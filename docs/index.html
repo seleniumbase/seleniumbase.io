@@ -582,10 +582,12 @@
 <img src="https://github.com/seleniumbase/SeleniumBase/workflows/CI%20build/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase">
 <img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" alt="SeleniumBase" /></a>
 </p>
+
 <p align="center">
 <div align="center"><span align="center"><b>Create web and mobile tests, fast!</b></span></div>
 <div align="center"><span align="center">Take <a href="https://selenium.dev/">Selenium</a> and <a href="https://docs.pytest.org/en/latest/index.html">pytest</a> to the next level.</span></div>
 </p>
+
 <p align="center">
 <a href="#python_installation">🚀 Get Started</a> |
 <a href="help_docs/customizing_test_runs/">🧙‍♂️ CMD Options</a> |
@@ -601,17 +603,20 @@
 <a href="seleniumbase/utilities/selenium_ide/ReadMe/">⏺️ Recorder</a> |
 <a href="examples/visual_testing/ReadMe/">👩‍🎨 Visual Testing</a> |
 <a href="integrations/github/workflows/ReadMe/">🤖 GitHub CI</a>
+
 </p>
 <p align="center">
 <div align="center"><b>Feel good about your test automation.</b></div>
 <div align="center">Control builds from the command line.</div>
 </p>
+
 <p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_swag_labs.py"><img src="https://cdn2.hubspot.net/hubfs/100006/images/swag_mobile.gif" /></a></p>
 <p align="center">(<i>Above: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_swag_labs.py">test_swag_labs.py</a> running with mobile emulation enabled.</i>)</p>
 
 
 <div class="codehilite"><pre><span></span><code>pytest test_swag_labs.py --mobile
 </code></pre></div>
+
 
 
 ------
@@ -683,7 +688,7 @@ pytest my_first_test.py
 * Chrome is the default browser if not specified with ``--browser=BROWSER``.
 * On Linux ``--headless`` is the default behavior (running with no GUI). You can also run in headless mode on any OS. If your Linux machine has a GUI and you want to see the web browser as tests run, add ``--headed`` or ``--gui``.
 
-**Here's an example test, [my_first_test.py](https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py):**<br />
+<b>Here's an example test, [my_first_test.py](https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py):</b>
 
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
@@ -704,7 +709,7 @@ pytest my_first_test.py
 </code></pre></div>
 
 
-<img src="https://cdn2.hubspot.net/hubfs/100006/images/my_first_test_gif.gif" title="SeleniumBase" /><br />
+<img src="https://cdn2.hubspot.net/hubfs/100006/images/my_first_test_gif.gif" title="SeleniumBase" />
 
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
 </code></pre></div>
@@ -741,10 +746,10 @@ pytest my_first_test.py
 For the complete list of SeleniumBase methods, see: <b><a href="help_docs/method_summary/">Method Summary</a></b>
 
 ## Learn More
-#### **Automatic WebDriver abilities:**<br />
+#### Automatic WebDriver abilities
 SeleniumBase automatically handles common WebDriver actions such as spinning up web browsers and saving screenshots during test failures. (<i><a href="help_docs/customizing_test_runs/">Read more about customizing test runs</a>.</i>)
 
-#### **Simplified code:**<br />
+#### Simplified code
 SeleniumBase uses simple syntax for commands, such as:
 
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -766,7 +771,7 @@ As you can see, the old WebDriver way is very bad!
 Use SeleniumBase to make testing much easier!
 (<i>You can still use ``self.driver`` in your code.</i>)
 
-#### **Run tests with ``pytest`` or ``nosetests`` in any browser:**<br />
+#### Run tests with ``pytest`` or ``nosetests`` in any browser
 (<i>Using **pytest** is recommended. **Chrome** is the default browser.</i>)
 
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>chrome
@@ -783,13 +788,13 @@ nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span cla
 
 
 
-#### **No more flaky tests:**<br />
+#### No more flaky tests
 SeleniumBase methods automatically wait for page elements to finish loading before interacting with them (*up to a timeout limit*). This means you no longer need random ``time.sleep()`` statements in your scripts.
 
-#### **Automated/manual hybrid mode:**<br />
+#### Automated/manual hybrid mode
 SeleniumBase includes a solution called <b><a href="seleniumbase/masterqa/ReadMe/">MasterQA</a></b>, which speeds up manual testing by having automation perform all the browser actions while the manual tester handles validatation.
 
-#### **Feature-Rich:**<br />
+#### Feature-Rich
 For a full list of SeleniumBase features, <a href="help_docs/features_list/">Click Here</a>.
 
 
@@ -1013,7 +1018,7 @@ The ``--report`` option gives you a fancy report after your test suite completes
 </code></pre></div>
 
 
-<img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" title="Example Nosetest Report" height="420">
+<img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" title="Example Nosetest Report" height="420" />
 
 (NOTE: You can add ``--show-report`` to immediately display Nosetest reports after the test suite completes. Only use ``--show-report`` when running tests locally because it pauses the test run.)
 
@@ -1098,7 +1103,7 @@ Here's an example of running tests with additional features enabled:
 
 
 
-**ProTip™:** You may need to use the get_page_source() method along with Python's find() command to parse through the source to find something that Selenium wouldn't be able to. (You may want to brush up on your Python programming skills for that.)
+<b>ProTip™:</b> You may need to use the get_page_source() method along with Python's find() command to parse through the source to find something that Selenium wouldn't be able to. (You may want to brush up on your Python programming skills for that.)
 
 <div class="codehilite"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
 <span class="n">head_open_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">)</span>
@@ -1392,13 +1397,20 @@ Additionally, you can use the ``@retry_on_exception()`` decorator to specificall
 ### Wrap-Up
 #### Congratulations on getting started with SeleniumBase!
 
-**If you see something, say something!**<br />[<img src="https://img.shields.io/github/issues-closed-raw/seleniumbase/SeleniumBase.svg?color=22BB88" alt=" " />](https://github.com/seleniumbase/SeleniumBase/issues?q=is%3Aissue+is%3Aclosed) [<img src="https://img.shields.io/github/issues-pr-closed/seleniumbase/SeleniumBase.svg?logo=github&logoColor=white&color=22BB99" />](https://github.com/seleniumbase/SeleniumBase/pulls?q=is%3Apr+is%3Aclosed)
+<p>
+<div><b>If you see something, say something!</b></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/seleniumbase/SeleniumBase.svg?color=22BB88" title="Closed Issues" /></a>   <a href="https://github.com/seleniumbase/SeleniumBase/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed/seleniumbase/SeleniumBase.svg?logo=github&logoColor=white&color=22BB99" title="Closed Pull Requests" /></a></div>
+</p>
 
-**If you like us, give us a star!**<br />[<img src="https://img.shields.io/github/stars/seleniumbase/seleniumbase.svg?color=888CFA" alt=" " />](https://github.com/seleniumbase/SeleniumBase/stargazers)
+<p>
+<div><b>If you like us, give us a star!</b></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase/stargazers"><img src="https://img.shields.io/github/stars/seleniumbase/seleniumbase.svg?color=888CFA" title="Stargazers" /></a></div>
+</p>
+<p><div><a href="https://github.com/mdmintz">https://github.com/mdmintz</a></div></p>
 
-[https://github.com/mdmintz](https://github.com/mdmintz)<br />
+<div><a href="README/"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb.png" title="SeleniumBase" height="46.2" /></a></div>
 
-[<img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb.png" title="SeleniumBase" height="46.2">](README.md) <br /> [<img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" alt=" " />](https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE) [<img src="https://img.shields.io/github/repo-size/seleniumbase/seleniumbase.svg" alt="Size" />](https://github.com/seleniumbase/SeleniumBase/releases) [<img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" alt="Join the chat!" />](https://gitter.im/seleniumbase/SeleniumBase)
+<div><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/releases"><img src="https://img.shields.io/github/repo-size/seleniumbase/seleniumbase.svg" title="SeleniumBase" alt="Repo Size" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase"><img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" title="SeleniumBase" alt="Join the chat!" /></a></div>
 
 <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a>
                 
