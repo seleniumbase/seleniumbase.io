@@ -654,8 +654,9 @@
 * Spanish / Español</p>
 <p>Examples can be found in [<a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/translations">SeleniumBase/examples/translations</a>].</p>
 <p>Multi-language tests are run with <strong>pytest</strong> like any other test. Every test method has a one-to-one mapping to every other supported language.<br /><i>Examples:</i></p>
-<div class="codehilite"><pre><span></span><code><span class="err">self.开启网址(URL) &lt;=&gt; self.open(URL)</span>
-<span class="err">self.нажмите(SELECTOR) &lt;=&gt; self.click(SELECTOR)</span>
+<div class="codehilite"><pre><span></span><code><span class="err">self.开启网址(URL) = self.open(URL)</span>
+<span class="err">self.нажмите(CSS) = self.click(CSS)</span>
+<span class="err">self.뒤로() = self.go_back()</span>
 </code></pre></div>
 
 
