@@ -1,143 +1,1420 @@
-<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Create browser tests for web and mobile user interfaces. Fully customizable automation that builds on top of Selenium. Uses Python and pytest to run tests and execute commands."><link href=https://seleniumbase.io/help_docs/customizing_test_runs/ rel=canonical><meta name=author content="Michael Mintz"><link rel="shortcut icon" href=../../img/logo4.png><meta name=generator content="mkdocs-1.1.2, mkdocs-material-5.0.2"><title>CMD Options - SeleniumBase</title><link rel=stylesheet href=../../assets/stylesheets/main.07c9fbf5.min.css><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style></head> <body dir=ltr> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#customizing-test-runs class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid" aria-label=Header> <a href=https://seleniumbase.io/ title=SeleniumBase class="md-header-nav__button md-logo" aria-label=SeleniumBase> <img src=../../img/logo3a.png alt=logo> </a> <label class="md-header-nav__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z /></svg> </label> <div class=md-header-nav__title data-md-component=header-title> <div class=md-header-nav__ellipsis> <span class="md-header-nav__topic md-ellipsis"> SeleniumBase </span> <span class="md-header-nav__topic md-ellipsis"> CMD Options </span> </div> </div> <label class="md-header-nav__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear data-md-component=search-reset tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z /></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Type to start searching </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header-nav__source> <a href=https://github.com/seleniumbase/SeleniumBase/ title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> seleniumbase/SeleniumBase </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class="md-tabs__link md-tabs__link--active"> Home Page </a> </li> <li class=md-tabs__item> <a href=../install_python_pip_git/ class=md-tabs__link> Python Setup </a> </li> <li class=md-tabs__item> <a href=../install/ class=md-tabs__link> Installation </a> </li> <li class=md-tabs__item> <a href=../../examples/example_logs/ReadMe/ class=md-tabs__link> Integrations </a> </li> <li class=md-tabs__item> <a href=../ReadMe/ class=md-tabs__link> Extra Help </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=https://seleniumbase.io/ title=SeleniumBase class="md-nav__button md-logo" aria-label=SeleniumBase> <img src=../../img/logo3a.png alt=logo> </a> SeleniumBase </label> <div class=md-nav__source> <a href=https://github.com/seleniumbase/SeleniumBase/ title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> seleniumbase/SeleniumBase </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. title="Home Page" class=md-nav__link> Home Page </a> </li> <li class=md-nav__item> <a href=../features_list/ title=Features class=md-nav__link> Features </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> CMD Options <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z /></svg> </span> </label> <a href=./ title="CMD Options" class="md-nav__link md-nav__link--active"> CMD Options </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#customizing-test-runs class=md-nav__link> Customizing test runs </a> <nav class=md-nav aria-label="Customizing test runs"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#customizing-default-settings class=md-nav__link> Customizing default settings </a> </li> <li class=md-nav__item> <a href=#running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own class=md-nav__link> Running tests on BrowserStack's Selenium Grid, the Sauce Labs Selenium Grid, the TestingBot Selenium Grid, another grid, or your own </a> </li> <li class=md-nav__item> <a href=#example-tests-using-logging class=md-nav__link> Example tests using Logging </a> </li> <li class=md-nav__item> <a href=#demo-mode class=md-nav__link> Demo Mode </a> </li> <li class=md-nav__item> <a href=#passing-additional-data-to-tests class=md-nav__link> Passing additional data to tests </a> </li> <li class=md-nav__item> <a href=#running-tests-multithreaded class=md-nav__link> Running tests multithreaded </a> </li> <li class=md-nav__item> <a href=#retrying-failing-tests-automatically class=md-nav__link> Retrying failing tests automatically </a> </li> <li class=md-nav__item> <a href=#debugging-tests class=md-nav__link> Debugging tests </a> </li> <li class=md-nav__item> <a href=#pytest-reports class=md-nav__link> Pytest Reports </a> </li> <li class=md-nav__item> <a href=#nosetest-reports class=md-nav__link> Nosetest Reports </a> </li> <li class=md-nav__item> <a href=#using-a-proxy-server class=md-nav__link> Using a Proxy Server </a> </li> <li class=md-nav__item> <a href=#changing-the-user-agent class=md-nav__link> Changing the User-Agent </a> </li> <li class=md-nav__item> <a href=#mobile-device-testing class=md-nav__link> Mobile Device Testing </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-4 type=checkbox id=nav-4> <label class=md-nav__link for=nav-4> Python Setup <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z /></svg> </span> </label> <nav class=md-nav aria-label="Python Setup" data-md-level=1> <label class=md-nav__title for=nav-4> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </span> Python Setup </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../install_python_pip_git/ title="Install Python, pip, git" class=md-nav__link> Install Python, pip, git </a> </li> <li class=md-nav__item> <a href=../virtualenv_instructions/ title="Virtualenv Instructions" class=md-nav__link> Virtualenv Instructions </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-5 type=checkbox id=nav-5> <label class=md-nav__link for=nav-5> Installation <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z /></svg> </span> </label> <nav class=md-nav aria-label=Installation data-md-level=1> <label class=md-nav__title for=nav-5> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </span> Installation </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../install/ title="Install SeleniumBase" class=md-nav__link> Install SeleniumBase </a> </li> <li class=md-nav__item> <a href=../webdriver_installation/ title="WebDriver Installation" class=md-nav__link> WebDriver Installation </a> </li> <li class=md-nav__item> <a href=../verify_webdriver/ title="Verifying WebDriver" class=md-nav__link> Verifying WebDriver </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../how_it_works/ title="How it Works" class=md-nav__link> How it Works </a> </li> <li class=md-nav__item> <a href=../../examples/ReadMe/ title=Examples class=md-nav__link> Examples </a> </li> <li class=md-nav__item> <a href=../translations/ title=Translations class=md-nav__link> Translations </a> </li> <li class=md-nav__item> <a href=../method_summary/ title="API Reference" class=md-nav__link> API Reference </a> </li> <li class=md-nav__item> <a href=../mobile_testing/ title="Mobile Testing" class=md-nav__link> Mobile Testing </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/console_scripts/ReadMe/ title="Console Scripts" class=md-nav__link> Console Scripts </a> </li> <li class=md-nav__item> <a href=../../examples/tour_examples/ReadMe/ title="Site Tours" class=md-nav__link> Site Tours </a> </li> <li class=md-nav__item> <a href=../../examples/master_qa/ReadMe/ title=MasterQA class=md-nav__link> MasterQA </a> </li> <li class=md-nav__item> <a href=../../examples/visual_testing/ReadMe/ title="Visual Testing" class=md-nav__link> Visual Testing </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-15 type=checkbox id=nav-15> <label class=md-nav__link for=nav-15> Integrations <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z /></svg> </span> </label> <nav class=md-nav aria-label=Integrations data-md-level=1> <label class=md-nav__title for=nav-15> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </span> Integrations </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../examples/example_logs/ReadMe/ title="Logging and Reports" class=md-nav__link> Logging and Reports </a> </li> <li class=md-nav__item> <a href=../../integrations/github/workflows/ReadMe/ title="GitHub CI" class=md-nav__link> GitHub CI </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/utilities/selenium_grid/ReadMe/ title="Selenium Grid" class=md-nav__link> Selenium Grid </a> </li> <li class=md-nav__item> <a href=../../integrations/katalon/ReadMe/ title="Katalon Integration" class=md-nav__link> Katalon Integration </a> </li> <li class=md-nav__item> <a href=../mysql_installation/ title="MySQL Help" class=md-nav__link> MySQL Help </a> </li> <li class=md-nav__item> <a href=../../integrations/azure/jenkins/ReadMe/ title="Jenkins on Azure" class=md-nav__link> Jenkins on Azure </a> </li> <li class=md-nav__item> <a href=../../integrations/google_cloud/ReadMe/ title="Jenkins on Google Cloud" class=md-nav__link> Jenkins on Google Cloud </a> </li> <li class=md-nav__item> <a href=../../integrations/docker/ReadMe/ title="Docker Help" class=md-nav__link> Docker Help </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/utilities/selenium_ide/ReadMe/ title="Recorder and Exporting" class=md-nav__link> Recorder and Exporting </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/masterqa/ReadMe/ title="Master QA" class=md-nav__link> Master QA </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-16 type=checkbox id=nav-16> <label class=md-nav__link for=nav-16> Extra Help <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z /></svg> </span> </label> <nav class=md-nav aria-label="Extra Help" data-md-level=1> <label class=md-nav__title for=nav-16> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </span> Extra Help </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../ReadMe/ title="Table of Contents" class=md-nav__link> Table of Contents </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/common/ReadMe/ title="Decorators & Security" class=md-nav__link> Decorators & Security </a> </li> <li class=md-nav__item> <a href=../using_safari_driver/ title="Using Safari Driver" class=md-nav__link> Using Safari Driver </a> </li> <li class=md-nav__item> <a href=../hidden_files_info/ title="macOS Hidden Files" class=md-nav__link> macOS Hidden Files </a> </li> <li class=md-nav__item> <a href=../happy_customers/ title="Happy Customers" class=md-nav__link> Happy Customers </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#customizing-test-runs class=md-nav__link> Customizing test runs </a> <nav class=md-nav aria-label="Customizing test runs"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#customizing-default-settings class=md-nav__link> Customizing default settings </a> </li> <li class=md-nav__item> <a href=#running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own class=md-nav__link> Running tests on BrowserStack's Selenium Grid, the Sauce Labs Selenium Grid, the TestingBot Selenium Grid, another grid, or your own </a> </li> <li class=md-nav__item> <a href=#example-tests-using-logging class=md-nav__link> Example tests using Logging </a> </li> <li class=md-nav__item> <a href=#demo-mode class=md-nav__link> Demo Mode </a> </li> <li class=md-nav__item> <a href=#passing-additional-data-to-tests class=md-nav__link> Passing additional data to tests </a> </li> <li class=md-nav__item> <a href=#running-tests-multithreaded class=md-nav__link> Running tests multithreaded </a> </li> <li class=md-nav__item> <a href=#retrying-failing-tests-automatically class=md-nav__link> Retrying failing tests automatically </a> </li> <li class=md-nav__item> <a href=#debugging-tests class=md-nav__link> Debugging tests </a> </li> <li class=md-nav__item> <a href=#pytest-reports class=md-nav__link> Pytest Reports </a> </li> <li class=md-nav__item> <a href=#nosetest-reports class=md-nav__link> Nosetest Reports </a> </li> <li class=md-nav__item> <a href=#using-a-proxy-server class=md-nav__link> Using a Proxy Server </a> </li> <li class=md-nav__item> <a href=#changing-the-user-agent class=md-nav__link> Changing the User-Agent </a> </li> <li class=md-nav__item> <a href=#mobile-device-testing class=md-nav__link> Mobile Device Testing </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <h1>CMD Options</h1> <p><a href=../..><img src=https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb.png title=SeleniumBase height=48></a></p> <h2 id=customizing-test-runs>Customizing test runs<a class=headerlink href=#customizing-test-runs title="Permanent link">&para;</a></h2> <p>You can customize test runs from the command-line thanks to <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py>SeleniumBase's pytest plugin</a>, which adds command-line options for setting/enabling the browser type, headless mode, mobile mode, multithreading mode, demo mode, proxy config, user agent config, browser extensions, and more.</p> <p>Here are some examples of configuring tests, which can be run from the <a href=https://github.com/seleniumbase/SeleniumBase/tree/master/examples>examples/</a> folder:</p> <div class=codehilite><pre><span></span><code><span class=c1># Run a test in Chrome (default browser)</span>
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create browser tests for web and mobile user interfaces. Fully customizable automation that builds on top of Selenium. Uses Python and pytest to run tests and execute commands.">
+      
+      
+        <link rel="canonical" href="https://seleniumbase.io/help_docs/customizing_test_runs/">
+      
+      
+        <meta name="author" content="Michael Mintz">
+      
+      <link rel="shortcut icon" href="../../img/logo4.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+    
+    
+      
+        <title>CMD Options - SeleniumBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#customizing-test-runs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://seleniumbase.io/" title="SeleniumBase" class="md-header-nav__button md-logo" aria-label="SeleniumBase">
+      
+  <img src="../../img/logo3a.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SeleniumBase
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              CMD Options
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/seleniumbase/SeleniumBase/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    seleniumbase/SeleniumBase
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Home Page
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../install_python_pip_git/" class="md-tabs__link">
+          Python Setup
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../install/" class="md-tabs__link">
+          Installation
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../examples/example_logs/ReadMe/" class="md-tabs__link">
+          Integrations
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ReadMe/" class="md-tabs__link">
+          Extra Help
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://seleniumbase.io/" title="SeleniumBase" class="md-nav__button md-logo" aria-label="SeleniumBase">
+      
+  <img src="../../img/logo3a.png" alt="logo">
+
+    </a>
+    SeleniumBase
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/seleniumbase/SeleniumBase/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    seleniumbase/SeleniumBase
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home Page" class="md-nav__link">
+      Home Page
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../features_list/" title="Features" class="md-nav__link">
+      Features
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        CMD Options
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="CMD Options" class="md-nav__link md-nav__link--active">
+      CMD Options
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-test-runs" class="md-nav__link">
+    Customizing test runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing test runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-default-settings" class="md-nav__link">
+    Customizing default settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own" class="md-nav__link">
+    Running tests on BrowserStack's Selenium Grid, the Sauce Labs Selenium Grid, the TestingBot Selenium Grid, another grid, or your own
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-tests-using-logging" class="md-nav__link">
+    Example tests using Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-mode" class="md-nav__link">
+    Demo Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-additional-data-to-tests" class="md-nav__link">
+    Passing additional data to tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests-multithreaded" class="md-nav__link">
+    Running tests multithreaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrying-failing-tests-automatically" class="md-nav__link">
+    Retrying failing tests automatically
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-tests" class="md-nav__link">
+    Debugging tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest-reports" class="md-nav__link">
+    Pytest Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nosetest-reports" class="md-nav__link">
+    Nosetest Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-proxy-server" class="md-nav__link">
+    Using a Proxy Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-user-agent" class="md-nav__link">
+    Changing the User-Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-device-testing" class="md-nav__link">
+    Mobile Device Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Python Setup
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Python Setup" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Python Setup
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install_python_pip_git/" title="Install Python, pip, git" class="md-nav__link">
+      Install Python, pip, git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../virtualenv_instructions/" title="Virtualenv Instructions" class="md-nav__link">
+      Virtualenv Instructions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Installation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install SeleniumBase" class="md-nav__link">
+      Install SeleniumBase
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webdriver_installation/" title="WebDriver Installation" class="md-nav__link">
+      WebDriver Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../verify_webdriver/" title="Verifying WebDriver" class="md-nav__link">
+      Verifying WebDriver
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how_it_works/" title="How it Works" class="md-nav__link">
+      How it Works
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/ReadMe/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../translations/" title="Translations" class="md-nav__link">
+      Translations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../method_summary/" title="API Reference" class="md-nav__link">
+      API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../mobile_testing/" title="Mobile Testing" class="md-nav__link">
+      Mobile Testing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../seleniumbase/console_scripts/ReadMe/" title="Console Scripts" class="md-nav__link">
+      Console Scripts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/tour_examples/ReadMe/" title="Site Tours" class="md-nav__link">
+      Site Tours
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/master_qa/ReadMe/" title="MasterQA" class="md-nav__link">
+      MasterQA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/visual_testing/ReadMe/" title="Visual Testing" class="md-nav__link">
+      Visual Testing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Integrations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Integrations" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/example_logs/ReadMe/" title="Logging and Reports" class="md-nav__link">
+      Logging and Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/github/workflows/ReadMe/" title="GitHub CI" class="md-nav__link">
+      GitHub CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../seleniumbase/utilities/selenium_grid/ReadMe/" title="Selenium Grid" class="md-nav__link">
+      Selenium Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/katalon/ReadMe/" title="Katalon Integration" class="md-nav__link">
+      Katalon Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mysql_installation/" title="MySQL Help" class="md-nav__link">
+      MySQL Help
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/azure/jenkins/ReadMe/" title="Jenkins on Azure" class="md-nav__link">
+      Jenkins on Azure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/google_cloud/ReadMe/" title="Jenkins on Google Cloud" class="md-nav__link">
+      Jenkins on Google Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/docker/ReadMe/" title="Docker Help" class="md-nav__link">
+      Docker Help
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../seleniumbase/utilities/selenium_ide/ReadMe/" title="Recorder and Exporting" class="md-nav__link">
+      Recorder and Exporting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../seleniumbase/masterqa/ReadMe/" title="Master QA" class="md-nav__link">
+      Master QA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Extra Help
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Extra Help" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Extra Help
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ReadMe/" title="Table of Contents" class="md-nav__link">
+      Table of Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../seleniumbase/common/ReadMe/" title="Decorators & Security" class="md-nav__link">
+      Decorators & Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../using_safari_driver/" title="Using Safari Driver" class="md-nav__link">
+      Using Safari Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hidden_files_info/" title="macOS Hidden Files" class="md-nav__link">
+      macOS Hidden Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../happy_customers/" title="Happy Customers" class="md-nav__link">
+      Happy Customers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-test-runs" class="md-nav__link">
+    Customizing test runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing test runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-default-settings" class="md-nav__link">
+    Customizing default settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own" class="md-nav__link">
+    Running tests on BrowserStack's Selenium Grid, the Sauce Labs Selenium Grid, the TestingBot Selenium Grid, another grid, or your own
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-tests-using-logging" class="md-nav__link">
+    Example tests using Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demo-mode" class="md-nav__link">
+    Demo Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-additional-data-to-tests" class="md-nav__link">
+    Passing additional data to tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests-multithreaded" class="md-nav__link">
+    Running tests multithreaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrying-failing-tests-automatically" class="md-nav__link">
+    Retrying failing tests automatically
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-tests" class="md-nav__link">
+    Debugging tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest-reports" class="md-nav__link">
+    Pytest Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nosetest-reports" class="md-nav__link">
+    Nosetest Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-proxy-server" class="md-nav__link">
+    Using a Proxy Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-user-agent" class="md-nav__link">
+    Changing the User-Agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-device-testing" class="md-nav__link">
+    Mobile Device Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>CMD Options</h1>
+                
+                <p><a href="../.."><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb.png" title="SeleniumBase" height="48"></a></p>
+<h2 id="customizing-test-runs">Customizing test runs</h2>
+<p>You can customize test runs from the command-line thanks to <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">SeleniumBase's pytest plugin</a>, which adds command-line options for setting/enabling the browser type, headless mode, mobile mode, multithreading mode, demo mode, proxy config, user agent config, browser extensions, and more.</p>
+<p>Here are some examples of configuring tests, which can be run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Run a test in Chrome (default browser)</span>
 pytest test_swag_labs.py
 
-<span class=c1># Run a test in Firefox</span>
-pytest test_swag_labs.py --browser<span class=o>=</span>firefox
+<span class="c1"># Run a test in Firefox</span>
+pytest test_swag_labs.py --browser<span class="o">=</span>firefox
 
-<span class=c1># Run a test in Demo Mode (highlight assertions)</span>
+<span class="c1"># Run a test in Demo Mode (highlight assertions)</span>
 pytest test_swag_labs.py --demo
 
-<span class=c1># Run a test in Headless Mode (invisible browser)</span>
+<span class="c1"># Run a test in Headless Mode (invisible browser)</span>
 pytest test_swag_labs.py --headless
 
-<span class=c1># Run tests multi-threaded using [n] threads</span>
-pytest test_suite.py -n<span class=o>=</span><span class=m>4</span>
+<span class="c1"># Run tests multi-threaded using [n] threads</span>
+pytest test_suite.py -n<span class="o">=</span><span class="m">4</span>
 
-<span class=c1># Create a pytest html report after tests are done</span>
-pytest test_suite.py --html<span class=o>=</span>report.html
+<span class="c1"># Create a pytest html report after tests are done</span>
+pytest test_suite.py --html<span class="o">=</span>report.html
 
-<span class=c1># Enter Debug Mode on failures</span>
+<span class="c1"># Enter Debug Mode on failures</span>
 pytest test_fail.py --pdb -s
 
-<span class=c1># Rerun failing tests more times</span>
-pytest test_suite.py --reruns<span class=o>=</span><span class=m>1</span>
+<span class="c1"># Rerun failing tests more times</span>
+pytest test_suite.py --reruns<span class="o">=</span><span class="m">1</span>
 
-<span class=c1># Pass extra data into tests (retrieve: self.data)</span>
-pytest my_first_test.py --data<span class=o>=</span><span class=s2>&quot;ABC,DEF&quot;</span>
+<span class="c1"># Pass extra data into tests (retrieve: self.data)</span>
+pytest my_first_test.py --data<span class="o">=</span><span class="s2">&quot;ABC,DEF&quot;</span>
 
-<span class=c1># Run tests on a local Selenium Grid</span>
-pytest test_suite.py --server<span class=o>=</span><span class=s2>&quot;127.0.0.1&quot;</span>
+<span class="c1"># Run tests on a local Selenium Grid</span>
+pytest test_suite.py --server<span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
 
-<span class=c1># Run tests on a remote Selenium Grid</span>
-pytest test_suite.py --server<span class=o>=</span>IP_ADDRESS --port<span class=o>=</span><span class=m>4444</span>
+<span class="c1"># Run tests on a remote Selenium Grid</span>
+pytest test_suite.py --server<span class="o">=</span>IP_ADDRESS --port<span class="o">=</span><span class="m">4444</span>
 
-<span class=c1># Run tests on a remote Selenium Grid with authentication</span>
-pytest test_suite.py --server<span class=o>=</span>USERNAME:KEY@IP_ADDRESS --port<span class=o>=</span><span class=m>80</span>
+<span class="c1"># Run tests on a remote Selenium Grid with authentication</span>
+pytest test_suite.py --server<span class="o">=</span>USERNAME:KEY@IP_ADDRESS --port<span class="o">=</span><span class="m">80</span>
 
-<span class=c1># Reuse the same browser session for all tests being run</span>
+<span class="c1"># Reuse the same browser session for all tests being run</span>
 pytest test_suite.py --reuse-session
 
-<span class=c1># Reuse the same browser session, but empty cookies between tests</span>
+<span class="c1"># Reuse the same browser session, but empty cookies between tests</span>
 pytest test_suite.py --reuse-session --crumbs
 
-<span class=c1># Run tests through a proxy server</span>
-pytest proxy_test.py --proxy<span class=o>=</span>IP_ADDRESS:PORT
+<span class="c1"># Run tests through a proxy server</span>
+pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
 
-<span class=c1># Run tests through a proxy server with authentication</span>
-pytest proxy_test.py --proxy<span class=o>=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
+<span class="c1"># Run tests through a proxy server with authentication</span>
+pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 
-<span class=c1># Run tests while setting the web browser&#39;s User Agent</span>
-pytest user_agent_test.py --agent<span class=o>=</span><span class=s2>&quot;USER-AGENT-STRING&quot;</span>
+<span class="c1"># Run tests while setting the web browser&#39;s User Agent</span>
+pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;USER-AGENT-STRING&quot;</span>
 
-<span class=c1># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
+<span class="c1"># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
 pytest test_swag_labs.py --mobile
 
-<span class=c1># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
-pytest test_swag_labs.py --mobile --metrics<span class=o>=</span><span class=s2>&quot;411,731,3&quot;</span>
+<span class="c1"># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
+pytest test_swag_labs.py --mobile --metrics<span class="o">=</span><span class="s2">&quot;411,731,3&quot;</span>
 
-<span class=c1># Run tests while changing SeleniumBase default settings</span>
-pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
-</code></pre></div> <p>You can interchange <strong>pytest</strong> with <strong>nosetests</strong> for most things, but using pytest is strongly recommended because developers stopped supporting nosetests. Chrome is the default browser if not specified.</p> <p>(NOTE: If you're using <strong>pytest</strong> for running tests outside of the SeleniumBase repo, <strong>you'll want a copy of <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini>pytest.ini</a> at the base of the new folder structure</strong>. If using <strong>nosetests</strong>, the same applies for <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg>setup.cfg</a>.)</p> <p>Here are some useful command-line options that come with Pytest:</p> <div class=codehilite><pre><span></span><code>-v  <span class=c1># Prints the full test name for each test.</span>
--q  <span class=c1># Prints fewer details in the console output when running tests.</span>
--x  <span class=c1># Stop running the tests after the first failure is reached.</span>
---html<span class=o>=</span>report.html  <span class=c1># Creates a detailed pytest-html report after tests finish.</span>
---collect-only  <span class=c1># Show what tests would get run without actually running them.</span>
--n<span class=o>=</span>NUM  <span class=c1># Multithread the tests using that many threads. (Speed up test runs!)</span>
--s  <span class=c1># See print statements. (Should be on by default with pytest.ini present.)</span>
---junit-xml<span class=o>=</span>report.xml  <span class=c1># Creates a junit-xml report after tests finish.</span>
---pdb  <span class=c1># If a test fails, pause run and enter debug mode. (Don&#39;t use with CI!)</span>
--m<span class=o>=</span>MARKER  <span class=c1># Only run tests that are marked with the specified pytest marker.</span>
-</code></pre></div> <p>SeleniumBase provides additional Pytest command-line options for tests:</p> <div class=codehilite><pre><span></span><code>--browser<span class=o>=</span>BROWSER  <span class=c1># (The web browser to use.)</span>
---cap-file<span class=o>=</span>FILE  <span class=c1># (The web browser&#39;s desired capabilities to use.)</span>
---cap-string<span class=o>=</span>STRING  <span class=c1># (The web browser&#39;s desired capabilities to use.)</span>
---settings-file<span class=o>=</span>FILE  <span class=c1># (Overrides SeleniumBase settings.py values.)</span>
---env<span class=o>=</span>ENV  <span class=c1># (Set a test environment. Use &quot;self.env&quot; to use this in tests.)</span>
---data<span class=o>=</span>DATA  <span class=c1># (Extra data to pass to tests. Use &quot;self.data&quot; in tests.)</span>
---var1<span class=o>=</span>DATA  <span class=c1># (Extra data to pass to tests. Use &quot;self.var1&quot; in tests.)</span>
---var2<span class=o>=</span>DATA  <span class=c1># (Extra data to pass to tests. Use &quot;self.var2&quot; in tests.)</span>
---var3<span class=o>=</span>DATA  <span class=c1># (Extra data to pass to tests. Use &quot;self.var3&quot; in tests.)</span>
---user-data-dir<span class=o>=</span>DIR  <span class=c1># (Set the Chrome user data directory to use.)</span>
---server<span class=o>=</span>SERVER  <span class=c1># (The server / IP address used by the tests.)</span>
---port<span class=o>=</span>PORT  <span class=c1># (The port that&#39;s used by the test server.)</span>
---proxy<span class=o>=</span>SERVER:PORT  <span class=c1># (This is the proxy server:port combo used by tests.)</span>
---agent<span class=o>=</span>STRING  <span class=c1># (This designates the web browser&#39;s User Agent to use.)</span>
---mobile  <span class=c1># (The option to use the mobile emulator while running tests.)</span>
---metrics<span class=o>=</span>STRING  <span class=c1># (&quot;CSSWidth,Height,PixelRatio&quot; for mobile emulator tests.)</span>
---extension-zip<span class=o>=</span>ZIP  <span class=c1># (Load a Chrome Extension .zip file, comma-separated.)</span>
---extension-dir<span class=o>=</span>DIR  <span class=c1># (Load a Chrome Extension directory, comma-separated.)</span>
---headless  <span class=c1># (The option to run tests headlessly. The default on Linux OS.)</span>
---headed  <span class=c1># (The option to run tests with a GUI on Linux OS.)</span>
---start-page<span class=o>=</span>URL  <span class=c1># (The starting URL for the web browser when tests begin.)</span>
---archive-logs  <span class=c1># (Archive old log files instead of deleting them.)</span>
---time-limit<span class=o>=</span>SECONDS  <span class=c1># (Safely fail any test that exceeds the limit limit.)</span>
---slow  <span class=c1># (The option to slow down the automation.)</span>
---demo  <span class=c1># (The option to visually see test actions as they occur.)</span>
---demo-sleep<span class=o>=</span>SECONDS  <span class=c1># (The option to wait longer after Demo Mode actions.)</span>
---highlights<span class=o>=</span>NUM  <span class=c1># (Number of highlight animations for Demo Mode actions.)</span>
---message-duration<span class=o>=</span>SECONDS  <span class=c1># (The time length for Messenger alerts.)</span>
---check-js  <span class=c1># (The option to check for JavaScript errors after page loads.)</span>
---ad-block  <span class=c1># (The option to block some display ads after page loads.)</span>
---verify-delay<span class=o>=</span>SECONDS  <span class=c1># (The delay before MasterQA verification checks.)</span>
---disable-csp  <span class=c1># (This disables the Content Security Policy of websites.)</span>
---enable-sync  <span class=c1># (The option to enable &quot;Chrome Sync&quot;.)</span>
---use-auto-ext  <span class=c1># (The option to use Chrome&#39;s automation extension.)</span>
---incognito  <span class=c1>#  (The option to enable Chrome&#39;s Incognito mode.)</span>
---guest  <span class=c1># (The option to enable Chrome&#39;s Guest mode.)</span>
---devtools  <span class=c1># (The option to open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session  <span class=c1># (The option to reuse the browser session between tests.)</span>
---crumbs  <span class=c1># (Option to delete all cookies between tests reusing a session.)</span>
---maximize-window  <span class=c1># (The option to start with the web browser maximized.)</span>
---save-screenshot  <span class=c1># (The option to save a screenshot after each test.)</span>
---visual-baseline  <span class=c1># (Set the visual baseline for Visual/Layout tests.)</span>
---timeout-multiplier<span class=o>=</span>MULTIPLIER  <span class=c1># (Multiplies the default timeout values.)</span>
-</code></pre></div> <p>(For more details, see the full list of command-line options <strong><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py>here</a></strong>.)</p> <h4 id=customizing-default-settings>Customizing default settings<a class=headerlink href=#customizing-default-settings title="Permanent link">&para;</a></h4> <p>An easy way to override <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py>seleniumbase/config/settings.py</a> is by using a custom settings file. Here's the command-line option to add to tests: (See <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py>examples/custom_settings.py</a>) <code>--settings-file=custom_settings.py</code> (Settings include default timeout values, a two-factor auth key, DB credentials, S3 credentials, and other important settings used by tests.)</p> <h4 id=running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own>Running tests on <a href=https://www.browserstack.com/automate#>BrowserStack</a>'s Selenium Grid, the <a href=https://saucelabs.com/products/open-source-frameworks/selenium>Sauce Labs</a> Selenium Grid, the <a href=https://testingbot.com/features>TestingBot</a> Selenium Grid, another grid, or your own<a class=headerlink href=#running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own title="Permanent link">&para;</a></h4> <p>(For setting browser desired capabilities while running Selenium remotely, see the ReadMe located here: https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities)</p> <p>Here's how to connect to a BrowserStack Selenium Grid server for running tests:</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --server<span class=o>=</span>USERNAME:KEY@hub.browserstack.com --port<span class=o>=</span><span class=m>80</span>
-</code></pre></div> <p>Here's how to connect to a Sauce Labs Selenium Grid server for running tests:</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --server<span class=o>=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class=o>=</span><span class=m>80</span>
-</code></pre></div> <p>Here's how to connect to a TestingBot Selenium Grid server for running tests:</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --server<span class=o>=</span>USERNAME:KEY@hub.testingbot.com --port<span class=o>=</span><span class=m>80</span>
-</code></pre></div> <p>Here's how to connect to a CrossBrowserTesting Selenium Grid server for running tests:</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --server<span class=o>=</span>USERNAME:KEY@hub.crossbrowsertesting.com --port<span class=o>=</span><span class=m>80</span>
-</code></pre></div> <p>Here's how to connect to a LambdaTest Selenium Grid server for running tests:</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --server<span class=o>=</span>USERNAME:KEY@hub.lambdatest.com --port<span class=o>=</span><span class=m>80</span>
-</code></pre></div> <p>Or you can create your own Selenium Grid for test distribution. (<a href=../../seleniumbase/utilities/selenium_grid/ReadMe/ >See this ReadMe for details</a>)</p> <h4 id=example-tests-using-logging>Example tests using Logging<a class=headerlink href=#example-tests-using-logging title="Permanent link">&para;</a></h4> <div class=codehilite><pre><span></span><code>pytest test_suite.py --browser<span class=o>=</span>chrome
-</code></pre></div> <p>(During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you have ARCHIVE_EXISTING_LOGS set to True in <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py>settings.py</a>, otherwise log files with be cleaned up at the start of the next test run.)</p> <h4 id=demo-mode>Demo Mode<a class=headerlink href=#demo-mode title="Permanent link">&para;</a></h4> <p>If any test is moving too fast for your eyes to see what's going on, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --demo
-</code></pre></div> <p>You can override the default wait time by either updating <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py>settings.py</a> or by using <code>--demo-sleep={NUM}</code> when using Demo Mode. (NOTE: If you use <code>--demo-sleep={NUM}</code> without using <code>--demo</code>, nothing will happen.)</p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --demo --demo-sleep<span class=o>=</span><span class=m>1</span>.2
-</code></pre></div> <h4 id=passing-additional-data-to-tests>Passing additional data to tests<a class=headerlink href=#passing-additional-data-to-tests title="Permanent link">&para;</a></h4> <p>If you want to pass additional data from the command line to your tests, you can use <code>--data=STRING</code>. Now inside your tests, you can use <code>self.data</code> to access that.</p> <h4 id=running-tests-multithreaded>Running tests multithreaded<a class=headerlink href=#running-tests-multithreaded title="Permanent link">&para;</a></h4> <p>To run Pytest multithreaded on multiple CPUs at the same time, add <code>-n=NUM</code> or <code>-n NUM</code> on the command line, where NUM is the number of CPUs you want to use.</p> <h4 id=retrying-failing-tests-automatically>Retrying failing tests automatically<a class=headerlink href=#retrying-failing-tests-automatically title="Permanent link">&para;</a></h4> <p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p> <div class=codehilite><pre><span></span><code>pytest --reruns=2 --reruns-delay=1
-</code></pre></div> <h4 id=debugging-tests>Debugging tests<a class=headerlink href=#debugging-tests title="Permanent link">&para;</a></h4> <p><strong>You can use the following code snippets in your scripts to help you debug issues:</strong></p> <div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>time</span><span class=p>;</span> <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>  <span class=c1># Makes the test wait and do nothing for 5 seconds.</span>
-<span class=kn>import</span> <span class=nn>ipdb</span><span class=p>;</span> <span class=n>ipdb</span><span class=o>.</span><span class=n>set_trace</span><span class=p>()</span>  <span class=c1># Enter debugging mode. n = next, c = continue, s = step.</span>
-<span class=kn>import</span> <span class=nn>pytest</span><span class=p>;</span> <span class=n>pytest</span><span class=o>.</span><span class=n>set_trace</span><span class=p>()</span>  <span class=c1># Enter debugging mode. n = next, c = continue, s = step.</span>
-</code></pre></div> <p><strong>To pause an active test that throws an exception or error, add <code>--pdb -s</code>:</strong></p> <div class=codehilite><pre><span></span><code>pytest my_first_test.py --pdb -s
-</code></pre></div> <p>The code above will leave your browser window open in case there's a failure. (ipdb commands: 'c', 's', 'n' =&gt; continue, step, next).</p> <h4 id=pytest-reports>Pytest Reports<a class=headerlink href=#pytest-reports title="Permanent link">&para;</a></h4> <p>Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p> <div class=codehilite><pre><span></span><code>pytest test_suite.py --html<span class=o>=</span>report.html
-</code></pre></div> <p><img alt src=https://cdn2.hubspot.net/hubfs/100006/images/PytestReport.png title="Example Pytest Report"></p> <h4 id=nosetest-reports>Nosetest Reports<a class=headerlink href=#nosetest-reports title="Permanent link">&para;</a></h4> <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p> <div class=codehilite><pre><span></span><code>nosetests test_suite.py --report
-</code></pre></div> <p><img src=https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png title="Example Nosetest Report" height=420></p> <p>(NOTE: You can add <code>--show_report</code> to immediately display Nosetest reports after the test suite completes. Only use <code>--show_report</code> when running tests locally because it pauses the test run.)</p> <h4 id=using-a-proxy-server>Using a Proxy Server<a class=headerlink href=#using-a-proxy-server title="Permanent link">&para;</a></h4> <p>If you wish to use a proxy server for your browser tests (Chrome and Firefox only), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p> <div class=codehilite><pre><span></span><code>pytest proxy_test.py --proxy<span class=o>=</span>IP_ADDRESS:PORT
-</code></pre></div> <p>If the proxy server that you wish to use requires authentication, you can do the following (Chrome only):</p> <div class=codehilite><pre><span></span><code>pytest proxy_test.py --proxy<span class=o>=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
-</code></pre></div> <p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py>proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p> <div class=codehilite><pre><span></span><code>pytest proxy_test.py --proxy<span class=o>=</span>proxy1
-</code></pre></div> <h4 id=changing-the-user-agent>Changing the User-Agent<a class=headerlink href=#changing-the-user-agent title="Permanent link">&para;</a></h4> <p>If you wish to change the User-Agent for your browser tests (Chrome and Firefox only), you can add <code>--agent="USER-AGENT-STRING"</code> as an argument on the command line.</p> <div class=codehilite><pre><span></span><code>pytest user_agent_test.py --agent<span class=o>=</span><span class=s2>&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
-</code></pre></div> <h4 id=mobile-device-testing>Mobile Device Testing<a class=headerlink href=#mobile-device-testing title="Permanent link">&para;</a></h4> <p>Use <code>--mobile</code> to quickly run your tests using Chrome's mobile device emulator with default values for device metrics (CSS Width, CSS Height, Pixel-Ratio) and a default value set for the user agent. To configure the mobile device metrics, use <code>--metrics="CSS_Width,CSS_Height,Pixel_Ratio"</code> to set those values. You'll also be able to set the user agent with <code>--agent="USER-AGENT-STRING"</code> (a default user agent will be used if not specified). To find real values for device metrics, <a href=https://gist.github.com/sidferreira/3f5fad525e99b395d8bd882ee0fd9d00>see this GitHub Gist</a>. For a list of available user agent strings, <a href=https://developers.whatismybrowser.com/useragents/explore/ >check out this page</a>.</p> <div class=codehilite><pre><span></span><code><span class=c1># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
+<span class="c1"># Run tests while changing SeleniumBase default settings</span>
+pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.py
+</code></pre></div>
+
+
+<p>You can interchange <strong>pytest</strong> with <strong>nosetests</strong> for most things, but using pytest is strongly recommended because developers stopped supporting nosetests. Chrome is the default browser if not specified.</p>
+<p>(NOTE: If you're using <strong>pytest</strong> for running tests outside of the SeleniumBase repo, <strong>you'll want a copy of <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a> at the base of the new folder structure</strong>. If using <strong>nosetests</strong>, the same applies for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a>.)</p>
+<p>Here are some useful command-line options that come with Pytest:</p>
+<div class="codehilite"><pre><span></span><code>-v  <span class="c1"># Prints the full test name for each test.</span>
+-q  <span class="c1"># Prints fewer details in the console output when running tests.</span>
+-x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
+--html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
+--collect-only  <span class="c1"># Show what tests would get run without actually running them.</span>
+-n<span class="o">=</span>NUM  <span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
+-s  <span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
+--junit-xml<span class="o">=</span>report.xml  <span class="c1"># Creates a junit-xml report after tests finish.</span>
+--pdb  <span class="c1"># If a test fails, pause run and enter debug mode. (Don&#39;t use with CI!)</span>
+-m<span class="o">=</span>MARKER  <span class="c1"># Only run tests that are marked with the specified pytest marker.</span>
+</code></pre></div>
+
+
+<p>SeleniumBase provides additional Pytest command-line options for tests:</p>
+<div class="codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use.)</span>
+--cap-file<span class="o">=</span>FILE  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--cap-string<span class="o">=</span>STRING  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--settings-file<span class="o">=</span>FILE  <span class="c1"># (Overrides SeleniumBase settings.py values.)</span>
+--env<span class="o">=</span>ENV  <span class="c1"># (Set a test environment. Use &quot;self.env&quot; to use this in tests.)</span>
+--data<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.data&quot; in tests.)</span>
+--var1<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.var1&quot; in tests.)</span>
+--var2<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.var2&quot; in tests.)</span>
+--var3<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.var3&quot; in tests.)</span>
+--user-data-dir<span class="o">=</span>DIR  <span class="c1"># (Set the Chrome user data directory to use.)</span>
+--server<span class="o">=</span>SERVER  <span class="c1"># (The server / IP address used by the tests.)</span>
+--port<span class="o">=</span>PORT  <span class="c1"># (The port that&#39;s used by the test server.)</span>
+--proxy<span class="o">=</span>SERVER:PORT  <span class="c1"># (This is the proxy server:port combo used by tests.)</span>
+--agent<span class="o">=</span>STRING  <span class="c1"># (This designates the web browser&#39;s User Agent to use.)</span>
+--mobile  <span class="c1"># (The option to use the mobile emulator while running tests.)</span>
+--metrics<span class="o">=</span>STRING  <span class="c1"># (&quot;CSSWidth,Height,PixelRatio&quot; for mobile emulator tests.)</span>
+--extension-zip<span class="o">=</span>ZIP  <span class="c1"># (Load a Chrome Extension .zip file, comma-separated.)</span>
+--extension-dir<span class="o">=</span>DIR  <span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
+--headless  <span class="c1"># (The option to run tests headlessly. The default on Linux OS.)</span>
+--headed  <span class="c1"># (The option to run tests with a GUI on Linux OS.)</span>
+--start-page<span class="o">=</span>URL  <span class="c1"># (The starting URL for the web browser when tests begin.)</span>
+--archive-logs  <span class="c1"># (Archive old log files instead of deleting them.)</span>
+--time-limit<span class="o">=</span>SECONDS  <span class="c1"># (Safely fail any test that exceeds the limit limit.)</span>
+--slow  <span class="c1"># (The option to slow down the automation.)</span>
+--demo  <span class="c1"># (The option to visually see test actions as they occur.)</span>
+--demo-sleep<span class="o">=</span>SECONDS  <span class="c1"># (The option to wait longer after Demo Mode actions.)</span>
+--highlights<span class="o">=</span>NUM  <span class="c1"># (Number of highlight animations for Demo Mode actions.)</span>
+--message-duration<span class="o">=</span>SECONDS  <span class="c1"># (The time length for Messenger alerts.)</span>
+--check-js  <span class="c1"># (The option to check for JavaScript errors after page loads.)</span>
+--ad-block  <span class="c1"># (The option to block some display ads after page loads.)</span>
+--verify-delay<span class="o">=</span>SECONDS  <span class="c1"># (The delay before MasterQA verification checks.)</span>
+--disable-csp  <span class="c1"># (This disables the Content Security Policy of websites.)</span>
+--enable-sync  <span class="c1"># (The option to enable &quot;Chrome Sync&quot;.)</span>
+--use-auto-ext  <span class="c1"># (The option to use Chrome&#39;s automation extension.)</span>
+--incognito  <span class="c1">#  (The option to enable Chrome&#39;s Incognito mode.)</span>
+--guest  <span class="c1"># (The option to enable Chrome&#39;s Guest mode.)</span>
+--devtools  <span class="c1"># (The option to open Chrome&#39;s DevTools when the browser opens.)</span>
+--reuse-session  <span class="c1"># (The option to reuse the browser session between tests.)</span>
+--crumbs  <span class="c1"># (Option to delete all cookies between tests reusing a session.)</span>
+--maximize-window  <span class="c1"># (The option to start with the web browser maximized.)</span>
+--save-screenshot  <span class="c1"># (The option to save a screenshot after each test.)</span>
+--visual-baseline  <span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
+--timeout-multiplier<span class="o">=</span>MULTIPLIER  <span class="c1"># (Multiplies the default timeout values.)</span>
+</code></pre></div>
+
+
+<p>(For more details, see the full list of command-line options <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">here</a></strong>.)</p>
+<h4 id="customizing-default-settings">Customizing default settings</h4>
+<p>An easy way to override <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">seleniumbase/config/settings.py</a> is by using a custom settings file.
+Here's the command-line option to add to tests: (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py">examples/custom_settings.py</a>)
+<code>--settings-file=custom_settings.py</code>
+(Settings include default timeout values, a two-factor auth key, DB credentials, S3 credentials, and other important settings used by tests.)</p>
+<h4 id="running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own">Running tests on <a href="https://www.browserstack.com/automate#">BrowserStack</a>'s Selenium Grid, the <a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a> Selenium Grid, the <a href="https://testingbot.com/features">TestingBot</a> Selenium Grid, another grid, or your own</h4>
+<p>(For setting browser desired capabilities while running Selenium remotely, see the ReadMe located here: https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities)</p>
+<p>Here's how to connect to a BrowserStack Selenium Grid server for running tests:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
+
+
+<p>Here's how to connect to a Sauce Labs Selenium Grid server for running tests:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
+
+
+<p>Here's how to connect to a TestingBot Selenium Grid server for running tests:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com --port<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
+
+
+<p>Here's how to connect to a CrossBrowserTesting Selenium Grid server for running tests:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com --port<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
+
+
+<p>Here's how to connect to a LambdaTest Selenium Grid server for running tests:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.lambdatest.com --port<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
+
+
+<p>Or you can create your own Selenium Grid for test distribution. (<a href="../../seleniumbase/utilities/selenium_grid/ReadMe/">See this ReadMe for details</a>)</p>
+<h4 id="example-tests-using-logging">Example tests using Logging</h4>
+<div class="codehilite"><pre><span></span><code>pytest test_suite.py --browser<span class="o">=</span>chrome
+</code></pre></div>
+
+
+<p>(During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you have ARCHIVE_EXISTING_LOGS set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, otherwise log files with be cleaned up at the start of the next test run.)</p>
+<h4 id="demo-mode">Demo Mode</h4>
+<p>If any test is moving too fast for your eyes to see what's going on, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
+</code></pre></div>
+
+
+<p>You can override the default wait time by either updating <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> or by using <code>--demo-sleep={NUM}</code> when using Demo Mode. (NOTE: If you use <code>--demo-sleep={NUM}</code> without using <code>--demo</code>, nothing will happen.)</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo --demo-sleep<span class="o">=</span><span class="m">1</span>.2
+</code></pre></div>
+
+
+<h4 id="passing-additional-data-to-tests">Passing additional data to tests</h4>
+<p>If you want to pass additional data from the command line to your tests, you can use <code>--data=STRING</code>. Now inside your tests, you can use <code>self.data</code> to access that.</p>
+<h4 id="running-tests-multithreaded">Running tests multithreaded</h4>
+<p>To run Pytest multithreaded on multiple CPUs at the same time, add <code>-n=NUM</code> or <code>-n NUM</code> on the command line, where NUM is the number of CPUs you want to use.</p>
+<h4 id="retrying-failing-tests-automatically">Retrying failing tests automatically</h4>
+<p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
+<div class="codehilite"><pre><span></span><code>pytest --reruns=2 --reruns-delay=1
+</code></pre></div>
+
+
+<h4 id="debugging-tests">Debugging tests</h4>
+<p><strong>You can use the following code snippets in your scripts to help you debug issues:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
+<span class="kn">import</span> <span class="nn">ipdb</span><span class="p">;</span> <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
+<span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
+</code></pre></div>
+
+
+<p><strong>To pause an active test that throws an exception or error, add <code>--pdb -s</code>:</strong></p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --pdb -s
+</code></pre></div>
+
+
+<p>The code above will leave your browser window open in case there's a failure. (ipdb commands: 'c', 's', 'n' =&gt; continue, step, next).</p>
+<h4 id="pytest-reports">Pytest Reports</h4>
+<p>Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
+<div class="codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
+</code></pre></div>
+
+
+<p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/PytestReport.png" title="Example Pytest Report" /></p>
+<h4 id="nosetest-reports">Nosetest Reports</h4>
+<p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
+<div class="codehilite"><pre><span></span><code>nosetests test_suite.py --report
+</code></pre></div>
+
+
+<p><img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" title="Example Nosetest Report" height="420"></p>
+<p>(NOTE: You can add <code>--show_report</code> to immediately display Nosetest reports after the test suite completes. Only use <code>--show_report</code> when running tests locally because it pauses the test run.)</p>
+<h4 id="using-a-proxy-server">Using a Proxy Server</h4>
+<p>If you wish to use a proxy server for your browser tests (Chrome and Firefox only), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p>
+<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
+</code></pre></div>
+
+
+<p>If the proxy server that you wish to use requires authentication, you can do the following (Chrome only):</p>
+<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
+</code></pre></div>
+
+
+<p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p>
+<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
+</code></pre></div>
+
+
+<h4 id="changing-the-user-agent">Changing the User-Agent</h4>
+<p>If you wish to change the User-Agent for your browser tests (Chrome and Firefox only), you can add <code>--agent="USER-AGENT-STRING"</code> as an argument on the command line.</p>
+<div class="codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
+</code></pre></div>
+
+
+<h4 id="mobile-device-testing">Mobile Device Testing</h4>
+<p>Use <code>--mobile</code> to quickly run your tests using Chrome's mobile device emulator with default values for device metrics (CSS Width, CSS Height, Pixel-Ratio) and a default value set for the user agent. To configure the mobile device metrics, use <code>--metrics="CSS_Width,CSS_Height,Pixel_Ratio"</code> to set those values. You'll also be able to set the user agent with <code>--agent="USER-AGENT-STRING"</code> (a default user agent will be used if not specified). To find real values for device metrics, <a href="https://gist.github.com/sidferreira/3f5fad525e99b395d8bd882ee0fd9d00">see this GitHub Gist</a>. For a list of available user agent strings, <a href="https://developers.whatismybrowser.com/useragents/explore/">check out this page</a>.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
 pytest test_swag_labs.py --mobile
 
-<span class=c1># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
-pytest test_swag_labs.py --mobile --metrics<span class=o>=</span><span class=s2>&quot;411,731,3&quot;</span>
+<span class="c1"># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
+pytest test_swag_labs.py --mobile --metrics<span class="o">=</span><span class="s2">&quot;411,731,3&quot;</span>
 
-<span class=c1># Run mobile tests specifying the user agent</span>
-pytest test_swag_labs.py --mobile --agent<span class=o>=</span><span class=s2>&quot;Mozilla/5.0 (Linux; Android 9; Pixel 3 XL)&quot;</span>
-</code></pre></div> <p><a href=../..><img src=https://cdn2.hubspot.net/hubfs/100006/images/fancy_logo_14.png title=SeleniumBase height=48></a></p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../features_list/ title=Features class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z /></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> Features </div> </div> </a> <a href=../install_python_pip_git/ title="Install Python, pip, git" class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> Install Python, pip, git </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d=M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z /></svg> </div> </a> </nav> </div> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Copyright &copy; 2016 - 2020 Michael Mintz / SeleniumBase </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> <div class=md-footer-social> <a href=https://github.com/seleniumbase/SeleniumBase target=_blank rel=noopener title=github.com class=md-footer-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> </a> <a href=https://gitter.im/seleniumbase/SeleniumBase target=_blank rel=noopener title=gitter.im class=md-footer-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 384 512"><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg> </a> <a href=https://twitter.com/seleniumbase target=_blank rel=noopener title=twitter.com class=md-footer-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> </a> <a href=https://www.facebook.com/SeleniumBase target=_blank rel=noopener title=www.facebook.com class=md-footer-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg> </a> <a href=https://instagram.com/seleniumbase target=_blank rel=noopener title=instagram.com class=md-footer-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> </a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/vendor.36cbf620.min.js></script> <script src=../../assets/javascripts/bundle.00c583dd.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script> <script>
+<span class="c1"># Run mobile tests specifying the user agent</span>
+pytest test_swag_labs.py --mobile --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Linux; Android 9; Pixel 3 XL)&quot;</span>
+</code></pre></div>
+
+
+<p><a href="../.."><img src="https://cdn2.hubspot.net/hubfs/100006/images/fancy_logo_14.png" title="SeleniumBase" height="48"></a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../features_list/" title="Features" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Features
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../install_python_pip_git/" title="Install Python, pip, git" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Install Python, pip, git
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 Michael Mintz / SeleniumBase
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/seleniumbase/SeleniumBase" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank" rel="noopener" title="gitter.im" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://twitter.com/seleniumbase" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.facebook.com/SeleniumBase" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://instagram.com/seleniumbase" target="_blank" rel="noopener" title="instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
         app = initialize({
           base: "../..",
           features: ["tabs"],
@@ -145,4 +1422,8 @@ pytest test_swag_labs.py --mobile --agent<span class=o>=</span><span class=s2>&q
             worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
           }, typeof search !== "undefined" && search)
         })
-      </script> </body> </html>
+      </script>
+      
+    
+  </body>
+</html>
