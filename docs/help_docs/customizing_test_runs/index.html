@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -1053,7 +1053,7 @@
                   <h1>CMD Options</h1>
                 
                 <p><a href="../.."><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb.png" title="SeleniumBase" height="48"></a></p>
-<h2 id="customizing-test-runs">Customizing test runs</h2>
+<h2 id="customizing-test-runs">Customizing test runs<a class="headerlink" href="#customizing-test-runs" title="Permanent link">&para;</a></h2>
 <p>You can customize test runs from the command-line thanks to <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">SeleniumBase's pytest plugin</a>, which adds command-line options for setting/enabling the browser type, headless mode, mobile mode, multithreading mode, demo mode, proxy config, user agent config, browser extensions, and more.</p>
 <p>Here are some examples of configuring tests, which can be run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Run a test in Chrome (default browser)</span>
@@ -1182,12 +1182,12 @@ pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.p
 
 
 <p>(For more details, see the full list of command-line options <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">here</a></strong>.)</p>
-<h4 id="customizing-default-settings">Customizing default settings</h4>
+<h4 id="customizing-default-settings">Customizing default settings<a class="headerlink" href="#customizing-default-settings" title="Permanent link">&para;</a></h4>
 <p>An easy way to override <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">seleniumbase/config/settings.py</a> is by using a custom settings file.
 Here's the command-line option to add to tests: (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py">examples/custom_settings.py</a>)
 <code>--settings-file=custom_settings.py</code>
 (Settings include default timeout values, a two-factor auth key, DB credentials, S3 credentials, and other important settings used by tests.)</p>
-<h4 id="running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own">Running tests on <a href="https://www.browserstack.com/automate#">BrowserStack</a>'s Selenium Grid, the <a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a> Selenium Grid, the <a href="https://testingbot.com/features">TestingBot</a> Selenium Grid, another grid, or your own</h4>
+<h4 id="running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own">Running tests on <a href="https://www.browserstack.com/automate#">BrowserStack</a>'s Selenium Grid, the <a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a> Selenium Grid, the <a href="https://testingbot.com/features">TestingBot</a> Selenium Grid, another grid, or your own<a class="headerlink" href="#running-tests-on-browserstacks-selenium-grid-the-sauce-labs-selenium-grid-the-testingbot-selenium-grid-another-grid-or-your-own" title="Permanent link">&para;</a></h4>
 <p>(For setting browser desired capabilities while running Selenium remotely, see the ReadMe located here: https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities)</p>
 <p>Here's how to connect to a BrowserStack Selenium Grid server for running tests:</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
@@ -1215,13 +1215,13 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 
 
 <p>Or you can create your own Selenium Grid for test distribution. (<a href="../../seleniumbase/utilities/selenium_grid/ReadMe/">See this ReadMe for details</a>)</p>
-<h4 id="example-tests-using-logging">Example tests using Logging</h4>
+<h4 id="example-tests-using-logging">Example tests using Logging<a class="headerlink" href="#example-tests-using-logging" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code>pytest test_suite.py --browser<span class="o">=</span>chrome
 </code></pre></div>
 
 
 <p>(During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you have ARCHIVE_EXISTING_LOGS set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, otherwise log files with be cleaned up at the start of the next test run.)</p>
-<h4 id="demo-mode">Demo Mode</h4>
+<h4 id="demo-mode">Demo Mode<a class="headerlink" href="#demo-mode" title="Permanent link">&para;</a></h4>
 <p>If any test is moving too fast for your eyes to see what's going on, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
 </code></pre></div>
@@ -1232,17 +1232,17 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 </code></pre></div>
 
 
-<h4 id="passing-additional-data-to-tests">Passing additional data to tests</h4>
+<h4 id="passing-additional-data-to-tests">Passing additional data to tests<a class="headerlink" href="#passing-additional-data-to-tests" title="Permanent link">&para;</a></h4>
 <p>If you want to pass additional data from the command line to your tests, you can use <code>--data=STRING</code>. Now inside your tests, you can use <code>self.data</code> to access that.</p>
-<h4 id="running-tests-multithreaded">Running tests multithreaded</h4>
+<h4 id="running-tests-multithreaded">Running tests multithreaded<a class="headerlink" href="#running-tests-multithreaded" title="Permanent link">&para;</a></h4>
 <p>To run Pytest multithreaded on multiple CPUs at the same time, add <code>-n=NUM</code> or <code>-n NUM</code> on the command line, where NUM is the number of CPUs you want to use.</p>
-<h4 id="retrying-failing-tests-automatically">Retrying failing tests automatically</h4>
+<h4 id="retrying-failing-tests-automatically">Retrying failing tests automatically<a class="headerlink" href="#retrying-failing-tests-automatically" title="Permanent link">&para;</a></h4>
 <p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
-<div class="codehilite"><pre><span></span><code>pytest --reruns=2 --reruns-delay=1
+<div class="codehilite"><pre><span></span><code><span class="err">pytest --reruns=2 --reruns-delay=1</span>
 </code></pre></div>
 
 
-<h4 id="debugging-tests">Debugging tests</h4>
+<h4 id="debugging-tests">Debugging tests<a class="headerlink" href="#debugging-tests" title="Permanent link">&para;</a></h4>
 <p><strong>You can use the following code snippets in your scripts to help you debug issues:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
 <span class="kn">import</span> <span class="nn">ipdb</span><span class="p">;</span> <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
@@ -1256,14 +1256,14 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 
 
 <p>The code above will leave your browser window open in case there's a failure. (ipdb commands: 'c', 's', 'n' =&gt; continue, step, next).</p>
-<h4 id="pytest-reports">Pytest Reports</h4>
+<h4 id="pytest-reports">Pytest Reports<a class="headerlink" href="#pytest-reports" title="Permanent link">&para;</a></h4>
 <p>Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
 <div class="codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
 </code></pre></div>
 
 
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/PytestReport.png" title="Example Pytest Report" /></p>
-<h4 id="nosetest-reports">Nosetest Reports</h4>
+<h4 id="nosetest-reports">Nosetest Reports<a class="headerlink" href="#nosetest-reports" title="Permanent link">&para;</a></h4>
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
 <div class="codehilite"><pre><span></span><code>nosetests test_suite.py --report
 </code></pre></div>
@@ -1271,7 +1271,7 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" title="Example Nosetest Report" height="420"></p>
 <p>(NOTE: You can add <code>--show_report</code> to immediately display Nosetest reports after the test suite completes. Only use <code>--show_report</code> when running tests locally because it pauses the test run.)</p>
-<h4 id="using-a-proxy-server">Using a Proxy Server</h4>
+<h4 id="using-a-proxy-server">Using a Proxy Server<a class="headerlink" href="#using-a-proxy-server" title="Permanent link">&para;</a></h4>
 <p>If you wish to use a proxy server for your browser tests (Chrome and Firefox only), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p>
 <div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
@@ -1287,13 +1287,13 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 </code></pre></div>
 
 
-<h4 id="changing-the-user-agent">Changing the User-Agent</h4>
+<h4 id="changing-the-user-agent">Changing the User-Agent<a class="headerlink" href="#changing-the-user-agent" title="Permanent link">&para;</a></h4>
 <p>If you wish to change the User-Agent for your browser tests (Chrome and Firefox only), you can add <code>--agent="USER-AGENT-STRING"</code> as an argument on the command line.</p>
 <div class="codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
 
 
-<h4 id="mobile-device-testing">Mobile Device Testing</h4>
+<h4 id="mobile-device-testing">Mobile Device Testing<a class="headerlink" href="#mobile-device-testing" title="Permanent link">&para;</a></h4>
 <p>Use <code>--mobile</code> to quickly run your tests using Chrome's mobile device emulator with default values for device metrics (CSS Width, CSS Height, Pixel-Ratio) and a default value set for the user agent. To configure the mobile device metrics, use <code>--metrics="CSS_Width,CSS_Height,Pixel_Ratio"</code> to set those values. You'll also be able to set the user agent with <code>--agent="USER-AGENT-STRING"</code> (a default user agent will be used if not specified). To find real values for device metrics, <a href="https://gist.github.com/sidferreira/3f5fad525e99b395d8bd882ee0fd9d00">see this GitHub Gist</a>. For a list of available user agent strings, <a href="https://developers.whatismybrowser.com/useragents/explore/">check out this page</a>.</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
 pytest test_swag_labs.py --mobile
@@ -1411,15 +1411,15 @@ pytest test_swag_labs.py --mobile --agent<span class="o">=</span><span class="s2
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

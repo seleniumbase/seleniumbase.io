@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -859,7 +859,7 @@
                   <h1>Visual Testing</h1>
                 
                 <p><a href="../../.."><img src="https://cdn2.hubspot.net/hubfs/100006/images/sb_logo_f6.png" title="SeleniumBase" align="center" height="120"></a></p>
-<h2 id="automated-visual-regression-testing">Automated Visual Regression Testing</h2>
+<h2 id="automated-visual-regression-testing">Automated Visual Regression Testing<a class="headerlink" href="#automated-visual-regression-testing" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.youtube.com/watch?v=erwkoiDeNzA"><img src="http://img.youtube.com/vi/erwkoiDeNzA/0.jpg" title="Automated Visual Regression Testing" height="180"></a>
 (<strong><a href="https://www.youtube.com/watch?v=erwkoiDeNzA">Watch the tutorial on YouTube</a></strong>)</p>
 <p>Automated Visual Regression Testing helps you detect when the layout of a web page has changed. Rather than comparing screenshots, layout differences are detected by comparing HTML tags and attributes with a baseline. If a change is detected, it could mean that something broke, the web page was redesigned, or dynamic content changed.</p>
@@ -872,7 +872,7 @@
 * tags_level3.txt  -&gt;  HTML tags + attribute names+values</p>
 <p>After the first time <code>self.check_window()</code> is called, later calls will compare the HTML tags and attributes of the latest window to the ones from the first call (<i>or to the ones from the call when the baseline was last reset</i>).</p>
 <p>Here's an example call:</p>
-<div class="codehilite"><pre><span></span><code>self.check_window(name=&quot;first_test)&quot;, level=3)
+<div class="codehilite"><pre><span></span><code><span class="err">self.check_window(name=&quot;first_test)&quot;, level=3)</span>
 </code></pre></div>
 
 
@@ -923,17 +923,17 @@
 
 
 <p>Here's the output of that: (<i>Text changes do not impact visual comparisons</i>)</p>
-<div class="codehilite"><pre><span></span><code>AssertionError:
-First differing element 39:
-[&#39;div&#39;, [[&#39;class&#39;, [&#39;section&#39;, &#39;hidden-section&#39;, &#39;image-section&#39;]]]]
-[&#39;div&#39;, [[&#39;class&#39;, [&#39;section&#39;, &#39;image-section&#39;]]]]
+<div class="codehilite"><pre><span></span><code><span class="n">AssertionError</span><span class="o">:</span>
+<span class="n">First</span> <span class="n">differing</span> <span class="n">element</span> <span class="mi">39</span><span class="o">:</span>
+<span class="o">[</span><span class="s1">&#39;div&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;section&#39;</span><span class="o">,</span> <span class="s1">&#39;hidden-section&#39;</span><span class="o">,</span> <span class="s1">&#39;image-section&#39;</span><span class="o">]]]]</span>
+<span class="o">[</span><span class="s1">&#39;div&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;section&#39;</span><span class="o">,</span> <span class="s1">&#39;image-section&#39;</span><span class="o">]]]]</span>
 
--  [&#39;div&#39;, [[&#39;class&#39;, [&#39;section&#39;, &#39;hidden-section&#39;, &#39;image-section&#39;]]]],
-?                                ------------------
-+  [&#39;div&#39;, [[&#39;class&#39;, [&#39;section&#39;, &#39;image-section&#39;]]]],
-*
-*** Exception: &lt;Level 3&gt; Visual Diff Failure:
-* HTML tag attribute values don&#39;t match the baseline!
+<span class="o">-</span>  <span class="o">[</span><span class="s1">&#39;div&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;section&#39;</span><span class="o">,</span> <span class="s1">&#39;hidden-section&#39;</span><span class="o">,</span> <span class="s1">&#39;image-section&#39;</span><span class="o">]]]],</span>
+<span class="o">?</span>                                <span class="o">------------------</span>
+<span class="o">+</span>  <span class="o">[</span><span class="s1">&#39;div&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;section&#39;</span><span class="o">,</span> <span class="s1">&#39;image-section&#39;</span><span class="o">]]]],</span>
+<span class="o">*</span>
+<span class="o">***</span> <span class="n">Exception</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">Level</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">Visual</span> <span class="n">Diff</span> <span class="n">Failure</span><span class="o">:</span>
+<span class="o">*</span> <span class="n">HTML</span> <span class="n">tag</span> <span class="n">attribute</span> <span class="n">values</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">match</span> <span class="n">the</span> <span class="n">baseline</span><span class="o">!</span>
 </code></pre></div>
 
 
@@ -953,18 +953,18 @@ First differing element 39:
 
 
 <p>Here's the output of that:</p>
-<div class="codehilite"><pre><span></span><code>AssertionError:
-First differing element 33:
-[&#39;a&#39;, [[&#39;class&#39;, [&#39;donate-button&#39;]], [&#39;href&#39;, &#39;/psf/donations/&#39;]]]
-[&#39;div&#39;, [[&#39;class&#39;, [&#39;options-bar&#39;]]]]
+<div class="codehilite"><pre><span></span><code><span class="n">AssertionError</span><span class="o">:</span>
+<span class="n">First</span> <span class="n">differing</span> <span class="n">element</span> <span class="mi">33</span><span class="o">:</span>
+<span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;donate-button&#39;</span><span class="o">]],</span> <span class="o">[</span><span class="s1">&#39;href&#39;</span><span class="o">,</span> <span class="s1">&#39;/psf/donations/&#39;</span><span class="o">]]]</span>
+<span class="o">[</span><span class="s1">&#39;div&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;options-bar&#39;</span><span class="o">]]]]</span>
 
--  [&#39;a&#39;, [[&#39;class&#39;, [&#39;donate-button&#39;]], [&#39;href&#39;, &#39;/psf/donations/&#39;]]],
--     &#39;display: list-item; opacity: 0.995722;&#39;]]],
-?                         -------------------
-+     &#39;display: list-item;&#39;]]],
-*
-*** Exception: &lt;Level 3&gt; Visual Diff Failure:
-* HTML tag attribute values don&#39;t match the baseline!
+<span class="o">-</span>  <span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="o">,</span> <span class="o">[[</span><span class="s1">&#39;class&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;donate-button&#39;</span><span class="o">]],</span> <span class="o">[</span><span class="s1">&#39;href&#39;</span><span class="o">,</span> <span class="s1">&#39;/psf/donations/&#39;</span><span class="o">]]],</span>
+<span class="o">-</span>     <span class="s1">&#39;display: list-item; opacity: 0.995722;&#39;</span><span class="o">]]],</span>
+<span class="o">?</span>                         <span class="o">-------------------</span>
+<span class="o">+</span>     <span class="s1">&#39;display: list-item;&#39;</span><span class="o">]]],</span>
+<span class="o">*</span>
+<span class="o">***</span> <span class="n">Exception</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">Level</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">Visual</span> <span class="n">Diff</span> <span class="n">Failure</span><span class="o">:</span>
+<span class="o">*</span> <span class="n">HTML</span> <span class="n">tag</span> <span class="n">attribute</span> <span class="n">values</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">match</span> <span class="n">the</span> <span class="n">baseline</span><span class="o">!</span>
 </code></pre></div>
 
 
@@ -985,27 +985,27 @@ First differing element 33:
 
 
 <p>Here's the output of that:</p>
-<div class="codehilite"><pre><span></span><code>AssertionError:
-First differing element 22:
-[&#39;img[30 chars][&#39;height&#39;, &#39;83&#39;], [&#39;src&#39;, &#39;/s/0b7742.png&#39;], [&#39;width&#39;, &#39;185&#39;]]]
-[&#39;img[30 chars][&#39;height&#39;, &#39;130&#39;], [&#39;src&#39;, &#39;/s/0b7742.png&#39;], [&#39;width&#39;, &#39;120&#39;]]]
+<div class="codehilite"><pre><span></span><code><span class="n">AssertionError</span><span class="o">:</span>
+<span class="n">First</span> <span class="n">differing</span> <span class="n">element</span> <span class="mi">22</span><span class="o">:</span>
+<span class="o">[</span><span class="s1">&#39;img[30 chars][&#39;</span><span class="n">height</span><span class="s1">&#39;, &#39;</span><span class="mi">83</span><span class="s1">&#39;], [&#39;</span><span class="n">src</span><span class="s1">&#39;, &#39;</span><span class="sr">/s/</span><span class="mi">0</span><span class="n">b7742</span><span class="o">.</span><span class="na">png</span><span class="s1">&#39;], [&#39;</span><span class="n">width</span><span class="s1">&#39;, &#39;</span><span class="mi">185</span><span class="s1">&#39;]]]</span>
+<span class="s1">[&#39;</span><span class="n">img</span><span class="o">[</span><span class="mi">30</span> <span class="n">chars</span><span class="o">][</span><span class="s1">&#39;height&#39;</span><span class="o">,</span> <span class="s1">&#39;130&#39;</span><span class="o">],</span> <span class="o">[</span><span class="s1">&#39;src&#39;</span><span class="o">,</span> <span class="s1">&#39;/s/0b7742.png&#39;</span><span class="o">],</span> <span class="o">[</span><span class="s1">&#39;width&#39;</span><span class="o">,</span> <span class="s1">&#39;120&#39;</span><span class="o">]]]</span>
 
--    [&#39;height&#39;, &#39;83&#39;],
-?                ^
-+    [&#39;height&#39;, &#39;130&#39;],
-?                ^ +
--    [&#39;width&#39;, &#39;185&#39;]]],
-?                ^^
-+    [&#39;width&#39;, &#39;120&#39;]]],
-?                ^^
-*
-*** Exception: &lt;Level 3&gt; Visual Diff Failure:
-* HTML tag attribute values don&#39;t match the baseline!
+<span class="o">-</span>    <span class="o">[</span><span class="s1">&#39;height&#39;</span><span class="o">,</span> <span class="s1">&#39;83&#39;</span><span class="o">],</span>
+<span class="o">?</span>                <span class="o">^</span>
+<span class="o">+</span>    <span class="o">[</span><span class="s1">&#39;height&#39;</span><span class="o">,</span> <span class="s1">&#39;130&#39;</span><span class="o">],</span>
+<span class="o">?</span>                <span class="o">^</span> <span class="o">+</span>
+<span class="o">-</span>    <span class="o">[</span><span class="s1">&#39;width&#39;</span><span class="o">,</span> <span class="s1">&#39;185&#39;</span><span class="o">]]],</span>
+<span class="o">?</span>                <span class="o">^^</span>
+<span class="o">+</span>    <span class="o">[</span><span class="s1">&#39;width&#39;</span><span class="o">,</span> <span class="s1">&#39;120&#39;</span><span class="o">]]],</span>
+<span class="o">?</span>                <span class="o">^^</span>
+<span class="o">*</span>
+<span class="o">***</span> <span class="n">Exception</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">Level</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">Visual</span> <span class="n">Diff</span> <span class="n">Failure</span><span class="o">:</span>
+<span class="o">*</span> <span class="n">HTML</span> <span class="n">tag</span> <span class="n">attribute</span> <span class="n">values</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">match</span> <span class="n">the</span> <span class="n">baseline</span><span class="o">!</span>
 </code></pre></div>
 
 
 <p>To run the example (from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/visual_testing/">examples/visual_testing/</a>) with a pytest HTML Report, use:</p>
-<div class="codehilite"><pre><span></span><code>pytest test_layout_fail.py --html=report.html
+<div class="codehilite"><pre><span></span><code><span class="err">pytest test_layout_fail.py --html=report.html</span>
 </code></pre></div>
 
 
@@ -1115,15 +1115,15 @@ First differing element 22:
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

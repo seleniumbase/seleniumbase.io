@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -890,7 +890,7 @@
                 
                   <h1>Logging and Reports</h1>
                 
-                <h3 id="logging-screenshots-and-reports">Logging, Screenshots, and Reports</h3>
+                <h3 id="logging-screenshots-and-reports">Logging, Screenshots, and Reports<a class="headerlink" href="#logging-screenshots-and-reports" title="Permanent link">&para;</a></h3>
 <p>Log files in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/example_logs">SeleniumBase/examples/example_logs</a> were generated when <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_fail.py">test_fail.py</a> ran and failed. During test failures, logs and screenshots get saved to the <code>latest_logs/</code> folder. If <code>--archive-logs</code> is set, test logs will get archived to the <code>archived_logs/</code> folder.</p>
 <div class="codehilite"><pre><span></span><code>pytest test_fail.py --browser<span class="o">=</span>chrome
 
@@ -905,14 +905,14 @@ nosetests test_fail.py --browser<span class="o">=</span>firefox
 <hr />
 <p><b>In addition to logging, you can also generate test reports:</b></p>
 <p>Reports are most useful when running large test suites. Pytest and Nosetest reports are handled differently.</p>
-<h3 id="pytest-reports">Pytest Reports</h3>
+<h3 id="pytest-reports">Pytest Reports<a class="headerlink" href="#pytest-reports" title="Permanent link">&para;</a></h3>
 <p>Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
 <div class="codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
 </code></pre></div>
 
 
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/PytestReport.png" title="Example Pytest Report" /></p>
-<h3 id="nosetest-reports">Nosetest Reports</h3>
+<h3 id="nosetest-reports">Nosetest Reports<a class="headerlink" href="#nosetest-reports" title="Permanent link">&para;</a></h3>
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes. (Requires <code>--with-testing_base</code> to also be set when <code>--report</code> is used because it's part of that plugin.)</p>
 <div class="codehilite"><pre><span></span><code>nosetests test_suite.py --report --browser<span class="o">=</span>chrome
 </code></pre></div>
@@ -1024,15 +1024,15 @@ nosetests test_fail.py --browser<span class="o">=</span>firefox
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

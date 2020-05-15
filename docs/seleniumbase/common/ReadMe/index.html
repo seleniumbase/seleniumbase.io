@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -968,9 +968,9 @@
                 
                   <h1>Decorators & Security</h1>
                 
-                <h2 id="using-seleniumbasecommon-methods">Using <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common">seleniumbase/common</a> methods.</h2>
-<h3 id="part-1-decorators-from-decoratorspy">Part 1: Decorators - (from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common/decorators.py">decorators.py</a>)</h3>
-<h4 id="use-these-python-decorators-with-your-test-methods-as-needed">Use these Python decorators with your test methods as needed</h4>
+                <h2 id="using-seleniumbasecommon-methods">Using <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common">seleniumbase/common</a> methods.<a class="headerlink" href="#using-seleniumbasecommon-methods" title="Permanent link">&para;</a></h2>
+<h3 id="part-1-decorators-from-decoratorspy">Part 1: Decorators - (from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common/decorators.py">decorators.py</a>)<a class="headerlink" href="#part-1-decorators-from-decoratorspy" title="Permanent link">&para;</a></h3>
+<h4 id="use-these-python-decorators-with-your-test-methods-as-needed">Use these Python decorators with your test methods as needed<a class="headerlink" href="#use-these-python-decorators-with-your-test-methods-as-needed" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>@retry_on_exception(tries=6, delay=1, backoff=2, max_delay=32)</p>
@@ -997,10 +997,10 @@
 </code></pre></div>
 
 
-<h3 id="part-2-stringpassword-obfuscation-encryption-and-decryption">Part 2: String/Password Obfuscation, Encryption, and Decryption</h3>
-<h4 id="intro">Intro</h4>
+<h3 id="part-2-stringpassword-obfuscation-encryption-and-decryption">Part 2: String/Password Obfuscation, Encryption, and Decryption<a class="headerlink" href="#part-2-stringpassword-obfuscation-encryption-and-decryption" title="Permanent link">&para;</a></h3>
+<h4 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h4>
 <p>Often in your tests, you may need to login to a website to perform testing. This generally means storing passwords in plaintext formats. For security reasons, that may not be an optimal solution. For this reason, encryption/obfuscation tools have been built here to help you mask your passwords in your tests. It's not a bulletproof solution, but it can keep anyone looking over your shoulder during test creation from getting your login passwords if they don't have your encryption key, which is stored in a separate file.</p>
-<h4 id="usage">Usage</h4>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>First, set your custom encryption/decryption key in your local clone of <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>. (If you modify the key later, you'll need to encrypt all your passwords again.)</p>
@@ -1137,15 +1137,15 @@ $^*ENCRYPT<span class="o">=</span><span class="nv">RXlYMSJWTz8HSwM</span><span c
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

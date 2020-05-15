@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -998,10 +998,10 @@
                 
                   <h1>MySQL Help</h1>
                 
-                <h3 id="mysql-installation-instructions">MySQL Installation Instructions</h3>
-<h4 id="mysql-optional"><a href="http://www.mysql.com/">MySQL</a> (OPTIONAL)</h4>
+                <h3 id="mysql-installation-instructions">MySQL Installation Instructions<a class="headerlink" href="#mysql-installation-instructions" title="Permanent link">&para;</a></h3>
+<h4 id="mysql-optional"><a href="http://www.mysql.com/">MySQL</a> (OPTIONAL)<a class="headerlink" href="#mysql-optional" title="Permanent link">&para;</a></h4>
 <p>(NOTE: If you're using this test framework from a local development machine and don't plan on writing to a MySQL DB from your local test runs, you can skip this step.)</p>
-<h5 id="linux-ubuntu">Linux (Ubuntu):</h5>
+<h5 id="linux-ubuntu">Linux (Ubuntu):<a class="headerlink" href="#linux-ubuntu" title="Permanent link">&para;</a></h5>
 <div class="codehilite"><pre><span></span><code>sudo apt update
 sudo apt install mysql-server
 sudo mysql_secure_installation
@@ -1017,7 +1017,7 @@ sudo service mysql restart
 </code></pre></div>
 
 
-<h5 id="macos">MacOS</h5>
+<h5 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
 <div class="codehilite"><pre><span></span><code>brew install mysql
 </code></pre></div>
 
@@ -1028,17 +1028,17 @@ sudo service mysql restart
 
 
 <p>Continue with additional steps below to setup your DB.</p>
-<h5 id="windows">Windows</h5>
+<h5 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h5>
 <p><a href="http://dev.mysql.com/downloads/windows/">Download MySQL here</a>
 Follow the steps from the MySQL Downloads page.</p>
 <p>Continue with additional steps below to setup your DB.</p>
-<h4 id="access-your-mysql-db">Access your MySQL DB</h4>
+<h4 id="access-your-mysql-db">Access your MySQL DB<a class="headerlink" href="#access-your-mysql-db" title="Permanent link">&para;</a></h4>
 <p>If you want a visual tool to help make your MySQL life easier, <a href="http://dev.mysql.com/downloads/workbench/">try MySQL Workbench</a>.</p>
-<h4 id="prepare-your-mysql-db">Prepare your MySQL DB</h4>
+<h4 id="prepare-your-mysql-db">Prepare your MySQL DB<a class="headerlink" href="#prepare-your-mysql-db" title="Permanent link">&para;</a></h4>
 <p>You can use the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/core/create_db_tables.sql">create_db_tables.sql</a> file to create the necessary tables for storing test data.</p>
-<h4 id="configure-your-mysql-db-for-seleniumbase">Configure your MySQL DB for SeleniumBase</h4>
+<h4 id="configure-your-mysql-db-for-seleniumbase">Configure your MySQL DB for SeleniumBase<a class="headerlink" href="#configure-your-mysql-db-for-seleniumbase" title="Permanent link">&para;</a></h4>
 <p>You'll want to update your <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> file with your MySQL DB credentials so that tests can write to the database when they run.</p>
-<h4 id="allow-tests-to-write-to-your-mysql-database">Allow tests to write to your MySQL database</h4>
+<h4 id="allow-tests-to-write-to-your-mysql-database">Allow tests to write to your MySQL database<a class="headerlink" href="#allow-tests-to-write-to-your-mysql-database" title="Permanent link">&para;</a></h4>
 <p>Add the <code>--with-db_reporting</code> argument on the command line when you want tests to write to your MySQL database.
 Example:</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --with-db_reporting
@@ -1147,15 +1147,15 @@ Example:</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

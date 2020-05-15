@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -860,7 +860,7 @@
                 
                 <h3 align="left"><a href="../README.md"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_m.png" title="SeleniumBase" height="48" /></a></h3>
 
-<h3 id="multi-language-tests-python-3-only"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_square_logo_3.png" title="SeleniumBase" height="32"> Multi-Language Tests (Python 3 Only!)</h3>
+<h3 id="multi-language-tests-python-3-only"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_square_logo_3.png" title="SeleniumBase" height="32"> Multi-Language Tests (Python 3 Only!)<a class="headerlink" href="#multi-language-tests-python-3-only" title="Permanent link">&para;</a></h3>
 <p><b>SeleniumBase</b> supports the following 10 languages:
 <ul>
 <li>English</li>
@@ -876,9 +876,9 @@
 </ul></p>
 <p>Examples can be found in [<a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/translations">SeleniumBase/examples/translations</a>].</p>
 <p>Multi-language tests are run with <strong>pytest</strong> like any other test. Every test method has a one-to-one mapping to every other supported language.<br /><i>Examples:</i></p>
-<div class="codehilite"><pre><span></span><code>self.开启网址(URL) = self.open(URL)
-self.нажмите(CSS) = self.click(CSS)
-self.뒤로() = self.go_back()
+<div class="codehilite"><pre><span></span><code><span class="err">self.开启网址(URL) = self.open(URL)</span>
+<span class="err">self.нажмите(CSS) = self.click(CSS)</span>
+<span class="err">self.뒤로() = self.go_back()</span>
 </code></pre></div>
 
 
@@ -888,39 +888,39 @@ self.뒤로() = self.go_back()
 </code></pre></div>
 
 
-<div class="codehilite"><pre><span></span><code>* Usage:
-seleniumbase translate [SB_FILE].py [LANGUAGE] [ACTION]
+<div class="codehilite"><pre><span></span><code><span class="o">*</span><span class="w"> </span><span class="k">Usage</span><span class="err">:</span><span class="w"></span>
+<span class="n">seleniumbase</span><span class="w"> </span><span class="k">translate</span><span class="w"> </span><span class="o">[</span><span class="n">SB_FILE</span><span class="o">]</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="o">[</span><span class="n">LANGUAGE</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">ACTION</span><span class="o">]</span><span class="w"></span>
 
-* Languages:
-``--en`` / ``--English``  |  ``--zh`` / ``--Chinese``
-``--nl`` / ``--Dutch``    |  ``--fr`` / ``--French``
-``--it`` / ``--Italian``  |  ``--ja`` / ``--Japanese``
-``--ko`` / ``--Korean``   |  ``--pt`` / ``--Portuguese``
-``--ru`` / ``--Russian``  |  ``--es`` / ``--Spanish``
+<span class="o">*</span><span class="w"> </span><span class="nl">Languages</span><span class="p">:</span><span class="w"></span>
+<span class="err">``</span><span class="c1">--en`` / ``--English``  |  ``--zh`` / ``--Chinese``</span>
+<span class="err">``</span><span class="c1">--nl`` / ``--Dutch``    |  ``--fr`` / ``--French``</span>
+<span class="err">``</span><span class="c1">--it`` / ``--Italian``  |  ``--ja`` / ``--Japanese``</span>
+<span class="err">``</span><span class="c1">--ko`` / ``--Korean``   |  ``--pt`` / ``--Portuguese``</span>
+<span class="err">``</span><span class="c1">--ru`` / ``--Russian``  |  ``--es`` / ``--Spanish``</span>
 
-* Actions:
-``-p`` / ``--print``  (Print translation output to the screen)
-``-o`` / ``--overwrite``  (Overwrite the file being translated)
-``-c`` / ``--copy``  (Copy the translation to a new ``.py`` file)
+<span class="o">*</span><span class="w"> </span><span class="nl">Actions</span><span class="p">:</span><span class="w"></span>
+<span class="err">``</span><span class="o">-</span><span class="n">p</span><span class="err">``</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">``</span><span class="c1">--print``  (Print translation output to the screen)</span>
+<span class="err">``</span><span class="o">-</span><span class="n">o</span><span class="err">``</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">``</span><span class="c1">--overwrite``  (Overwrite the file being translated)</span>
+<span class="err">``</span><span class="o">-</span><span class="n">c</span><span class="err">``</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">``</span><span class="c1">--copy``  (Copy the translation to a new ``.py`` file)</span>
 
-* Examples:
-Translate test_1.py into Chinese and only print the output:
-&gt;&gt;&gt; seleniumbase translate test_1.py --zh  -p
-Translate test_2.py into Portuguese and overwrite the file:
-&gt;&gt;&gt; seleniumbase translate test_2.py --pt  -o
-Translate test_3.py into Dutch and make a copy of the file:
-&gt;&gt;&gt; seleniumbase translate test_3.py --nl  -c
+<span class="o">*</span><span class="w"> </span><span class="nl">Examples</span><span class="p">:</span><span class="w"></span>
+<span class="k">Translate</span><span class="w"> </span><span class="n">test_1</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Chinese</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">output</span><span class="err">:</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">seleniumbase</span><span class="w"> </span><span class="k">translate</span><span class="w"> </span><span class="n">test_1</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="c1">--zh  -p</span>
+<span class="k">Translate</span><span class="w"> </span><span class="n">test_2</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Portuguese</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">file</span><span class="err">:</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">seleniumbase</span><span class="w"> </span><span class="k">translate</span><span class="w"> </span><span class="n">test_2</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="c1">--pt  -o</span>
+<span class="k">Translate</span><span class="w"> </span><span class="n">test_3</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Dutch</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">file</span><span class="err">:</span><span class="w"></span>
+<span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">seleniumbase</span><span class="w"> </span><span class="k">translate</span><span class="w"> </span><span class="n">test_3</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="c1">--nl  -c</span>
 
-* Output:
-Translates a SeleniumBase Python file into the language
-specified. Method calls and ``import`` lines get swapped.
-Both a language and an action must be specified.
-The ``-p`` action can be paired with one other action.
-When running with ``-c`` (or ``--copy``) the new file name
-will be the orginal name appended with an underscore
-plus the 2-letter language code of the new language.
-(Example: Translating ``test_1.py`` into Japanese with
-``-c`` will create a new file called ``test_1_ja.py``.)
+<span class="o">*</span><span class="w"> </span><span class="k">Output</span><span class="err">:</span><span class="w"></span>
+<span class="n">Translates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">SeleniumBase</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">language</span><span class="w"></span>
+<span class="n">specified</span><span class="p">.</span><span class="w"> </span><span class="k">Method</span><span class="w"> </span><span class="n">calls</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="err">``</span><span class="n">import</span><span class="err">``</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">swapped</span><span class="p">.</span><span class="w"></span>
+<span class="k">Both</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">language</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">action</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span><span class="w"></span>
+<span class="n">The</span><span class="w"> </span><span class="err">``</span><span class="o">-</span><span class="n">p</span><span class="err">``</span><span class="w"> </span><span class="k">action</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">paired</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="k">action</span><span class="p">.</span><span class="w"></span>
+<span class="k">When</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="err">``</span><span class="o">-</span><span class="n">c</span><span class="err">``</span><span class="w"> </span><span class="p">(</span><span class="ow">or</span><span class="w"> </span><span class="err">``</span><span class="c1">--copy``) the new file name</span>
+<span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">orginal</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">appended</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">underscore</span><span class="w"></span>
+<span class="n">plus</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="n">letter</span><span class="w"> </span><span class="k">language</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">language</span><span class="p">.</span><span class="w"></span>
+<span class="p">(</span><span class="nl">Example</span><span class="p">:</span><span class="w"> </span><span class="n">Translating</span><span class="w"> </span><span class="err">``</span><span class="n">test_1</span><span class="p">.</span><span class="n">py</span><span class="err">``</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Japanese</span><span class="w"> </span><span class="k">with</span><span class="w"></span>
+<span class="err">``</span><span class="o">-</span><span class="n">c</span><span class="err">``</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">called</span><span class="w"> </span><span class="err">``</span><span class="n">test_1_ja</span><span class="p">.</span><span class="n">py</span><span class="err">``</span><span class="p">.)</span><span class="w"></span>
 </code></pre></div>
                 
               
@@ -1026,15 +1026,15 @@ plus the 2-letter language code of the new language.
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

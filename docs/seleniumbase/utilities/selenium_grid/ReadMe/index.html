@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -957,27 +957,27 @@
                   <h1>Selenium Grid</h1>
                 
                 <p><a href="../../../.."><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_q.png" title="SeleniumBase" height="48"></a></p>
-<h2 id="the-selenium-grid-hub">The Selenium Grid Hub</h2>
+<h2 id="the-selenium-grid-hub">The Selenium Grid Hub<a class="headerlink" href="#the-selenium-grid-hub" title="Permanent link">&para;</a></h2>
 <p>The Selenium Grid Hub lets you distribute tests to run in parallel across multiple node machines. Each node machine can then run its own allocation of tests. This allows you to run a large suite of tests very quickly.</p>
-<h3 id="running-the-selenium-grid-hub">Running the Selenium Grid Hub</h3>
+<h3 id="running-the-selenium-grid-hub">Running the Selenium Grid Hub<a class="headerlink" href="#running-the-selenium-grid-hub" title="Permanent link">&para;</a></h3>
 <p>The following commands will work once you've installed seleniumbase.</p>
-<h4 id="downloading-the-selenium-server-jar-file">Downloading the Selenium Server JAR file</h4>
-<div class="codehilite"><pre><span></span><code>seleniumbase download server
+<h4 id="downloading-the-selenium-server-jar-file">Downloading the Selenium Server JAR file<a class="headerlink" href="#downloading-the-selenium-server-jar-file" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="err">seleniumbase download server</span>
 </code></pre></div>
 
 
 <ul>
 <li>(Required for using your own Selenium Grid)</li>
 </ul>
-<h4 id="grid-hub-server-controls">Grid Hub server controls</h4>
-<div class="codehilite"><pre><span></span><code>seleniumbase grid-hub {start|stop} [OPTIONS]
+<h4 id="grid-hub-server-controls">Grid Hub server controls<a class="headerlink" href="#grid-hub-server-controls" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="n">seleniumbase</span><span class="w"> </span><span class="n">grid</span><span class="o">-</span><span class="n">hub</span><span class="w"> </span><span class="err">{</span><span class="k">start</span><span class="o">|</span><span class="n">stop</span><span class="err">}</span><span class="w"> </span><span class="o">[</span><span class="n">OPTIONS</span><span class="o">]</span><span class="w"></span>
 </code></pre></div>
 
 
 <p>Options:
 * <code>-v</code>, <code>--verbose</code>  (Increases verbosity of logging output.)</p>
-<h4 id="grid-node-server-controls">Grid node server controls</h4>
-<div class="codehilite"><pre><span></span><code>seleniumbase grid-node {start|stop} --hub=[HUB_IP] [OPTIONS]
+<h4 id="grid-node-server-controls">Grid node server controls<a class="headerlink" href="#grid-node-server-controls" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="n">seleniumbase</span><span class="w"> </span><span class="n">grid</span><span class="o">-</span><span class="n">node</span><span class="w"> </span><span class="err">{</span><span class="k">start</span><span class="o">|</span><span class="n">stop</span><span class="err">}</span><span class="w"> </span><span class="c1">--hub=[HUB_IP] [OPTIONS]</span>
 </code></pre></div>
 
 
@@ -986,7 +986,7 @@
 * <code>--hub=[HUB_IP]</code> (Specifies the Grid Hub to connect to. Default: "127.0.0.1".)</p>
 <p>When the Grid Hub Console is up and running, you'll be able to find it here: <a href="http://127.0.0.1:4444/grid/console">http://127.0.0.1:4444/grid/console</a></p>
 <p>Now you can run your tests on the Selenium Grid:</p>
-<div class="codehilite"><pre><span></span><code>pytest test_suite.py --server=IP_ADDRESS --port=4444
+<div class="codehilite"><pre><span></span><code><span class="err">pytest test_suite.py --server=IP_ADDRESS --port=4444</span>
 </code></pre></div>
 
 
@@ -994,21 +994,21 @@
 <ul>
 <li><a href="https://www.browserstack.com/automate#">BrowserStack</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server=USERNAME:KEY@hub.browserstack.com --port=80
+<div class="codehilite"><pre><span></span><code><span class="err">pytest my_first_test.py --server=USERNAME:KEY@hub.browserstack.com --port=80</span>
 </code></pre></div>
 
 
 <ul>
 <li><a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server=USERNAME:KEY@ondemand.saucelabs.com --port=80
+<div class="codehilite"><pre><span></span><code><span class="err">pytest my_first_test.py --server=USERNAME:KEY@ondemand.saucelabs.com --port=80</span>
 </code></pre></div>
 
 
 <ul>
 <li><a href="https://testingbot.com/features">TestingBot</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server=USERNAME:KEY@hub.testingbot.com --port=80
+<div class="codehilite"><pre><span></span><code><span class="err">pytest my_first_test.py --server=USERNAME:KEY@hub.testingbot.com --port=80</span>
 </code></pre></div>
 
 
@@ -1027,7 +1027,7 @@
 
 
 <p>(For setting browser desired capabilities while running Selenium remotely, see the ReadMe located here: https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities)</p>
-<h4 id="more-info-about-the-selenium-grid-hub-can-be-found-here">More info about the Selenium Grid Hub can be found here</h4>
+<h4 id="more-info-about-the-selenium-grid-hub-can-be-found-here">More info about the Selenium Grid Hub can be found here<a class="headerlink" href="#more-info-about-the-selenium-grid-hub-can-be-found-here" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/SeleniumHQ/selenium/wiki/Grid2">https://github.com/SeleniumHQ/selenium/wiki/Grid2</a></li>
 </ul>
@@ -1135,15 +1135,15 @@
       
     </div>
     
-      <script src="../../../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

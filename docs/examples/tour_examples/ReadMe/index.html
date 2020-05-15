@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../../img/logo4.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.07c9fbf5.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a676eddb.min.css">
       
       
     
@@ -1062,43 +1062,43 @@
                 
                 <h3 align="left"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb23.png" alt="SeleniumBase" height="48" /></h3>
 
-<h2 id="website-tours">Website Tours</h2>
+<h2 id="website-tours">Website Tours<a class="headerlink" href="#website-tours" title="Permanent link">&para;</a></h2>
 <p>SeleniumBase Tours utilize 4 JavaScript libraries for creating interactive walkthroughs on any website:<br><strong><a href="https://shepherdjs.dev/">Shepherd</a></strong>, <strong><a href="http://bootstraptour.com/">Bootstrap Tour</a></strong>, <strong><a href="https://introjs.com/">IntroJS</a></strong>, and <strong><a href="https://linkedinattic.github.io/hopscotch/">Hopscotch</a></strong>.</p>
 <p><strong>Example tour:</strong></p>
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/google_tour_3.gif" title="SeleniumBase Tour of Google"><br></p>
-<div class="codehilite"><pre><span></span><code>cd examples/tour_examples
-pytest google_tour.py
+<div class="codehilite"><pre><span></span><code><span class="err">cd examples/tour_examples</span>
+<span class="err">pytest google_tour.py</span>
 </code></pre></div>
 
 
-<h3 id="creating-a-new-tour">Creating a new tour</h3>
-<h4 id="to-create-a-tour-utilizing-the-shepherd-js-library-use-one-of-the-following">To create a tour utilizing the Shepherd JS Library, use one of the following</h4>
+<h3 id="creating-a-new-tour">Creating a new tour<a class="headerlink" href="#creating-a-new-tour" title="Permanent link">&para;</a></h3>
+<h4 id="to-create-a-tour-utilizing-the-shepherd-js-library-use-one-of-the-following">To create a tour utilizing the Shepherd JS Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-shepherd-js-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.create_shepherd_tour()</code></p>
 <p>OR</p>
 <p><code>self.create_tour(theme="shepherd")</code></p>
 <p>You can pass a custom theme to change the look &amp; feel of Shepherd tours. Valid themes for Shepherd Tours are <code>dark</code>, <code>light</code> / <code>arrows</code>, <code>default</code>, <code>square</code>, and <code>square-dark</code>.</p>
-<h4 id="to-create-a-tour-utilizing-the-bootstrap-tour-library-use-one-of-the-following">To create a tour utilizing the Bootstrap Tour Library, use one of the following</h4>
+<h4 id="to-create-a-tour-utilizing-the-bootstrap-tour-library-use-one-of-the-following">To create a tour utilizing the Bootstrap Tour Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-bootstrap-tour-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.create_bootstrap_tour()</code></p>
 <p>OR</p>
 <p><code>self.create_tour(theme="bootstrap")</code></p>
-<h4 id="to-create-a-tour-utilizing-the-intro-js-library-use-one-of-the-following">To create a tour utilizing the Intro JS Library, use one of the following</h4>
+<h4 id="to-create-a-tour-utilizing-the-intro-js-library-use-one-of-the-following">To create a tour utilizing the Intro JS Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-intro-js-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.create_introjs_tour()</code></p>
 <p>OR</p>
 <p><code>self.create_tour(theme="introjs")</code></p>
-<h4 id="to-create-a-tour-utilizing-the-hopscotch-js-library-use-one-of-the-following">To create a tour utilizing the Hopscotch JS Library, use one of the following</h4>
+<h4 id="to-create-a-tour-utilizing-the-hopscotch-js-library-use-one-of-the-following">To create a tour utilizing the Hopscotch JS Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-hopscotch-js-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.create_hopscotch_tour()</code></p>
 <p>OR</p>
 <p><code>self.create_tour(theme="hopscotch")</code></p>
-<h3 id="adding-a-step-to-a-tour">Adding a step to a tour</h3>
-<h4 id="to-add-a-tour-step-use-the-following">To add a tour step, use the following</h4>
+<h3 id="adding-a-step-to-a-tour">Adding a step to a tour<a class="headerlink" href="#adding-a-step-to-a-tour" title="Permanent link">&para;</a></h3>
+<h4 id="to-add-a-tour-step-use-the-following">To add a tour step, use the following<a class="headerlink" href="#to-add-a-tour-step-use-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.add_tour_step(message, css_selector, title, alignment, theme)</code></p>
 <p>With the <code>self.add_tour_step()</code> method, you must first pass a message to display. You can then specify a web element to attach to (by using <a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS selectors</a>). If no element is specified, the tour step will tether to the top of the screen by default. You can also add an optional title above the message to display with the tour step, as well as change the theme for that step (Shepherd tours only), and even specify the alignment (which is the side of the element that you want the tour message to tether to).</p>
-<h3 id="playing-a-tour">Playing a tour</h3>
+<h3 id="playing-a-tour">Playing a tour<a class="headerlink" href="#playing-a-tour" title="Permanent link">&para;</a></h3>
 <p>You can play a tour by calling:</p>
 <p><code>self.play_tour(interval)</code></p>
 <p>If you specify an interval (optional), the tour will automatically walk through each step after that many seconds have passed.</p>
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple tours at once. Then, when you're adding a step or playing a tour, SeleniumBase knows which tour you're referring too. You can avoid using the <code>name</code> arg for multiple tours if you play a tour before creating a new one.</p>
-<h3 id="heres-an-example-of-using-seleniumbase-tours">Here's an example of using SeleniumBase Tours</h3>
+<h3 id="heres-an-example-of-using-seleniumbase-tours">Here's an example of using SeleniumBase Tours<a class="headerlink" href="#heres-an-example-of-using-seleniumbase-tours" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
@@ -1122,12 +1122,12 @@ pytest google_tour.py
 </code></pre></div>
 
 
-<h4 id="this-example-was-taken-from-google_tourpy-which-you-can-run-from-the-examplestour_examples-folder-with-the-following-command">This example was taken from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a>, which you can run from the <code>examples/tour_examples</code> folder with the following command</h4>
+<h4 id="this-example-was-taken-from-google_tourpy-which-you-can-run-from-the-examplestour_examples-folder-with-the-following-command">This example was taken from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a>, which you can run from the <code>examples/tour_examples</code> folder with the following command<a class="headerlink" href="#this-example-was-taken-from-google_tourpy-which-you-can-run-from-the-examplestour_examples-folder-with-the-following-command" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code>pytest google_tour.py
 </code></pre></div>
 
 
-<h3 id="exporting-a-tour">Exporting a Tour</h3>
+<h3 id="exporting-a-tour">Exporting a Tour<a class="headerlink" href="#exporting-a-tour" title="Permanent link">&para;</a></h3>
 <p>If you want to save the tour you created as a JavaScript file, use:</p>
 <p><code>self.export_tour()</code></p>
 <p>OR</p>
@@ -1237,15 +1237,15 @@ pytest google_tour.py
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../../assets/javascripts/worker/search.58d22e8e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
