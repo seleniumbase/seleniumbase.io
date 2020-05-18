@@ -836,6 +836,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../../help_docs/desired_capabilities/" title="Desired Capabilities" class="md-nav__link">
+      Desired Capabilities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../../help_docs/using_safari_driver/" title="Using Safari Driver" class="md-nav__link">
       Using Safari Driver
     </a>
@@ -984,7 +996,7 @@
 <h3 id="running-the-selenium-grid-hub">Running the Selenium Grid Hub<a class="headerlink" href="#running-the-selenium-grid-hub" title="Permanent link">&para;</a></h3>
 <p>The following commands will work once you've installed seleniumbase.</p>
 <h4 id="downloading-the-selenium-server-jar-file">Downloading the Selenium Server JAR file<a class="headerlink" href="#downloading-the-selenium-server-jar-file" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="err">seleniumbase download server</span>
+<div class="codehilite"><pre><span></span><code>seleniumbase download server
 </code></pre></div>
 
 
@@ -992,23 +1004,27 @@
 <li>(Required for using your own Selenium Grid)</li>
 </ul>
 <h4 id="grid-hub-server-controls">Grid Hub server controls<a class="headerlink" href="#grid-hub-server-controls" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">seleniumbase</span><span class="w"> </span><span class="n">grid</span><span class="o">-</span><span class="n">hub</span><span class="w"> </span><span class="err">{</span><span class="k">start</span><span class="o">|</span><span class="n">stop</span><span class="err">}</span><span class="w"> </span><span class="o">[</span><span class="n">OPTIONS</span><span class="o">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code>seleniumbase grid-hub <span class="o">{</span>start<span class="p">|</span>stop<span class="o">}</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 
 
-<p>Options:
-* <code>-v</code>, <code>--verbose</code>  (Increases verbosity of logging output.)</p>
+<p><b>Options:</b>
+<ul>
+<li> -v / --verbose  (Increases verbosity of logging output.)</li>
+</ul></p>
 <h4 id="grid-node-server-controls">Grid node server controls<a class="headerlink" href="#grid-node-server-controls" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">seleniumbase</span><span class="w"> </span><span class="n">grid</span><span class="o">-</span><span class="n">node</span><span class="w"> </span><span class="err">{</span><span class="k">start</span><span class="o">|</span><span class="n">stop</span><span class="err">}</span><span class="w"> </span><span class="c1">--hub=[HUB_IP] [OPTIONS]</span>
+<div class="codehilite"><pre><span></span><code>seleniumbase grid-node <span class="o">{</span>start<span class="p">|</span>stop<span class="o">}</span> --hub<span class="o">=[</span>HUB_IP<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 
 
-<p>Options:
-* <code>-v</code>, <code>--verbose</code>  (Increases verbosity of logging output.)
-* <code>--hub=[HUB_IP]</code> (Specifies the Grid Hub to connect to. Default: "127.0.0.1".)</p>
+<p><b>Options:</b>
+<ul>
+<li> -v / --verbose  (Increases verbosity of logging output.)</li>
+<li> --hub=[HUB_IP]  (Specifies the Grid Hub to connect to. Default: "127.0.0.1".)</li>
+</ul></p>
 <p>When the Grid Hub Console is up and running, you'll be able to find it here: <a href="http://127.0.0.1:4444/grid/console">http://127.0.0.1:4444/grid/console</a></p>
 <p>Now you can run your tests on the Selenium Grid:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">pytest test_suite.py --server=IP_ADDRESS --port=4444</span>
+<div class="codehilite"><pre><span></span><code>pytest test_suite.py --server<span class="o">=</span>IP_ADDRESS --port<span class="o">=</span><span class="m">4444</span>
 </code></pre></div>
 
 
@@ -1016,21 +1032,21 @@
 <ul>
 <li><a href="https://www.browserstack.com/automate#">BrowserStack</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="err">pytest my_first_test.py --server=USERNAME:KEY@hub.browserstack.com --port=80</span>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
 
 
 <ul>
 <li><a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="err">pytest my_first_test.py --server=USERNAME:KEY@ondemand.saucelabs.com --port=80</span>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
 
 
 <ul>
 <li><a href="https://testingbot.com/features">TestingBot</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="err">pytest my_first_test.py --server=USERNAME:KEY@hub.testingbot.com --port=80</span>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
 
 
