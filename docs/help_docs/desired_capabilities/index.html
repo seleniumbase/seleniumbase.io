@@ -67,11 +67,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#using-desired-capabilities" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -763,47 +758,9 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Desired Capabilities
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
     <a href="./" title="Desired Capabilities" class="md-nav__link md-nav__link--active">
       Desired Capabilities
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-desired-capabilities" class="md-nav__link">
-    Using Desired Capabilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-local-selenium-grid" class="md-nav__link">
-    Using a local Selenium Grid
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -868,43 +825,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-desired-capabilities" class="md-nav__link">
-    Using Desired Capabilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-local-selenium-grid" class="md-nav__link">
-    Using a local Selenium Grid
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -916,7 +836,8 @@
                 
                   <h1>Desired Capabilities</h1>
                 
-                <h3 id="using-desired-capabilities">Using Desired Capabilities<a class="headerlink" href="#using-desired-capabilities" title="Permanent link">&para;</a></h3>
+                <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Using Desired Capabilities</h3>
+
 <p>You can specify browser desired capabilities for webdriver when running SeleniumBase tests on a remote SeleniumGrid server such as <a href="https://www.browserstack.com/automate/capabilities">BrowserStack</a>, <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/">Sauce Labs</a>, or <a href="https://testingbot.com/support/other/test-options">TestingBot</a>.</p>
 <p>Sample run commands may look like this when run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a> folder: (The browser is now specified in the capabilities file.)</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>remote --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span> --cap_file<span class="o">=</span>capabilities/sample_cap_file_BS.py
@@ -987,7 +908,8 @@ Example:</p>
 
 
 <p>Example name: <code>"my_first_test.MyTestClass.test_basic"</code></p>
-<h3 id="using-a-local-selenium-grid">Using a local Selenium Grid<a class="headerlink" href="#using-a-local-selenium-grid" title="Permanent link">&para;</a></h3>
+<h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Using a local Selenium Grid</h3>
+
 <p>If using a local Selenium Grid with SeleniumBase, start up the Grid Hub and nodes first:</p>
 <div class="codehilite"><pre><span></span><code>seleniumbase grid-hub start
 seleniumbase grid-node start
