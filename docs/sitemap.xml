@@ -60,10 +60,6 @@
      <lastmod>2020-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://seleniumbase.io/examples/master_qa/ReadMe/</loc>
-     <lastmod>2020-05-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://seleniumbase.io/examples/visual_testing/ReadMe/</loc>
      <lastmod>2020-05-23</lastmod>
      <changefreq>daily</changefreq>
@@ -81,6 +77,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://seleniumbase.io/integrations/katalon/ReadMe/</loc>
+     <lastmod>2020-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://seleniumbase.io/examples/master_qa/ReadMe/</loc>
      <lastmod>2020-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
