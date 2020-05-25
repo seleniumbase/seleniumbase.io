@@ -67,11 +67,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#js-package-manager" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -524,40 +519,9 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        JS Package Manager
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
     <a href="./" title="JS Package Manager" class="md-nav__link md-nav__link--active">
       JS Package Manager
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#js-package-manager" class="md-nav__link">
-    JS Package Manager
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -881,36 +845,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#js-package-manager" class="md-nav__link">
-    JS Package Manager
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -922,9 +856,14 @@
                 
                   <h1>JS Package Manager</h1>
                 
-                <h2 id="js-package-manager">JS Package Manager<a class="headerlink" href="#js-package-manager" title="Permanent link">&para;</a></h2>
-<p><div>SeleniumBase's JS Package Manager lets you load JavaScript libraries into any website from a CDN link.</div>
-<p><div>Here's an example of loading a website-tour library into a web browser while visiting Google:</div></p></p>
+                <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> JS Package Manager</h2>
+
+<!-- Title: A package manager for loading JS libraries into websites via CDN -->
+
+<div>SeleniumBase's Package Manager lets you load JS into websites via CDN.</div>
+
+<p><div>Here's an example of loading a website-tour library into the browser while visiting Google:</div></p>
+
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/google_tour_3.gif" title="SeleniumBase Tour of Google" /><br /></p>
 <p>This example, (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a> from the SeleniumBase <code>examples/tour_examples/</code> folder), can be run with <code>pytest</code> after you've cloned and installed <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase from GitHub</a>:</p>
 <div class="codehilite"><pre><span></span><code>pytest google_tour.py
@@ -1002,7 +941,10 @@
 <p><div>The following example shows the <a href="https://github.com/craftpip/jquery-confirm">JqueryConfirm</a> package loaded into a website for creating fancy dialog boxes:</div></p>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/masterqa6.gif" alt="MasterQA by SeleniumBase" title="MasterQA by SeleniumBase" /><br /></p>
-<p>Since the libraries are loaded directly from a CDN, such as <a href="https://cdnjs.com/">CloudFlare's cdnjs</a>, there's no need to use NPM, Bower, Yarn, or other package managers to get the packages that you need into the websites that you want.</p>
+<p><div>(Example from <a href="https://seleniumbase.io/examples/master_qa/ReadMe/">SeleniumBase's MasterQA ReadMe</a>)</div></p>
+
+<div>Since packages are loaded directly from a CDN, such as <a href="https://cdnjs.com/">CloudFlare's cdnjs</a>, there's no need to use NPM, Bower, Yarn, or other package managers to get the packages that you need into the websites that you want.</div>
+
 <hr />
 <div>To learn more about SeleniumBase, check out the Docs Site:</div>
 
