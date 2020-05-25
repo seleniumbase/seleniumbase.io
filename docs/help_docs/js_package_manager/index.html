@@ -11,7 +11,7 @@
         <meta name="description" content="Reliable Browser Automation & Testing">
       
       
-        <link rel="canonical" href="https://seleniumbase.io/help_docs/js_package_mgr/">
+        <link rel="canonical" href="https://seleniumbase.io/help_docs/js_package_manager/">
       
       
         <meta name="author" content="Michael Mintz">
@@ -922,33 +922,32 @@
                 
                   <h1>JS Package Manager</h1>
                 
-                <p><h3 align="center"><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb23.png" alt="SeleniumBase" width="220" /></a></h3></p>
-
-<h2 id="js-package-manager">JS Package Manager<a class="headerlink" href="#js-package-manager" title="Permanent link">&para;</a></h2>
-<p><div>The SeleniumBase JS Package Manager lets you load any JavaScript library into any website from automation scripts.</div>
-<p><div>Here's an example of website-tour libraries loaded into a browser session while visiting Google:</div></p></p>
-<p><img src="https://cdn2.hubspot.net/hubfs/100006/google_tour_3.gif" title="SeleniumBase Tour of Google"><br /></p>
-<p>This example from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a> can be run with <b>pytest</b> from the SeleniumBase <code>examples/tour_examples</code> folder with the following command after you've cloned and installed <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase from GitHub</a>:</p>
+                <h2 id="js-package-manager">JS Package Manager<a class="headerlink" href="#js-package-manager" title="Permanent link">&para;</a></h2>
+<p><div>SeleniumBase's JS Package Manager lets you load JavaScript libraries into any website from a CDN link.</div>
+<p><div>Here's an example of loading a website-tour library into a web browser while visiting Google:</div></p></p>
+<p><img src="https://cdn2.hubspot.net/hubfs/100006/google_tour_3.gif" title="SeleniumBase Tour of Google" /><br /></p>
+<p>This example, (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a> from the SeleniumBase <code>examples/tour_examples/</code> folder), can be run with <code>pytest</code> after you've cloned and installed <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase from GitHub</a>:</p>
 <div class="codehilite"><pre><span></span><code>pytest google_tour.py
 </code></pre></div>
 
 
-<div>Website tours are just one way of demonstrating the abilities of the SeleniumBase JS Package Manager.</div>
+<div>Since a CDN is used for holding packages, you no longer need to use other package managers such as NPM, Bower, or Yarn.</div>
 
-<div>Here's the SeleniumBase code for loading any JS package into any website from your web browser:</div>
+<p><div>Here's the Python code for loading JS packages into the web browser with SeleniumBase:</div></p>
 
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="n">js_link</span><span class="p">)</span>
 </code></pre></div>
 
 
-<p>Here's code that loads the <a href="https://introjs.com/">IntroJS</a> JavaScript library:</p>
+<div>This example loads the <a href="https://introjs.com/">IntroJS</a> JavaScript library:</div>
+
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
-<div>You can load any JS library into a web browser this way as long as you know the URL to it!</div>
+<div>You can load any JS package this way as long as you know the URL.</div>
 
-<p>If you're wondering how SeleniumBase does this, here's a sneak peak at the code, which uses WebDriver's <code>execute_script()</code> method to run JavaScript commands:</p>
+<p>If you're wondering how SeleniumBase does this, here's the full Python code, which uses WebDriver's <code>execute_script()</code> method for making JS calls after escaping quotes:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
     <span class="n">script_to_add_js</span> <span class="o">=</span> <span class="p">(</span>
         <span class="sd">&quot;&quot;&quot;function injectJS(link) {</span>
@@ -967,7 +966,7 @@
 </code></pre></div>
 
 
-<p>Now that you've loaded the JavaScript into the browser, you may also want to load some CSS to go along with it:</p>
+<p>Now that you've loaded JavaScript into the browser, you may also want to load some CSS to go along with it:</p>
 
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>
@@ -998,6 +997,12 @@
 </code></pre></div>
 
 
+<div>Website tours are just one of the many ways of using the SeleniumBase JS Package Manager.</div>
+
+<p><div>The following example shows the <a href="https://github.com/craftpip/jquery-confirm">JqueryConfirm</a> package loaded into a website for creating fancy dialog boxes:</div></p>
+
+<p><img src="https://cdn2.hubspot.net/hubfs/100006/images/masterqa6.gif" alt="MasterQA by SeleniumBase" title="MasterQA by SeleniumBase" /><br /></p>
+<p>Since the libraries are loaded directly from a CDN, such as <a href="https://cdnjs.com/">CloudFlare's cdnjs</a>, there's no need to use NPM, Bower, Yarn, or other package managers to get the packages that you need into the websites that you want.</p>
 <hr />
 <div>To learn more about SeleniumBase, check out the Docs Site:</div>
 
