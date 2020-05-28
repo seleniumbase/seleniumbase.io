@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../img/logo3a.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.71dfd922.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a2408e81.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.616af814.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
       
       
         
@@ -1379,11 +1379,14 @@
 
 <span class="c1">############</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">wait_for_and_accept_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">accept_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.wait_for_and_accept_alert(timeout=None)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">wait_for_and_dismiss_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">dismiss_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.wait_for_and_dismiss_alert(timeout=None)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">wait_for_and_switch_to_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.wait_for_and_switch_to_alert(timeout=None)</span>
 
 <span class="c1">############</span>
 
@@ -1391,11 +1394,14 @@
 
 <span class="c1">############</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">delayed_assert_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.delayed_assert_element(selector, by=By.CSS_SELECTOR, timeout=None)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">delayed_assert_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.delayed_assert_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">process_delayed_asserts</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">(</span><span class="n">print_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.process_delayed_asserts(print_only=False)</span>
 
 <span class="c1">############</span>
 
