@@ -603,6 +603,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mkfile" class="md-nav__link">
+    mkfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert" class="md-nav__link">
     convert
   </a>
@@ -1034,6 +1041,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mkfile" class="md-nav__link">
+    mkfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert" class="md-nav__link">
     convert
   </a>
@@ -1118,20 +1132,35 @@
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Console Scripts</h2>
 
 <p>SeleniumBase console scripts help you get things done more easily, such as installing web drivers, creating a test directory with necessary configuration files, converting old WebDriver unittest scripts into SeleniumBase code, translating tests into multiple languages, and using the Selenium Grid.</p>
-<p>Type <code>seleniumbase</code> on the command line to use console scripts.
-You can also use the simplified name: <code>sbase</code> instead.</p>
+<ul>
+<li>
+<p>Usage: <code>seleniumbase [COMMAND] [PARAMETERS]</code></p>
+</li>
+<li>
+<p>(simplified): <code>sbase [COMMAND] [PARAMETERS]</code></p>
+</li>
+<li>
+<p>To list all commands: <code>seleniumbase --help</code></p>
+</li>
+</ul>
 <p>(<i>For running tests, <a href="../../../help_docs/customizing_test_runs/">use <b>pytest</b> with SeleniumBase</a>.</i>)</p>
 <h3 id="install">install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase install [DRIVER_NAME]</code>
-        (Drivers: <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>,
-                  <code>iedriver</code>, <code>operadriver</code>)</p>
+<code>sbase install [DRIVER_NAME] [VERSION]</code>
+    (Drivers: <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>,
+              <code>iedriver</code>, <code>operadriver</code>)
+    (Versions: <code>latest</code> or a specific driver version.
+               If none specified, installs the default version.)</p>
 </li>
 <li>
-<p>Example:
-<code>seleniumbase install chromedriver</code></p>
+<p>Examples:
+<code>sbase install chromedriver</code></p>
+</li>
+<li>
+<p>Options:
+    <code>latest</code>:</p>
 </li>
 <li>
 <p>Output:
@@ -1147,26 +1176,60 @@ Installs the specified webdriver.
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase mkdir [DIRECTORY_NAME]</code></p>
+<code>sbase mkdir [DIRECTORY_NAME]</code></p>
 </li>
 <li>
 <p>Example:
-<code>seleniumbase mkdir browser_tests</code></p>
+<code>sbase mkdir browser_tests</code></p>
 </li>
 <li>
 <p>Output:
 Creates a new folder for running SeleniumBase scripts.
 The new folder contains default config files,
-sample tests for helping new users get started, and
-Python boilerplates for setting up customized
+sample tests for helping new users get started,
+and Python boilerplates for setting up customized
 test frameworks.</p>
+</li>
+</ul>
+<h3 id="mkfile">mkfile<a class="headerlink" href="#mkfile" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Usage:
+<code>sbase mkfile [FILE_NAME.py] [OPTIONS]</code></p>
+</li>
+<li>
+<p>Example:
+<code>sbase mkfile new_test.py</code></p>
+</li>
+<li>
+<p>Options:
+<code>-b</code> / <code>--basic</code>  (Basic boilerplate / single-line test)</p>
+</li>
+<li>
+<p>Language Options:
+<code>--en</code> / <code>--English</code>    |    <code>--zh</code> / <code>--Chinese</code>
+<code>--nl</code> / <code>--Dutch</code>      |    <code>--fr</code> / <code>--French</code>
+<code>--it</code> / <code>--Italian</code>    |    <code>--ja</code> / <code>--Japanese</code>
+<code>--ko</code> / <code>--Korean</code>     |    <code>--pt</code> / <code>--Portuguese</code>
+<code>--ru</code> / <code>--Russian</code>    |    <code>--es</code> / <code>--Spanish</code></p>
+</li>
+<li>
+<p>Output:
+Creates a new SeleniumBase test file with boilerplate code.
+If the file already exists, an error is raised.
+By default, uses English mode and creates a
+boilerplate with the 5 most common SeleniumBase
+methods, which are "open", "click", "update_text",
+"assert_element", and "assert_text". If using the
+basic boilerplate option, only the "open" method
+is included.</p>
 </li>
 </ul>
 <h3 id="convert">convert<a class="headerlink" href="#convert" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase convert [PYTHON_WEBDRIVER_UNITTEST_FILE]</code></p>
+<code>sbase convert [PYTHON_WEBDRIVER_UNITTEST_FILE]</code></p>
 </li>
 <li>
 <p>Output:
@@ -1181,7 +1244,7 @@ See: http://www.katalon.com/automation-recorder</p>
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase translate [SB_FILE].py [LANGUAGE] [ACTION]</code></p>
+<code>sbase translate [SB_FILE].py [LANGUAGE] [ACTION]</code></p>
 </li>
 <li>
 <p>Languages:
@@ -1218,7 +1281,7 @@ plus the 2-letter language code of the new language.
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase extract-objects [SB_PYTHON_FILE]</code></p>
+<code>sbase extract-objects [SB_PYTHON_FILE]</code></p>
 </li>
 <li>
 <p>Output:
@@ -1231,7 +1294,7 @@ seleniumbase Python file and saves those objects to the
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase inject-objects [SB_PYTHON_FILE] [OPTIONS]</code></p>
+<code>sbase inject-objects [SB_PYTHON_FILE] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
@@ -1248,7 +1311,7 @@ the selected seleniumbase Python file.</p>
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase objectify [SB_PYTHON_FILE] [OPTIONS]</code></p>
+<code>sbase objectify [SB_PYTHON_FILE] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
@@ -1267,7 +1330,7 @@ have been replaced with variable names defined in
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase revert-objects [SB_PYTHON_FILE] [OPTIONS]</code></p>
+<code>sbase revert-objects [SB_PYTHON_FILE] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
@@ -1285,12 +1348,12 @@ selectors stored in the "page_objects.py" file.</p>
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase download [ITEM]</code>
+<code>sbase download [ITEM]</code>
         (Options: server)</p>
 </li>
 <li>
 <p>Example:
-<code>seleniumbase download server</code></p>
+<code>sbase download server</code></p>
 </li>
 <li>
 <p>Output:
@@ -1302,7 +1365,7 @@ Downloads the specified item.
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase grid-hub {start|stop}</code></p>
+<code>sbase grid-hub {start|stop}</code></p>
 </li>
 <li>
 <p>Options:
@@ -1321,7 +1384,7 @@ You can start, restart, or stop the Grid Hub server.</p>
 <ul>
 <li>
 <p>Usage:
-<code>seleniumbase grid-node {start|stop} [OPTIONS]</code></p>
+<code>sbase grid-node {start|stop} [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:

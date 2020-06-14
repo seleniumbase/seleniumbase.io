@@ -1021,17 +1021,17 @@ pytest my_first_test.py
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">test_basic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://store.xkcd.com/search&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;xkcd book</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;xkcd: volume 0&quot;</span><span class="p">,</span> <span class="s2">&quot;h3&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/353/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="s2">&quot;xkcd: Python&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Python&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[rel=&quot;license&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;free to copy and reuse&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;link=About&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;xkcd.com&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;://store.xkcd.com/collections/everything&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input.search-input&quot;</span><span class="p">,</span> <span class="s2">&quot;xkcd book</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;xkcd: volume 0&quot;</span><span class="p">,</span> <span class="s2">&quot;h3&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click_link_text</span><span class="p">(</span><span class="s2">&quot;About&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;xkcd.com&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1042,7 +1042,7 @@ pytest my_first_test.py
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># Navigate to the web page</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># Click a page element</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># Type text (Add &quot;\n&quot; to text for pressing enter/return.)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># Type text (Add &quot;\n&quot; to text for pressing enter/return.)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># Assert element is visible</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># Assert text is visible (has optional SELECTOR arg)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="n">PAGE_TITLE</span><span class="p">)</span>  <span class="c1"># Assert page title</span>
@@ -1072,7 +1072,7 @@ pytest my_first_test.py
 <h4>Simplified code:</h4>
 
 <p>SeleniumBase uses simple syntax for commands, such as:</p>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1389,8 +1389,8 @@ pytest my_first_test.py
 <p><strong>ProTip™:</strong> In most web browsers, you can right-click on a page and select <code>Inspect Element</code> to see the CSS selector details that you'll need to create your own scripts.</p>
 <h4>Typing Text</h4>
 
-<p>self.update_text(selector, text)  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:</p>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
+<p>self.type(selector, text)  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 

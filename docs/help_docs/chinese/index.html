@@ -1042,7 +1042,7 @@ pytest my_first_test.py
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;link=About&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;xkcd.com&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;://store.xkcd.com/collections/everything&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input.search-input&quot;</span><span class="p">,</span> <span class="s2">&quot;xkcd book</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input.search-input&quot;</span><span class="p">,</span> <span class="s2">&quot;xkcd book</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;xkcd: volume 0&quot;</span><span class="p">,</span> <span class="s2">&quot;h3&quot;</span><span class="p">)</span>
 </code></pre></div>
 
@@ -1052,9 +1052,10 @@ pytest my_first_test.py
 <li>如果你是CSS Selectors新手, 可以通过 <a href="http://flukeout.github.io/">Flukeout</a> 游戏来帮助学习掌握.</li>
 <li>在上述代码中可以看到以下相关的 <code>SeleniumBase</code> 方法:</li>
 </ul>
+<p><code>from seleniumbase import BaseCase</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># 打开页面</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 点击页面元素</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 输入文字 (添加 &quot;\n&quot; 在&quot;TEXT&quot;的末尾来进行换行.)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 输入文字 (添加 &quot;\n&quot; 在&quot;TEXT&quot;的末尾来进行换行.)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 断言元素是否存在并可见</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 断言文本是否存在并可见 (可以选择某个元素选择器)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="n">PAGE_TITLE</span><span class="p">)</span>  <span class="c1"># 断言标题是否存在并可见</span>
@@ -1075,6 +1076,54 @@ pytest my_first_test.py
 </code></pre></div>
 
 
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/translations/chinese_test_1.py">chinese_test_1.py</a>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.translate.chinese</span> <span class="kn">import</span> <span class="n">硒测试用例</span>
+
+<span class="k">class</span> <span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">开启网址</span><span class="p">(</span><span class="s2">&quot;https://xkcd.in/comic?lg=cn&amp;id=353&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言标题</span><span class="p">(</span><span class="s2">&quot;Python - XKCD中文站&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s2">&quot;#content div.comic-body&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;上漫画&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;div.nextLink&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;老妈的逆袭&quot;</span><span class="p">,</span> <span class="s2">&quot;#content h1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击链接文本</span><span class="p">(</span><span class="s2">&quot;下一篇&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;敲桌子&quot;</span><span class="p">,</span> <span class="s2">&quot;#content h1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;有时候无聊就是最棒的乐趣&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">回去</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击链接文本</span><span class="p">(</span><span class="s2">&quot;兰德尔·门罗&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;兰德尔·门罗&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">更新文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;程式设计&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;程序设计&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><code>from seleniumbase.translate.chinese import 硒测试用例</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># 打开页面</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 点击页面元素</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 输入文字 (添加 &quot;\n&quot; 在&quot;TEXT&quot;的末尾来进行换行.)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 断言元素是否存在并可见</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 断言文本是否存在并可见 (可以选择某个元素选择器)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">断言标题</span><span class="p">(</span><span class="n">PAGE_TITLE</span><span class="p">)</span>  <span class="c1"># 断言标题是否存在并可见</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">检查断开的链接</span><span class="p">()</span>  <span class="c1"># 断言不存在404错误,若存在则断言失败</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">检查JS错误</span><span class="p">()</span>  <span class="c1"># 断言不存在js错误 (Chrome-ONLY)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">执行脚本</span><span class="p">(</span><span class="n">JAVASCRIPT</span><span class="p">)</span>  <span class="c1"># 在页面中执行js脚本</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">回去</span><span class="p">()</span>  <span class="c1"># 返回到上一个url链接页面</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">获取文本</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 获取元素的文本</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">获取属性</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">ATTRIBUTE</span><span class="p">)</span>  <span class="c1"># 获取某个定位元素的指定元素属性的属性值</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">元素是否可见</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 判断元素是否在页面上可见</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">文本是否显示</span><span class="p">(</span><span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 判断文本是否在页面上可见(可提供 SELECTOR)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">悬停并单击</span><span class="p">(</span><span class="n">HOVER_SELECTOR</span><span class="p">,</span> <span class="n">CLICK_SELECTOR</span><span class="p">)</span>  <span class="c1"># 鼠标移动在指定元素上后点击另一个元素</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">按文本选择选项</span><span class="p">(</span><span class="n">DROPDOWN_SELECTOR</span><span class="p">,</span> <span class="n">OPTION_TEXT</span><span class="p">)</span>  <span class="c1"># 选择下拉框中内容</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">切换到帧</span><span class="p">(</span><span class="n">FRAME_NAME</span><span class="p">)</span>  <span class="c1"># 切换 webdriver control 到页面上指定 iframe</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">切换到默认内容</span><span class="p">()</span>  <span class="c1"># 切换 webdriver control out 到当前的 iframe</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">切换到窗口</span><span class="p">(</span><span class="n">WINDOW_NUMBER</span><span class="p">)</span>  <span class="c1"># 切换不同的 window/tab</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">保存截图</span><span class="p">(</span><span class="n">FILE_NAME</span><span class="p">)</span>  <span class="c1"># 保存当前页面的截图</span>
+</code></pre></div>
+
+
 <p>完整的 SeleniumBase methods, 可见: <b><a href="https://seleniumbase.io/help_docs/method_summary/">Method Summary</a></b></p>
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 了解更多信息:</h2>
 
@@ -1084,7 +1133,7 @@ pytest my_first_test.py
 <h4>简易的代码:</h4>
 
 <p>SeleniumBase 使用简单简约的语法, 例如:</p>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1399,8 +1448,8 @@ pytest my_first_test.py
 <p><strong>ProTip™:</strong> 在大多数web浏览器中，您可以右键单击页面并选择<code>Inspect Element</code>来查看创建您自己的脚本所需的CSS选择器详细信息.</p>
 <h4>输入文本</h4>
 
-<p>self.update_text(selector, text)  # 用指定的值更新来自指定元素的文本。如果元素丢失或文本字段不可编辑，则引发异常。例如:</p>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
+<p>self.type(selector, text)  # 用指定的值更新来自指定元素的文本。如果元素丢失或文本字段不可编辑，则引发异常。例如:</p>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
