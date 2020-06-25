@@ -1081,7 +1081,7 @@
 <p>SeleniumBase Presenter allows you to create an HTML presentation with only a few lines of Python.
 The Reveal-JS library is used for running the presentations.</p>
 <p><strong>Here's a sample slide:</strong></p>
-<p><img src="https://seleniumbase.io/other/presenter_screen.png" title="Screenshot"><br></p>
+<p><img width="90%" src="https://seleniumbase.io/other/presenter_screen.png" title="Screenshot"><br></p>
 <p>Slides can include HTML, code, images, and iframes.</p>
 <p>Here's how to run the example presentation:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">cd examples/presenter</span>
@@ -1091,13 +1091,13 @@ The Reveal-JS library is used for running the presentations.</p>
 
 <h3 id="creating-a-new-presentation">Creating a new presentation<a class="headerlink" href="#creating-a-new-presentation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="sd">&quot;&quot;&quot; Creates a Reveal-JS presentation that you can add slides to.</span>
-<span class="sd">            @Params</span>
-<span class="sd">            name - If creating multiple presentations at the same time,</span>
-<span class="sd">                   use this to specify the name of the current presentation.</span>
-<span class="sd">            show_notes - When set to True, the Notes feature becomes enabled,</span>
-<span class="sd">                         which allows presenters to see notes next to slides.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot; Creates a Reveal-JS presentation that you can add slides to.</span>
+<span class="sd">    @Params</span>
+<span class="sd">    name - If creating multiple presentations at the same time,</span>
+<span class="sd">           use this to specify the name of the current presentation.</span>
+<span class="sd">    show_notes - When set to True, the Notes feature becomes enabled,</span>
+<span class="sd">                 which allows presenters to see notes next to slides.</span>
+<span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
 
@@ -1107,24 +1107,24 @@ Notes are enabled by default unless you specify:
 <h3 id="adding-a-slide-to-a-presentation">Adding a slide to a presentation<a class="headerlink" href="#adding-a-slide-to-a-presentation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iframe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-        <span class="sd">&quot;&quot;&quot; Allows the user to add slides to a presentation.</span>
-<span class="sd">            @Params</span>
-<span class="sd">            content - The HTML content to display on the presentation slide.</span>
-<span class="sd">            image - Attach an image (from a URL link) to the slide.</span>
-<span class="sd">            code - Attach code of any programming language to the slide.</span>
-<span class="sd">                   Language-detection will be used to add syntax formatting.</span>
-<span class="sd">            iframe - Attach an iFrame (from a URL link) to the slide.</span>
-<span class="sd">            notes - Additional notes to include with the slide.</span>
-<span class="sd">                    ONLY SEEN if show_notes is set for the presentation.</span>
-<span class="sd">            name - If creating multiple presentations at the same time,</span>
-<span class="sd">                   use this to select the presentation to add slides to.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot; Allows the user to add slides to a presentation.</span>
+<span class="sd">    @Params</span>
+<span class="sd">    content - The HTML content to display on the presentation slide.</span>
+<span class="sd">    image - Attach an image (from a URL link) to the slide.</span>
+<span class="sd">    code - Attach code of any programming language to the slide.</span>
+<span class="sd">           Language-detection will be used to add syntax formatting.</span>
+<span class="sd">    iframe - Attach an iFrame (from a URL link) to the slide.</span>
+<span class="sd">    notes - Additional notes to include with the slide.</span>
+<span class="sd">            ONLY SEEN if show_notes is set for the presentation.</span>
+<span class="sd">    name - If creating multiple presentations at the same time,</span>
+<span class="sd">           use this to select the presentation to add slides to.</span>
+<span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
 
 <h3 id="running-a-presentation">Running a presentation<a class="headerlink" href="#running-a-presentation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-        <span class="sd">&quot;&quot;&quot; Begin a Reveal-JS Presentation in the web browser. &quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot; Begin a Reveal-JS Presentation in the web browser. &quot;&quot;&quot;</span>
 </code></pre></div>
 
 
