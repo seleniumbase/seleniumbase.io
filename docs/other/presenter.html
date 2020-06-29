@@ -1,0 +1,178 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/serif.min.css">
+<style>
+pre{background-color:#fbe8d4;border-radius:8px;}
+div[flex_div]{height:75vh;margin:0;align-items:center;justify-content:center;display:flex;}
+img[rounded]{border-radius:16px;max-width:82%;}
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section data-transition="none">
+<h1>Welcome</h1><br />
+<h3>Press the <b>Right Arrow</b></h3>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>SeleniumBase Presenter</h3><br />
+<img width="240" src="https://seleniumbase.io/img/logo3a.png" /><span style="margin:144px;" /><img src="https://seleniumbase.io/other/python_3d_logo.png" /><br /><br />
+<h4>Create presentations with <b>Python</b></h4>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Make slides using <b>HTML</b>:</h3><br />
+<table style="padding:10px;border:4px solid black;font-size:50;">
+<tr style="background-color:CDFFFF;">
+<th>Row ABC</th><th>Row XYZ</th></tr>
+<tr style="background-color:DCFDDC;"><td>Value ONE</td><td>Value TWO</td></tr>
+<tr style="background-color:DFDFFB;">
+<td>Value THREE</td><td>Value FOUR</td></tr>
+</table><br />
+<h4>(HTML <b>table</b> example)</h4>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Keyboard Shortcuts:</h3>
+<table style="padding:10px;border:4px solid black;font-size:30;background-color:FFFFDD;">
+<tr><th>Key</th><th>Action</th></tr>
+<tr><td><b>=></b></td><td>Next Slide (N also works)</td></tr>
+<tr><td><b><=</b></td><td>Previous Slide (P also works)</td></tr>
+<tr><td>F</td><td>Full Screen Mode</td></tr>
+<tr><td>O</td><td>Overview Mode Toggle</td></tr>
+<tr><td>esc</td><td>Exit Full Screen / Overview Mode</td></tr>
+<tr><td><b>.</b></td><td>Pause/Resume Toggle</td></tr>
+<tr><td>space</td><td>Next Slide (alternative)</td></tr></table>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Add <b>images</b> to slides:</h3>
+<div flex_div><img rounded src="https://seleniumbase.io/other/seagulls.jpg"></div>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Add <b>code</b> to slides:</h3>
+<div></div>
+<pre class="prettyprint">
+from seleniumbase import BaseCase
+
+class MyTestClass(BaseCase):
+
+    def test_basic(self):
+        self.open("https://store.xkcd.com/search")
+        self.type('input[name="q"]', "xkcd book\n")
+        self.assert_text("xkcd: volume 0", "h3")
+        self.open("https://xkcd.com/353/")
+        self.assert_title("xkcd: Python")
+        self.assert_element('img[alt="Python"]')
+        self.click('a[rel="license"]')
+        self.assert_text("free to copy and reuse")
+        self.go_back()
+        self.click_link_text("About")
+        self.assert_exact_text("xkcd.com", "h2")</pre>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Highlight <b>code</b> in slides:</h3>
+<div></div>
+<pre class="prettyprint">
+from seleniumbase import BaseCase
+
+<mark>class MyTestClass(BaseCase):</mark>
+
+    def test_basic(self):
+        self.open("https://store.xkcd.com/search")
+        self.type('input[name="q"]', "xkcd book\n")
+        self.assert_text("xkcd: volume 0", "h3")</pre>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Add <b>iFrames</b> to slides:</h3>
+<div></div>
+<iframe src="https://seleniumbase.io/demo_page" style="width:92%;height:550;title="iframe content"></iframe>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Getting started is easy:</h3>
+<div></div>
+<pre class="prettyprint">
+from seleniumbase import BaseCase
+
+class MyPresenterClass(BaseCase):
+
+    def test_presenter(self):
+        self.create_presentation()
+        self.add_slide("Welcome to Presenter!")
+        self.add_slide(
+            "Add code to slides:",
+            code=(
+                "from seleniumbase import BaseCase\n\n"
+                "class MyPresenterClass(BaseCase):\n\n"
+                "    def test_presenter(self):\n"
+                "        self.create_presentation()\n"))
+        self.begin_presentation(filename="demo.html")</pre>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h3>Include <b>notes</b> with slides:</h3><br />
+<div></div>
+<pre class="prettyprint">
+self.add_slide("[Your HTML goes here]",
+               code="[Your software code goes here]",
+               content2="[Additional HTML goes here]",
+               notes="[Attached speaker notes go here]"
+                     "[Note A! -- Note B! -- Note C! ]")</pre>
+<h4>(Notes can include HTML tags)</h4>
+<aside class="notes"><h2><ul><li>Note A!<li>Note B!<li>Note C!<li>Note D!</h2></aside>
+</section>
+
+<section data-transition="none">
+<h3>Multiple themes available:</h3>
+<div></div>
+<pre class="prettyprint">
+self.create_presentation(theme="serif")
+
+self.create_presentation(theme="sky")
+
+self.create_presentation(theme="simple")
+
+self.create_presentation(theme="white")
+
+self.create_presentation(theme="moon")
+
+self.create_presentation(theme="black")
+
+self.create_presentation(theme="night")
+
+self.create_presentation(theme="beige")
+
+self.create_presentation(theme="league")</pre>
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<h2><b>The End</b></h2>
+<div flex_div><img rounded src="https://seleniumbase.io/img/sb_logo_10.png"></div>
+<aside class="notes"></aside>
+</section>
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<script>Reveal.initialize({showNotes: true, slideNumber: true, autoSlide: 0.0,});</script>
+</body>
+</html>
