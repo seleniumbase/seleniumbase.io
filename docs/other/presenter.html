@@ -120,7 +120,7 @@ from seleniumbase import BaseCase
 class MyPresenterClass(BaseCase):
 
     def test_presenter(self):
-        self.create_presentation()
+        self.create_presentation(theme="serif")
         self.add_slide("Welcome to Presenter!")
         self.add_slide(
             "Add code to slides:",
@@ -129,7 +129,8 @@ class MyPresenterClass(BaseCase):
                 "class MyPresenterClass(BaseCase):\n\n"
                 "    def test_presenter(self):\n"
                 "        self.create_presentation()\n"))
-        self.begin_presentation(filename="demo.html")</pre>
+        self.begin_presentation(
+            filename="demo.html", show_notes=True)</pre>
 <aside class="notes"></aside>
 </section>
 
