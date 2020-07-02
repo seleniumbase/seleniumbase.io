@@ -1090,7 +1090,7 @@ The Reveal-JS library is used for running the presentations.</p>
 
 
 <h3 id="creating-a-new-presentation">Creating a new presentation<a class="headerlink" href="#creating-a-new-presentation" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Creates a Reveal-JS presentation that you can add slides to.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    name - If creating multiple presentations at the same time,</span>
@@ -1099,8 +1099,6 @@ The Reveal-JS library is used for running the presentations.</p>
 <span class="sd">            Valid themes: &quot;serif&quot; (default), &quot;sky&quot;, &quot;white&quot;, &quot;black&quot;,</span>
 <span class="sd">                          &quot;simple&quot;, &quot;league&quot;, &quot;moon&quot;, &quot;night&quot;,</span>
 <span class="sd">                          &quot;beige&quot;, &quot;blood&quot;, and &quot;solarized&quot;.</span>
-<span class="sd">    show_notes - When set to True, the Notes feature becomes enabled,</span>
-<span class="sd">                 which allows presenters to see notes next to slides.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
@@ -1128,13 +1126,16 @@ Notes are enabled by default unless you specify:
 
 
 <h3 id="running-a-presentation">Running a presentation<a class="headerlink" href="#running-a-presentation" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Begin a Reveal-JS Presentation in the web browser.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    name - If creating multiple presentations at the same time,</span>
 <span class="sd">           use this to select the one you wish to add slides to.</span>
 <span class="sd">    filename - The name of the HTML file that you wish to</span>
 <span class="sd">               save the presentation to. (filename must end in &quot;.html&quot;)</span>
+<span class="sd">    show_notes - When set to True, the Notes feature becomes enabled,</span>
+<span class="sd">                 which allows presenters to see notes next to slides.</span>
 <span class="sd">    interval - The delay time between autoplaying slides. (in seconds)</span>
 <span class="sd">               If set to 0 (default), autoplay is disabled.</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -1221,7 +1222,7 @@ Notes are enabled by default unless you specify:
                 <span class="s1">&#39;from seleniumbase import BaseCase</span><span class="se">\n\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;class MyPresenterClass(BaseCase):</span><span class="se">\n\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;    def test_presenter(self):</span><span class="se">\n</span><span class="s1">&#39;</span>
-                <span class="s1">&#39;        self.create_presentation()</span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="s1">&#39;        self.create_presentation(theme=&quot;serif&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;        self.add_slide(&quot;Welcome to Presenter!&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;        self.add_slide(</span><span class="se">\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;            &quot;Add code to slides:&quot;,</span><span class="se">\n</span><span class="s1">&#39;</span>
@@ -1230,7 +1231,8 @@ Notes are enabled by default unless you specify:
                 <span class="s1">&#39;                &quot;class MyPresenterClass(BaseCase):</span><span class="se">\\</span><span class="s1">n</span><span class="se">\\</span><span class="s1">n&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;                &quot;    def test_presenter(self):</span><span class="se">\\</span><span class="s1">n&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>
                 <span class="s1">&#39;                &quot;        self.create_presentation()</span><span class="se">\\</span><span class="s1">n&quot;))</span><span class="se">\n</span><span class="s1">&#39;</span>
-                <span class="s1">&#39;        self.begin_presentation(filename=&quot;demo.html&quot;)&#39;</span><span class="p">))</span>
+                <span class="s1">&#39;        self.begin_presentation(</span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="s1">&#39;            filename=&quot;demo.html&quot;, show_notes=True)&#39;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span>
             <span class="s1">&#39;&lt;h3&gt;Include &lt;b&gt;notes&lt;/b&gt; with slides:&lt;/h3&gt;&lt;br /&gt;&#39;</span><span class="p">,</span>
             <span class="n">code</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;self.add_slide(&quot;[Your HTML goes here]&quot;,</span><span class="se">\n</span><span class="s1">&#39;</span>
@@ -1255,7 +1257,8 @@ Notes are enabled by default unless you specify:
         <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span>
             <span class="s1">&#39;&lt;h2&gt;&lt;b&gt;The End&lt;/b&gt;&lt;/h2&gt;&#39;</span><span class="p">,</span>
             <span class="n">image</span><span class="o">=</span><span class="s2">&quot;https://seleniumbase.io/img/sb_logo_10.png&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;presenter.html&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span>
+            <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;presenter.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1266,12 +1269,12 @@ Notes are enabled by default unless you specify:
 
 <h3 id="saving-a-presentation">Saving a presentation<a class="headerlink" href="#saving-a-presentation" title="Permanent link">&para;</a></h3>
 <p>If you want to save the presentation you created as an HTML file, use:</p>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
 
 <p>Presentations automatically get saved when calling:</p>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
                 
               
