@@ -735,8 +735,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows" class="md-nav__link">
-    Step 5. Congratulations! You now know how to create and run browser tests with GitHub Actions/Workflows!
+  <a href="#congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows" class="md-nav__link">
+    Congratulations! You now know how to create and run browser tests with GitHub Actions/Workflows!
   </a>
   
 </li>
@@ -745,6 +745,40 @@
   <a href="#study-seleniumbase-to-learn-more" class="md-nav__link">
     Study SeleniumBase to learn more!
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    ----------
+  </a>
+  
+    <nav class="md-nav" aria-label="----------">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integrations-for-github-actions" class="md-nav__link">
+    Integrations for GitHub Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slack-notifications-rtcampaction-slack-notify-can-be-used-to-send-notifications-to-slack" class="md-nav__link">
+    Slack Notifications - rtCamp/action-slack-notify can be used to send notifications to Slack.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-artifacts" class="md-nav__link">
+    Uploading Artifacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1060,8 +1094,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows" class="md-nav__link">
-    Step 5. Congratulations! You now know how to create and run browser tests with GitHub Actions/Workflows!
+  <a href="#congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows" class="md-nav__link">
+    Congratulations! You now know how to create and run browser tests with GitHub Actions/Workflows!
   </a>
   
 </li>
@@ -1070,6 +1104,40 @@
   <a href="#study-seleniumbase-to-learn-more" class="md-nav__link">
     Study SeleniumBase to learn more!
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    ----------
+  </a>
+  
+    <nav class="md-nav" aria-label="----------">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integrations-for-github-actions" class="md-nav__link">
+    Integrations for GitHub Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slack-notifications-rtcampaction-slack-notify-can-be-used-to-send-notifications-to-slack" class="md-nav__link">
+    Slack Notifications - rtCamp/action-slack-notify can be used to send notifications to Slack.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-artifacts" class="md-nav__link">
+    Uploading Artifacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1128,8 +1196,36 @@
 <li><strong>(You'll notice that web browsers such as Chrome and Firefox get installed for tests to use. SeleniumBase uses pytest for running tests while using Selenium to interact with web browsers.)</strong></li>
 </ul>
 <hr />
-<h3 id="step-5-congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows">Step 5. Congratulations! You now know how to create and run browser tests with GitHub Actions/Workflows!<a class="headerlink" href="#step-5-congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows" title="Permanent link">&para;</a></h3>
+<h3 id="congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows">Congratulations! You now know how to create and run browser tests with GitHub Actions/Workflows!<a class="headerlink" href="#congratulations-you-now-know-how-to-create-and-run-browser-tests-with-github-actionsworkflows" title="Permanent link">&para;</a></h3>
 <h3 id="study-seleniumbase-to-learn-more"><strong>Study <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase</a> to learn more!</strong><a class="headerlink" href="#study-seleniumbase-to-learn-more" title="Permanent link">&para;</a></h3>
+<h2 id="-">----------<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h3 id="integrations-for-github-actions">Integrations for GitHub Actions<a class="headerlink" href="#integrations-for-github-actions" title="Permanent link">&para;</a></h3>
+<h3 id="slack-notifications-rtcampaction-slack-notify-can-be-used-to-send-notifications-to-slack">Slack Notifications - <a href="https://github.com/rtCamp/action-slack-notify">rtCamp/action-slack-notify</a> can be used to send notifications to Slack.<a class="headerlink" href="#slack-notifications-rtcampaction-slack-notify-can-be-used-to-send-notifications-to-slack" title="Permanent link">&para;</a></h3>
+<p><strong>Usage:</strong>
+* Create a slack integration webhook if you don't have one already.
+* Create a <code>SLACK_WEBHOOK</code> secret on your repository with the webhook token value.
+* For this particular action, <code>SLACK_CHANNEL</code> is an optional environment variable that defaults to the webhook token channel if not specified.
+* The following example shows how to put a link to your workflow as the <code>SLACK_MESSAGE</code> (Lets you see artifacts pushed up, such as from the SeleniumBase Presenter feature!):</p>
+<div class="codehilite"><pre><span></span><code>    - name: Slack notification
+      uses: rtCamp/action-slack-notify@master
+      env:
+        SLACK_WEBHOOK: <span class="cp">${</span><span class="p">{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">SLACK_WEBHOOK</span> <span class="cp">}</span>}
+        SLACK_CHANNEL: general
+        SLACK_ICON_EMOJI: rocket
+        SLACK_USERNAME: SeleniumBase
+        SLACK_MESSAGE: &#39;Actions workflow completed successful! :tada:  https://github.com/<span class="cp">${</span><span class="p">{</span> <span class="n">github</span><span class="o">.</span><span class="n">repository</span> <span class="cp">}</span>}/actions/runs/<span class="cp">${</span><span class="p">{</span> <span class="n">github</span><span class="o">.</span><span class="n">run_id</span> <span class="cp">}</span>}&#39;
+</code></pre></div>
+
+
+<h3 id="uploading-artifacts">Uploading Artifacts<a class="headerlink" href="#uploading-artifacts" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Here's an example using <a href="https://github.com/actions/upload-artifact">upload-artifact@v2</a> to push up a SeleniumBase-generated presentation as an artifact. (You can use this together with the Slack notification action to view the presentation directly from GitHub)</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="err">    - uses: actions/upload-artifact@v2</span>
+<span class="err">      with:</span>
+<span class="err">        name: Click to download the presentation</span>
+<span class="err">        path: saved_presentations/my_presentation.html</span>
+</code></pre></div>
                 
               
               
