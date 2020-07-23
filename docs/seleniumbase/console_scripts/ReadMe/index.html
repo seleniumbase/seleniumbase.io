@@ -620,6 +620,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#print" class="md-nav__link">
+    print
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#translate" class="md-nav__link">
     translate
   </a>
@@ -650,6 +657,20 @@
         <li class="md-nav__item">
   <a href="#revert-objects" class="md-nav__link">
     revert-objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypt-obfuscate" class="md-nav__link">
+    encrypt / obfuscate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypt-unobfuscate" class="md-nav__link">
+    decrypt / unobfuscate
   </a>
   
 </li>
@@ -1070,6 +1091,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#print" class="md-nav__link">
+    print
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#translate" class="md-nav__link">
     translate
   </a>
@@ -1100,6 +1128,20 @@
         <li class="md-nav__item">
   <a href="#revert-objects" class="md-nav__link">
     revert-objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypt-obfuscate" class="md-nav__link">
+    encrypt / obfuscate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypt-unobfuscate" class="md-nav__link">
+    decrypt / unobfuscate
   </a>
   
 </li>
@@ -1255,6 +1297,23 @@ Works with Katalon Recorder scripts.
 See: http://www.katalon.com/automation-recorder</p>
 </li>
 </ul>
+<h3 id="print">print<a class="headerlink" href="#print" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Usage:
+<code>sbase print [FILE] [OPTIONS]</code></p>
+</li>
+<li>
+<p>Options:
+<code>-n</code> (Add line Numbers to the rows)
+<code>-w</code> (Use word-Wrap for long lines)</p>
+</li>
+<li>
+<p>Output:
+Prints the code/text of any file
+with syntax-highlighting.</p>
+</li>
+</ul>
 <h3 id="translate">translate<a class="headerlink" href="#translate" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -1357,6 +1416,30 @@ Reverts the changes made by <code>seleniumbase objectify ...</code> or
 <code>seleniumbase inject-objects ...</code> when run against a
 seleniumbase Python file. Objects will get replaced by
 selectors stored in the "page_objects.py" file.</p>
+</li>
+</ul>
+<h3 id="encrypt-obfuscate">encrypt / obfuscate<a class="headerlink" href="#encrypt-obfuscate" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Usage:
+<code>sbase encrypt</code>  OR  <code>sbase obfuscate</code></p>
+</li>
+<li>
+<p>Output:
+Runs the password encryption/obfuscation tool.
+(Where you can enter a password to encrypt/obfuscate.)</p>
+</li>
+</ul>
+<h3 id="decrypt-unobfuscate">decrypt / unobfuscate<a class="headerlink" href="#decrypt-unobfuscate" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Usage:
+<code>sbase decrypt</code>  OR  <code>sbase unobfuscate</code></p>
+</li>
+<li>
+<p>Output:
+Runs the password decryption/unobfuscation tool.
+(Where you can enter an encrypted password to decrypt.)</p>
 </li>
 </ul>
 <h3 id="download">download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>

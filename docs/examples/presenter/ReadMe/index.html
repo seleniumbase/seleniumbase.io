@@ -1104,8 +1104,8 @@ The Reveal-JS library is used for running the presentations.</p>
 
 
 <p>If creating multiple presentations at the same time, you can pass the <code>name</code> parameter to distinguish between different presentations.
-Notes are enabled by default unless you specify:
-<code>show_notes=False</code> when calling.</p>
+Notes are disabled by default. You can enable notes by specifying:
+<code>show_notes=True</code></p>
 <h3 id="adding-a-slide-to-a-presentation">Adding a slide to a presentation<a class="headerlink" href="#adding-a-slide-to-a-presentation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iframe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">content2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -1127,7 +1127,7 @@ Notes are enabled by default unless you specify:
 
 <h3 id="running-a-presentation">Running a presentation<a class="headerlink" href="#running-a-presentation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span>
-    <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Begin a Reveal-JS Presentation in the web browser.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    name - If creating multiple presentations at the same time,</span>
