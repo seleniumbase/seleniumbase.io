@@ -22,7 +22,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
             
             <style>
             .highcharts-figure, .highcharts-data-table table {
-                min-width: 320px; 
+                min-width: 320px;
                 max-width: 660px;
                 margin: 1em auto;
             }
@@ -80,14 +80,14 @@ img[rounded]{border-radius:16px;max-width:82%;}
             },
             
             tooltip: {
-                pointFormat: '{series.name}: <b>{point.y}</b><br /><b>{point.percentage:.1f}%</b>'
+                pointFormat: '<b>{point.y}</b><br /><b>{point.percentage:.1f}%</b>'
             },
+            
             accessibility: {
                 point: {
                     valueSuffix: '%'
                 }
             },
-            
             plotOptions: {
                 pie: {
                     allowPointSelect: true,
