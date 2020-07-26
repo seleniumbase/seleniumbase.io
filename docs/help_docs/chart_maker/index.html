@@ -11,7 +11,7 @@
         <meta name="description" content="Reliable Browser Automation & Testing">
       
       
-        <link rel="canonical" href="https://seleniumbase.io/help_docs/hidden_files_info/">
+        <link rel="canonical" href="https://seleniumbase.io/help_docs/chart_maker/">
       
       
         <meta name="author" content="Michael Mintz">
@@ -21,7 +21,7 @@
     
     
       
-        <title>macOS Hidden Files - SeleniumBase | Docs</title>
+        <title>Chart Maker - SeleniumBase | Docs</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#info-about-hidden-files-on-macos" class="md-skip">
+        <a href="#chart-maker" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              macOS Hidden Files
+              Chart Maker
             
           </span>
         </div>
@@ -157,16 +157,14 @@
         
           
 
-  
-
-<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         SeleniumBase | Docs
       </a>
     
@@ -252,7 +250,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../ReadMe/" class="md-tabs__link md-tabs__link--active">
+        <a href="../ReadMe/" class="md-tabs__link">
           Help Docs ToC
         </a>
       
@@ -611,11 +609,101 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../chart_maker/" title="Chart Maker" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Chart Maker
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Chart Maker" class="md-nav__link md-nav__link--active">
       Chart Maker
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-new-chart" class="md-nav__link">
+    Creating a new chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-data-point-to-a-chart" class="md-nav__link">
+    Adding a data point to a chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-a-chart-to-a-file" class="md-nav__link">
+    Saving a chart to a file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extracting-the-html-of-a-chart" class="md-nav__link">
+    Extracting the HTML of a chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#displaying-a-chart-in-the-browser-window" class="md-nav__link">
+    Displaying a chart in the browser window
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heres-an-example-of-using-seleniumbase-chart-maker" class="md-nav__link">
+    Here's an example of using SeleniumBase Chart Maker
+  </a>
+  
+    <nav class="md-nav" aria-label="Here's an example of using SeleniumBase Chart Maker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#this-example-is-from-my_chartpy-which-you-can-run-from-the-exampleschart_maker-folder-with-the-following-command" class="md-nav__link">
+    This example is from my_chart.py, which you can run from the examples/chart_maker folder with the following command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -785,12 +873,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
     
     <label class="md-nav__link" for="nav-17">
       Help Docs ToC
@@ -872,49 +958,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        macOS Hidden Files
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="macOS Hidden Files" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../hidden_files_info/" title="macOS Hidden Files" class="md-nav__link">
       macOS Hidden Files
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#info-about-hidden-files-on-macos" class="md-nav__link">
-    Info about hidden files on macOS
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -973,6 +1021,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -983,9 +1033,57 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#info-about-hidden-files-on-macos" class="md-nav__link">
-    Info about hidden files on macOS
+  <a href="#creating-a-new-chart" class="md-nav__link">
+    Creating a new chart
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-data-point-to-a-chart" class="md-nav__link">
+    Adding a data point to a chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-a-chart-to-a-file" class="md-nav__link">
+    Saving a chart to a file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extracting-the-html-of-a-chart" class="md-nav__link">
+    Extracting the HTML of a chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#displaying-a-chart-in-the-browser-window" class="md-nav__link">
+    Displaying a chart in the browser window
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heres-an-example-of-using-seleniumbase-chart-maker" class="md-nav__link">
+    Here's an example of using SeleniumBase Chart Maker
+  </a>
+  
+    <nav class="md-nav" aria-label="Here's an example of using SeleniumBase Chart Maker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#this-example-is-from-my_chartpy-which-you-can-run-from-the-exampleschart_maker-folder-with-the-following-command" class="md-nav__link">
+    This example is from my_chart.py, which you can run from the examples/chart_maker folder with the following command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1005,18 +1103,99 @@
                   
                 
                 
-                  <h1>macOS Hidden Files</h1>
-                
-                <h2 id="info-about-hidden-files-on-macos">Info about hidden files on macOS<a class="headerlink" href="#info-about-hidden-files-on-macos" title="Permanent link">&para;</a></h2>
-<p>Depending on your macOS settings, some files may be hidden from view in your Finder window, such as <code>.gitignore</code>. To view all files, run the following command and then reopen the Finder window:</p>
-<div class="codehilite"><pre><span></span><code>defaults write com.apple.finder AppleShowAllFiles -bool <span class="nb">true</span>
+                <h3 align="left"><img src="https://cdn2.hubspot.net/hubfs/100006/images/super_logo_sb23.png" alt="SeleniumBase" width="290" /></h3>
+
+<h1 id="chart-maker">📊 Chart Maker 📊<a class="headerlink" href="#chart-maker" title="Permanent link">&para;</a></h1>
+<p>SeleniumBase Chart Maker allows you to create HTML charts with Python.<br />
+The HighCharts library is used for creating charts.
+(Currently only <b>pie charts</b> are supported.)</p>
+<p><strong>Here's a sample chart:</strong></p>
+<p><a href="https://seleniumbase.io/other/chart_presentation.html"><img width="500" src="https://seleniumbase.io/other/sample_pie_chart.png" title="Screenshot"></a><br></p>
+<p>(<a href="https://seleniumbase.io/other/chart_presentation.html">Click on the image for the actual chart</a>)</p>
+<p>Here's how to run the example (a chart in a presentation):</p>
+<div class="codehilite"><pre><span></span><code><span class="err">cd examples/chart_maker</span>
+<span class="err">pytest my_chart.py</span>
 </code></pre></div>
 
 
-<p>More info on that can be found here:
-<a href="https://www.defaults-write.com/show-hidden-files-in-os-x-finder/">https://www.defaults-write.com/show-hidden-files-in-os-x-finder/</a>
-<a href="https://www.macworld.co.uk/how-to/mac-software/hidden-files-mac-3520878/">https://www.macworld.co.uk/how-to/mac-software/hidden-files-mac-3520878/</a>
-<a href="https://setapp.com/how-to/show-hidden-files-on-mac">https://setapp.com/how-to/show-hidden-files-on-mac</a></p>
+<h3 id="creating-a-new-chart">Creating a new chart<a class="headerlink" href="#creating-a-new-chart" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;My Chart&quot;</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot; Creates a JavaScript pie chart using &quot;HighCharts&quot;. &quot;&quot;&quot;</span>
+</code></pre></div>
+
+
+<p>If creating multiple charts at the same time, you can pass the <code>chart_name</code> parameter to distinguish between different charts.</p>
+<h3 id="adding-a-data-point-to-a-chart">Adding a data point to a chart<a class="headerlink" href="#adding-a-data-point-to-a-chart" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot; Add a data point to a SeleniumBase-generated chart.</span>
+<span class="sd">    @Params</span>
+<span class="sd">    label - The label name for the data point.</span>
+<span class="sd">    value - The numeric value of the data point.</span>
+<span class="sd">    color - The HTML color of the data point.</span>
+<span class="sd">            Can be an RGB color. Eg: &quot;#55ACDC&quot;.</span>
+<span class="sd">            Can also be a named color. Eg: &quot;Teal&quot;.</span>
+<span class="sd">    chart_name - If creating multiple charts,</span>
+<span class="sd">                 use this to select which one.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+
+<h3 id="saving-a-chart-to-a-file">Saving a chart to a file<a class="headerlink" href="#saving-a-chart-to-a-file" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot; Saves a SeleniumBase-generated chart to a file for later use.</span>
+<span class="sd">    @Params</span>
+<span class="sd">    chart_name - If creating multiple charts at the same time,</span>
+<span class="sd">                 use this to select the one you wish to use.</span>
+<span class="sd">    filename - The name of the HTML file that you wish to</span>
+<span class="sd">               save the chart to. (filename must end in &quot;.html&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+
+<p>The full HTML of the chart is saved to the <code>saved_charts/</code> folder.</p>
+<h3 id="extracting-the-html-of-a-chart">Extracting the HTML of a chart<a class="headerlink" href="#extracting-the-html-of-a-chart" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot; Extracts the HTML from a SeleniumBase-generated chart.</span>
+<span class="sd">    @Params</span>
+<span class="sd">    chart_name - If creating multiple charts at the same time,</span>
+<span class="sd">                 use this to select the one you wish to use.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+
+<h3 id="displaying-a-chart-in-the-browser-window">Displaying a chart in the browser window<a class="headerlink" href="#displaying-a-chart-in-the-browser-window" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">display_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot; Displays a SeleniumBase-generated chart in the browser window.</span>
+<span class="sd">    @Params</span>
+<span class="sd">    chart_name - If creating multiple charts at the same time,</span>
+<span class="sd">                 use this to select the one you wish to use.</span>
+<span class="sd">    filename - The name of the HTML file that you wish to</span>
+<span class="sd">               save the chart to. (filename must end in &quot;.html&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+
+
+<p>All methods have the optional <code>chart_name</code> argument, which is only needed if you're creating multiple charts at once.</p>
+<h3 id="heres-an-example-of-using-seleniumbase-chart-maker">Here's an example of using SeleniumBase Chart Maker<a class="headerlink" href="#heres-an-example-of-using-seleniumbase-chart-maker" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+
+
+<span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Automated Tests&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Passed&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#95d96f&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Untested&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#eaeaea&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Failed&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f1888f&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h4 id="this-example-is-from-my_chartpy-which-you-can-run-from-the-exampleschart_maker-folder-with-the-following-command">This example is from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/chart_maker/my_chart.py">my_chart.py</a>, which you can run from the <code>examples/chart_maker</code> folder with the following command<a class="headerlink" href="#this-example-is-from-my_chartpy-which-you-can-run-from-the-exampleschart_maker-folder-with-the-following-command" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>pytest my_chart.py
+</code></pre></div>
                 
               
               
@@ -1035,7 +1214,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../using_safari_driver/" title="Using Safari Driver" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../examples/presenter/ReadMe/" title="Presenter" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1044,19 +1223,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Using Safari Driver
+                Presenter
               </div>
             </div>
           </a>
         
         
-          <a href="../happy_customers/" title="Case Studies" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../examples/visual_testing/ReadMe/" title="Visual Testing" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Case Studies
+                Visual Testing
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
