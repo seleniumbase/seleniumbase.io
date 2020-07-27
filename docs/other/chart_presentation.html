@@ -58,19 +58,20 @@ img[rounded]{border-radius:16px;max-width:82%;}
             </style>
             
             <figure class="highcharts-figure">
-                <div id="container"></div>
+                <div id="chartcontainer1"></div>
                 <p class="highcharts-description"></p>
             </figure>
             
             <script>
             // Build the chart
-            Highcharts.chart('container', {
+            Highcharts.chart('chartcontainer1', {
             credits: {
                 enabled: false
             },
             title: {
                 text: 'Automated Tests'
             },
+            xAxis: {categories: ['Passed','Untested','Failed',], crosshair: false},
             chart: {
                 renderTo: 'statusChart',
                 plotBackgroundColor: null,
@@ -121,6 +122,124 @@ img[rounded]{border-radius:16px;max-width:82%;}
             name: 'Failed',
             y: 1,
             color: '#f1888f'
+            },
+            
+            ]
+                }]
+            });
+            </script>
+            
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+            <figure class="highcharts-figure">
+                <div id="chartcontainer2"></div>
+                <p class="highcharts-description"></p>
+            </figure>
+            
+            <script>
+            // Build the chart
+            Highcharts.chart('chartcontainer2', {
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Code'
+            },
+            xAxis: {categories: ['Python','JavaScript','HTML + CSS',], crosshair: false},
+            chart: {
+                renderTo: 'statusChart',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'bar'
+            },
+            
+            tooltip: {
+                pointFormat: '<b>{point.y}</b>'
+            },
+            
+            series: [{
+            name: 'Count',
+            colorByPoint: true,
+            data: [
+            
+            {
+            name: 'Python',
+            y: 33,
+            color: 'Orange'
+            },
+            
+            {
+            name: 'JavaScript',
+            y: 27,
+            color: 'Teal'
+            },
+            
+            {
+            name: 'HTML + CSS',
+            y: 21,
+            color: 'Purple'
+            },
+            
+            ]
+                }]
+            });
+            </script>
+            
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+            <figure class="highcharts-figure">
+                <div id="chartcontainer3"></div>
+                <p class="highcharts-description"></p>
+            </figure>
+            
+            <script>
+            // Build the chart
+            Highcharts.chart('chartcontainer3', {
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Colors'
+            },
+            xAxis: {categories: ['Red','Green','Blue',], crosshair: false},
+            chart: {
+                renderTo: 'statusChart',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'column'
+            },
+            
+            tooltip: {
+                pointFormat: '<b>{point.y}</b>'
+            },
+            
+            series: [{
+            name: 'Count',
+            colorByPoint: true,
+            data: [
+            
+            {
+            name: 'Red',
+            y: 10,
+            color: 'Red'
+            },
+            
+            {
+            name: 'Green',
+            y: 25,
+            color: 'Green'
+            },
+            
+            {
+            name: 'Blue',
+            y: 15,
+            color: 'Blue'
             },
             
             ]
