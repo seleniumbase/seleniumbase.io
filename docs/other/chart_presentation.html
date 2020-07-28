@@ -79,7 +79,32 @@ img[rounded]{border-radius:16px;max-width:82%;}
             title: {
                 text: 'Automated Tests'
             },
-            xAxis: {categories: ['Passed','Untested','Failed',], crosshair: false},
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px',
+                    },
+                },
+            categories: ['Passed','Untested','Failed',], crosshair: false},
+            yAxis: {
+                // min: 0,
+                title: {
+                    text: 'Values',
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px'
+                    }
+                }
+            },
             chart: {
                 renderTo: 'statusChart',
                 plotBackgroundColor: null,
@@ -89,6 +114,12 @@ img[rounded]{border-radius:16px;max-width:82%;}
             },
             
             tooltip: {
+                enabled: true,
+                useHTML: true,
+                style: {
+                    padding: '6px',
+                    fontSize: '14px'
+                },
                 pointFormat: '<b>{point.y}</b><br /><b>{point.percentage:.1f}%</b>'
             },
             
@@ -103,14 +134,19 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: false,
-                        format: '{point.name}: {point.y:.1f}%'
+                        format: '{point.name}: {point.y:.1f}%',
+                    },
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
                     },
                     showInLegend: true
                 }
             },
             
             series: [{
-            name: 'Count',
+            name: 'Series 1',
             colorByPoint: true,
             data: [
             
@@ -156,7 +192,32 @@ img[rounded]{border-radius:16px;max-width:82%;}
             title: {
                 text: 'Language'
             },
-            xAxis: {categories: ['Python','JavaScript','HTML + CSS',], crosshair: false},
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px',
+                    },
+                },
+            categories: ['Python','JavaScript','HTML + CSS',], crosshair: false},
+            yAxis: {
+                // min: 0,
+                title: {
+                    text: 'Values',
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px'
+                    }
+                }
+            },
             chart: {
                 renderTo: 'statusChart',
                 plotBackgroundColor: null,
@@ -166,12 +227,35 @@ img[rounded]{border-radius:16px;max-width:82%;}
             },
             
             tooltip: {
+                enabled: true,
+                useHTML: true,
+                style: {
+                    padding: '6px',
+                    fontSize: '14px'
+                },
                 pointFormat: '<b>{point.y}</b>'
             },
             
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+                plotOptions: {
+                    series: {
+                        showInLegend: true,
+                        animation: true,
+                        shadow: false,
+                        lineWidth: 3,
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                },
+                
             series: [{
-            name: 'Count',
-            colorByPoint: true,
+            name: 'Series 1',
+            colorByPoint: false,
             data: [
             
             {
@@ -216,7 +300,32 @@ img[rounded]{border-radius:16px;max-width:82%;}
             title: {
                 text: 'Colors'
             },
-            xAxis: {categories: ['Red','Green','Blue',], crosshair: false},
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px',
+                    },
+                },
+            categories: ['Red','Green','Blue',], crosshair: false},
+            yAxis: {
+                // min: 0,
+                title: {
+                    text: 'Values',
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px'
+                    }
+                }
+            },
             chart: {
                 renderTo: 'statusChart',
                 plotBackgroundColor: null,
@@ -226,12 +335,35 @@ img[rounded]{border-radius:16px;max-width:82%;}
             },
             
             tooltip: {
+                enabled: true,
+                useHTML: true,
+                style: {
+                    padding: '6px',
+                    fontSize: '14px'
+                },
                 pointFormat: '<b>{point.y}</b>'
             },
             
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+                plotOptions: {
+                    series: {
+                        showInLegend: true,
+                        animation: true,
+                        shadow: false,
+                        lineWidth: 3,
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                },
+                
             series: [{
-            name: 'Count',
-            colorByPoint: true,
+            name: 'Series 1',
+            colorByPoint: false,
             data: [
             
             {
@@ -250,6 +382,138 @@ img[rounded]{border-radius:16px;max-width:82%;}
             name: 'Blue',
             y: 15,
             color: 'Blue'
+            },
+            
+            ]
+                }]
+            });
+            </script>
+            
+<aside class="notes"></aside>
+</section>
+
+<section data-transition="none">
+<p>Line Chart</p>
+            <figure class="highcharts-figure">
+                <div id="chartcontainer4"></div>
+                <p class="highcharts-description"></p>
+            </figure>
+            
+            <script>
+            // Build the chart
+            Highcharts.chart('chartcontainer4', {
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Last Week\'s Data'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px',
+                    },
+                },
+            categories: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat',], crosshair: false},
+            yAxis: {
+                // min: 0,
+                title: {
+                    text: 'Values',
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                labels: {
+                    useHTML: true,
+                    style: {
+                        fontSize: '14px'
+                    }
+                }
+            },
+            chart: {
+                renderTo: 'statusChart',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'line'
+            },
+            
+            tooltip: {
+                enabled: true,
+                useHTML: true,
+                style: {
+                    padding: '6px',
+                    fontSize: '14px'
+                },
+                pointFormat: '<b>{point.y}</b>'
+            },
+            
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+                plotOptions: {
+                    series: {
+                        showInLegend: true,
+                        animation: true,
+                        shadow: false,
+                        lineWidth: 3,
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                },
+                
+            series: [{
+            name: 'Series 1',
+            colorByPoint: false,
+            data: [
+            
+            {
+            name: 'Sun',
+            y: 5,
+            color: ''
+            },
+            
+            {
+            name: 'Mon',
+            y: 10,
+            color: ''
+            },
+            
+            {
+            name: 'Tue',
+            y: 20,
+            color: ''
+            },
+            
+            {
+            name: 'Wed',
+            y: 40,
+            color: ''
+            },
+            
+            {
+            name: 'Thu',
+            y: 80,
+            color: ''
+            },
+            
+            {
+            name: 'Fri',
+            y: 65,
+            color: ''
+            },
+            
+            {
+            name: 'Sat',
+            y: 50,
+            color: ''
             },
             
             ]
