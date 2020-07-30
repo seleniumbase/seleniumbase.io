@@ -91,7 +91,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
             categories: ['Passed','Untested','Failed',], crosshair: false},
             yAxis: {
-                // min: 0,
+                
                 title: {
                     text: 'Values',
                     style: {
@@ -134,7 +134,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: false,
-                        format: '{point.name}: {point.y:.1f}%',
+                        format: '{point.name}: {point.y:.1f}%'
                     },
                     states: {
                         hover: {
@@ -204,7 +204,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
             categories: ['Python','JavaScript','HTML + CSS',], crosshair: false},
             yAxis: {
-                // min: 0,
+                
                 title: {
                     text: 'Values',
                     style: {
@@ -236,10 +236,17 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 pointFormat: '<b>{point.y}</b>'
             },
             
+                allowPointSelect: true,
+                cursor: 'pointer',
                 legend: {
                     layout: 'vertical',
                     align: 'right',
                     verticalAlign: 'middle'
+                },
+                states: {
+                    hover: {
+                        enabled: true
+                    }
                 },
                 plotOptions: {
                     series: {
@@ -247,6 +254,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                         animation: true,
                         shadow: false,
                         lineWidth: 3,
+                        fillOpacity: 0.5,
                         marker: {
                             enabled: true
                         }
@@ -312,7 +320,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
             categories: ['Red','Green','Blue',], crosshair: false},
             yAxis: {
-                // min: 0,
+                
                 title: {
                     text: 'Values',
                     style: {
@@ -344,10 +352,17 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 pointFormat: '<b>{point.y}</b>'
             },
             
+                allowPointSelect: true,
+                cursor: 'pointer',
                 legend: {
                     layout: 'vertical',
                     align: 'right',
                     verticalAlign: 'middle'
+                },
+                states: {
+                    hover: {
+                        enabled: true
+                    }
                 },
                 plotOptions: {
                     series: {
@@ -355,6 +370,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                         animation: true,
                         shadow: false,
                         lineWidth: 3,
+                        fillOpacity: 0.5,
                         marker: {
                             enabled: true
                         }
@@ -420,7 +436,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
             categories: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat',], crosshair: false},
             yAxis: {
-                // min: 0,
+                
                 title: {
                     text: 'Values',
                     style: {
@@ -452,10 +468,17 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 pointFormat: '<b>{point.y}</b>'
             },
             
+                allowPointSelect: true,
+                cursor: 'pointer',
                 legend: {
                     layout: 'vertical',
                     align: 'right',
                     verticalAlign: 'middle'
+                },
+                states: {
+                    hover: {
+                        enabled: true
+                    }
                 },
                 plotOptions: {
                     series: {
@@ -463,6 +486,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                         animation: true,
                         shadow: false,
                         lineWidth: 3,
+                        fillOpacity: 0.5,
                         marker: {
                             enabled: true
                         }
