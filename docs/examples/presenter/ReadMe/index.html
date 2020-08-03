@@ -17,7 +17,7 @@
         <meta name="author" content="Michael Mintz">
       
       <link rel="shortcut icon" href="../../../img/logo3a.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.1">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.5d00201e.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.816e8abc.min.css">
       
       
         
@@ -1105,7 +1105,7 @@ The Reveal-JS library is used for running the presentations.</p>
 
 
 <h3 id="creating-a-new-presentation">Creating a new presentation<a class="headerlink" href="#creating-a-new-presentation" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">transition</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Creates a Reveal-JS presentation that you can add slides to.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    name - If creating multiple presentations at the same time,</span>
@@ -1114,6 +1114,9 @@ The Reveal-JS library is used for running the presentations.</p>
 <span class="sd">            Valid themes: &quot;serif&quot; (default), &quot;sky&quot;, &quot;white&quot;, &quot;black&quot;,</span>
 <span class="sd">                          &quot;simple&quot;, &quot;league&quot;, &quot;moon&quot;, &quot;night&quot;,</span>
 <span class="sd">                          &quot;beige&quot;, &quot;blood&quot;, and &quot;solarized&quot;.</span>
+<span class="sd">    transition - Set a transition between slides.</span>
+<span class="sd">                 Valid transitions: &quot;none&quot; (default), &quot;slide&quot;, &quot;fade&quot;,</span>
+<span class="sd">                                    &quot;zoom&quot;, &quot;convex&quot;, and &quot;concave&quot;.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
@@ -1123,7 +1126,7 @@ Notes are disabled by default. You can enable notes by specifying:
 <code>show_notes=True</code></p>
 <h3 id="adding-a-slide-to-a-presentation">Adding a slide to a presentation<a class="headerlink" href="#adding-a-slide-to-a-presentation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iframe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-               <span class="n">content2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+               <span class="n">content2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Allows the user to add slides to a presentation.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    content - The HTML content to display on the presentation slide.</span>
@@ -1134,6 +1137,9 @@ Notes are disabled by default. You can enable notes by specifying:
 <span class="sd">    content2 - HTML content to display after adding an image or code.</span>
 <span class="sd">    notes - Additional notes to include with the slide.</span>
 <span class="sd">            ONLY SEEN if show_notes is set for the presentation.</span>
+<span class="sd">    transition - Set a transition between slides. (overrides previous)</span>
+<span class="sd">                 Valid transitions: &quot;none&quot; (default), &quot;slide&quot;, &quot;fade&quot;,</span>
+<span class="sd">                                    &quot;zoom&quot;, &quot;convex&quot;, and &quot;concave&quot;.</span>
 <span class="sd">    name - If creating multiple presentations at the same time,</span>
 <span class="sd">           use this to select the presentation to add slides to.</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -1361,15 +1367,15 @@ Notes are disabled by default. You can enable notes by specifying:
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.073197b2.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.01088dc6.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
