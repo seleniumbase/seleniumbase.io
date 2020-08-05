@@ -953,31 +953,28 @@
 
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Mobile Testing</h2>
 
-<p>Use <code>--mobile</code> to run your SeleniumBase tests using Chromium's mobile device emulator with default values for device metrics (CSS Width, CSS Height, Pixel-Ratio) and user agent.</p>
-<p>To configure the mobile device metrics, use:</p>
-<div class="codehilite"><pre><span></span><code>--metrics<span class="o">=</span><span class="s2">&quot;CSS_Width,CSS_Height,Pixel_Ratio&quot;</span>
-</code></pre></div>
-
-
-<p>To configure the user agent, use:</p>
-<div class="codehilite"><pre><span></span><code>--agent<span class="o">=</span><span class="s2">&quot;USER-AGENT-STRING&quot;</span>
-</code></pre></div>
-
-
-<p>To find real values for device metrics, see:
-* <a href="https://gist.github.com/sidferreira/3f5fad525e99b395d8bd882ee0fd9d00">Device Metrics List</a></p>
-<p>For a list of available user agent strings, see:
-* <a href="https://developers.whatismybrowser.com/useragents/explore/">User Agent Strings List</a></p>
-<hr />
-<p>Here's an example of running a mobile test:</p>
-<ul>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_skype_site.py">SeleniumBase/examples/test_skype_site.py</a></li>
-</ul>
+<p>Use <code>--mobile</code> to run SeleniumBase tests using Chrome's mobile device emulator with default values for Device Metrics and User-Agent.</p>
+<p><b>Here's an example mobile test:</b></p>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_skype_site.py">SeleniumBase/examples/test_skype_site.py</a></p>
 <div class="codehilite"><pre><span></span><code>pytest test_skype_site.py --mobile
 </code></pre></div>
 
 
 <p><a href="https://cdn2.hubspot.net/hubfs/100006/images/skype_mobile_test_2.gif"><img src="https://cdn2.hubspot.net/hubfs/100006/images/skype_mobile_test_2.gif" title="SeleniumBase Mobile Testing"></a></p>
+<p>To configure Device Metrics, use:</p>
+<div class="codehilite"><pre><span></span><code>--metrics<span class="o">=</span><span class="s2">&quot;CSS_Width,CSS_Height,Pixel_Ratio&quot;</span>
+</code></pre></div>
+
+
+<p>To configure the User-Agent, use:</p>
+<div class="codehilite"><pre><span></span><code>--agent<span class="o">=</span><span class="s2">&quot;USER-AGENT-STRING&quot;</span>
+</code></pre></div>
+
+
+<p>To find real values for Device Metrics, see:
+* <a href="https://gist.github.com/sidferreira/3f5fad525e99b395d8bd882ee0fd9d00">Device Metrics List</a></p>
+<p>To find real User-Agent strings, see:
+* <a href="https://developers.whatismybrowser.com/useragents/explore/">User Agent Strings List</a></p>
 <hr />
 <p>Here's another example of running a mobile test (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_swag_labs.py">SeleniumBase/examples/test_swag_labs.py</a>), which demonstrates using <code>--metrics</code> and <code>--agent</code> with <code>--mobile</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
