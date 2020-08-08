@@ -763,6 +763,18 @@
 
 
   <li class="md-nav__item">
+    <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/integrations/node_js" title="NodeJS Test Runner" class="md-nav__link">
+      NodeJS Test Runner
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="examples/chart_maker/ReadMe/" title="HighCharts" class="md-nav__link">
       HighCharts
     </a>
@@ -980,17 +992,21 @@ Tests are run with "pytest". Browsers are controlled by WebDriver.
 <br />
 <a href="help_docs/method_summary/">📖 API</a> |
 <a href="examples/example_logs/ReadMe/">📋 Reports</a> |
-<a href="seleniumbase/utilities/selenium_ide/ReadMe/">⏺️ Recorder</a> |
-<a href="help_docs/mobile_testing/">📱 Mobile</a>
+<a href="help_docs/mobile_testing/">📱 Mobile</a> |
+<a href="seleniumbase/utilities/selenium_ide/ReadMe/">⏺️ Recorder</a>
 <br />
+<a href="integrations/github/workflows/ReadMe/">🤖 CI</a> |
 <a href="help_docs/translations/">🌎 Translate</a> |
 <a href="examples/tour_examples/ReadMe/">🗺️ Tours</a> |
-<a href="integrations/github/workflows/ReadMe/">🤖 CI</a> |
 <a href="examples/visual_testing/ReadMe/">🖼️ VisualTests</a>
 <br />
 <a href="examples/presenter/ReadMe/">📰 Presenter</a> |
 <a href="examples/chart_maker/ReadMe/">📊 Chart Maker</a> |
 <a href="examples/master_qa/ReadMe/">🛂 MasterQA</a>
+<br />
+<a href="seleniumbase/console_scripts/ReadMe/">💻 Console Scripts</a> |
+<a href="seleniumbase/utilities/selenium_grid/ReadMe/">🌐 Grid</a> |
+<a href="https://github.com/seleniumbase/SeleniumBase/tree/master/integrations/node_js">🏃 NodeRunner</a>
 </p>
 
 <p align="center"><img src="https://cdn2.hubspot.net/hubfs/100006/images/swag_labs_gif.gif" alt="SeleniumBase" title="SeleniumBase" /></p>
@@ -1133,10 +1149,7 @@ pytest my_first_test.py
 <p>As you can see, the old WebDriver way is very bad!
 Use SeleniumBase to make testing much easier!
 (You can still use <code>self.driver</code> in your code.)</p>
-<ul>
-<li>Run tests with <code>pytest</code> or <code>nosetests</code> in any browser:
-(<strong>pytest</strong> is recommended. <strong>Chrome</strong> is the default browser.)</li>
-</ul>
+<p>You can interchange <code>pytest</code> with <code>nosetests</code> for most tests, but using <code>pytest</code> is recommended. (<code>chrome</code> is the default browser if not specified.)</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>chrome
 
 nosetests test_suite.py --browser<span class="o">=</span>firefox
@@ -1174,7 +1187,7 @@ seleniumbase install operadriver
 </code></pre></div>
 
 
-<p>Next, choose between <strong>pytest</strong> and <strong>nosetests</strong> test runners. (<i>Mostly interchangeable.</i>)</p>
+<p>Next, choose between <code>pytest</code> and <code>nosetests</code> test runners. (<i>Mostly interchangeable.</i>)</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
 
 pytest my_first_test.py --browser<span class="o">=</span>chrome
@@ -1185,13 +1198,13 @@ nosetests my_first_test.py --browser<span class="o">=</span>firefox
 
 <p>(<i>If no browser is specified, Chrome is used by default.</i>)
 With Pytest, a green dot means a test passed. An "F" means a test failed.</p>
-<p><a id="seleniumbase_demo_mode"></a> <strong>Use Demo Mode to help you see what tests are asserting.</strong></p>
+<p><a id="seleniumbase_demo_mode"></a> <b>Use Demo Mode to help you see what tests are asserting.</b></p>
 <p>If the example test is moving too fast for your eyes, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command-line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
 </code></pre></div>
 
 
-<p><strong>Pytest</strong> includes test discovery. If you don't specify a specific file or folder to run from, <code>pytest</code> will search all subdirectories automatically for tests to run based on the following matching criteria:
+<p><code>Pytest</code> includes test discovery. If you don't specify a specific file or folder to run from, <code>pytest</code> will search all subdirectories automatically for tests to run based on the following matching criteria:
 Python filenames that start with <code>test_</code> or end with <code>_test.py</code>.
 Python methods that start with <code>test_</code>.
 The Python class name can be anything since SeleniumBase's <code>BaseCase</code> class inherits from the <code>unittest.TestCase</code> class.
@@ -1200,23 +1213,22 @@ You can see which tests are getting discovered by <code>pytest</code> by using:<
 </code></pre></div>
 
 
-<p>You can use the following in your scripts to help you debug issues:
-(<i>If using ipdb, make sure you add "-s" to command-line options unless already in pytest.ini</i>)</p>
+<p>You can use the following calls in your scripts to help you debug issues:</p>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
 <span class="kn">import</span> <span class="nn">ipdb</span><span class="p">;</span> <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 <span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 </code></pre></div>
 
 
-<p><b>To pause an active test that throws an exception or error, add <code>--pdb -s</code>:</b></p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --pdb -s
+<p>To pause an active test that throws an exception or error, add <code>--pdb</code>:</p>
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --pdb
 </code></pre></div>
 
 
 <p>The code above will leave your browser window open in case there's a failure. (ipdb commands: 'n', 'c', 's' =&gt; next, continue, step).</p>
-<p>Here are some useful command-line options that come with Pytest:</p>
-<div class="codehilite"><pre><span></span><code>-v  <span class="c1"># Prints the full test name for each test.</span>
--q  <span class="c1"># Prints fewer details in the console output when running tests.</span>
+<p>Here are some useful command-line options that come with <code>pytest</code>:</p>
+<div class="codehilite"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Print the full name of each test run.</span>
+-q  <span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
 --collect-only  <span class="c1"># Show what tests would get run without actually running them.</span>
@@ -1228,50 +1240,50 @@ You can see which tests are getting discovered by <code>pytest</code> by using:<
 </code></pre></div>
 
 
-<p>SeleniumBase provides additional Pytest command-line options for tests:</p>
-<div class="codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use.)</span>
+<p>SeleniumBase provides additional <code>pytest</code> command-line options for tests:</p>
+<div class="codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use. Default: &quot;chrome&quot;)</span>
 --cap-file<span class="o">=</span>FILE  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
 --cap-string<span class="o">=</span>STRING  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---settings-file<span class="o">=</span>FILE  <span class="c1"># (Overrides SeleniumBase settings.py values.)</span>
+--settings-file<span class="o">=</span>FILE  <span class="c1"># (Override default SeleniumBase settings.)</span>
 --env<span class="o">=</span>ENV  <span class="c1"># (Set a test environment. Use &quot;self.env&quot; to use this in tests.)</span>
---data<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.data&quot; in tests.)</span>
---var1<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.var1&quot; in tests.)</span>
---var2<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.var2&quot; in tests.)</span>
---var3<span class="o">=</span>DATA  <span class="c1"># (Extra data to pass to tests. Use &quot;self.var3&quot; in tests.)</span>
+--data<span class="o">=</span>DATA  <span class="c1"># (Extra test data. Access with &quot;self.data&quot; in tests.)</span>
+--var1<span class="o">=</span>DATA  <span class="c1"># (Extra test data. Access with &quot;self.var1&quot; in tests.)</span>
+--var2<span class="o">=</span>DATA  <span class="c1"># (Extra test data. Access with &quot;self.var2&quot; in tests.)</span>
+--var3<span class="o">=</span>DATA  <span class="c1"># (Extra test data. Access with &quot;self.var3&quot; in tests.)</span>
 --user-data-dir<span class="o">=</span>DIR  <span class="c1"># (Set the Chrome user data directory to use.)</span>
 --server<span class="o">=</span>SERVER  <span class="c1"># (The server / IP address used by the tests.)</span>
 --port<span class="o">=</span>PORT  <span class="c1"># (The port that&#39;s used by the test server.)</span>
 --proxy<span class="o">=</span>SERVER:PORT  <span class="c1"># (This is the proxy server:port combo used by tests.)</span>
---agent<span class="o">=</span>STRING  <span class="c1"># (This designates the web browser&#39;s User Agent to use.)</span>
---mobile  <span class="c1"># (The option to use the mobile emulator while running tests.)</span>
---metrics<span class="o">=</span>STRING  <span class="c1"># (&quot;CSSWidth,Height,PixelRatio&quot; for mobile emulator tests.)</span>
+--agent<span class="o">=</span>STRING  <span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
+--mobile  <span class="c1"># (Use the mobile device emulator while running tests.)</span>
+--metrics<span class="o">=</span>STRING  <span class="c1"># (Set mobile &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
 --extension-zip<span class="o">=</span>ZIP  <span class="c1"># (Load a Chrome Extension .zip file, comma-separated.)</span>
 --extension-dir<span class="o">=</span>DIR  <span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
---headless  <span class="c1"># (The option to run tests headlessly. The default on Linux OS.)</span>
---headed  <span class="c1"># (The option to run tests with a GUI on Linux OS.)</span>
+--headless  <span class="c1"># (Run tests headlessly. Default mode on Linux OS.)</span>
+--headed  <span class="c1"># (Run tests with a GUI on Linux OS.)</span>
 --start-page<span class="o">=</span>URL  <span class="c1"># (The starting URL for the web browser when tests begin.)</span>
 --archive-logs  <span class="c1"># (Archive old log files instead of deleting them.)</span>
 --time-limit<span class="o">=</span>SECONDS  <span class="c1"># (Safely fail any test that exceeds the limit limit.)</span>
---slow  <span class="c1"># (The option to slow down the automation.)</span>
---demo  <span class="c1"># (The option to visually see test actions as they occur.)</span>
---demo-sleep<span class="o">=</span>SECONDS  <span class="c1"># (The option to wait longer after Demo Mode actions.)</span>
+--slow  <span class="c1"># (Slow down the automation. Faster than using Demo Mode.)</span>
+--demo  <span class="c1"># (Slow down and visually see test actions as they occur.)</span>
+--demo-sleep<span class="o">=</span>SECONDS  <span class="c1"># (Set the wait time after Demo Mode actions.)</span>
 --highlights<span class="o">=</span>NUM  <span class="c1"># (Number of highlight animations for Demo Mode actions.)</span>
 --message-duration<span class="o">=</span>SECONDS  <span class="c1"># (The time length for Messenger alerts.)</span>
---check-js  <span class="c1"># (The option to check for JavaScript errors after page loads.)</span>
---ad-block  <span class="c1"># (The option to block some display ads after page loads.)</span>
---block-images  <span class="c1"># (The option to block images from loading during tests.)</span>
+--check-js  <span class="c1"># (Check for JavaScript errors after page loads.)</span>
+--ad-block  <span class="c1"># (Block some types of display ads after page loads.)</span>
+--block-images  <span class="c1"># (Block images from loading during tests.)</span>
 --verify-delay<span class="o">=</span>SECONDS  <span class="c1"># (The delay before MasterQA verification checks.)</span>
 --disable-csp  <span class="c1"># (This disables the Content Security Policy of websites.)</span>
---enable-sync  <span class="c1"># (The option to enable &quot;Chrome Sync&quot;.)</span>
---use-auto-ext  <span class="c1"># (The option to use Chrome&#39;s automation extension.)</span>
---swiftshader  <span class="c1"># (The option to use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
---incognito  <span class="c1">#  (The option to enable Chrome&#39;s Incognito mode.)</span>
---guest  <span class="c1"># (The option to enable Chrome&#39;s Guest mode.)</span>
---devtools  <span class="c1"># (The option to open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session  <span class="c1"># (The option to reuse the browser session between tests.)</span>
---crumbs  <span class="c1"># (Option to delete all cookies between tests reusing a session.)</span>
---maximize-window  <span class="c1"># (The option to start with the web browser maximized.)</span>
---save-screenshot  <span class="c1"># (The option to save a screenshot after each test.)</span>
+--enable-sync  <span class="c1"># (Enable &quot;Chrome Sync&quot;.)</span>
+--use-auto-ext  <span class="c1"># (Use Chrome&#39;s automation extension.)</span>
+--swiftshader  <span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
+--incognito  <span class="c1">#  (Enable Chrome&#39;s Incognito mode.)</span>
+--guest  <span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
+--devtools  <span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
+--reuse-session  <span class="c1"># (Reuse the browser session between tests.)</span>
+--crumbs  <span class="c1"># (Delete all cookies between tests reusing a session.)</span>
+--maximize-window  <span class="c1"># (Start tests with the web browser window maximized.)</span>
+--save-screenshot  <span class="c1"># (Save a screenshot at the end of each test.)</span>
 --visual-baseline  <span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
 --timeout-multiplier<span class="o">=</span>MULTIPLIER  <span class="c1"># (Multiplies the default timeout values.)</span>
 </code></pre></div>
