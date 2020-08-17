@@ -441,8 +441,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#macos-linux-windows" class="md-nav__link">
-    macOS / Linux / Windows
+  <a href="#macos-linux_1" class="md-nav__link">
+    macOS / Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkvirtualenv-commands" class="md-nav__link">
+    mkvirtualenv Commands
   </a>
   
 </li>
@@ -1063,8 +1077,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#macos-linux-windows" class="md-nav__link">
-    macOS / Linux / Windows
+  <a href="#macos-linux_1" class="md-nav__link">
+    macOS / Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkvirtualenv-commands" class="md-nav__link">
+    mkvirtualenv Commands
   </a>
   
 </li>
@@ -1092,8 +1120,8 @@
 <h3 id="step-1-install-virtualenv-and-virtualenvwrapper">Step 1: Install VirtualEnv and VirtualEnvWrapper<a class="headerlink" href="#step-1-install-virtualenv-and-virtualenvwrapper" title="Permanent link">&para;</a></h3>
 <h3 id="macos-linux">macOS / Linux<a class="headerlink" href="#macos-linux" title="Permanent link">&para;</a></h3>
 <p>(<em>Shortcut</em>: Run "<code>source virtualenv_install.sh</code>" from the top-level SeleniumBase folder to perform the following steps.)</p>
-<div class="codehilite"><pre><span></span><code>python -m pip install --upgrade virtualenv
-python -m pip install --upgrade virtualenvwrapper
+<div class="codehilite"><pre><span></span><code>python3 -m pip install pip wheel --force-reinstall
+python3 -m pip install virtualenvwrapper --force-reinstall
 <span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
 <span class="nb">source</span> <span class="sb">`</span>which virtualenvwrapper.sh<span class="sb">`</span>
 </code></pre></div>
@@ -1102,53 +1130,85 @@ python -m pip install --upgrade virtualenvwrapper
 <p>If you add <code>source `which virtualenvwrapper.sh`</code> to your local bash file (<code>~/.bash_profile</code> on macOS, or <code>~/.bashrc</code> on Linux), virtualenvwrapper commands such as <code>mkvirtualenv</code> will be available whenever you open a new command prompt.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>(<em>Shortcut</em>: Run "<code>virtualenv_install.bat</code>" from the top-level SeleniumBase folder to perform the following steps.)</p>
-<div class="codehilite"><pre><span></span><code>python -m pip install --upgrade virtualenvwrapper-win
+<div class="codehilite"><pre><span></span><code>py -m pip install pip wheel --force-reinstall --user
+py -m pip install virtualenvwrapper-win --force-reinstall --user
 </code></pre></div>
 
 
 <h3 id="step-2-create-a-virtual-environment">Step 2: Create a virtual environment<a class="headerlink" href="#step-2-create-a-virtual-environment" title="Permanent link">&para;</a></h3>
-<h3 id="macos-linux-windows">macOS / Linux / Windows<a class="headerlink" href="#macos-linux-windows" title="Permanent link">&para;</a></h3>
+<h3 id="macos-linux_1">macOS / Linux<a class="headerlink" href="#macos-linux_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Using <code>mkvirtualenv</code>:</li>
+<li>Using <code>mkvirtualenv</code> (any version of Python):</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>mkvirtualenv seleniumbase_venv
+<div class="codehilite"><pre><span></span><code>mkvirtualenv sbase_env
 </code></pre></div>
 
 
 <p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> with the Python executable to use.)</p>
 <ul>
-<li>Using <code>virtualenv</code>:</li>
+<li>(Python 2) Using <code>virtualenv</code>:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>virtualenv seleniumbase_venv
-<span class="nb">source</span> seleniumbase_venv/bin/activate
+<div class="codehilite"><pre><span></span><code>virtualenv sbase_env
+<span class="nb">source</span> sbase_env/bin/activate
 </code></pre></div>
 
 
 <ul>
-<li>(Python 3) Using <code>mvenv</code>:</li>
+<li>(Python 3) Using <code>python3 -m venv</code>:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>python3 -mvenv seleniumbase_venv
-<span class="nb">source</span> seleniumbase_venv/bin/activate
+<div class="codehilite"><pre><span></span><code>python3 -m venv sbase_env
+<span class="nb">source</span> sbase_env/bin/activate
+</code></pre></div>
+
+
+<h3 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Using <code>mkvirtualenv</code> (any version of Python):</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>mkvirtualenv sbase_env
+</code></pre></div>
+
+
+<p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> with the Python executable to use.)</p>
+<ul>
+<li>(Python 2) Using <code>virtualenv</code>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>virtualenv sbase_env
+call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
+</code></pre></div>
+
+
+<ul>
+<li>(Python 3) Using <code>py -m venv</code>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>py -m venv sbase_env
+call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
 </code></pre></div>
 
 
 <hr />
-<p>If you ever need to leave your virtual environment, use the following command:</p>
+<h3 id="mkvirtualenv-commands">mkvirtualenv Commands<a class="headerlink" href="#mkvirtualenv-commands" title="Permanent link">&para;</a></h3>
+<p>Creating a virtual environment:</p>
+<div class="codehilite"><pre><span></span><code>mkvirtualenv sbase_env
+</code></pre></div>
+
+
+<p>Leaving your virtual environment:</p>
 <div class="codehilite"><pre><span></span><code>deactivate
 </code></pre></div>
 
 
-<p>You can always jump back into your virtual environment later:</p>
-<div class="codehilite"><pre><span></span><code>workon seleniumbase_venv
+<p>Returning to a virtual environment:</p>
+<div class="codehilite"><pre><span></span><code>workon sbase_env
 </code></pre></div>
 
 
-<p>To list all existing virtual environments:</p>
+<p>Listing all virtual environments:</p>
 <div class="codehilite"><pre><span></span><code>lsvirtualenv
 </code></pre></div>
 
 
-<p>To delete a virtual environment:</p>
+<p>Deleting a virtual environment:</p>
 <div class="codehilite"><pre><span></span><code>rmvirtualenv VIRTUAL_ENV_NAME
 </code></pre></div>
 
