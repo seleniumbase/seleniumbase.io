@@ -1094,7 +1094,8 @@ pytest my_first_test.py
 
     <span class="k">def</span> <span class="nf">test_basic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://store.xkcd.com/search&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;xkcd book</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;xkcd book&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;input[value=&quot;Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;xkcd: volume 0&quot;</span><span class="p">,</span> <span class="s2">&quot;h3&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/353/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="s2">&quot;xkcd: Python&quot;</span><span class="p">)</span>
@@ -1104,6 +1105,8 @@ pytest my_first_test.py
         <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click_link_text</span><span class="p">(</span><span class="s2">&quot;About&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;xkcd.com&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click_link_text</span><span class="p">(</span><span class="s2">&quot;geohashing&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -1400,7 +1403,7 @@ pytest my_first_test.py
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Changing the User-Agent:</h3>
 
-<p>If you wish to change the User-Agent for your browser tests (Chrome and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
+<p>If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
 <div class="codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
 
