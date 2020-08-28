@@ -1001,8 +1001,8 @@
 </p>
 
 <p>
-SeleniumBase is an all-in-one framework for web automation, end-to-end testing, presentations, charts, and website tours.
-Tests are run with "pytest". Browsers are controlled by WebDriver.
+<b>SeleniumBase</b> is an all-in-one framework for web automation, end-to-end testing, presentations, charts, and website tours.
+Tests are run with <b>pytest</b>. Browsers are controlled by <b>WebDriver</b>.
 </p>
 
 <p align="center">
@@ -1637,7 +1637,7 @@ You'd know this because the web page would contain something like the following 
 </code></pre></div>
 
 
-<p>Some websites have a restrictive <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a> to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on such a website, add <code>--disable_csp</code> on the command-line.</p>
+<p>Some websites have a restrictive <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a> to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on such a website, add <code>--disable-csp</code> on the command-line.</p>
 <p>Here are some examples of using jQuery in your scripts:</p>
 <div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">&#39;jQuery, window.scrollTo(0, 600)&#39;</span><span class="p">)</span>  <span class="c1"># Scrolling the page</span>
 
@@ -1659,7 +1659,7 @@ You'd know this because the web page would contain something like the following 
 </code></pre></div>
 
 
-<p>In the following example, JavaScript is used to plant code on a page that Selenium can then touch after that:</p>
+<p>In the next example, JavaScript creates a referral button on a page, which is then clicked:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">start_page</span> <span class="o">=</span> <span class="s2">&quot;https://xkcd.com/465/&quot;</span>
 <span class="n">destination_page</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/seleniumbase/SeleniumBase&quot;</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">start_page</span><span class="p">)</span>
