@@ -1518,11 +1518,12 @@ Downloads the specified item.
 <ul>
 <li>
 <p>Usage:
-<code>sbase grid-hub {start|stop}</code></p>
+<code>sbase grid-hub {start|stop|restart} [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
-<code>-v</code>, <code>--verbose</code>  (Increases verbosity of logging output.)</p>
+<code>-v</code>, <code>--verbose</code>  (Increases verbosity of logging output.)
+<code>--timeout=TIMEOUT</code>  (Close idle browser windows after TIMEOUT seconds.)</p>
 </li>
 <li>
 <p>Output:
@@ -1537,7 +1538,7 @@ You can start, restart, or stop the Grid Hub server.</p>
 <ul>
 <li>
 <p>Usage:
-<code>sbase grid-node {start|stop} [OPTIONS]</code></p>
+<code>sbase grid-node {start|stop|restart} [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
