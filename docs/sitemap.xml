@@ -8,10 +8,6 @@
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://seleniumbase.io/help_docs/customizing_test_runs/</loc>
-     <lastmod>2020-09-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://seleniumbase.io/help_docs/install_python_pip_git/</loc>
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
@@ -36,11 +32,27 @@
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://seleniumbase.io/examples/ReadMe/</loc>
+     <loc>https://seleniumbase.io/help_docs/customizing_test_runs/</loc>
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://seleniumbase.io/help_docs/method_summary/</loc>
+     <lastmod>2020-09-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://seleniumbase.io/help_docs/mobile_testing/</loc>
+     <lastmod>2020-09-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://seleniumbase.io/examples/ReadMe/</loc>
+     <lastmod>2020-09-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://seleniumbase.io/examples/example_logs/ReadMe/</loc>
+     <lastmod>2020-09-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/</loc>
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -56,14 +68,6 @@
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://seleniumbase.io/help_docs/mobile_testing/</loc>
-     <lastmod>2020-09-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/</loc>
-     <lastmod>2020-09-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://seleniumbase.io/examples/tour_examples/ReadMe/</loc>
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
@@ -73,10 +77,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://seleniumbase.io/help_docs/chart_maker/</loc>
-     <lastmod>2020-09-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://seleniumbase.io/examples/example_logs/ReadMe/</loc>
      <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
