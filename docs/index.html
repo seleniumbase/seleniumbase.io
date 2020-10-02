@@ -981,23 +981,27 @@ Tests are run with <code><b>pytest</b></code>. Browsers are controlled by WebDri
 <p align="center"><img src="https://cdn2.hubspot.net/hubfs/100006/images/swag_labs_gif.gif" alt="SeleniumBase" title="SeleniumBase" /></p>
 
 <p><a id="python_installation"></a>
-<h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Start 🚀:</h2></p>
+<h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Start: 🚀</h2></p>
 <ul>
-<li>Get <strong><a href="https://www.python.org/downloads/">Python</a></strong> and <strong><a href="https://git-scm.com/">Git</a></strong></li>
+<li>
+<p>Add <strong><a href="https://www.python.org/downloads/">Python</a></strong> and <strong><a href="https://git-scm.com/">Git</a></strong> to your System PATH.</p>
+</li>
+<li>
+<p>Upgrade <b><a href="https://pypi.org/project/pip/">pip</a></b> and create a <a href="https://seleniumbase.io/help_docs/virtualenv_instructions/">Python virtual env</a>:</p>
+</li>
 </ul>
-<p>Upgrade <b><a href="https://pypi.org/project/pip/">pip</a></b> and create a <a href="https://seleniumbase.io/help_docs/virtualenv_instructions/">Python virtual environment</a>:</p>
-<ul>
-<li>macOS/Linux:</li>
-</ul>
+<blockquote>
+<p>macOS/Linux (terminal):</p>
+</blockquote>
 <div class="codehilite"><pre><span></span><code>python3 -m pip install -U pip
 python3 -m venv sbase_env
 <span class="nb">source</span> sbase_env/bin/activate
 </code></pre></div>
 
 
-<ul>
-<li>Windows(Cmd):</li>
-</ul>
+<blockquote>
+<p>Windows (CMD prompt):</p>
+</blockquote>
 <div class="codehilite"><pre><span></span><code>py -m pip install -U pip
 py -m venv sbase_env
 call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
@@ -1006,37 +1010,83 @@ call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activat
 
 <p><a id="install_seleniumbase"></a>
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Install SeleniumBase:</h2></p>
-<p>You can install <code>seleniumbase</code> from <a href="https://pypi.python.org/pypi/seleniumbase">pypi</a>:</p>
+<ul>
+<li>You can install <code>seleniumbase</code> from <a href="https://pypi.python.org/pypi/seleniumbase">pypi</a>:</li>
+</ul>
 <div class="codehilite"><pre><span></span><code>pip install seleniumbase
 </code></pre></div>
 
 
+<blockquote>
+<p>(Add <code>--upgrade</code> OR <code>-U</code> to upgrade an installation.)
+(Add <code>--force-reinstall</code> to upgrade dependencies.)</p>
+</blockquote>
 <ul>
-<li>Add <code>--upgrade</code> OR <code>-U</code> to upgrade an installation.</li>
-<li>Add <code>--force-reinstall</code> to also upgrade dependencies.</li>
+<li>You can also install SeleniumBase from a <a href="https://github.com/seleniumbase/SeleniumBase">GitHub</a> clone:</li>
 </ul>
-<p>You can also install SeleniumBase from a <a href="https://github.com/seleniumbase/SeleniumBase">GitHub</a> clone:</p>
 <div class="codehilite"><pre><span></span><code>git clone https://github.com/seleniumbase/SeleniumBase.git
 <span class="nb">cd</span> SeleniumBase/
 pip install .
 </code></pre></div>
 
 
-<h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Download a webdriver:</h3>
+<ul>
+<li>Type <code>seleniumbase</code> or <code>sbase</code> to verify that SeleniumBase was installed successfully:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>   ______     __           _                 ____                
+  / ____/__  / /__  ____  <span class="o">(</span>_<span class="o">)</span>_  ______ ___  / _  <span class="se">\_</span>___  ________ 
+  <span class="se">\_</span>_ <span class="se">\/</span> _ <span class="se">\/</span> / _ <span class="se">\/</span> __ <span class="se">\/</span> / / / / __ <span class="sb">`</span>__ <span class="se">\/</span> /_<span class="o">)</span> / __ <span class="se">\/</span> ___/ _ <span class="se">\</span>
+ ___/ /  __/ /  __/ / / / / /_/ / / / / / / /_<span class="o">)</span> / <span class="o">(</span>_/ /__  /  __/
+/____/<span class="se">\_</span>__/_/<span class="se">\_</span>__/_/ /_/_/<span class="se">\_</span>_,_/_/ /_/ /_/_____/<span class="se">\_</span>_,_/____/<span class="se">\_</span>__/ 
 
-<p>SeleniumBase can download webdrivers to the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/drivers">seleniumbase/drivers</a> folder with the <code>install</code> command:</p>
-<div class="codehilite"><pre><span></span><code>sbase install chromedriver
+<span class="o">[</span>seleniumbase &lt;VERSION&gt; <span class="o">(</span>&lt;PATH&gt;<span class="o">)]</span>
+
+ * USAGE: <span class="s2">&quot;seleniumbase [COMMAND] [PARAMETERS]&quot;</span>
+ *    OR:        <span class="s2">&quot;sbase [COMMAND] [PARAMETERS]&quot;</span>
+
+COMMANDS:
+      install         <span class="o">[</span>DRIVER<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+      mkdir           <span class="o">[</span>DIRECTORY<span class="o">]</span>
+      mkfile          <span class="o">[</span>FILE.py<span class="o">]</span>
+      options         <span class="o">(</span>List common pytest options<span class="o">)</span>
+      print           <span class="o">[</span>FILE<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+      translate       <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span> <span class="o">[</span>ACTION<span class="o">]</span>
+      convert         <span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
+      extract-objects <span class="o">[</span>SB_FILE.py<span class="o">]</span>
+      inject-objects  <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+      objectify       <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+      revert-objects  <span class="o">[</span>SB_FILE.py<span class="o">]</span>
+      encrypt         <span class="o">(</span>OR: obfuscate<span class="o">)</span>
+      decrypt         <span class="o">(</span>OR: unobfuscate<span class="o">)</span>
+      download server <span class="o">(</span>Selenium Server JAR file<span class="o">)</span>
+      grid-hub        <span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+      grid-node       <span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span> --hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
+ * <span class="o">(</span>EXAMPLE: <span class="s2">&quot;sbase install chromedriver latest&quot;</span><span class="o">)</span>  *
+
+    Type <span class="s2">&quot;sbase help [COMMAND]&quot;</span> <span class="k">for</span> specific <span class="nb">command</span> info.
+    For info on all commands, type: <span class="s2">&quot;seleniumbase --help&quot;</span>.
+ * <span class="o">(</span>Use <span class="s2">&quot;pytest&quot;</span> <span class="k">for</span> running tests<span class="o">)</span> *
+ <span class="sb">```</span>
+
+&lt;h3&gt;&lt;img <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;https://seleniumbase.io/img/sb_icon.png&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;SeleniumBase&quot;</span> <span class="nv">width</span><span class="o">=</span><span class="s2">&quot;30&quot;</span> /&gt; Download a webdriver:&lt;/h3&gt;
+
+SeleniumBase can download webdrivers to the <span class="o">[</span>seleniumbase/drivers<span class="o">](</span>https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/drivers<span class="o">)</span> folder with the <span class="sb">``</span>install<span class="sb">``</span> command:
+<span class="sb">```</span>bash
+sbase install chromedriver
 </code></pre></div>
 
 
 <ul>
-<li>You need a different webdriver for each browser: <code>chromedriver</code> for Chrome, <code>edgedriver</code> for Edge, <code>geckodriver</code> for Firefox, and <code>operadriver</code> for Opera.</li>
+<li>You need a different webdriver for each browser to automate: <code>chromedriver</code> for Chrome, <code>edgedriver</code> for Edge, <code>geckodriver</code> for Firefox, and <code>operadriver</code> for Opera.</li>
 <li>If you have the latest version of Chrome installed, get the latest chromedriver (<i>otherwise it defaults to chromedriver 2.44 for compatibility reasons</i>):</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sbase install chromedriver latest
 </code></pre></div>
 
 
+<ul>
+<li>If you run a test without the correct webdriver installed, the driver will be downloaded automatically.</li>
+</ul>
 <p>(See <a href="https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/">seleniumbase.io/seleniumbase/console_scripts/ReadMe/</a> for more information on SeleniumBase console scripts.)</p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Create and run tests:</h3>
 
@@ -1048,8 +1098,22 @@ pip install .
 </code></pre></div>
 
 
+<blockquote>
+<p>This folder contains the following files:</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="err">__init__.py</span>
+<span class="err">boilerplates/</span>
+<span class="err">my_first_test.py</span>
+<span class="err">parameterized_test.py</span>
+<span class="err">pytest.ini</span>
+<span class="err">requirements.txt</span>
+<span class="err">setup.cfg</span>
+<span class="err">test_demo_site.py</span>
+</code></pre></div>
+
+
 <ul>
-<li>Now run a sample test with <code>pytest</code>:</li>
+<li><b>Run a sample test with <code>pytest</code>:</b></li>
 </ul>
 <div class="codehilite"><pre><span></span><code>pytest test_demo_site.py
 </code></pre></div>
@@ -1179,11 +1243,11 @@ nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span cla
 <h4><b>Here's how to run the example script on various web browsers:</b></h4>
 
 <p>First install a webdriver for each browser you intend to use:</p>
-<div class="codehilite"><pre><span></span><code>seleniumbase install chromedriver
-seleniumbase install geckodriver
-seleniumbase install edgedriver
-seleniumbase install iedriver
-seleniumbase install operadriver
+<div class="codehilite"><pre><span></span><code>sbase install chromedriver
+sbase install geckodriver
+sbase install edgedriver
+sbase install iedriver
+sbase install operadriver
 </code></pre></div>
 
 
@@ -1307,7 +1371,7 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 <code>--settings_file=custom_settings.py</code>
 (Settings include default timeout values, a two-factor auth key, DB credentials, S3 credentials, and other important settings used by tests.)</p>
 <p>To pass additional data from the command-line to tests, add <code>--data="ANY STRING"</code>.
-Now inside your tests, you can use <code>self.data</code> to access that.</p>
+Inside your tests, you can use <code>self.data</code> to access that.</p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Test Directory Customization:</h3>
 
 <p>For running tests outside of the SeleniumBase repo with <strong>Pytest</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></strong> on the root folder. For running tests outside of the SeleniumBase repo with <strong>Nosetests</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></strong> on the root folder. (Subfolders should include a blank <code>__init__.py</code> file.) These files specify default configuration details for tests. (For nosetest runs, you can also specify a .cfg file by using <code>--config</code>. Example <code>nosetests [MY_TEST].py --config=[MY_CONFIG].cfg</code>)</p>
