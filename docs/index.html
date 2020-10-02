@@ -1240,28 +1240,6 @@ nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span cla
 <img src="https://seleniumbase.io/cdn/img/super_logo_sb.png" title="SeleniumBase" width="290"></p>
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Detailed Instructions:</h2>
 
-<h4><b>Here's how to run the example script on various web browsers:</b></h4>
-
-<p>First install a webdriver for each browser you intend to use:</p>
-<div class="codehilite"><pre><span></span><code>sbase install chromedriver
-sbase install geckodriver
-sbase install edgedriver
-sbase install iedriver
-sbase install operadriver
-</code></pre></div>
-
-
-<p>Next, choose between <code>pytest</code> and <code>nosetests</code> test runners. (<i>Mostly interchangeable.</i>)</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
-
-pytest my_first_test.py --browser<span class="o">=</span>chrome
-
-nosetests my_first_test.py --browser<span class="o">=</span>firefox
-</code></pre></div>
-
-
-<p>(<i>If no browser is specified, Chrome is used by default.</i>)
-With Pytest, a green dot means a test passed. An "F" means a test failed.</p>
 <p><a id="seleniumbase_demo_mode"></a> <b>Use Demo Mode to help you see what tests are asserting.</b></p>
 <p>If the example test is moving too fast for your eyes, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command-line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p>
 <div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
@@ -1463,10 +1441,10 @@ pytest test_demo_site.py
 <p>Learn about <a href="examples/tour_examples/ReadMe/">SeleniumBase Interactive Walkthroughs</a> (in the <code>examples/tour_examples</code> folder). It's great for prototyping a website onboarding experience.</p>
 <p><a id="utilizing_advanced_features"></a>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Production Environments &amp; Integrations:</h3></p>
-<p>Here are some things you can do to setup a production environment for your testing:</p>
+<p>Here are some things you can do to set up a production environment for your testing:</p>
 <ul>
 <li>
-<p>You can setup a <a href="https://jenkins.io/">Jenkins</a> build server for running tests at regular intervals. For a real-world Jenkins example of headless browser automation in action, check out the <a href="integrations/azure/jenkins/ReadMe/">SeleniumBase Jenkins example on Azure</a> or the <a href="integrations/google_cloud/ReadMe/">SeleniumBase Jenkins example on Google Cloud</a>.</p>
+<p>You can set up a <a href="https://jenkins.io/">Jenkins</a> build server for running tests at regular intervals. For a real-world Jenkins example of headless browser automation in action, check out the <a href="integrations/azure/jenkins/ReadMe/">SeleniumBase Jenkins example on Azure</a> or the <a href="integrations/google_cloud/ReadMe/">SeleniumBase Jenkins example on Google Cloud</a>.</p>
 </li>
 <li>
 <p>You can use <a href="https://selenium.dev/documentation/en/grid/">the Selenium Grid</a> to scale your testing by distributing tests on several machines with parallel execution. To do this, check out the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/utilities/selenium_grid">SeleniumBase selenium_grid folder</a>, which should have everything you need, including the <a href="seleniumbase/utilities/selenium_grid/ReadMe/">Selenium Grid ReadMe</a>, which will help you get started.</p>
@@ -1478,11 +1456,11 @@ pytest test_demo_site.py
 <p>If you use <a href="https://slack.com">Slack</a>, you can easily have your Jenkins jobs display results there by using the <a href="https://github.com/jenkinsci/slack-plugin">Jenkins Slack Plugin</a>. Another way to send messages from your tests to Slack is by using <a href="https://api.slack.com/incoming-webhooks">Slack's Incoming Webhooks API</a>.</p>
 </li>
 <li>
-<p>If you're using AWS, you can setup an <a href="https://aws.amazon.com/s3/">Amazon S3</a> account for saving log files and screenshots from your tests. To activate this feature, modify <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> with connection details in the S3 section, and add "<code>--with-s3-logging</code>" on the command-line when running your tests.</p>
+<p>If you're using AWS, you can set up an <a href="https://aws.amazon.com/s3/">Amazon S3</a> account for saving log files and screenshots from your tests. To activate this feature, modify <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> with connection details in the S3 section, and add "<code>--with-s3-logging</code>" on the command-line when running your tests.</p>
 </li>
 </ul>
 <p>Here's an example of running tests with additional features enabled:</p>
-<div class="codehilite"><pre><span></span><code>pytest <span class="o">[</span>YOUR_TEST_FILE<span class="o">]</span>.py --with-db-reporting --with-s3-logging
+<div class="codehilite"><pre><span></span><code>pytest <span class="o">[</span>YOUR_TEST_FILE.py<span class="o">]</span> --with-db-reporting --with-s3-logging
 </code></pre></div>
 
 
