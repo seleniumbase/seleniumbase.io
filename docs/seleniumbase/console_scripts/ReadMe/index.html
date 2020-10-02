@@ -1215,7 +1215,7 @@
 <ul>
 <li>
 <p>Usage:
-<code>sbase install [DRIVER_NAME] [VERSION]</code>
+<code>sbase install [DRIVER] [VERSION]</code>
     (Drivers: <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>,
               <code>iedriver</code>, <code>operadriver</code>)
     (Versions: <code>latest</code> or a specific driver version.
@@ -1243,11 +1243,11 @@ Installs the specified webdriver.
 <ul>
 <li>
 <p>Usage:
-<code>sbase mkdir [DIRECTORY_NAME]</code></p>
+<code>sbase mkdir [DIRECTORY]</code></p>
 </li>
 <li>
 <p>Example:
-<code>sbase mkdir browser_tests</code></p>
+<code>sbase mkdir ui_tests</code></p>
 </li>
 <li>
 <p>Output:
@@ -1262,7 +1262,7 @@ test frameworks.</p>
 <ul>
 <li>
 <p>Usage:
-<code>sbase mkfile [FILE_NAME.py] [OPTIONS]</code></p>
+<code>sbase mkfile [FILE.py] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Example:
@@ -1308,7 +1308,7 @@ that are available when using SeleniumBase.</p>
 <ul>
 <li>
 <p>Usage:
-<code>sbase convert [PYTHON_WEBDRIVER_UNITTEST_FILE]</code></p>
+<code>sbase convert [WEBDRIVER_UNITTEST_FILE.py]</code></p>
 </li>
 <li>
 <p>Output:
@@ -1339,7 +1339,7 @@ with syntax-highlighting.</p>
 <ul>
 <li>
 <p>Usage:
-<code>sbase translate [SB_FILE].py [LANGUAGE] [ACTION]</code></p>
+<code>sbase translate [SB_FILE.py] [LANGUAGE] [ACTION]</code></p>
 </li>
 <li>
 <p>Languages:
@@ -1376,7 +1376,7 @@ plus the 2-letter language code of the new language.
 <ul>
 <li>
 <p>Usage:
-<code>sbase extract-objects [SB_PYTHON_FILE]</code></p>
+<code>sbase extract-objects [SB_FILE.py]</code></p>
 </li>
 <li>
 <p>Output:
@@ -1389,7 +1389,7 @@ seleniumbase Python file and saves those objects to the
 <ul>
 <li>
 <p>Usage:
-<code>sbase inject-objects [SB_PYTHON_FILE] [OPTIONS]</code></p>
+<code>sbase inject-objects [SB_FILE.py] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
@@ -1406,7 +1406,7 @@ the selected seleniumbase Python file.</p>
 <ul>
 <li>
 <p>Usage:
-<code>sbase objectify [SB_PYTHON_FILE] [OPTIONS]</code></p>
+<code>sbase objectify [SB_FILE.py] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
@@ -1425,7 +1425,7 @@ have been replaced with variable names defined in
 <ul>
 <li>
 <p>Usage:
-<code>sbase revert-objects [SB_PYTHON_FILE] [OPTIONS]</code></p>
+<code>sbase revert-objects [SB_FILE.py] [OPTIONS]</code></p>
 </li>
 <li>
 <p>Options:
