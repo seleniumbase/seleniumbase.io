@@ -69,11 +69,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#step-0-install-virtualenvwrapper-optional" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -319,78 +314,9 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Virtualenv Instructions
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
     <a href="./" class="md-nav__link md-nav__link--active">
       Virtualenv Instructions
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#step-0-install-virtualenvwrapper-optional" class="md-nav__link">
-    Step 0: Install VirtualEnvWrapper (optional):
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos-linux" class="md-nav__link">
-    macOS / Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-a-virtual-environment" class="md-nav__link">
-    Step 1: Create a virtual environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos-linux_1" class="md-nav__link">
-    macOS / Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows_1" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkvirtualenv-commands" class="md-nav__link">
-    mkvirtualenv Commands
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -993,76 +919,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#step-0-install-virtualenvwrapper-optional" class="md-nav__link">
-    Step 0: Install VirtualEnvWrapper (optional):
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos-linux" class="md-nav__link">
-    macOS / Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-a-virtual-environment" class="md-nav__link">
-    Step 1: Create a virtual environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos-linux_1" class="md-nav__link">
-    macOS / Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows_1" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkvirtualenv-commands" class="md-nav__link">
-    mkvirtualenv Commands
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -1071,58 +927,64 @@
                 
                   <h1>Virtualenv Instructions</h1>
                 
-                <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Virtual Environment Tutorial</h2>
+                <h2><img src="https://seleniumbase.io/img/logo3a.png" title="SeleniumBase" width="32" /> Virtual Environment Tutorial</h2>
 
-<h3 id="step-0-install-virtualenvwrapper-optional">Step 0: Install VirtualEnvWrapper (<i>optional</i>):<a class="headerlink" href="#step-0-install-virtualenvwrapper-optional" title="Permanent link">&para;</a></h3>
+<p>There are multiple ways of creating a <strong><a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">Python virtual environment</a></strong>. This tutorial covers two of those:</p>
 <ul>
-<li><code>virtualenvwrapper</code> can make it easier to work with <a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">Python virtual environments</a> by giving you the <code>mkvirtualenv</code> command.</li>
+<li>The <code>venv</code> command (<i>included with Python 3+</i>).</li>
+<li>The virtualenvwrapper <code>mkvirtualenv</code> command.</li>
 </ul>
-<h3 id="macos-linux">macOS / Linux<a class="headerlink" href="#macos-linux" title="Permanent link">&para;</a></h3>
-<p>(<em>Shortcut</em>: Run "<code>source virtualenv_install.sh</code>" from the top-level SeleniumBase folder to perform the following steps.)</p>
+<p><code>venv</code> creates virtual environments in the location where run (<i>generally with Python projects</i>).</p>
+<p><code>mkvirtualenv</code> creates virtual environments in one place (<i>generally in your home directory</i>).</p>
+<p>(The <a href="https://www.python.org/psf/">Python Software Foundation</a> recommends <code>venv</code> for creating virtual environments.)</p>
+<h3><img src="https://seleniumbase.io/img/logo3a.png" title="SeleniumBase" width="32" /> Part 1: Using "venv"</h3>
+
+<blockquote>
+<p>macOS/Linux terminal (<code>python3 -m venv ENV</code>)</p>
+</blockquote>
+<div class="bash codehilite"><pre><span></span><code>python3 -m venv sbase_env
+<span class="nb">source</span> sbase_env/bin/activate
+</code></pre></div>
+
+<blockquote>
+<p>Windows CMD prompt (<code>py -m venv ENV</code>):</p>
+</blockquote>
+<div class="bash codehilite"><pre><span></span><code>py -m venv sbase_env
+call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
+</code></pre></div>
+
+<p>To exit a virtual env, type <code>deactivate</code>.</p>
+<hr />
+<h3><img src="https://seleniumbase.io/img/logo3a.png" title="SeleniumBase" width="32" /> Part 2: Using virtualenvwrapper</h3>
+
+<blockquote>
+<p>macOS/Linux terminal:</p>
+</blockquote>
 <div class="bash codehilite"><pre><span></span><code>python3 -m pip install virtualenvwrapper --force-reinstall
 <span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
 <span class="nb">source</span> <span class="sb">`</span>which virtualenvwrapper.sh<span class="sb">`</span>
 </code></pre></div>
 
-<p>If you add <code>source `which virtualenvwrapper.sh`</code> to your local bash file (<code>~/.bash_profile</code> on macOS, or <code>~/.bashrc</code> on Linux), virtualenvwrapper commands such as <code>mkvirtualenv</code> will be available whenever you open a new command prompt.</p>
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
-<p>(<em>Shortcut</em>: Run "<code>win_virtualenv.bat</code>" from the top-level SeleniumBase folder to perform the following steps.)</p>
+<p>(<em>Shortcut</em>: Run <code>source virtualenv_install.sh</code> from the top-level SeleniumBase folder to perform the above steps.)</p>
+<p>(If you add <code>source `which virtualenvwrapper.sh`</code> to your local bash file (<code>~/.bash_profile</code> on macOS, or <code>~/.bashrc</code> on Linux), virtualenvwrapper commands such as <code>mkvirtualenv</code> will be available whenever you open a new command prompt.)</p>
+<blockquote>
+<p>Windows CMD prompt:</p>
+</blockquote>
 <div class="bash codehilite"><pre><span></span><code>py -m pip install virtualenvwrapper-win --force-reinstall --user
 </code></pre></div>
 
-<h3 id="step-1-create-a-virtual-environment">Step 1: Create a virtual environment<a class="headerlink" href="#step-1-create-a-virtual-environment" title="Permanent link">&para;</a></h3>
-<h3 id="macos-linux_1">macOS / Linux<a class="headerlink" href="#macos-linux_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>(Python 3) <code>python3 -m venv ENV</code>:</li>
-</ul>
-<div class="bash codehilite"><pre><span></span><code>python3 -m venv sbase_env
-<span class="nb">source</span> sbase_env/bin/activate
-</code></pre></div>
+<p>(<em>Shortcut</em>: Run <code>win_virtualenv.bat</code> from the top-level SeleniumBase folder to perform the above step.)</p>
+<h3>Create a virtual environment:</h3>
 
 <ul>
-<li>(Python 2, 3) <code>mkvirtualenv ENV</code>:</li>
+<li><code>mkvirtualenv ENV</code>:</li>
 </ul>
 <div class="bash codehilite"><pre><span></span><code>mkvirtualenv sbase_env
 </code></pre></div>
 
-<p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> with the Python executable to use.)</p>
-<h3 id="windows_1">Windows<a class="headerlink" href="#windows_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>(Python 3) <code>py -m venv ENV</code>:</li>
-</ul>
-<div class="bash codehilite"><pre><span></span><code>py -m venv sbase_env
-call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
-</code></pre></div>
+<p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> to your <code>mkvirtualenv</code> command with the Python executable to use.)</p>
+<h3><img src="https://seleniumbase.io/img/logo3a.png" title="SeleniumBase" width="32" /> virtualenvwrapper commands:</h3>
 
-<ul>
-<li>(Python 2, 3) <code>mkvirtualenv ENV</code>:</li>
-</ul>
-<div class="bash codehilite"><pre><span></span><code>mkvirtualenv sbase_env
-</code></pre></div>
-
-<p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> with the Python executable to use.)</p>
-<hr />
-<h3 id="mkvirtualenv-commands">mkvirtualenv Commands<a class="headerlink" href="#mkvirtualenv-commands" title="Permanent link">&para;</a></h3>
 <p>Creating a virtual environment:</p>
 <div class="bash codehilite"><pre><span></span><code>mkvirtualenv sbase_env
 </code></pre></div>
@@ -1140,10 +1002,13 @@ call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activat
 </code></pre></div>
 
 <p>Deleting a virtual environment:</p>
-<div class="bash codehilite"><pre><span></span><code>rmvirtualenv VIRTUAL_ENV_NAME
+<div class="bash codehilite"><pre><span></span><code>rmvirtualenv sbase_env
 </code></pre></div>
 
-<p><br><i><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">python-guide.org/en/latest/dev/virtualenvs</a> has more information about Python virtual environments. For specific details about VirtualEnv and VirtualEnvWrapper, see <a href="http://virtualenv.readthedocs.org/en/latest/">http://virtualenv.readthedocs.org/en/latest/</a> and <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">http://virtualenvwrapper.readthedocs.org/en/latest/</a>.</i></p>
+<hr />
+<blockquote>
+<p><i><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">python-guide.org/en/latest/dev/virtualenvs</a> has more information about Python virtual environments. For specific details about VirtualEnv and VirtualEnvWrapper, see <a href="http://virtualenv.readthedocs.org/en/latest/">http://virtualenv.readthedocs.org/en/latest/</a> and <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">http://virtualenvwrapper.readthedocs.org/en/latest/</a>.</i></p>
+</blockquote>
                 
               
               

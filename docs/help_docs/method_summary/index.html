@@ -1005,10 +1005,10 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">click_chain</span><span class="p">(</span><span class="n">selectors_list</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.type(selector, text, by=By.CSS_SELECTOR, timeout=None, retry=False)</span>
-<span class="c1">#             self.input(selector, text, by=By.CSS_SELECTOR, timeout=None, retry=False)</span>
-<span class="c1">#             self.write(selector, text, by=By.CSS_SELECTOR, timeout=None, retry=False)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.update_text(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
+<span class="c1">#             self.input(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
+<span class="c1">#             self.write(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Duplicates: self.send_keys(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
