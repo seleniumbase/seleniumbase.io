@@ -1203,47 +1203,38 @@ https://docs.docker.com/engine/installation/</p>
 <div class="codehilite"><pre><span></span><code><span class="err">docker-machine create --driver virtualbox seleniumbase</span>
 </code></pre></div>
 
-
 <h5 id="if-your-docker-environment-ever-goes-down-for-any-reason-you-can-bring-it-back-up-with-a-restart">(If your Docker environment ever goes down for any reason, you can bring it back up with a restart.)<a class="headerlink" href="#if-your-docker-environment-ever-goes-down-for-any-reason-you-can-bring-it-back-up-with-a-restart" title="Permanent link">&para;</a></h5>
 <div class="codehilite"><pre><span></span><code><span class="err">docker-machine restart seleniumbase</span>
 </code></pre></div>
 
-
 <h4 id="3-configure-your-shell">3. Configure your shell<a class="headerlink" href="#3-configure-your-shell" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">eval &quot;$(docker-machine env seleniumbase)&quot;</span>
 </code></pre></div>
-
 
 <h4 id="4-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo">4. Go to the SeleniumBase home directory on the command line, which is where <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/Dockerfile">Dockerfile</a> is located. (This assumes you've already cloned the SeleniumBase repo.)<a class="headerlink" href="#4-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo" title="Permanent link">&para;</a></h4>
 <h4 id="5-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile">5. Create your Docker image from your Dockerfile: (Get ready to wait awhile)<a class="headerlink" href="#5-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">docker build -t seleniumbase .</span>
 </code></pre></div>
 
-
 <h4 id="6-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell">6. Run <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">the example test</a> with Chrome inside your Docker: (Once the test completes after a few seconds, you'll automatically exit the Docker shell)<a class="headerlink" href="#6-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">docker run seleniumbase ./run_docker_test_in_chrome.sh</span>
 </code></pre></div>
-
 
 <h4 id="7-now-run-the-same-test-with-firefox-inside-your-docker">7. Now run the same test with Firefox inside your Docker<a class="headerlink" href="#7-now-run-the-same-test-with-firefox-inside-your-docker" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">docker run seleniumbase ./run_docker_test_in_firefox.sh</span>
 </code></pre></div>
 
-
 <h4 id="8-you-can-also-enter-docker-and-stay-inside-the-shell">8. You can also enter Docker and stay inside the shell<a class="headerlink" href="#8-you-can-also-enter-docker-and-stay-inside-the-shell" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">docker run -i -t seleniumbase</span>
 </code></pre></div>
-
 
 <h4 id="9-now-you-can-run-the-example-test-from-inside-the-docker-shell">9. Now you can run the example test from inside the Docker shell<a class="headerlink" href="#9-now-you-can-run-the-example-test-from-inside-the-docker-shell" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">./run_docker_test_in_chrome.sh</span>
 </code></pre></div>
 
-
 <h4 id="10-when-youre-satisfied-you-may-exit-the-docker-shell">10. When you're satisfied, you may exit the Docker shell<a class="headerlink" href="#10-when-youre-satisfied-you-may-exit-the-docker-shell" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="err">exit</span>
 </code></pre></div>
-
 
 <h4 id="11-optional-since-docker-images-and-containers-take-up-a-lot-of-space-you-may-want-to-clean-up-your-machine-from-time-to-time-when-theyre-not-being-used">11. (Optional) Since Docker images and containers take up a lot of space, you may want to clean up your machine from time to time when they’re not being used<a class="headerlink" href="#11-optional-since-docker-images-and-containers-take-up-a-lot-of-space-you-may-want-to-clean-up-your-machine-from-time-to-time-when-theyre-not-being-used" title="Permanent link">&para;</a></h4>
 <p>Details on that can be found here:
@@ -1255,18 +1246,15 @@ http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers<
 <span class="err">docker rm &#39;docker ps --no-trunc -aq&#39;</span>
 </code></pre></div>
 
-
 <p>If you want to completely remove all of your Docker containers and images, use these commands: (If there's nothing to delete, those commands will return an error.)</p>
 <div class="codehilite"><pre><span></span><code><span class="err">docker rm -f $(docker ps -a -q)</span>
 <span class="err">docker rmi -f $(docker images -q)</span>
 </code></pre></div>
 
-
 <p>Finally, if you want to wipe out your SeleniumBase Docker virtualbox, use these commands:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">docker-machine kill seleniumbase</span>
 <span class="err">docker-machine rm seleniumbase</span>
 </code></pre></div>
-
 
 <p>For more cleanup commands, check out:
 https://codefresh.io/blog/everyday-hacks-docker/</p>

@@ -1158,7 +1158,7 @@
 
 <p>You can customize test runs from the command-line interface thanks to <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">SeleniumBase's pytest plugin</a>, which adds CLI options for setting/enabling the browser type, headless mode, mobile mode, multithreading mode, demo mode, proxy config, user agent config, browser extensions, and more.</p>
 <p>Here are some examples of configuring tests, which can be run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Run a test in Chrome (default browser)</span>
+<div class="bash codehilite"><pre><span></span><code><span class="c1"># Run a test in Chrome (default browser)</span>
 pytest test_swag_labs.py
 
 <span class="c1"># Run a test in Firefox</span>
@@ -1222,11 +1222,10 @@ pytest test_swag_labs.py --mobile --metrics<span class="o">=</span><span class="
 pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.py
 </code></pre></div>
 
-
 <p>You can interchange <code>pytest</code> with <code>nosetests</code> for most tests, but using <code>pytest</code> is recommended. (<code>chrome</code> is the default browser if not specified.)</p>
 <p>If you're using <code>pytest</code> for running tests outside of the SeleniumBase repo, you'll want a copy of <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a> at the base of the new folder structure. If using <code>nosetests</code>, the same applies for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a>.</p>
 <p>Here are some useful command-line options that come with <code>pytest</code>:</p>
-<div class="codehilite"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test run.</span>
+<div class="bash codehilite"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test run.</span>
 -q  <span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
@@ -1238,9 +1237,8 @@ pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.p
 -m<span class="o">=</span>MARKER  <span class="c1"># Run tests with the specified pytest marker.</span>
 </code></pre></div>
 
-
 <p>SeleniumBase provides additional <code>pytest</code> command-line options for tests:</p>
-<div class="codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
+<div class="bash codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
 --cap-file<span class="o">=</span>FILE  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
 --cap-string<span class="o">=</span>STRING  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
 --settings-file<span class="o">=</span>FILE  <span class="c1"># (Override default SeleniumBase settings.)</span>
@@ -1289,17 +1287,14 @@ pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.p
 --timeout-multiplier<span class="o">=</span>MULTIPLIER  <span class="c1"># (Multiplies the default timeout values.)</span>
 </code></pre></div>
 
-
 <p>(For more details, see the full list of command-line options <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">here</a></strong>.)</p>
 <p>You can also view a list of popular <code>pytest</code> options for SeleniumBase by typing:</p>
-<div class="codehilite"><pre><span></span><code>seleniumbase options
+<div class="bash codehilite"><pre><span></span><code>seleniumbase options
 </code></pre></div>
-
 
 <p>Or the short form:</p>
-<div class="codehilite"><pre><span></span><code>sbase options
+<div class="bash codehilite"><pre><span></span><code>sbase options
 </code></pre></div>
-
 
 <h3 id="customizing-default-settings">Customizing default settings<a class="headerlink" href="#customizing-default-settings" title="Permanent link">&para;</a></h3>
 <p>An easy way to override <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">seleniumbase/config/settings.py</a> is by using a custom settings file.
@@ -1310,47 +1305,39 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 <p>SeleniumBase lets you run tests on remote Selenium Grids such as <a href="https://www.browserstack.com/automate#">BrowserStack</a>'s Selenium Grid, <a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a>'s Selenium Grid, <a href="https://testingbot.com/features">TestingBot</a>'s Selenium Grid, other Grids, and even your own Grid:</p>
 <p>(For setting browser desired capabilities while running Selenium remotely, see the ReadMe located here: https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities)</p>
 <p>Here's how to connect to a BrowserStack Selenium Grid server for running tests:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <p>Here's how to connect to a Sauce Labs Selenium Grid server for running tests:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <p>Here's how to connect to a TestingBot Selenium Grid server for running tests:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <p>Here's how to connect to a CrossBrowserTesting Selenium Grid server for running tests:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <p>Here's how to connect to a LambdaTest Selenium Grid server for running tests:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.lambdatest.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.lambdatest.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <p>Or you can create your own Selenium Grid for test distribution. (<a href="../../seleniumbase/utilities/selenium_grid/ReadMe/">See this ReadMe for details</a>)</p>
 <h3 id="example-tests-using-logging">Example tests using Logging<a class="headerlink" href="#example-tests-using-logging" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>pytest test_suite.py --browser<span class="o">=</span>chrome
+<div class="bash codehilite"><pre><span></span><code>pytest test_suite.py --browser<span class="o">=</span>chrome
 </code></pre></div>
-
 
 <p>(During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you have ARCHIVE_EXISTING_LOGS set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, otherwise log files with be cleaned up at the start of the next test run.)</p>
 <h3 id="demo-mode">Demo Mode<a class="headerlink" href="#demo-mode" title="Permanent link">&para;</a></h3>
 <p>If any test is moving too fast for your eyes to see what's going on, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --demo
 </code></pre></div>
-
 
 <p>You can override the default wait time by either updating <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> or by using <code>--demo-sleep={NUM}</code> when using Demo Mode. (NOTE: If you use <code>--demo-sleep={NUM}</code> without using <code>--demo</code>, nothing will happen.)</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo --demo-sleep<span class="o">=</span><span class="m">1</span>.2
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --demo --demo-sleep<span class="o">=</span><span class="m">1</span>.2
 </code></pre></div>
-
 
 <h3 id="passing-additional-data-to-tests">Passing additional data to tests<a class="headerlink" href="#passing-additional-data-to-tests" title="Permanent link">&para;</a></h3>
 <p>If you want to pass additional data from the command line to your tests, you can use <code>--data=STRING</code>. Now inside your tests, you can use <code>self.data</code> to access that.</p>
@@ -1361,61 +1348,52 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 <div class="codehilite"><pre><span></span><code><span class="err">pytest --reruns=2 --reruns-delay=1</span>
 </code></pre></div>
 
-
 <h3 id="debugging-tests">Debugging tests<a class="headerlink" href="#debugging-tests" title="Permanent link">&para;</a></h3>
 <p>You can use the following calls in your scripts to help you debug issues:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
 <span class="kn">import</span> <span class="nn">ipdb</span><span class="p">;</span> <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 <span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 </code></pre></div>
 
-
 <p>To pause an active test that throws an exception or error, add <code>--pdb -s</code>:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --pdb -s
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --pdb -s
 </code></pre></div>
-
 
 <p>The code above will leave your browser window open in case there's a failure. (ipdb commands: 'c', 's', 'n' =&gt; continue, step, next).</p>
 <h3 id="pytest-reports">Pytest Reports<a class="headerlink" href="#pytest-reports" title="Permanent link">&para;</a></h3>
 <p>Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
-<div class="codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
+<div class="bash codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
 </code></pre></div>
-
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/pytest_report_3c.png" alt="Example Pytest Report" title="Example Pytest Report" width="520" /></p>
 <h3 id="nosetest-reports">Nosetest Reports<a class="headerlink" href="#nosetest-reports" title="Permanent link">&para;</a></h3>
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
-<div class="codehilite"><pre><span></span><code>nosetests test_suite.py --report
+<div class="bash codehilite"><pre><span></span><code>nosetests test_suite.py --report
 </code></pre></div>
-
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" alt="Example Nosetest Report" title="Example Nosetest Report" width="320" /></p>
 <p>(NOTE: You can add <code>--show_report</code> to immediately display Nosetest reports after the test suite completes. Only use <code>--show_report</code> when running tests locally because it pauses the test run.)</p>
 <h3 id="using-a-proxy-server">Using a Proxy Server<a class="headerlink" href="#using-a-proxy-server" title="Permanent link">&para;</a></h3>
 <p>If you wish to use a proxy server for your browser tests (Chrome and Firefox only), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p>
-<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
+<div class="bash codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
-
 
 <p>If the proxy server that you wish to use requires authentication, you can do the following (Chrome only):</p>
-<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
+<div class="bash codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
-
 
 <p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p>
-<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
+<div class="bash codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
 </code></pre></div>
-
 
 <h3 id="changing-the-user-agent">Changing the User-Agent<a class="headerlink" href="#changing-the-user-agent" title="Permanent link">&para;</a></h3>
 <p>If you wish to change the User-Agent for your browser tests (Chrome and Firefox only), you can add <code>--agent="USER-AGENT-STRING"</code> as an argument on the command line.</p>
-<div class="codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
+<div class="bash codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
-
 
 <h3 id="mobile-device-testing">Mobile Device Testing<a class="headerlink" href="#mobile-device-testing" title="Permanent link">&para;</a></h3>
 <p>Use <code>--mobile</code> to quickly run your tests using Chrome's mobile device emulator with default values for device metrics (CSS Width, CSS Height, Pixel-Ratio) and a default value set for the user agent. To configure the mobile device metrics, use <code>--metrics="CSS_Width,CSS_Height,Pixel_Ratio"</code> to set those values. You'll also be able to set the user agent with <code>--agent="USER-AGENT-STRING"</code> (a default user agent will be used if not specified). To find real values for device metrics, <a href="https://gist.github.com/sidferreira/3f5fad525e99b395d8bd882ee0fd9d00">see this GitHub Gist</a>. For a list of available user agent strings, <a href="https://developers.whatismybrowser.com/useragents/explore/">check out this page</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
+<div class="bash codehilite"><pre><span></span><code><span class="c1"># Run tests using Chrome&#39;s mobile device emulator (default settings)</span>
 pytest test_swag_labs.py --mobile
 
 <span class="c1"># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
@@ -1424,7 +1402,6 @@ pytest test_swag_labs.py --mobile --metrics<span class="o">=</span><span class="
 <span class="c1"># Run mobile tests specifying the user agent</span>
 pytest test_swag_labs.py --mobile --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Linux; Android 9; Pixel 3 XL)&quot;</span>
 </code></pre></div>
-
 
 <p><a href="../.."><img src="https://seleniumbase.io/cdn/img/fancy_logo_14.png" title="SeleniumBase" width="290"></a></p>
                 

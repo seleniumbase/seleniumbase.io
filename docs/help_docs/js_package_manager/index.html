@@ -931,33 +931,28 @@
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> JS Package Manager</h2>
 
 <div>SeleniumBase lets you load JavaScript packages from any CDN link into any website.</div>
-
 <p><div>Here's an example of loading a website-tour library into the browser while visiting Google:</div></p>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/google_tour_3.gif" title="SeleniumBase Tour of Google" /><br /></p>
 <p>This example, (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a> from the SeleniumBase <code>examples/tour_examples/</code> folder), can be run with <code>pytest</code> after you've cloned and installed <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase from GitHub</a>:</p>
-<div class="codehilite"><pre><span></span><code>pytest google_tour.py
+<div class="bash codehilite"><pre><span></span><code>pytest google_tour.py
 </code></pre></div>
-
 
 <div>Since a CDN is used for holding packages, you no longer need to use other package managers such as NPM, Bower, or Yarn.</div>
-
 <p><div>Here's the Python code for loading JS packages into the web browser with SeleniumBase:</div></p>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="n">js_link</span><span class="p">)</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="n">js_link</span><span class="p">)</span>
 </code></pre></div>
-
 
 <div>This example loads the <a href="https://introjs.com/">IntroJS</a> JavaScript library:</div>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js&quot;</span><span class="p">)</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <div>You can load any JS package this way as long as you know the URL.</div>
 
 <p>If you're wondering how SeleniumBase does this, here's the full Python code, which uses WebDriver's <code>execute_script()</code> method for making JS calls after escaping quotes:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
     <span class="n">script_to_add_js</span> <span class="o">=</span> <span class="p">(</span>
         <span class="sd">&quot;&quot;&quot;function injectJS(link) {</span>
 <span class="sd">              var body = document.getElementsByTagName(&quot;body&quot;)[0];</span>
@@ -974,22 +969,19 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_js</span> <span class="o">%</span> <span class="n">js_link</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Now that you've loaded JavaScript into the browser, you may also want to load some CSS to go along with it:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Here's code that loads the <a href="https://introjs.com/">IntroJS</a> CSS:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css&quot;</span><span class="p">)</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>And here's the Python WebDriver code that makes this possible:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add_css_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">css_link</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add_css_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">css_link</span><span class="p">):</span>
     <span class="n">script_to_add_css</span> <span class="o">=</span> <span class="p">(</span>
         <span class="sd">&quot;&quot;&quot;function injectCSS(css) {</span>
 <span class="sd">              var head = document.getElementsByTagName(&quot;head&quot;)[0];</span>
@@ -1005,9 +997,7 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_css</span> <span class="o">%</span> <span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>
 
-
 <div>Website tours are just one of the many ways of using the SeleniumBase JS Package Manager.</div>
-
 <p><div>The following example shows the <a href="https://github.com/craftpip/jquery-confirm">JqueryConfirm</a> package loaded into a website for creating fancy dialog boxes:</div></p>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/masterqa6.gif" alt="MasterQA by SeleniumBase" title="MasterQA by SeleniumBase" /><br /></p>
@@ -1017,11 +1007,9 @@
 
 <hr />
 <div>To learn more about SeleniumBase, check out the Docs Site:</div>
-
 <p><a href="https://seleniumbase.io">
 <img src="https://img.shields.io/badge/docs-%20%20SeleniumBase.io-11BBDD.svg" alt="SeleniumBase.io Docs" /></a></p>
 <div>All the code is on GitHub:</div>
-
 <p><a href="https://github.com/seleniumbase/SeleniumBase">
 <img src="https://img.shields.io/badge/✅%20💛%20View%20Code-on%20GitHub%20🌎%20🚀-02A79E.svg" alt="SeleniumBase on GitHub" /></a></p>
 <p>And if you're just interested in creating website tours with SeleniumBase, here's the link to the <a href="https://seleniumbase.io/examples/tour_examples/ReadMe/">Website Tours ReadMe</a>.</p>

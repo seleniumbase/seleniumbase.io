@@ -936,80 +936,72 @@
 <p>The following commands will work once you've installed seleniumbase.</p>
 <h4><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Downloading the Selenium Server JAR file:</h4>
 
-<div class="codehilite"><pre><span></span><code>seleniumbase download server
+<div class="bash codehilite"><pre><span></span><code>seleniumbase download server
 </code></pre></div>
-
 
 <ul>
 <li>(Required for using your own Selenium Grid)</li>
 </ul>
 <h4><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Grid Hub server controls:</h4>
 
-<div class="codehilite"><pre><span></span><code>seleniumbase grid-hub <span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="bash codehilite"><pre><span></span><code>seleniumbase grid-hub <span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 
-
-<p><b>Options:</b>
+<p><b>Options:</b></p>
 <ul>
 <li> -v / --verbose  (Increases verbosity of logging output.)</li>
 <li> --timeout=TIMEOUT  (Close idle browser after TIMEOUT sec.)</li>
-</ul></p>
+</ul>
+
 <h4><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> Grid node server controls:</h4>
 
-<div class="codehilite"><pre><span></span><code>seleniumbase grid-node <span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span> --hub<span class="o">=[</span>HUB_IP<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="bash codehilite"><pre><span></span><code>seleniumbase grid-node <span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span> --hub<span class="o">=[</span>HUB_IP<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 
-
-<p><b>Options:</b>
+<p><b>Options:</b></p>
 <ul>
 <li> -v / --verbose  (Increases verbosity of logging output.)</li>
 <li> --hub=[HUB_IP]  (Specifies the Grid Hub to connect to. Default: "127.0.0.1".)</li>
-</ul></p>
+</ul>
+
 <p>When the Grid Hub Console is up and running, you'll be able to find it here: <a href="http://127.0.0.1:4444/grid/console">http://127.0.0.1:4444/grid/console</a></p>
 <p>Now you can run your tests on the Selenium Grid:</p>
-<div class="codehilite"><pre><span></span><code>pytest test_suite.py --server<span class="o">=</span>IP_ADDRESS --port<span class="o">=</span><span class="m">4444</span>
+<div class="bash codehilite"><pre><span></span><code>pytest test_suite.py --server<span class="o">=</span>IP_ADDRESS --port<span class="o">=</span><span class="m">4444</span>
 </code></pre></div>
-
 
 <p>You can also run your tests on someone else's Selenium Grid to avoid managing your own. Here are some Selenium Grids that you can use (and the run command format):</p>
 <ul>
 <li><a href="https://www.browserstack.com/automate#">BrowserStack</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <ul>
 <li><a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@ondemand.saucelabs.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <ul>
 <li><a href="https://testingbot.com/features">TestingBot</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <ul>
 <li><a href="https://help.crossbrowsertesting.com/selenium-testing/getting-started/python/">CrossBrowserTesting</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <ul>
 <li><a href="https://www.lambdatest.com/selenium-automation">LambdaTest</a> Selenium Grid:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.lambdatest.com --port<span class="o">=</span><span class="m">80</span>
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --server<span class="o">=</span>USERNAME:KEY@hub.lambdatest.com --port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
-
 
 <p>(For setting browser desired capabilities while running Selenium remotely, see the <a href="https://seleniumbase.io/help_docs/desired_capabilities/">desired capabilities documentation</a> and the sample files located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities">SeleniumBase/examples/capabilities</a>)</p>
 <h4><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> More info about the Selenium Grid Hub can be found here:</h4>
-
 <ul>
 <li><a href="https://github.com/SeleniumHQ/selenium/wiki/Grid2">https://github.com/SeleniumHQ/selenium/wiki/Grid2</a></li>
 </ul>

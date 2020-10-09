@@ -990,8 +990,9 @@
                 <p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://cdn2.hubspot.net/hubfs/100006/images/sb_logo_f6.png" alt="SeleniumBase" width="320" /></a></p>
 
 <h2 id="automated-visual-regression-testing">Automated Visual Regression Testing<a class="headerlink" href="#automated-visual-regression-testing" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.youtube.com/watch?v=erwkoiDeNzA"><img src="https://img.youtube.com/vi/erwkoiDeNzA/0.jpg" title="Automated Visual Regression Testing" width="276"></a>
-<p>(<b><a href="https://www.youtube.com/watch?v=erwkoiDeNzA">Watch the tutorial on YouTube</a></b>)</p></p>
+<p><a href="https://www.youtube.com/watch?v=erwkoiDeNzA"><img src="https://img.youtube.com/vi/erwkoiDeNzA/0.jpg" title="Automated Visual Regression Testing" width="276"></a></p>
+<p>(<b><a href="https://www.youtube.com/watch?v=erwkoiDeNzA">Watch the tutorial on YouTube</a></b>)</p>
+
 <p>Automated Visual Regression Testing helps you detect when the layout of a web page has changed. Rather than comparing screenshots, layout differences are detected by comparing HTML tags and attributes with a baseline. If a change is detected, it could mean that something broke, the web page was redesigned, or dynamic content changed.</p>
 <p>To handle automated visual testing, SeleniumBase uses the <code>self.check_window()</code> method, which can set visual baselines for comparison and then compare the latest versions of web pages to the existing baseline.</p>
 <p>The first time a test calls <code>self.check_window()</code> with a unique "name" parameter, the visual baseline is set, which means a folder is created with the following files:
@@ -1004,7 +1005,6 @@
 <p>Here's an example call:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">self.check_window(name=&quot;first_test)&quot;, level=3)</span>
 </code></pre></div>
-
 
 <p>On the first run (<i>or if the baseline is being set/reset</i>) the "level" doesn't matter because that's only used for comparing the current layout to the existing baseline.</p>
 <p>Here's how the level system works:
@@ -1024,7 +1024,7 @@
 <p>If you want to use <code>self.check_window()</code> to compare a web page to a later version of itself in the same test, add the <code>baseline=True</code> parameter to your first <code>self.check_window()</code> call to use that as the baseline. (<i>This only makes sense if you're calling <code>self.check_window()</code> more than once with the same "name" parameter in the same test.</i>)</p>
 <p>Automated Visual Testing with <code>self.check_window()</code> is not very effective for websites that have dynamic content because that changes the layout and structure of web pages. For those pages, you're much better off using regular SeleniumBase functional testing, unless you can remove the dynamic content before performing the comparison, (such as by using <code>self.ad_block()</code> to remove dynamic ad content on a web page).</p>
 <p>Example usage of <code>self.check_window()</code> with different levels:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;testing&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="python codehilite"><pre><span></span><code>    <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;testing&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xkcd_home&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;github_page&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;wikipedia_page&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -1034,9 +1034,8 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;helloworld&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Here's an example where clicking a button makes a hidden element visible:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1050,7 +1049,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;helloworld&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Here's the output of that: (<i>Text changes do not impact visual comparisons</i>)</p>
 <div class="codehilite"><pre><span></span><code><span class="n">AssertionError</span><span class="o">:</span>
@@ -1066,9 +1064,8 @@
 <span class="o">*</span> <span class="n">HTML</span> <span class="n">tag</span> <span class="n">attribute</span> <span class="n">values</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">match</span> <span class="n">the</span> <span class="n">baseline</span><span class="o">!</span>
 </code></pre></div>
 
-
 <p>Here's an example where a button is removed from a web page:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1080,7 +1077,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">remove_element</span><span class="p">(</span><span class="s1">&#39;a.donate-button&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;python_home&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Here's the output of that:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">AssertionError</span><span class="o">:</span>
@@ -1097,9 +1093,8 @@
 <span class="o">*</span> <span class="n">HTML</span> <span class="n">tag</span> <span class="n">attribute</span> <span class="n">values</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">match</span> <span class="n">the</span> <span class="n">baseline</span><span class="o">!</span>
 </code></pre></div>
 
-
 <p>Here's an example where a web site logo is resized:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1112,7 +1107,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="s1">&#39;[alt=&quot;xkcd.com logo&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;120&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xkcd_554&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Here's the output of that:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">AssertionError</span><span class="o">:</span>
@@ -1133,11 +1127,9 @@
 <span class="o">*</span> <span class="n">HTML</span> <span class="n">tag</span> <span class="n">attribute</span> <span class="n">values</span> <span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">match</span> <span class="n">the</span> <span class="n">baseline</span><span class="o">!</span>
 </code></pre></div>
 
-
 <p>To run the example (from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/visual_testing/">examples/visual_testing/</a>) with a pytest HTML Report, use:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">pytest test_layout_fail.py --html=report.html</span>
 </code></pre></div>
-
 
 <p>Here's what the pytest HTML Report looks like:<br />
 <a href="https://cdn2.hubspot.net/hubfs/100006/visual_testing_report_2.png"><img src="https://cdn2.hubspot.net/hubfs/100006/visual_testing_report_2.png" title="Test Report"></a></p>

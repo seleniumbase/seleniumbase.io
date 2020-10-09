@@ -1481,67 +1481,55 @@
 <li>SSH into your new instance by selecting: "SSH" =&gt; "Open in browser window" from the instance page.</li>
 </ul>
 <h4 id="step-4-clone-the-seleniumbase-repository-from-the-root-directory">Step 4. Clone the SeleniumBase repository from the root ("/") directory.<a class="headerlink" href="#step-4-clone-the-seleniumbase-repository-from-the-root-directory" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> /
 sudo git clone https://github.com/seleniumbase/SeleniumBase.git
 </code></pre></div>
 
-
 <h4 id="step-5-enter-the-linux-folder">Step 5. Enter the "linux" folder<a class="headerlink" href="#step-5-enter-the-linux-folder" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> SeleniumBase/integrations/linux/
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> SeleniumBase/integrations/linux/
 </code></pre></div>
-
 
 <h4 id="step-6-give-jenkins-aka-tomcat-user-sudo-access-see-tomcat_permissionssh-for-details">Step 6. Give Jenkins (aka "tomcat" user) sudo access (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/tomcat_permissions.sh">tomcat_permissions.sh</a> for details)<a class="headerlink" href="#step-6-give-jenkins-aka-tomcat-user-sudo-access-see-tomcat_permissionssh-for-details" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>./tomcat_permissions.sh
+<div class="bash codehilite"><pre><span></span><code>./tomcat_permissions.sh
 </code></pre></div>
 
-
 <h4 id="step-7-become-tomcat-the-jenkins-user-and-enter-a-bash-shell">Step 7. Become "tomcat" (the Jenkins user) and enter a "bash" shell<a class="headerlink" href="#step-7-become-tomcat-the-jenkins-user-and-enter-a-bash-shell" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>sudo su tomcat
+<div class="bash codehilite"><pre><span></span><code>sudo su tomcat
 bash
 </code></pre></div>
 
-
 <h4 id="step-8-install-dependencies-see-linuxfilesh-for-details">Step 8. Install dependencies (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/Linuxfile.sh">Linuxfile.sh</a> for details)<a class="headerlink" href="#step-8-install-dependencies-see-linuxfilesh-for-details" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>./Linuxfile.sh
+<div class="bash codehilite"><pre><span></span><code>./Linuxfile.sh
 </code></pre></div>
-
 
 <h4 id="step-9-start-up-the-headless-browser-display-mechanism-xvfb-see-xvfb_launchersh-for-details">Step 9. Start up the headless browser display mechanism: Xvfb (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/Xvfb_launcher.sh">Xvfb_launcher.sh</a> for details)<a class="headerlink" href="#step-9-start-up-the-headless-browser-display-mechanism-xvfb-see-xvfb_launchersh-for-details" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>./Xvfb_launcher.sh
+<div class="bash codehilite"><pre><span></span><code>./Xvfb_launcher.sh
 </code></pre></div>
-
 
 <h4 id="step-10-go-to-the-seleniumbase-directory">Step 10. Go to the SeleniumBase directory<a class="headerlink" href="#step-10-go-to-the-seleniumbase-directory" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /SeleniumBase
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> /SeleniumBase
 </code></pre></div>
-
 
 <h4 id="step-11-install-the-requirements-for-seleniumbase">Step 11. Install the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/requirements.txt">requirements</a> for SeleniumBase<a class="headerlink" href="#step-11-install-the-requirements-for-seleniumbase" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>sudo pip install -r requirements.txt --upgrade
+<div class="bash codehilite"><pre><span></span><code>sudo pip install -r requirements.txt --upgrade
 </code></pre></div>
-
 
 <h4 id="step-12-install-seleniumbase-make-sure-you-already-installed-the-requirements-above">Step 12. Install SeleniumBase (Make sure you already installed the requirements above)<a class="headerlink" href="#step-12-install-seleniumbase-make-sure-you-already-installed-the-requirements-above" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>sudo python setup.py develop
+<div class="bash codehilite"><pre><span></span><code>sudo python setup.py develop
 </code></pre></div>
-
 
 <h4 id="step-13-run-an-example-test-in-chrome-to-verify-installation-may-take-up-to-10-seconds">Step 13. Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">example test</a> in Chrome to verify installation (May take up to 10 seconds)<a class="headerlink" href="#step-13-run-an-example-test-in-chrome-to-verify-installation-may-take-up-to-10-seconds" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/gcp_bitnami.png" title="Linux SSH Terminal" /></p>
-<div class="codehilite"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
+<div class="bash codehilite"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
 </code></pre></div>
-
 
 <h4 id="step-14-if-you-like-nosetests-better-than-pytest-that-works-too">Step 14. If you like nosetests better than pytest, that works too<a class="headerlink" href="#step-14-if-you-like-nosetests-better-than-pytest-that-works-too" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>nosetests examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
+<div class="bash codehilite"><pre><span></span><code>nosetests examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
 </code></pre></div>
-
 
 <h4 id="step-15-you-can-also-verify-that-the-example-test-runs-on-firefox">Step 15. You can also verify that the example test runs on Firefox<a class="headerlink" href="#step-15-you-can-also-verify-that-the-example-test-runs-on-firefox" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>nosetests examples/my_first_test.py --headless --browser<span class="o">=</span>firefox
+<div class="bash codehilite"><pre><span></span><code>nosetests examples/my_first_test.py --headless --browser<span class="o">=</span>firefox
 </code></pre></div>
-
 
 <h4 id="step-16-login-to-jenkins">Step 16. Login to Jenkins<a class="headerlink" href="#step-16-login-to-jenkins" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1562,9 +1550,8 @@ bash
 <li>Under "Build", click the "Add build step" dropdown and then select "Execute shell".</li>
 <li>For the "Command", put:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
+<div class="bash codehilite"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
 </code></pre></div>
-
 
 <ul>
 <li>Click "Save" when you're done.</li>
@@ -1619,9 +1606,8 @@ bash
 <ul>
 <li>For the "Execute shell", use the following as your updated "Command":</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>pytest examples/test_suite.py --headless --browser<span class="o">=</span>chrome --with-db_reporting
+<div class="bash codehilite"><pre><span></span><code>pytest examples/test_suite.py --headless --browser<span class="o">=</span>chrome --with-db_reporting
 </code></pre></div>
-
 
 <ul>
 <li>Click "Save" when you're done.</li>

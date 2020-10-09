@@ -1127,7 +1127,7 @@
 <h4 id="mysql-optional"><a href="http://www.mysql.com/">MySQL</a> (OPTIONAL)<a class="headerlink" href="#mysql-optional" title="Permanent link">&para;</a></h4>
 <p>(NOTE: If you're using this test framework from a local development machine and don't plan on writing to a MySQL DB from your local test runs, you can skip this step.)</p>
 <h5 id="linux-ubuntu">Linux (Ubuntu):<a class="headerlink" href="#linux-ubuntu" title="Permanent link">&para;</a></h5>
-<div class="codehilite"><pre><span></span><code>sudo apt update
+<div class="bash codehilite"><pre><span></span><code>sudo apt update
 sudo apt install mysql-server
 sudo mysql_secure_installation
 sudo mysql -e <span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span>
@@ -1135,22 +1135,18 @@ sudo mysql -h <span class="m">127</span>.0.0.1 -u root test_db &lt; seleniumbase
 sudo service mysql restart
 </code></pre></div>
 
-
 <p>To change the password:</p>
-<div class="codehilite"><pre><span></span><code>mysqladmin -u root -p<span class="s1">&#39;OLD_PASSWORD&#39;</span> password NEW_PASSWORD
+<div class="bash codehilite"><pre><span></span><code>mysqladmin -u root -p<span class="s1">&#39;OLD_PASSWORD&#39;</span> password NEW_PASSWORD
 sudo service mysql restart
 </code></pre></div>
 
-
 <h5 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
-<div class="codehilite"><pre><span></span><code>brew install mysql
+<div class="bash codehilite"><pre><span></span><code>brew install mysql
 </code></pre></div>
-
 
 <p>Then you'll need to start the MySQL service:</p>
-<div class="codehilite"><pre><span></span><code>brew services start mysql
+<div class="bash codehilite"><pre><span></span><code>brew services start mysql
 </code></pre></div>
-
 
 <p>Continue with additional steps below to setup your DB.</p>
 <h5 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h5>
@@ -1166,7 +1162,7 @@ Follow the steps from the MySQL Downloads page.</p>
 <h4 id="allow-tests-to-write-to-your-mysql-database">Allow tests to write to your MySQL database<a class="headerlink" href="#allow-tests-to-write-to-your-mysql-database" title="Permanent link">&para;</a></h4>
 <p>Add the <code>--with-db_reporting</code> argument on the command line when you want tests to write to your MySQL database.
 Example:</p>
-<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --with-db_reporting
+<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --with-db_reporting
 </code></pre></div>
                 
               

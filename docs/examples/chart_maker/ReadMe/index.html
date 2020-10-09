@@ -935,13 +935,12 @@
 <p><a href="https://seleniumbase.io/other/chart_presentation.html"><img width="500" src="https://seleniumbase.io/other/chart_presentation.gif" title="Screenshot"></a><br></p>
 <p>(<a href="https://seleniumbase.io/other/chart_presentation.html">Click to see a presentation with multiple charts</a>)</p>
 <p>Here's how to run a simple pie chart presentation from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/chart_maker">GitHub =&gt; seleniumbase/SeleniumBase/examples/chart_maker</a>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
 pytest my_chart.py
 </code></pre></div>
 
-
 <p>Here's the code for that pie chart presentation (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/chart_maker/my_chart.py">GitHub =&gt; seleniumbase/SeleniumBase/examples/chart_maker/my_chart.py</a>):</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -954,12 +953,10 @@ pytest my_chart.py
         <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_chart.html&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Here's how to run an example presentation with multiple charts:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
 pytest chart_presentation.py
 </code></pre></div>
-
 
 <p>Here are screenshots from the examples:</p>
 <p><a href="https://seleniumbase.io/other/chart_presentation.html"><img width="500" src="https://seleniumbase.io/other/sample_pie_chart.png" title="Screenshot"></a><br></p>
@@ -970,7 +967,7 @@ pytest chart_presentation.py
 <p><a href="https://seleniumbase.io/other/multi_series_chart.png"><img width="500" src="https://seleniumbase.io/other/multi_series_chart.png" title="Screenshot"></a><br></p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Here's a line chart example:</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -988,16 +985,14 @@ pytest chart_presentation.py
         <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;line_chart.html&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>This example is from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/chart_maker/test_line_chart.py">test_line_chart.py</a>, which you can run from the <code>examples/chart_maker</code> folder with the following command:</p>
-<div class="codehilite"><pre><span></span><code>pytest test_line_chart.py
+<div class="bash codehilite"><pre><span></span><code>pytest test_line_chart.py
 </code></pre></div>
-
 
 <p>Because that presentation above has an <code>interval</code> set to <code>8</code>, it will automatically advance to the next slide after 8 seconds. (Or exit if there are no more slides.)</p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> For a more advanced example (multiple charts in a presentation):</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1035,19 +1030,17 @@ pytest chart_presentation.py
         <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;chart_presentation.html&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Here's how to run that example:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
 pytest chart_presentation.py
 </code></pre></div>
-
 
 <p>(Press the Right Arrow to advance to the next slide in that chart presentation)</p>
 <p>(<a href="https://seleniumbase.io/other/chart_presentation.html">Click to see a live example of that presentation</a>)</p>
 <p>Multi-Series charts can also be created. Try the available examples to learn more.</p>
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Chart Maker API</h2>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Creates a JavaScript pie chart using &quot;HighCharts&quot;.</span>
@@ -1066,8 +1059,7 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_bar_chart</span><span class="p">(</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_bar_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Creates a JavaScript bar chart using &quot;HighCharts&quot;.</span>
@@ -1086,8 +1078,7 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_column_chart</span><span class="p">(</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_column_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Creates a JavaScript column chart using &quot;HighCharts&quot;.</span>
@@ -1106,8 +1097,7 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Creates a JavaScript line chart using &quot;HighCharts&quot;.</span>
@@ -1127,8 +1117,7 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_area_chart</span><span class="p">(</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_area_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Creates a JavaScript area chart using &quot;HighCharts&quot;.</span>
@@ -1148,11 +1137,10 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
 <p>If creating multiple charts at the same time, you can pass the <code>chart_name</code> parameter to distinguish between different charts.</p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Adding a data point to a chart:</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Add a data point to a SeleniumBase-generated chart.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    label - The label name for the data point.</span>
@@ -1165,10 +1153,9 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Adding a new data series to an existing chart:</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_series_to_chart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_series_to_chart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Add a new data series to an existing chart.</span>
 <span class="sd">    This allows charts to have multiple data sets.</span>
 <span class="sd">    @Params</span>
@@ -1178,10 +1165,9 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Saving a chart to a file:</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Saves a SeleniumBase-generated chart to a file for later use.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts at the same time,</span>
@@ -1191,11 +1177,10 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
 <p>The full HTML of the chart is saved to the <code>saved_charts/</code> folder.</p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Extracting the HTML of a chart:</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Extracts the HTML from a SeleniumBase-generated chart.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts at the same time,</span>
@@ -1203,10 +1188,9 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Displaying a chart in the browser window:</h3>
 
-<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">display_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">display_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Displays a SeleniumBase-generated chart in the browser window.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts at the same time,</span>
@@ -1217,7 +1201,6 @@ pytest chart_presentation.py
 <span class="sd">               If set to 0 (default), auto-advancing is disabled.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
-
 
 <p>All methods have the optional <code>chart_name</code> argument, which is only needed when storing multiple charts at the same time.</p>
                 

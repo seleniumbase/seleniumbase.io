@@ -1209,10 +1209,9 @@
 <p>SeleniumBase Tours utilize 5 JavaScript libraries for creating interactive walkthroughs on any website:<br><strong><a href="https://shepherdjs.dev/">Shepherd</a></strong>, <strong><a href="http://bootstraptour.com/">Bootstrap Tour</a></strong>, <strong><a href="https://introjs.com/">IntroJS</a></strong>, <strong><a href="https://kamranahmed.info/driver.js/">DriverJS</a></strong>, and <strong><a href="https://linkedinattic.github.io/hopscotch/">Hopscotch</a></strong>.</p>
 <p><strong>Example tour:</strong></p>
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/google_tour_3.gif" title="SeleniumBase Tour of Google"><br></p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/tour_examples
+<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/tour_examples
 pytest google_tour.py
 </code></pre></div>
-
 
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples">GitHub =&gt; SeleniumBase/examples/tour_examples</a>)</p>
 <h3 id="creating-a-new-tour">Creating a new tour<a class="headerlink" href="#creating-a-new-tour" title="Permanent link">&para;</a></h3>
@@ -1247,7 +1246,7 @@ pytest google_tour.py
 <p>If you specify an interval (optional), the tour will automatically walk through each step after that many seconds have passed.</p>
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple tours at once. Then, when you're adding a step or playing a tour, SeleniumBase knows which tour you're referring too. You can avoid using the <code>name</code> arg for multiple tours if you play a tour before creating a new one.</p>
 <h3 id="heres-an-example-of-using-seleniumbase-tours">Here's an example of using SeleniumBase Tours<a class="headerlink" href="#heres-an-example-of-using-seleniumbase-tours" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1269,11 +1268,9 @@ pytest google_tour.py
         <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 </code></pre></div>
 
-
 <h4 id="this-example-is-from-google_tourpy-which-you-can-run-from-the-examplestour_examples-folder-with-the-following-command">This example is from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a>, which you can run from the <code>examples/tour_examples</code> folder with the following command<a class="headerlink" href="#this-example-is-from-google_tourpy-which-you-can-run-from-the-examplestour_examples-folder-with-the-following-command" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>pytest google_tour.py
+<div class="bash codehilite"><pre><span></span><code>pytest google_tour.py
 </code></pre></div>
-
 
 <h3 id="exporting-a-tour">Exporting a Tour<a class="headerlink" href="#exporting-a-tour" title="Permanent link">&para;</a></h3>
 <p>If you want to save the tour you created as a JavaScript file, use:</p>
