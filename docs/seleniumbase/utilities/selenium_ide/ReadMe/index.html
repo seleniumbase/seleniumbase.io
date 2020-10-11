@@ -1043,13 +1043,13 @@
                 
                 <h2 id="converting-katalon-recordings-into-seleniumbase-test-scripts">Converting Katalon recordings into SeleniumBase test scripts<a class="headerlink" href="#converting-katalon-recordings-into-seleniumbase-test-scripts" title="Permanent link">&para;</a></h2>
 <p>Katalon Recorder (Selenium IDE) is a tool that allows you to record and playback actions performed inside a web browser. It's available as a <a href="https://chrome.google.com/webstore/detail/katalon-recorder-selenium/ljdobmomdgdljniojadhoplhkpialdid">downloadable Chrome extension</a> and a <a href="https://addons.mozilla.org/en-US/firefox/addon/katalon-automation-record/">downloadable Firefox extension</a>. The Katalon Recorder comes with an option to export recordings as various WebDriver test scripts, one of which is <code>Python 2 (WebDriver + unittest)</code>. Unfortunately, these natively-exported scripts can be very messy and don't always run reliably. The purpose of this converter is to clean up and improve the scripts so that they can be used in production-level environments.</p>
-<h4 id="step-1-make-a-recording-with-the-katalon-recorder">Step 1: Make a recording with the Katalon Recorder<a class="headerlink" href="#step-1-make-a-recording-with-the-katalon-recorder" title="Permanent link">&para;</a></h4>
+<h3 id="step-1-make-a-recording-with-the-katalon-recorder">Step 1: Make a recording with the Katalon Recorder<a class="headerlink" href="#step-1-make-a-recording-with-the-katalon-recorder" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/katalon_recorder_2.png" title="Katalon Recorder example" /></p>
-<h4 id="step-2-export-your-recording-as-a-python-2-webdriver-script">Step 2: Export your recording as a Python 2 Webdriver script<a class="headerlink" href="#step-2-export-your-recording-as-a-python-2-webdriver-script" title="Permanent link">&para;</a></h4>
+<h3 id="step-2-export-your-recording-as-a-python-2-webdriver-script">Step 2: Export your recording as a Python 2 Webdriver script<a class="headerlink" href="#step-2-export-your-recording-as-a-python-2-webdriver-script" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>{} Export</code> =&gt; <code>Python 2 (WebDriver + unittest)</code> =&gt; <code>Save As File</code></li>
 </ul>
-<h4 id="step-3-run-seleniumbase-convert-on-your-exported-python-file">Step 3: Run <code>seleniumbase convert</code> on your exported Python file<a class="headerlink" href="#step-3-run-seleniumbase-convert-on-your-exported-python-file" title="Permanent link">&para;</a></h4>
+<h3 id="step-3-run-seleniumbase-convert-on-your-exported-python-file">Step 3: Run <code>seleniumbase convert</code> on your exported Python file<a class="headerlink" href="#step-3-run-seleniumbase-convert-on-your-exported-python-file" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="err">seleniumbase convert [MY_TEST.py]</span>
 </code></pre></div>
 
