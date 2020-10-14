@@ -942,14 +942,14 @@
 <blockquote>
 <p>macOS/Linux terminal (<code>python3 -m venv ENV</code>)</p>
 </blockquote>
-<div class="bash codehilite"><pre><span></span><code>python3 -m venv sbase_env
+<div class="codehilite"><pre><span></span><code>python3 -m venv sbase_env
 <span class="nb">source</span> sbase_env/bin/activate
 </code></pre></div>
 
 <blockquote>
 <p>Windows CMD prompt (<code>py -m venv ENV</code>):</p>
 </blockquote>
-<div class="bash codehilite"><pre><span></span><code>py -m venv sbase_env
+<div class="codehilite"><pre><span></span><code>py -m venv sbase_env
 call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
 </code></pre></div>
 
@@ -960,7 +960,7 @@ call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activat
 <blockquote>
 <p>macOS/Linux terminal:</p>
 </blockquote>
-<div class="bash codehilite"><pre><span></span><code>python3 -m pip install virtualenvwrapper --force-reinstall
+<div class="codehilite"><pre><span></span><code>python3 -m pip install virtualenvwrapper --force-reinstall
 <span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
 <span class="nb">source</span> <span class="sb">`</span>which virtualenvwrapper.sh<span class="sb">`</span>
 </code></pre></div>
@@ -970,7 +970,7 @@ call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activat
 <blockquote>
 <p>Windows CMD prompt:</p>
 </blockquote>
-<div class="bash codehilite"><pre><span></span><code>py -m pip install virtualenvwrapper-win --force-reinstall --user
+<div class="codehilite"><pre><span></span><code>py -m pip install virtualenvwrapper-win --force-reinstall --user
 </code></pre></div>
 
 <p>(<em>Shortcut</em>: Run <code>win_virtualenv.bat</code> from the top-level SeleniumBase folder to perform the above step.)</p>
@@ -979,30 +979,30 @@ call sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activat
 <ul>
 <li><code>mkvirtualenv ENV</code>:</li>
 </ul>
-<div class="bash codehilite"><pre><span></span><code>mkvirtualenv sbase_env
+<div class="codehilite"><pre><span></span><code>mkvirtualenv sbase_env
 </code></pre></div>
 
 <p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> to your <code>mkvirtualenv</code> command with the Python executable to use.)</p>
 <h3><img src="https://seleniumbase.io/img/logo3a.png" title="SeleniumBase" width="32" /> virtualenvwrapper commands:</h3>
 
 <p>Creating a virtual environment:</p>
-<div class="bash codehilite"><pre><span></span><code>mkvirtualenv sbase_env
+<div class="codehilite"><pre><span></span><code>mkvirtualenv sbase_env
 </code></pre></div>
 
 <p>Leaving your virtual environment:</p>
-<div class="bash codehilite"><pre><span></span><code>deactivate
+<div class="codehilite"><pre><span></span><code>deactivate
 </code></pre></div>
 
 <p>Returning to a virtual environment:</p>
-<div class="bash codehilite"><pre><span></span><code>workon sbase_env
+<div class="codehilite"><pre><span></span><code>workon sbase_env
 </code></pre></div>
 
 <p>Listing all virtual environments:</p>
-<div class="bash codehilite"><pre><span></span><code>lsvirtualenv
+<div class="codehilite"><pre><span></span><code>lsvirtualenv
 </code></pre></div>
 
 <p>Deleting a virtual environment:</p>
-<div class="bash codehilite"><pre><span></span><code>rmvirtualenv sbase_env
+<div class="codehilite"><pre><span></span><code>rmvirtualenv sbase_env
 </code></pre></div>
 
 <hr />

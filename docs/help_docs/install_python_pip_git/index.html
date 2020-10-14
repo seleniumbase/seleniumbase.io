@@ -1050,28 +1050,28 @@
 <p>You can download Python from <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> if it's not already preinstalled on your machine.</p>
 <h3 id="pip"><a href="https://en.wikipedia.org/wiki/Pip_%28package_manager%29">Pip</a><a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
 <p>You might already have pip and setuptools installed, but if you don't:</p>
-<div class="bash codehilite"><pre><span></span><code>python -m easy_install -U pip
+<div class="codehilite"><pre><span></span><code>python -m easy_install -U pip
 pip install -U setuptools
 </code></pre></div>
 
 <p>If that didn't work, here are some more commands you can try:</p>
 <p>On macOS / Windows / Linux, run the following command:</p>
-<div class="bash codehilite"><pre><span></span><code>python -m ensurepip --default-pip
+<div class="codehilite"><pre><span></span><code>python -m ensurepip --default-pip
 </code></pre></div>
 
 <p>If your existing version of pip is old, upgrade to the latest version:</p>
-<div class="bash codehilite"><pre><span></span><code>python -m pip install --upgrade pip setuptools
+<div class="codehilite"><pre><span></span><code>python -m pip install --upgrade pip setuptools
 </code></pre></div>
 
 <p>On CentOS 7 and some versions of Linux, you may need to install pip with <code>yum</code>:</p>
-<div class="bash codehilite"><pre><span></span><code>yum -y update
+<div class="codehilite"><pre><span></span><code>yum -y update
 yum -y install python-pip
 </code></pre></div>
 
 <p>If you're having any trouble getting pip, you can <a href="https://pip.pypa.io/en/latest/installing/">GET PIP HERE</a>.</p>
 <p>When done, make sure the location of pip is on your path, which is <code>$PATH</code> for macOS/Linux. (On Windows, it's the System Variables <code>Path</code> within System Environment Variables.)</p>
 <p>You can also get pip (or fix pip) by using:</p>
-<div class="bash codehilite"><pre><span></span><code>curl https://bootstrap.pypa.io/get-pip.py <span class="p">|</span> python
+<div class="codehilite"><pre><span></span><code>curl https://bootstrap.pypa.io/get-pip.py <span class="p">|</span> python
 </code></pre></div>
 
 <ul>

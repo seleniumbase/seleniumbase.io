@@ -1016,7 +1016,7 @@
                 <p><a align="center" href="https://github.com/seleniumbase/SeleniumBase/"><img align="center" src="https://seleniumbase.io/cdn/img/super_logo_sb.png" title="SeleniumBase" width="290" /></a></p>
 <h3 id="logging-screenshots-and-reports">Logging, Screenshots, and Reports<a class="headerlink" href="#logging-screenshots-and-reports" title="Permanent link">&para;</a></h3>
 <p>Log files in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/example_logs">SeleniumBase/examples/example_logs</a> were generated when <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_fail.py">test_fail.py</a> ran and failed. During test failures, logs and screenshots get saved to the <code>latest_logs/</code> folder. If <code>--archive-logs</code> is set, test logs will get archived to the <code>archived_logs/</code> folder.</p>
-<div class="bash codehilite"><pre><span></span><code>pytest test_fail.py --browser<span class="o">=</span>chrome
+<div class="codehilite"><pre><span></span><code>pytest test_fail.py --browser<span class="o">=</span>chrome
 
 nosetests test_fail.py --browser<span class="o">=</span>firefox
 </code></pre></div>
@@ -1033,13 +1033,13 @@ nosetests test_fail.py --browser<span class="o">=</span>firefox
 <p>Reports are most useful when running large test suites. Pytest and Nosetest reports are handled differently.</p>
 <h3 id="pytest-reports">Pytest Reports<a class="headerlink" href="#pytest-reports" title="Permanent link">&para;</a></h3>
 <p>Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
-<div class="bash codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
+<div class="codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
 </code></pre></div>
 
 <p><img src="https://seleniumbase.io/cdn/img/html_report.png" alt="Example Pytest Report" title="Example Pytest Report" width="520" /></p>
 <h3 id="nosetest-reports">Nosetest Reports<a class="headerlink" href="#nosetest-reports" title="Permanent link">&para;</a></h3>
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
-<div class="bash codehilite"><pre><span></span><code>nosetests test_suite.py --report --browser<span class="o">=</span>chrome
+<div class="codehilite"><pre><span></span><code>nosetests test_suite.py --report --browser<span class="o">=</span>chrome
 </code></pre></div>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" alt="Example Nosetest Report" title="Example Nosetest Report" width="320" /></p>

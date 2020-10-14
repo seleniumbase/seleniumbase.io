@@ -937,7 +937,7 @@
 <p>(<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/presenter/my_presentation.py">Here's the code for that presentation</a>)</p>
 <p>Slides can include HTML, code, images, and iframes.</p>
 <p>Here's how to run the example presentation:</p>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/presenter
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/presenter
 pytest my_presentation.py
 </code></pre></div>
 
@@ -946,13 +946,13 @@ pytest my_presentation.py
 <p>(<a href="https://seleniumbase.io/other/core_presentation.html">Click on the image/GIF for the actual presentation</a>)</p>
 <p>(<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/presenter/core_presentation.py">Here's the code for that presentation</a>)</p>
 <p>Here's how to run that example:</p>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/presenter
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/presenter
 pytest core_presentation.py
 </code></pre></div>
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Creating a new presentation:</h3>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">transition</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">transition</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Creates a Reveal-JS presentation that you can add slides to.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    name - If creating multiple presentations at the same time,</span>
@@ -972,7 +972,7 @@ Notes are disabled by default. You can enable notes by specifying:
 <code>show_notes=True</code></p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Adding a slide to a presentation:</h3>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iframe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iframe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">content2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Allows the user to add slides to a presentation.</span>
 <span class="sd">    @Params</span>
@@ -994,7 +994,7 @@ Notes are disabled by default. You can enable notes by specifying:
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Running a presentation:</h3>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span>
     <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot; Begin a Reveal-JS Presentation in the web browser.</span>
 <span class="sd">    @Params</span>
@@ -1013,7 +1013,7 @@ Notes are disabled by default. You can enable notes by specifying:
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple presentations at once.</p>
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Here's an example of using SeleniumBase Presenter:</h3>
 
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 
 <span class="k">class</span> <span class="nc">MyPresenterClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
@@ -1130,17 +1130,17 @@ Notes are disabled by default. You can enable notes by specifying:
 </code></pre></div>
 
 <p>That example is from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/presenter/my_presentation.py">my_presentation.py</a>, which you can run from the <code>examples/presenter</code> folder with the following command:</p>
-<div class="bash codehilite"><pre><span></span><code>pytest my_presentation.py
+<div class="codehilite"><pre><span></span><code>pytest my_presentation.py
 </code></pre></div>
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="24" /> Saving a presentation:</h3>
 
 <p>If you want to save the presentation you created as an HTML file, use:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_presentation.html&quot;</span><span class="p">,</span> <span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Presentations automatically get saved when calling:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
                 
               

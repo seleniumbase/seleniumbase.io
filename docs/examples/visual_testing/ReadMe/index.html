@@ -1024,7 +1024,7 @@
 <p>If you want to use <code>self.check_window()</code> to compare a web page to a later version of itself in the same test, add the <code>baseline=True</code> parameter to your first <code>self.check_window()</code> call to use that as the baseline. (<i>This only makes sense if you're calling <code>self.check_window()</code> more than once with the same "name" parameter in the same test.</i>)</p>
 <p>Automated Visual Testing with <code>self.check_window()</code> is not very effective for websites that have dynamic content because that changes the layout and structure of web pages. For those pages, you're much better off using regular SeleniumBase functional testing, unless you can remove the dynamic content before performing the comparison, (such as by using <code>self.ad_block()</code> to remove dynamic ad content on a web page).</p>
 <p>Example usage of <code>self.check_window()</code> with different levels:</p>
-<div class="python codehilite"><pre><span></span><code>    <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;testing&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;testing&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xkcd_home&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;github_page&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;wikipedia_page&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -1035,7 +1035,7 @@
 </code></pre></div>
 
 <p>Here's an example where clicking a button makes a hidden element visible:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1065,7 +1065,7 @@
 </code></pre></div>
 
 <p>Here's an example where a button is removed from a web page:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1094,7 +1094,7 @@
 </code></pre></div>
 
 <p>Here's an example where a web site logo is resized:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 

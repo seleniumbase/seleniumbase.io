@@ -986,13 +986,13 @@
 <li>建议配合 <a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">Python virtual env</a> . <i><a href="https://seleniumbase.io/help_docs/virtualenv_instructions/">See shortcut</a>.</i></li>
 <li>更新 <strong><a href="https://pypi.org/project/pip/">pip</a></strong> 以防出现警告:</li>
 </ul>
-<div class="bash codehilite"><pre><span></span><code>python -m pip install -U pip
+<div class="codehilite"><pre><span></span><code>python -m pip install -U pip
 </code></pre></div>
 
 <p><a id="install_seleniumbase"></a></p>
 <h2><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 安装 SeleniumBase:</h2>
 
-<div class="bash codehilite"><pre><span></span><code>git clone https://github.com/seleniumbase/SeleniumBase.git
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/seleniumbase/SeleniumBase.git
 <span class="nb">cd</span> SeleniumBase/
 pip install -r requirements.txt
 python setup.py install
@@ -1002,7 +1002,7 @@ python setup.py install
 <ul>
 <li>你也可以通过<a href="https://pypi.python.org/pypi/seleniumbase">pypi</a>安装 <code>seleniumbase</code>  :</li>
 </ul>
-<div class="bash codehilite"><pre><span></span><code>pip install seleniumbase
+<div class="codehilite"><pre><span></span><code>pip install seleniumbase
 </code></pre></div>
 
 <ul>
@@ -1012,19 +1012,19 @@ python setup.py install
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 下载 webdriver:</h3>
 
 <p>SeleniumBase 下载 webdriver 驱动到 <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/drivers">seleniumbase/drivers</a> 文件夹下, 使用 <code>install</code> 命令:</p>
-<div class="bash codehilite"><pre><span></span><code>seleniumbase install chromedriver
+<div class="codehilite"><pre><span></span><code>seleniumbase install chromedriver
 </code></pre></div>
 
 <ul>
 <li>你可能需要不同的 webdriver 来对应各种网页浏览器来完成自动化测试,例如: <code>chromedriver</code> 对应 Chrome, <code>edgedriver</code> 对应 Edge, <code>geckodriver</code> 对应 Firefox, <code>operadriver</code> 对应 Opera,  <code>iedriver</code> 对应 Internet Explorer.</li>
 <li>如果你需要安装最新版本的浏览器驱动, 以以下命令获取最新版本浏览器驱动 (<i>因兼容性原因,默认下载的版本为 chromedriver 2.44 </i>):</li>
 </ul>
-<div class="bash codehilite"><pre><span></span><code>seleniumbase install chromedriver latest
+<div class="codehilite"><pre><span></span><code>seleniumbase install chromedriver latest
 </code></pre></div>
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 使用 Chrome 运行用例:</h3>
 
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
 pytest my_first_test.py
 </code></pre></div>
 
@@ -1033,12 +1033,12 @@ pytest my_first_test.py
 <li>Linux 中 <code>--headless</code> 为默认值 (无界面运行).你也可以在任何系统中运行无界面模式. 如果你的 Linux服务器有 GUI 界面,你也需要在界面中查看浏览器运行用例的过程,你可以添加 <code>--headed</code> 或 <code>--gui</code>.</li>
 </ul>
 <p><b>运行 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a> Demo Mode:</b></p>
-<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --demo
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
 </code></pre></div>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/my_first_test_gif.gif" title="SeleniumBase" /></p>
 <p><b>此处为相关代码 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1062,7 +1062,7 @@ pytest my_first_test.py
 <li>在上述代码中可以看到以下相关的 <code>SeleniumBase</code> 方法:</li>
 </ul>
 <p><code>from seleniumbase import BaseCase</code>:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># 打开页面</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># 打开页面</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 点击页面元素</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 输入文字 (添加 &quot;\n&quot; 在&quot;TEXT&quot;的末尾来进行换行.)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 断言元素是否存在并可见</span>
@@ -1085,7 +1085,7 @@ pytest my_first_test.py
 </code></pre></div>
 
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/translations/chinese_test_1.py">chinese_test_1.py</a>:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.translate.chinese</span> <span class="kn">import</span> <span class="n">硒测试用例</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.translate.chinese</span> <span class="kn">import</span> <span class="n">硒测试用例</span>
 
 <span class="k">class</span> <span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
 
@@ -1108,7 +1108,7 @@ pytest my_first_test.py
 </code></pre></div>
 
 <p><code>from seleniumbase.translate.chinese import 硒测试用例</code>:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># 打开页面</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>  <span class="c1"># 打开页面</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 点击页面元素</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">,</span> <span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># 输入文字 (添加 &quot;\n&quot; 在&quot;TEXT&quot;的末尾来进行换行.)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="n">SELECTOR</span><span class="p">)</span>  <span class="c1"># 断言元素是否存在并可见</span>
@@ -1137,12 +1137,12 @@ pytest my_first_test.py
 <p>SeleniumBase 自动化控制 WebDriver 操作 web browsers(浏览器),在运行失败后进行截图保存. (<i><a href="https://seleniumbase.io/help_docs/customizing_test_runs/">了解更多关于定制的启动测试用例</a>.</i>)</p>
 <h4>简易的代码:</h4>
 <p>SeleniumBase 使用简单简约的语法, 例如:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>上述相似的代码在 Webdriver中变现的不是特别好:
 (<i>而且下面的代码不包含 SeleniumBase 的智能等待.</i>)</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
 <span class="n">element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">)</span>
 <span class="n">element</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="n">element</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&quot;dogs&quot;</span><span class="p">)</span>
@@ -1154,13 +1154,13 @@ pytest my_first_test.py
 (<i>你可以在你的代码中一直使用 <code>self.driver</code> .</i>)</p>
 <h4>适用 ``pytest`` 或者 ``nosetests`` 在所有的浏览器中运行你的测试用例:</h4>
 <p>(<i>推荐使用 <strong>pytest</strong> . <strong>Chrome</strong> 是默认的浏览器.</i>)</p>
-<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>chrome
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>chrome
 
 nosetests test_suite.py --browser<span class="o">=</span>firefox
 </code></pre></div>
 
 <p>Python 文件中所有以 <code>test_</code> 开头的python方法将自动运行当你使用 <code>pytest</code> 或 <code>nosetests</code>, (<i>或包含Python文件的文件夹</i>). 还可以使用以下命令更具体地说明在文件中运行什么: (<i>注意，pytest和nosetests的语法是不同的.</i>)</p>
-<div class="bash codehilite"><pre><span></span><code>pytest <span class="o">[</span>FILE_NAME<span class="o">]</span>.py::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
+<div class="codehilite"><pre><span></span><code>pytest <span class="o">[</span>FILE_NAME<span class="o">]</span>.py::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 </code></pre></div>
 
@@ -1177,7 +1177,7 @@ nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span cla
 <h4><b>下面介绍如何在各种web浏览器上运行示例脚本:</b></h4>
 
 <p>首先，为您打算使用的每个浏览器安装一个webdriver:</p>
-<div class="bash codehilite"><pre><span></span><code>seleniumbase install chromedriver
+<div class="codehilite"><pre><span></span><code>seleniumbase install chromedriver
 seleniumbase install geckodriver
 seleniumbase install edgedriver
 seleniumbase install iedriver
@@ -1185,7 +1185,7 @@ seleniumbase install operadriver
 </code></pre></div>
 
 <p>接着, 在  <strong>pytest</strong> 和 <strong>nosetests</strong> 中选择一个为您的测试启动器. (<i>可以互换.</i>)</p>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
 
 pytest my_first_test.py --browser<span class="o">=</span>chrome
 
@@ -1196,7 +1196,7 @@ nosetests my_first_test.py --browser<span class="o">=</span>firefox
 对于Pytest，绿色的点表示测试通过。“F”表示测试失败。</p>
 <p><a id="seleniumbase_demo_mode"></a> <strong>使用演示模式来帮助您查看所断言的测试.</strong></p>
 <p>如果示例测试运行得太快，您可以在<strong>Demo模式</strong>下运行它，方法是在命令行上添加<code>--Demo</code>，它会在操作之间短暂地暂停浏览器，突出显示正在操作的页面元素，并让您实时了解测试断言的内容::</p>
-<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --demo
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --demo
 </code></pre></div>
 
 <p><strong>Pytest</strong> 包括测试发现。如果您没有指定要运行的特定文件或文件夹，<code>pytest</code>将根据以下匹配条件自动搜索要运行的测试的所有子目录:
@@ -1204,23 +1204,23 @@ Python 文件名应是开头为 <code>test_</code> 或者以 <code>_test.py</cod
 Python 方法应以 <code>test_</code>开头.
 Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>类继承自<code>unittest</code>的TestCase的类。
 你可以看到哪些测试是由<code>pytest</code>发现使用::</p>
-<div class="bash codehilite"><pre><span></span><code>pytest --collect-only -q
+<div class="codehilite"><pre><span></span><code>pytest --collect-only -q
 </code></pre></div>
 
 <p>您可以在脚本中使用以下内容来帮助您调试问题:
 (<i>如果使用ipdb，请确保将“-s”添加到命令行选项中，除非已经在pytest.ini中</i>)</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
 <span class="kn">import</span> <span class="nn">ipdb</span><span class="p">;</span> <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 <span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 </code></pre></div>
 
 <p><b>要暂停抛出异常或错误的活动测试，请添加<code>--pdb -s</code>:</b></p>
-<div class="bash codehilite"><pre><span></span><code>pytest my_first_test.py --pdb -s
+<div class="codehilite"><pre><span></span><code>pytest my_first_test.py --pdb -s
 </code></pre></div>
 
 <p>上面的代码将在出现故障时打开浏览器窗口。(ipdb命令:'n'， 'c'， 's' =&gt; next, continue, step)。</p>
 <p>下面是Pytest附带的一些有用的命令行选项:</p>
-<div class="bash codehilite"><pre><span></span><code>-v  <span class="c1"># Prints the full test name for each test.</span>
+<div class="codehilite"><pre><span></span><code>-v  <span class="c1"># Prints the full test name for each test.</span>
 -q  <span class="c1"># Prints fewer details in the console output when running tests.</span>
 -x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
@@ -1233,7 +1233,7 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 </code></pre></div>
 
 <p>SeleniumBase 为测试提供额外的Pytest命令行选项:</p>
-<div class="bash codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use.)</span>
+<div class="codehilite"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use.)</span>
 --cap-file<span class="o">=</span>FILE  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
 --cap-string<span class="o">=</span>STRING  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
 --settings-file<span class="o">=</span>FILE  <span class="c1"># (Overrides SeleniumBase settings.py values.)</span>
@@ -1280,7 +1280,7 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 
 <p>(有关详细信息，请参见命令行选项的完整列表 <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">点击这里</a></strong>.)</p>
 <p>在测试失败期间，最近一次测试运行的日志和屏幕截图将被保存到<code>latest_logs/</code>文件夹中。如果在命令行选项中添加——archive_logs，或者在 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>中将<code>ARCHIVE_EXISTING_LOGS</code>设置为<code>True</code>，那么这些日志将被移动到<code>archived_logs/</code>。否则，将在下一次测试运行开始时清理日志文件。<code>test_suite.py</code>集合包含故意失败的测试，以便您可以看到日志记录是如何工作的。</p>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples/
 
 pytest test_suite.py --browser<span class="o">=</span>chrome
 
@@ -1296,7 +1296,7 @@ pytest test_suite.py --browser<span class="o">=</span>firefox
 
 <p>用于在SeleniumBase repo之外运行测试 <b>Pytest</b>, 你需要一份 <b><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></b> 在根目录上。用于在SeleniumBase repo之外运行测试 <b>Nosetests</b>, 你需要拷贝 <b><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></b> 在根目录上. (子文件夹应该包括一个空白的 "<strong>init</strong>.py" 文件。)这些文件指定测试的默认配置细节。(对于运行nosetest，还可以使用<code>--config</code>指定.cfg文件。示例<code>nosetests [MY_TEST].py--config=[MY_CONFIG].cfg</code> ')</p>
 <p>作为一个快捷方式，您可以运行<code>seleniumbase mkdir [DIRECTORY_NAME]</code>来创建一个新的文件夹，其中已经包含了必要的文件和一些可以运行的示例测试。例子:</p>
-<div class="bash codehilite"><pre><span></span><code>seleniumbase mkdir ui_tests
+<div class="codehilite"><pre><span></span><code>seleniumbase mkdir ui_tests
 <span class="nb">cd</span> ui_tests/
 pytest my_first_test.py
 </code></pre></div>
@@ -1304,7 +1304,7 @@ pytest my_first_test.py
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 日志记录/失败测试的结果:</h3>
 
 <p>让我们尝试一个失败的测试示例:</p>
-<div class="python codehilite"><pre><span></span><code><span class="sd">&quot;&quot;&quot; test_fail.py &quot;&quot;&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="sd">&quot;&quot;&quot; test_fail.py &quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
@@ -1315,7 +1315,7 @@ pytest my_first_test.py
 </code></pre></div>
 
 <p>你可以运行在<code>example</code>文件夹运行:</p>
-<div class="bash codehilite"><pre><span></span><code>pytest test_fail.py
+<div class="codehilite"><pre><span></span><code>pytest test_fail.py
 </code></pre></div>
 
 <p>您会注意到，创建了一个名为“latest_logs”的日志文件夹来保存有关失败测试的信息和屏幕截图。在测试运行期间，如果您在 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>中将ARCHIVE_EXISTING_LOGS设置为True, 或者如果您使用<code>--archive-logs</code>运行测试，那么过去的结果就会移动到archived_logs文件夹中。如果您选择不归档现有的日志，它们将被删除，并被最新测试运行的日志所取代。</p>
@@ -1326,18 +1326,18 @@ pytest my_first_test.py
 <h4><b>Pytest 报告:</b></h4>
 
 <p>使用 <code>--html=report.html</code> 在您的测试套件完成后，为您提供指定名称的漂亮报告。</p>
-<div class="bash codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
+<div class="codehilite"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
 </code></pre></div>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/pytest_report_3c.png" alt="Example Pytest Report" title="Example Pytest Report" width="520" /></p>
 <p>还可以使用<code>--junit-xml=report</code>。获取一个xml报告。Jenkins可以使用这个文件为您的测试显示更好的报告。</p>
-<div class="bash codehilite"><pre><span></span><code>pytest test_suite.py --junit-xml<span class="o">=</span>report.xml
+<div class="codehilite"><pre><span></span><code>pytest test_suite.py --junit-xml<span class="o">=</span>report.xml
 </code></pre></div>
 
 <h4><b>Nosetest 报告:</b></h4>
 
 <p><code>--report</code> 选项将在测试套件完成后为您提供一个漂亮的报告。</p>
-<div class="bash codehilite"><pre><span></span><code>nosetests test_suite.py --report
+<div class="codehilite"><pre><span></span><code>nosetests test_suite.py --report
 </code></pre></div>
 
 <p><img src="https://cdn2.hubspot.net/hubfs/100006/images/Test_Report_2.png" alt="Example Nosetest Report" title="Example Nosetest Report" width="320" /></p>
@@ -1345,21 +1345,21 @@ pytest my_first_test.py
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 使用代理服务器:</h3>
 
 <p>如果您希望为您的浏览器测试使用代理服务器(仅适用于Chrome和Firefox)，您可以在命令行上添加<code>--proxy=IP_ADDRESS:PORT</code>作为参数。</p>
-<div class="bash codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
+<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
 
 <p>如果您希望使用的代理服务器需要身份验证，您可以执行以下操作 (Chrome only):</p>
-<div class="bash codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
+<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
 
 <p>为了使事情更简单，您可以将您经常使用的代理添加到PROXY_LIST中 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, 然后使用<code>--proxy=KEY_FROM_PROXY_LIST</code>来使用该键的IP_ADDRESS:PORT。</p>
-<div class="bash codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
+<div class="codehilite"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
 </code></pre></div>
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 变更 User-Agent:</h3>
 
 <p>如果您希望为您的浏览器测试更改用户代理(仅限Chrome和Firefox)，您可以在命令行上添加<code>--agent="USER agent STRING"</code>作为参数。</p>
-<div class="bash codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
+<div class="codehilite"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
 
 <h3><img src="https://seleniumbase.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 为网站建设导游服务:</h3>
@@ -1387,7 +1387,7 @@ pytest my_first_test.py
 </li>
 </ul>
 <p>下面是一个启用了附加功能的测试运行示例:</p>
-<div class="bash codehilite"><pre><span></span><code>pytest <span class="o">[</span>YOUR_TEST_FILE<span class="o">]</span>.py --with-db-reporting --with-s3-logging
+<div class="codehilite"><pre><span></span><code>pytest <span class="o">[</span>YOUR_TEST_FILE<span class="o">]</span>.py --with-db-reporting --with-s3-logging
 </code></pre></div>
 
 <p><a id="detailed_method_specifications"></a></p>
@@ -1395,7 +1395,7 @@ pytest my_first_test.py
 
 <h4>导航到web页面 (使用相关commands)</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>  <span class="c1"># This method navigates the browser to the previous page.</span>
 
@@ -1409,7 +1409,7 @@ pytest my_first_test.py
 </code></pre></div>
 
 <p><b>ProTip™:</b> 您可能需要使用get_page_source()方法和Python的find()命令来解析源代码，以找到Selenium无法找到的东西。(你可能需要温习一下你的Python编程技能。)</p>
-<div class="python codehilite"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
 <span class="n">head_open_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">)</span>
 <span class="n">head_close_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;/head&gt;&#39;</span><span class="p">,</span> <span class="n">head_open_tag</span><span class="p">)</span>
 <span class="n">everything_inside_head</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">head_open_tag</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">):</span><span class="n">head_close_tag</span><span class="p">]</span>
@@ -1418,46 +1418,46 @@ pytest my_first_test.py
 <h4>点击</h4>
 
 <p>单击页面上的元素:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div#my_id&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div#my_id&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p><strong>ProTip™:</strong> 在大多数web浏览器中，您可以右键单击页面并选择<code>Inspect Element</code>来查看创建您自己的脚本所需的CSS选择器详细信息.</p>
 <h4>输入文本</h4>
 
 <p>self.type(selector, text)  # 用指定的值更新来自指定元素的文本。如果元素丢失或文本字段不可编辑，则引发异常。例如:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>您也可以使用self.add_text()或WebDriver .send_keys()命令，但是如果文本框中已经有文本，这些命令不会首先清除文本框
 如果您想键入特殊的键，这也很容易。这里有一个例子:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;textarea&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">SPACE</span> <span class="o">+</span> <span class="n">Keys</span><span class="o">.</span><span class="n">BACK_SPACE</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># The backspace should cancel out the space, leaving you with the newline</span>
 </code></pre></div>
 
 <h4>从页面上的元素获取文本</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;header h2&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;header h2&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <h4>从页面上的元素获取属性值</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <h4>断言页面上某个元素在几秒钟内存在:</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">&quot;div.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">&quot;div.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
 
 <p>(注意: 您也可以使用: <code>self.assert_element_present(ELEMENT)</code>)</p>
 <h4>在数秒内断言页面上元素的可见性:</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 
 <p>(注意: 这个的简单版本是 <code>self.find_element(ELEMENT)</code> 和 <code>self.assert_element(ELEMENT)</code>.  find_element() version 返回元素)</p>
 <p>由于上面的行返回元素，您可以将其与.click()组合起来，如下所示:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 
 <span class="c1"># But you&#39;re better off using the following statement, which does the same thing</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">)</span>  <span class="c1"># DO IT THIS WAY!</span>
@@ -1465,19 +1465,19 @@ pytest my_first_test.py
 
 <p><strong>ProTip™:</strong> 可以使用点来表示类名(例如:<code>div.class_name</code>)，这是CSS选择器中<code>div[class="class_name"]</code>的简化版本。</p>
 <p>你也可以使用 <code>*=</code> 在CSS选择器中搜索任何部分值，如下所示:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[name*=&quot;partial_name&quot;]&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[name*=&quot;partial_name&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <h4>在数秒内断言页面上元素内的文本的可见性:</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Make it so!&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Make it so!&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Tea. Earl Grey. Hot.&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 
 <p>(注意: <code>self.find_text(TEXT, ELEMENT)</code> 和 <code>self.wait_for_text(TEXT, ELEMENT)</code> 干了同一件事. 为了向后字兼容性，保留了较旧的方法名，但默认超时可能不同.)</p>
 <h4>断言 anything</h4>
 
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="n">myvar1</span> <span class="o">==</span> <span class="n">something</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="n">myvar1</span> <span class="o">==</span> <span class="n">something</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
 </code></pre></div>
@@ -1485,12 +1485,12 @@ pytest my_first_test.py
 <h4>有用的条件语句 (with creative examples in action)</h4>
 
 <p>is_element_visible(selector)  # is an element visible on a page</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;div#warning&#39;</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;div#warning&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Red Alert: Something bad might be happening!&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>is_element_present(selector)  # is an element present on a page</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s1">&#39;div#top_secret img.tracking_cookie&#39;</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s1">&#39;div#top_secret img.tracking_cookie&#39;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_cookie_monster</span><span class="p">()</span>  <span class="c1"># Not a real SeleniumBase method</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">current_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
@@ -1498,14 +1498,14 @@ pytest my_first_test.py
 </code></pre></div>
 
 <p>Another example:</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
 
 <p>is_text_visible(text, selector)  # is text visible on a page</p>
-<div class="python codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="s2">&quot;div.superbowl_</span><span class="si">%s</span><span class="s2"> div.commercials div.transcript div.picard&quot;</span> <span class="o">%</span> <span class="n">superbowl_year</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;For the Love of Marketing and Earl Grey Tea!&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Picard HubSpot Superbowl Ad 2015&quot;</span>
@@ -1530,11 +1530,11 @@ pytest my_first_test.py
 <h4>切换 tabs</h4>
 
 <p>如果您的测试打开了一个新选项卡/窗口，而现在您有多个页面，该怎么办?没有问题。您需要指定当前想要使用哪个Selenium。在选项卡/窗口之间切换很容易:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This switches to the new tab (0 is the first one)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This switches to the new tab (0 is the first one)</span>
 </code></pre></div>
 
 <p><strong>ProTip™:</strong> iFrame遵循与新窗口相同的原则—如果要对其中的某些内容采取操作，需要指定iFrame</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;ContentManagerTextBody_ifr&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;ContentManagerTextBody_ifr&#39;</span><span class="p">)</span>
 <span class="c1"># Now you can act inside the iFrame</span>
 <span class="c1"># .... Do something cool (here)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>  <span class="c1"># Exit the iFrame when you&#39;re done</span>
@@ -1543,7 +1543,7 @@ pytest my_first_test.py
 <h4>处理 Pop-Up 警告</h4>
 
 <p>如果您的测试在浏览器中弹出了一个警告，该怎么办?没有问题。你需要切换到它，要么接受它，要么拒绝它:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_and_accept_alert</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_and_accept_alert</span><span class="p">()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_and_dismiss_alert</span><span class="p">()</span>
 </code></pre></div>
@@ -1554,16 +1554,16 @@ pytest my_first_test.py
 <p>Query是一个强大的JavaScript库，允许您在web浏览器中执行高级操作。
 如果您所在的web页面已经加载了jQuery，您可以立即开始执行jQuery脚本。
 您应该知道这一点，因为web页面在HTML中会包含如下内容:</p>
-<div class="html codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 
 <p>如果您想在尚未加载jQuery的页面上使用它，这是可以的。为此，首先运行以下命令:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery</span><span class="p">()</span>
 </code></pre></div>
 
 <p>许多 websites 存在限制 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a> 防止用户将jQuery和其他外部库加载到自己的网站上。如果您需要在这样的网站上使用jQuery或其他JS库，请在命令行上添加<code>--disable_csp</code>。</p>
 <p>下面是一些在脚本中使用jQuery的例子:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">&#39;jQuery, window.scrollTo(0, 600)&#39;</span><span class="p">)</span>  <span class="c1"># Scrolling the page</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">&#39;jQuery, window.scrollTo(0, 600)&#39;</span><span class="p">)</span>  <span class="c1"># Scrolling the page</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;#annoying-widget&#39;).hide()&quot;</span><span class="p">)</span>  <span class="c1"># Hiding elements on a page</span>
 
@@ -1583,7 +1583,7 @@ pytest my_first_test.py
 </code></pre></div>
 
 <p>在下面的示例中，JavaScript用于在页面上植入代码，然后Selenium可以在此之后访问该页面:</p>
-<div class="python codehilite"><pre><span></span><code><span class="n">start_page</span> <span class="o">=</span> <span class="s2">&quot;https://xkcd.com/465/&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="n">start_page</span> <span class="o">=</span> <span class="s2">&quot;https://xkcd.com/465/&quot;</span>
 <span class="n">destination_page</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/seleniumbase/SeleniumBase&quot;</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">start_page</span><span class="p">)</span>
 <span class="n">referral_link</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&lt;a class=&#39;analytics test&#39; href=&#39;</span><span class="si">%s</span><span class="s1">&#39;&gt;Free-Referral Button!&lt;/a&gt;&#39;&#39;&#39;</span> <span class="o">%</span> <span class="n">destination_page</span>
@@ -1595,7 +1595,7 @@ pytest my_first_test.py
 <h4>使用延迟的断言:</h4>
 
 <p>假设您想在单个测试中验证web页面上的多个不同元素，但是您不希望在一次验证多个元素之前测试失败，这样您就不必重新运行测试来查找同一页面上的更多缺失元素。这就是延迟断言的用武之地。这里的例子:</p>
-<div class="python codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
@@ -1616,7 +1616,7 @@ pytest my_first_test.py
 <h4>访问原始WebDriver</h4>
 
 <p>如果您需要访问标准WebDriver附带的任何命令，您可以像这样直接调用它们:</p>
-<div class="python codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">delete_all_cookies</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">delete_all_cookies</span><span class="p">()</span>
 <span class="n">capabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">capabilities</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_elements_by_partial_link_text</span><span class="p">(</span><span class="s2">&quot;GitHub&quot;</span><span class="p">)</span>
 </code></pre></div>

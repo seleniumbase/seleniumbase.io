@@ -1654,55 +1654,55 @@
 <ul>
 <li><strong>Use that IP Address to SSH into the machine:</strong></li>
 </ul>
-<div class="bash codehilite"><pre><span></span><code>ssh USERNAME@IP_ADDRESS
+<div class="codehilite"><pre><span></span><code>ssh USERNAME@IP_ADDRESS
 </code></pre></div>
 
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/jenkins_on_azure_07.png" title="Jenkins on Azure" /></p>
 <h3 id="step-4-clone-the-seleniumbase-repository-from-the-root-directory">Step 4. Clone the SeleniumBase repository from the root ("/") directory.<a class="headerlink" href="#step-4-clone-the-seleniumbase-repository-from-the-root-directory" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> /
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /
 sudo git clone https://github.com/seleniumbase/SeleniumBase.git
 </code></pre></div>
 
 <h3 id="step-5-enter-the-linux-folder">Step 5. Enter the "linux" folder<a class="headerlink" href="#step-5-enter-the-linux-folder" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> SeleniumBase/integrations/linux/
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> SeleniumBase/integrations/linux/
 </code></pre></div>
 
 <h3 id="step-6-give-the-jenkins-user-sudo-access-see-jenkins_permissionssh-for-details">Step 6. Give the "jenkins" user sudo access (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/jenkins_permissions.sh">jenkins_permissions.sh</a> for details)<a class="headerlink" href="#step-6-give-the-jenkins-user-sudo-access-see-jenkins_permissionssh-for-details" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>./jenkins_permissions.sh
+<div class="codehilite"><pre><span></span><code>./jenkins_permissions.sh
 </code></pre></div>
 
 <h3 id="step-7-become-the-jenkins-user-and-enter-a-bash-shell">Step 7. Become the "jenkins" user and enter a "bash" shell<a class="headerlink" href="#step-7-become-the-jenkins-user-and-enter-a-bash-shell" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>sudo su jenkins
+<div class="codehilite"><pre><span></span><code>sudo su jenkins
 bash
 </code></pre></div>
 
 <h3 id="step-8-install-dependencies-see-linuxfilesh-for-details">Step 8. Install dependencies (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/Linuxfile.sh">Linuxfile.sh</a> for details)<a class="headerlink" href="#step-8-install-dependencies-see-linuxfilesh-for-details" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>./Linuxfile.sh
+<div class="codehilite"><pre><span></span><code>./Linuxfile.sh
 </code></pre></div>
 
 <h3 id="step-9-start-up-the-headless-browser-display-mechanism-xvfb-see-xvfb_launchersh-for-details">Step 9. Start up the headless browser display mechanism: Xvfb (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/Xvfb_launcher.sh">Xvfb_launcher.sh</a> for details)<a class="headerlink" href="#step-9-start-up-the-headless-browser-display-mechanism-xvfb-see-xvfb_launchersh-for-details" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>./Xvfb_launcher.sh
+<div class="codehilite"><pre><span></span><code>./Xvfb_launcher.sh
 </code></pre></div>
 
 <h3 id="step-10-go-to-the-seleniumbase-directory">Step 10. Go to the SeleniumBase directory<a class="headerlink" href="#step-10-go-to-the-seleniumbase-directory" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> /SeleniumBase
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /SeleniumBase
 </code></pre></div>
 
 <h3 id="step-11-install-the-requirements-for-seleniumbase">Step 11. Install the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/requirements.txt">requirements</a> for SeleniumBase<a class="headerlink" href="#step-11-install-the-requirements-for-seleniumbase" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>sudo pip install -r requirements.txt --upgrade
+<div class="codehilite"><pre><span></span><code>sudo pip install -r requirements.txt --upgrade
 </code></pre></div>
 
 <h3 id="step-12-install-seleniumbase-make-sure-you-already-installed-the-requirements-above">Step 12. Install SeleniumBase (Make sure you already installed the requirements above)<a class="headerlink" href="#step-12-install-seleniumbase-make-sure-you-already-installed-the-requirements-above" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>sudo python setup.py develop
+<div class="codehilite"><pre><span></span><code>sudo python setup.py develop
 </code></pre></div>
 
 <h3 id="step-13-install-chromedriver">Step 13. Install chromedriver<a class="headerlink" href="#step-13-install-chromedriver" title="Permanent link">&para;</a></h3>
-<div class="bash codehilite"><pre><span></span><code>sudo seleniumbase install chromedriver
+<div class="codehilite"><pre><span></span><code>sudo seleniumbase install chromedriver
 </code></pre></div>
 
 <h3 id="step-14-run-an-example-test-in-chrome-to-verify-installation-may-take-up-to-10-seconds">Step 14. Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">example test</a> in Chrome to verify installation (May take up to 10 seconds)<a class="headerlink" href="#step-14-run-an-example-test-in-chrome-to-verify-installation-may-take-up-to-10-seconds" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/jenkins_on_azure_08.png" title="Jenkins on Azure" /></p>
-<div class="bash codehilite"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
+<div class="codehilite"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
 </code></pre></div>
 
 <h3 id="step-15-secure-your-jenkins-machine">Step 15. Secure your Jenkins machine<a class="headerlink" href="#step-15-secure-your-jenkins-machine" title="Permanent link">&para;</a></h3>
@@ -1719,7 +1719,7 @@ bash
 <h4 id="if-youve-correctly-set-up-ssh-port-forwarding-the-url-will-be-http1270018080">If you've correctly set up SSH Port Forwarding, the url will be <code>http://127.0.0.1:8080/</code><a class="headerlink" href="#if-youve-correctly-set-up-ssh-port-forwarding-the-url-will-be-http1270018080" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="https://cdn2.hubspot.net/hubfs/100006/images/jenkins_on_azure_10.png" title="Jenkins on Azure" /></p>
 <h4 id="youll-need-to-get-the-password-from-the-ssh-terminal-on-the-linux-machine-to-log-in">You'll need to get the password from the SSH terminal on the Linux machine to log in<a class="headerlink" href="#youll-need-to-get-the-password-from-the-ssh-terminal-on-the-linux-machine-to-log-in" title="Permanent link">&para;</a></h4>
-<div class="bash codehilite"><pre><span></span><code>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+<div class="codehilite"><pre><span></span><code>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 </code></pre></div>
 
 <h3 id="step-17-customize-jenkins">Step 17. Customize Jenkins<a class="headerlink" href="#step-17-customize-jenkins" title="Permanent link">&para;</a></h3>
@@ -1747,7 +1747,7 @@ bash
 <li><strong>Select "Execute shell".</strong></li>
 <li><strong>For the "Command", paste:</strong></li>
 </ul>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> examples
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> examples
 pytest my_first_test.py --headless
 </code></pre></div>
 
