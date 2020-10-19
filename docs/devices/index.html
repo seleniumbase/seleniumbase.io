@@ -14,6 +14,15 @@
         font-family: 'Proxima Nova', sans-serif;
         font-size: 19px;
     }
+    input {
+        zoom: 1.26;
+        -moz-transform: scale(1.26);
+    }
+    button {
+        color: green;
+        zoom: 1.26;
+        -moz-transform: scale(1.26);
+    }
     .mockup-wrapper {
         padding: 40px 0;
         perspective: 590px;
@@ -185,6 +194,19 @@
             font-family: 'Proxima Nova', sans-serif;
             font-size: 22px;
         }
+        a {
+            zoom: 1.05;
+            -moz-transform: scale(1.05);
+        }
+        input {
+            zoom: 2;
+            -moz-transform: scale(2);
+        }
+        button {
+            color: green;
+            zoom: 2;
+            -moz-transform: scale(2);
+        }
         .mockup-wrapper {
             padding: 40px 0;
             perspective: 590px;
@@ -258,9 +280,8 @@
             <div>&nbsp;</div>
             <div>&nbsp;
             <input type="text" onkeypress="buttonFunction1('input', event)" placeholder="Enter a URL"
-                   id="myTextInput1" style="zoom: 1.26;-moz-transform: scale(1.26);" name="url"/>
-            <button onclick="buttonFunction1('button', event)" id="myButton" type="button"
-                    style="color: green; zoom: 1.26;-moz-transform: scale(1.26);">LOAD</button>
+                   id="myTextInput1" name="url"/>
+            <button onclick="buttonFunction1('button', event)" id="myButton" type="button">LOAD</button>
             </div>
         </td>
         </tr>
