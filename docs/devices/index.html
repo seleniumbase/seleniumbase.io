@@ -6,7 +6,7 @@
 <meta property="og:keywords" content="Python, pytest, selenium, webdriver, test automation, testing, seleniumbase, test framework, RPA, reports, website tours, presentations">
 <meta property="og:image" content="https://seleniumbase.io/cdn/img/sb_logo_dh.png" />
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=0.5, shrink-to-fit=no">
 <link rel="icon" href="https://seleniumbase.io/img/logo3a.png" />
 <style>
     body {
@@ -179,6 +179,65 @@
         -webkit-transform: scale(0.2);
         -webkit-transform-origin: 0 0;
     }
+    @media only screen and (max-device-width: 480px) {
+        body {
+            background-color: #FAFAFA;
+            font-family: 'Proxima Nova', sans-serif;
+            font-size: 22px;
+        }
+        .mockup-wrapper {
+            padding: 40px 0;
+            perspective: 590px;
+            overflow: visible;
+        }
+        .imac-wrapper {
+            width: 703px;
+            height: 576px;
+            background: url(https://seleniumbase.io/cdn/devices/img/imac.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 120px;
+            top: 410px;
+            cursor: move;
+        }
+        .macbook-wrapper {
+            width: 650px;
+            height: 406px;
+            background: url(https://seleniumbase.io/cdn/devices/img/macbook.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 200px;
+            top: 40px;
+            cursor: move;
+            background-size: contain;
+        }
+        .ipad-wrapper {
+            width: 250px;
+            height: 353px;
+            position: absolute;
+            left: 5px;
+            top: 90px;
+            background-image: url(https://seleniumbase.io/cdn/devices/img/ipad.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            cursor: move;
+        }
+        .iphone-wrapper {
+            width: 120px;
+            height: 240px;
+            left: 10px;
+            top: 450px;
+            position: absolute;
+            background-image: url(https://seleniumbase.io/cdn/devices/img/iphonex.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+            z-index: 2;
+            cursor: move;
+            transform-origin: top left;
+        }
+    }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
@@ -199,9 +258,9 @@
             <div>&nbsp;</div>
             <div>&nbsp;
             <input type="text" onkeypress="buttonFunction1('input', event)" placeholder="Enter a URL"
-                   id="myTextInput1" name="url"/>
+                   id="myTextInput1" style="zoom: 1.20;-moz-transform: scale(1.20);" name="url"/>
             <button onclick="buttonFunction1('button', event)" id="myButton" type="button"
-                    style="color: green;">LOAD</button>
+                    style="color: green; zoom: 1.20;-moz-transform: scale(1.20);">LOAD</button>
             </div>
         </td>
         </tr>
