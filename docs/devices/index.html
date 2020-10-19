@@ -1,0 +1,340 @@
+<html lang="en">
+<head>
+<meta property="og:site_name" content="SeleniumBase | Virtual Devices">
+<meta property="og:title" content="SeleniumBase Virtual Devices" />
+<meta property="og:description" content="Build fast, reliable, end-to-end tests." />
+<meta property="og:keywords" content="Python, pytest, selenium, webdriver, test automation, testing, seleniumbase, test framework, RPA, reports, website tours, presentations">
+<meta property="og:image" content="https://seleniumbase.io/cdn/img/sb_logo_dh.png" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="https://seleniumbase.io/img/logo3a.png" />
+<style>
+    body {
+        background-color: #FAFAFA;
+        font-family: 'Proxima Nova', sans-serif;
+        font-size: 19px;
+    }
+    .mockup-wrapper {
+        padding: 40px 0;
+        perspective: 590px;
+        overflow: hidden;
+    }
+    .inner-wrapper {
+        height: 648px;
+        position: relative;
+    }
+    .imac-wrapper {
+        width: 703px;
+        height: 576px;
+        background: url(https://seleniumbase.io/cdn/devices/img/imac.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 296px;
+        top: -30px;
+        cursor: move;
+    }
+    .imac-inner {
+        width: 601px;
+        height: 343px;
+        margin-left: 48px;
+        margin-top: 36px;
+        position: relative;
+        overflow: hidden;
+    }
+    .macbook-wrapper {
+        width: 650px;
+        height: 406px;
+        background: url(https://seleniumbase.io/cdn/devices/img/macbook.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        left: -42px;
+        top: 231px;
+        cursor: move;
+        background-size: contain;
+    }
+    .macbook-inner {
+        width: 484px;
+        height: 302px;
+        margin-left: 83px;
+        margin-top: 28px;
+        position: relative;
+        overflow: hidden;
+    }
+    .ipad-wrapper {
+        width: 250px;
+        height: 353px;
+        position: absolute;
+        left: 948px;
+        top: 250px;
+        background-image: url(https://seleniumbase.io/cdn/devices/img/ipad.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        cursor: move;
+    }
+    .ipad-inner {
+        width: 217px;
+        height: 290px;
+        margin-left: 17px;
+        margin-top: 33px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .iphone-wrapper {
+        width: 120px;
+        height: 240px;
+        left: 786px;
+        top: 364px;
+        position: absolute;
+        background-image: url(https://seleniumbase.io/cdn/devices/img/iphonex.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        z-index: 2;
+        cursor: move;
+        transform-origin: top left;
+    }
+    .iphone-notch{
+        position: absolute;
+        width: 61px;
+        height: 10px;
+        left: 30px;
+        top: 6px;
+        background-image: url(https://seleniumbase.io/cdn/devices/img/iphonexnotch.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        z-index: 4;
+        cursor: move;
+    }
+    .iphone-inner {
+        width: 104px;
+        height: 214px;
+        border-radius: 0 0 13px 13px;
+        margin-left: 8px;
+        margin-top: 18px;
+        position: relative;
+        z-index: 3;
+        overflow: hidden;
+    }
+    #frame_imac {
+        width: 1500px;
+        height: 856px;
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+    #frame_imac {
+        -ms-zoom: 0.7;
+        -moz-transform: scale(0.4);
+        -moz-transform-origin: 0px 0;
+        -o-transform: scale(0.4);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.4);
+        -webkit-transform-origin: 0 0;
+    }
+    #frame_macbook {
+        width: 1207px;
+        height: 758px;
+        position: relative;
+    }
+    #frame_macbook {
+        -ms-zoom: 0.7;
+        -moz-transform: scale(0.4);
+        -moz-transform-origin: 0px 0;
+        -o-transform: scale(0.4);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.4);
+        -webkit-transform-origin: 0 0;
+    }
+    #frame_ipad {
+        width: 1085px;
+        height: 1446px;
+        position: relative;
+        left: -1px;
+        top: -1px;
+    }
+    #frame_ipad {
+        -ms-zoom: 0.7;
+        -moz-transform: scale(0.2);
+        -moz-transform-origin: 0px 0;
+        -o-transform: scale(0.2);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.2);
+        -webkit-transform-origin: 0 0;
+    }
+    #frame_iphone {
+        width: 523px;
+        height: 1067px;
+        position: relative;
+        left: -1px;
+        top: 0px;
+    }
+    #frame_iphone {
+        -ms-zoom: 0.7;
+        -moz-transform: scale(0.2);
+        -moz-transform-origin: 0px 0;
+        -o-transform: scale(0.2);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.2);
+        -webkit-transform-origin: 0 0;
+    }
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-167313767-1');
+</script>
+</head>
+<body>
+    <div class="mockup-wrapper">
+        <div class="inner-wrapper">
+        <tr>
+        <td>
+            <div>&nbsp;<a id="myLink3" name="linkName3" class="linkClass"
+                    href="https://seleniumbase.io">SeleniumBase</a> Virtual Devices</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;
+            <input type="text" onkeypress="buttonFunction1('input', event)" placeholder="Enter a URL"
+                   id="myTextInput1" name="url"/>
+            <button onclick="buttonFunction1('button', event)" id="myButton" type="button"
+                    style="color: green;">LOAD</button>
+            </div>
+        </td>
+        </tr>
+        <script type="text/javascript">
+            function validURL(str) {
+              var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+                '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+                '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+                '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+              return !!pattern.test(str);
+            }
+        </script>
+        <script type="text/javascript">
+            function buttonFunction1(ty, event) {
+                if (ty == 'button' || event.keyCode == 13) {
+                  var url_input = document.querySelector("#myTextInput1");
+                  var the_url = url_input.value;
+                  var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
+                  if (s_w) { }
+                  else {
+                    the_url = ('https://' + the_url);
+                  }
+                  if (the_url.includes("://google.com")) {
+                    the_url = "https://www.google.com/webhp?igu=1";  // Bypass CORS restrictions
+                  }
+                  var sandbox = "allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+
+                  if (validURL(the_url) || the_url.startsWith("data:") || the_url.startsWith("about:") || the_url.startsWith("chrome:") || the_url.startsWith("edge:")) {
+                      $(".imac-inner").find("iframe").remove();
+                        var iframe = $('<iframe name="imac" id="frame_imac" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
+                      $(".imac-inner").append(iframe);
+
+                      $(".macbook-inner").find("iframe").remove();
+                        var iframe = $('<iframe name="macbook" id="frame_macbook" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
+                      $(".macbook-inner").append(iframe);
+
+                      $(".ipad-inner").find("iframe").remove();
+                        var iframe = $('<iframe name="ipad" id="frame_ipad" is="x-frame-bypass" src="' + the_url + '" width="200" height="260" sandbox="' + sandbox + '"></iframe>');
+                      $(".ipad-inner").append(iframe);
+
+                      $(".iphone-inner").find("iframe").remove();
+                        var iframe = $('<iframe name="iphone" id="frame_iphone" is="x-frame-bypass" src="' + the_url + '" width="105" height="141" sandbox="' + sandbox + '"></iframe>');
+                      $(".iphone-inner").append(iframe);
+                      }
+                }
+            }
+        </script>
+        <div class="imac-wrapper">
+            <div class="imac-inner">
+                <iframe id="frame_imac" name="imac" is="x-frame-bypass" src="about:blank" width="600" height="342" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+            </div>
+        </div>
+        <div class="macbook-wrapper">
+            <div class="macbook-inner">
+                <iframe id="frame_macbook" name="macbook" is="x-frame-bypass" src="about:blank" width="600" height="342" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+            </div>
+        </div>
+        <div class="ipad-wrapper">
+            <div class="ipad-inner">
+                <iframe id="frame_ipad" name="ipad" is="x-frame-bypass" src="about:blank" width="200" height="260" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+            </div>
+        </div>
+        <div class="iphone-wrapper">
+            <!--<div class="iphone-notch"></div>-->
+            <div class="iphone-inner">
+                <iframe id="frame_iphone" name="iphone" is="x-frame-bypass" src="about:blank" width="105" height="141" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Questions? See Michael Mintz: https://github.com/mdmintz | https://seleniumbase.io/ -->
+    <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    // Make mockups dragable
+    var __dx;
+    var __dy;
+    var __scale=1.75;
+    var __recoupLeft, __recoupTop;
+    $('.iphone-wrapper, .ipad-wrapper, .imac-wrapper, .macbook-wrapper'
+            ).draggable({
+        //revert: true,
+        zIndex: 100,
+        drag: function (event, ui) {
+            __dx = ui.position.left - ui.originalPosition.left;
+            __dy = ui.position.top - ui.originalPosition.top;
+            ui.position.left = ui.originalPosition.left + (__dx/__scale);
+            ui.position.top = ui.originalPosition.top + (__dy/__scale);
+            ui.position.left = ui.originalPosition.left + (__dx);
+            ui.position.top = ui.originalPosition.top + (__dy);
+            ui.position.left += __recoupLeft;
+            ui.position.top += __recoupTop;
+        },
+        start: function (event, ui) {
+            $(this).css('cursor', 'pointer');
+            var left = parseInt($(this).css('left'), 10);
+            left = isNaN(left) ? 0 : left;
+            var top = parseInt($(this).css('top'), 10);
+            top = isNaN(top) ? 0 : top;
+            __recoupLeft = left - ui.position.left;
+            __recoupTop = top - ui.position.top;
+        },
+        create: function (event, ui) {
+            $(this).attr('oriLeft', $(this).css('left'));
+            $(this).attr('oriTop', $(this).css('top'));
+        }
+        });
+    });
+    </script>
+    <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+    <script type="text/javascript">
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+            function(m,key,value) {
+              vars[key] = value;
+            });
+            return vars;
+        }
+        var url = getUrlVars()["url"];
+        if (url == "" || url == undefined) {
+            url = "about:blank";
+        }
+        var url_input = document.querySelector("#myTextInput1");
+        url_input.value = url;
+        buttonFunction1('button', event)
+        if (url == "about:blank") {
+            url_input.value = "";
+        }
+    </script>
+</body>
+</html>
