@@ -283,7 +283,6 @@
 
   gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
 </head>
 <body>
     <div class="mockup-wrapper">
@@ -320,9 +319,9 @@
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+                  gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
                   if(typeof ga !== 'undefined') {
-                    ga('send', 'pageview', {'page': location.pathname + the_url + location.hash});
+                    ga('send', 'pageview', {'page': location.pathname + location.search + "&search=" + the_url + location.hash});
                   }
                   if (s_w) { }
                   else {
