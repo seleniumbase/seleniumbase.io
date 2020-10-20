@@ -274,7 +274,6 @@
         }
     }
 </style>
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -316,13 +315,6 @@
                   var url_input = document.querySelector("#myTextInput1");
                   var the_url = url_input.value;
                   var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
-                  if(typeof ga !== 'undefined') {
-                    ga('send', 'pageview', {'page': location.pathname + location.search + "&search=" + the_url + location.hash});
-                  }
                   if (s_w) { }
                   else {
                     the_url = ('https://' + the_url);
