@@ -278,7 +278,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  gtag('js', new Date(), { cookie_flags: 'SameSite=None;Secure' });
   gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
 </script>
 </head>
@@ -311,36 +311,36 @@
         <script type="text/javascript">
             function buttonFunction1(ty, event) {
                 if (ty == 'button' || event.keyCode == 13) {
-                  var url_input = document.querySelector("#myTextInput1");
-                  var the_url = url_input.value;
-                  var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
-                  if (s_w) { }
-                  else {
-                    the_url = ('https://' + the_url);
-                  }
-                  if (the_url.includes("://google.com")) {
-                    // Bypass CORS issues
-                    the_url = the_url.replace("://google.com", "://www.google.com")
-                  }
-                  var sandbox = "allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                    var url_input = document.querySelector("#myTextInput1");
+                    var the_url = url_input.value;
+                    var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
+                    if (s_w) { }
+                    else {
+                        the_url = ('https://' + the_url);
+                    }
+                    if (the_url.toLowerCase().includes("://google.")) {
+                        // Bypass CORS issues
+                        the_url = the_url.toLowerCase().replace("://google.", "://www.google.")
+                    }
+                    var sandbox = "allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
 
-                  if (validURL(the_url) || the_url.startsWith("data:") || the_url.startsWith("about:") || the_url.startsWith("chrome:") || the_url.startsWith("edge:")) {
-                      $(".imac-inner").find("iframe").remove();
-                        var iframe = $('<iframe name="imac" id="frame_imac" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
-                      $(".imac-inner").append(iframe);
+                    if (validURL(the_url) || the_url.startsWith("data:") || the_url.startsWith("about:") || the_url.startsWith("chrome:") || the_url.startsWith("edge:")) {
+                            $(".imac-inner").find("iframe").remove();
+                            var iframe = $('<iframe name="imac" id="frame_imac" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
+                        $(".imac-inner").append(iframe);
 
-                      $(".macbook-inner").find("iframe").remove();
+                        $(".macbook-inner").find("iframe").remove();
                         var iframe = $('<iframe name="macbook" id="frame_macbook" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
-                      $(".macbook-inner").append(iframe);
+                        $(".macbook-inner").append(iframe);
 
-                      $(".ipad-inner").find("iframe").remove();
+                        $(".ipad-inner").find("iframe").remove();
                         var iframe = $('<iframe name="ipad" id="frame_ipad" is="x-frame-bypass" src="' + the_url + '" width="200" height="260" sandbox="' + sandbox + '"></iframe>');
-                      $(".ipad-inner").append(iframe);
+                        $(".ipad-inner").append(iframe);
 
-                      $(".iphone-inner").find("iframe").remove();
+                        $(".iphone-inner").find("iframe").remove();
                         var iframe = $('<iframe name="iphone" id="frame_iphone" is="x-frame-bypass" src="' + the_url + '" width="105" height="141" sandbox="' + sandbox + '"></iframe>');
-                      $(".iphone-inner").append(iframe);
-                      }
+                        $(".iphone-inner").append(iframe);
+                    }
                 }
             }
         </script>
