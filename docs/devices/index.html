@@ -1,14 +1,17 @@
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta property="og:site_name" content="SeleniumBase | Virtual Devices">
-<meta property="og:title" content="SeleniumBase Virtual Devices">
-<meta property="og:description" content="Build fast, reliable, end-to-end tests.">
-<meta property="og:keywords" content="Python, pytest, selenium, webdriver, test automation, testing, seleniumbase, test framework, RPA, reports, website tours, presentations">
+<title>Virtual Device Farm - seleniumbase.io</title>
+<meta property="og:site_name" content="Virtual Device Farm">
+<meta property="og:title" content="Virtual Device Farm - seleniumbase.io">
+<meta name="Description" content="Test your web apps on multiple devices!">
+<meta property="og:description" content="Test your web apps on multiple devices!">
+<meta name="Keywords" content="Python, pytest, selenium, webdriver, test automation, testing, seleniumbase, test framework, HTML, JavaScript">
+<meta property="og:keywords" content="Python, pytest, selenium, webdriver, test automation, testing, seleniumbase, test framework, HTML, JavaScript">
 <meta property="og:image" content="https://seleniumbase.io/cdn/img/github_demo.png">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.5, shrink-to-fit=no">
-<!-- <link rel="icon" href="https://seleniumbase.io/img/logo3a.png" /> // SameSite --> 
+<meta content="follow,index" name="robots">
 <style>
     body {
         background-color: #FAFAFA;
@@ -16,6 +19,14 @@
         font-size: 19px;
     }
     input {
+        width: 150px;
+        border: 2px solid teal;
+        zoom: 1.26;
+        -moz-transform: scale(1.26);
+    }
+    input:focus {
+        background-color: #F4FAFD;
+        border: 2px solid;
         zoom: 1.26;
         -moz-transform: scale(1.26);
     }
@@ -205,6 +216,14 @@
             -moz-transform: scale(1.05);
         }
         input {
+            width: 150px;
+            border: 2px solid teal;
+            zoom: 2.5;
+            -moz-transform: scale(2.5);
+        }
+        input:focus {
+            background-color: #F4FAFD;
+            border: 2px solid;
             zoom: 2.5;
             -moz-transform: scale(2.5);
         }
@@ -289,13 +308,13 @@
         <div class="inner-wrapper">
         <tr>
         <td>
-            <div>&nbsp;<a id="myLink3" name="linkName3" class="linkClass"
+            <div>&nbsp;&nbsp;<a id="myLink" name="linkName" class="linkClass"
                     href="https://seleniumbase.io">SeleniumBase</a> Virtual Devices</div>
             <div>&nbsp;</div>
             <div>&nbsp;&nbsp;&nbsp;
-            <input type="text" onkeypress="buttonFunction1('input', event)" placeholder="Enter a URL"
-                   id="myTextInput1" name="url"/>&nbsp;&nbsp;&nbsp;
-            <button onclick="buttonFunction1('button', event)" id="myButton" type="button">Load</button>
+            <input type="text" onkeypress="buttonFunction1('input', event)" placeholder="Enter a valid URL"
+                   id="urlInput" name="url"/>&nbsp;&nbsp;&nbsp;
+            <button onclick="buttonFunction1('button', event)" id="myButton" type="button">Open</button>
             </div>
         </td>
         </tr>
@@ -313,7 +332,7 @@
         <script type="text/javascript">
             function buttonFunction1(ty, event) {
                 if (ty == 'button' || event.keyCode == 13) {
-                    var url_input = document.querySelector("#myTextInput1");
+                    var url_input = document.querySelector("#urlInput");
                     var the_url = url_input.value;
                     var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
                     if (s_w) { }
@@ -322,18 +341,28 @@
                     }
                     if (the_url.toLowerCase().includes("://google.")) {
                         // Bypass CORS issues
-                        the_url = the_url.toLowerCase().replace("://google.", "://www.google.")
+                        the_url = the_url.toLowerCase().replace("://google.", "://www.google.");
+                    }
+                    append_url = "?url=" + the_url;
+                    if (!validURL(the_url)) {
+                        append_url = "";
+                    } else {
+                        if (the_url.startsWith("https://")) {
+                            the_url = the_url.slice("https://".length);
+                            append_url = "?url=" + the_url;
+                        }
                     }
                     //loadIframes('button', event)  // Load iframes without page refresh
                     //window.location.href = "https://seleniumbase.io/devices/?url=" + the_url;
-                    window.location.replace("https://seleniumbase.io/devices/?url=" + the_url);
+                    //window.location.replace("https://seleniumbase.io/devices/" + append_url);
+                    window.location.replace("file:///Users/michael/github/SeleniumBase/examples/temp/abc.html" + append_url);
                 }
             }
         </script>
         <script type="text/javascript">
             function loadIframes(ty, event) {
                 if (ty == 'button' || event.keyCode == 13) {
-                    var url_input = document.querySelector("#myTextInput1");
+                    var url_input = document.querySelector("#urlInput");
                     var the_url = url_input.value;
                     var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
                     if (s_w) { }
@@ -449,10 +478,13 @@
         if (url == "" || url == undefined) {
             url = "about:blank";
         }
-        var url_input = document.querySelector("#myTextInput1");
+        var url_input = document.querySelector("#urlInput");
         url_input.value = url;
         loadIframes('button', event)
         if (url == "about:blank") {
+            url_input.value = "";
+        }
+        if (url == "https://" || url == "http://") {
             url_input.value = "";
         }
     </script>
