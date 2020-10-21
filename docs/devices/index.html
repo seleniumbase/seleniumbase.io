@@ -324,6 +324,25 @@
                         // Bypass CORS issues
                         the_url = the_url.toLowerCase().replace("://google.", "://www.google.")
                     }
+                    //loadIframes('button', event)  // Load iframes without page refresh
+                    window.location.href = "https://seleniumbase.io/devices/?url=" + the_url;
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            function loadIframes(ty, event) {
+                if (ty == 'button' || event.keyCode == 13) {
+                    var url_input = document.querySelector("#myTextInput1");
+                    var the_url = url_input.value;
+                    var s_w = the_url.startsWith("http") || the_url.startsWith("data") || the_url.startsWith("about") || the_url.startsWith("chrome") || the_url.startsWith("edge");
+                    if (s_w) { }
+                    else {
+                        the_url = ('https://' + the_url);
+                    }
+                    if (the_url.toLowerCase().includes("://google.")) {
+                        // Bypass CORS issues
+                        the_url = the_url.toLowerCase().replace("://google.", "://www.google.")
+                    }
                     var sandbox = "allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
 
                     if (validURL(the_url) || the_url.startsWith("data:") || the_url.startsWith("about:") || the_url.startsWith("chrome:") || the_url.startsWith("edge:")) {
@@ -431,7 +450,7 @@
         }
         var url_input = document.querySelector("#myTextInput1");
         url_input.value = url;
-        buttonFunction1('button', event)
+        loadIframes('button', event)
         if (url == "about:blank") {
             url_input.value = "";
         }
