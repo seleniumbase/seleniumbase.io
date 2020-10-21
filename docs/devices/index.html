@@ -324,8 +324,9 @@
                         // Bypass CORS issues
                         the_url = the_url.toLowerCase().replace("://google.", "://www.google.")
                     }
-                    loadIframes('button', event)  // Load iframes without page refresh
+                    //loadIframes('button', event)  // Load iframes without page refresh
                     //window.location.href = "https://seleniumbase.io/devices/?url=" + the_url;
+                    window.location.replace("https://seleniumbase.io/devices/?url=" + the_url);
                 }
             }
         </script>
