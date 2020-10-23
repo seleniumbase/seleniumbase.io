@@ -370,13 +370,13 @@
                     }
                     if (the_url.toLowerCase().includes("://google.")) {
                         // Bypass CORS issues
-                        the_url = the_url.toLowerCase().replace("://google.", "://www.google.")
+                        the_url = the_url.toLowerCase().replace("://google.", "://www.google.");
                     }
                     var sandbox = "allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
 
                     if (validURL(the_url) || the_url.startsWith("data:") || the_url.startsWith("about:") || the_url.startsWith("chrome:") || the_url.startsWith("edge:")) {
-                            $(".imac-inner").find("iframe").remove();
-                            var iframe = $('<iframe name="imac" id="frame_imac" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
+                        $(".imac-inner").find("iframe").remove();
+                        var iframe = $('<iframe name="imac" id="frame_imac" is="x-frame-bypass" src="' + the_url + '" width="600" height="342" sandbox="' + sandbox + '"></iframe>');
                         $(".imac-inner").append(iframe);
 
                         $(".macbook-inner").find("iframe").remove();
@@ -396,23 +396,23 @@
         </script>
         <div class="imac-wrapper">
             <div class="imac-inner">
-                <iframe id="frame_imac" name="imac" is="x-frame-bypass" src="about:blank" width="600" height="342" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+                <iframe id="frame_imac" name="imac" src="about:blank" width="600" height="342"></iframe>
             </div>
         </div>
         <div class="macbook-wrapper">
             <div class="macbook-inner">
-                <iframe id="frame_macbook" name="macbook" is="x-frame-bypass" src="about:blank" width="600" height="342" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+                <iframe id="frame_macbook" name="macbook" src="about:blank" width="600" height="342"></iframe>
             </div>
         </div>
         <div class="ipad-wrapper">
             <div class="ipad-inner">
-                <iframe id="frame_ipad" name="ipad" is="x-frame-bypass" src="about:blank" width="200" height="260" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+                <iframe id="frame_ipad" name="ipad" src="about:blank" width="200" height="260"></iframe>
             </div>
         </div>
         <div class="iphone-wrapper">
             <!--<div class="iphone-notch"></div>-->
             <div class="iphone-inner">
-                <iframe id="frame_iphone" name="iphone" is="x-frame-bypass" src="about:blank" width="105" height="141" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+                <iframe id="frame_iphone" name="iphone" src="about:blank" width="105" height="141"></iframe>
             </div>
         </div>
         </div>
