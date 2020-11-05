@@ -42,25 +42,22 @@ COMMANDS:
 </code></pre></div> <ul> <li>If you run a test without the correct webdriver installed, the driver will be downloaded automatically.</li> </ul> <p>(See <a href=https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/ >seleniumbase.io/seleniumbase/console_scripts/ReadMe/</a> for more information on SeleniumBase console scripts.)</p> <h3><img src=https://seleniumbase.io/img/logo3a.png title=SeleniumBase width=32> Create and run tests:</h3> <ul> <li><code>sbase mkdir DIR</code> creates a folder with sample tests:</li> </ul> <div class=codehilite><pre><span></span><code>sbase mkdir ui_tests
 <span class=nb>cd</span> ui_tests/
 </code></pre></div> <blockquote> <p>That folder will have the following files:</p> </blockquote> <div class=codehilite><pre><span></span><code><span class=err>ui_tests/</span>
-<span class=err>│</span>
 <span class=err>├── __init__.py</span>
+<span class=err>├── boilerplates/</span>
+<span class=err>│   ├── __init__.py</span>
+<span class=err>│   ├── base_test_case.py</span>
+<span class=err>│   ├── boilerplate_test.py</span>
+<span class=err>│   ├── page_objects.py</span>
+<span class=err>│   └── samples/</span>
+<span class=err>│       ├── __init__.py</span>
+<span class=err>│       ├── google_objects.py</span>
+<span class=err>│       └── google_test.py</span>
 <span class=err>├── my_first_test.py</span>
 <span class=err>├── parameterized_test.py</span>
 <span class=err>├── pytest.ini</span>
 <span class=err>├── requirements.txt</span>
 <span class=err>├── setup.cfg</span>
-<span class=err>├── test_demo_site.py</span>
-<span class=err>└── boilerplates/</span>
-<span class=err>     │</span>
-<span class=err>     ├── __init__.py</span>
-<span class=err>     ├── base_test_case.py</span>
-<span class=err>     ├── boilerplate_test.py</span>
-<span class=err>     ├── page_objects.py</span>
-<span class=err>     └── samples/</span>
-<span class=err>          │</span>
-<span class=err>          ├── __init__.py</span>
-<span class=err>          ├── google_objects.py</span>
-<span class=err>          └── google_test.py</span>
+<span class=err>└── test_demo_site.py</span>
 </code></pre></div> <ul> <li><b>Run a sample test with <code>pytest</code>:</b></li> </ul> <div class=codehilite><pre><span></span><code>pytest test_demo_site.py
 </code></pre></div> <blockquote> <p>(Chrome is the default browser if not specified with <code>--browser=BROWSER</code>.) (On Linux, <code>--headless</code> is the default behavior. You can also run in headless mode on any OS. If your Linux machine has a GUI and you want to see the web browser as tests run, add <code>--headed</code> or <code>--gui</code>.)</p> </blockquote> <p><b>If you've cloned SeleniumBase from GitHub, you can also run tests from the <a href=https://github.com/seleniumbase/SeleniumBase/tree/master/examples>SeleniumBase/examples/</a> folder:</b></p> <div class=codehilite><pre><span></span><code><span class=nb>cd</span> examples/
 pytest my_first_test.py
