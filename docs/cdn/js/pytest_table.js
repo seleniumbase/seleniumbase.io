@@ -107,8 +107,6 @@ function get_query_parameter(name) {
 function init () {
     reset_sort_headers();
 
-    add_collapse();
-
     show_filters();
 
     sort_column(find('.initial-sort'));
