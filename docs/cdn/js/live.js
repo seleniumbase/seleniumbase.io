@@ -1,6 +1,6 @@
  /*
   Live.js
-  Written for Handcraft.com by Martin Kool (@mrtnkl).
+  Written by Martin Kool (@mrtnkl)
   http://livejs.com
   http://livejs.com/license (MIT)  
   @livejs
