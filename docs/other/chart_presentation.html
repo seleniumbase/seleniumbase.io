@@ -28,11 +28,11 @@ img[rounded]{border-radius:16px;max-width:82%;}
 
 <section data-transition="zoom">
 <p>Pie Chart</p>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/highcharts.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/modules/exporting.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/modules/export-data.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/modules/accessibility.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/highcharts.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/modules/export-data.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/modules/accessibility.js"></script>
             
             <style>
             .highcharts-figure, .highcharts-data-table table {
@@ -136,11 +136,18 @@ img[rounded]{border-radius:16px;max-width:82%;}
             },
             plotOptions: {
                 pie: {
+                    size: "95%",
                     allowPointSelect: true,
+                    animation: false,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: false,
-                        format: '{point.name}: {point.y:.1f}%'
+                        // enabled: false,
+                        // format: '{point.name}: {point.y:.0f}',
+                        formatter: function() {
+                          if (this.y > 0) {
+                            return this.point.name + ': ' + this.point.y
+                          }
+                        }
                     },
                     states: {
                         hover: {
@@ -257,7 +264,10 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 plotOptions: {
                     series: {
                         showInLegend: true,
-                        animation: true,
+                        animation: false,
+                        dataLabels: {
+                            enabled: true
+                        },
                         shadow: false,
                         lineWidth: 3,
                         fillOpacity: 0.5,
@@ -373,7 +383,10 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 plotOptions: {
                     series: {
                         showInLegend: true,
-                        animation: true,
+                        animation: false,
+                        dataLabels: {
+                            enabled: true
+                        },
                         shadow: false,
                         lineWidth: 3,
                         fillOpacity: 0.5,
@@ -489,7 +502,10 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 plotOptions: {
                     series: {
                         showInLegend: true,
-                        animation: true,
+                        animation: false,
+                        dataLabels: {
+                            enabled: true
+                        },
                         shadow: false,
                         lineWidth: 3,
                         fillOpacity: 0.5,
