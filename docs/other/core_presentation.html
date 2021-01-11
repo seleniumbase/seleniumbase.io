@@ -28,11 +28,11 @@ img[rounded]{border-radius:16px;max-width:82%;}
 
 <section data-transition="slide">
 <p>SeleniumBase core areas</p>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/highcharts.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/modules/exporting.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/modules/export-data.js"></script>
-            <script src="https://code.highcharts.com/8.1.2/modules/accessibility.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/highcharts.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/modules/export-data.js"></script>
+            <script src="https://code.highcharts.com/8.2.2/modules/accessibility.js"></script>
             
             <style>
             .highcharts-figure, .highcharts-data-table table {
@@ -95,7 +95,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                         fontSize: '14px',
                     },
                 },
-            categories: ['Basic API (Test methods/functions)','Command-line Options (pytest Options)','The Console Scripts interface','Advanced API (Tours, Charts, & Presentations)',], crosshair: false},
+            categories: ['Basic API (test methods/functions)','Command-line options (pytest options)','The Console Scripts interface','Advanced API (Tours, Charts, & Presentations)',], crosshair: false},
             yAxis: {
                 
                 title: {
@@ -136,11 +136,13 @@ img[rounded]{border-radius:16px;max-width:82%;}
             },
             plotOptions: {
                 pie: {
+                    size: "100%",
                     allowPointSelect: true,
+                    animation: true,
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: false,
-                        format: '{point.name}: {point.y:.1f}%'
+                        format: '{point.name}: {point.y:.0f}'
                     },
                     states: {
                         hover: {
@@ -157,13 +159,13 @@ img[rounded]{border-radius:16px;max-width:82%;}
             data: [
             
             {
-            name: 'Basic API (Test methods/functions)',
+            name: 'Basic API (test methods/functions)',
             y: 1,
             color: ''
             },
             
             {
-            name: 'Command-line Options (pytest Options)',
+            name: 'Command-line options (pytest options)',
             y: 1,
             color: ''
             },
@@ -189,7 +191,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
 </section>
 
 <section data-transition="slide">
-<p>Basic API (Test methods/functions) Example</p>
+<p>Basic API (test methods/functions). Example test:</p>
 <div></div>
 <pre class="prettyprint">
 from seleniumbase import BaseCase
@@ -211,25 +213,28 @@ class MyTestClass(BaseCase):
 </section>
 
 <section data-transition="slide">
-<p>Command-line Options Example</p>
+<p>Command-line options. Examples:</p>
 <div></div>
 <pre class="prettyprint">
 $ pytest my_first_test.py
 $ pytest test_swag_labs.py --mobile
 $ pytest edge_test.py --browser=edge
 $ pytest basic_test.py --headless
-$ pytest my_first_test.py --demo
+$ pytest my_first_test.py --demo --guest
 $ pytest basic_test.py --slow
 $ pytest -v -m marker2 --headless --save-screenshot
-$ pytest test_suite.py --reuse-session --html=report.html
+$ pytest parameterized_test.py --reuse-session
+$ pytest test_suite.py --html=report.html --rs
+$ pytest test_suite.py --dashboard --html=report.html
+$ pytest github_test.py --demo --disable-csp
+$ pytest test_suite.py -n=2 --rs --crumbs
 $ pytest basic_test.py --incognito
-$ pytest parameterized_test.py --guest --reuse-session
 </pre>
 <aside class="notes"></aside>
 </section>
 
 <section data-transition="slide">
-<p>Console scripts interface Example</p>
+<p>The Console Scripts interface. Examples:</p>
 <div></div>
 <pre class="prettyprint">
 $ sbase install chromedriver
@@ -251,7 +256,7 @@ $ sbase options
 </section>
 
 <section data-transition="slide">
-<p>Advanced API (creating a presentation) Example</p>
+<p>Advanced API. "Presenter" example:</p>
 <div></div>
 <pre class="prettyprint">
 from seleniumbase import BaseCase
@@ -275,7 +280,7 @@ class MyPresenterClass(BaseCase):
 
 <section data-transition="slide">
 <p><b>The End</b></p>
-<div flex_div><img rounded src="https://seleniumbase.io/cdn/img/sb_logo_g.png"></div>
+<div flex_div><img rounded src="https://seleniumbase.io/cdn/img/sb_logo_g.png" /></div>
 <aside class="notes"></aside>
 </section>
 
