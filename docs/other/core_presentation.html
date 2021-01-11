@@ -83,7 +83,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 enabled: false
             },
             title: {
-                text: 'There are 4 core areas of SeleniumBase:'
+                text: 'The 4 core areas of SeleniumBase:'
             },
             subtitle: {
                 text: ''
@@ -95,7 +95,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
                         fontSize: '14px',
                     },
                 },
-            categories: ['Basic API (test methods/functions)','Command-line options (pytest options)','The Console Scripts interface','Advanced API (Tours, Charts, & Presentations)',], crosshair: false},
+            categories: ['Basic API (test methods)','Command-line options (pytest options)','The Console Scripts interface','Advanced API (Tours, Charts, & Presentations)',], crosshair: false},
             yAxis: {
                 
                 title: {
@@ -141,8 +141,8 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     animation: true,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: false,
-                        format: '{point.name}: {point.y:.0f}'
+                        enabled: true,
+                        format: '{point.name}'
                     },
                     states: {
                         hover: {
@@ -159,7 +159,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
             data: [
             
             {
-            name: 'Basic API (test methods/functions)',
+            name: 'Basic API (test methods)',
             y: 1,
             color: ''
             },
@@ -191,7 +191,7 @@ img[rounded]{border-radius:16px;max-width:82%;}
 </section>
 
 <section data-transition="slide">
-<p>Basic API (test methods/functions). Example test:</p>
+<p>Basic API (test methods). Example test:</p>
 <div></div>
 <pre class="prettyprint">
 from seleniumbase import BaseCase
