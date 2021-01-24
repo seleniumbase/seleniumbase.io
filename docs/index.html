@@ -125,6 +125,11 @@ nosetests <span class=o>[</span>FILE_NAME.py<span class=o>]</span>:<span class=o
 --pdb  <span class=c1># If a test fails, pause run and enter debug mode. (Don&#39;t use with CI!)</span>
 -m<span class=o>=</span>MARKER  <span class=c1># Run tests with the specified pytest marker.</span>
 </code></pre></div> <p>🔵 SeleniumBase provides additional <code>pytest</code> command-line options for tests:</p> <div class=codehilite><pre><span></span><code>--browser<span class=o>=</span>BROWSER  <span class=c1># (The web browser to use. Default: &quot;chrome&quot;.)</span>
+--chrome  <span class=c1># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
+--edge  <span class=c1># (Shortcut for &quot;--browser=edge&quot;.)</span>
+--firefox  <span class=c1># (Shortcut for &quot;--browser=firefox&quot;.)</span>
+--opera  <span class=c1># (Shortcut for &quot;--browser=opera&quot;.)</span>
+--safari  <span class=c1># (Shortcut for &quot;--browser=safari&quot;.)</span>
 --cap-file<span class=o>=</span>FILE  <span class=c1># (The web browser&#39;s desired capabilities to use.)</span>
 --cap-string<span class=o>=</span>STRING  <span class=c1># (The web browser&#39;s desired capabilities to use.)</span>
 --settings-file<span class=o>=</span>FILE  <span class=c1># (Override default SeleniumBase settings.)</span>
