@@ -63,10 +63,11 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>get_partial_link_text_attribute</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>hard_fail</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_link_text</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.click_link(link_text, timeout=None)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>click_link</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=c1># Duplicates: self.click_link_text(link_text, timeout=None)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_partial_link_text</span><span class=p>(</span><span class=n>partial_link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>click_partial_link</span><span class=p>(</span><span class=n>partial_link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=c1># Duplicates: self.click_partial_link_text(partial_link_text, timeout=None)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>get_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 

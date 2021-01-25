@@ -93,7 +93,7 @@ pytest core_presentation.py
             <span class=n>code</span><span class=o>=</span><span class=p>(</span>
                 <span class=s1>&#39;from seleniumbase import BaseCase</span><span class=se>\n\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;class MyTestClass(BaseCase):</span><span class=se>\n\n</span><span class=s1>&#39;</span>
-                <span class=s1>&#39;    def test_basic(self):</span><span class=se>\n</span><span class=s1>&#39;</span>
+                <span class=s1>&#39;    def test_basics(self):</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.open(&quot;https://store.xkcd.com/search&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.type(</span><span class=se>\&#39;</span><span class=s1>input[name=&quot;q&quot;]</span><span class=se>\&#39;</span><span class=s1>, &quot;xkcd book</span><span class=se>\\</span><span class=s1>n&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.assert_text(&quot;xkcd: volume 0&quot;, &quot;h3&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
@@ -103,14 +103,14 @@ pytest core_presentation.py
                 <span class=s1>&#39;        self.click(</span><span class=se>\&#39;</span><span class=s1>a[rel=&quot;license&quot;]</span><span class=se>\&#39;</span><span class=s1>)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.assert_text(&quot;free to copy and reuse&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.go_back()</span><span class=se>\n</span><span class=s1>&#39;</span>
-                <span class=s1>&#39;        self.click_link_text(&quot;About&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
+                <span class=s1>&#39;        self.click_link(&quot;About&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.assert_exact_text(&quot;xkcd.com&quot;, &quot;h2&quot;)&#39;</span><span class=p>))</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>add_slide</span><span class=p>(</span>
             <span class=s2>&quot;&lt;h3&gt;Highlight &lt;b&gt;code&lt;/b&gt; in slides:&lt;/h3&gt;&quot;</span><span class=p>,</span>
             <span class=n>code</span><span class=o>=</span><span class=p>(</span>
                 <span class=s1>&#39;from seleniumbase import BaseCase</span><span class=se>\n\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;&lt;mark&gt;class MyTestClass(BaseCase):&lt;/mark&gt;</span><span class=se>\n\n</span><span class=s1>&#39;</span>
-                <span class=s1>&#39;    def test_basic(self):</span><span class=se>\n</span><span class=s1>&#39;</span>
+                <span class=s1>&#39;    def test_basics(self):</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.open(&quot;https://store.xkcd.com/search&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.type(</span><span class=se>\&#39;</span><span class=s1>input[name=&quot;q&quot;]</span><span class=se>\&#39;</span><span class=s1>, &quot;xkcd book</span><span class=se>\\</span><span class=s1>n&quot;)</span><span class=se>\n</span><span class=s1>&#39;</span>
                 <span class=s1>&#39;        self.assert_text(&quot;xkcd: volume 0&quot;, &quot;h3&quot;)&#39;</span><span class=p>))</span>

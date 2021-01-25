@@ -13,18 +13,19 @@ pytest my_first_test.py
 
 <span class=k>class</span> <span class=nc>MyTestClass</span><span class=p>(</span><span class=n>BaseCase</span><span class=p>):</span>
 
-    <span class=k>def</span> <span class=nf>test_basic</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>test_basics</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://store.xkcd.com/search&quot;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s1>&#39;input[name=&quot;q&quot;]&#39;</span><span class=p>,</span> <span class=s2>&quot;xkcd book&quot;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s1>&#39;input[value=&quot;Search&quot;]&#39;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=s2>&quot;xkcd: volume 0&quot;</span><span class=p>,</span> <span class=s2>&quot;h3&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://xkcd.com/353/&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assert_title</span><span class=p>(</span><span class=s2>&quot;xkcd: Python&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assert_element</span><span class=p>(</span><span class=s1>&#39;img[alt=&quot;Python&quot;]&#39;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s1>&#39;a[rel=&quot;license&quot;]&#39;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=s2>&quot;free to copy and reuse&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>go_back</span><span class=p>()</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s2>&quot;link=About&quot;</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=s2>&quot;xkcd.com&quot;</span><span class=p>,</span> <span class=s2>&quot;h2&quot;</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;://store.xkcd.com/collections/everything&quot;</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;input.search-input&quot;</span><span class=p>,</span> <span class=s2>&quot;xkcd book</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>assert_exact_text</span><span class=p>(</span><span class=s2>&quot;xkcd: volume 0&quot;</span><span class=p>,</span> <span class=s2>&quot;h3&quot;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>click_link</span><span class=p>(</span><span class=s2>&quot;About&quot;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>assert_exact_text</span><span class=p>(</span><span class=s2>&quot;xkcd.com&quot;</span><span class=p>,</span> <span class=s2>&quot;h2&quot;</span><span class=p>)</span>
 </code></pre></div> <ul> <li>默认情况下, <strong><a href=https://www.w3schools.com/cssref/css_selectors.asp>CSS Selectors</a></strong> 用来查找页面元素.</li> <li>如果你是CSS Selectors新手, 可以通过 <a href=http://flukeout.github.io/ >Flukeout</a> 游戏来帮助学习掌握.</li> <li>在上述代码中可以看到以下相关的 <code>SeleniumBase</code> 方法:</li> </ul> <p><code>from seleniumbase import BaseCase</code>:</p> <div class=codehilite><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=n>URL</span><span class=p>)</span>  <span class=c1># 打开页面</span>
 <span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>)</span>  <span class=c1># 点击页面元素</span>
 <span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>,</span> <span class=n>TEXT</span><span class=p>)</span>  <span class=c1># 输入文字 (添加 &quot;\n&quot; 在&quot;TEXT&quot;的末尾来进行换行.)</span>
