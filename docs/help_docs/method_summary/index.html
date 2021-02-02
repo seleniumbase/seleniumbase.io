@@ -1,559 +1,559 @@
-<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A complete framework for end-to-end testing with Python, pytest, and WebDriver."><meta name=author content="Michael Mintz"><link href=https://seleniumbase.io/help_docs/method_summary/ rel=canonical><link rel="shortcut icon" href=../../img/grad_logo.png><meta name=generator content="mkdocs-1.1.2, mkdocs-material-6.2.7"><title>API Reference - SeleniumBase</title><link rel=stylesheet href=../../assets/stylesheets/main.cb6bc1d0.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.39b8e14a.min.css><meta name=theme-color content=#2094f3><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-167313767-1","seleniumbase.io"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script><script async src=https://www.google-analytics.com/analytics.js></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=blue data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid" aria-label=Header> <a href=https://seleniumbase.io title=SeleniumBase class="md-header-nav__button md-logo" aria-label=SeleniumBase> <img src=../../img/grad_logo.png alt=logo> </a> <label class="md-header-nav__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header-nav__title data-md-component=header-title> <div class=md-header-nav__ellipsis> <div class=md-header-nav__topic> <span class=md-ellipsis> SeleniumBase </span> </div> <div class=md-header-nav__topic> <span class=md-ellipsis> API Reference </span> </div> </div> </div> <label class="md-header-nav__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear data-md-component=search-reset tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header-nav__source> <a href=https://github.com/seleniumbase/SeleniumBase title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg> </div> <div class=md-source__repository> seleniumbase/SeleniumBase </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--integrated" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=https://seleniumbase.io title=SeleniumBase class="md-nav__button md-logo" aria-label=SeleniumBase> <img src=../../img/grad_logo.png alt=logo> </a> SeleniumBase </label> <div class=md-nav__source> <a href=https://github.com/seleniumbase/SeleniumBase title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg> </div> <div class=md-source__repository> seleniumbase/SeleniumBase </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> SeleniumBase / ReadMe </a> </li> <li class=md-nav__item> <a href=../features_list/ class=md-nav__link> Features List </a> </li> <li class=md-nav__item> <a href=../../examples/ReadMe/ class=md-nav__link> Running Example Tests </a> </li> <li class=md-nav__item> <a href=../customizing_test_runs/ class=md-nav__link> Command Line Options </a> </li> <li class=md-nav__item> <a href=../../examples/example_logs/ReadMe/ class=md-nav__link> Dashboard / Reports </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/console_scripts/ReadMe/ class=md-nav__link> Console Scripts </a> </li> <li class=md-nav__item> <a href=../syntax_formats/ class=md-nav__link> Syntax Formats </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <a href=./ class="md-nav__link md-nav__link--active"> API Reference </a> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-9 data-md-state=indeterminate type=checkbox id=nav-9 checked> <label class=md-nav__link for=nav-9> Setup / Install <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Setup / Install" data-md-level=1> <label class=md-nav__title for=nav-9> <span class="md-nav__icon md-icon"></span> Setup / Install </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../install_python_pip_git/ class=md-nav__link> Install Python, pip, git </a> </li> <li class=md-nav__item> <a href=../virtualenv_instructions/ class=md-nav__link> Virtualenv Instructions </a> </li> <li class=md-nav__item> <a href=../install/ class=md-nav__link> Install SeleniumBase </a> </li> <li class=md-nav__item> <a href=../webdriver_installation/ class=md-nav__link> WebDriver Installation </a> </li> <li class=md-nav__item> <a href=../verify_webdriver/ class=md-nav__link> Verifying WebDriver </a> </li> <li class=md-nav__item> <a href=../how_it_works/ class=md-nav__link> How it Works </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-10 data-md-state=indeterminate type=checkbox id=nav-10 checked> <label class=md-nav__link for=nav-10> Languages <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Languages data-md-level=1> <label class=md-nav__title for=nav-10> <span class="md-nav__icon md-icon"></span> Languages </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../translations/ class=md-nav__link> Translations </a> </li> <li class=md-nav__item> <a href=../chinese/ class=md-nav__link> Chinese Docs </a> </li> <li class=md-nav__item> <a href=../locale_codes/ class=md-nav__link> Locale Codes </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-11 data-md-state=indeterminate type=checkbox id=nav-11 checked> <label class=md-nav__link for=nav-11> JS Generators <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="JS Generators" data-md-level=1> <label class=md-nav__title for=nav-11> <span class="md-nav__icon md-icon"></span> JS Generators </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../examples/tour_examples/ReadMe/ class=md-nav__link> Tour Maker </a> </li> <li class=md-nav__item> <a href=../../examples/presenter/ReadMe/ class=md-nav__link> Presentation Maker </a> </li> <li class=md-nav__item> <a href=../chart_maker/ class=md-nav__link> Chart Maker </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-12 data-md-state=indeterminate type=checkbox id=nav-12 checked> <label class=md-nav__link for=nav-12> Integrations <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Integrations data-md-level=1> <label class=md-nav__title for=nav-12> <span class="md-nav__icon md-icon"></span> Integrations </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../mobile_testing/ class=md-nav__link> Mobile Testing </a> </li> <li class=md-nav__item> <a href=../../integrations/github/workflows/ReadMe/ class=md-nav__link> GitHub CI </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/utilities/selenium_grid/ReadMe/ class=md-nav__link> Selenium Grid </a> </li> <li class=md-nav__item> <a href=../../integrations/katalon/ReadMe/ class=md-nav__link> Katalon Recorder </a> </li> <li class=md-nav__item> <a href=../../examples/master_qa/ReadMe/ class=md-nav__link> MasterQA </a> </li> <li class=md-nav__item> <a href=../../examples/visual_testing/ReadMe/ class=md-nav__link> Visual Testing </a> </li> <li class=md-nav__item> <a href=../../integrations/azure/jenkins/ReadMe/ class=md-nav__link> Jenkins on Azure </a> </li> <li class=md-nav__item> <a href=../../integrations/google_cloud/ReadMe/ class=md-nav__link> Jenkins on Google Cloud </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/utilities/selenium_ide/ReadMe/ class=md-nav__link> Recorder Export/Convert </a> </li> <li class=md-nav__item> <a href=https://github.com/seleniumbase/SeleniumBase/tree/master/integrations/node_js class=md-nav__link> NodeJS Test Runner </a> </li> <li class=md-nav__item> <a href=../../examples/chart_maker/ReadMe/ class=md-nav__link> HighCharts </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-13 data-md-state=indeterminate type=checkbox id=nav-13 checked> <label class=md-nav__link for=nav-13> Help Docs <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Help Docs" data-md-level=1> <label class=md-nav__title for=nav-13> <span class="md-nav__icon md-icon"></span> Help Docs </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../ReadMe/ class=md-nav__link> Table of Contents </a> </li> <li class=md-nav__item> <a href=../js_package_manager/ class=md-nav__link> JS Package Manager </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/masterqa/ReadMe/ class=md-nav__link> Master QA Hybrid Mode </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/common/ReadMe/ class=md-nav__link> Decorators / Security </a> </li> <li class=md-nav__item> <a href=../desired_capabilities/ class=md-nav__link> Desired Capabilities </a> </li> <li class=md-nav__item> <a href=../../integrations/docker/ReadMe/ class=md-nav__link> Docker Start Guide </a> </li> <li class=md-nav__item> <a href=../using_safari_driver/ class=md-nav__link> Using Safari Driver </a> </li> <li class=md-nav__item> <a href=../hidden_files_info/ class=md-nav__link> macOS Hidden Files </a> </li> <li class=md-nav__item> <a href=../mysql_installation/ class=md-nav__link> MySQL Instructions </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-14 data-md-state=indeterminate type=checkbox id=nav-14 checked> <label class=md-nav__link for=nav-14> Demo Pages <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Demo Pages" data-md-level=1> <label class=md-nav__title for=nav-14> <span class="md-nav__icon md-icon"></span> Demo Pages </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=https://seleniumbase.io/demo_page class=md-nav__link> Demo Page / Demo Site </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/tinymce class=md-nav__link> TinyMCE Demo Page </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/devices/ class=md-nav__link> Virtual Device Farm </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/error_page/ class=md-nav__link> Error Demo Page </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-15 data-md-state=indeterminate type=checkbox id=nav-15 checked> <label class=md-nav__link for=nav-15> Presentations <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Presentations data-md-level=1> <label class=md-nav__title for=nav-15> <span class="md-nav__icon md-icon"></span> Presentations </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=https://seleniumbase.io/other/presenter.html class=md-nav__link> Presenter Demo </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/core_presentation.html class=md-nav__link> Core Presentation </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/chart_presentation.html class=md-nav__link> Chart Maker Demo </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/py_virtual_envs.html class=md-nav__link> Virtual Env Tutorial </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-16 data-md-state=indeterminate type=checkbox id=nav-16 checked> <label class=md-nav__link for=nav-16> Other <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Other data-md-level=1> <label class=md-nav__title for=nav-16> <span class="md-nav__icon md-icon"></span> Other </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href="https://www.youtube.com/playlist?list=PLp9uKicxkBc5UIlGi2BuE3aWC7JyXpD3m" class=md-nav__link> YouTube Link </a> </li> <li class=md-nav__item> <a href=../happy_customers/ class=md-nav__link> Case Studies </a> </li> <li class=md-nav__item> <a href=../thank_you/ class=md-nav__link> Thank You </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <h1>API Reference</h1> <p><a href=../..><img src=https://seleniumbase.io/cdn/img/sb_text_f.png title=SeleniumBase align=center width=360></a></p> <h2><img src=https://seleniumbase.io/img/logo6.png title=SeleniumBase width=32> Method Summary (API Reference)</h2> <p>Here's a summary of SeleniumBase method definitions, which are defined in <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py>base_case.py</a></p> <p>For backwards compatibility, older versions of method names have remained to keep older scripts working. <em>(Ex: wait_for_element_visible was later shortened to wait_for_element and then to find_element. Also, add_text and send_keys are the same, etc.)</em></p> <div class=codehilite><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=n>url</span><span class=p>)</span>
-<span class=c1># Duplicates: self.open_url(url), self.visit(url), visit_url(url),</span>
-<span class=c1>#             self.goto(url), self.go_to(url)</span>
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A complete framework for end-to-end testing with Python, pytest, and WebDriver."><meta name=author content="Michael Mintz"><link href=https://seleniumbase.io/help_docs/method_summary/ rel=canonical><link rel="shortcut icon" href=../../img/grad_logo.png><meta name=generator content="mkdocs-1.1.2, mkdocs-material-6.2.7"><title>API Reference - SeleniumBase</title><link rel=stylesheet href=../../assets/stylesheets/main.cb6bc1d0.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.39b8e14a.min.css><meta name=theme-color content=#4051b5><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-167313767-1","seleniumbase.io"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script><script async src=https://www.google-analytics.com/analytics.js></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid" aria-label=Header> <a href=https://seleniumbase.io title=SeleniumBase class="md-header-nav__button md-logo" aria-label=SeleniumBase> <img src=../../img/grad_logo.png alt=logo> </a> <label class="md-header-nav__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header-nav__title data-md-component=header-title> <div class=md-header-nav__ellipsis> <div class=md-header-nav__topic> <span class=md-ellipsis> SeleniumBase </span> </div> <div class=md-header-nav__topic> <span class=md-ellipsis> API Reference </span> </div> </div> </div> <label class="md-header-nav__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear data-md-component=search-reset tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header-nav__source> <a href=https://github.com/seleniumbase/SeleniumBase title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg> </div> <div class=md-source__repository> seleniumbase/SeleniumBase </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=https://seleniumbase.io title=SeleniumBase class="md-nav__button md-logo" aria-label=SeleniumBase> <img src=../../img/grad_logo.png alt=logo> </a> SeleniumBase </label> <div class=md-nav__source> <a href=https://github.com/seleniumbase/SeleniumBase title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg> </div> <div class=md-source__repository> seleniumbase/SeleniumBase </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> SeleniumBase / ReadMe </a> </li> <li class=md-nav__item> <a href=../features_list/ class=md-nav__link> Features List </a> </li> <li class=md-nav__item> <a href=../../examples/ReadMe/ class=md-nav__link> Running Example Tests </a> </li> <li class=md-nav__item> <a href=../customizing_test_runs/ class=md-nav__link> Command Line Options </a> </li> <li class=md-nav__item> <a href=../../examples/example_logs/ReadMe/ class=md-nav__link> Dashboard / Reports </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/console_scripts/ReadMe/ class=md-nav__link> Console Scripts </a> </li> <li class=md-nav__item> <a href=../syntax_formats/ class=md-nav__link> Syntax Formats </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <a href=./ class="md-nav__link md-nav__link--active"> API Reference </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-9 type=checkbox id=nav-9> <label class=md-nav__link for=nav-9> Setup / Install <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Setup / Install" data-md-level=1> <label class=md-nav__title for=nav-9> <span class="md-nav__icon md-icon"></span> Setup / Install </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../install_python_pip_git/ class=md-nav__link> Install Python, pip, git </a> </li> <li class=md-nav__item> <a href=../virtualenv_instructions/ class=md-nav__link> Virtualenv Instructions </a> </li> <li class=md-nav__item> <a href=../install/ class=md-nav__link> Install SeleniumBase </a> </li> <li class=md-nav__item> <a href=../webdriver_installation/ class=md-nav__link> WebDriver Installation </a> </li> <li class=md-nav__item> <a href=../verify_webdriver/ class=md-nav__link> Verifying WebDriver </a> </li> <li class=md-nav__item> <a href=../how_it_works/ class=md-nav__link> How it Works </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-10 type=checkbox id=nav-10> <label class=md-nav__link for=nav-10> Languages <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Languages data-md-level=1> <label class=md-nav__title for=nav-10> <span class="md-nav__icon md-icon"></span> Languages </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../translations/ class=md-nav__link> Translations </a> </li> <li class=md-nav__item> <a href=../chinese/ class=md-nav__link> Chinese Docs </a> </li> <li class=md-nav__item> <a href=../locale_codes/ class=md-nav__link> Locale Codes </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-11 type=checkbox id=nav-11> <label class=md-nav__link for=nav-11> JS Generators <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="JS Generators" data-md-level=1> <label class=md-nav__title for=nav-11> <span class="md-nav__icon md-icon"></span> JS Generators </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../examples/tour_examples/ReadMe/ class=md-nav__link> Tour Maker </a> </li> <li class=md-nav__item> <a href=../../examples/presenter/ReadMe/ class=md-nav__link> Presentation Maker </a> </li> <li class=md-nav__item> <a href=../chart_maker/ class=md-nav__link> Chart Maker </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-12 type=checkbox id=nav-12> <label class=md-nav__link for=nav-12> Integrations <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Integrations data-md-level=1> <label class=md-nav__title for=nav-12> <span class="md-nav__icon md-icon"></span> Integrations </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../mobile_testing/ class=md-nav__link> Mobile Testing </a> </li> <li class=md-nav__item> <a href=../../integrations/github/workflows/ReadMe/ class=md-nav__link> GitHub CI </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/utilities/selenium_grid/ReadMe/ class=md-nav__link> Selenium Grid </a> </li> <li class=md-nav__item> <a href=../../integrations/katalon/ReadMe/ class=md-nav__link> Katalon Recorder </a> </li> <li class=md-nav__item> <a href=../../examples/master_qa/ReadMe/ class=md-nav__link> MasterQA </a> </li> <li class=md-nav__item> <a href=../../examples/visual_testing/ReadMe/ class=md-nav__link> Visual Testing </a> </li> <li class=md-nav__item> <a href=../../integrations/azure/jenkins/ReadMe/ class=md-nav__link> Jenkins on Azure </a> </li> <li class=md-nav__item> <a href=../../integrations/google_cloud/ReadMe/ class=md-nav__link> Jenkins on Google Cloud </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/utilities/selenium_ide/ReadMe/ class=md-nav__link> Recorder Export/Convert </a> </li> <li class=md-nav__item> <a href=https://github.com/seleniumbase/SeleniumBase/tree/master/integrations/node_js class=md-nav__link> NodeJS Test Runner </a> </li> <li class=md-nav__item> <a href=../../examples/chart_maker/ReadMe/ class=md-nav__link> HighCharts </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-13 type=checkbox id=nav-13> <label class=md-nav__link for=nav-13> Help Docs <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Help Docs" data-md-level=1> <label class=md-nav__title for=nav-13> <span class="md-nav__icon md-icon"></span> Help Docs </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../ReadMe/ class=md-nav__link> Table of Contents </a> </li> <li class=md-nav__item> <a href=../js_package_manager/ class=md-nav__link> JS Package Manager </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/masterqa/ReadMe/ class=md-nav__link> Master QA Hybrid Mode </a> </li> <li class=md-nav__item> <a href=../../seleniumbase/common/ReadMe/ class=md-nav__link> Decorators / Security </a> </li> <li class=md-nav__item> <a href=../desired_capabilities/ class=md-nav__link> Desired Capabilities </a> </li> <li class=md-nav__item> <a href=../../integrations/docker/ReadMe/ class=md-nav__link> Docker Start Guide </a> </li> <li class=md-nav__item> <a href=../using_safari_driver/ class=md-nav__link> Using Safari Driver </a> </li> <li class=md-nav__item> <a href=../hidden_files_info/ class=md-nav__link> macOS Hidden Files </a> </li> <li class=md-nav__item> <a href=../mysql_installation/ class=md-nav__link> MySQL Instructions </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-14 type=checkbox id=nav-14> <label class=md-nav__link for=nav-14> Demo Pages <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Demo Pages" data-md-level=1> <label class=md-nav__title for=nav-14> <span class="md-nav__icon md-icon"></span> Demo Pages </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=https://seleniumbase.io/demo_page class=md-nav__link> Demo Page / Demo Site </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/tinymce class=md-nav__link> TinyMCE Demo Page </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/devices/ class=md-nav__link> Virtual Device Farm </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/error_page/ class=md-nav__link> Error Demo Page </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-15 type=checkbox id=nav-15> <label class=md-nav__link for=nav-15> Presentations <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Presentations data-md-level=1> <label class=md-nav__title for=nav-15> <span class="md-nav__icon md-icon"></span> Presentations </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=https://seleniumbase.io/other/presenter.html class=md-nav__link> Presenter Demo </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/core_presentation.html class=md-nav__link> Core Presentation </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/chart_presentation.html class=md-nav__link> Chart Maker Demo </a> </li> <li class=md-nav__item> <a href=https://seleniumbase.io/other/py_virtual_envs.html class=md-nav__link> Virtual Env Tutorial </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-16 type=checkbox id=nav-16> <label class=md-nav__link for=nav-16> Other <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Other data-md-level=1> <label class=md-nav__title for=nav-16> <span class="md-nav__icon md-icon"></span> Other </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href="https://www.youtube.com/playlist?list=PLp9uKicxkBc5UIlGi2BuE3aWC7JyXpD3m" class=md-nav__link> YouTube Link </a> </li> <li class=md-nav__item> <a href=../happy_customers/ class=md-nav__link> Case Studies </a> </li> <li class=md-nav__item> <a href=../thank_you/ class=md-nav__link> Thank You </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <h1>API Reference</h1> <p><a href=../..><img src=https://seleniumbase.io/cdn/img/sb_text_f.png title=SeleniumBase align=center width=360></a></p> <h2><img src=https://seleniumbase.io/img/logo6.png title=SeleniumBase width=32> Method Summary (API Reference)</h2> <p>Here's a summary of SeleniumBase method definitions, which are defined in <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py>base_case.py</a></p> <p>For backwards compatibility, older versions of method names have remained to keep older scripts working. <em>(Ex: wait_for_element_visible was later shortened to wait_for_element and then to find_element. Also, add_text and send_keys are the same, etc.)</em></p> <pre><code class=language-python>self.open(url)
+# Duplicates: self.open_url(url), self.visit(url), visit_url(url),
+#             self.goto(url), self.go_to(url)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=p>)</span>
-<span class=c1># If the url parameter is a URL: Perform self.open(url)</span>
-<span class=c1># Otherwise: return self.get_element(URL_AS_A_SELECTOR)</span>
+self.get(url)
+# If the url parameter is a URL: Perform self.open(url)
+# Otherwise: return self.get_element(URL_AS_A_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>delay</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.click(selector, by=By.CSS_SELECTOR, timeout=None, delay=0)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>slow_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.slow_click(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>double_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.double_click(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_chain</span><span class=p>(</span><span class=n>selectors_list</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>spacing</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.click_chain(selectors_list, by=By.CSS_SELECTOR, timeout=None, spacing=0)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.update_text(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
-<span class=c1>#             self.input(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
-<span class=c1>#             self.write(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
+self.type(selector, text, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.update_text(selector, text, by=By.CSS_SELECTOR, timeout=None)
+#             self.input(selector, text, by=By.CSS_SELECTOR, timeout=None)
+#             self.write(selector, text, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.send_keys(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
+self.add_text(selector, text, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.send_keys(selector, text, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>submit</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.submit(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>clear</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.clear(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>refresh_page</span><span class=p>()</span>
-<span class=c1># Duplicates: self.refresh(), self.reload(), self.reload_page()</span>
+self.refresh_page()
+# Duplicates: self.refresh(), self.reload(), self.reload_page()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_current_url</span><span class=p>()</span>
+self.get_current_url()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_page_source</span><span class=p>()</span>
+self.get_page_source()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_title</span><span class=p>()</span>
-<span class=c1># Duplicates: self.get_page_title()</span>
+self.get_title()
+# Duplicates: self.get_page_title()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_user_agent</span><span class=p>()</span>
+self.get_user_agent()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_locale_code</span><span class=p>()</span>
+self.get_locale_code()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>go_back</span><span class=p>()</span>
+self.go_back()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>go_forward</span><span class=p>()</span>
+self.go_forward()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_element_present</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.is_element_present(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_element_visible</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.is_element_visible(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_text_visible</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.is_text_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_link_text_visible</span><span class=p>(</span><span class=n>link_text</span><span class=p>)</span>
+self.is_link_text_visible(link_text)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_partial_link_text_visible</span><span class=p>(</span><span class=n>partial_link_text</span><span class=p>)</span>
+self.is_partial_link_text_visible(partial_link_text)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_link_text_present</span><span class=p>(</span><span class=n>link_text</span><span class=p>)</span>
+self.is_link_text_present(link_text)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_partial_link_text_present</span><span class=p>(</span><span class=n>link_text</span><span class=p>)</span>
+self.is_partial_link_text_present(link_text)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_link_attribute</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>hard_fail</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
-<span class=c1># Duplicates: self.get_link_text_attribute(link_text, attribute, hard_fail=True)</span>
+self.get_link_attribute(link_text, attribute, hard_fail=True)
+# Duplicates: self.get_link_text_attribute(link_text, attribute, hard_fail=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_partial_link_text_attribute</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>hard_fail</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.get_partial_link_text_attribute(link_text, attribute, hard_fail=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_link</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.click_link_text(link_text, timeout=None)</span>
+self.click_link(link_text, timeout=None)
+# Duplicates: self.click_link_text(link_text, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_partial_link</span><span class=p>(</span><span class=n>partial_link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.click_partial_link_text(partial_link_text, timeout=None)</span>
+self.click_partial_link(partial_link_text, timeout=None)
+# Duplicates: self.click_partial_link_text(partial_link_text, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.get_text(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>hard_fail</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.get_attribute(selector, attribute, by=By.CSS_SELECTOR, timeout=None, hard_fail=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.set_attribute(selector, attribute, value, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_attributes</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
-<span class=c1># Duplicates: self.set_attribute_all(selector, attribute, value, by=By.CSS_SELECTOR)</span>
+self.set_attributes(selector, attribute, value, by=By.CSS_SELECTOR)
+# Duplicates: self.set_attribute_all(selector, attribute, value, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>remove_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.remove_attribute(selector, attribute, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>remove_attributes</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.remove_attributes(selector, attribute, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_property_value</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=nb>property</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.get_property_value(selector, property, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_image_url</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.get_image_url(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>find_elements</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>limit</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.find_elements(selector, by=By.CSS_SELECTOR, limit=0)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>find_visible_elements</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>limit</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.find_visible_elements(selector, by=By.CSS_SELECTOR, limit=0)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_visible_elements</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>limit</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.click_visible_elements(selector, by=By.CSS_SELECTOR, limit=0, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_nth_visible_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>number</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.click_nth_visible_element(selector, number, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_if_visible</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.click_if_visible(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_selected</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.is_checked(selector, by=By.CSS_SELECTOR, timeout=None)</span>
+self.is_selected(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.is_checked(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>select_if_unselected</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
-<span class=c1># Duplicates: self.check_if_unchecked(selector, by=By.CSS_SELECTOR)</span>
+self.select_if_unselected(selector, by=By.CSS_SELECTOR)
+# Duplicates: self.check_if_unchecked(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>unselect_if_selected</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
-<span class=c1># Duplicates: self.uncheck_if_checked(selector, by=By.CSS_SELECTOR)</span>
+self.unselect_if_selected(selector, by=By.CSS_SELECTOR)
+# Duplicates: self.uncheck_if_checked(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_element_in_an_iframe</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.is_element_in_an_iframe(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_frame_of_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.switch_to_frame_of_element(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>hover_on_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.hover_on_element(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>hover_and_click</span><span class=p>(</span><span class=n>hover_selector</span><span class=p>,</span> <span class=n>click_selector</span><span class=p>,</span>
-                     <span class=n>hover_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>click_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
-                     <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.hover_and_click(hover_selector, click_selector,
+                     hover_by=By.CSS_SELECTOR, click_by=By.CSS_SELECTOR,
+                     timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>hover_and_double_click</span><span class=p>(</span><span class=n>hover_selector</span><span class=p>,</span> <span class=n>click_selector</span><span class=p>,</span>
-                            <span class=n>hover_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>click_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
-                            <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.hover_and_double_click(hover_selector, click_selector,
+                            hover_by=By.CSS_SELECTOR, click_by=By.CSS_SELECTOR,
+                            timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>drag_and_drop</span><span class=p>(</span><span class=n>drag_selector</span><span class=p>,</span> <span class=n>drop_selector</span><span class=p>,</span>
-                   <span class=n>drag_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>drop_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
-                   <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.drag_and_drop(drag_selector, drop_selector,
+                   drag_by=By.CSS_SELECTOR, drop_by=By.CSS_SELECTOR,
+                   timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>drag_and_drop_with_offset</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.drag_and_drop_with_offset(selector, x, y, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>select_option_by_text</span><span class=p>(</span><span class=n>dropdown_selector</span><span class=p>,</span> <span class=n>option</span><span class=p>,</span>
-                           <span class=n>dropdown_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
-                           <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.select_option_by_text(dropdown_selector, option,
+                           dropdown_by=By.CSS_SELECTOR,
+                           timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>select_option_by_index</span><span class=p>(</span><span class=n>dropdown_selector</span><span class=p>,</span> <span class=n>option</span><span class=p>,</span>
-                            <span class=n>dropdown_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
-                            <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.select_option_by_index(dropdown_selector, option,
+                            dropdown_by=By.CSS_SELECTOR,
+                            timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>select_option_by_value</span><span class=p>(</span><span class=n>dropdown_selector</span><span class=p>,</span> <span class=n>option</span><span class=p>,</span>
-                            <span class=n>dropdown_by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
-                            <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.select_option_by_value(dropdown_selector, option,
+                            dropdown_by=By.CSS_SELECTOR,
+                            timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>load_html_string</span><span class=p>(</span><span class=n>html_string</span><span class=p>,</span> <span class=n>new_page</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.load_html_string(html_string, new_page=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>load_html_file</span><span class=p>(</span><span class=n>html_file</span><span class=p>,</span> <span class=n>new_page</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.load_html_file(html_file, new_page=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>open_html_file</span><span class=p>(</span><span class=n>html_file</span><span class=p>)</span>
+self.open_html_file(html_file)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>execute_script</span><span class=p>(</span><span class=n>script</span><span class=p>)</span>
+self.execute_script(script)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>execute_async_script</span><span class=p>(</span><span class=n>script</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.execute_async_script(script, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>safe_execute_script</span><span class=p>(</span><span class=n>script</span><span class=p>)</span>
+self.safe_execute_script(script)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_window_rect</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>)</span>
+self.set_window_rect(x, y, width, height)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_window_size</span><span class=p>(</span><span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>)</span>
+self.set_window_size(width, height)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>maximize_window</span><span class=p>()</span>
+self.maximize_window()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_frame</span><span class=p>(</span><span class=n>frame</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.switch_to_frame(frame, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_content</span><span class=p>()</span>
+self.switch_to_default_content()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>open_new_window</span><span class=p>(</span><span class=n>switch_to</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.open_new_window(switch_to=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_window</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.switch_to_window(window, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_window</span><span class=p>()</span>
+self.switch_to_default_window()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_new_driver</span><span class=p>(</span><span class=n>browser</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>headless</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>locale_code</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>servername</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>proxy</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>agent</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>switch_to</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>cap_file</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>cap_string</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>disable_csp</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>enable_ws</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>enable_sync</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>use_auto_ext</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>no_sandbox</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>disable_gpu</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>incognito</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>guest_mode</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>devtools</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>remote_debug</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>swiftshader</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>block_images</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>user_data_dir</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                    <span class=n>extension_zip</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>extension_dir</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>is_mobile</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span>
-                    <span class=n>d_width</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>d_height</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>d_p_r</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.get_new_driver(browser=None, headless=None, locale_code=None,
+                    servername=None, port=None, proxy=None, agent=None,
+                    switch_to=True, cap_file=None, cap_string=None,
+                    disable_csp=None, enable_ws=None, enable_sync=None,
+                    use_auto_ext=None, no_sandbox=None, disable_gpu=None,
+                    incognito=None, guest_mode=None,
+                    devtools=None, remote_debug=None,
+                    swiftshader=None, block_images=None, user_data_dir=None,
+                    extension_zip=None, extension_dir=None, is_mobile=False,
+                    d_width=None, d_height=None, d_p_r=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_driver</span><span class=p>(</span><span class=n>driver</span><span class=p>)</span>
+self.switch_to_driver(driver)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_driver</span><span class=p>()</span>
+self.switch_to_default_driver()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_screenshot</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.save_screenshot(name, folder=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_page_source</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.save_page_source(name, folder=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_cookies</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s2>&quot;cookies.txt&quot;</span><span class=p>)</span>
+self.save_cookies(name=&quot;cookies.txt&quot;)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>load_cookies</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s2>&quot;cookies.txt&quot;</span><span class=p>)</span>
+self.load_cookies(name=&quot;cookies.txt&quot;)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>delete_all_cookies</span><span class=p>()</span>
+self.delete_all_cookies()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>delete_saved_cookies</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s2>&quot;cookies.txt&quot;</span><span class=p>)</span>
+self.delete_saved_cookies(name=&quot;cookies.txt&quot;)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_ready_state_complete</span><span class=p>(</span><span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_ready_state_complete(timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_angularjs</span><span class=p>(</span><span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_angularjs(timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=n>seconds</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait(seconds)</span>
+self.sleep(seconds)
+# Duplicates: self.wait(seconds)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>activate_design_mode</span><span class=p>()</span>
+self.activate_design_mode()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>deactivate_design_mode</span><span class=p>()</span>
+self.deactivate_design_mode()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>activate_jquery</span><span class=p>()</span>
+self.activate_jquery()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>bring_to_front</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.bring_to_front(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>highlight_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.highlight_click(selector, by=By.CSS_SELECTOR, loops=3, scroll=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>highlight_update_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.highlight_update_text(selector, text, by=By.CSS_SELECTOR, loops=3, scroll=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>highlight</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>4</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.highlight(selector, by=By.CSS_SELECTOR, loops=4, scroll=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>press_up_arrow</span><span class=p>(</span><span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>times</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.press_up_arrow(selector=&quot;html&quot;, times=1, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>press_down_arrow</span><span class=p>(</span><span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>times</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.press_down_arrow(selector=&quot;html&quot;, times=1, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>press_left_arrow</span><span class=p>(</span><span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>times</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.press_left_arrow(selector=&quot;html&quot;, times=1, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>press_right_arrow</span><span class=p>(</span><span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>times</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.press_right_arrow(selector=&quot;html&quot;, times=1, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>scroll_to</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.scroll_to(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>slow_scroll_to</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.slow_scroll_to(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>scroll_to_top</span><span class=p>()</span>
+self.scroll_to_top()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>scroll_to_bottom</span><span class=p>()</span>
+self.scroll_to_bottom()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click_xpath</span><span class=p>(</span><span class=n>xpath</span><span class=p>)</span>
+self.click_xpath(xpath)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>js_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>all_matches</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+self.js_click(selector, by=By.CSS_SELECTOR, all_matches=False)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>js_click_all</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.js_click_all(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>jquery_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.jquery_click(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>jquery_click_all</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.jquery_click_all(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>hide_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.hide_element(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>hide_elements</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.hide_elements(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>show_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.show_element(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>show_elements</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.show_elements(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>remove_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.remove_element(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>remove_elements</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.remove_elements(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>ad_block</span><span class=p>()</span>
-<span class=c1># Duplicates: self.block_ads()</span>
+self.ad_block()
+# Duplicates: self.block_ads()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_domain_url</span><span class=p>(</span><span class=n>url</span><span class=p>)</span>
+self.get_domain_url(url)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_beautiful_soup</span><span class=p>(</span><span class=n>source</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.get_beautiful_soup(source=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_unique_links</span><span class=p>()</span>
+self.get_unique_links()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_link_status_code</span><span class=p>(</span><span class=n>link</span><span class=p>,</span> <span class=n>allow_redirects</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+self.get_link_status_code(link, allow_redirects=False, timeout=5)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_link_status_code_is_not_404</span><span class=p>(</span><span class=n>link</span><span class=p>)</span>
+self.assert_link_status_code_is_not_404(link)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_no_404_errors</span><span class=p>(</span><span class=n>multithreaded</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
-<span class=c1># Duplicates: self.assert_no_broken_links(multithreaded=True)</span>
+self.assert_no_404_errors(multithreaded=True)
+# Duplicates: self.assert_no_broken_links(multithreaded=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>print_unique_links_with_status_codes</span><span class=p>()</span>
+self.print_unique_links_with_status_codes()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_pdf_text</span><span class=p>(</span><span class=n>pdf</span><span class=p>,</span> <span class=n>page</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>maxpages</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>password</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                  <span class=n>codec</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>,</span> <span class=n>wrap</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>nav</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>override</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+self.get_pdf_text(pdf, page=None, maxpages=None, password=None,
+                  codec='utf-8', wrap=False, nav=False, override=False)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_pdf_text</span><span class=p>(</span><span class=n>pdf</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>page</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>maxpages</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>password</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                     <span class=n>codec</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>,</span> <span class=n>wrap</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>nav</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>override</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+self.assert_pdf_text(pdf, text, page=None, maxpages=None, password=None,
+                     codec='utf-8', wrap=True, nav=False, override=False)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_folder</span><span class=p>(</span><span class=n>folder</span><span class=p>)</span>
+self.create_folder(folder)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>choose_file</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>file_path</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.choose_file(selector, file_path, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_element_as_image_file</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>file_name</span><span class=p>,</span> <span class=n>folder</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>overlay_text</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=p>)</span>
+self.save_element_as_image_file(selector, file_name, folder=None, overlay_text=&quot;&quot;)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>download_file</span><span class=p>(</span><span class=n>file_url</span><span class=p>,</span> <span class=n>destination_folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.download_file(file_url, destination_folder=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_file_as</span><span class=p>(</span><span class=n>file_url</span><span class=p>,</span> <span class=n>new_file_name</span><span class=p>,</span> <span class=n>destination_folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.save_file_as(file_url, new_file_name, destination_folder=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_data_as</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>file_name</span><span class=p>,</span> <span class=n>destination_folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.save_data_as(data, file_name, destination_folder=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_downloads_folder</span><span class=p>()</span>
+self.get_downloads_folder()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_path_of_downloaded_file</span><span class=p>(</span><span class=n>file</span><span class=p>)</span>
+self.get_path_of_downloaded_file(file)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>is_downloaded_file_present</span><span class=p>(</span><span class=n>file</span><span class=p>)</span>
+self.is_downloaded_file_present(file)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_downloaded_file</span><span class=p>(</span><span class=n>file</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_downloaded_file(file, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_true</span><span class=p>(</span><span class=n>expr</span><span class=p>,</span> <span class=n>msg</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_true(expr, msg=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_false</span><span class=p>(</span><span class=n>expr</span><span class=p>,</span> <span class=n>msg</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_false(expr, msg=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_equal</span><span class=p>(</span><span class=n>first</span><span class=p>,</span> <span class=n>second</span><span class=p>,</span> <span class=n>msg</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_equal(first, second, msg=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_not_equal</span><span class=p>(</span><span class=n>first</span><span class=p>,</span> <span class=n>second</span><span class=p>,</span> <span class=n>msg</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_not_equal(first, second, msg=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_raises</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+self.assert_raises(*args, **kwargs)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_title</span><span class=p>(</span><span class=n>title</span><span class=p>)</span>
+self.assert_title(title)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_no_js_errors</span><span class=p>()</span>
+self.assert_no_js_errors()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>inspect_html</span><span class=p>()</span>
+self.inspect_html()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_google_auth_password</span><span class=p>(</span><span class=n>totp_key</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.get_google_auth_password(totp_key=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>convert_css_to_xpath</span><span class=p>(</span><span class=n>css</span><span class=p>)</span>
+self.convert_css_to_xpath(css)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>convert_xpath_to_css</span><span class=p>(</span><span class=n>xpath</span><span class=p>)</span>
+self.convert_xpath_to_css(xpath)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>convert_to_css_selector</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=p>)</span>
+self.convert_to_css_selector(selector, by)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_value</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.set_value(selector, text, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>js_update_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.js_type(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
-<span class=c1>#             self.set_text(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
+self.js_update_text(selector, text, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.js_type(selector, text, by=By.CSS_SELECTOR, timeout=None)
+#             self.set_text(selector, text, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>jquery_update_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.jquery_update_text(selector, text, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_time_limit</span><span class=p>(</span><span class=n>time_limit</span><span class=p>)</span>
+self.set_time_limit(time_limit)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>skip</span><span class=p>(</span><span class=n>reason</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=p>)</span>
+self.skip(reason=&quot;&quot;)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_local_storage_item</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+self.set_local_storage_item(key, value)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_local_storage_item</span><span class=p>(</span><span class=n>key</span><span class=p>)</span>
+self.get_local_storage_item(key)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>remove_local_storage_item</span><span class=p>(</span><span class=n>key</span><span class=p>)</span>
+self.remove_local_storage_item(key)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>clear_local_storage</span><span class=p>()</span>
+self.clear_local_storage()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_local_storage_keys</span><span class=p>()</span>
+self.get_local_storage_keys()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_local_storage_items</span><span class=p>()</span>
+self.get_local_storage_items()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_session_storage_item</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>
+self.set_session_storage_item(key, value)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_session_storage_item</span><span class=p>(</span><span class=n>key</span><span class=p>)</span>
+self.get_session_storage_item(key)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>remove_session_storage_item</span><span class=p>(</span><span class=n>key</span><span class=p>)</span>
+self.remove_session_storage_item(key)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>clear_session_storage</span><span class=p>()</span>
+self.clear_session_storage()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_session_storage_keys</span><span class=p>()</span>
+self.get_session_storage_keys()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_session_storage_items</span><span class=p>()</span>
+self.get_session_storage_items()
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_css_link</span><span class=p>(</span><span class=n>css_link</span><span class=p>)</span>
+self.add_css_link(css_link)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_js_link</span><span class=p>(</span><span class=n>js_link</span><span class=p>)</span>
+self.add_js_link(js_link)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_css_style</span><span class=p>(</span><span class=n>css_style</span><span class=p>)</span>
+self.add_css_style(css_style)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_js_code_from_link</span><span class=p>(</span><span class=n>js_link</span><span class=p>)</span>
+self.add_js_code_from_link(js_link)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_js_code</span><span class=p>(</span><span class=n>js_code</span><span class=p>)</span>
+self.add_js_code(js_code)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_meta_tag</span><span class=p>(</span><span class=n>http_equiv</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>content</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.add_meta_tag(http_equiv=None, content=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_presentation</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>theme</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span> <span class=n>transition</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>)</span>
+self.create_presentation(name=None, theme=&quot;default&quot;, transition=&quot;default&quot;)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_slide</span><span class=p>(</span><span class=n>content</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>image</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>code</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>iframe</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-               <span class=n>content2</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>notes</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>transition</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.add_slide(content=None, image=None, code=None, iframe=None,
+               content2=None, notes=None, transition=None, name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_presentation</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>filename</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>show_notes</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>interval</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.save_presentation(name=None, filename=None, show_notes=False, interval=0)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>begin_presentation</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>filename</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>show_notes</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>interval</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.begin_presentation(name=None, filename=None, show_notes=False, interval=0)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_pie_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                      <span class=n>data_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>unit</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>libs</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.create_pie_chart(chart_name=None, title=None, subtitle=None,
+                      data_name=None, unit=None, libs=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_bar_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                      <span class=n>data_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>unit</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>libs</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.create_bar_chart(chart_name=None, title=None, subtitle=None,
+                      data_name=None, unit=None, libs=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_column_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                         <span class=n>data_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>unit</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>libs</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.create_column_chart(chart_name=None, title=None, subtitle=None,
+                         data_name=None, unit=None, libs=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_line_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                       <span class=n>data_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>unit</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>zero</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>libs</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.create_line_chart(chart_name=None, title=None, subtitle=None,
+                       data_name=None, unit=None, zero=False, libs=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_area_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                       <span class=n>data_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>unit</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>zero</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>libs</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.create_area_chart(chart_name=None, title=None, subtitle=None,
+                       data_name=None, unit=None, zero=False, libs=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_series_to_chart</span><span class=p>(</span><span class=n>data_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.add_series_to_chart(data_name=None, chart_name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_data_point</span><span class=p>(</span><span class=n>label</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>color</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.add_data_point(label, value, color=None, chart_name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>save_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>filename</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.save_chart(chart_name=None, filename=None, folder=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>display_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>filename</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>interval</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+self.display_chart(chart_name=None, filename=None, interval=0)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>extract_chart</span><span class=p>(</span><span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.extract_chart(chart_name=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>theme</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.create_tour(name=None, theme=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_shepherd_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>theme</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.create_shepherd_tour(name=None, theme=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_bootstrap_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.create_bootstrap_tour(name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_hopscotch_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.create_hopscotch_tour(name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>create_introjs_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.create_introjs_tour(name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>add_tour_step</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-                   <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>theme</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>alignment</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.add_tour_step(message, selector=None, name=None,
+                   title=None, theme=None, alignment=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>play_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.play_tour(name=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>export_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>filename</span><span class=o>=</span><span class=s2>&quot;my_tour.js&quot;</span><span class=p>,</span> <span class=n>url</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.export_tour(name=None, filename=&quot;my_tour.js&quot;, url=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>activate_jquery_confirm</span><span class=p>()</span>
+self.activate_jquery_confirm()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>activate_messenger</span><span class=p>()</span>
+self.activate_messenger()
 
-<span class=bp>self</span><span class=o>.</span><span class=n>post_message</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>duration</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>pause</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>style</span><span class=o>=</span><span class=s2>&quot;info&quot;</span><span class=p>)</span>
+self.post_message(message, duration=None, pause=True, style=&quot;info&quot;)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>post_message_and_highlight</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
+self.post_message_and_highlight(message, selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>post_success_message</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>duration</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>pause</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.post_success_message(message, duration=None, pause=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>post_error_message</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>duration</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>pause</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+self.post_error_message(message, duration=None, pause=True)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_messenger_theme</span><span class=p>(</span><span class=n>theme</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span> <span class=n>location</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span>
-                         <span class=n>max_messages</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>)</span>
+self.set_messenger_theme(theme=&quot;default&quot;, location=&quot;default&quot;,
+                         max_messages=&quot;default&quot;)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>generate_referral</span><span class=p>(</span><span class=n>start_page</span><span class=p>,</span> <span class=n>destination_page</span><span class=p>)</span>
+self.generate_referral(start_page, destination_page)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>generate_traffic</span><span class=p>(</span><span class=n>start_page</span><span class=p>,</span> <span class=n>destination_page</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span>
+self.generate_traffic(start_page, destination_page, loops=1)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>generate_referral_chain</span><span class=p>(</span><span class=n>pages</span><span class=p>)</span>
+self.generate_referral_chain(pages)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>generate_traffic_chain</span><span class=p>(</span><span class=n>pages</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span>
+self.generate_traffic_chain(pages, loops=1)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_element_present(selector, by=By.CSS_SELECTOR, timeout=None)</span>
+self.get_element(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.wait_for_element_present(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>find_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_element(selector, by=By.CSS_SELECTOR, timeout=None)</span>
-<span class=c1>#             self.wait_for_element_visible(selector, by=By.CSS_SELECTOR, timeout=None)</span>
+self.find_element(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.wait_for_element(selector, by=By.CSS_SELECTOR, timeout=None)
+#             self.wait_for_element_visible(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_element_present</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_element_present(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.assert_element_visible(selector, by=By.CSS_SELECTOR, timeout=None)</span>
+self.assert_element(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.assert_element_visible(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>find_text</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)</span>
-<span class=c1>#             self.wait_for_text_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)</span>
+self.find_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.wait_for_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
+#             self.wait_for_text_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_exact_text_visible</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_exact_text_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.assert_text_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)</span>
+self.assert_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.assert_text_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_exact_text</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_exact_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_link_text_present</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_link_text_present(link_text, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_partial_link_text_present</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_partial_link_text_present(link_text, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>find_link_text</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_link_text(link_text, timeout=None)</span>
-<span class=c1>#             self.wait_for_link_text_visible(link_text, timeout=None)</span>
+self.find_link_text(link_text, timeout=None)
+# Duplicates: self.wait_for_link_text(link_text, timeout=None)
+#             self.wait_for_link_text_visible(link_text, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_link_text</span><span class=p>(</span><span class=n>link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_link_text(link_text, timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>find_partial_link_text</span><span class=p>(</span><span class=n>partial_link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_partial_link_text(partial_link_text, timeout=None)</span>
+self.find_partial_link_text(partial_link_text, timeout=None)
+# Duplicates: self.wait_for_partial_link_text(partial_link_text, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_partial_link_text</span><span class=p>(</span><span class=n>partial_link_text</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_partial_link_text(partial_link_text, timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_element_absent</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_element_not_present(selector, by=By.CSS_SELECTOR)</span>
+self.wait_for_element_absent(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.wait_for_element_not_present(selector, by=By.CSS_SELECTOR)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_element_absent</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.assert_element_not_present(selector, by=By.CSS_SELECTOR)</span>
+self.assert_element_absent(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.assert_element_not_present(selector, by=By.CSS_SELECTOR)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_element_not_visible</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_element_not_visible(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_element_not_visible</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_element_not_visible(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_text_not_visible</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.wait_for_text_not_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_text_not_visible</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+self.assert_text_not_visible(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>accept_alert</span><span class=p>(</span><span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_and_accept_alert(timeout=None)</span>
+self.accept_alert(timeout=None)
+# Duplicates: self.wait_for_and_accept_alert(timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>dismiss_alert</span><span class=p>(</span><span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_and_dismiss_alert(timeout=None)</span>
+self.dismiss_alert(timeout=None)
+# Duplicates: self.wait_for_and_dismiss_alert(timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_alert</span><span class=p>(</span><span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.wait_for_and_switch_to_alert(timeout=None)</span>
+self.switch_to_alert(timeout=None)
+# Duplicates: self.wait_for_and_switch_to_alert(timeout=None)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>check_window</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span> <span class=n>level</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span> <span class=n>baseline</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+self.check_window(name=&quot;default&quot;, level=0, baseline=False)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>deferred_assert_element</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.delayed_assert_element(selector, by=By.CSS_SELECTOR, timeout=None)</span>
+self.deferred_assert_element(selector, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.delayed_assert_element(selector, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>deferred_assert_text</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.delayed_assert_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)</span>
+self.deferred_assert_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
+# Duplicates: self.delayed_assert_text(text, selector=&quot;html&quot;, by=By.CSS_SELECTOR, timeout=None)
 
-<span class=bp>self</span><span class=o>.</span><span class=n>process_deferred_asserts</span><span class=p>(</span><span class=n>print_only</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
-<span class=c1># Duplicates: self.process_delayed_asserts(print_only=False)</span>
+self.process_deferred_asserts(print_only=False)
+# Duplicates: self.process_delayed_asserts(print_only=False)
 
-<span class=c1>############</span>
+############
 
-<span class=bp>self</span><span class=o>.</span><span class=n>fail</span><span class=p>(</span><span class=n>msg</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>  <span class=c1># Inherited from &quot;unittest&quot;</span>
+self.fail(msg=None)  # Inherited from &quot;unittest&quot;
 
-<span class=bp>self</span><span class=o>.</span><span class=n>_print</span><span class=p>(</span><span class=n>TEXT</span><span class=p>)</span>  <span class=c1># Calls Python&#39;s print() / Allows for translations</span>
-</code></pre></div> <hr> <p>Example Test: <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py>my_first_test.py</a></p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../syntax_formats/ class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> Syntax Formats </div> </div> </a> <a href=../install_python_pip_git/ class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> Install Python, pip, git </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Copyright &copy; 2014 - 2021 Michael Mintz </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/vendor.53cc9318.min.js></script> <script src=../../assets/javascripts/bundle.e9c9f54f.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script> <script>
+self._print(TEXT)  # Calls Python's print() / Allows for translations
+</code></pre> <hr> <p>Example Test: <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py>my_first_test.py</a></p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../syntax_formats/ class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> Syntax Formats </div> </div> </a> <a href=../install_python_pip_git/ class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> Install Python, pip, git </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Copyright &copy; 2014 - 2021 Michael Mintz </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/vendor.53cc9318.min.js></script> <script src=../../assets/javascripts/bundle.e9c9f54f.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script> <script>
         app = initialize({
           base: "../..",
-          features: ['toc.integrate', 'navigation.indexes', 'navigation.sections', 'navigation.expand', 'navigation.instant'],
+          features: ['navigation.indexes', 'navigation.instant'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
