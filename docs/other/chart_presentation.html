@@ -126,6 +126,20 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     padding: '6px',
                     fontSize: '14px'
                 },
+                backgroundColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, 'rgba(255, 255, 255, 0.78)'],
+                        [0.5, 'rgba(235, 235, 235, 0.76)'],
+                        [1, 'rgba(244, 252, 255, 0.74)']
+                    ]
+                },
+                hideDelay: 40,
                 pointFormat: '<b>{point.y}</b><br /><b>{point.percentage:.1f}%</b>'
             },
             
@@ -135,14 +149,20 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 }
             },
             plotOptions: {
+                series: {
+                    states: {
+                        inactive: {
+                            opacity: 0.85
+                        }
+                    }
+                },
                 pie: {
                     size: "95%",
                     allowPointSelect: true,
                     animation: false,
                     cursor: 'pointer',
                     dataLabels: {
-                        // enabled: false,
-                        // format: '{point.name}: {point.y:.0f}',
+                        enabled: true,
                         formatter: function() {
                           if (this.y > 0) {
                             return this.point.name + ': ' + this.point.y
@@ -246,6 +266,20 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     padding: '6px',
                     fontSize: '14px'
                 },
+                backgroundColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, 'rgba(255, 255, 255, 0.78)'],
+                        [0.5, 'rgba(235, 235, 235, 0.76)'],
+                        [1, 'rgba(244, 252, 255, 0.74)']
+                    ]
+                },
+                hideDelay: 40,
                 pointFormat: '<b>{point.y}</b>'
             },
             
@@ -263,11 +297,11 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
                 plotOptions: {
                     series: {
-                        showInLegend: true,
-                        animation: false,
                         dataLabels: {
                             enabled: true
                         },
+                        showInLegend: false,
+                        animation: false,
                         shadow: false,
                         lineWidth: 3,
                         fillOpacity: 0.5,
@@ -365,6 +399,20 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     padding: '6px',
                     fontSize: '14px'
                 },
+                backgroundColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, 'rgba(255, 255, 255, 0.78)'],
+                        [0.5, 'rgba(235, 235, 235, 0.76)'],
+                        [1, 'rgba(244, 252, 255, 0.74)']
+                    ]
+                },
+                hideDelay: 40,
                 pointFormat: '<b>{point.y}</b>'
             },
             
@@ -382,11 +430,11 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
                 plotOptions: {
                     series: {
-                        showInLegend: true,
-                        animation: false,
                         dataLabels: {
                             enabled: true
                         },
+                        showInLegend: false,
+                        animation: false,
                         shadow: false,
                         lineWidth: 3,
                         fillOpacity: 0.5,
@@ -484,6 +532,20 @@ img[rounded]{border-radius:16px;max-width:82%;}
                     padding: '6px',
                     fontSize: '14px'
                 },
+                backgroundColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, 'rgba(255, 255, 255, 0.78)'],
+                        [0.5, 'rgba(235, 235, 235, 0.76)'],
+                        [1, 'rgba(244, 252, 255, 0.74)']
+                    ]
+                },
+                hideDelay: 40,
                 pointFormat: '<b>{point.y}</b>'
             },
             
@@ -501,11 +563,11 @@ img[rounded]{border-radius:16px;max-width:82%;}
                 },
                 plotOptions: {
                     series: {
-                        showInLegend: true,
-                        animation: false,
                         dataLabels: {
                             enabled: true
                         },
+                        showInLegend: true,
+                        animation: false,
                         shadow: false,
                         lineWidth: 3,
                         fillOpacity: 0.5,
@@ -574,6 +636,6 @@ img[rounded]{border-radius:16px;max-width:82%;}
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-<script>Reveal.initialize({showNotes: false, slideNumber: true, autoSlide: 0.0,});</script>
+<script>Reveal.initialize({showNotes: false, slideNumber: true, progress: true, hash: false, autoSlide: 0.0,});</script>
 </body>
 </html>
