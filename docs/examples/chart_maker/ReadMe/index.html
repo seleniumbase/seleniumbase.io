@@ -77,13 +77,16 @@ pytest chart_presentation.py
 <span class=sd>                 use this to select which one.</span>
 <span class=sd>    title - The title displayed for the chart.</span>
 <span class=sd>    subtitle - The subtitle displayed for the chart.</span>
-<span class=sd>    data_name - Set the series name. Useful for multi-series charts.</span>
+<span class=sd>    data_name - The series name. Useful for multi-series charts.</span>
+<span class=sd>                If no data_name, will default to using &quot;Series 1&quot;.</span>
 <span class=sd>    unit - The description label given to the chart&#39;s y-axis values.</span>
 <span class=sd>    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class=sd>           Should be set to True (default) for the first time creating</span>
-<span class=sd>           a chart on a web page. If creating multiple charts on</span>
-<span class=sd>           a web page, you no longer need to re-import the libraries</span>
+<span class=sd>           a chart on a web page. If creating multiple charts on the</span>
+<span class=sd>           same web page, you won&#39;t need to re-import the libraries</span>
 <span class=sd>           when creating additional charts.</span>
+<span class=sd>    labels - If True, displays labels on the chart for data points.</span>
+<span class=sd>    legend - If True, displays the data point legend on the chart.</span>
 <span class=sd>&quot;&quot;&quot;</span>
 </code></pre></div> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>create_bar_chart</span><span class=p>(</span>
     <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
@@ -94,13 +97,16 @@ pytest chart_presentation.py
 <span class=sd>                 use this to select which one.</span>
 <span class=sd>    title - The title displayed for the chart.</span>
 <span class=sd>    subtitle - The subtitle displayed for the chart.</span>
-<span class=sd>    data_name - Set the series name. Useful for multi-series charts.</span>
+<span class=sd>    data_name - The series name. Useful for multi-series charts.</span>
+<span class=sd>                If no data_name, will default to using &quot;Series 1&quot;.</span>
 <span class=sd>    unit - The description label given to the chart&#39;s y-axis values.</span>
 <span class=sd>    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class=sd>           Should be set to True (default) for the first time creating</span>
-<span class=sd>           a chart on a web page. If creating multiple charts on</span>
-<span class=sd>           a web page, you no longer need to re-import the libraries</span>
+<span class=sd>           a chart on a web page. If creating multiple charts on the</span>
+<span class=sd>           same web page, you won&#39;t need to re-import the libraries</span>
 <span class=sd>           when creating additional charts.</span>
+<span class=sd>    labels - If True, displays labels on the chart for data points.</span>
+<span class=sd>    legend - If True, displays the data point legend on the chart.</span>
 <span class=sd>&quot;&quot;&quot;</span>
 </code></pre></div> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>create_column_chart</span><span class=p>(</span>
     <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
@@ -111,13 +117,16 @@ pytest chart_presentation.py
 <span class=sd>                 use this to select which one.</span>
 <span class=sd>    title - The title displayed for the chart.</span>
 <span class=sd>    subtitle - The subtitle displayed for the chart.</span>
-<span class=sd>    data_name - Set the series name. Useful for multi-series charts.</span>
+<span class=sd>    data_name - The series name. Useful for multi-series charts.</span>
+<span class=sd>                If no data_name, will default to using &quot;Series 1&quot;.</span>
 <span class=sd>    unit - The description label given to the chart&#39;s y-axis values.</span>
 <span class=sd>    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class=sd>           Should be set to True (default) for the first time creating</span>
-<span class=sd>           a chart on a web page. If creating multiple charts on</span>
-<span class=sd>           a web page, you no longer need to re-import the libraries</span>
+<span class=sd>           a chart on a web page. If creating multiple charts on the</span>
+<span class=sd>           same web page, you won&#39;t need to re-import the libraries</span>
 <span class=sd>           when creating additional charts.</span>
+<span class=sd>    labels - If True, displays labels on the chart for data points.</span>
+<span class=sd>    legend - If True, displays the data point legend on the chart.</span>
 <span class=sd>&quot;&quot;&quot;</span>
 </code></pre></div> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>create_line_chart</span><span class=p>(</span>
     <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
@@ -128,14 +137,17 @@ pytest chart_presentation.py
 <span class=sd>                 use this to select which one.</span>
 <span class=sd>    title - The title displayed for the chart.</span>
 <span class=sd>    subtitle - The subtitle displayed for the chart.</span>
-<span class=sd>    data_name - Set the series name. Useful for multi-series charts.</span>
+<span class=sd>    data_name - The series name. Useful for multi-series charts.</span>
+<span class=sd>                If no data_name, will default to using &quot;Series 1&quot;.</span>
 <span class=sd>    unit - The description label given to the chart&#39;s y-axis values.</span>
 <span class=sd>    zero - If True, the y-axis always starts at 0. (Default: False).</span>
 <span class=sd>    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class=sd>           Should be set to True (default) for the first time creating</span>
-<span class=sd>           a chart on a web page. If creating multiple charts on</span>
-<span class=sd>           a web page, you no longer need to re-import the libraries</span>
+<span class=sd>           a chart on a web page. If creating multiple charts on the</span>
+<span class=sd>           same web page, you won&#39;t need to re-import the libraries</span>
 <span class=sd>           when creating additional charts.</span>
+<span class=sd>    labels - If True, displays labels on the chart for data points.</span>
+<span class=sd>    legend - If True, displays the data point legend on the chart.</span>
 <span class=sd>&quot;&quot;&quot;</span>
 </code></pre></div> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>create_area_chart</span><span class=p>(</span>
     <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>subtitle</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
@@ -146,7 +158,8 @@ pytest chart_presentation.py
 <span class=sd>                 use this to select which one.</span>
 <span class=sd>    title - The title displayed for the chart.</span>
 <span class=sd>    subtitle - The subtitle displayed for the chart.</span>
-<span class=sd>    data_name - Set the series name. Useful for multi-series charts.</span>
+<span class=sd>    data_name - The series name. Useful for multi-series charts.</span>
+<span class=sd>                If no data_name, will default to using &quot;Series 1&quot;.</span>
 <span class=sd>    unit - The description label given to the chart&#39;s y-axis values.</span>
 <span class=sd>    zero - If True, the y-axis always starts at 0. (Default: False).</span>
 <span class=sd>    libs - The option to include Chart libraries (JS and CSS files).</span>
@@ -154,6 +167,8 @@ pytest chart_presentation.py
 <span class=sd>           a chart on a web page. If creating multiple charts on the</span>
 <span class=sd>           same web page, you won&#39;t need to re-import the libraries</span>
 <span class=sd>           when creating additional charts.</span>
+<span class=sd>    labels - If True, displays labels on the chart for data points.</span>
+<span class=sd>    legend - If True, displays the data point legend on the chart.</span>
 <span class=sd>&quot;&quot;&quot;</span>
 </code></pre></div> <p>If creating multiple charts at the same time, you can pass the <code>chart_name</code> parameter to distinguish between different charts.</p> <h3><img src=https://seleniumbase.io/img/sb_icon.png title=SeleniumBase width=24> Adding a data point to a chart:</h3> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>add_data_point</span><span class=p>(</span><span class=n>label</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>color</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>chart_name</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
 <span class=sd>&quot;&quot;&quot; Add a data point to a SeleniumBase-generated chart.</span>
