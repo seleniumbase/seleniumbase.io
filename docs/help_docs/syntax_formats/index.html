@@ -65,7 +65,7 @@
 <span class=k>class</span> <span class=nc>LoginPage</span><span class=p>():</span>
 
     <span class=k>def</span> <span class=nf>login_to_swag_labs</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>sb</span><span class=p>,</span> <span class=n>username</span><span class=p>):</span>
-        <span class=n>sb</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://www.saucedemo.com/&quot;</span><span class=p>)</span>
+        <span class=n>sb</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://www.saucedemo.com/v1&quot;</span><span class=p>)</span>
         <span class=n>sb</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;#user-name&quot;</span><span class=p>,</span> <span class=n>username</span><span class=p>)</span>
         <span class=n>sb</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;#password&quot;</span><span class=p>,</span> <span class=s2>&quot;secret_sauce&quot;</span><span class=p>)</span>
         <span class=n>sb</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s1>&#39;input[type=&quot;submit&quot;]&#39;</span><span class=p>)</span>
@@ -79,7 +79,7 @@
 </code></pre></div> <p>(See <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/boilerplates/samples/swag_labs_test.py>examples/boilerplates/samples/swag_labs_test.py</a> for the full test.)</p> <h3><img src=https://seleniumbase.io/img/green_logo.png title=SeleniumBase width=32> 6. The classic Page Object Model with the <code>sb</code> pytest fixture</h3> <p>This is similar to the classic Page Object Model with <code>BaseCase</code> inheritance, except that this time we pass the <code>sb</code> pytest fixture from the test into the <code>sb</code> arg of the page object class method, (instead of passing <code>self</code>). Now that you're using <code>sb</code> as a pytest fixture, you no longer need to import <code>BaseCase</code> anywhere in your code. See the example below:</p> <div class=highlight><pre><span></span><code><span class=k>class</span> <span class=nc>LoginPage</span><span class=p>():</span>
 
     <span class=k>def</span> <span class=nf>login_to_swag_labs</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>sb</span><span class=p>,</span> <span class=n>username</span><span class=p>):</span>
-        <span class=n>sb</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://www.saucedemo.com/&quot;</span><span class=p>)</span>
+        <span class=n>sb</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://www.saucedemo.com/v1&quot;</span><span class=p>)</span>
         <span class=n>sb</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;#user-name&quot;</span><span class=p>,</span> <span class=n>username</span><span class=p>)</span>
         <span class=n>sb</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;#password&quot;</span><span class=p>,</span> <span class=s2>&quot;secret_sauce&quot;</span><span class=p>)</span>
         <span class=n>sb</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s1>&#39;input[type=&quot;submit&quot;]&#39;</span><span class=p>)</span>
