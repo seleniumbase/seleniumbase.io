@@ -193,6 +193,8 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>save_screenshot</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
+<span class=bp>self</span><span class=o>.</span><span class=n>save_screenshot_to_logs</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>save_page_source</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>folder</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>save_cookies</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s2>&quot;cookies.txt&quot;</span><span class=p>)</span>
@@ -322,6 +324,12 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>assert_raises</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
 
+<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+                        <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+                      <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>assert_title</span><span class=p>(</span><span class=n>title</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>assert_no_js_errors</span><span class=p>()</span>
@@ -329,6 +337,12 @@
 <span class=bp>self</span><span class=o>.</span><span class=n>inspect_html</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>is_chromium</span><span class=p>()</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>get_chrome_version</span><span class=p>()</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>get_chromedriver_version</span><span class=p>()</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>is_chromedriver_too_old</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>get_google_auth_password</span><span class=p>(</span><span class=n>totp_key</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
