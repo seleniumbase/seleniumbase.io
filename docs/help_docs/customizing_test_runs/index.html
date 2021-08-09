@@ -13,6 +13,15 @@ pytest test_demo_site.py --headless
 <span class=c1># Run tests multi-threaded using [n] threads</span>
 pytest test_suite.py -n<span class=o>=</span><span class=m>4</span>
 
+<span class=c1># Reuse the browser session for all tests being run</span>
+pytest test_suite.py --reuse-session
+
+<span class=c1># Reuse the browser session, but empty cookies between tests</span>
+pytest test_suite.py --reuse-session --crumbs
+
+<span class=c1># Create a real-time dashboard for test results</span>
+pytest test_suite.py --dashboard
+
 <span class=c1># Create a pytest html report after tests are done</span>
 pytest test_suite.py --html<span class=o>=</span>report.html
 
@@ -33,12 +42,6 @@ pytest test_suite.py --server<span class=o>=</span>IP_ADDRESS --port<span class=
 
 <span class=c1># Run tests on a remote Selenium Grid with authentication</span>
 pytest test_suite.py --server<span class=o>=</span>USERNAME:KEY@IP_ADDRESS --port<span class=o>=</span><span class=m>80</span>
-
-<span class=c1># Reuse the same browser session for all tests being run</span>
-pytest test_suite.py --reuse-session
-
-<span class=c1># Reuse the same browser session, but empty cookies between tests</span>
-pytest test_suite.py --reuse-session --crumbs
 
 <span class=c1># Run tests through a proxy server</span>
 pytest proxy_test.py --proxy<span class=o>=</span>IP_ADDRESS:PORT
