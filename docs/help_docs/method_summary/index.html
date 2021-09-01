@@ -6,7 +6,7 @@
 <span class=c1># If the url parameter is a URL: Perform self.open(url)</span>
 <span class=c1># Otherwise: return self.get_element(URL_AS_A_SELECTOR)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>delay</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>delay</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>slow_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
@@ -84,7 +84,8 @@
     <span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span>
     <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>hard_fail</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>set_attribute</span><span class=p>(</span>
+    <span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>set_attributes</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>,</span> <span class=n>value</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
 <span class=c1># Duplicates: self.set_attribute_all(selector, attribute, value, by=By.CSS_SELECTOR)</span>
@@ -260,7 +261,7 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>click_xpath</span><span class=p>(</span><span class=n>xpath</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>js_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>all_matches</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>js_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>all_matches</span><span class=o>=</span><span class=kc>False</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>js_click_all</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
 
@@ -376,13 +377,17 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>convert_to_css_selector</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_value</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>set_value</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>js_update_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 <span class=c1># Duplicates: self.js_type(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
 <span class=c1>#             self.set_text(selector, text, by=By.CSS_SELECTOR, timeout=None)</span>
 
+<span class=bp>self</span><span class=o>.</span><span class=n>set_text_content</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>jquery_update_text</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>get_value</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>set_time_limit</span><span class=p>(</span><span class=n>time_limit</span><span class=p>)</span>
 
@@ -494,6 +499,8 @@
 <span class=bp>self</span><span class=o>.</span><span class=n>create_hopscotch_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>create_introjs_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>set_introjs_colors</span><span class=p>(</span><span class=n>theme_color</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>hover_color</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>add_tour_step</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
                    <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>theme</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>alignment</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
