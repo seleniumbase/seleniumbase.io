@@ -1,0 +1,100 @@
+<html lang="en">
+    <head>
+        <title>Drag and Drop</title>
+        <meta property="og:site_name" content="Drag and Drop Testing Page">
+        <meta property="og:title" content="Drag and Drop Testing Page">
+        <meta name="Description" content="Drag and Drop Testing Page.">
+        <meta property="og:description" content="Drag and Drop Testing Page.">
+        <meta name="Keywords" content="Drag, Drop">
+        <meta property="og:keywords" content="Drag, Drop">
+        <meta property="og:image" content="https://seleniumbase.io/cdn/img/sb_logo_gs.png">
+        <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, shrink-to-fit=no">
+        <meta content="follow,index" name="robots">
+        <style>
+            #div1,#div2 {
+                width: 401px;
+                height: 65px;
+                padding: 10px;
+                border: 1px solid #aaaaaa;
+                box-shadow: 0px 2px 5px 1px rgba(120, 120, 120, 0.3),
+                1px 2px 12px 0px rgba(120, 120, 120, 0.2) !important;
+            }
+            img {
+                box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.3),
+                1px 2px 12px 0px rgba(105, 165, 155, 0.2) !important;
+            }
+            img:active {
+                box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+                1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+            }
+            html {
+                background-color: #9988ad;
+            }
+            html, body {
+                font-size: 100%;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: none;
+                background-origin: padding-box;
+                background-color: #c6d6f0;
+                padding: 30;
+                margin: 10;
+                font-family: "Proxima Nova","proxima-nova",
+                "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+                text-rendering: optimizelegibility;
+                -moz-osx-font-smoothing: grayscale;
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+                1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            tbody {
+                border: 1px solid #e1e1e1;
+                background-color: #fefefe;
+            }
+        </style>
+    </head>
+    <body contenteditable="false">
+        <!-- Tested with SeleniumBase - https://seleniumbase.io -->
+        <form id="myForm">
+            <table id="myTable" style="width: 580px; padding: 10px;">
+                <thead>
+                    <h1>Drag-and-Drop Testing Page</h1>
+                </thead>
+                <tbody id="tbodyId">
+                    <h3>Drag and drop the logo onto the other rectangle:</h3>
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <br>
+                    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag1" src="https://seleniumbase.io/cdn/img/sb_logo_ms.png" draggable="true" ondragstart="drag(event)" width="400" height="64">
+                    </div>
+                </tbody>
+            </table>
+        </form>
+        <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                try {
+                    ev.target.appendChild(document.getElementById(data));
+                }
+                catch (HierarchyRequestError) {
+                    // Drap & Drop to same location. Do nothing.
+                }
+            }
+        </script>
+    </body>
+</html>
