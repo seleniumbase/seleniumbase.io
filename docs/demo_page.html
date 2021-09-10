@@ -256,6 +256,17 @@
                 background: #4CAF50;
                 cursor: pointer;
             }
+            #drop1,#drop2 {
+                width: 131px;
+                height: 21px;
+                padding: 1px;
+                border: 1.5px solid #aaaaaa;
+                background-color: #d6e6f0;
+            }
+            img:active {
+                box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.3),
+                1px 2px 12px 0px rgba(105, 165, 155, 0.2) !important;
+            }
         </style>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
         <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-167313767-1","seleniumbase.io"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
@@ -405,7 +416,8 @@
                         <td style="width: 150px;">
                             CheckBox:
                             <input type="checkbox" id="checkBox1"
-                                   name="checkBoxName1" class="checkBoxClassA"/>
+                                   name="checkBoxName1" class="checkBoxClassA"
+                                   onchange="revealRow(event)"/>
                         </td>
                         <td style="width: 180px;">
                             CheckBoxes:
@@ -432,6 +444,20 @@
                                 %20name=%22checkBoxName6%22
                                 %20class=%22checkBoxClassD%20fBox%22%20/>
                                 </body>"></iframe>
+                        </td>
+                    </tr>
+                    <tr style="display: none" class="hidden_row">
+                        <td>
+                            Drag and Drop A:
+                        </td>
+                        <td>
+                            <div id="drop1" class="dropzone" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"><img id="logo" src="https://seleniumbase.io/cdn/img/sb_logo_tiny.png" draggable="true" ondragstart="dragStart(event)" width="130" height="20"></div>
+                        </td>
+                        <td>
+                            Drag and Drop B:
+                        </td>
+                        <td>
+                            <div id="drop2" class="dropzone" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)"></div>
                         </td>
                     </tr>
                     <tr>
@@ -574,6 +600,51 @@
                     element.beginElement();
                 });
             });
+        </script>
+        <script>
+            function revealRow(event) {
+                // Show the Drag & Drop row if the first checkbox is checked.
+                if (event.target.checked)
+                {
+                    document.querySelector('tr.hidden_row').style.display='';
+                }
+                else
+                {
+                    document.querySelector('tr.hidden_row').style.display='none';
+                }
+            }
+        </script>
+        <script>
+            function dragOver(event) {
+                // Allow dropping.
+                event.preventDefault();
+            }
+            function dragEnter(event) {
+                event.preventDefault();
+                if ( event.target.className === "dropzone" ) {
+                    event.target.style.background = "#c6b6d6";
+                }
+            }
+            function dragLeave(event) {
+                event.preventDefault();
+                if ( event.target.className === "dropzone" ) {
+                    event.target.style.background = "#d6e6f0";
+                }
+            }
+            function dragStart(event) {
+                event.dataTransfer.setData("id_of_dragged_element", event.target.id);
+            }
+            function drop(event) {
+                event.preventDefault();
+                var data = event.dataTransfer.getData("id_of_dragged_element");
+                try {
+                    event.target.appendChild(document.getElementById(data));
+                    event.target.style.background = "#d6e6f0";
+                }
+                catch (HierarchyRequestError) {
+                    // Drap & Drop to same location. Do nothing.
+                }
+            }
         </script>
     </body>
 </html>
