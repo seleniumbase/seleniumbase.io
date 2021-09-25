@@ -429,7 +429,6 @@
         <div class="w3-bar" style="overflow:auto">
           <a id="tryhome" href="https://www.w3schools.com" target="_blank" title="w3schools.com Home" class="w3-button w3-bar-item topnav-icons fa fa-home" style="margin-top:-2px;"></a>
           <a href="javascript:void(0);" onclick="openMenu()" id="menuButton" title="Open Menu" class="w3-dropdown-click w3-button w3-bar-item topnav-icons fa fa-menu" style="margin-top:-2px;"></a>
-          <a href="javascript:void(0);" onclick="click_savebtn()" title="Save" class="w3-button w3-bar-item topnav-icons w3-hide-small fa fa-save" style="margin-top:-2px;"></a>
           <a href="javascript:void(0);" onclick="restack(currentStack)" title="Change Orientation" class="w3-button w3-bar-item topnav-icons fa fa-rotate" style="margin-top:-2px;"></a>
           <a href="javascript:void(0);" onclick="retheme()" title="Change Theme" class="w3-button w3-bar-item topnav-icons fa fa-adjust" style="margin-top:-2px;"></a>
           <button id="runbtn" class="w3-button w3-bar-item w3-hover-white w3-hover-text-green" onclick="submitTryit(1);ga('send', 'event', 'runCode', 'click');">Run ❯</button>
@@ -443,7 +442,6 @@
         <span onclick="openMenu()" class="w3-button w3-display-topright w3-transparent ws-hover-black" title="Close Menu" style="font-weight:bold;padding-top:10px;padding-bottom:11px;">×</span>
           <div class="w3-bar-block">
             <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Change Orientaton" onclick="openMenu();restack(currentStack)"><i class="fa fa-rotate" style="font-size:26px;margin-left:-4px;margin-right:8px"></i><span style="position:relative;top:-4px;left:2px;">Change Orientation</span></a>
-            <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Save" onclick="openMenu();click_savebtn()"><i class="fa fa-save" style="font-size:26px;margin-right:10px;"></i><span style="position:relative;top:-4px;left:2px;">Save Code</span></a>
             <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Change Theme" onclick="openMenu();retheme()"><i class="fa fa-adjust" style="font-size:26px;margin-right:8px"></i><span style="position:relative;top:-4px;left:2px;">Change Theme, Dark/Light</span></a>
           </div>
         </div>
@@ -458,14 +456,13 @@
 
 &lt;h1&gt;Show Checkboxes&lt;/h1&gt;
 
-&lt;form action="https://www.w3schools.com/action_page.php"&gt;
+&lt;form&gt;
   &lt;input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"&gt;
   &lt;label for="vehicle1"&gt; I have a bike&lt;/label&gt;&lt;br&gt;
   &lt;input type="checkbox" id="vehicle2" name="vehicle2" value="Car"&gt;
   &lt;label for="vehicle2"&gt; I have a car&lt;/label&gt;&lt;br&gt;
   &lt;input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"&gt;
   &lt;label for="vehicle3"&gt; I have a boat&lt;/label&gt;&lt;br&gt;&lt;br&gt;
-  &lt;input type="submit" value="Submit"&gt;
 &lt;/form&gt;
 
 &lt;/body&gt;
@@ -681,12 +678,6 @@
           window.addEventListener("touchend", dragend);
           window.addEventListener("load", fixDragBtn);
           window.addEventListener("load", showFrameSize);
-        }
-        function click_savebtn() {
-          if (window.editor) {
-            window.editor.save();
-          }
-          document.getElementById('saveModal').style.display = 'block';
         }
         function retheme() {
           var cc = document.body.className;
