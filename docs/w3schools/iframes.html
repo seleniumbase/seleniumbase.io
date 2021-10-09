@@ -31,11 +31,11 @@
             var afterResize = window.innerWidth;
             if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
                 (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
-                (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+                (xbeforeResize < (468) && afterResize >= (468)) || (xbeforeResize >= (468) && afterResize < (468))) {
                 xbeforeResize = afterResize;
             }
             if (window.screen.availWidth <= 768) {
-              restack(window.innerHeight > window.innerWidth);
+                restack(window.innerHeight > window.innerWidth);
             }
             fixDragBtn();
             showFrameSize();    
