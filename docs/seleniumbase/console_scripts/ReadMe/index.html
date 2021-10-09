@@ -9,7 +9,6 @@ sbase install chromedriver -p
 sbase install chromedriver latest -p
 sbase install edgedriver <span class=m>94</span>.0.992.38
 </code></pre></div> <p>(Drivers: <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>, <code>iedriver</code>, <code>operadriver</code>)</p> <p>(Options: <code>latest</code> or a specific driver version. For chromedriver, you can also specify the major version int, or <code>latest-1</code> for latest minus 1. If none specified, installs the default version. <code>-p</code> / <code>--path</code>: Also copy to "/usr/local/bin".)</p> <ul> <li>Output: Installs the specified webdriver. (<code>chromedriver</code> is required for Google Chrome automation) (<code>geckodriver</code> is required for Mozilla Firefox automation) (<code>edgedriver</code> is required for Microsoft Edge automation) (<code>iedriver</code> is required for Internet Explorer automation) (<code>operadriver</code> is required for Opera Browser automation)</li> </ul> <h3 id=methods>methods<a class=headerlink href=#methods title="Permanent link">&para;</a></h3> <ul> <li> <p>Usage: <code>sbase methods</code></p> </li> <li> <p>Output: Displays common SeleniumBase Python methods.</p> </li> </ul> <h3 id=options>options<a class=headerlink href=#options title="Permanent link">&para;</a></h3> <ul> <li> <p>Usage: <code>sbase options</code></p> </li> <li> <p>Output: Displays common pytest command-line options that are available when using SeleniumBase.</p> </li> </ul> <h3 id=mkdir>mkdir<a class=headerlink href=#mkdir title="Permanent link">&para;</a></h3> <ul> <li> <p>Usage: <code>sbase mkdir [DIRECTORY] [OPTIONS]</code></p> </li> <li> <p>Example: <code>sbase mkdir ui_tests</code></p> </li> <li> <p>Options: <code>-b</code> / <code>--basic</code> (Only config files. No tests added.)</p> </li> <li> <p>Output: Creates a new folder for running SBase scripts. The new folder contains default config files, sample tests for helping new users get started, and Python boilerplates for setting up customized test frameworks.</p> </li> </ul> <div class=highlight><pre><span></span><code>ui_tests/
-│
 ├── __init__.py
 ├── my_first_test.py
 ├── parameterized_test.py
@@ -18,7 +17,6 @@ sbase install edgedriver <span class=m>94</span>.0.992.38
 ├── setup.cfg
 ├── test_demo_site.py
 └── boilerplates/
-    │
     ├── __init__.py
     ├── base_test_case.py
     ├── boilerplate_test.py
@@ -26,14 +24,12 @@ sbase install edgedriver <span class=m>94</span>.0.992.38
     ├── page_objects.py
     ├── sb_fixture_test.py
     └── samples/
-        │
         ├── __init__.py
         ├── google_objects.py
         ├── google_test.py
         ├── sb_swag_test.py
         └── swag_labs_test.py
 </code></pre></div> <p>If running with the <code>-b</code> or <code>--basic</code> option:</p> <div class=highlight><pre><span></span><code>ui_tests/
-│
 ├── __init__.py
 ├── pytest.ini
 ├── requirements.txt
