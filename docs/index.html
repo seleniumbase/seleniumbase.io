@@ -32,30 +32,31 @@ pip install -e .  <span class=c1># Editable install</span>
  *    OR:        <span class=s2>&quot;sbase [COMMAND] [PARAMETERS]&quot;</span>
 
 COMMANDS:
-      install         <span class=o>[</span>DRIVER<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      methods         <span class=o>(</span>List common Python methods<span class=o>)</span>
-      options         <span class=o>(</span>List common pytest options<span class=o>)</span>
-      mkdir           <span class=o>[</span>DIRECTORY<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      mkfile          <span class=o>[</span>FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      mkpres          <span class=o>[</span>FILE.py<span class=o>]</span> <span class=o>[</span>LANG<span class=o>]</span>
-      mkchart         <span class=o>[</span>FILE.py<span class=o>]</span> <span class=o>[</span>LANG<span class=o>]</span>
-      print           <span class=o>[</span>FILE<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      translate       <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>LANG<span class=o>]</span> <span class=o>[</span>ACTION<span class=o>]</span>
-      convert         <span class=o>[</span>WEBDRIVER_UNITTEST_FILE.py<span class=o>]</span>
-      extract-objects <span class=o>[</span>SB_FILE.py<span class=o>]</span>
-      inject-objects  <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      objectify       <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      revert-objects  <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      encrypt         <span class=o>(</span>OR: obfuscate<span class=o>)</span>
-      decrypt         <span class=o>(</span>OR: unobfuscate<span class=o>)</span>
-      download server <span class=o>(</span>The Selenium Grid JAR file<span class=o>)</span>
-      grid-hub        <span class=o>[</span>start<span class=p>|</span>stop<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
-      grid-node       <span class=o>[</span>start<span class=p>|</span>stop<span class=o>]</span> --hub<span class=o>=[</span>HOST/IP<span class=o>]</span>
- * <span class=o>(</span>EXAMPLE: <span class=s2>&quot;sbase install chromedriver latest&quot;</span><span class=o>)</span>  *
+      install          <span class=o>[</span>DRIVER<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      methods          <span class=o>(</span>List common Python methods<span class=o>)</span>
+      options          <span class=o>(</span>List common pytest options<span class=o>)</span>
+      mkdir            <span class=o>[</span>DIRECTORY<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      mkfile           <span class=o>[</span>FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      mkrec / codegen  <span class=o>[</span>FILE.py<span class=o>]</span>
+      mkpres           <span class=o>[</span>FILE.py<span class=o>]</span> <span class=o>[</span>LANG<span class=o>]</span>
+      mkchart          <span class=o>[</span>FILE.py<span class=o>]</span> <span class=o>[</span>LANG<span class=o>]</span>
+      print            <span class=o>[</span>FILE<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      translate        <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>LANG<span class=o>]</span> <span class=o>[</span>ACTION<span class=o>]</span>
+      convert          <span class=o>[</span>WEBDRIVER_UNITTEST_FILE.py<span class=o>]</span>
+      extract-objects  <span class=o>[</span>SB_FILE.py<span class=o>]</span>
+      inject-objects   <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      objectify        <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      revert-objects   <span class=o>[</span>SB_FILE.py<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      encrypt / obfuscate
+      decrypt / unobfuscate
+      download server  <span class=o>(</span>Get Selenium Grid JAR file<span class=o>)</span>
+      grid-hub         <span class=o>[</span>start<span class=p>|</span>stop<span class=o>]</span> <span class=o>[</span>OPTIONS<span class=o>]</span>
+      grid-node        <span class=o>[</span>start<span class=p>|</span>stop<span class=o>]</span> --hub<span class=o>=[</span>HOST/IP<span class=o>]</span>
+ * <span class=o>(</span>EXAMPLE: <span class=s2>&quot;sbase install chromedriver latest&quot;</span><span class=o>)</span> *
 
     Type <span class=s2>&quot;sbase help [COMMAND]&quot;</span> <span class=k>for</span> specific <span class=nb>command</span> info.
     For info on all commands, type: <span class=s2>&quot;seleniumbase --help&quot;</span>.
- * <span class=o>(</span>Use <span class=s2>&quot;pytest&quot;</span> <span class=k>for</span> running tests<span class=o>)</span> *
+    Use <span class=s2>&quot;pytest&quot;</span> <span class=k>for</span> running tests.
 </code></pre></div> <h3><img src=https://seleniumbase.io/img/logo6.png title=SeleniumBase width=32> Download a webdriver:</h3> <p>✅ SeleniumBase can download webdrivers to the <a href=https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/drivers>seleniumbase/drivers</a> folder with the <code>install</code> command:</p> <div class=highlight><pre><span></span><code>sbase install chromedriver
 </code></pre></div> <ul> <li>You need a different webdriver for each browser to automate: <code>chromedriver</code> for Chrome, <code>edgedriver</code> for Edge, <code>geckodriver</code> for Firefox, and <code>operadriver</code> for Opera.</li> <li>If you have the latest version of Chrome installed, get the latest chromedriver (<i>otherwise it defaults to chromedriver 2.44 for compatibility reasons</i>):</li> </ul> <div class=highlight><pre><span></span><code>sbase install chromedriver latest
 </code></pre></div> <ul> <li>If you run a test without the correct webdriver installed, the driver will be downloaded automatically.</li> </ul> <p>(See <a href=https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/ >seleniumbase.io/seleniumbase/console_scripts/ReadMe/</a> for more information on SeleniumBase console scripts.)</p> <h3><img src=https://seleniumbase.io/img/logo6.png title=SeleniumBase width=32> Running tests:</h3> <p>🔵 <b>If you've cloned SeleniumBase from GitHub, you can run sample tests from the <a href=https://github.com/seleniumbase/SeleniumBase/tree/master/examples>examples/</a> folder:</b></p> <div class=highlight><pre><span></span><code><span class=nb>cd</span> examples/
@@ -64,26 +65,38 @@ pytest test_demo_site.py
 
 pytest test_swag_labs.py
 </code></pre></div> <p>🔵 <b>Run <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py>my_first_test.py</a> in Demo Mode:</b></p> <div class=highlight><pre><span></span><code>pytest my_first_test.py --demo
-</code></pre></div> <p><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py><img src=https://seleniumbase.io/cdn/gif/my_first_test_2.gif alt="SeleniumBase Demo Mode" title="SeleniumBase Demo Mode"></a></p> <ul> <li>By default, <strong><a href=https://www.w3schools.com/cssref/css_selectors.asp>CSS Selectors</a></strong> are used for finding page elements.</li> <li>If you're new to CSS Selectors, games like <a href=http://flukeout.github.io/ >CSS Diner</a> can help you learn.</li> <li>Here are some common <code>SeleniumBase</code> methods that you might find in tests:</li> </ul> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=n>URL</span><span class=p>)</span>  <span class=c1># Navigate to the web page</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>)</span>  <span class=c1># Click a page element</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>,</span> <span class=n>TEXT</span><span class=p>)</span>  <span class=c1># Type text (Add &quot;\n&quot; to text for pressing enter/return.)</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_element</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>)</span>  <span class=c1># Assert element is visible</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=n>TEXT</span><span class=p>)</span>  <span class=c1># Assert text is visible (has optional SELECTOR arg)</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_title</span><span class=p>(</span><span class=n>PAGE_TITLE</span><span class=p>)</span>  <span class=c1># Assert page title</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_no_404_errors</span><span class=p>()</span>  <span class=c1># Assert no 404 errors from files on the page</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>assert_no_js_errors</span><span class=p>()</span>  <span class=c1># Assert no JavaScript errors on the page (Chrome-ONLY)</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>execute_script</span><span class=p>(</span><span class=n>JAVASCRIPT</span><span class=p>)</span>  <span class=c1># Execute JavaScript code</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>go_back</span><span class=p>()</span>  <span class=c1># Navigate to the previous URL</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>get_text</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>)</span>  <span class=c1># Get text from a selector</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>get_attribute</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>,</span> <span class=n>ATTRIBUTE</span><span class=p>)</span>  <span class=c1># Get a specific attribute from a selector</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>is_element_visible</span><span class=p>(</span><span class=n>SELECTOR</span><span class=p>)</span>  <span class=c1># Determine if an element is visible on the page</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>is_text_visible</span><span class=p>(</span><span class=n>TEXT</span><span class=p>)</span>  <span class=c1># Determine if text is visible on the page (optional SELECTOR)</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>hover_and_click</span><span class=p>(</span><span class=n>HOVER_SELECTOR</span><span class=p>,</span> <span class=n>CLICK_SELECTOR</span><span class=p>)</span>  <span class=c1># Mouseover element &amp; click another</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>select_option_by_text</span><span class=p>(</span><span class=n>DROPDOWN_SELECTOR</span><span class=p>,</span> <span class=n>OPTION_TEXT</span><span class=p>)</span>  <span class=c1># Select a dropdown option</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_frame</span><span class=p>(</span><span class=n>FRAME_NAME</span><span class=p>)</span>  <span class=c1># Switch webdriver control to an iframe on the page</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_content</span><span class=p>()</span>  <span class=c1># Switch webdriver control out of the current iframe</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_window</span><span class=p>(</span><span class=n>WINDOW_NUMBER</span><span class=p>)</span>  <span class=c1># Switch to a different window/tab</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>save_screenshot</span><span class=p>(</span><span class=n>FILE_NAME</span><span class=p>)</span>  <span class=c1># Save a screenshot of the current page</span>
+</code></pre></div> <p><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py><img src=https://seleniumbase.io/cdn/gif/my_first_test_2.gif alt="SeleniumBase Demo Mode" title="SeleniumBase Demo Mode"></a></p> <ul> <li>By default, <strong><a href=https://www.w3schools.com/cssref/css_selectors.asp>CSS Selectors</a></strong> are used for finding page elements.</li> <li>If you're new to CSS Selectors, games like <a href=http://flukeout.github.io/ >CSS Diner</a> can help you learn.</li> <li>Here are some common <code>SeleniumBase</code> methods that you might find in tests:</li> </ul> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=n>url</span><span class=p>)</span>  <span class=c1># Navigate the browser window to the URL.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>)</span>  <span class=c1># Update the field with the text.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=n>selector</span><span class=p>)</span>  <span class=c1># Click the element with the selector.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>click_link</span><span class=p>(</span><span class=n>link_text</span><span class=p>)</span>  <span class=c1># Click the link containing text.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>go_back</span><span class=p>()</span>  <span class=c1># Navigate back to the previous URL.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>select_option_by_text</span><span class=p>(</span><span class=n>dropdown_selector</span><span class=p>,</span> <span class=n>option</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>hover_and_click</span><span class=p>(</span><span class=n>hover_selector</span><span class=p>,</span> <span class=n>click_selector</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>drag_and_drop</span><span class=p>(</span><span class=n>drag_selector</span><span class=p>,</span> <span class=n>drop_selector</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_text</span><span class=p>(</span><span class=n>selector</span><span class=p>)</span>  <span class=c1># Get the text from the element.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_current_url</span><span class=p>()</span>  <span class=c1># Get the URL of the current page.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_page_source</span><span class=p>()</span>  <span class=c1># Get the HTML of the current page.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_attribute</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>attribute</span><span class=p>)</span>  <span class=c1># Get element attribute.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_title</span><span class=p>()</span>  <span class=c1># Get the title of the current page.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_frame</span><span class=p>(</span><span class=n>frame</span><span class=p>)</span>  <span class=c1># Switch into the iframe container.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_content</span><span class=p>()</span>  <span class=c1># Leave the iframe container.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>open_new_window</span><span class=p>()</span>  <span class=c1># Open a new window in the same browser.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_window</span><span class=p>(</span><span class=n>window</span><span class=p>)</span>  <span class=c1># Switch to the browser window.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_window</span><span class=p>()</span>  <span class=c1># Switch to the original window.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_new_driver</span><span class=p>(</span><span class=n>OPTIONS</span><span class=p>)</span>  <span class=c1># Open a new driver with OPTIONS.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_driver</span><span class=p>(</span><span class=n>driver</span><span class=p>)</span>  <span class=c1># Switch to the browser driver.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_driver</span><span class=p>()</span>  <span class=c1># Switch to the original driver.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>wait_for_element</span><span class=p>(</span><span class=n>selector</span><span class=p>)</span>  <span class=c1># Wait until element is visible.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>is_element_visible</span><span class=p>(</span><span class=n>selector</span><span class=p>)</span>  <span class=c1># Return element visibility.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>is_text_visible</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=p>)</span>  <span class=c1># Return text visibility.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=n>seconds</span><span class=p>)</span>  <span class=c1># Do nothing for the given amount of time.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>save_screenshot</span><span class=p>(</span><span class=n>name</span><span class=p>)</span>  <span class=c1># Save a screenshot in .png format.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_element</span><span class=p>(</span><span class=n>selector</span><span class=p>)</span>  <span class=c1># Verify the element is visible.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>selector</span><span class=p>)</span>  <span class=c1># Verify text in the element.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_title</span><span class=p>(</span><span class=n>title</span><span class=p>)</span>  <span class=c1># Verify the title of the web page.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_downloaded_file</span><span class=p>(</span><span class=n>file</span><span class=p>)</span>  <span class=c1># Verify file was downloaded.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_no_404_errors</span><span class=p>()</span>  <span class=c1># Verify there are no broken links.</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>assert_no_js_errors</span><span class=p>()</span>  <span class=c1># Verify there are no JS errors.</span>
 </code></pre></div> <p>🔵 For the complete list of SeleniumBase methods, see: <b><a href=help_docs/method_summary/ >Method Summary</a></b></p> <h2><img src=https://seleniumbase.io/img/logo6.png title=SeleniumBase width=32> Learn More:</h2> <p>✅ Automatic WebDriver Abilities:</p> <p>SeleniumBase automatically handles common WebDriver actions such as spinning up web browsers and saving screenshots during test failures. (<i><a href=help_docs/customizing_test_runs/ >Read more about customizing test runs</a>.</i>)</p> <p>✅ Simplified Code:</p> <p>SeleniumBase uses simple syntax for commands. Example:</p> <div class=highlight><pre><span></span><code><span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;input&quot;</span><span class=p>,</span> <span class=s2>&quot;dogs</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
 </code></pre></div> <p>SeleniumBase tests can be run with both <code>pytest</code> and <code>nosetests</code>, but using <code>pytest</code> is recommended. (<code>chrome</code> is the default browser if not specified.)</p> <div class=highlight><pre><span></span><code>pytest my_first_test.py --browser<span class=o>=</span>chrome
 
@@ -179,7 +192,6 @@ pytest test_suite.py --browser<span class=o>=</span>chrome
 pytest test_suite.py --browser<span class=o>=</span>firefox
 </code></pre></div> <p>An easy way to override seleniumbase/config/settings.py is by using a custom settings file. Here's the command-line option to add to tests: (See <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py>examples/custom_settings.py</a>) <code>--settings_file=custom_settings.py</code> (Settings include default timeout values, a two-factor auth key, DB credentials, S3 credentials, and other important settings used by tests.)</p> <p>🔵 To pass additional data from the command-line to tests, add <code>--data="ANY STRING"</code>. Inside your tests, you can use <code>self.data</code> to access that.</p> <h3><img src=https://seleniumbase.io/img/logo6.png title=SeleniumBase width=32> Test Directory Configuration:</h3> <p>🔵 When running tests with <strong>pytest</strong>, you'll want a copy of <strong><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini>pytest.ini</a></strong> in your root folders. When running tests with <strong>nosetests</strong>, you'll want a copy of <strong><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg>setup.cfg</a></strong> in your root folders. These files specify default configuration details for tests. Folders should also include a blank <code>__init__.py</code> file, which allows your tests to import files from that folder.</p> <p>🔵 <code>sbase mkdir DIR</code> creates a folder with config files and sample tests:</p> <div class=highlight><pre><span></span><code>sbase mkdir ui_tests
 </code></pre></div> <blockquote> <p>That new folder will have these files:</p> </blockquote> <div class=highlight><pre><span></span><code>ui_tests/
-│
 ├── __init__.py
 ├── my_first_test.py
 ├── parameterized_test.py
@@ -188,7 +200,6 @@ pytest test_suite.py --browser<span class=o>=</span>firefox
 ├── setup.cfg
 ├── test_demo_site.py
 └── boilerplates/
-    │
     ├── __init__.py
     ├── base_test_case.py
     ├── boilerplate_test.py
@@ -196,7 +207,6 @@ pytest test_suite.py --browser<span class=o>=</span>firefox
     ├── page_objects.py
     ├── sb_fixture_test.py
     └── samples/
-        │
         ├── __init__.py
         ├── google_objects.py
         ├── google_test.py
