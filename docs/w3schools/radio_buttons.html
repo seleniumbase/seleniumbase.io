@@ -21,9 +21,9 @@
         k42 = true;
         </script>
         <script>
-        if (window.addEventListener) {              
+        if (window.addEventListener) {
             window.addEventListener("resize", browserResize);
-        } else if (window.attachEvent) {                 
+        } else if (window.attachEvent) {
             window.attachEvent("onresize", browserResize);
         }
         var xbeforeResize = window.innerWidth;
@@ -38,7 +38,7 @@
                 restack(window.innerHeight > window.innerWidth);
             }
             fixDragBtn();
-            showFrameSize();    
+            showFrameSize();
         }
         var fileID = "";
         var loadSave = false;
@@ -59,7 +59,7 @@
                     loadSave = false;
                 }
             }
-            httpA.send(paramA);   
+            httpA.send(paramA);
         }
         </script>
         <style>
@@ -140,11 +140,11 @@
         }
         #textarea {
           padding-left:10px;
-          padding-right:5px;  
+          padding-right:5px;
         }
         #iframe {
           padding-left:5px;
-          padding-right:10px;  
+          padding-right:10px;
         }
         #textareawrapper {
           width:100%;
@@ -169,7 +169,7 @@
           padding:8px;
           resize: none;
           border:none;
-          line-height:normal;    
+          line-height:normal;
         }
         .CodeMirror.cm-s-default {
           line-height:normal;
@@ -180,7 +180,7 @@
         #iframeResult, #iframeSource {
           background-color: #ffffff;
           height:100%;
-          width:100%;  
+          width:100%;
         }
         #stackV {background-color:#999999;}
         #stackV:hover {background-color:#BBBBBB !important;}
@@ -202,7 +202,7 @@
           height:100%;
           padding-right:10px;
           padding-bottom:10px;
-          padding-left:10px;  
+          padding-left:10px;
         }
         #container.horizontal{
           min-height:200px;
@@ -216,7 +216,7 @@
           padding-inline-start: 1px;
           font-size: 12px;
           margin-block-start: 6px;
-          margin-block-end: 6px;    
+          margin-block-end: 6px;
         }
         #breadcrumb li {
           display: inline;
@@ -235,22 +235,22 @@
           border-top: 12px solid transparent;
           border-bottom: 12px solid transparent;
           border-left: 12px solid #E7E9EB;
-          position: absolute; 
+          position: absolute;
           right: -12px;
           top: 0;
           z-index: 1;
         }
         #breadcrumb a:before {
-          content: "";  
+          content: "";
           border-top: 12px solid transparent;
           border-bottom: 12px solid transparent;
           border-left: 12px solid #fff;
-          position: absolute; 
-          left: 0; 
+          position: absolute;
+          left: 0;
           top: 0;
         }
         #breadcrumb ul li:first-child a:before {
-          display: none; 
+          display: none;
         }
         #breadcrumb ul:last-child li{
           padding-right: 5px;
@@ -299,7 +299,7 @@
         }
         #getwebsitebtn {
           background-color:#04AA6D;
-          font-family: 'Source Sans Pro', sans-serif;  
+          font-family: 'Source Sans Pro', sans-serif;
           color: white;
           font-size: 18px;
           padding:6px 15px;
@@ -332,7 +332,7 @@
           #container     {min-width:310px;}
           .stack         {display:none;}
           #tryhome       {display:block;}
-          .trytopnav     {min-width:310px;}  
+          .trytopnav     {min-width:310px;}
         }
         .loader {
             border: 6px solid #f3f3f3;
@@ -406,7 +406,7 @@
                 <div id="saveDisclaimer" style="display:none;">
                   <p>All code in shared files are supplied by users, and belongs to the poster.</p>
                   <p>All shared files are made public. No license is enforced.</p>
-                  <p>Any code can be removed without warning (if it is deemed offensive, damaging or for any other reason).</p>        
+                  <p>Any code can be removed without warning (if it is deemed offensive, damaging or for any other reason).</p>
                   <p>w3schools.com are not responsible or liable for any loss or damage of any kind during the usage of provided code.</p>
                 </div>
               </div>
@@ -529,7 +529,7 @@
           } else if (fileID != "" && loadSave == false) {
             var t=text;
             t=t.replace(/=/gi,"w3equalsign");
-            t=t.replace(/\+/gi,"w3plussign");    
+            t=t.replace(/\+/gi,"w3plussign");
             var pos=t.search(/script/i)
             while (pos>0) {
               t=t.substring(0,pos) + "w3" + t.substr(pos,3) + "w3" + t.substr(pos+3,3) + "tag" + t.substr(pos+6);
@@ -544,7 +544,7 @@
           } else {
             var ifrw = (ifr.contentWindow) ? ifr.contentWindow : (ifr.contentDocument.document) ? ifr.contentDocument.document : ifr.contentDocument;
             ifrw.document.open();
-            ifrw.document.write(text);  
+            ifrw.document.write(text);
             ifrw.document.close();
             if (ifrw.document.body && !ifrw.document.body.isContentEditable) {
               ifrw.document.body.contentEditable = true;
@@ -560,23 +560,23 @@
             ic = document.getElementById("iframecontainer");
             t = document.getElementById("textarea");
             i = document.getElementById("iframe");
-            c = document.getElementById("container");    
+            c = document.getElementById("container");
             sv = document.getElementById("stackV");
             sh = document.getElementById("stackH");
             tc.className = tc.className.replace("horizontal", "");
-            ic.className = ic.className.replace("horizontal", "");        
-            t.className = t.className.replace("horizontal", "");        
-            i.className = i.className.replace("horizontal", "");        
-            c.className = c.className.replace("horizontal", "");                        
+            ic.className = ic.className.replace("horizontal", "");
+            t.className = t.className.replace("horizontal", "");
+            i.className = i.className.replace("horizontal", "");
+            c.className = c.className.replace("horizontal", "");
             if (sv) {sv.className = sv.className.replace("horizontal", "")};
             if (sv) {sh.className = sh.className.replace("horizontal", "")};
             stack = "";
             if (horizontal) {
                 tc.className = tc.className + " horizontal";
-                ic.className = ic.className + " horizontal";        
-                t.className = t.className + " horizontal";        
-                i.className = i.className + " horizontal";                
-                c.className = c.className + " horizontal";                
+                ic.className = ic.className + " horizontal";
+                t.className = t.className + " horizontal";
+                i.className = i.className + " horizontal";
+                c.className = c.className + " horizontal";
                 if (sv) {sv.className = sv.className + " horizontal"};
                 if (sv) {sh.className = sh.className + " horizontal"};
                 stack = " horizontal";
@@ -590,7 +590,7 @@
                 document.getElementById("iframecontainer").style.height = "100%";
                 document.getElementById("textareacontainer").style.width = "50%";
                 document.getElementById("iframecontainer").style.width = "50%";
-                currentStack=true;        
+                currentStack=true;
             }
             fixDragBtn();
             showFrameSize();
@@ -608,7 +608,7 @@
           var textareawidth, leftpadding, dragleft, containertop, buttonwidth
           var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
           if (stack != " horizontal") {
-            document.getElementById("dragbar").style.width = "5px";    
+            document.getElementById("dragbar").style.width = "5px";
             textareasize = Number(w3_getStyleValue(document.getElementById("textareawrapper"), "width").replace("px", ""));
             leftpadding = Number(w3_getStyleValue(document.getElementById("textarea"), "padding-left").replace("px", ""));
             buttonwidth = Number(w3_getStyleValue(document.getElementById("dragbar"), "width").replace("px", ""));
@@ -618,7 +618,6 @@
             document.getElementById("dragbar").style.left = dragleft + "px";
             document.getElementById("dragbar").style.height = textareaheight;
             document.getElementById("dragbar").style.cursor = "col-resize";
-            
           } else {
             document.getElementById("dragbar").style.height = "5px";
             if (window.getComputedStyle) {
@@ -636,7 +635,7 @@
             document.getElementById("dragbar").style.top = dragleft + "px";
             document.getElementById("dragbar").style.left = "5px";
             document.getElementById("dragbar").style.width = textareaheight;
-            document.getElementById("dragbar").style.cursor = "row-resize";        
+            document.getElementById("dragbar").style.cursor = "row-resize";
           }
         }
         function dragstart(e) {
@@ -645,9 +644,9 @@
           var main = document.getElementById("iframecontainer");
         }
         function dragmove(e) {
-          if (dragging) 
+          if (dragging)
           {
-            document.getElementById("shield").style.display = "block";        
+            document.getElementById("shield").style.display = "block";
             if (stack != " horizontal") {
               var percentage = (e.pageX / window.innerWidth) * 100;
               if (percentage > 5 && percentage < 98) {
@@ -666,7 +665,7 @@
                 fixDragBtn();
               }
             }
-            showFrameSize();    
+            showFrameSize();
           }
         }
         function dragend() {
@@ -677,7 +676,7 @@
               window.editor.refresh();
           }
         }
-        if (window.addEventListener) {              
+        if (window.addEventListener) {
           document.getElementById("dragbar").addEventListener("mousedown", function(e) {dragstart(e);});
           document.getElementById("dragbar").addEventListener("touchstart", function(e) {dragstart(e);});
           window.addEventListener("mousemove", function(e) {dragmove(e);});
@@ -728,10 +727,10 @@
         function saveFile(code) {
             document.getElementById('preSave').style.display='none';
             if (code.length>20000) {
-                document.getElementById('errorSave').style.display='block';    
+                document.getElementById('errorSave').style.display='block';
                 return;
             }
-            document.getElementById('postSave').style.display='block';    
+            document.getElementById('postSave').style.display='block';
             var paramObj = {};
             paramObj.code = code;
             var paramB = JSON.stringify(paramObj);
@@ -754,7 +753,7 @@
         function hideAndResetModal() {
             document.getElementById("saveModal").style.display = "none";
             document.getElementById('preSave').style.display = "block";
-            document.getElementById('errorSave').style.display = "none";    
+            document.getElementById('errorSave').style.display = "none";
             document.getElementById('postSave').style.display = "none";
             document.getElementById("saveModalSaved").style.display = "none";
             document.getElementById('saveDisclaimer').style.display= "none";
