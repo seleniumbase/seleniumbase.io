@@ -509,7 +509,7 @@
       var totp = new TOTP(key);
       var qrnode = new AraleQRCode({
         size: 128,
-        text: totp.gaURL('handsome@totp.js', 'Totp.js')
+        text: totp.gaURL('SeleniumBase', 'TOTP Code')
       });
       $secret.innerHTML = key;
       $qrcode.appendChild(qrnode);
