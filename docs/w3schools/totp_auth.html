@@ -508,7 +508,7 @@
       var key = TOTP.randomKey();
       var totp = new TOTP(key);
       var qrnode = new AraleQRCode({
-        size: 128,
+        size: 144,
         text: totp.gaURL('SeleniumBase', 'TOTP Code')
       });
       $secret.innerHTML = key;
