@@ -130,7 +130,8 @@
                 var secret = "GAXG2MTEOR3DMMDG"
                 var totp = new jsOTP.totp();
                 var code = totp.getOtp(secret);
-                var previous_code = totp.getOtp(secret, Date.now() - 30000)
+                date_now = Date.now()
+                var previous_code = totp.getOtp(secret, date_now - 30000)
                 if (totpcode == '')
                 {
                     top_message_element.textContent = 'The MFA Code is Required!';
@@ -146,7 +147,7 @@
                 sessionStorage.setItem('realworld_auth_granted', true);
                 sessionStorage.setItem('realworld_login_token', token);
                 sessionStorage.setItem('realworld_start_token', token);
-                sessionStorage.setItem('realworld_login_date', date_now);
+                sessionStorage.setItem('realworld_login_date', date_now;
                 setCookie('realworld_login_date', Date.now(), 1);
                 window.location.href = 'https://seleniumbase.io/realworld/?token=' + token;
             }
