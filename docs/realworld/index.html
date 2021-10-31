@@ -128,9 +128,9 @@
                 var code = totp.getOtp(secret);
                 var previous_code = totp.getOtp(secret, date_now - 30000);
                 var pre_pre_code = totp.getOtp(secret, date_now - 60000);
-                var token = String(2000000 - parseInt(code));
-                var previous_token = String(2000000 - parseInt(previous_code));
-                var pre_pre_token = String(2000000 - parseInt(pre_pre_code));
+                var token = 'T' + String(2000000 - parseInt(code));
+                var previous_token = 'T' + String(2000000 - parseInt(previous_code));
+                var pre_pre_token = 'T' + String(2000000 - parseInt(pre_pre_code));
                 session_token = sessionStorage.getItem('realworld_login_token');
                 if (session_token == token || session_token == previous_token || session_token == pre_pre_token)
                 {
@@ -170,7 +170,7 @@
             if (token != sessionStorage.getItem('realworld_start_token')) {
                 window.location.href = 'https://seleniumbase.io/realworld/logout';
             }
-            token_totp_code = String(2000000 - parseInt(token)).padStart(6, '0');
+            token_totp_code = String(2000000 - parseInt(token.substring(1))).padStart(6, '0');
             date_now = Date.now();
             var secret = "GAXG2MTEOR3DMMDG";
             var totp = new jsOTP.totp();
@@ -180,7 +180,7 @@
                 the_hash = window.location.hash;
                 if (the_hash.startsWith('#'))
                     the_hash = the_hash.substring(1);
-                hash_totp_code = String(2000000 - parseInt(the_hash)).padStart(6, '0');
+                hash_totp_code = String(2000000 - parseInt(the_hash.substring(1))).padStart(6, '0');
                 if (hash_totp_code != code && hash_totp_code != previous_code) {
                     window.location.href = 'https://seleniumbase.io/realworld/logout';
                 }
