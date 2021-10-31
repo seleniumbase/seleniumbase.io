@@ -166,6 +166,9 @@
             }
             top_message_element = document.getElementById('top_message');
             token = getUrlVars()["token"];
+            if (token != sessionStorage.getItem('realworld_start_token')) {
+                window.location.href = 'https://seleniumbase.io/realworld/logout';
+            }
             token_totp_code = String(2000000 - parseInt(token)).padStart(6, '0');
             date_now = Date.now();
             var secret = "GAXG2MTEOR3DMMDG";
