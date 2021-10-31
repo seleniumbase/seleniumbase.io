@@ -38,6 +38,7 @@
         }
         sessionStorage.removeItem('realworld_login_token');
         sessionStorage.removeItem('realworld_login_date');
+        sessionStorage.removeItem('realworld_auth_granted');
         deleteCookie('realworld_login_token');
         deleteCookie('realworld_login_date');
         window.location.href = 'https://seleniumbase.io/realworld/login?msg=loginrequired';
@@ -46,6 +47,11 @@
 <body>
     <h3 class="auth-header">Redirecting...</h3>
     <script type="text/javascript">
+        sessionStorage.removeItem('realworld_login_token');
+        sessionStorage.removeItem('realworld_login_date');
+        sessionStorage.removeItem('realworld_auth_granted');
+        deleteCookie('realworld_login_token');
+        deleteCookie('realworld_login_date');
         window.location.href = 'https://seleniumbase.io/realworld/login?msg=loginrequired';
     </script>
 </body>
