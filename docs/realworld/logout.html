@@ -36,10 +36,10 @@
         const deleteCookie = (name, path) => {
             setCookie(name, '', -1, path);
         }
-        sessionStorage.removeItem('login_token');
-        sessionStorage.removeItem('login_date');
-        deleteCookie('login_token');
-        deleteCookie('login_date');
+        sessionStorage.removeItem('realworld_login_token');
+        sessionStorage.removeItem('realworld_login_date');
+        deleteCookie('realworld_login_token');
+        deleteCookie('realworld_login_date');
         window.location.href = 'https://seleniumbase.io/realworld/login?msg=loginrequired';
     </script>
 </head>
