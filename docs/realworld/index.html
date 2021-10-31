@@ -1,0 +1,201 @@
+<html lang="en">
+    <head>
+        <title>Welcome Page</title>
+        <meta property="og:site_name" content="Realworld Welcome Page">
+        <meta property="og:title" content="Realworld Welcome Page (Test Site)">
+        <meta name="Description" content="Realworld Welcome Page. (Test Site)">
+        <meta property="og:description" content="Realworld Welcome Page. (Test Site)">
+        <meta name="Keywords" content="SeleniumBase Welcome Page">
+        <meta property="og:keywords" content="Welcome Page">
+        <meta property="og:image" content="https://seleniumbase.io/cdn/img/sb_logo_gs.png">
+        <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="follow,index" name="robots">
+        <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+        <link href="https://seleniumbase.io/img/green_logo.png" rel="apple-touch-icon">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+        <link href="https://seleniumbase.io/cdn/css/bs_theme.css" rel="stylesheet">
+        <style>
+            #div1,#div2 {
+                width: 401px;
+                height: 65px;
+                padding: 10px;
+                border: 2px solid #aaaaaa;
+            }
+            img:active {
+                box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+                1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+            }
+            html {
+                background-color: #9988ad;
+            }
+            html, body {
+                font-size: 100%;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: none;
+                background-origin: padding-box;
+                background-color: #c6d6f0;
+                padding: 12;
+                font-family: "Proxima Nova","proxima-nova",
+                "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+                text-rendering: optimizelegibility;
+                -moz-osx-font-smoothing: grayscale;
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+                1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            tbody {
+                border: 1px solid #e1e1e1;
+                background-color: #fefefe;
+            }
+            h1 {
+                text-align: center;
+                color: #228888;
+            }
+            a {
+                padding: 0px;
+                border: 1px solid #444444;
+            }
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 12px 14px;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+        </script>
+        <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
+        <script type="text/javascript">
+            const setCookie = (name, value, days = 7, path = '/') => {
+                const expires = new Date(Date.now() + days * 864e5).toUTCString();
+                document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path;
+            }
+            const getCookie = (name) => {
+                return document.cookie.split('; ').reduce((r, v) => {
+                    const parts = v.split('=')
+                    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+                }, '');
+            }
+            const deleteCookie = (name, path) => {
+                setCookie(name, '', -1, path);
+            }
+        </script>
+        <script type="text/javascript">
+            function refreshCode() {
+                date_now = Date.now();
+                var secret = "GAXG2MTEOR3DMMDG";
+                var totp = new jsOTP.totp();
+                var code = totp.getOtp(secret);
+                var previous_code = totp.getOtp(secret, date_now - 30000);
+                var pre_pre_code = totp.getOtp(secret, date_now - 60000);
+                var token = String(2000000 - parseInt(code));
+                var previous_token = String(2000000 - parseInt(previous_code));
+                var pre_pre_token = String(2000000 - parseInt(pre_pre_code));
+                session_token = sessionStorage.getItem('realworld_login_token');
+                if (session_token == token || session_token == previous_token || session_token == pre_pre_token)
+                {
+                    window.location.hash = token;
+                    setCookie('realworld_login_token', token, 1);
+                    setCookie('realworld_login_date', date_now, 1);
+                    sessionStorage.setItem('realworld_login_token', token);
+                    sessionStorage.setItem('realworld_login_date', token);
+                }
+            }
+            function startInterval() {
+                setInterval(function () {
+                    var ttl = Math.floor(Date.now() / 1000 % 30);
+                    if (ttl === 0) {
+                        refreshCode();
+                    }
+                }, 1000);
+            }
+            function sync2NextSecond() {
+                var ms2NextSecond = 1000 - (Date.now() % 1000);
+                setTimeout(startInterval, ms2NextSecond);
+            }
+            sync2NextSecond();
+            refreshCode();
+        </script>
+        <script type="text/javascript">
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+            top_message_element = document.getElementById('top_message');
+            token = getUrlVars()["token"];
+            token_totp_code = String(2000000 - parseInt(token)).padStart(6, '0');
+            date_now = Date.now();
+            var secret = "GAXG2MTEOR3DMMDG";
+            var totp = new jsOTP.totp();
+            var code = totp.getOtp(secret);
+            var previous_code = totp.getOtp(secret, date_now - 30000);
+            if (token_totp_code != code && token_totp_code != previous_code) {
+                the_hash = window.location.hash;
+                if (the_hash.startsWith('#'))
+                    the_hash = the_hash.substring(1);
+                hash_totp_code = String(2000000 - parseInt(the_hash)).padStart(6, '0');
+                if (hash_totp_code != code && hash_totp_code != previous_code)
+                {
+                    window.location.href = 'https://seleniumbase.io/realworld/logout';
+                }
+                token = the_hash;
+            }
+            setCookie('realworld_login_token', token, 1);
+            setCookie('realworld_login_date', date_now, 1);
+            sessionStorage.setItem('realworld_login_token', token);
+            sessionStorage.setItem('realworld_login_date', token);
+        </script>
+    </head>
+    <body contenteditable="false">
+        <!-- Tested with SeleniumBase - https://seleniumbase.io -->
+        <div class="topnav">
+            <a class="active">This Page</a>
+            <a href="https://seleniumbase.io/demo_page" target="_blank">Demo Page</a>
+            <a href="https://seleniumbase.io" target="_blank">SeleniumBase Docs</a>
+            <a href="https://seleniumbase.io/devices/?url=seleniumbase.io" target="_blank">Virtual Device Farm</a>
+            <a href="https://github.com/seleniumbase/SeleniumBase" target="_blank">Github Page</a>
+            <a href="https://seleniumbase.io/w3schools/" target="_blank">HTML Playground</a>
+            <a href="https://seleniumbase.io/realworld/logout">Logout</a>
+        </div>
+        <p></p>
+        <h1>Welcome!</h1>
+        <img id="image1" class="center" src="https://seleniumbase.io/cdn/img/st_tng_s1e3.png">
+    </body>
+</html>

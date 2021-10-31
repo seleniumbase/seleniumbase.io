@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <title>Signup Page / Get Login Credentials</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="Signup Login Credentials Demo Test Automation App" name="keywords">
+    <meta content="Signup - Get Login Credentials for Demo App" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="follow,index" name="robots">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+    <link href="https://seleniumbase.io/cdn/css/bs_theme.css" rel="stylesheet">
+    <style>
+        #div1,#div2 {
+            width: 401px;
+            height: 65px;
+            padding: 10px;
+            border: 2px solid #aaaaaa;
+        }
+        img:active {
+            box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+            1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+        }
+        html {
+            background-color: #9988ad;
+        }
+        html, body {
+            font-size: 100%;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 12;
+            background-image: none;
+            background-origin: padding-box;
+            background-color: #c6d6f0;
+            font-family: "Proxima Nova","proxima-nova",
+            "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            text-rendering: optimizelegibility;
+            -moz-osx-font-smoothing: grayscale;
+            box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+            1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        tbody {
+            border: 1px solid #e1e1e1;
+            background-color: #fefefe;
+        }
+        .main {
+            text-align: center;
+            line-height: 2;
+            font-size: 17px;
+        }
+        .main .preview {
+            text-align: center;
+        }
+        .main .preview .label {
+            display: inline-block;
+            font-weight: bold;
+            width: 100px;
+        }
+        #qrcode {
+            margin-top: 5px;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+</head>
+<body>
+    <h3 align="center">Signup Page / Get Login Credentials</h3>
+    <hr />
+    <h5 align="center">Use these creds on <a href="https://seleniumbase.io/realworld/login" target="_blank">seleniumbase.io/realworld/login</a></h5>
+        <div align="center"><b>Username:</b> <h5>demo_user</h5></div>
+        <div align="center"><b>Password:</b> <h5>secret_pass</h5></div>
+        <hr />
+        <div align="center"><h5>To generate the 6-digit MFA Code:</h5></div>
+    <div class="main">
+        <div class="qrcode">
+            Scan the QR code with <a href="https://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">Google Authenticator</a> (Or copy the Secret Key)
+            <div id="qrcode"></div>
+        </div>
+        <div class="preview">
+            <div></div>
+            <span class="label">Secret Key : </span>
+            <span id="secret"></span><br>
+            <span class="label">TOTP Code: </span>
+            <span id="totp"></span><br>
+            <span class="label">TOTP TTL : </span>
+            <span id="ttl"></span>
+        </div>
+    </div>
+    <script src="https://seleniumbase.io/cdn/js/totp.min.js"></script>
+    <script src="https://seleniumbase.io/cdn/js/arale-qrcode.js"></script>
+    <script>
+        !function main() {
+            var $qrcode = document.getElementById('qrcode');
+            var $secret = document.getElementById('secret');
+            var $totp = document.getElementById('totp');
+            var $ttl = document.getElementById('ttl');
+            var key = 'GAXG2MTEOR3DMMDG';
+            var totp = new TOTP(key);
+            var qrnode = new AraleQRCode({
+                size: 140,
+                text: totp.gaURL('SeleniumBase', 'TOTP Code')
+            });
+            $secret.innerHTML = key;
+            $qrcode.appendChild(qrnode);
+            function refreshCode() {
+                totp_code = totp.genOTP();
+                $totp.innerHTML = totp_code;
+                window.location.hash = totp_code;
+            }
+            function startInterval() {
+                setInterval(function () {
+                    var ttl = Math.floor(Date.now() / 1000 % 30);
+                    $ttl.innerHTML = 30 - ttl;
+                    if (ttl === 0) {
+                        refreshCode();
+                    }
+                }, 1000);
+            }
+            function sync2NextSecond() {
+                var ms2NextSecond = 1000 - (Date.now() % 1000);
+                setTimeout(startInterval, ms2NextSecond);
+            }
+            sync2NextSecond();
+            refreshCode();
+        }();
+    </script>
+</body>
+</html>
