@@ -144,7 +144,7 @@
                 }
                 top_message_element.textContent = '';
                 var token = 'T' + String(2000000 - parseInt(code));
-                sessionStorage.setItem('realworld_auth_granted', true);
+                sessionStorage.setItem('realworld_auth_granted', 'true');
                 sessionStorage.setItem('realworld_login_token', token);
                 sessionStorage.setItem('realworld_start_token', token);
                 sessionStorage.setItem('realworld_login_date', date_now);
@@ -165,7 +165,7 @@
         top_message_element = document.getElementById('top_message');
         var msg = getUrlVars()["msg"];
         if (msg == "loginrequired") {
-            if (sessionStorage.getItem('realworld_auth_granted') === false) {
+            if (sessionStorage.getItem('realworld_auth_granted') == 'false') {
                 top_message_element.textContent = 'You Have Been Logged Out!';
                 sessionStorage.removeItem('realworld_auth_granted');
             }

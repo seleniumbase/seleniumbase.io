@@ -50,7 +50,7 @@
         sessionStorage.removeItem('realworld_login_date');
         was_auth_granted = sessionStorage.getItem('realworld_auth_granted');
         if (was_auth_granted)
-            sessionStorage.setItem('realworld_auth_granted', false)
+            sessionStorage.setItem('realworld_auth_granted', 'false')
         else
             sessionStorage.removeItem('realworld_auth_granted');
         sessionStorage.removeItem('realworld_start_token');
@@ -61,18 +61,5 @@
 </head>
 <body>
     <h3 class="auth-header">Redirecting...</h3>
-    <script type="text/javascript">
-        sessionStorage.removeItem('realworld_login_token');
-        sessionStorage.removeItem('realworld_login_date');
-        was_auth_granted = sessionStorage.getItem('realworld_auth_granted');
-        if (was_auth_granted)
-            sessionStorage.setItem('realworld_auth_granted', false)
-        else
-            sessionStorage.removeItem('realworld_auth_granted');
-        sessionStorage.removeItem('realworld_start_token');
-        deleteCookie('realworld_login_token');
-        deleteCookie('realworld_login_date');
-        window.location.href = 'https://seleniumbase.io/realworld/login?msg=loginrequired';
-    </script>
 </body>
 </html>
