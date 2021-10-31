@@ -136,9 +136,7 @@
                 {
                     window.location.hash = token;
                     setCookie('realworld_login_token', token, 1);
-                    setCookie('realworld_login_date', date_now, 1);
                     sessionStorage.setItem('realworld_login_token', token);
-                    sessionStorage.setItem('realworld_login_date', token);
                 }
             }
             function startInterval() {
@@ -187,9 +185,7 @@
                 token = the_hash;
             }
             setCookie('realworld_login_token', token, 1);
-            setCookie('realworld_login_date', date_now, 1);
             sessionStorage.setItem('realworld_login_token', token);
-            sessionStorage.setItem('realworld_login_date', date_now);
         </script>
     </head>
     <body contenteditable="false">

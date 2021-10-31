@@ -83,6 +83,21 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        const setCookie = (name, value, days = 7, path = '/') => {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None;Secure; expires=' + expires + '; path=' + path;
+        }
+        const getCookie = (name) => {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=')
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r
+            }, '');
+        }
+        const deleteCookie = (name, path) => {
+            setCookie(name, '', -1, path);
+        }
+    </script>
     <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
     <script type="text/javascript">
         function performLogin(ty, event) {
@@ -129,7 +144,10 @@
                 top_message_element.textContent = '';
                 var token = 'T' + String(2000000 - parseInt(code));
                 sessionStorage.setItem('realworld_auth_granted', true);
+                sessionStorage.setItem('realworld_login_token', token);
                 sessionStorage.setItem('realworld_start_token', token);
+                sessionStorage.setItem('realworld_login_date', date_now);
+                setCookie('realworld_login_date', Date.now(), 1);
                 window.location.href = 'https://seleniumbase.io/realworld/?token=' + token;
             }
         }
