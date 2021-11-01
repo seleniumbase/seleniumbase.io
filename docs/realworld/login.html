@@ -132,12 +132,12 @@
                 var code = totp.getOtp(secret);
                 date_now = Date.now()
                 var previous_code = totp.getOtp(secret, date_now - 30000)
-                if (totpcode == '')
+                if (totpcode.trim() == '')
                 {
                     top_message_element.textContent = 'The MFA Code is Required!';
                     return;
                 }
-                if (totpcode != code && totpcode != previous_code)
+                if (totpcode.trim() != code && totpcode.trim() != previous_code)
                 {
                     top_message_element.textContent = 'Invalid MFA Code!';
                     return;
