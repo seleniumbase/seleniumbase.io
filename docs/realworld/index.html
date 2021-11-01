@@ -99,17 +99,6 @@
             gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
         </script>
         <script type="text/javascript">
-            realworld_auth_granted = sessionStorage.getItem('realworld_auth_granted');
-            if (realworld_auth_granted != 'true') {
-                window.location.href = 'https://seleniumbase.io/realworld/logout';
-            }
-            realworld_auth_granted_cookie = getCookie('realworld_auth_granted');
-            if (realworld_auth_granted_cookie != 'true') {
-                window.location.href = 'https://seleniumbase.io/realworld/logout';
-            }
-        </script>
-        <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
-        <script type="text/javascript">
             const setCookie = (name, value, days = 7, path = '/') => {
                 const expires = new Date(Date.now() + days * 864e5).toUTCString();
                 document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None;Secure; expires=' + expires + '; path=' + path;
@@ -124,6 +113,17 @@
                 setCookie(name, '', -1, path);
             }
         </script>
+        <script type="text/javascript">
+            realworld_auth_granted = sessionStorage.getItem('realworld_auth_granted');
+            if (realworld_auth_granted != 'true') {
+                window.location.href = 'https://seleniumbase.io/realworld/logout';
+            }
+            realworld_auth_granted_cookie = getCookie('realworld_auth_granted');
+            if (realworld_auth_granted_cookie != 'true') {
+                window.location.href = 'https://seleniumbase.io/realworld/logout';
+            }
+        </script>
+        <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
         <script type="text/javascript">
             function refreshCode() {
                 date_now = Date.now();
