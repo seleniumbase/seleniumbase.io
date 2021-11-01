@@ -103,6 +103,10 @@
             if (realworld_auth_granted != 'true') {
                 window.location.href = 'https://seleniumbase.io/realworld/logout';
             }
+            realworld_auth_granted_cookie = getCookie('realworld_auth_granted');
+            if (realworld_auth_granted_cookie != 'true') {
+                window.location.href = 'https://seleniumbase.io/realworld/logout';
+            }
         </script>
         <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
         <script type="text/javascript">
