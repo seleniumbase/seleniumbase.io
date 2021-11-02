@@ -249,6 +249,8 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>activate_recorder</span><span class=p>()</span>
 
+<span class=bp>self</span><span class=o>.</span><span class=n>save_recorded_actions</span><span class=p>()</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>activate_jquery</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>bring_to_front</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>)</span>
@@ -390,9 +392,13 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>is_chromedriver_too_old</span><span class=p>()</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>get_totp_code</span><span class=p>(</span><span class=n>totp_key</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
-<span class=c1># Duplicates: self.get_google_auth_password(totp_key=None)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>get_mfa_code</span><span class=p>(</span><span class=n>totp_key</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=c1># Duplicates: self.get_totp_code(totp_key=None)</span>
+<span class=c1>#             self.get_google_auth_password(totp_key=None)</span>
 <span class=c1>#             self.get_google_auth_code(totp_key=None)</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>enter_mfa_code</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>totp_key</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=c1># Duplicates: self.enter_totp_code(selector, totp_key=None, by=By.CSS_SELECTOR, timeout=None)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>convert_css_to_xpath</span><span class=p>(</span><span class=n>css</span><span class=p>)</span>
 
