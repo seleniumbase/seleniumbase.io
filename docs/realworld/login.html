@@ -107,12 +107,12 @@
                 password = document.getElementById('password').value;
                 totpcode = document.getElementById('totpcode').value;
                 top_message_element = document.getElementById('top_message');
-                if (username == '')
+                if (username.trim() == '')
                 {
                     top_message_element.textContent = 'The Username is Required!';
                     return;
                 }
-                if (username !== 'demo_user')
+                if (username.trim() !== 'demo_user')
                 {
                     top_message_element.textContent = 'Invalid Username!';
                     return;
