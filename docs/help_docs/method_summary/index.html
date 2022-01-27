@@ -206,15 +206,44 @@
 <span class=c1># Duplicates: self.switch_to_newest_tab()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>get_new_driver</span><span class=p>(</span>
-    <span class=n>browser</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>headless</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>locale_code</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>protocol</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>servername</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>proxy</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>agent</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>switch_to</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span>
-    <span class=n>cap_file</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>cap_string</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>disable_csp</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>enable_ws</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>enable_sync</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>use_auto_ext</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>no_sandbox</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>disable_gpu</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>incognito</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>guest_mode</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>devtools</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>remote_debug</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>swiftshader</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>block_images</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>chromium_arg</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>firefox_arg</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>firefox_pref</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>user_data_dir</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>extension_zip</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>extension_dir</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
-    <span class=n>is_mobile</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>d_width</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>d_height</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>d_p_r</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+    <span class=n>browser</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>headless</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>locale_code</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>protocol</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>servername</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>port</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>proxy</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>proxy_bypass_list</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>agent</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>switch_to</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span>
+    <span class=n>cap_file</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>cap_string</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>recorder_ext</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>disable_csp</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>enable_ws</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>enable_sync</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>use_auto_ext</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>no_sandbox</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>disable_gpu</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>incognito</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>guest_mode</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>devtools</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>remote_debug</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>swiftshader</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>ad_block_on</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>block_images</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>chromium_arg</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>firefox_arg</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>firefox_pref</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>user_data_dir</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>extension_zip</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>extension_dir</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>external_pdf</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>is_mobile</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>d_width</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>d_height</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+    <span class=n>d_p_r</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
+<span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>switch_to_driver</span><span class=p>(</span><span class=n>driver</span><span class=p>)</span>
 
@@ -263,8 +292,9 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>highlight_click</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>highlight_update_text</span><span class=p>(</span>
-    <span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>highlight_type</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=c1># Duplicates</span>
+<span class=c1># self.highlight_update_text(selector, text, by=By.CSS_SELECTOR, loops=3, scroll=True)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>highlight</span><span class=p>(</span><span class=n>selector</span><span class=p>,</span> <span class=n>by</span><span class=o>=</span><span class=n>By</span><span class=o>.</span><span class=n>CSS_SELECTOR</span><span class=p>,</span> <span class=n>loops</span><span class=o>=</span><span class=mi>4</span><span class=p>,</span> <span class=n>scroll</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
@@ -572,8 +602,7 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>post_error_message</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>duration</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>pause</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_messenger_theme</span><span class=p>(</span><span class=n>theme</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span> <span class=n>location</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span>
-                         <span class=n>max_messages</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>set_messenger_theme</span><span class=p>(</span><span class=n>theme</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span> <span class=n>location</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>,</span> <span class=n>max_messages</span><span class=o>=</span><span class=s2>&quot;default&quot;</span><span class=p>)</span>
 
 <span class=c1>############</span>
 
