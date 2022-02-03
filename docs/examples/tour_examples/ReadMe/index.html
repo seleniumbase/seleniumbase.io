@@ -15,7 +15,7 @@ pytest google_tour.py
         <span class=bp>self</span><span class=o>.</span><span class=n>add_tour_step</span><span class=p>(</span><span class=s2>&quot;Type in your query here.&quot;</span><span class=p>,</span> <span class=s1>&#39;input[title=&quot;Search&quot;]&#39;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>play_tour</span><span class=p>()</span>
 
-        <span class=bp>self</span><span class=o>.</span><span class=n>highlight_update_text</span><span class=p>(</span><span class=s1>&#39;input[title=&quot;Search&quot;]&#39;</span><span class=p>,</span> <span class=s2>&quot;Google&quot;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>highlight_type</span><span class=p>(</span><span class=s1>&#39;input[title=&quot;Search&quot;]&#39;</span><span class=p>,</span> <span class=s2>&quot;Google&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>wait_for_element</span><span class=p>(</span><span class=s1>&#39;[role=&quot;listbox&quot;]&#39;</span><span class=p>)</span>  <span class=c1># Wait for autocomplete</span>
 
         <span class=bp>self</span><span class=o>.</span><span class=n>create_tour</span><span class=p>(</span><span class=n>theme</span><span class=o>=</span><span class=s2>&quot;light&quot;</span><span class=p>)</span>
