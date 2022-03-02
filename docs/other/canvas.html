@@ -1,0 +1,106 @@
+<html lang="en">
+    <head>
+        <title>Canvas Testing Page</title>
+        <meta property="og:site_name" content="Canvas Testing Page">
+        <meta property="og:title" content="Canvas Testing Page">
+        <meta name="Description" content="Canvas Testing Page.">
+        <meta property="og:description" content="Canvas Testing Page.">
+        <meta name="Keywords" content="Canvas">
+        <meta property="og:keywords" content="Canvas">
+        <meta property="og:image" content="https://seleniumbase.io/cdn/img/sb_logo_gs.png">
+        <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, shrink-to-fit=no">
+        <meta content="follow,index" name="robots">
+        <style>canvas { background: teal;} </style>
+        <style>
+            #div1,#div2 {
+                width: 401px;
+                height: 65px;
+                padding: 10px;
+                border: 2px solid #aaaaaa;
+            }
+            img:active {
+                box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+                1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+            }
+            html {
+                background-color: #9988ad;
+            }
+            html, body {
+                font-size: 100%;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: none;
+                background-origin: padding-box;
+                background-color: #c6d6f0;
+                padding: 30;
+                margin: 10;
+                font-family: "Proxima Nova","proxima-nova",
+                "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+                text-rendering: optimizelegibility;
+                -moz-osx-font-smoothing: grayscale;
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+                1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            tbody {
+                border: 1px solid #e1e1e1;
+                background-color: #fefefe;
+            }
+        </style>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+        </script>
+    </head>
+    <body contenteditable="false">
+        <!-- Tested with SeleniumBase - https://seleniumbase.io -->
+        <form id="myForm">
+            <table id="myTable" style="width: 580px; padding: 10px;">
+                <thead>
+                    <h1>Canvas Testing Page</h1>
+                </thead>
+                <tbody id="tbodyId">
+                    <h3>Click on the square in the rectangle:</h3>
+                    <div>
+                        <canvas id="myCanvas" width=600 height=400></canvas>
+                    </div>
+                </tbody>
+            </table>
+        </form>
+        <script>
+            const canvas = document.getElementById("myCanvas")
+            const context = canvas.getContext("2d")
+            const path = new Path2D()
+            path.rect(250,150,100,100)
+            path.closePath()
+            context.fillStyle = "#FFFFFF"
+            context.fillStyle = "rgba(225,225,225,0.5)"
+            context.fill(path)
+            context.lineWidth = 2
+            context.strokeStyle = "#000000"
+            context.stroke(path)
+            function getXY(canvas, event){
+                const rect = canvas.getBoundingClientRect()
+                const y = event.clientY - rect.top
+                const x = event.clientX - rect.left
+                return {x:x, y:y}
+            }
+            document.addEventListener("click",  function (e) {
+                const XY = getXY(canvas, e)
+                if(context.isPointInPath(path, XY.x, XY.y)) {
+                    alert("You clicked on the square!")
+                }
+            }, false)
+        </script>
+    </body>
+</html>
