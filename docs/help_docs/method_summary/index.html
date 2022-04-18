@@ -195,9 +195,15 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>switch_to_default_content</span><span class=p>()</span>
 
+<span class=bp>self</span><span class=o>.</span><span class=n>switch_to_parent_frame</span><span class=p>()</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>set_content_to_frame</span><span class=p>(</span><span class=n>frame</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>set_content_to_default</span><span class=p>(</span><span class=n>nested</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>set_content_to_default</span><span class=p>(</span><span class=n>nested</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
+<span class=c1># Duplicates: self.set_content_to_default_content(nested=False)</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>set_content_to_parent</span><span class=p>()</span>
+<span class=c1># Duplicates: self.set_content_to_parent_frame()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>open_new_window</span><span class=p>(</span><span class=n>switch_to</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
 <span class=c1># Duplicates: self.open_new_tab(switch_to=True)</span>
