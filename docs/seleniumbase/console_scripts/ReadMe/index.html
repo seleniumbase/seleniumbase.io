@@ -2,6 +2,7 @@
       install          [DRIVER] [OPTIONS]
       methods          (List common Python methods)
       options          (List common pytest options)
+      commander / gui  [OPTIONAL PATH or TEST FILE]
       mkdir            [DIRECTORY] [OPTIONS]
       mkfile           [FILE.py] [OPTIONS]
       mkrec / codegen  [FILE.py] [OPTIONS]
@@ -79,7 +80,7 @@ sbase install edgedriver <span class=m>100</span>.0.1185.39
 --proxy=USER:PASS@SERVER:PORT  (Use authenticated proxy server.)
 
 For the full list of command-line options, type: &quot;pytest --help&quot;.
-</code></pre></div> <h3>mkdir</h3> <ul> <li> <p>Usage: <code>sbase mkdir [DIRECTORY] [OPTIONS]</code></p> </li> <li> <p>Example: <code>sbase mkdir ui_tests</code></p> </li> <li> <p>Options: <code>-b</code> / <code>--basic</code> (Only config files. No tests added.)</p> </li> <li> <p>Output: Creates a new folder for running SBase scripts. The new folder contains default config files, sample tests for helping new users get started, and Python boilerplates for setting up customized test frameworks.</p> </li> </ul> <div class=highlight><pre><span></span><code>ui_tests/
+</code></pre></div> <h3>commander / gui</h3> <ul> <li> <p>Usage: <code>sbase commander [OPTIONAL PATH or TEST FILE]</code> <code>sbase gui [OPTIONAL PATH or TEST FILE]</code></p> </li> <li> <p>Examples: <code>sbase gui</code> <code>sbase gui -k agent</code> <code>sbase gui examples/</code> <code>sbase gui test_suite.py</code></p> </li> <li> <p>Output: Launches SeleniumBase Commander | GUI for pytest.</p> </li> </ul> <h3>mkdir</h3> <ul> <li> <p>Usage: <code>sbase mkdir [DIRECTORY] [OPTIONS]</code></p> </li> <li> <p>Example: <code>sbase mkdir ui_tests</code></p> </li> <li> <p>Options: <code>-b</code> / <code>--basic</code> (Only config files. No tests added.)</p> </li> <li> <p>Output: Creates a new folder for running SBase scripts. The new folder contains default config files, sample tests for helping new users get started, and Python boilerplates for setting up customized test frameworks.</p> </li> </ul> <div class=highlight><pre><span></span><code>ui_tests/
 ├── __init__.py
 ├── my_first_test.py
 ├── parameterized_test.py
