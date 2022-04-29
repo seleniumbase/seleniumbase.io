@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<style>
+body {
+    background: black;
+}
+div.space {
+    position: relative;
+    padding-top: 10px;
+}
+.container{
+    width: 358px;
+    height: 558px;
+    background-color: #e8e6e4;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    margin: auto;
+    border-radius: 6%;
+}
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    grid-template-columns: repeat(4, 82px);
+    grid-template-rows: minmax(96px, auto) repeat(5, 82px);
+    padding-bottom: 15px;
+    border-bottom-left-radius: 6%;
+    border-bottom-right-radius: 6%;
+}
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'TT Commons Demibold',Helvetica,Arial,Lucida,sans-serif;
+    border-radius: 50%;
+    border-width: 0;
+    margin: 8px;
+    outline: 0;
+    background-color: #eaeaea;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.calculator-grid #equal {
+    background-color: #4252f5;
+}
+.calculator-grid #add {
+    background-color: #ead25b;
+}
+.calculator-grid #subtract {
+    background-color: #f490af;
+}
+.calculator-grid #divide {
+    background-color: #0aa788;
+}
+.calculator-grid #multiply {
+    background-color: #f66947;
+}
+.calculator-grid > button:hover {
+    background-color: #c6c6cd;
+    font-size: 31px;
+    padding: 8px;
+}
+button[special]:hover {
+    font-size: 36px;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+.output {
+    grid-column: 1 / -1;
+}
+.output input {
+    width: 100%;
+    height: 76%;
+    padding: 11px;
+    margin-top: 16px;
+    margin-left: 0px;
+    font-size: 46px;
+    float: left;
+    text-align: right;
+    border: solid;
+    border-color: #8b9bab;
+    box-sizing: border-box;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    background-color: #caedef;
+    overflow: visible;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 2px 3px 0 rgba(0, 0, 0, 0.06);
+}
+.dark-mode {
+    background-color: lightgray;
+    background-color: #cdcdcd;
+}
+.toggle {
+    position : relative ;
+    display : inline-block;
+    width : 30px;
+    height : 15px;
+    background-color: lightgray;
+    border-radius: 30px;
+    border: 2px solid gray;
+    margin-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+span {
+    font-family: 'TT Commons Demibold',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 10px;
+}
+span[header] {
+    font-size: 23px;
+    color: #3242f5;
+}
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+    left: 1px;
+    transition: all 0.5s;
+}
+.checkbox:checked + .toggle::after {
+    left : 13px; 
+}
+.checkbox:checked + .toggle {
+    background-color: green;
+}
+.checkbox { 
+    display : none;
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="space">
+        <div class="row">
+            <input type="checkbox" id="switch" class="checkbox" checked onchange="darkMode()" />
+            <label for="switch" class="toggle"></label>
+            <span>Dark Mode</span>
+            <span header>&nbsp&nbsp&nbsp&nbsp&nbspCalculator</span>
+        </div>
+        <div class="calculator-grid">
+            <div class="output">
+                <input type="text" id="output" readonly="readonly">
+            </div>
+            <button id="clear" onclick="getNum()">AC</button>
+            <button id="(" onclick="getNum()">(</button>
+            <button id=")" onclick="getNum()">)</button>
+            <button id="divide" special onclick="getNum()">÷</button>
+            <button id="7" onclick="getNum()">7</button>
+            <button id="8" onclick="getNum()">8</button>
+            <button id="9" onclick="getNum()">9</button>
+            <button id="multiply" special onclick="getNum()">×</button>
+            <button id="4" onclick="getNum()">4</button>
+            <button id="5" onclick="getNum()">5</button>
+            <button id="6" onclick="getNum()">6</button>
+            <button id="subtract" special onclick="getNum()">-</button>
+            <button id="1" onclick="getNum()">1</button>
+            <button id="2" onclick="getNum()">2</button>
+            <button id="3" onclick="getNum()">3</button>
+            <button id="add" special onclick="getNum()">+</button>
+            <button id="←" onclick="getNum()">←</button>
+            <button id="0" onclick="getNum()">0</button>
+            <button id="." onclick="getNum()">.</button>
+            <button id="equal" special onclick="getNum()">=</button>
+        </div>
+    </div>
+<script>
+document.getElementById("output").value = "0";
+//Model of input handling
+function Stack() {
+    this.data = [];
+    this.count = 0;
+    this.push = push;
+    this.pop = pop;
+    this.size = size;
+    this.clear = clear;
+    this.top = top;
+    this.empty = empty;
+    function push(x) {
+        this.data[this.count++] = x;
+    }
+    function pop() {
+        this.count -= 1;
+    }
+    function size() {
+        return this.count;
+    }
+    function clear() {
+        this.count = 0;
+    }
+    function top() {
+        if (this.count == 0)
+            throw err = new Error("Stack Error");
+        else
+            return this.data[this.count - 1];
+    }
+    function empty() {
+        if (this.count == 0)
+            return true;
+        else
+            return false;
+    }
+}
+//Check if input element is an operator
+function isOperator(x) {
+    if ((x >= '0' && x <= '9') || x == ' ' || x == '.')
+        return false;
+    else
+        return true;
+}
+//Format input string equation
+function Format(str) {
+    var i;
+    var tmp = "";
+    for (i = 0; i < str.length; ++i) {
+        if (isOperator(str[i])) {
+            if (str[i] == '(') {
+                if (i > 0 && !isOperator(str[i - 1]) && str[i - 1] != ' ')
+                    tmp = tmp + " × ";
+                tmp = tmp + str[i] + " ";
+            }
+            else if (str[i] == ')') {
+                tmp = tmp + " " + str[i];
+                if (i < str.length - 1 && !isOperator(str[i + 1]) && str[i + 1] != ' ')
+                    tmp = tmp + " × ";
+            }
+            else {
+                if (str[i] == '-') {
+                    if (i == 0)
+                        tmp = tmp + " " + str[i];
+                    else if (isOperator(str[i - 1]) && str[i - 1] != ')')
+                        tmp = tmp + " " + str[i];
+                    else
+                        tmp = tmp + " " + str[i] + " ";
+                }
+                else
+                    tmp = tmp + " " + str[i] + " ";
+            }
+        }
+        else {
+            tmp = tmp + str[i];
+        }
+    }
+    return tmp;
+}
+//Get previous operator
+function getPrevious(operator) {
+    var a;
+    switch (operator) {
+        case "+":
+        case "-":
+            a = 1;
+            break;
+        case "×":
+        case "÷":
+            a = 2;
+            break;
+        case "(":
+            a = 4;
+            break;
+        case ")":
+            a = 0;
+            break;
+        default:
+            a = -1;
+            break
+    }
+    return a;
+}
+//Handling of parenthesis
+function shiftExpression(equation) {
+    var stack = new Stack();
+    var str = "";
+    var i = 0;
+    while (i < equation.length) {
+        if (equation[i] == ' ')
+            i += 1;
+        else if ((!isOperator(equation[i]) && equation[i] != ' ') || (equation[i] == '-' && !isOperator(equation[i + 1]) && equation[i + 1] != ' ')) {
+            while (equation[i] != ' ') {
+                str = str + equation[i];
+                i += 1;
+                if (i >= equation.length)
+                    break;
+            }
+            str = str + " ";
+        }
+        else {
+            var currentSymbol = "";
+            currentSymbol = equation[i];
+            i += 1;
+            if (stack.empty())
+                stack.push(currentSymbol);
+            else if (currentSymbol == '(')
+                stack.push(currentSymbol);
+            else if (currentSymbol == ')') {
+                while (stack.top() != '(') {
+                    str = str + stack.top() + " ";
+                    stack.pop();
+                }
+                stack.pop();
+            }
+            else if (stack.top() == '(') {
+                stack.push(currentSymbol);
+            }
+            else if (getPrevious(currentSymbol) > getPrevious(stack.top())) {
+                stack.push(currentSymbol);
+            }
+            else if (getPrevious(currentSymbol) <= getPrevious(stack.top())) {
+                while (getPrevious(currentSymbol) <= getPrevious(stack.top())) {
+                    if (stack.top() == '(')
+                        break;
+                    str = str + stack.top() + " ";
+                    stack.pop();
+                    if (stack.empty())
+                        break;
+                }
+                stack.push(currentSymbol);
+            }
+        }
+    }
+    while (!stack.empty()) {
+        str = str + stack.top() + " ";
+        stack.pop();
+    }
+    str = str.trim();
+    return str;
+}
+//Calculate result of input string equation
+function Calculate(str) {
+    var numstack = new Stack();
+    var tmp = "";
+    var i = 0;
+    var len = str.length;
+    while (i < len) {
+        if (isOperator(str[i])) {
+            if (str[i] == '-' && !isOperator(str[i + 1]) && str[i + 1] != ' ') {
+                while (str[i] != ' ') {
+                    tmp = tmp + str[i];
+                    i += 1;
+                    if (i > 24) {
+                        return str;
+                    }
+                }
+                var t = parseFloat(tmp);
+                numstack.push(t);
+                tmp = "";
+            }
+            else {
+                var a, b;
+                if (numstack.empty())
+                    return "ERROR";
+                a = numstack.top();
+                numstack.pop();
+                if (numstack.empty())
+                    return "ERROR";
+                b = numstack.top();
+                numstack.pop();
+                if (str[i] == '+')
+                    numstack.push(a + b);
+                else if (str[i] == '-')
+                    numstack.push(b - a);
+                else if (str[i] == '×')
+                    numstack.push(a * b);
+                else if (str[i] == '÷') {
+                    if (a == 0)
+                        return "ERROR";
+                    else
+                        numstack.push(b / a);
+                }
+                i++;
+            }
+        }
+        else if (str[i] == ' ') {
+            i++;
+        }
+        else {
+            while (str[i] != ' ') {
+                tmp = tmp + str[i];
+                i += 1;
+                if (i > 24) {
+                    return str;
+                }
+            }
+            var t;
+            t = parseFloat(tmp);
+            numstack.push(t);
+            tmp = "";
+        }
+    }
+    var result = numstack.top();
+    result = result.toFixed(9);
+    result = parseFloat(result);
+    return result.toString();
+}
+//Get number from input
+function getNum() {
+    var e = event.srcElement;
+    var display = true;
+    if (document.getElementById("output").value == "Error") {
+        document.getElementById("output").value = "0";
+    }
+    if (e.id == "0")
+        e = document.getElementById("0").textContent;
+    else if (e.id == "1")
+        e = document.getElementById("1").textContent;
+    else if (e.id == "2")
+        e = document.getElementById("2").textContent;
+    else if (e.id == "3")
+        e = document.getElementById("3").textContent;
+    else if (e.id == "4")
+        e = document.getElementById("4").textContent;
+    else if (e.id == "5")
+        e = document.getElementById("5").textContent;
+    else if (e.id == "6")
+        e = document.getElementById("6").textContent;
+    else if (e.id == "7")
+        e = document.getElementById("7").textContent;
+    else if (e.id == "8")
+        e = document.getElementById("8").textContent;
+    else if (e.id == "9")
+        e = document.getElementById("9").textContent;
+    else if (e.id == "add")
+        e = document.getElementById("add").textContent;
+    else if (e.id == "subtract")
+        e = document.getElementById("subtract").textContent;
+    else if (e.id == "multiply")
+        e = document.getElementById("multiply").textContent;
+    else if (e.id == "divide")
+        e = document.getElementById("divide").textContent;
+    else if (e.id == "(")
+        e = document.getElementById("(").textContent;
+    else if (e.id == ")")
+        e = document.getElementById(")").textContent;
+    else if (e.id == ".")
+        e = document.getElementById(".").textContent;
+    else if (e.id == "←") {
+        display = false;
+        var backspace = document.getElementById("output").value;
+        if (backspace.length > 0) {
+            backspace = backspace.substring(0, backspace.length - 1);
+            document.getElementById("output").value = backspace;
+        }
+        if (document.getElementById("output").value == "") {
+            document.getElementById("output").value = "0";
+        }
+    }
+    else if (e.id == "equal") {
+        display = false;
+        value = document.getElementById("output").value;
+        if (value.startsWith("-")) {
+            document.getElementById("output").value = "0" + value;
+        }
+        if (value == "0+0+0+0") {
+            // top secret easter egg
+            window.location.href="https://seleniumbase.io";
+            return;
+        }
+        var inputEquation = document.getElementById("output").value;
+        inputEquation = Format(inputEquation);
+        inputEquation = shiftExpression(inputEquation);
+        inputEquation = Calculate(inputEquation);
+        if (inputEquation == "NaN")
+            inputEquation = "ERROR: NaN";
+        else if (inputEquation == "Infinity")
+            inputEquation = "∞";
+        if (inputEquation.indexOf("ERROR") != -1)
+            inputEquation = "Error";
+        document.getElementById("output").value = inputEquation;
+    }
+    else if (e.id == "clear") {
+        display = false;
+        document.getElementById("output").value = "0";
+    }
+    else
+        e = "";
+    if (display) {
+        var previousEntry = document.getElementById("output").value;
+        document.getElementById("output").value = previousEntry + e;
+        if (previousEntry == "0" && !isNaN(e)) {
+            document.getElementById("output").value = e;
+        }
+        else if (document.getElementById("output").value == "0-") {
+            document.getElementById("output").value = "-";
+        }
+        else if (document.getElementById("output").value == "0(") {
+            document.getElementById("output").value = "(";
+        }
+        else if (document.getElementById("output").value == "0)") {
+            document.getElementById("output").value = "0";
+        }
+        else if (document.getElementById("output").value == "-.") {
+            document.getElementById("output").value = "-0.";
+        }
+    }
+}
+//Dark mode toggle function
+function darkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+</script>
+</body>
+</html>
