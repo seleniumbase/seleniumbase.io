@@ -63,7 +63,6 @@ div.space {
 .calculator-grid > button:hover {
     background-color: #c6c6cd;
     font-size: 31px;
-    padding: 8px;
 }
 button[special]:hover {
     font-size: 36px;
@@ -75,7 +74,7 @@ button[special]:hover {
 }
 .output input {
     width: 100%;
-    height: 76%;
+    height: 78%;
     padding: 11px;
     margin-top: 16px;
     margin-left: 0px;
@@ -208,8 +207,10 @@ function Stack() {
         this.count = 0;
     }
     function top() {
-        if (this.count == 0)
-            throw err = new Error("Stack Error");
+        if (this.count == 0) {
+            //throw err = new Error("Stack Error");
+            document.location.href = "https://seleniumbase.io/error_page/";
+        }
         else
             return this.data[this.count - 1];
     }
