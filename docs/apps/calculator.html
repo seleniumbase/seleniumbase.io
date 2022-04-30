@@ -30,7 +30,7 @@ div.space {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     grid-template-columns: repeat(4, 82px);
     grid-template-rows: minmax(96px, auto) repeat(5, 82px);
-    padding-bottom: 15px;
+    padding-bottom: 14px;
     border-bottom-left-radius: 6%;
     border-bottom-right-radius: 6%;
 }
@@ -52,11 +52,11 @@ div.space {
 .calculator-grid > button[clear]:hover {
     background-color: #eea530;
 }
-.calculator-grid > button[back] {
-    background-color: #d1a096;
+.calculator-grid > button[delete] {
+    background-color: #d39d92;
 }
-.calculator-grid > button[back]:hover {
-    background-color: #c19086;
+.calculator-grid > button[delete]:hover {
+    background-color: #c38d82;
 }
 .calculator-grid > button[equal] {
     background-color: #5060f3;
@@ -219,7 +219,7 @@ span[header2] {
             <button id="3" onclick="getNum()">3</button>
             
             <button id="add" add special onclick="getNum()">+</button>
-            <button id="←" back special onclick="getNum()">←</button>
+            <button id="←" delete special onclick="getNum()">←</button>
             <button id="0" onclick="getNum()">0</button>
             <button id="." onclick="getNum()">.</button>
             
@@ -401,7 +401,7 @@ function Calculate(str) {
                 while (str[i] != ' ') {
                     tmp = tmp + str[i];
                     i += 1;
-                    if (i > 24) {
+                    if (i > 64) {
                         return str;
                     }
                 }
@@ -441,7 +441,7 @@ function Calculate(str) {
             while (str[i] != ' ') {
                 tmp = tmp + str[i];
                 i += 1;
-                if (i > 24) {
+                if (i > 64) {
                     return str;
                 }
             }
