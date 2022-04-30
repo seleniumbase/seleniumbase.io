@@ -551,6 +551,12 @@ function getNum() {
         e = "";
     if (display) {
         var previousEntry = document.getElementById("output").value;
+        if (e == ")") {
+            open_parens = previousEntry.split("(").length - 1;
+            close_parens = previousEntry.split(")").length - 1;
+            if (close_parens >= open_parens)
+                return;
+        }
         document.getElementById("output").value = previousEntry + e;
         if (previousEntry == "0" && !isNaN(e)) {
             document.getElementById("output").value = e;
@@ -565,9 +571,39 @@ function getNum() {
             document.getElementById("output").value = "0";
         }
         value = document.getElementById("output").value;
-        if (value.endsWith("..")) {
+        if (value.endsWith("..") || value.endsWith("()") ||
+            value.endsWith("(×") || value.endsWith("×)") ||
+            value.endsWith("(÷") || value.endsWith("÷)") ||
+            value.endsWith("(+") || value.endsWith("+)") ||
+            value.endsWith("(--") || value.endsWith("-)"))
+        {
             subs = value.substring(0, value.length-1);
             document.getElementById("output").value = subs;
+        }
+        else if (value.endsWith("---")) {
+            subs = value.substring(0, value.length-1);
+            document.getElementById("output").value = subs;
+        }
+        else if (value.endsWith("--+") || value.endsWith("--×") ||
+            value.endsWith("--÷") || value.endsWith("+-+") ||
+            value.endsWith("×-+") || value.endsWith("÷-+") ||
+            value.endsWith("+-×") || value.endsWith("+-÷") ||
+            value.endsWith("×-÷") || value.endsWith("÷-×"))
+        {
+            subs = value.substring(0, value.length-3);
+            document.getElementById("output").value = subs + e;
+        }
+        else if (value.endsWith("××") || value.endsWith("÷÷") ||
+            value.endsWith("++") || value.endsWith("×÷") ||
+            value.endsWith("÷×") || value.endsWith("×+") ||
+            value.endsWith("+×") || value.endsWith("÷+") ||
+            value.endsWith("+÷") || value.endsWith("-×") ||
+            value.endsWith("-÷") || value.endsWith("-+") ||
+            value.endsWith("+--") || value.endsWith("×--") ||
+            value.endsWith("÷--"))
+        {
+            subs = value.substring(0, value.length-2);
+            document.getElementById("output").value = subs + e;
         }
         else if (
             value.endsWith("+.") || value.endsWith("-.") ||
@@ -576,6 +612,10 @@ function getNum() {
         {
             subs = value.substring(0, value.length-1);
             document.getElementById("output").value = subs + "0.";
+        }
+        else if (value.endsWith(")(")) {
+            subs = value.substring(0, value.length-1);
+            document.getElementById("output").value = subs + "×(";
         }
     }
 }
