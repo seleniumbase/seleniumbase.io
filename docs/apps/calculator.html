@@ -41,37 +41,60 @@ div.space {
     border-radius: 50%;
     border-width: 0;
     margin: 8px;
+    padding: 14px;
     outline: 0;
     background-color: #eaeaea;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-button[clear] {
+.calculator-grid > button[clear] {
     background-color: #feb540;
 }
-button[back] {
-    background-color: #cea5a0;
+.calculator-grid > button[clear]:hover {
+    background-color: #eea530;
 }
-button[equal] {
-    background-color: #4252f5;
+.calculator-grid > button[back] {
+    background-color: #d1a096;
 }
-button[add] {
+.calculator-grid > button[back]:hover {
+    background-color: #c19086;
+}
+.calculator-grid > button[equal] {
+    background-color: #5060f3;
+}
+.calculator-grid > button[equal]:hover {
+    background-color: #4050e3;
+}
+.calculator-grid > button[add] {
     background-color: #ead25b;
 }
-button[subtract] {
+.calculator-grid > button[add]:hover {
+    background-color: #dac24b;
+}
+.calculator-grid > button[subtract] {
     background-color: #f490af;
 }
-button[divide] {
+.calculator-grid > button[subtract]:hover {
+    background-color: #e4809f;
+}
+.calculator-grid > button[divide] {
     background-color: #0aa788;
 }
-button[multiply] {
+.calculator-grid > button[divide]:hover {
+    background-color: #009778;
+}
+.calculator-grid > button[multiply] {
     background-color: #f66947;
 }
-button:hover {
-    background-color: #c6c6cd;
-    font-size: 36px;
+.calculator-grid > button[multiply]:hover {
+    background-color: #e65937;
 }
-button[special]:hover {
-    font-size: 36px;
+.calculator-grid > button:not([special]):hover {
+    background-color: #c6c6cd;
+    border-width: 0px;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+.calculator-grid > button[special]:hover {
+    border-width: 0px;
     text-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 .output {
@@ -177,22 +200,29 @@ span[header2] {
             <button id="clear" clear special onclick="getNum()">C</button>
             <button id="(" onclick="getNum()">(</button>
             <button id=")" onclick="getNum()">)</button>
+            
             <button id="divide" divide special onclick="getNum()">÷</button>
+            
             <button id="7" onclick="getNum()">7</button>
             <button id="8" onclick="getNum()">8</button>
             <button id="9" onclick="getNum()">9</button>
+            
             <button id="multiply" multiply special onclick="getNum()">×</button>
+            
             <button id="4" onclick="getNum()">4</button>
             <button id="5" onclick="getNum()">5</button>
             <button id="6" onclick="getNum()">6</button>
+            
             <button id="subtract" subtract special onclick="getNum()">-</button>
             <button id="1" onclick="getNum()">1</button>
             <button id="2" onclick="getNum()">2</button>
             <button id="3" onclick="getNum()">3</button>
+            
             <button id="add" add special onclick="getNum()">+</button>
-            <button id="←" back onclick="getNum()">←</button>
+            <button id="←" back special onclick="getNum()">←</button>
             <button id="0" onclick="getNum()">0</button>
             <button id="." onclick="getNum()">.</button>
+            
             <button id="equal" equal special onclick="getNum()">=</button>
         </div>
     </div>
