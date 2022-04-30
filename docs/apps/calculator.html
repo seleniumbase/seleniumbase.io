@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
 <style>
 body {
@@ -36,7 +36,7 @@ div.space {
 }
 .calculator-grid > button {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 36px;
     font-family: 'TT Commons Demibold',Helvetica,Arial,Lucida,sans-serif;
     border-radius: 50%;
     border-width: 0;
@@ -44,6 +44,12 @@ div.space {
     outline: 0;
     background-color: #eaeaea;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#clear {
+    background-color: #feb540;
+}
+#← {
+    background-color: #cea5a0;
 }
 #equal {
     background-color: #4252f5;
@@ -62,7 +68,7 @@ div.space {
 }
 button:hover {
     background-color: #c6c6cd;
-    font-size: 31px;
+    font-size: 36px;
 }
 button[special]:hover {
     font-size: 36px;
@@ -169,7 +175,7 @@ span[header2] {
             <div class="output">
                 <input type="text" id="output" readonly="readonly">
             </div>
-            <button id="clear" onclick="getNum()">AC</button>
+            <button id="clear" clear special onclick="getNum()">C</button>
             <button id="(" onclick="getNum()">(</button>
             <button id=")" onclick="getNum()">)</button>
             <button id="divide" special onclick="getNum()">÷</button>
@@ -185,7 +191,7 @@ span[header2] {
             <button id="2" onclick="getNum()">2</button>
             <button id="3" onclick="getNum()">3</button>
             <button id="add" special onclick="getNum()">+</button>
-            <button id="←" onclick="getNum()">←</button>
+            <button id="←" back onclick="getNum()">←</button>
             <button id="0" onclick="getNum()">0</button>
             <button id="." onclick="getNum()">.</button>
             <button id="equal" special onclick="getNum()">=</button>
