@@ -180,18 +180,18 @@ span[header2] {
     </script>
 </head>
 <body>
-    <div class="container">
+    <div id="calculator" class="container">
         <div class="space">
         <div class="row">
             <input type="checkbox" id="switch" class="checkbox" checked onchange="darkMode()" />
             <label for="switch" class="toggle"></label>
             <span>Dark Mode</span>
             <span header>&nbsp&nbsp&nbsp&nbsp</span>
-            <span header><a href="https://seleniumbase.io/apps/calculator">Calculator</a></span>
+            <span header><a name="title" href="https://seleniumbase.io/apps/calculator">Calculator</a></span>
             <span header>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <span header2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <span header2>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-            <span header2><a href="https://seleniumbase.io">SB</a></span>
+            <span header2><a name="home" href="https://seleniumbase.io">SB</a></span>
         </div>
         <div class="calculator-grid">
             <div class="output">
@@ -320,7 +320,7 @@ function getPrevious(operator) {
             break;
         default:
             a = -1;
-            break
+            break;
     }
     return a;
 }
@@ -508,12 +508,12 @@ function getNum() {
             document.getElementById("output").value = "0" + value;
         }
         if (value == "(0+0+0+0)") {
-            // top secret easter egg
+            // top secret code / "easter egg"
             window.location.href="https://seleniumbase.io";
             return;
         }
         else if (value == "(0÷0÷0÷0)") {
-            // top secret easter egg
+            // top secret code / "easter egg"
             window.location.href="https://seleniumbase.io/error_page/";
             return;
         }
