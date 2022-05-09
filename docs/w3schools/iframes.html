@@ -661,7 +661,8 @@
           }
         }
         function dragend() {
-          document.getElementById("shield").style.display = "none";
+          if (document.getElementById("shield") instanceof Element)
+              document.getElementById("shield").style.display = "none";
           dragging = false;
           var vend = navigator.vendor;
           if (window.editor && vend.indexOf("Apple") == -1) {
@@ -710,6 +711,8 @@
         }
         colorcoding();
         function w3_getStyleValue(elmnt,style) {
+            if (!(elmnt instanceof Element))
+                return null;
             if (window.getComputedStyle) {
                 return window.getComputedStyle(elmnt,null).getPropertyValue(style);
             } else {
