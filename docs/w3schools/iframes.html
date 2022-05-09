@@ -712,7 +712,7 @@
         colorcoding();
         function w3_getStyleValue(elmnt,style) {
             if (!(elmnt instanceof Element))
-                return null;
+                return '';
             if (window.getComputedStyle) {
                 return window.getComputedStyle(elmnt,null).getPropertyValue(style);
             } else {
