@@ -139,12 +139,12 @@
 <span class=n>success</span> <span class=o>=</span> <span class=kc>False</span>
 <span class=k>try</span><span class=p>:</span>
     <span class=n>driver</span> <span class=o>=</span> <span class=n>get_driver</span><span class=p>(</span><span class=s2>&quot;chrome&quot;</span><span class=p>,</span> <span class=n>headless</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
-    <span class=n>driver</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;data:text/html,&lt;h1 class=&quot;top&quot;&gt;Data URL&lt;/h2&gt;&#39;</span><span class=p>)</span>
-    <span class=n>source</span> <span class=o>=</span> <span class=n>driver</span><span class=o>.</span><span class=n>page_source</span>
-    <span class=k>assert</span> <span class=s2>&quot;Data URL&quot;</span> <span class=ow>in</span> <span class=n>source</span>
-    <span class=k>assert</span> <span class=n>page_actions</span><span class=o>.</span><span class=n>is_element_visible</span><span class=p>(</span><span class=n>driver</span><span class=p>,</span> <span class=s2>&quot;h1.top&quot;</span><span class=p>)</span>
-    <span class=n>js_utils</span><span class=o>.</span><span class=n>highlight_with_js</span><span class=p>(</span><span class=n>driver</span><span class=p>,</span> <span class=s2>&quot;h1.top&quot;</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=s2>&quot;&quot;</span><span class=p>)</span>
-    <span class=n>success</span> <span class=o>=</span> <span class=kc>True</span>  <span class=c1># No errors</span>
+    <span class=n>driver</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&quot;https://seleniumbase.io/apps/calculator&quot;</span><span class=p>)</span>
+    <span class=n>page_actions</span><span class=o>.</span><span class=n>wait_for_element_visible</span><span class=p>(</span><span class=n>driver</span><span class=p>,</span> <span class=s2>&quot;4&quot;</span><span class=p>,</span> <span class=s2>&quot;id&quot;</span><span class=p>)</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
+    <span class=n>page_actions</span><span class=o>.</span><span class=n>wait_for_element_visible</span><span class=p>(</span><span class=n>driver</span><span class=p>,</span> <span class=s2>&quot;2&quot;</span><span class=p>,</span> <span class=s2>&quot;id&quot;</span><span class=p>)</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
+    <span class=n>page_actions</span><span class=o>.</span><span class=n>wait_for_text_visible</span><span class=p>(</span><span class=n>driver</span><span class=p>,</span> <span class=s2>&quot;42&quot;</span><span class=p>,</span> <span class=s2>&quot;output&quot;</span><span class=p>,</span> <span class=s2>&quot;id&quot;</span><span class=p>)</span>
+    <span class=n>js_utils</span><span class=o>.</span><span class=n>highlight_with_js</span><span class=p>(</span><span class=n>driver</span><span class=p>,</span> <span class=s2>&quot;#output&quot;</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=s2>&quot;&quot;</span><span class=p>)</span>
+    <span class=n>success</span> <span class=o>=</span> <span class=kc>True</span>
 <span class=k>finally</span><span class=p>:</span>
     <span class=n>driver</span><span class=o>.</span><span class=n>quit</span><span class=p>()</span>
 <span class=k>assert</span> <span class=n>success</span>
