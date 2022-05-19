@@ -7,7 +7,7 @@
         <span class=bp>self</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;#password&quot;</span><span class=p>,</span> <span class=s2>&quot;secret_pass&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>enter_mfa_code</span><span class=p>(</span><span class=s2>&quot;#totpcode&quot;</span><span class=p>,</span> <span class=s2>&quot;GAXG2MTEOR3DMMDG&quot;</span><span class=p>)</span>  <span class=c1># 6-digit</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assert_element</span><span class=p>(</span><span class=s2>&quot;img#image1&quot;</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=s2>&quot;Welcome!&quot;</span><span class=p>,</span> <span class=s2>&quot;h1&quot;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>assert_exact_text</span><span class=p>(</span><span class=s2>&quot;Welcome!&quot;</span><span class=p>,</span> <span class=s2>&quot;h1&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s1>&#39;a:contains(&quot;This Page&quot;)&#39;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>save_screenshot_to_logs</span><span class=p>()</span>
 </code></pre></div> <p align=left>📗 An example with the <b>sb</b> <code>pytest</code> fixture. Runs with <code>pytest</code>.</p> <div class=highlight><pre><span></span><code><span class=k>def</span> <span class=nf>test_mfa_login</span><span class=p>(</span><span class=n>sb</span><span class=p>):</span>
@@ -16,7 +16,7 @@
     <span class=n>sb</span><span class=o>.</span><span class=n>type</span><span class=p>(</span><span class=s2>&quot;#password&quot;</span><span class=p>,</span> <span class=s2>&quot;secret_pass&quot;</span><span class=p>)</span>
     <span class=n>sb</span><span class=o>.</span><span class=n>enter_mfa_code</span><span class=p>(</span><span class=s2>&quot;#totpcode&quot;</span><span class=p>,</span> <span class=s2>&quot;GAXG2MTEOR3DMMDG&quot;</span><span class=p>)</span>  <span class=c1># 6-digit</span>
     <span class=n>sb</span><span class=o>.</span><span class=n>assert_element</span><span class=p>(</span><span class=s2>&quot;img#image1&quot;</span><span class=p>)</span>
-    <span class=n>sb</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=s2>&quot;Welcome!&quot;</span><span class=p>,</span> <span class=s2>&quot;h1&quot;</span><span class=p>)</span>
+    <span class=n>sb</span><span class=o>.</span><span class=n>assert_exact_text</span><span class=p>(</span><span class=s2>&quot;Welcome!&quot;</span><span class=p>,</span> <span class=s2>&quot;h1&quot;</span><span class=p>)</span>
     <span class=n>sb</span><span class=o>.</span><span class=n>click</span><span class=p>(</span><span class=s1>&#39;a:contains(&quot;This Page&quot;)&#39;</span><span class=p>)</span>
     <span class=n>sb</span><span class=o>.</span><span class=n>save_screenshot_to_logs</span><span class=p>()</span>
 </code></pre></div> <p align=left>📕 An example with <b>behave-BDD</b> <a href=https://behave.readthedocs.io/en/stable/gherkin.html>Gherkin</a> structure. Runs with <code>behave</code>. (<a href=examples/behave_bdd/ReadMe/ >Learn more</a>)</p> <div class=highlight><pre><span></span><code><span class=k>Feature:</span><span class=nf> SeleniumBase scenarios for the RealWorld App</span>
@@ -26,8 +26,8 @@
 <span class=nf>    </span><span class=k>When </span><span class=nf>Type &quot;</span><span class=s>demo_user</span><span class=nf>&quot; into &quot;</span><span class=s>#username</span><span class=nf>&quot;</span>
 <span class=nf>    </span><span class=k>And </span><span class=nf>Type &quot;</span><span class=s>secret_pass</span><span class=nf>&quot; into &quot;</span><span class=s>#password</span><span class=nf>&quot;</span>
 <span class=nf>    </span><span class=k>And </span><span class=nf>Do MFA &quot;</span><span class=s>GAXG2MTEOR3DMMDG</span><span class=nf>&quot; into &quot;</span><span class=s>#totpcode</span><span class=nf>&quot;</span>
-<span class=nf>    </span><span class=k>Then </span><span class=nf>Assert exact text &quot;</span><span class=s>Welcome!</span><span class=nf>&quot; in &quot;</span><span class=s>h1</span><span class=nf>&quot;</span>
-<span class=nf>    </span><span class=k>And </span><span class=nf>Highlight &quot;</span><span class=s>img#image1</span><span class=nf>&quot;</span>
+<span class=nf>    </span><span class=k>Then </span><span class=nf>Assert element &quot;</span><span class=s>img#image1</span><span class=nf>&quot;</span>
+<span class=nf>    </span><span class=k>And </span><span class=nf>Assert exact text &quot;</span><span class=s>Welcome!</span><span class=nf>&quot; in &quot;</span><span class=s>h1</span><span class=nf>&quot;</span>
 <span class=nf>    </span><span class=k>And </span><span class=nf>Click &#39;a:contains(&quot;</span><span class=s>This Page</span><span class=nf>&quot;)&#39;</span>
 <span class=nf>    </span><span class=k>And </span><span class=nf>Save screenshot to logs</span>
 </code></pre></div> <p align=left>✅ An example of running a test: <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py>test_demo_site.py</a></p> <div class=highlight><pre><span></span><code><span class=nb>cd</span> examples/
