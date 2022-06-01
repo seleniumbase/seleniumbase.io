@@ -6,18 +6,18 @@ Dashboard: /Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
 Feature: SeleniumBase scenarios <span class=k>for</span> the RealWorld App <span class=c1># features/realworld.feature:1</span>
 
   Scenario: Verify RealWorld App <span class=o>(</span>log <span class=k>in</span> / sign out<span class=o>)</span>  <span class=c1># features/realworld.feature:3</span>
-    Given Open <span class=s2>&quot;seleniumbase.io/realworld/login&quot;</span>      <span class=c1># ../../sbase/steps.py:4</span>
-    And Clear Session Storage                         <span class=c1># ../../sbase/steps.py:374</span>
-    When Type <span class=s2>&quot;demo_user&quot;</span> into <span class=s2>&quot;#username&quot;</span>            <span class=c1># ../../sbase/steps.py:22</span>
-    And Type <span class=s2>&quot;secret_pass&quot;</span> into <span class=s2>&quot;#password&quot;</span>           <span class=c1># ../../sbase/steps.py:22</span>
-    And Do MFA <span class=s2>&quot;GAXG2MTEOR3DMMDG&quot;</span> into <span class=s2>&quot;#totpcode&quot;</span>    <span class=c1># ../../sbase/steps.py:179</span>
-    Then Assert exact text <span class=s2>&quot;Welcome!&quot;</span> <span class=k>in</span> <span class=s2>&quot;h1&quot;</span>         <span class=c1># ../../sbase/steps.py:75</span>
-    And Highlight <span class=s2>&quot;img#image1&quot;</span>                        <span class=c1># ../../sbase/steps.py:82</span>
-    And Click <span class=s1>&#39;a:contains(&quot;This Page&quot;)&#39;</span>               <span class=c1># ../../sbase/steps.py:13</span>
-    And Save screenshot to logs                       <span class=c1># ../../sbase/steps.py:107</span>
-    When Click link <span class=s2>&quot;Sign out&quot;</span>                        <span class=c1># ../../sbase/steps.py:91</span>
-    Then Assert element <span class=s1>&#39;a:contains(&quot;Sign in&quot;)&#39;</span>       <span class=c1># ../../sbase/steps.py:52</span>
-    And Assert text <span class=s2>&quot;You have been signed out!&quot;</span>       <span class=c1># ../../sbase/steps.py:68</span>
+    Given Open <span class=s2>&quot;seleniumbase.io/realworld/login&quot;</span>      <span class=c1># ../../sbase/steps.py:10</span>
+    And Clear Session Storage                         <span class=c1># ../../sbase/steps.py:389</span>
+    When Type <span class=s2>&quot;demo_user&quot;</span> into <span class=s2>&quot;#username&quot;</span>            <span class=c1># ../../sbase/steps.py:28</span>
+    And Type <span class=s2>&quot;secret_pass&quot;</span> into <span class=s2>&quot;#password&quot;</span>           <span class=c1># ../../sbase/steps.py:28</span>
+    And Do MFA <span class=s2>&quot;GAXG2MTEOR3DMMDG&quot;</span> into <span class=s2>&quot;#totpcode&quot;</span>    <span class=c1># ../../sbase/steps.py:192</span>
+    Then Assert exact text <span class=s2>&quot;Welcome!&quot;</span> <span class=k>in</span> <span class=s2>&quot;h1&quot;</span>         <span class=c1># ../../sbase/steps.py:85</span>
+    And Highlight <span class=s2>&quot;img#image1&quot;</span>                        <span class=c1># ../../sbase/steps.py:93</span>
+    And Click <span class=s1>&#39;a:contains(&quot;This Page&quot;)&#39;</span>               <span class=c1># ../../sbase/steps.py:19</span>
+    And Save screenshot to logs                       <span class=c1># ../../sbase/steps.py:118</span>
+    When Click link <span class=s2>&quot;Sign out&quot;</span>                        <span class=c1># ../../sbase/steps.py:102</span>
+    Then Assert element <span class=s1>&#39;a:contains(&quot;Sign in&quot;)&#39;</span>       <span class=c1># ../../sbase/steps.py:60</span>
+    And Assert text <span class=s2>&quot;You have been signed out!&quot;</span>       <span class=c1># ../../sbase/steps.py:77</span>
    ✅ Scenario Passed!
 
 - Dashboard: /Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
@@ -58,7 +58,7 @@ Feature: SeleniumBase scenarios <span class=k>for</span> the Calculator App <spa
 <span class=m>1</span> scenario passed, <span class=m>0</span> failed, <span class=m>8</span> skipped
 <span class=m>14</span> steps passed, <span class=m>0</span> failed, <span class=m>60</span> skipped, <span class=m>0</span> undefined
 Took 0m1.672s
-</code></pre></div> <p>🔵🐝⚪ With the Dashboard enabled, you'll get one of these:</p> <p><img src=https://seleniumbase.io/cdn/img/sb_behave_dashboard.png title=SeleniumBase width=600></p> <h3 id=behave-gherkin-files>🐝 Behave-Gherkin files<a class=headerlink href=#behave-gherkin-files title="Permanent link">&para;</a></h3> <p>🐝 The <code>*.feature</code> files can use any step seen from:</p> <div class=highlight><pre><span></span><code>behave --steps-catalog
+</code></pre></div> <p>🐝⚪ With the Dashboard enabled, you'll get one of these:</p> <p><img src=https://seleniumbase.io/cdn/img/sb_behave_dashboard.png title=SeleniumBase width=600></p> <h3 id=behave-gherkin-files>🐝 Behave-Gherkin files<a class=headerlink href=#behave-gherkin-files title="Permanent link">&para;</a></h3> <p>🐝 The <code>*.feature</code> files can use any step seen from:</p> <div class=highlight><pre><span></span><code>behave --steps-catalog
 </code></pre></div> <p>🐝 SeleniumBase includes several pre-made Behave steps, which you can use by creating a Python file with the following line in your <code>features/steps/</code> directory:</p> <div class=highlight><pre><span></span><code><span class=kn>from</span> <span class=nn>seleniumbase.behave</span> <span class=kn>import</span> <span class=n>steps</span>  <span class=c1># noqa</span>
 </code></pre></div> <p>🐝 Inside your <code>features/environment.py</code> file, you should have the following:</p> <div class=highlight><pre><span></span><code><span class=kn>from</span> <span class=nn>seleniumbase</span> <span class=kn>import</span> <span class=n>BaseCase</span>
 <span class=kn>from</span> <span class=nn>seleniumbase.behave</span> <span class=kn>import</span> <span class=n>behave_sb</span>
