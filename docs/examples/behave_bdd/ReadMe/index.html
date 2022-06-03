@@ -7,15 +7,15 @@ Feature: SeleniumBase scenarios <span class=k>for</span> the RealWorld App <span
 
   Scenario: Verify RealWorld App <span class=o>(</span>log <span class=k>in</span> / sign out<span class=o>)</span>  <span class=c1># features/realworld.feature:3</span>
     Given Open <span class=s2>&quot;seleniumbase.io/realworld/login&quot;</span>      <span class=c1># ../../sbase/steps.py:10</span>
-    And Clear Session Storage                         <span class=c1># ../../sbase/steps.py:389</span>
+    And Clear Session Storage                         <span class=c1># ../../sbase/steps.py:391</span>
     When Type <span class=s2>&quot;demo_user&quot;</span> into <span class=s2>&quot;#username&quot;</span>            <span class=c1># ../../sbase/steps.py:28</span>
     And Type <span class=s2>&quot;secret_pass&quot;</span> into <span class=s2>&quot;#password&quot;</span>           <span class=c1># ../../sbase/steps.py:28</span>
-    And Do MFA <span class=s2>&quot;GAXG2MTEOR3DMMDG&quot;</span> into <span class=s2>&quot;#totpcode&quot;</span>    <span class=c1># ../../sbase/steps.py:192</span>
+    And Do MFA <span class=s2>&quot;GAXG2MTEOR3DMMDG&quot;</span> into <span class=s2>&quot;#totpcode&quot;</span>    <span class=c1># ../../sbase/steps.py:194</span>
     Then Assert exact text <span class=s2>&quot;Welcome!&quot;</span> <span class=k>in</span> <span class=s2>&quot;h1&quot;</span>         <span class=c1># ../../sbase/steps.py:85</span>
-    And Highlight <span class=s2>&quot;img#image1&quot;</span>                        <span class=c1># ../../sbase/steps.py:93</span>
+    And Highlight <span class=s2>&quot;img#image1&quot;</span>                        <span class=c1># ../../sbase/steps.py:95</span>
     And Click <span class=s1>&#39;a:contains(&quot;This Page&quot;)&#39;</span>               <span class=c1># ../../sbase/steps.py:19</span>
-    And Save screenshot to logs                       <span class=c1># ../../sbase/steps.py:118</span>
-    When Click link <span class=s2>&quot;Sign out&quot;</span>                        <span class=c1># ../../sbase/steps.py:102</span>
+    And Save screenshot to logs                       <span class=c1># ../../sbase/steps.py:120</span>
+    When Click link <span class=s2>&quot;Sign out&quot;</span>                        <span class=c1># ../../sbase/steps.py:104</span>
     Then Assert element <span class=s1>&#39;a:contains(&quot;Sign in&quot;)&#39;</span>       <span class=c1># ../../sbase/steps.py:60</span>
     And Assert text <span class=s2>&quot;You have been signed out!&quot;</span>       <span class=c1># ../../sbase/steps.py:77</span>
    ✅ Scenario Passed!
