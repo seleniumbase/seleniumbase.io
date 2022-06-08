@@ -196,6 +196,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://seleniumbase.io/integrations/azure/azure_pipelines/ReadMe/</loc>
+         <lastmod>2022-06-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://seleniumbase.io/integrations/azure/jenkins/ReadMe/</loc>
          <lastmod>2022-06-08</lastmod>
          <changefreq>daily</changefreq>
