@@ -74,7 +74,8 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 -n<span class=o>=</span>NUM  <span class=c1># Multithread the tests using that many threads. (Speed up test runs!)</span>
 -s  <span class=c1># See print statements. (Should be on by default with pytest.ini present.)</span>
 --junit-xml<span class=o>=</span>report.xml  <span class=c1># Creates a junit-xml report after tests finish.</span>
---pdb  <span class=c1># If a test fails, pause run and enter debug mode. (Don&#39;t use with CI!)</span>
+--pdb  <span class=c1># If a test fails, enter Post Mortem Debug Mode. (Don&#39;t use with CI!)</span>
+--trace  <span class=c1># Enter Debug Mode at the beginning of each test. (Don&#39;t use with CI!)</span>
 -m<span class=o>=</span>MARKER  <span class=c1># Run tests with the specified pytest marker.</span>
 </code></pre></div> <p>🎛️ SeleniumBase provides additional <code>pytest</code> command-line options for tests:</p> <div class=highlight><pre><span></span><code>--browser<span class=o>=</span>BROWSER  <span class=c1># (The web browser to use. Default: &quot;chrome&quot;.)</span>
 --chrome  <span class=c1># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
@@ -136,6 +137,7 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 --enable-sync  <span class=c1># (Enable &quot;Chrome Sync&quot;.)</span>
 --use-auto-ext  <span class=c1># (Use Chrome&#39;s automation extension.)</span>
 --remote-debug  <span class=c1># (Enable Chrome&#39;s Remote Debugger on http://localhost:9222)</span>
+--final-debug  <span class=c1># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
 --dashboard  <span class=c1># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class=o>=</span>STRING  <span class=c1># (Set the title shown for the generated dashboard.)</span>
 --swiftshader  <span class=c1># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
