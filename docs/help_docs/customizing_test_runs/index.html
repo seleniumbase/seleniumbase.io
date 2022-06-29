@@ -101,6 +101,8 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 --proxy<span class=o>=</span>SERVER:PORT  <span class=c1># (Connect to a proxy server:port for tests.)</span>
 --proxy<span class=o>=</span>USERNAME:PASSWORD@SERVER:PORT  <span class=c1># (Use authenticated proxy server.)</span>
 --proxy-bypass-list<span class=o>=</span>STRING  <span class=c1># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
+--proxy-pac-url<span class=o>=</span>URL  <span class=c1># (Connect to a proxy server using a PAC_URL.pac file.)</span>
+--proxy-pac-url<span class=o>=</span>USERNAME:PASSWORD@URL  <span class=c1># (Authenticated proxy with PAC URL.)</span>
 --agent<span class=o>=</span>STRING  <span class=c1># (Modify the web browser&#39;s User-Agent string.)</span>
 --mobile  <span class=c1># (Use the mobile device emulator while running tests.)</span>
 --metrics<span class=o>=</span>STRING  <span class=c1># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
