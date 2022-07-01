@@ -7,7 +7,7 @@ pytest google_tour.py
 <span class=k>class</span> <span class=nc>MyTourClass</span><span class=p>(</span><span class=n>BaseCase</span><span class=p>):</span>
 
     <span class=k>def</span> <span class=nf>test_google_tour</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s1>&#39;https://google.com&#39;</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s1>&#39;https://google.com/ncr&#39;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>wait_for_element</span><span class=p>(</span><span class=s1>&#39;input[title=&quot;Search&quot;]&#39;</span><span class=p>)</span>
 
         <span class=bp>self</span><span class=o>.</span><span class=n>create_tour</span><span class=p>(</span><span class=n>theme</span><span class=o>=</span><span class=s2>&quot;dark&quot;</span><span class=p>)</span>
