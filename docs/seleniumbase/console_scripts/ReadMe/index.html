@@ -31,13 +31,13 @@
 </code></pre></div> <h3>get / install</h3> <ul> <li> <p>Usage: <code>sbase get [DRIVER] [OPTIONS]</code> <code>sbase install [DRIVER] [OPTIONS]</code></p> </li> <li> <p>Examples:</p> </li> </ul> <div class=highlight><pre><span></span><code>sbase get chromedriver  <span class=c1># (Default version = 72.0.3626.69)</span>
 sbase get geckodriver
 sbase get edgedriver
-sbase get chromedriver <span class=m>101</span>
-sbase get chromedriver <span class=m>101</span>.0.4951.41
+sbase get chromedriver <span class=m>102</span>
+sbase get chromedriver <span class=m>102</span>.0.5005.61
 sbase get chromedriver latest
 sbase get chromedriver latest-1  <span class=c1># (Latest minus one)</span>
 sbase get chromedriver -p
 sbase get chromedriver latest -p
-sbase get edgedriver <span class=m>101</span>.0.1210.32
+sbase get edgedriver <span class=m>102</span>.0.1245.44
 </code></pre></div> <p>(Drivers: <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>, <code>iedriver</code>, <code>operadriver</code>)</p> <p>(Options: <code>latest</code> or a specific driver version. For chromedriver, you can also specify the major version int, or <code>latest-1</code> for latest minus 1. If none specified, installs the default version. <code>-p</code> / <code>--path</code>: Also copy to "/usr/local/bin".)</p> <ul> <li>Output: Downloads the chosen webdriver to <code>seleniumbase/drivers/</code>. (<code>chromedriver</code> is required for Google Chrome automation) (<code>geckodriver</code> is required for Mozilla Firefox automation) (<code>edgedriver</code> is required for Microsoft Edge automation) (<code>iedriver</code> is required for InternetExplorer automation) (<code>operadriver</code> is required for Opera Browser automation)</li> </ul> <h3>methods</h3> <ul> <li> <p>Usage: <code>sbase methods</code></p> </li> <li> <p>Output: Displays common SeleniumBase Python methods.</p> </li> </ul> <h3>options</h3> <ul> <li> <p>Usage: <code>sbase options</code></p> </li> <li> <p>Output: Displays common pytest command-line options that are available when using SeleniumBase.</p> </li> </ul> <div class=highlight><pre><span></span><code>--browser<span class=o>=</span>BROWSER  <span class=o>(</span>The web browser to use. Default is <span class=s2>&quot;chrome&quot;</span><span class=o>)</span>
 --headless  <span class=o>(</span>Run tests headlessly. Default mode on Linux OS.<span class=o>)</span>
 --demo  <span class=o>(</span>Slow down and visually see <span class=nb>test</span> actions as they occur.<span class=o>)</span>
