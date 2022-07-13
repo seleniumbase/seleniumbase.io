@@ -199,6 +199,9 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>switch_to_parent_frame</span><span class=p>()</span>
 
+<span class=k>with</span> <span class=bp>self</span><span class=o>.</span><span class=n>frame_switch</span><span class=p>(</span><span class=n>frame</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
+    <span class=c1># Indented Code Block for Context Manager (Must use &quot;with&quot;)</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>set_content_to_frame</span><span class=p>(</span><span class=n>frame</span><span class=p>,</span> <span class=n>timeout</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>set_content_to_default</span><span class=p>(</span><span class=n>nested</span><span class=o>=</span><span class=kc>False</span><span class=p>)</span>
