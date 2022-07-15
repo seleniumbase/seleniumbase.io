@@ -155,6 +155,7 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 --visual-baseline  <span class=c1># (Set the visual baseline for Visual/Layout tests.)</span>
 --external-pdf  <span class=c1># (Set Chrome &quot;plugins.always_open_pdf_externally&quot;: True.)</span>
 --timeout-multiplier<span class=o>=</span>MULTIPLIER  <span class=c1># (Multiplies the default timeout values.)</span>
+--list-fail-page  <span class=c1># (After each failing test, list the URL of the failure.)</span>
 </code></pre></div> <p>(For more details, see the full list of command-line options <strong><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py>here</a></strong>.)</p> <p>🎛️ You can also view a list of popular <code>pytest</code> options for SeleniumBase by typing:</p> <div class=highlight><pre><span></span><code>seleniumbase options
 </code></pre></div> <p>Or the short form:</p> <div class=highlight><pre><span></span><code>sbase options
 </code></pre></div> <hr> <h3><img src=https://seleniumbase.io/img/green_logo.png title=SeleniumBase width=32> Example tests using Logging:</h3> <p>To see logging abilities, you can run a test suite that includes tests that fail on purpose:</p> <div class=highlight><pre><span></span><code>pytest test_suite.py
