@@ -111,14 +111,16 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 --firefox-pref<span class=o>=</span>SET  <span class=c1># (Set a Firefox preference:value set, comma-separated.)</span>
 --extension-zip<span class=o>=</span>ZIP  <span class=c1># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
 --extension-dir<span class=o>=</span>DIR  <span class=c1># (Load a Chrome Extension directory, comma-separated.)</span>
+--pls<span class=o>=</span>PLS  <span class=c1># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
 --headless  <span class=c1># (Run tests in headless mode. The default arg on Linux OS.)</span>
 --headed  <span class=c1># (Run tests in headed/GUI mode on Linux OS.)</span>
 --xvfb  <span class=c1># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
 --locale<span class=o>=</span>LOCALE_CODE  <span class=c1># (Set the Language Locale Code for the web browser.)</span>
 --interval<span class=o>=</span>SECONDS  <span class=c1># (The autoplay interval for presentations &amp; tour steps)</span>
 --start-page<span class=o>=</span>URL  <span class=c1># (The starting URL for the web browser when tests begin.)</span>
---archive-logs  <span class=c1>#  (Archive existing log files instead of deleting them.)</span>
---archive-downloads  <span class=c1>#  (Archive old downloads instead of deleting them.)</span>
+--archive-logs  <span class=c1># (Archive existing log files instead of deleting them.)</span>
+--archive-downloads  <span class=c1># (Archive old downloads instead of deleting them.)</span>
+--skip-js-waits  <span class=c1># (Skip waiting for readyState to be complete or Angular.)</span>
 --time-limit<span class=o>=</span>SECONDS  <span class=c1># (Safely fail any test that exceeds the time limit.)</span>
 --slow  <span class=c1># (Slow down the automation. Faster than using Demo Mode.)</span>
 --demo  <span class=c1># (Slow down and visually see test actions as they occur.)</span>
@@ -144,7 +146,7 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 --dashboard  <span class=c1># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class=o>=</span>STRING  <span class=c1># (Set the title shown for the generated dashboard.)</span>
 --swiftshader  <span class=c1># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
---incognito  <span class=c1>#  (Enable Chrome&#39;s Incognito mode.)</span>
+--incognito  <span class=c1># (Enable Chrome&#39;s Incognito mode.)</span>
 --guest  <span class=c1># (Enable Chrome&#39;s Guest mode.)</span>
 --devtools  <span class=c1># (Open Chrome&#39;s DevTools when the browser opens.)</span>
 --reuse-session <span class=p>|</span> --rs  <span class=c1># (Reuse the browser session between tests.)</span>
