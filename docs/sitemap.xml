@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://seleniumbase.io/help_docs/demo_mode/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://seleniumbase.io/help_docs/desired_capabilities/</loc>
          <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
