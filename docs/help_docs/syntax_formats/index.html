@@ -108,11 +108,19 @@
     <span class=k>def</span> <span class=nf>get_new_driver</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
         <span class=sd>&quot;&quot;&quot;This method overrides get_new_driver() from BaseCase.&quot;&quot;&quot;</span>
         <span class=n>options</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>ChromeOptions</span><span class=p>()</span>
-        <span class=n>options</span><span class=o>.</span><span class=n>add_experimental_option</span><span class=p>(</span>
-            <span class=s2>&quot;excludeSwitches&quot;</span><span class=p>,</span> <span class=p>[</span><span class=s2>&quot;enable-automation&quot;</span><span class=p>]</span>
-        <span class=p>)</span>
+        <span class=n>options</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=s2>&quot;--disable-3d-apis&quot;</span><span class=p>)</span>
+        <span class=n>options</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=s2>&quot;--disable-notifications&quot;</span><span class=p>)</span>
         <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>headless</span><span class=p>:</span>
             <span class=n>options</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=s2>&quot;--headless&quot;</span><span class=p>)</span>
+            <span class=n>options</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=s2>&quot;--disable-gpu&quot;</span><span class=p>)</span>
+        <span class=n>options</span><span class=o>.</span><span class=n>add_experimental_option</span><span class=p>(</span>
+            <span class=s2>&quot;excludeSwitches&quot;</span><span class=p>,</span> <span class=p>[</span><span class=s2>&quot;enable-automation&quot;</span><span class=p>,</span> <span class=s2>&quot;enable-logging&quot;</span><span class=p>],</span>
+        <span class=p>)</span>
+        <span class=n>prefs</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s2>&quot;credentials_enable_service&quot;</span><span class=p>:</span> <span class=kc>False</span><span class=p>,</span>
+            <span class=s2>&quot;profile.password_manager_enabled&quot;</span><span class=p>:</span> <span class=kc>False</span><span class=p>,</span>
+        <span class=p>}</span>
+        <span class=n>options</span><span class=o>.</span><span class=n>add_experimental_option</span><span class=p>(</span><span class=s2>&quot;prefs&quot;</span><span class=p>,</span> <span class=n>prefs</span><span class=p>)</span>
         <span class=k>return</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>Chrome</span><span class=p>(</span><span class=n>options</span><span class=o>=</span><span class=n>options</span><span class=p>)</span>
 
     <span class=k>def</span> <span class=nf>test_simple</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
