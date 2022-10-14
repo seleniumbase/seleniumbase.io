@@ -135,12 +135,14 @@ pytest my_first_test.py --settings-file<span class=o>=</span>custom_settings.py
 --rec-behave  <span class=c1># (Same as Recorder Mode, but also generates behave-gherkin.)</span>
 --rec-sleep  <span class=c1># (If the Recorder is enabled, also records self.sleep calls.)</span>
 --rec-print  <span class=c1># (If the Recorder is enabled, prints output after tests end.)</span>
+--disable-js  <span class=c1># (Disable JavaScript on websites. Pages might break!)</span>
 --disable-csp  <span class=c1># (Disable the Content Security Policy of websites.)</span>
 --disable-ws  <span class=c1># (Disable Web Security on Chromium-based browsers.)</span>
 --enable-ws  <span class=c1># (Enable Web Security on Chromium-based browsers.)</span>
---enable-sync  <span class=c1># (Enable &quot;Chrome Sync&quot;.)</span>
+--enable-sync  <span class=c1># (Enable &quot;Chrome Sync&quot; on websites.)</span>
 --use-auto-ext  <span class=c1># (Use Chrome&#39;s automation extension.)</span>
---undetected <span class=p>|</span> --uc  <span class=c1># (Use undetected-chromedriver to evade bot-detection.)</span>
+--uc <span class=p>|</span> --undetected  <span class=c1># (Use undetected-chromedriver to evade bot-detection.)</span>
+--uc-sub <span class=p>|</span> --uc-subprocess  <span class=c1># (Use undetected-chromedriver as a subprocess.)</span>
 --remote-debug  <span class=c1># (Enable Chrome&#39;s Remote Debugger on http://localhost:9222)</span>
 --final-debug  <span class=c1># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
 --dashboard  <span class=c1># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
