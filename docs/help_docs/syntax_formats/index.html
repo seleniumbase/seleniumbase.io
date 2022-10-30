@@ -18,7 +18,7 @@
         <span class=c1># &lt;&lt;&lt; Run custom setUp() code for tests AFTER the super().setUp() &gt;&gt;&gt;</span>
 
     <span class=k>def</span> <span class=nf>tearDown</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>save_teardown_screenshot</span><span class=p>()</span>  <span class=c1># If test fails, or if &quot;--screenshot&quot;</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>save_teardown_screenshot</span><span class=p>()</span>  <span class=c1># On failure or &quot;--screenshot&quot;</span>
         <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>has_exception</span><span class=p>():</span>
             <span class=c1># &lt;&lt;&lt; Run custom code if the test failed. &gt;&gt;&gt;</span>
             <span class=k>pass</span>
@@ -126,7 +126,7 @@
     <span class=k>def</span> <span class=nf>test_simple</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://seleniumbase.io/demo_page&quot;</span><span class=p>)</span>
         <span class=bp>self</span><span class=o>.</span><span class=n>assert_text</span><span class=p>(</span><span class=s2>&quot;Demo Page&quot;</span><span class=p>,</span> <span class=s2>&quot;h1&quot;</span><span class=p>)</span>
-</code></pre></div> <p>(From <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_override_driver.py>examples/test_override_driver.py</a>)</p> <p>The above format can let you use <a href=https://github.com/wkeeling/selenium-wire>selenium-wire</a> to intercept &amp; inspect requests and responses during SeleniumBase tests. Here's how the <code>selenium-wire</code> integration may look:</p> <div class=highlight><pre><span></span><code><span class=kn>from</span> <span class=nn>seleniumbase</span> <span class=kn>import</span> <span class=n>BaseCase</span>
+</code></pre></div> <p>(From <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_override_driver.py>examples/test_override_driver.py</a>)</p> <p>The above format lets you customize <a href=https://github.com/wkeeling/selenium-wire>selenium-wire</a> for intercepting and inspecting requests and responses during SeleniumBase tests. Here's how a <code>selenium-wire</code> integration may look:</p> <div class=highlight><pre><span></span><code><span class=kn>from</span> <span class=nn>seleniumbase</span> <span class=kn>import</span> <span class=n>BaseCase</span>
 <span class=kn>from</span> <span class=nn>seleniumwire</span> <span class=kn>import</span> <span class=n>webdriver</span>  <span class=c1># Requires &quot;pip install selenium-wire&quot;</span>
 
 
@@ -143,7 +143,7 @@
         <span class=bp>self</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://seleniumbase.io/demo_page&quot;</span><span class=p>)</span>
         <span class=k>for</span> <span class=n>request</span> <span class=ow>in</span> <span class=bp>self</span><span class=o>.</span><span class=n>driver</span><span class=o>.</span><span class=n>requests</span><span class=p>:</span>
             <span class=nb>print</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
-</code></pre></div> <p><a id=sb_sf_10></a></p> <h3><img src=https://seleniumbase.github.io/img/logo3b.png title=SeleniumBase width=32> 10. Overriding the driver via "sb" fixture</h3> <p>When you want to use SeleniumBase methods via the <code>sb</code> pytest fixture, but you want total freedom to control how you spin up your web browsers, this is the format you want. Although SeleniumBase gives you plenty of command-line options to change how your browsers are launched, this format gives you more control when the existing options aren't enough.</p> <div class=highlight><pre><span></span><code><span class=sd>&quot;&quot;&quot;Overriding the &quot;sb&quot; fixture to override the driver.&quot;&quot;&quot;</span>
+</code></pre></div> <p>(NOTE: The <code>selenium-wire</code> integration is now included with <code>seleniumbase</code>: Add <code>--wire</code> as a <code>pytest</code> command-line option to activate. If you need both <code>--wire</code> with <code>--undetected</code> together, you'll still need to override <code>get_new_driver()</code>.)</p> <p><a id=sb_sf_10></a></p> <h3><img src=https://seleniumbase.github.io/img/logo3b.png title=SeleniumBase width=32> 10. Overriding the driver via "sb" fixture</h3> <p>When you want to use SeleniumBase methods via the <code>sb</code> pytest fixture, but you want total freedom to control how you spin up your web browsers, this is the format you want. Although SeleniumBase gives you plenty of command-line options to change how your browsers are launched, this format gives you more control when the existing options aren't enough.</p> <div class=highlight><pre><span></span><code><span class=sd>&quot;&quot;&quot;Overriding the &quot;sb&quot; fixture to override the driver.&quot;&quot;&quot;</span>
 <span class=kn>import</span> <span class=nn>pytest</span>
 
 <span class=nd>@pytest</span><span class=o>.</span><span class=n>fixture</span><span class=p>()</span>
@@ -157,7 +157,7 @@
             <span class=nb>super</span><span class=p>(</span><span class=n>BaseClass</span><span class=p>,</span> <span class=bp>self</span><span class=p>)</span><span class=o>.</span><span class=n>setUp</span><span class=p>()</span>
 
         <span class=k>def</span> <span class=nf>tearDown</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>save_teardown_screenshot</span><span class=p>()</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>save_teardown_screenshot</span><span class=p>()</span>  <span class=c1># On failure or &quot;--screenshot&quot;</span>
             <span class=nb>super</span><span class=p>(</span><span class=n>BaseClass</span><span class=p>,</span> <span class=bp>self</span><span class=p>)</span><span class=o>.</span><span class=n>tearDown</span><span class=p>()</span>
 
         <span class=k>def</span> <span class=nf>base_method</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
@@ -205,7 +205,7 @@
             <span class=nb>super</span><span class=p>(</span><span class=n>BaseClass</span><span class=p>,</span> <span class=bp>self</span><span class=p>)</span><span class=o>.</span><span class=n>setUp</span><span class=p>()</span>
 
         <span class=k>def</span> <span class=nf>tearDown</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>save_teardown_screenshot</span><span class=p>()</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>save_teardown_screenshot</span><span class=p>()</span>  <span class=c1># On failure or &quot;--screenshot&quot;</span>
             <span class=nb>super</span><span class=p>(</span><span class=n>BaseClass</span><span class=p>,</span> <span class=bp>self</span><span class=p>)</span><span class=o>.</span><span class=n>tearDown</span><span class=p>()</span>
 
         <span class=k>def</span> <span class=nf>base_method</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
@@ -241,7 +241,7 @@
         <span class=n>sb</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=s2>&quot;https://seleniumbase.io/demo_page&quot;</span><span class=p>)</span>
         <span class=k>for</span> <span class=n>request</span> <span class=ow>in</span> <span class=n>sb</span><span class=o>.</span><span class=n>driver</span><span class=o>.</span><span class=n>requests</span><span class=p>:</span>
             <span class=nb>print</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
-</code></pre></div> <p><a id=sb_sf_11></a></p> <h3><img src=https://seleniumbase.github.io/img/logo3b.png title=SeleniumBase width=32> 11. BaseCase with Chinese translations</h3> <p>This format is similar to the English version with <code>BaseCase</code> inheritance, but there's a different import statement, and method names have been translated into Chinese. Here's an example of that:</p> <div class=highlight><pre><span></span><code><span class=kn>from</span> <span class=nn>seleniumbase.translate.chinese</span> <span class=kn>import</span> <span class=n>硒测试用例</span>
+</code></pre></div> <p>(NOTE: The <code>selenium-wire</code> integration is now included with <code>seleniumbase</code>: Add <code>--wire</code> as a <code>pytest</code> command-line option to activate. If you need both <code>--wire</code> with <code>--undetected</code> together, you'll still need to override <code>get_new_driver()</code>.)</p> <p><a id=sb_sf_11></a></p> <h3><img src=https://seleniumbase.github.io/img/logo3b.png title=SeleniumBase width=32> 11. BaseCase with Chinese translations</h3> <p>This format is similar to the English version with <code>BaseCase</code> inheritance, but there's a different import statement, and method names have been translated into Chinese. Here's an example of that:</p> <div class=highlight><pre><span></span><code><span class=kn>from</span> <span class=nn>seleniumbase.translate.chinese</span> <span class=kn>import</span> <span class=n>硒测试用例</span>
 
 <span class=k>class</span> <span class=nc>我的测试类</span><span class=p>(</span><span class=n>硒测试用例</span><span class=p>):</span>
     <span class=k>def</span> <span class=nf>test_例子1</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>

@@ -259,7 +259,8 @@ nosetests <span class=o>[</span>FILE_NAME.py<span class=o>]</span>:<span class=o
 --maximize  <span class=c1># (Start tests with the browser window maximized.)</span>
 --screenshot  <span class=c1># (Save a screenshot at the end of each test.)</span>
 --visual-baseline  <span class=c1># (Set the visual baseline for Visual/Layout tests.)</span>
---external-pdf  <span class=c1># (Set Chrome &quot;plugins.always_open_pdf_externally&quot;: True.)</span>
+--wire  <span class=c1># (Use selenium-wire&#39;s webdriver for replacing selenium webdriver.)</span>
+--external-pdf  <span class=c1># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
 --timeout-multiplier<span class=o>=</span>MULTIPLIER  <span class=c1># (Multiplies the default timeout values.)</span>
 --list-fail-page  <span class=c1># (After each failing test, list the URL of the failure.)</span>
 </code></pre></div> <p>(See the full list of command-line option definitions <strong><a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py>here</a></strong>. For detailed examples of command-line options, see <strong><a href=help_docs/customizing_test_runs/ >customizing_test_runs.md</a></strong>)</p> <p>🔵 During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you add --archive_logs to command-line options, or have ARCHIVE_EXISTING_LOGS set to True in <a href=https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py>settings.py</a>, otherwise log files with be cleaned up at the start of the next test run. The <code>test_suite.py</code> collection contains tests that fail on purpose so that you can see how logging works.</p> <div class=highlight><pre><span></span><code><span class=nb>cd</span> examples/
