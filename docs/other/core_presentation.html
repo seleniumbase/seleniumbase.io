@@ -234,7 +234,9 @@ $ pytest test_suite.py --html=report.html --rs
 $ pytest test_suite.py --dashboard --html=report.html
 $ pytest github_test.py --demo --disable-csp
 $ pytest test_suite.py -n=2 --rs --crumbs
-$ pytest basic_test.py --incognito
+$ pytest test_demo_site.py --incognito
+$ pytest verify_undetected.py --uc
+$ pytest basic_test.py --sjw --pls=none
 </pre>
 <aside class="notes"></aside>
 </section>
@@ -243,19 +245,20 @@ $ pytest basic_test.py --incognito
 <p>The Console Scripts interface. Examples:</p>
 <div></div>
 <pre class="prettyprint">
-$ sbase install chromedriver
-$ sbase install chromedriver latest
+$ sbase get chromedriver
 $ sbase mkdir new_test_folder
 $ sbase mkfile new_test.py
+$ sbase mkpres new_presentation.py
+$ sbase mkchart new_chart.py
 $ sbase print basic_test.py -n
-$ sbase translate basic_test.py -p --chinese -n
-$ sbase translate basic_test.py -p --japanese
-$ sbase translate basic_test.py -c --russian
-$ sbase download server
+$ sbase translate basic_test.py -p --ru -n
 $ sbase grid-hub start
 $ sbase grid-node start --hub="127.0.0.1"
 $ sbase grid-node stop
 $ sbase grid-hub stop
+$ sbase recorder
+$ sbase commander
+$ sbase methods
 $ sbase options
 </pre>
 <aside class="notes"></aside>
@@ -268,7 +271,6 @@ $ sbase options
 from seleniumbase import BaseCase
 
 class MyPresenterClass(BaseCase):
-
     def test_presenter(self):
         self.create_presentation(theme="serif")
         self.add_slide("Welcome to Presenter!")
