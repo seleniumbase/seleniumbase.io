@@ -298,6 +298,8 @@
 
 <span class=bp>self</span><span class=o>.</span><span class=n>install_addon</span><span class=p>(</span><span class=n>xpi_file</span><span class=p>)</span>
 
+<span class=bp>self</span><span class=o>.</span><span class=n>activate_jquery</span><span class=p>()</span>
+
 <span class=bp>self</span><span class=o>.</span><span class=n>activate_demo_mode</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>deactivate_demo_mode</span><span class=p>()</span>
@@ -309,8 +311,6 @@
 <span class=bp>self</span><span class=o>.</span><span class=n>activate_recorder</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>save_recorded_actions</span><span class=p>()</span>
-
-<span class=bp>self</span><span class=o>.</span><span class=n>activate_jquery</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>bring_active_window_to_front</span><span class=p>()</span>
 
@@ -461,8 +461,6 @@
 <span class=bp>self</span><span class=o>.</span><span class=n>get_chrome_version</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>get_chromedriver_version</span><span class=p>()</span>
-
-<span class=bp>self</span><span class=o>.</span><span class=n>is_chromedriver_too_old</span><span class=p>()</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>get_mfa_code</span><span class=p>(</span><span class=n>totp_key</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 <span class=c1># Duplicates: self.get_totp_code(totp_key=None)</span>
@@ -620,7 +618,8 @@
 <span class=bp>self</span><span class=o>.</span><span class=n>add_tour_step</span><span class=p>(</span><span class=n>message</span><span class=p>,</span> <span class=n>selector</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span>
                    <span class=n>title</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>theme</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>alignment</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>play_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>play_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>interval</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+<span class=c1># Duplicates: self.start_tour(name=None, interval=0):</span>
 
 <span class=bp>self</span><span class=o>.</span><span class=n>export_tour</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=kc>None</span><span class=p>,</span> <span class=n>filename</span><span class=o>=</span><span class=s2>&quot;my_tour.js&quot;</span><span class=p>,</span> <span class=n>url</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
 
