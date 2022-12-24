@@ -1779,7 +1779,7 @@ pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.p
 <p>🎛️ You can interchange <code>pytest</code> with <code>nosetests</code> for most tests, but using <code>pytest</code> is recommended. (<code>chrome</code> is the default browser if not specified.)</p>
 <p>🎛️ If you're using <code>pytest</code> for running tests outside of the SeleniumBase repo, you'll want a copy of <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a> at the base of the new folder structure. If using <code>nosetests</code>, the same applies for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a>.</p>
 <p>🎛️ Here are some useful command-line options that come with <code>pytest</code>:</p>
-<div class="highlight"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test run.</span>
+<div class="highlight"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test and shows more details.</span>
 -q  <span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
@@ -1864,7 +1864,8 @@ pytest my_first_test.py --settings-file<span class="o">=</span>custom_settings.p
 --incognito  <span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
 --guest  <span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
 --devtools  <span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session <span class="p">|</span> --rs  <span class="c1"># (Reuse the browser session between tests.)</span>
+--reuse-session <span class="p">|</span> --rs  <span class="c1"># (Reuse browser session for all tests.)</span>
+--reuse-class-session <span class="p">|</span> --rcs  <span class="c1"># (Reuse session for tests in class.)</span>
 --crumbs  <span class="c1"># (Delete all cookies between tests reusing a session.)</span>
 --disable-beforeunload  <span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
 --window-size<span class="o">=</span>WIDTH,HEIGHT  <span class="c1"># (Set the browser&#39;s starting window size.)</span>

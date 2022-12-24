@@ -1706,10 +1706,10 @@
 
   <h1>📶 Chart Maker</h1>
 
-<h2 id="chartmaker"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32"></a> 📊 ChartMaker 📶<a class="headerlink" href="#chartmaker" title="Permanent link">&para;</a></h2>
+<h2 id="chartmaker"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> 📊 ChartMaker 📶<a class="headerlink" href="#chartmaker" title="Permanent link">&para;</a></h2>
 <p>SeleniumBase ChartMaker lets you use Python to generate HTML charts.</p>
 
-<p><a href="https://seleniumbase.io/other/chart_presentation.html"><img width="480" src="https://seleniumbase.io/cdn/gif/chart_pres.gif" title="Chart Presentation"></a><br></p>
+<p><a href="https://seleniumbase.io/other/chart_presentation.html"><img width="480" src="https://seleniumbase.github.io/cdn/gif/chart_pres.gif" title="Chart Presentation"></a><br></p>
 <p>(<a href="https://seleniumbase.io/other/chart_presentation.html">Click to see a presentation with multiple charts</a>)</p>
 <p>Here's how to run a simple pie chart presentation from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/chart_maker">GitHub =&gt; seleniumbase/SeleniumBase/examples/chart_maker</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/chart_maker
@@ -1733,13 +1733,13 @@ pytest my_chart.py
 pytest chart_presentation.py
 </code></pre></div>
 <p>Here are screenshots from the examples:</p>
-<p><a href="https://seleniumbase.io/other/chart_presentation.html"><img width="500" src="https://seleniumbase.io/other/sample_pie_chart.png" title="Screenshot"></a><br></p>
-<p><a href="https://seleniumbase.io/other/sample_column_chart.png"><img width="500" src="https://seleniumbase.io/other/sample_column_chart.png" title="Screenshot"></a><br></p>
-<p><a href="https://seleniumbase.io/other/sample_bar_chart.png"><img width="500" src="https://seleniumbase.io/other/sample_bar_chart.png" title="Screenshot"></a><br></p>
-<p><a href="https://seleniumbase.io/other/sample_line_chart.png"><img width="500" src="https://seleniumbase.io/other/sample_line_chart.png" title="Screenshot"></a><br></p>
-<p><a href="https://seleniumbase.io/other/sample_area_chart.png"><img width="500" src="https://seleniumbase.io/other/sample_area_chart.png" title="Screenshot"></a><br></p>
-<p><a href="https://seleniumbase.io/other/multi_series_chart.png"><img width="500" src="https://seleniumbase.io/other/multi_series_chart.png" title="Screenshot"></a><br></p>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Here's a line chart example:</h3>
+<p><a href="https://seleniumbase.github.io/other/chart_presentation.html"><img width="500" src="https://seleniumbase.github.io/other/sample_pie_chart.png" title="Screenshot"></a><br></p>
+<p><a href="https://seleniumbase.github.io/other/sample_column_chart.png"><img width="500" src="https://seleniumbase.github.io/other/sample_column_chart.png" title="Screenshot"></a><br></p>
+<p><a href="https://seleniumbase.github.io/other/sample_bar_chart.png"><img width="500" src="https://seleniumbase.github.io/other/sample_bar_chart.png" title="Screenshot"></a><br></p>
+<p><a href="https://seleniumbase.github.io/other/sample_line_chart.png"><img width="500" src="https://seleniumbase.github.io/other/sample_line_chart.png" title="Screenshot"></a><br></p>
+<p><a href="https://seleniumbase.github.io/other/sample_area_chart.png"><img width="500" src="https://seleniumbase.github.io/other/sample_area_chart.png" title="Screenshot"></a><br></p>
+<p><a href="https://seleniumbase.github.io/other/multi_series_chart.png"><img width="500" src="https://seleniumbase.github.io/other/multi_series_chart.png" title="Screenshot"></a><br></p>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Here's a line chart example:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
@@ -1762,7 +1762,7 @@ pytest chart_presentation.py
 <div class="highlight"><pre><span></span><code>pytest test_line_chart.py
 </code></pre></div>
 <p>Because that presentation above has an <code>interval</code> set to <code>8</code>, it will automatically advance to the next slide after 8 seconds. (Or exit if there are no more slides.)</p>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> For a more advanced example (multiple charts in a presentation):</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> For a more advanced example (multiple charts in a presentation):</h3>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
@@ -1808,7 +1808,7 @@ pytest chart_presentation.py
 <p>(Press the Right Arrow to advance to the next slide in that chart presentation)</p>
 <p>(<a href="https://seleniumbase.io/other/chart_presentation.html">Click to see a live example of that presentation</a>)</p>
 <p>Multi-Series charts can also be created. Try the available examples to learn more.</p>
-<h2><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> ChartMaker API</h2>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> ChartMaker API</h2>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1918,7 +1918,7 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 <p>If creating multiple charts at the same time, you can pass the <code>chart_name</code> parameter to distinguish between different charts.</p>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Adding a data point to a chart:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Adding a data point to a chart:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Add a data point to a SeleniumBase-generated chart.</span>
@@ -1932,7 +1932,7 @@ pytest chart_presentation.py
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Adding a new data series to an existing chart:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Adding a new data series to an existing chart:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_series_to_chart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Add a new data series to an existing chart.</span>
@@ -1943,7 +1943,7 @@ pytest chart_presentation.py
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Saving a chart to a file:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Saving a chart to a file:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Saves a SeleniumBase-generated chart to a file for later use.</span>
@@ -1955,7 +1955,7 @@ pytest chart_presentation.py
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 <p>The full HTML of the chart is saved to the <code>saved_charts/</code> folder.</p>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Extracting the HTML of a chart:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Extracting the HTML of a chart:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Extracts the HTML from a SeleniumBase-generated chart.</span>
@@ -1964,7 +1964,7 @@ pytest chart_presentation.py
 <span class="sd">                 use this to select the one you wish to use.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
-<h3><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Displaying a chart in the browser window:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Displaying a chart in the browser window:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">display_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Displays a SeleniumBase-generated chart in the browser window.</span>

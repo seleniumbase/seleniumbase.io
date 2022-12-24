@@ -1661,11 +1661,9 @@
 <meta property="og:keywords" content="Python, pytest, selenium, webdriver, testing, automation, seleniumbase, framework, dashboard, recorder, reports, screenshots">
 <meta property="og:image" content="https://seleniumbase.github.io/cdn/img/mac_sb_logo_5b.png" />
 <link rel="icon" href="https://seleniumbase.github.io/img/logo3b.png" /></p>
-<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/sb_word_cloud.png" alt="SeleniumBase" title="SeleniumBase" width="450" /></a></p>
+<h2 align="center"><b>SeleniumBase - Python Web UI Testing Made Easy</b><br /><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/releases" target="_blank"><img src="https://img.shields.io/github/v/release/seleniumbase/SeleniumBase.svg?color=22AAEE" alt="GitHub version" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/CI%20build/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" alt="SeleniumBase" /></a></h2>
 
-<h3 align="center"><b>SeleniumBase - Python Web UI Testing Made Easy</b></h3>
-
-<p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/releases" target="_blank"><img src="https://img.shields.io/github/v/release/seleniumbase/SeleniumBase.svg?color=22AAEE" alt="GitHub version" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/CI%20build/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" alt="SeleniumBase" /></a></p>
+<p align="center"><a href="https://seleniumbase.github.io/cdn/gif/my_first_test_2.gif" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/my_first_test_2.gif"  alt="SeleniumBase Example" title="SeleniumBase Example" /></a></p>
 
 <p align="center">
 <a href="#python_installation">🚀 Start</a> |
@@ -1707,7 +1705,7 @@
 
 <hr />
 <blockquote>
-<p dir="auto"><strong>Table of Contents:</strong></p>
+<p dir="auto"><strong>SeleniumBase - Table of Contents:</strong></p>
 <ul dir="auto">
 <li><a href="#python_installation"    ><strong>Set up Python & Git</strong></a></li>
 <li><a href="#install_seleniumbase"   ><strong>Install SeleniumBase</strong></a></li>
@@ -2049,7 +2047,7 @@ nosetests <span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span cla
 <p>(<strong><code>pdb</code></strong> console commands: <code>n</code>, <code>c</code>, <code>s</code> =&gt; <code>next</code>, <code>continue</code>, <code>step</code>).</p>
 <p><a id="pytest_options"></a>
 🔵 Here are some useful command-line options that come with <code>pytest</code>:</p>
-<div class="highlight"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test run.</span>
+<div class="highlight"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test and shows more details.</span>
 -q  <span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
@@ -2135,7 +2133,8 @@ nosetests <span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span cla
 --incognito  <span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
 --guest  <span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
 --devtools  <span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session <span class="p">|</span> --rs  <span class="c1"># (Reuse the browser session between tests.)</span>
+--reuse-session <span class="p">|</span> --rs  <span class="c1"># (Reuse browser session for all tests.)</span>
+--reuse-class-session <span class="p">|</span> --rcs  <span class="c1"># (Reuse session for tests in class.)</span>
 --crumbs  <span class="c1"># (Delete all cookies between tests reusing a session.)</span>
 --disable-beforeunload  <span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
 --window-size<span class="o">=</span>WIDTH,HEIGHT  <span class="c1"># (Set the browser&#39;s starting window size.)</span>
