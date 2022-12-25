@@ -1742,9 +1742,8 @@
 <p><a id="sb_sf_01"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 1. BaseCase direct class inheritance</h3>
 
-<p>This format is used by most of the examples in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase examples folder</a>. It's a great starting point for anyone learning SeleniumBase, and it follows good object-oriented programming principles.</p>
-<p>In this format, <code>BaseCase</code> is imported at the top of a Python file, followed by a Python class inheriting <code>BaseCase</code>. Then, any test method defined in that class automatically gains access to SeleniumBase methods, including the <code>setUp()</code> and <code>tearDown()</code> methods that are automatically called to spin up and spin down web browsers at the beginning and end of test methods.</p>
-<p>To run a test of this format, use <strong><code>pytest</code></strong> or <code>nosetests</code>. If you add: <code>if __name__ == "__main__":</code> <code>pytest.main([__file__])</code> to the file, you can also use <code>python</code> as a runner, which invokes <code>pytest</code>. Here's an example a script that uses <code>BaseCase</code> inheritance:</p>
+<p>In this format, (which is used by most of the tests in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase examples folder</a>), <code>BaseCase</code> is imported at the top of a Python file, followed by a Python class inheriting <code>BaseCase</code>. Then, any test method defined in that class automatically gains access to SeleniumBase methods, including the <code>setUp()</code> and <code>tearDown()</code> methods that are automatically called for opening and closing web browsers at the start and end of tests.</p>
+<p>To run a test of this format, use <strong><code>pytest</code></strong> or <code>nosetests</code>. If you add: <code>if __name__ == "__main__":</code> <code>pytest.main([__file__])</code> to a file, you can also use <code>python</code> as a runner, which invokes <code>pytest</code>. Here's an example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
@@ -1758,11 +1757,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Demo Page&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_no_js_errors</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  <span class="c1"># To run with &quot;python&quot; instead of &quot;pytest&quot;.</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  <span class="c1"># Use &quot;python&quot; to call &quot;pytest&quot;</span>
     <span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">main</span>
     <span class="n">main</span><span class="p">([</span><span class="vm">__file__</span><span class="p">])</span>
 </code></pre></div>
 <p>(See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py">examples/test_demo_site.py</a> for the full test.)</p>
+<p>Using <code>BaseCase</code> inheritance is a great starting point for anyone learning SeleniumBase, and it follows good object-oriented programming principles.</p>
 <p><a id="sb_sf_02"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 2. BaseCase subclass inheritance</h3>
 
