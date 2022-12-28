@@ -8177,7 +8177,7 @@ const _sfc_main$9 = defineComponent({
   props: ["item", "disabled", "isBigger"]
 });
 const Cup_vue_vue_type_style_index_0_scoped_400a88f7_lang = "";
-const _hoisted_1$7 = ["aria-label", "data-test", "data-cy"];
+const _hoisted_1$7 = ["aria-label", "data-test", "data-sb"];
 function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: normalizeClass(["cup", { "disabled-hover": _ctx.disabled }])
@@ -8186,7 +8186,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
       class: normalizeClass(["cup-body", { "disabled-hover": _ctx.disabled, bigger: _ctx.isBigger }]),
       "aria-label": _ctx.item.name,
       "data-test": _ctx.item.name.replace(" ", "_"),
-      "data-cy": _ctx.item.name.replace(" ", "-")
+      "data-sb": _ctx.item.name.replace(" ", "-")
     }, [
       (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.item.recipe, (ingredient) => {
         return openBlock(), createElementBlock("div", {
@@ -8692,7 +8692,7 @@ const _hoisted_1$2 = ["onDblclick"];
 const _hoisted_2$2 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createBaseVNode("br", null, null, -1));
 const _hoisted_3$1 = ["onClick", "onContextmenu"];
 const _hoisted_4$1 = {
-  "data-cy": "add-to-cart-modal",
+  "data-sb": "add-to-cart-modal",
   ref: "dialog"
 };
 const _hoisted_5$1 = { method: "dialog" };
