@@ -6324,7 +6324,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     createBaseVNode("li", null, [
       createVNode(_component_router_link, {
         "aria-label": "Menu page",
-        to: "/"
+        to: "/coffee/"
       }, {
         default: withCtx(() => [
           createTextVNode("menu")
@@ -6335,7 +6335,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     createBaseVNode("li", null, [
       createVNode(_component_router_link, {
         "aria-label": "Cart page",
-        to: "/cart"
+        to: "/coffee/cart"
       }, {
         default: withCtx(() => [
           createTextVNode("cart (" + toDisplayString(_ctx.cartCount) + ")", 1)
@@ -6346,7 +6346,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     createBaseVNode("li", null, [
       createVNode(_component_router_link, {
         "aria-label": "GitHub page",
-        to: "/github"
+        to: "/coffee/github"
       }, {
         default: withCtx(() => [
           createTextVNode("github")
@@ -8103,7 +8103,7 @@ function extractChangingRecords(to, from) {
 }
 const scriptRel = "modulepreload";
 const assetsURL = function(dep) {
-  return "/" + dep;
+  return "./coffee/assets/" + dep;
 };
 const seen = {};
 const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -8237,7 +8237,7 @@ const _sfc_main$8 = defineComponent({
         this.resetForm();
         this.closeModal();
         this.$store.commit("cart/emptyCart");
-        this.$router.push("/");
+        this.$router.push("/coffee");
         this.$snackbar.showMessage({ content: "Thanks for your purchase. Please check your email for payment.", color: "success" });
       }
     },
@@ -8453,7 +8453,7 @@ const _sfc_main$6 = defineComponent({
     }
   }
 });
-const _imports_0$1 = "/ad.jpg";
+const _imports_0$1 = "./coffee/assets/ad.jpg";
 const Ad_vue_vue_type_style_index_0_scoped_bd056c0f_lang = "";
 const _hoisted_1$4 = { class: "modal" };
 function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
@@ -8504,7 +8504,7 @@ const _sfc_main$5 = defineComponent({
     }
   }
 });
-const _imports_0 = "/banner.jpg";
+const _imports_0 = "./coffee/assets/banner.jpg";
 const Banner_vue_vue_type_style_index_0_scoped_46cd019d_lang = "";
 function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, { name: "fade" }, {
@@ -8872,26 +8872,26 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/",
+      path: "/coffee/",
       component: ListPage
     },
     {
-      path: "/cart",
+      path: "/coffee/cart",
       component: CartPage
     },
     {
-      path: "/ad",
+      path: "/coffee/ad",
       component: AdPage
     },
     {
-      path: "/github",
+      path: "/coffee/github",
       component: GitHubPage
     }
   ]
 });
 const coffee = {
   getList(waitTime = 0) {
-    const url = "/list.json";
+    const url = "./coffee/assets/list.json";
     return fetch(url).then((res) => res.json()).then((x) => wait(waitTime, x));
   }
 };
