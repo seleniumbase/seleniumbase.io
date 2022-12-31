@@ -1704,7 +1704,7 @@
 
   <h1>📚 Running Example Tests</h1>
 
-<h2 id="example-tests"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Example Tests<a class="headerlink" href="#example-tests" title="Permanent link">&para;</a></h2>
+<h2 id="example-tests"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32"></a> Example Tests<a class="headerlink" href="#example-tests" title="Permanent link">&para;</a></h2>
 <p align="left"><a align="center" href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py"><img align="center" src="https://seleniumbase.github.io/cdn/img/sb_demo_page.png" alt="SeleniumBase Demo Page" width="420" /></a></p>
 
 <ul>
@@ -1716,68 +1716,88 @@
 <li>Examples can be found in: <strong><a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a></strong>.</li>
 </ul>
 <p>(NOTE: Some example tests fail on purpose to demonstrate <a href="../example_logs/ReadMe/">logging features</a>.)</p>
-<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Example tests with run commands to help you get started:</h3>
+<hr />
+<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Example tests with run commands to help you get started:</h3>
 
-<p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">example test</a> in Chrome: (Default: <code>--browser=chrome</code>)</p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py
-</code></pre></div>
-<p><img src="https://seleniumbase.github.io/cdn/gif/swag_labs_4.gif" title="Testing Swag Labs with SeleniumBase" /><br /></p>
-<p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py">example test</a> on the SeleniumBase Demo Site:</p>
+<hr />
+<p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py">example test</a>: (Default option: <code>--browser=chrome</code>)</p>
 <div class="highlight"><pre><span></span><code>pytest test_demo_site.py
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/demo_page_4.gif" title="SeleniumBase Demo Page" /><br /></p>
+<hr />
 <p>Run an example test in Firefox:</p>
 <div class="highlight"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>firefox
 </code></pre></div>
+<hr />
 <p>Run an example test in Demo Mode: (highlight assertions)</p>
 <div class="highlight"><pre><span></span><code>pytest test_swag_labs.py --demo
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/swag_demo_3.gif" /><br /></p>
+<hr />
+<p>Run <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py">test_coffee_cart.py</a> to test the <a href="https://seleniumbase.io/coffee/">Coffee Cart</a> app:</p>
+<div class="highlight"><pre><span></span><code>pytest test_coffee_cart.py --demo
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/cdn/gif/coffee_cart.gif" title="SeleniumBase Coffee App Example" alt="SeleniumBase Example" title="SeleniumBase Coffee App Example" /></p>
+<hr />
 <p>Run a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/wordle_test.py">Wordle-solver example</a>:</p>
 <div class="highlight"><pre><span></span><code>pytest wordle_test.py
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/wordle.gif" title="Solving Wordle with SeleniumBase" /><br /></p>
+<hr />
 <p>Run an example test in Headless Mode: (invisible browser)</p>
 <div class="highlight"><pre><span></span><code>pytest my_first_test.py --headless
 </code></pre></div>
+<hr />
 <p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_swag_labs.py">example test</a> using Chrome's mobile device emulator: (default settings)</p>
 <div class="highlight"><pre><span></span><code>pytest test_swag_labs.py --mobile
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/swag_mobile_2.gif" title="SeleniumBase Mobile Mode" /><br /></p>
+<hr />
 <p>Run another <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_xkcd.py">example test</a> in Demo Mode: (highlight assertions)</p>
 <div class="highlight"><pre><span></span><code>pytest test_xkcd.py --demo
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/xkcd_vid.gif" title="SeleniumBase Demo Mode" /><br /></p>
+<hr />
 <p>Run a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_suite.py">test suite</a> with verbose output: (see more details)</p>
 <div class="highlight"><pre><span></span><code>pytest test_suite.py -v
 </code></pre></div>
+<hr />
 <p>Run a test suite multi-threaded using [n] threads:</p>
 <div class="highlight"><pre><span></span><code>pytest test_suite.py -n<span class="o">=</span><span class="m">4</span>
 </code></pre></div>
+<hr />
 <p>Run a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/parameterized_test.py">parameterized test</a>: (Generates multiple tests from one)</p>
 <div class="highlight"><pre><span></span><code>pytest parameterized_test.py -v
 </code></pre></div>
+<hr />
 <p>Run a test suite and generate a SeleniumBase Dashboard:</p>
 <div class="highlight"><pre><span></span><code>pytest test_suite.py --dashboard
 </code></pre></div>
+<hr />
 <p>Run a test suite and generate a pytest report:</p>
 <div class="highlight"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
 </code></pre></div>
+<hr />
 <p>Run a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_fail.py">failing test</a>: (See the <code>latest_logs/</code> folder for logs and screenshots)</p>
 <div class="highlight"><pre><span></span><code>pytest test_fail.py
 </code></pre></div>
+<hr />
 <p>Run a failing test with Debug-mode enabled: (<code>pdb</code> activates on failures)</p>
 <div class="highlight"><pre><span></span><code>pytest test_fail.py --pdb -s
 </code></pre></div>
+<hr />
 <p>Run a test suite that demonstrates the use of pytest markers:</p>
 <div class="highlight"><pre><span></span><code>pytest -m marker_test_suite -v
 </code></pre></div>
+<hr />
 <p>Run a test suite that reuses the browser session between tests:</p>
 <div class="highlight"><pre><span></span><code>pytest test_suite.py --reuse-session
 </code></pre></div>
+<hr />
 <p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/rate_limiting_test.py">example test</a> demonstrating the <code>rate_limited</code> Python decorator:</p>
 <div class="highlight"><pre><span></span><code>pytest rate_limiting_test.py
 </code></pre></div>
+<hr />
 <p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/upload_file_test.py">example test</a> that demonstrates how to upload a file to a website:</p>
 <div class="highlight"><pre><span></span><code>pytest upload_file_test.py
 </code></pre></div>
@@ -1791,9 +1811,11 @@
 <p>Run an example test with nosetests:</p>
 <div class="highlight"><pre><span></span><code>nosetests my_first_test.py
 </code></pre></div>
+<hr />
 <p>Run an example test suite and generate a nosetest report:</p>
 <div class="highlight"><pre><span></span><code>nosetests test_suite.py --report --show-report
 </code></pre></div>
+<hr />
 <p>Run an example test using a nosetest configuration file:</p>
 <div class="highlight"><pre><span></span><code>nosetests my_first_test.py --config<span class="o">=</span>example_config.cfg
 </code></pre></div>
@@ -1801,12 +1823,18 @@
 <p>For more advanced run commands, such as using a proxy server, see <a href="../../help_docs/customizing_test_runs/">../help_docs/customizing_test_runs.md</a></p>
 <hr />
 <p>If you just need to perform some quick website verification on various devices, you can use the <a href="https://seleniumbase.io/devices/">SeleniumBase Device Farm</a>. Just plug in a website URL, and it will display how the website looks on four different devices:</p>
-<p><a href="https://seleniumbase.io/devices/"><img src="https://seleniumbase.github.io/cdn/img/github_demo2.png" width="540" title="SeleniumBase Mobile Mode" /></a><br /></p>
+<p><a href="https://seleniumbase.io/devices/?url=github.com"><img src="https://seleniumbase.github.io/cdn/img/github_demo2.png" width="540" title="SeleniumBase Mobile Mode" /></a><br /></p>
 <hr />
 <p>To make things easier, here's a simple GUI program that allows you to run a few example tests by pressing a button:</p>
 <div class="highlight"><pre><span></span><code>python gui_test_runner.py
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/gui_test_runner.png" title="GUI Test Runner" width="320" /></p>
+<p>(The newer <a href="https://seleniumbase.io/help_docs/commander/">SeleniumBase Commander</a> improves on that.)</p>
+<hr />
+<p>🎖️ To launch the SeleniumBase Commander GUI for pytest:</p>
+<div class="highlight"><pre><span></span><code>sbase gui
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/cdn/img/sbase_commander_wide.png" title="SeleniumBase Commander" width="600"></p>
 <hr />
 <p><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" title="SeleniumBase" width="320" /></p>
 <p><a href="https://github.com/seleniumbase/SeleniumBase">
