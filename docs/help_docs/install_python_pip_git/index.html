@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/help_docs/install_python_pip_git/">
       
+      
+        <link rel="prev" href="../method_summary/">
+      
+      
+        <link rel="next" href="../virtualenv_instructions/">
+      
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1758,6 +1759,7 @@
                   
 
 
+
   <h1>🐉 Get Python, pip, & git</h1>
 
 <h2 id="installation-instructions-for-git-python-and-pip">Installation instructions for <code>Git</code>, <code>Python</code>, and <code>pip</code><a class="headerlink" href="#installation-instructions-for-git-python-and-pip" title="Permanent link">&para;</a></h2>
@@ -1770,25 +1772,25 @@
 <h3 id="pip"><a href="https://en.wikipedia.org/wiki/Pip_%28package_manager%29">pip</a><a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
 <p><strong><code>pip</code> already comes with Python!</strong> (It lets you install packages, such as <code>seleniumbase</code>.)</p>
 <p>⚠️ If something went wrong with your <code>pip</code> installation, try this:</p>
-<div class="highlight"><pre><span></span><code>python -m ensurepip --default-pip
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span>--default-pip
 </code></pre></div>
 <p>If your existing version of pip is old, upgrade to the latest version:</p>
-<div class="highlight"><pre><span></span><code>python -m pip install --upgrade pip setuptools
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools
 </code></pre></div>
 <p>On CentOS 7 and some versions of Linux, you may need to install pip with <code>yum</code>:</p>
-<div class="highlight"><pre><span></span><code>yum -y update
-yum -y install python-pip
+<div class="highlight"><pre><span></span><code>yum<span class="w"> </span>-y<span class="w"> </span>update
+yum<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>python-pip
 </code></pre></div>
 <p>If you're having any trouble getting pip, you can <a href="https://pip.pypa.io/en/latest/installation/">GET PIP HERE</a>.</p>
 <p>When done, make sure the location of pip is on your path, which is <code>$PATH</code> for macOS/Linux. (On Windows, it's the System Variables <code>Path</code> within System Environment Variables.)</p>
 <p>You can also get pip (or fix pip) by using:</p>
-<div class="highlight"><pre><span></span><code>curl https://bootstrap.pypa.io/get-pip.py <span class="p">|</span> python
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://bootstrap.pypa.io/get-pip.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>python
 </code></pre></div>
 <ul>
 <li>(If you get SSL errors while trying to install packages with pip, see <a href="https://stackoverflow.com/questions/49768770/not-able-to-install-python-packages-ssl-tlsv1-alert-protocol-version">this Stackoverflow post</a>, which tells you to run the above command.)</li>
 </ul>
 <p><strong>Keep Pip and Setuptools up-to-date:</strong></p>
-<div class="highlight"><pre><span></span><code>python -m pip install -U pip setuptools
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip<span class="w"> </span>setuptools
 </code></pre></div>
 <ul>
 <li>(Depending on your user permissions, you may need to add <code>--user</code> to the command if you're not inside a <a href="../virtualenv_instructions/">Python virtual environment</a>, or use "<a href="https://en.wikipedia.org/wiki/Sudo">sudo</a>" on a UNIX-based OS if you're getting errors during installation.)</li>
@@ -1818,44 +1820,6 @@ yum -y install python-pip
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../method_summary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 📘 API Reference" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              📘 API Reference
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../virtualenv_instructions/" class="md-footer__link md-footer__link--next" aria-label="Next: ⚙️ Virtualenv Instructions" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              ⚙️ Virtualenv Instructions
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1881,12 +1845,11 @@ yum -y install python-pip
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

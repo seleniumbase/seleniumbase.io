@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/help_docs/translations/">
       
+      
+        <link rel="prev" href="../behave_gui/">
+      
+      
+        <link rel="next" href="../chinese/">
+      
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1704,6 +1705,7 @@
                   
 
 
+
   <h1>🌏 Translations</h1>
 
 <p><a id="language_tests"></a></p>
@@ -1741,44 +1743,44 @@
 <h2><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Translation API 🈺</h2>
 
 <p>You can use SeleniumBase to selectively translate the method names of any test from one language to another with the console scripts interface. Additionally, the <code>import</code> line at the top of the Python file will change to import the new <code>BaseCase</code>. Example: <code>BaseCase</code> becomes <code>CasoDeTeste</code> when a test is translated into Portuguese.</p>
-<div class="highlight"><pre><span></span><code>seleniumbase translate
+<div class="highlight"><pre><span></span><code>seleniumbase<span class="w"> </span>translate
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>* Usage:
-seleniumbase translate <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>LANGUAGE<span class="o">]</span> <span class="o">[</span>ACTION<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>*<span class="w"> </span>Usage:
+seleniumbase<span class="w"> </span>translate<span class="w"> </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANGUAGE<span class="o">]</span><span class="w"> </span><span class="o">[</span>ACTION<span class="o">]</span>
 
-* Languages:
-<span class="sb">``</span>--en<span class="sb">``</span> / <span class="sb">``</span>--English<span class="sb">``</span>  <span class="p">|</span>  <span class="sb">``</span>--zh<span class="sb">``</span> / <span class="sb">``</span>--Chinese<span class="sb">``</span>
-<span class="sb">``</span>--nl<span class="sb">``</span> / <span class="sb">``</span>--Dutch<span class="sb">``</span>    <span class="p">|</span>  <span class="sb">``</span>--fr<span class="sb">``</span> / <span class="sb">``</span>--French<span class="sb">``</span>
-<span class="sb">``</span>--it<span class="sb">``</span> / <span class="sb">``</span>--Italian<span class="sb">``</span>  <span class="p">|</span>  <span class="sb">``</span>--ja<span class="sb">``</span> / <span class="sb">``</span>--Japanese<span class="sb">``</span>
-<span class="sb">``</span>--ko<span class="sb">``</span> / <span class="sb">``</span>--Korean<span class="sb">``</span>   <span class="p">|</span>  <span class="sb">``</span>--pt<span class="sb">``</span> / <span class="sb">``</span>--Portuguese<span class="sb">``</span>
-<span class="sb">``</span>--ru<span class="sb">``</span> / <span class="sb">``</span>--Russian<span class="sb">``</span>  <span class="p">|</span>  <span class="sb">``</span>--es<span class="sb">``</span> / <span class="sb">``</span>--Spanish<span class="sb">``</span>
+*<span class="w"> </span>Languages:
+<span class="sb">``</span>--en<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--English<span class="sb">``</span><span class="w">  </span><span class="p">|</span><span class="w">  </span><span class="sb">``</span>--zh<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Chinese<span class="sb">``</span>
+<span class="sb">``</span>--nl<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Dutch<span class="sb">``</span><span class="w">    </span><span class="p">|</span><span class="w">  </span><span class="sb">``</span>--fr<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--French<span class="sb">``</span>
+<span class="sb">``</span>--it<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Italian<span class="sb">``</span><span class="w">  </span><span class="p">|</span><span class="w">  </span><span class="sb">``</span>--ja<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Japanese<span class="sb">``</span>
+<span class="sb">``</span>--ko<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Korean<span class="sb">``</span><span class="w">   </span><span class="p">|</span><span class="w">  </span><span class="sb">``</span>--pt<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Portuguese<span class="sb">``</span>
+<span class="sb">``</span>--ru<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Russian<span class="sb">``</span><span class="w">  </span><span class="p">|</span><span class="w">  </span><span class="sb">``</span>--es<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--Spanish<span class="sb">``</span>
 
-* Actions:
-<span class="sb">``</span>-p<span class="sb">``</span> / <span class="sb">``</span>--print<span class="sb">``</span>  <span class="o">(</span>Print translation output to the screen<span class="o">)</span>
-<span class="sb">``</span>-o<span class="sb">``</span> / <span class="sb">``</span>--overwrite<span class="sb">``</span>  <span class="o">(</span>Overwrite the file being translated<span class="o">)</span>
-<span class="sb">``</span>-c<span class="sb">``</span> / <span class="sb">``</span>--copy<span class="sb">``</span>  <span class="o">(</span>Copy the translation to a new <span class="sb">``</span>.py<span class="sb">``</span> file<span class="o">)</span>
+*<span class="w"> </span>Actions:
+<span class="sb">``</span>-p<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--print<span class="sb">``</span><span class="w">  </span><span class="o">(</span>Print<span class="w"> </span>translation<span class="w"> </span>output<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>screen<span class="o">)</span>
+<span class="sb">``</span>-o<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--overwrite<span class="sb">``</span><span class="w">  </span><span class="o">(</span>Overwrite<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>being<span class="w"> </span>translated<span class="o">)</span>
+<span class="sb">``</span>-c<span class="sb">``</span><span class="w"> </span>/<span class="w"> </span><span class="sb">``</span>--copy<span class="sb">``</span><span class="w">  </span><span class="o">(</span>Copy<span class="w"> </span>the<span class="w"> </span>translation<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span><span class="sb">``</span>.py<span class="sb">``</span><span class="w"> </span>file<span class="o">)</span>
 
-* Options:
-<span class="sb">``</span>-n<span class="sb">``</span>  <span class="o">(</span>include line Numbers when using the Print action<span class="o">)</span>
+*<span class="w"> </span>Options:
+<span class="sb">``</span>-n<span class="sb">``</span><span class="w">  </span><span class="o">(</span>include<span class="w"> </span>line<span class="w"> </span>Numbers<span class="w"> </span>when<span class="w"> </span>using<span class="w"> </span>the<span class="w"> </span>Print<span class="w"> </span>action<span class="o">)</span>
 
-* Examples:
-Translate test_1.py into Chinese and only print the output:
-&gt;&gt;&gt; seleniumbase translate test_1.py --zh  -p
-Translate test_2.py into Portuguese and overwrite the file:
-&gt;&gt;&gt; seleniumbase translate test_2.py --pt  -o
-Translate test_3.py into Dutch and make a copy of the file:
-&gt;&gt;&gt; seleniumbase translate test_3.py --nl  -c
+*<span class="w"> </span>Examples:
+Translate<span class="w"> </span>test_1.py<span class="w"> </span>into<span class="w"> </span>Chinese<span class="w"> </span>and<span class="w"> </span>only<span class="w"> </span>print<span class="w"> </span>the<span class="w"> </span>output:
+&gt;&gt;&gt;<span class="w"> </span>seleniumbase<span class="w"> </span>translate<span class="w"> </span>test_1.py<span class="w"> </span>--zh<span class="w">  </span>-p
+Translate<span class="w"> </span>test_2.py<span class="w"> </span>into<span class="w"> </span>Portuguese<span class="w"> </span>and<span class="w"> </span>overwrite<span class="w"> </span>the<span class="w"> </span>file:
+&gt;&gt;&gt;<span class="w"> </span>seleniumbase<span class="w"> </span>translate<span class="w"> </span>test_2.py<span class="w"> </span>--pt<span class="w">  </span>-o
+Translate<span class="w"> </span>test_3.py<span class="w"> </span>into<span class="w"> </span>Dutch<span class="w"> </span>and<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>copy<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>file:
+&gt;&gt;&gt;<span class="w"> </span>seleniumbase<span class="w"> </span>translate<span class="w"> </span>test_3.py<span class="w"> </span>--nl<span class="w">  </span>-c
 
-* Output:
-Translates a SeleniumBase Python file into the language
-specified. Method calls and <span class="sb">``</span>import<span class="sb">``</span> lines get swapped.
-Both a language and an action must be specified.
-The <span class="sb">``</span>-p<span class="sb">``</span> action can be paired with one other action.
-When running with <span class="sb">``</span>-c<span class="sb">``</span> <span class="o">(</span>or <span class="sb">``</span>--copy<span class="sb">``</span><span class="o">)</span> the new file name
-will be the original name appended with an underscore
-plus the <span class="m">2</span>-letter language code of the new language.
-<span class="o">(</span>Example: Translating <span class="sb">``</span>test_1.py<span class="sb">``</span> into Japanese with
-<span class="sb">``</span>-c<span class="sb">``</span> will create a new file called <span class="sb">``</span>test_1_ja.py<span class="sb">``</span>.<span class="o">)</span>
+*<span class="w"> </span>Output:
+Translates<span class="w"> </span>a<span class="w"> </span>SeleniumBase<span class="w"> </span>Python<span class="w"> </span>file<span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>language
+specified.<span class="w"> </span>Method<span class="w"> </span>calls<span class="w"> </span>and<span class="w"> </span><span class="sb">``</span>import<span class="sb">``</span><span class="w"> </span>lines<span class="w"> </span>get<span class="w"> </span>swapped.
+Both<span class="w"> </span>a<span class="w"> </span>language<span class="w"> </span>and<span class="w"> </span>an<span class="w"> </span>action<span class="w"> </span>must<span class="w"> </span>be<span class="w"> </span>specified.
+The<span class="w"> </span><span class="sb">``</span>-p<span class="sb">``</span><span class="w"> </span>action<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>paired<span class="w"> </span>with<span class="w"> </span>one<span class="w"> </span>other<span class="w"> </span>action.
+When<span class="w"> </span>running<span class="w"> </span>with<span class="w"> </span><span class="sb">``</span>-c<span class="sb">``</span><span class="w"> </span><span class="o">(</span>or<span class="w"> </span><span class="sb">``</span>--copy<span class="sb">``</span><span class="o">)</span><span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>file<span class="w"> </span>name
+will<span class="w"> </span>be<span class="w"> </span>the<span class="w"> </span>original<span class="w"> </span>name<span class="w"> </span>appended<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>underscore
+plus<span class="w"> </span>the<span class="w"> </span><span class="m">2</span>-letter<span class="w"> </span>language<span class="w"> </span>code<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>language.
+<span class="o">(</span>Example:<span class="w"> </span>Translating<span class="w"> </span><span class="sb">``</span>test_1.py<span class="sb">``</span><span class="w"> </span>into<span class="w"> </span>Japanese<span class="w"> </span>with
+<span class="sb">``</span>-c<span class="sb">``</span><span class="w"> </span>will<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>file<span class="w"> </span>called<span class="w"> </span><span class="sb">``</span>test_1_ja.py<span class="sb">``</span>.<span class="o">)</span>
 </code></pre></div>
 <hr />
 <h3 align="left"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_m.png" title="SeleniumBase" width="280" /></a></h3>
@@ -1807,44 +1809,6 @@ plus the <span class="m">2</span>-letter language code of the new language.
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../behave_gui/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🐝 Behave-BDD GUI App" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              🐝 Behave-BDD GUI App
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../chinese/" class="md-footer__link md-footer__link--next" aria-label="Next: 🐲 Chinese Docs" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              🐲 Chinese Docs
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1870,12 +1834,11 @@ plus the <span class="m">2</span>-letter language code of the new language.
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

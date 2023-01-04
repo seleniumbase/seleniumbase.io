@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/help_docs/syntax_formats/">
       
+      
+        <link rel="prev" href="../../examples/example_logs/ReadMe/">
+      
+      
+        <link rel="next" href="../commander/">
+      
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1702,6 +1703,7 @@
                   
 
 
+
   <h1>🔡 Syntax Formats</h1>
 
 <p><a id="syntax_formats"></a></p>
@@ -1772,7 +1774,7 @@
 
 <span class="k">class</span> <span class="nc">BaseTestCase</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">BaseTestCase</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
         <span class="c1"># &lt;&lt;&lt; Run custom setUp() code for tests AFTER the super().setUp() &gt;&gt;&gt;</span>
 
     <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1785,7 +1787,7 @@
             <span class="k">pass</span>
         <span class="c1"># (Wrap unreliable tearDown() code in a try/except block.)</span>
         <span class="c1"># &lt;&lt;&lt; Run custom tearDown() code BEFORE the super().tearDown() &gt;&gt;&gt;</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">BaseTestCase</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># &lt;&lt;&lt; Placeholder. Add your code here. &gt;&gt;&gt;</span>
@@ -1906,7 +1908,7 @@
 
 <span class="k">class</span> <span class="nc">OverrideDriverTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">get_new_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;This method overrides get_new_driver() from BaseCase.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method overrides get_new_driver() from BaseCase.&quot;&quot;&quot;</span>
         <span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
         <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--disable-3d-apis&quot;</span><span class="p">)</span>
         <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--disable-notifications&quot;</span><span class="p">)</span>
@@ -1962,7 +1964,7 @@
 
     <span class="k">class</span> <span class="nc">BaseClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">get_new_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="sd">&quot;&quot;&quot;This method overrides get_new_driver() from BaseCase.&quot;&quot;&quot;</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;This method overrides get_new_driver() from BaseCase.&quot;&quot;&quot;</span>
             <span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">headless</span><span class="p">:</span>
                 <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--headless=chrome&quot;</span><span class="p">)</span>
@@ -1973,14 +1975,14 @@
             <span class="k">return</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="nb">super</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">pass</span>
 
         <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">save_teardown_screenshot</span><span class="p">()</span>  <span class="c1"># On failure or &quot;--screenshot&quot;</span>
-            <span class="nb">super</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
 
     <span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">setUpClass</span><span class="p">()</span>
@@ -2019,11 +2021,11 @@
             <span class="k">return</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="nb">super</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">save_teardown_screenshot</span><span class="p">()</span>  <span class="c1"># On failure or &quot;--screenshot&quot;</span>
-            <span class="nb">super</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">pass</span>
@@ -2281,14 +2283,14 @@
 
 <p>With <a href="https://behave.readthedocs.io/en/stable/gherkin.html">Behave's BDD Gherkin format</a>, you can use natural language to write tests that work with SeleniumBase methods. Behave tests are run by calling <code>behave</code> on the command-line. This requires some special files in a specific directory structure. Here's an example of that structure:</p>
 <div class="highlight"><pre><span></span><code>features/
-├── __init__.py
-├── behave.ini
-├── environment.py
-├── feature_file.feature
-└── steps/
-    ├── __init__.py
-    ├── imported.py
-    └── step_file.py
+├──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>behave.ini
+├──<span class="w"> </span>environment.py
+├──<span class="w"> </span>feature_file.feature
+└──<span class="w"> </span>steps/
+<span class="w">    </span>├──<span class="w"> </span>__init__.py
+<span class="w">    </span>├──<span class="w"> </span>imported.py
+<span class="w">    </span>└──<span class="w"> </span>step_file.py
 </code></pre></div>
 <p>A <code>*.feature</code> file might look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> SeleniumBase scenarios for the RealWorld App</span>
@@ -2488,44 +2490,6 @@
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../examples/example_logs/ReadMe/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 📊 Dashboard / Reports" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              📊 Dashboard / Reports
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../commander/" class="md-footer__link md-footer__link--next" aria-label="Next: 🎖️ GUI / Commander" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              🎖️ GUI / Commander
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2551,12 +2515,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

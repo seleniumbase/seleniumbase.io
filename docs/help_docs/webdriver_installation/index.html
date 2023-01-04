@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/help_docs/webdriver_installation/">
       
+      
+        <link rel="prev" href="../useful_grep_commands/">
+      
+      
+        <link rel="next" href="../verify_webdriver/">
+      
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1704,25 +1705,26 @@
                   
 
 
+
   <h1>⚙️ WebDriver Installation</h1>
 
 <h2 id="installing-webdrivers"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Installing webdrivers<a class="headerlink" href="#installing-webdrivers" title="Permanent link">&para;</a></h2>
 <p>To run web automation, you'll need webdrivers for each browser you plan on using.  With SeleniumBase, drivers are downloaded automatically as needed into the SeleniumBase <code>drivers</code> folder.</p>
 <p>You can also download drivers manually with these commands:</p>
-<div class="highlight"><pre><span></span><code>seleniumbase get chromedriver
-seleniumbase get geckodriver
-seleniumbase get edgedriver
+<div class="highlight"><pre><span></span><code>seleniumbase<span class="w"> </span>get<span class="w"> </span>chromedriver
+seleniumbase<span class="w"> </span>get<span class="w"> </span>geckodriver
+seleniumbase<span class="w"> </span>get<span class="w"> </span>edgedriver
 </code></pre></div>
 <p>After running the commands above, web drivers will get downloaded into the <code>seleniumbase/drivers/</code> folder. SeleniumBase uses those drivers during tests. (The drivers don't come with SeleniumBase by default.)</p>
 <p>If the necessary driver is not found in this location while running tests, SeleniumBase will instead look for the driver on the System PATH. If the necessary driver is not on the System PATH either, SeleniumBase will automatically attempt to download the required driver.</p>
 <ul>
 <li>You can also download specific versions of drivers. Examples:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase get chromedriver <span class="m">107</span>
-sbase get chromedriver <span class="m">107</span>.0.5304.62
-sbase get chromedriver latest
-sbase get chromedriver latest-1
-sbase get edgedriver <span class="m">106</span>.0.1370.42
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span><span class="m">107</span>
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span><span class="m">107</span>.0.5304.62
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest-1
+sbase<span class="w"> </span>get<span class="w"> </span>edgedriver<span class="w"> </span><span class="m">106</span>.0.1370.42
 </code></pre></div>
 <p>(NOTE: <code>sbase</code> is a shortcut for <code>seleniumbase</code>)</p>
 <hr />
@@ -1746,26 +1748,26 @@ sbase get edgedriver <span class="m">106</span>.0.1370.42
 <ul>
 <li>You can also install drivers by using <code>brew</code> (aka <code>homebrew</code>):</li>
 </ul>
-<div class="highlight"><pre><span></span><code>brew install --cask chromedriver
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>chromedriver
 
-brew install geckodriver
+brew<span class="w"> </span>install<span class="w"> </span>geckodriver
 </code></pre></div>
 <p>You can also upgrade existing webdrivers:</p>
-<div class="highlight"><pre><span></span><code>brew upgrade --cask chromedriver
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>upgrade<span class="w"> </span>--cask<span class="w"> </span>chromedriver
 
-brew upgrade geckodriver
+brew<span class="w"> </span>upgrade<span class="w"> </span>geckodriver
 </code></pre></div>
 <p><strong>Linux shortcuts</strong>:</p>
 <p>If you still need the web drivers, here are some scripts to help you get <code>chromedriver</code> and <code>geckodriver</code> on a Linux machine:</p>
-<div class="highlight"><pre><span></span><code>wget https://chromedriver.storage.googleapis.com/72.0.3626.69/chromedriver_linux64.zip
-unzip chromedriver_linux64.zip
-mv chromedriver /usr/local/bin/
-chmod +x /usr/local/bin/chromedriver
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://chromedriver.storage.googleapis.com/72.0.3626.69/chromedriver_linux64.zip
+unzip<span class="w"> </span>chromedriver_linux64.zip
+mv<span class="w"> </span>chromedriver<span class="w"> </span>/usr/local/bin/
+chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/chromedriver
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
-tar xvfz geckodriver-v0.32.0-linux64.tar.gz
-mv geckodriver /usr/local/bin/
-chmod +x /usr/local/bin/geckodriver
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
+tar<span class="w"> </span>xvfz<span class="w"> </span>geckodriver-v0.32.0-linux64.tar.gz
+mv<span class="w"> </span>geckodriver<span class="w"> </span>/usr/local/bin/
+chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/geckodriver
 </code></pre></div>
 <p>To verify that web drivers are working, <strong><a href="../verify_webdriver/">follow these instructions</a></strong>.</p>
 <p><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_b.png" title="SeleniumBase" width="280"></a></p>
@@ -1794,44 +1796,6 @@ chmod +x /usr/local/bin/geckodriver
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../useful_grep_commands/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 📜 Useful grep commands" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              📜 Useful grep commands
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../verify_webdriver/" class="md-footer__link md-footer__link--next" aria-label="Next: ✔️ Verifying WebDriver" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              ✔️ Verifying WebDriver
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1857,12 +1821,11 @@ chmod +x /usr/local/bin/geckodriver
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

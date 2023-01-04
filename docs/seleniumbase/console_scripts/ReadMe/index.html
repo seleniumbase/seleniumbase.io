@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/">
       
+      
+        <link rel="prev" href="../../../help_docs/customizing_test_runs/">
+      
+      
+        <link rel="next" href="../../../examples/example_logs/ReadMe/">
+      
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1702,6 +1703,7 @@
                   
 
 
+
   <h1>🌠 Console Scripts</h1>
 
 <h2 id="console-scripts"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Console Scripts 🌠<a class="headerlink" href="#console-scripts" title="Permanent link">&para;</a></h2>
@@ -1719,58 +1721,58 @@
 </ul>
 <p>(<i>For running tests, <a href="../../../help_docs/customizing_test_runs/">use <b>pytest</b> with SeleniumBase</a>.</i>)</p>
 <div class="highlight"><pre><span></span><code>COMMANDS:
-      get / install    <span class="o">[</span>DRIVER<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      methods          <span class="o">(</span>List common Python methods<span class="o">)</span>
-      options          <span class="o">(</span>List common pytest options<span class="o">)</span>
-      behave-options   <span class="o">(</span>List common behave options<span class="o">)</span>
-      gui / commander  <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
-      behave-gui       <span class="o">(</span>SBase Commander <span class="k">for</span> Behave<span class="o">)</span>
-      caseplans        <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
-      mkdir            <span class="o">[</span>DIRECTORY<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      mkfile           <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      mkrec / codegen  <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      recorder         <span class="o">(</span>Open Recorder Desktop App.<span class="o">)</span>
-      record           <span class="o">(</span>If args: mkrec. Else: App.<span class="o">)</span>
-      mkpres           <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span>
-      mkchart          <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span>
-      print            <span class="o">[</span>FILE<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      translate        <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span> <span class="o">[</span>ACTION<span class="o">]</span>
-      convert          <span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
-      extract-objects  <span class="o">[</span>SB_FILE.py<span class="o">]</span>
-      inject-objects   <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      objectify        <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      revert-objects   <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      encrypt / obfuscate
-      decrypt / unobfuscate
-      download server  <span class="o">(</span>Get Selenium Grid JAR file<span class="o">)</span>
-      grid-hub         <span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      grid-node        <span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span> --hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
- * <span class="o">(</span>EXAMPLE: <span class="s2">&quot;sbase get chromedriver latest&quot;</span><span class="o">)</span> *
+<span class="w">      </span>get<span class="w"> </span>/<span class="w"> </span>install<span class="w">    </span><span class="o">[</span>DRIVER<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>methods<span class="w">          </span><span class="o">(</span>List<span class="w"> </span>common<span class="w"> </span>Python<span class="w"> </span>methods<span class="o">)</span>
+<span class="w">      </span>options<span class="w">          </span><span class="o">(</span>List<span class="w"> </span>common<span class="w"> </span>pytest<span class="w"> </span>options<span class="o">)</span>
+<span class="w">      </span>behave-options<span class="w">   </span><span class="o">(</span>List<span class="w"> </span>common<span class="w"> </span>behave<span class="w"> </span>options<span class="o">)</span>
+<span class="w">      </span>gui<span class="w"> </span>/<span class="w"> </span>commander<span class="w">  </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
+<span class="w">      </span>behave-gui<span class="w">       </span><span class="o">(</span>SBase<span class="w"> </span>Commander<span class="w"> </span><span class="k">for</span><span class="w"> </span>Behave<span class="o">)</span>
+<span class="w">      </span>caseplans<span class="w">        </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
+<span class="w">      </span>mkdir<span class="w">            </span><span class="o">[</span>DIRECTORY<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>mkfile<span class="w">           </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>mkrec<span class="w"> </span>/<span class="w"> </span>codegen<span class="w">  </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>recorder<span class="w">         </span><span class="o">(</span>Open<span class="w"> </span>Recorder<span class="w"> </span>Desktop<span class="w"> </span>App.<span class="o">)</span>
+<span class="w">      </span>record<span class="w">           </span><span class="o">(</span>If<span class="w"> </span>args:<span class="w"> </span>mkrec.<span class="w"> </span>Else:<span class="w"> </span>App.<span class="o">)</span>
+<span class="w">      </span>mkpres<span class="w">           </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span>
+<span class="w">      </span>mkchart<span class="w">          </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span>
+<span class="w">      </span>print<span class="w">            </span><span class="o">[</span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>translate<span class="w">        </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span><span class="w"> </span><span class="o">[</span>ACTION<span class="o">]</span>
+<span class="w">      </span>convert<span class="w">          </span><span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
+<span class="w">      </span>extract-objects<span class="w">  </span><span class="o">[</span>SB_FILE.py<span class="o">]</span>
+<span class="w">      </span>inject-objects<span class="w">   </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>objectify<span class="w">        </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>revert-objects<span class="w">   </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>encrypt<span class="w"> </span>/<span class="w"> </span>obfuscate
+<span class="w">      </span>decrypt<span class="w"> </span>/<span class="w"> </span>unobfuscate
+<span class="w">      </span>download<span class="w"> </span>server<span class="w">  </span><span class="o">(</span>Get<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>JAR<span class="w"> </span>file<span class="o">)</span>
+<span class="w">      </span>grid-hub<span class="w">         </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>grid-node<span class="w">        </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span>--hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
+<span class="w"> </span>*<span class="w"> </span><span class="o">(</span>EXAMPLE:<span class="w"> </span><span class="s2">&quot;sbase get chromedriver latest&quot;</span><span class="o">)</span><span class="w"> </span>*
 
-    Type <span class="s2">&quot;sbase help [COMMAND]&quot;</span> <span class="k">for</span> specific <span class="nb">command</span> info.
-    For info on all commands, type: <span class="s2">&quot;seleniumbase --help&quot;</span>.
-    Use <span class="s2">&quot;pytest&quot;</span> <span class="k">for</span> running tests.
+<span class="w">    </span>Type<span class="w"> </span><span class="s2">&quot;sbase help [COMMAND]&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>specific<span class="w"> </span><span class="nb">command</span><span class="w"> </span>info.
+<span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
+<span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
 <h3>get / install</h3>
 
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase get <span class="o">[</span>DRIVER<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-sbase install <span class="o">[</span>DRIVER<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>DRIVER<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+sbase<span class="w"> </span>install<span class="w"> </span><span class="o">[</span>DRIVER<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Examples:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase get chromedriver
-sbase get geckodriver
-sbase get edgedriver
-sbase get chromedriver <span class="m">108</span>
-sbase get chromedriver <span class="m">108</span>.0.5359.71
-sbase get chromedriver latest
-sbase get chromedriver latest-1  <span class="c1"># (Latest minus one)</span>
-sbase get chromedriver -p
-sbase get chromedriver latest -p
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>get<span class="w"> </span>chromedriver
+sbase<span class="w"> </span>get<span class="w"> </span>geckodriver
+sbase<span class="w"> </span>get<span class="w"> </span>edgedriver
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span><span class="m">108</span>
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span><span class="m">108</span>.0.5359.71
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest-1<span class="w">  </span><span class="c1"># (Latest minus one)</span>
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>-p
+sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest<span class="w"> </span>-p
 </code></pre></div>
 <p>(Drivers:  <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>,
            <code>iedriver</code>, <code>operadriver</code>, <code>uc_driver</code>)</p>
@@ -1791,7 +1793,7 @@ sbase get chromedriver latest -p
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase methods
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>methods
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -1802,136 +1804,136 @@ sbase get chromedriver latest -p
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase options
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>options
 </code></pre></div>
 <ul>
 <li>Output:</li>
 </ul>
 <p>Displays common pytest command-line options
 that are available when using SeleniumBase.</p>
-<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="o">(</span>The web browser to use. Default is <span class="s2">&quot;chrome&quot;</span><span class="o">)</span>
---headless  <span class="o">(</span>Run tests headlessly. Default mode on Linux OS.<span class="o">)</span>
---demo  <span class="o">(</span>Slow down and visually see <span class="nb">test</span> actions as they occur.<span class="o">)</span>
---slow  <span class="o">(</span>Slow down the automation. Faster than using Demo Mode.<span class="o">)</span>
---reuse-session / --rs  <span class="o">(</span>Reuse browser session between tests.<span class="o">)</span>
---crumbs  <span class="o">(</span>Clear all cookies between tests reusing a session.<span class="o">)</span>
---maximize  <span class="o">(</span>Start tests with the web browser window maximized.<span class="o">)</span>
---dashboard  <span class="o">(</span>Enable SeleniumBase<span class="se">\&#39;</span>s Dashboard at dashboard.html<span class="o">)</span>
---uc  <span class="o">(</span>Enable undetected-chromedriver to evade bot-detection.<span class="o">)</span>
---incognito  <span class="o">(</span>Enable Chromium<span class="se">\&#39;</span>s Incognito mode.<span class="o">)</span>
---guest  <span class="o">(</span>Enable Chromium<span class="se">\&#39;</span>s Guest mode.<span class="o">)</span>
--m<span class="o">=</span>MARKER  <span class="o">(</span>Run tests with the specified pytest marker.<span class="o">)</span>
--n<span class="o">=</span>NUM  <span class="o">(</span>Multithread the tests using that many threads.<span class="o">)</span>
--v  <span class="o">(</span>Verbose mode. Print the full names of each <span class="nb">test</span> run.<span class="o">)</span>
---html<span class="o">=</span>report.html  <span class="o">(</span>Create a detailed pytest-html report.<span class="o">)</span>
---collect-only / --co  <span class="o">(</span>Only show discovered tests. No run.<span class="o">)</span>
---co -q  <span class="o">(</span>Only show full names of discovered tests. No run.<span class="o">)</span>
--x  <span class="o">(</span>Stop running tests after the first failure is reached.<span class="o">)</span>
---pdb  <span class="o">(</span>Enter the Post Mortem Debug Mode after any <span class="nb">test</span> fails.<span class="o">)</span>
---trace  <span class="o">(</span>Enter Debug Mode immediately after starting any test.<span class="o">)</span>
-      <span class="p">|</span> Debug Mode Commands  &gt;&gt;&gt;   <span class="nb">help</span> / h: List all commands. <span class="p">|</span>
-      <span class="p">|</span>   n: Next line of method. s: Step through. c: Continue. <span class="p">|</span>
-      <span class="p">|</span>  <span class="k">return</span> / r: Run <span class="k">until</span> method returns. j: Jump to line. <span class="p">|</span>
-      <span class="p">|</span> where / w: Show stack spot. u: Up stack. d: Down stack. <span class="p">|</span>
-      <span class="p">|</span> longlist / ll: See code. dir<span class="o">()</span>: List namespace objects. <span class="p">|</span>
---final-debug  <span class="o">(</span>Enter Final Debug Mode after each <span class="nb">test</span> ends.<span class="o">)</span>
---recorder  <span class="o">(</span>Record browser actions to generate <span class="nb">test</span> scripts.<span class="o">)</span>
---save-screenshot  <span class="o">(</span>Save a screenshot at the end of each test.<span class="o">)</span>
---archive-logs  <span class="o">(</span>Archive old log files instead of deleting them.<span class="o">)</span>
---check-js  <span class="o">(</span>Check <span class="k">for</span> JavaScript errors after page loads.<span class="o">)</span>
---start-page<span class="o">=</span>URL  <span class="o">(</span>The browser start page when tests begin.<span class="o">)</span>
---agent<span class="o">=</span>STRING  <span class="o">(</span>Modify the web browser<span class="se">\&#39;</span>s User-Agent string.<span class="o">)</span>
---mobile  <span class="o">(</span>Use Chromium<span class="se">\&#39;</span>s mobile device emulator during tests.<span class="o">)</span>
---metrics<span class="o">=</span>STRING  <span class="o">(</span>Set mobile <span class="s2">&quot;CSSWidth,CSSHeight,PixelRatio&quot;</span>.<span class="o">)</span>
---ad-block  <span class="o">(</span>Block some types of display ads after page loads.<span class="o">)</span>
---settings-file<span class="o">=</span>FILE  <span class="o">(</span>Override default SeleniumBase settings.<span class="o">)</span>
---env<span class="o">=</span>ENV  <span class="o">(</span>Set the <span class="nb">test</span> env. Access with <span class="s2">&quot;self.env&quot;</span> <span class="k">in</span> tests.<span class="o">)</span>
---data<span class="o">=</span>DATA  <span class="o">(</span>Extra <span class="nb">test</span> data. Access with <span class="s2">&quot;self.data&quot;</span> <span class="k">in</span> tests.<span class="o">)</span>
---disable-csp  <span class="o">(</span>Disable the Content Security Policy of websites.<span class="o">)</span>
---remote-debug  <span class="o">(</span>Sync to Ch-R-Debugger chrome://inspect/#devices<span class="o">)</span>
---server<span class="o">=</span>SERVER  <span class="o">(</span>The Selenium Grid server/IP used <span class="k">for</span> tests.<span class="o">)</span>
---port<span class="o">=</span>PORT  <span class="o">(</span>The Selenium Grid port used by the <span class="nb">test</span> server.<span class="o">)</span>
---proxy<span class="o">=</span>SERVER:PORT  <span class="o">(</span>Connect to a proxy server:port <span class="k">for</span> tests.<span class="o">)</span>
---proxy<span class="o">=</span>USER:PASS@SERVER:PORT  <span class="o">(</span>Use authenticated proxy server.<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>to<span class="w"> </span>use.<span class="w"> </span>Default<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;chrome&quot;</span><span class="o">)</span>
+--headless<span class="w">  </span><span class="o">(</span>Run<span class="w"> </span>tests<span class="w"> </span>headlessly.<span class="w"> </span>Default<span class="w"> </span>mode<span class="w"> </span>on<span class="w"> </span>Linux<span class="w"> </span>OS.<span class="o">)</span>
+--demo<span class="w">  </span><span class="o">(</span>Slow<span class="w"> </span>down<span class="w"> </span>and<span class="w"> </span>visually<span class="w"> </span>see<span class="w"> </span><span class="nb">test</span><span class="w"> </span>actions<span class="w"> </span>as<span class="w"> </span>they<span class="w"> </span>occur.<span class="o">)</span>
+--slow<span class="w">  </span><span class="o">(</span>Slow<span class="w"> </span>down<span class="w"> </span>the<span class="w"> </span>automation.<span class="w"> </span>Faster<span class="w"> </span>than<span class="w"> </span>using<span class="w"> </span>Demo<span class="w"> </span>Mode.<span class="o">)</span>
+--reuse-session<span class="w"> </span>/<span class="w"> </span>--rs<span class="w">  </span><span class="o">(</span>Reuse<span class="w"> </span>browser<span class="w"> </span>session<span class="w"> </span>between<span class="w"> </span>tests.<span class="o">)</span>
+--crumbs<span class="w">  </span><span class="o">(</span>Clear<span class="w"> </span>all<span class="w"> </span>cookies<span class="w"> </span>between<span class="w"> </span>tests<span class="w"> </span>reusing<span class="w"> </span>a<span class="w"> </span>session.<span class="o">)</span>
+--maximize<span class="w">  </span><span class="o">(</span>Start<span class="w"> </span>tests<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>window<span class="w"> </span>maximized.<span class="o">)</span>
+--dashboard<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>SeleniumBase<span class="se">\&#39;</span>s<span class="w"> </span>Dashboard<span class="w"> </span>at<span class="w"> </span>dashboard.html<span class="o">)</span>
+--uc<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>undetected-chromedriver<span class="w"> </span>to<span class="w"> </span>evade<span class="w"> </span>bot-detection.<span class="o">)</span>
+--incognito<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Incognito<span class="w"> </span>mode.<span class="o">)</span>
+--guest<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Guest<span class="w"> </span>mode.<span class="o">)</span>
+-m<span class="o">=</span>MARKER<span class="w">  </span><span class="o">(</span>Run<span class="w"> </span>tests<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>specified<span class="w"> </span>pytest<span class="w"> </span>marker.<span class="o">)</span>
+-n<span class="o">=</span>NUM<span class="w">  </span><span class="o">(</span>Multithread<span class="w"> </span>the<span class="w"> </span>tests<span class="w"> </span>using<span class="w"> </span>that<span class="w"> </span>many<span class="w"> </span>threads.<span class="o">)</span>
+-v<span class="w">  </span><span class="o">(</span>Verbose<span class="w"> </span>mode.<span class="w"> </span>Print<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>names<span class="w"> </span>of<span class="w"> </span>each<span class="w"> </span><span class="nb">test</span><span class="w"> </span>run.<span class="o">)</span>
+--html<span class="o">=</span>report.html<span class="w">  </span><span class="o">(</span>Create<span class="w"> </span>a<span class="w"> </span>detailed<span class="w"> </span>pytest-html<span class="w"> </span>report.<span class="o">)</span>
+--collect-only<span class="w"> </span>/<span class="w"> </span>--co<span class="w">  </span><span class="o">(</span>Only<span class="w"> </span>show<span class="w"> </span>discovered<span class="w"> </span>tests.<span class="w"> </span>No<span class="w"> </span>run.<span class="o">)</span>
+--co<span class="w"> </span>-q<span class="w">  </span><span class="o">(</span>Only<span class="w"> </span>show<span class="w"> </span>full<span class="w"> </span>names<span class="w"> </span>of<span class="w"> </span>discovered<span class="w"> </span>tests.<span class="w"> </span>No<span class="w"> </span>run.<span class="o">)</span>
+-x<span class="w">  </span><span class="o">(</span>Stop<span class="w"> </span>running<span class="w"> </span>tests<span class="w"> </span>after<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>failure<span class="w"> </span>is<span class="w"> </span>reached.<span class="o">)</span>
+--pdb<span class="w">  </span><span class="o">(</span>Enter<span class="w"> </span>the<span class="w"> </span>Post<span class="w"> </span>Mortem<span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>after<span class="w"> </span>any<span class="w"> </span><span class="nb">test</span><span class="w"> </span>fails.<span class="o">)</span>
+--trace<span class="w">  </span><span class="o">(</span>Enter<span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>immediately<span class="w"> </span>after<span class="w"> </span>starting<span class="w"> </span>any<span class="w"> </span>test.<span class="o">)</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>Commands<span class="w">  </span>&gt;&gt;&gt;<span class="w">   </span><span class="nb">help</span><span class="w"> </span>/<span class="w"> </span>h:<span class="w"> </span>List<span class="w"> </span>all<span class="w"> </span>commands.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w">   </span>n:<span class="w"> </span>Next<span class="w"> </span>line<span class="w"> </span>of<span class="w"> </span>method.<span class="w"> </span>s:<span class="w"> </span>Step<span class="w"> </span>through.<span class="w"> </span>c:<span class="w"> </span>Continue.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w">  </span><span class="k">return</span><span class="w"> </span>/<span class="w"> </span>r:<span class="w"> </span>Run<span class="w"> </span><span class="k">until</span><span class="w"> </span>method<span class="w"> </span>returns.<span class="w"> </span>j:<span class="w"> </span>Jump<span class="w"> </span>to<span class="w"> </span>line.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>where<span class="w"> </span>/<span class="w"> </span>w:<span class="w"> </span>Show<span class="w"> </span>stack<span class="w"> </span>spot.<span class="w"> </span>u:<span class="w"> </span>Up<span class="w"> </span>stack.<span class="w"> </span>d:<span class="w"> </span>Down<span class="w"> </span>stack.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>longlist<span class="w"> </span>/<span class="w"> </span>ll:<span class="w"> </span>See<span class="w"> </span>code.<span class="w"> </span>dir<span class="o">()</span>:<span class="w"> </span>List<span class="w"> </span>namespace<span class="w"> </span>objects.<span class="w"> </span><span class="p">|</span>
+--final-debug<span class="w">  </span><span class="o">(</span>Enter<span class="w"> </span>Final<span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>after<span class="w"> </span>each<span class="w"> </span><span class="nb">test</span><span class="w"> </span>ends.<span class="o">)</span>
+--recorder<span class="w">  </span><span class="o">(</span>Record<span class="w"> </span>browser<span class="w"> </span>actions<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span><span class="nb">test</span><span class="w"> </span>scripts.<span class="o">)</span>
+--save-screenshot<span class="w">  </span><span class="o">(</span>Save<span class="w"> </span>a<span class="w"> </span>screenshot<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>each<span class="w"> </span>test.<span class="o">)</span>
+--archive-logs<span class="w">  </span><span class="o">(</span>Archive<span class="w"> </span>old<span class="w"> </span>log<span class="w"> </span>files<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>deleting<span class="w"> </span>them.<span class="o">)</span>
+--check-js<span class="w">  </span><span class="o">(</span>Check<span class="w"> </span><span class="k">for</span><span class="w"> </span>JavaScript<span class="w"> </span>errors<span class="w"> </span>after<span class="w"> </span>page<span class="w"> </span>loads.<span class="o">)</span>
+--start-page<span class="o">=</span>URL<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>browser<span class="w"> </span>start<span class="w"> </span>page<span class="w"> </span>when<span class="w"> </span>tests<span class="w"> </span>begin.<span class="o">)</span>
+--agent<span class="o">=</span>STRING<span class="w">  </span><span class="o">(</span>Modify<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>browser<span class="se">\&#39;</span>s<span class="w"> </span>User-Agent<span class="w"> </span>string.<span class="o">)</span>
+--mobile<span class="w">  </span><span class="o">(</span>Use<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>mobile<span class="w"> </span>device<span class="w"> </span>emulator<span class="w"> </span>during<span class="w"> </span>tests.<span class="o">)</span>
+--metrics<span class="o">=</span>STRING<span class="w">  </span><span class="o">(</span>Set<span class="w"> </span>mobile<span class="w"> </span><span class="s2">&quot;CSSWidth,CSSHeight,PixelRatio&quot;</span>.<span class="o">)</span>
+--ad-block<span class="w">  </span><span class="o">(</span>Block<span class="w"> </span>some<span class="w"> </span>types<span class="w"> </span>of<span class="w"> </span>display<span class="w"> </span>ads<span class="w"> </span>after<span class="w"> </span>page<span class="w"> </span>loads.<span class="o">)</span>
+--settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="o">(</span>Override<span class="w"> </span>default<span class="w"> </span>SeleniumBase<span class="w"> </span>settings.<span class="o">)</span>
+--env<span class="o">=</span>ENV<span class="w">  </span><span class="o">(</span>Set<span class="w"> </span>the<span class="w"> </span><span class="nb">test</span><span class="w"> </span>env.<span class="w"> </span>Access<span class="w"> </span>with<span class="w"> </span><span class="s2">&quot;self.env&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>tests.<span class="o">)</span>
+--data<span class="o">=</span>DATA<span class="w">  </span><span class="o">(</span>Extra<span class="w"> </span><span class="nb">test</span><span class="w"> </span>data.<span class="w"> </span>Access<span class="w"> </span>with<span class="w"> </span><span class="s2">&quot;self.data&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>tests.<span class="o">)</span>
+--disable-csp<span class="w">  </span><span class="o">(</span>Disable<span class="w"> </span>the<span class="w"> </span>Content<span class="w"> </span>Security<span class="w"> </span>Policy<span class="w"> </span>of<span class="w"> </span>websites.<span class="o">)</span>
+--remote-debug<span class="w">  </span><span class="o">(</span>Sync<span class="w"> </span>to<span class="w"> </span>Ch-R-Debugger<span class="w"> </span>chrome://inspect/#devices<span class="o">)</span>
+--server<span class="o">=</span>SERVER<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>server/IP<span class="w"> </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>tests.<span class="o">)</span>
+--port<span class="o">=</span>PORT<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>port<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span><span class="nb">test</span><span class="w"> </span>server.<span class="o">)</span>
+--proxy<span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="o">(</span>Connect<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>proxy<span class="w"> </span>server:port<span class="w"> </span><span class="k">for</span><span class="w"> </span>tests.<span class="o">)</span>
+--proxy<span class="o">=</span>USER:PASS@SERVER:PORT<span class="w">  </span><span class="o">(</span>Use<span class="w"> </span>authenticated<span class="w"> </span>proxy<span class="w"> </span>server.<span class="o">)</span>
 
-For the full list of command-line options, type: <span class="s2">&quot;pytest --help&quot;</span>.
+For<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>command-line<span class="w"> </span>options,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;pytest --help&quot;</span>.
 </code></pre></div>
 <h3>behave-options</h3>
 
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase behave-options
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>behave-options
 </code></pre></div>
 <ul>
 <li>Output:</li>
 </ul>
 <p>Displays common Behave command-line options
 that are available when using SeleniumBase.</p>
-<div class="highlight"><pre><span></span><code>-D <span class="nv">browser</span><span class="o">=</span>BROWSER  <span class="o">(</span>The web browser to use. Default is <span class="s2">&quot;chrome&quot;</span><span class="o">)</span>
--D headless  <span class="o">(</span>Run tests headlessly. Default mode on Linux OS.<span class="o">)</span>
--D demo  <span class="o">(</span>Slow down and visually see <span class="nb">test</span> actions as they occur.<span class="o">)</span>
--D slow  <span class="o">(</span>Slow down the automation. Faster than using Demo Mode.<span class="o">)</span>
--D reuse-session / -D rs  <span class="o">(</span>Reuse browser session between tests.<span class="o">)</span>
--D crumbs  <span class="o">(</span>Clear all cookies between tests reusing a session.<span class="o">)</span>
--D maximize  <span class="o">(</span>Start tests with the web browser window maximized.<span class="o">)</span>
--D dashboard  <span class="o">(</span>Enable SeleniumBase<span class="se">\&#39;</span>s Dashboard at dashboard.html<span class="o">)</span>
--D uc  <span class="o">(</span>Enable undetected-chromedriver to evade bot-detection.<span class="o">)</span>
--D incognito  <span class="o">(</span>Enable Chromium<span class="se">\&#39;</span>s Incognito mode.<span class="o">)</span>
--D guest  <span class="o">(</span>Enable Chromium<span class="se">\&#39;</span>s Guest mode.<span class="o">)</span>
---no-snippets / -q  <span class="o">(</span>Quiet mode. Don<span class="se">\&#39;</span>t print snippets.<span class="o">)</span>
---dry-run / -d  <span class="o">(</span>Dry run. Only show discovered tests.<span class="o">)</span>
---stop  <span class="o">(</span>Stop running tests after the first failure is reached.<span class="o">)</span>
--D pdb  <span class="o">(</span>Enter the Post Mortem Debug Mode after any <span class="nb">test</span> fails.<span class="o">)</span>
-      <span class="p">|</span> Debug Mode Commands  &gt;&gt;&gt;   <span class="nb">help</span> / h: List all commands. <span class="p">|</span>
-      <span class="p">|</span>   n: Next line of method. s: Step through. c: Continue. <span class="p">|</span>
-      <span class="p">|</span>  <span class="k">return</span> / r: Run <span class="k">until</span> method returns. j: Jump to line. <span class="p">|</span>
-      <span class="p">|</span> where / w: Show stack spot. u: Up stack. d: Down stack. <span class="p">|</span>
-      <span class="p">|</span> longlist / ll: See code. dir<span class="o">()</span>: List namespace objects. <span class="p">|</span>
--D recorder  <span class="o">(</span>Record browser actions to generate <span class="nb">test</span> scripts.<span class="o">)</span>
--D save-screenshot  <span class="o">(</span>Save a screenshot at the end of each test.<span class="o">)</span>
--D archive-logs  <span class="o">(</span>Archive old log files instead of deleting them.<span class="o">)</span>
--D check-js  <span class="o">(</span>Check <span class="k">for</span> JavaScript errors after page loads.<span class="o">)</span>
--D start-page<span class="o">=</span>URL  <span class="o">(</span>The browser start page when tests begin.<span class="o">)</span>
--D <span class="nv">agent</span><span class="o">=</span>STRING  <span class="o">(</span>Modify the web browser<span class="se">\&#39;</span>s User-Agent string.<span class="o">)</span>
--D mobile  <span class="o">(</span>Use Chromium<span class="se">\&#39;</span>s mobile device emulator during tests.<span class="o">)</span>
--D <span class="nv">metrics</span><span class="o">=</span>STRING  <span class="o">(</span>Set mobile <span class="s2">&quot;CSSWidth,CSSHeight,PixelRatio&quot;</span>.<span class="o">)</span>
--D ad-block  <span class="o">(</span>Block some types of display ads after page loads.<span class="o">)</span>
--D settings-file<span class="o">=</span>FILE  <span class="o">(</span>Override default SeleniumBase settings.<span class="o">)</span>
--D <span class="nv">env</span><span class="o">=</span>ENV  <span class="o">(</span>Set the <span class="nb">test</span> env. Access with <span class="s2">&quot;self.env&quot;</span> <span class="k">in</span> tests.<span class="o">)</span>
--D <span class="nv">data</span><span class="o">=</span>DATA  <span class="o">(</span>Extra <span class="nb">test</span> data. Access with <span class="s2">&quot;self.data&quot;</span> <span class="k">in</span> tests.<span class="o">)</span>
--D disable-csp  <span class="o">(</span>Disable the Content Security Policy of websites.<span class="o">)</span>
--D remote-debug  <span class="o">(</span>Sync to Ch-R-Debugger chrome://inspect/#devices<span class="o">)</span>
--D <span class="nv">server</span><span class="o">=</span>SERVER  <span class="o">(</span>The Selenium Grid server/IP used <span class="k">for</span> tests.<span class="o">)</span>
--D <span class="nv">port</span><span class="o">=</span>PORT  <span class="o">(</span>The Selenium Grid port used by the <span class="nb">test</span> server.<span class="o">)</span>
--D <span class="nv">proxy</span><span class="o">=</span>SERVER:PORT  <span class="o">(</span>Connect to a proxy server:port <span class="k">for</span> tests.<span class="o">)</span>
--D <span class="nv">proxy</span><span class="o">=</span>USER:PASS@SERVER:PORT  <span class="o">(</span>Use authenticated proxy server.<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>-D<span class="w"> </span><span class="nv">browser</span><span class="o">=</span>BROWSER<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>to<span class="w"> </span>use.<span class="w"> </span>Default<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;chrome&quot;</span><span class="o">)</span>
+-D<span class="w"> </span>headless<span class="w">  </span><span class="o">(</span>Run<span class="w"> </span>tests<span class="w"> </span>headlessly.<span class="w"> </span>Default<span class="w"> </span>mode<span class="w"> </span>on<span class="w"> </span>Linux<span class="w"> </span>OS.<span class="o">)</span>
+-D<span class="w"> </span>demo<span class="w">  </span><span class="o">(</span>Slow<span class="w"> </span>down<span class="w"> </span>and<span class="w"> </span>visually<span class="w"> </span>see<span class="w"> </span><span class="nb">test</span><span class="w"> </span>actions<span class="w"> </span>as<span class="w"> </span>they<span class="w"> </span>occur.<span class="o">)</span>
+-D<span class="w"> </span>slow<span class="w">  </span><span class="o">(</span>Slow<span class="w"> </span>down<span class="w"> </span>the<span class="w"> </span>automation.<span class="w"> </span>Faster<span class="w"> </span>than<span class="w"> </span>using<span class="w"> </span>Demo<span class="w"> </span>Mode.<span class="o">)</span>
+-D<span class="w"> </span>reuse-session<span class="w"> </span>/<span class="w"> </span>-D<span class="w"> </span>rs<span class="w">  </span><span class="o">(</span>Reuse<span class="w"> </span>browser<span class="w"> </span>session<span class="w"> </span>between<span class="w"> </span>tests.<span class="o">)</span>
+-D<span class="w"> </span>crumbs<span class="w">  </span><span class="o">(</span>Clear<span class="w"> </span>all<span class="w"> </span>cookies<span class="w"> </span>between<span class="w"> </span>tests<span class="w"> </span>reusing<span class="w"> </span>a<span class="w"> </span>session.<span class="o">)</span>
+-D<span class="w"> </span>maximize<span class="w">  </span><span class="o">(</span>Start<span class="w"> </span>tests<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>window<span class="w"> </span>maximized.<span class="o">)</span>
+-D<span class="w"> </span>dashboard<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>SeleniumBase<span class="se">\&#39;</span>s<span class="w"> </span>Dashboard<span class="w"> </span>at<span class="w"> </span>dashboard.html<span class="o">)</span>
+-D<span class="w"> </span>uc<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>undetected-chromedriver<span class="w"> </span>to<span class="w"> </span>evade<span class="w"> </span>bot-detection.<span class="o">)</span>
+-D<span class="w"> </span>incognito<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Incognito<span class="w"> </span>mode.<span class="o">)</span>
+-D<span class="w"> </span>guest<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Guest<span class="w"> </span>mode.<span class="o">)</span>
+--no-snippets<span class="w"> </span>/<span class="w"> </span>-q<span class="w">  </span><span class="o">(</span>Quiet<span class="w"> </span>mode.<span class="w"> </span>Don<span class="se">\&#39;</span>t<span class="w"> </span>print<span class="w"> </span>snippets.<span class="o">)</span>
+--dry-run<span class="w"> </span>/<span class="w"> </span>-d<span class="w">  </span><span class="o">(</span>Dry<span class="w"> </span>run.<span class="w"> </span>Only<span class="w"> </span>show<span class="w"> </span>discovered<span class="w"> </span>tests.<span class="o">)</span>
+--stop<span class="w">  </span><span class="o">(</span>Stop<span class="w"> </span>running<span class="w"> </span>tests<span class="w"> </span>after<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>failure<span class="w"> </span>is<span class="w"> </span>reached.<span class="o">)</span>
+-D<span class="w"> </span>pdb<span class="w">  </span><span class="o">(</span>Enter<span class="w"> </span>the<span class="w"> </span>Post<span class="w"> </span>Mortem<span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>after<span class="w"> </span>any<span class="w"> </span><span class="nb">test</span><span class="w"> </span>fails.<span class="o">)</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>Commands<span class="w">  </span>&gt;&gt;&gt;<span class="w">   </span><span class="nb">help</span><span class="w"> </span>/<span class="w"> </span>h:<span class="w"> </span>List<span class="w"> </span>all<span class="w"> </span>commands.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w">   </span>n:<span class="w"> </span>Next<span class="w"> </span>line<span class="w"> </span>of<span class="w"> </span>method.<span class="w"> </span>s:<span class="w"> </span>Step<span class="w"> </span>through.<span class="w"> </span>c:<span class="w"> </span>Continue.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w">  </span><span class="k">return</span><span class="w"> </span>/<span class="w"> </span>r:<span class="w"> </span>Run<span class="w"> </span><span class="k">until</span><span class="w"> </span>method<span class="w"> </span>returns.<span class="w"> </span>j:<span class="w"> </span>Jump<span class="w"> </span>to<span class="w"> </span>line.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>where<span class="w"> </span>/<span class="w"> </span>w:<span class="w"> </span>Show<span class="w"> </span>stack<span class="w"> </span>spot.<span class="w"> </span>u:<span class="w"> </span>Up<span class="w"> </span>stack.<span class="w"> </span>d:<span class="w"> </span>Down<span class="w"> </span>stack.<span class="w"> </span><span class="p">|</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>longlist<span class="w"> </span>/<span class="w"> </span>ll:<span class="w"> </span>See<span class="w"> </span>code.<span class="w"> </span>dir<span class="o">()</span>:<span class="w"> </span>List<span class="w"> </span>namespace<span class="w"> </span>objects.<span class="w"> </span><span class="p">|</span>
+-D<span class="w"> </span>recorder<span class="w">  </span><span class="o">(</span>Record<span class="w"> </span>browser<span class="w"> </span>actions<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span><span class="nb">test</span><span class="w"> </span>scripts.<span class="o">)</span>
+-D<span class="w"> </span>save-screenshot<span class="w">  </span><span class="o">(</span>Save<span class="w"> </span>a<span class="w"> </span>screenshot<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>each<span class="w"> </span>test.<span class="o">)</span>
+-D<span class="w"> </span>archive-logs<span class="w">  </span><span class="o">(</span>Archive<span class="w"> </span>old<span class="w"> </span>log<span class="w"> </span>files<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>deleting<span class="w"> </span>them.<span class="o">)</span>
+-D<span class="w"> </span>check-js<span class="w">  </span><span class="o">(</span>Check<span class="w"> </span><span class="k">for</span><span class="w"> </span>JavaScript<span class="w"> </span>errors<span class="w"> </span>after<span class="w"> </span>page<span class="w"> </span>loads.<span class="o">)</span>
+-D<span class="w"> </span>start-page<span class="o">=</span>URL<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>browser<span class="w"> </span>start<span class="w"> </span>page<span class="w"> </span>when<span class="w"> </span>tests<span class="w"> </span>begin.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">agent</span><span class="o">=</span>STRING<span class="w">  </span><span class="o">(</span>Modify<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>browser<span class="se">\&#39;</span>s<span class="w"> </span>User-Agent<span class="w"> </span>string.<span class="o">)</span>
+-D<span class="w"> </span>mobile<span class="w">  </span><span class="o">(</span>Use<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>mobile<span class="w"> </span>device<span class="w"> </span>emulator<span class="w"> </span>during<span class="w"> </span>tests.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">metrics</span><span class="o">=</span>STRING<span class="w">  </span><span class="o">(</span>Set<span class="w"> </span>mobile<span class="w"> </span><span class="s2">&quot;CSSWidth,CSSHeight,PixelRatio&quot;</span>.<span class="o">)</span>
+-D<span class="w"> </span>ad-block<span class="w">  </span><span class="o">(</span>Block<span class="w"> </span>some<span class="w"> </span>types<span class="w"> </span>of<span class="w"> </span>display<span class="w"> </span>ads<span class="w"> </span>after<span class="w"> </span>page<span class="w"> </span>loads.<span class="o">)</span>
+-D<span class="w"> </span>settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="o">(</span>Override<span class="w"> </span>default<span class="w"> </span>SeleniumBase<span class="w"> </span>settings.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">env</span><span class="o">=</span>ENV<span class="w">  </span><span class="o">(</span>Set<span class="w"> </span>the<span class="w"> </span><span class="nb">test</span><span class="w"> </span>env.<span class="w"> </span>Access<span class="w"> </span>with<span class="w"> </span><span class="s2">&quot;self.env&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>tests.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">data</span><span class="o">=</span>DATA<span class="w">  </span><span class="o">(</span>Extra<span class="w"> </span><span class="nb">test</span><span class="w"> </span>data.<span class="w"> </span>Access<span class="w"> </span>with<span class="w"> </span><span class="s2">&quot;self.data&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>tests.<span class="o">)</span>
+-D<span class="w"> </span>disable-csp<span class="w">  </span><span class="o">(</span>Disable<span class="w"> </span>the<span class="w"> </span>Content<span class="w"> </span>Security<span class="w"> </span>Policy<span class="w"> </span>of<span class="w"> </span>websites.<span class="o">)</span>
+-D<span class="w"> </span>remote-debug<span class="w">  </span><span class="o">(</span>Sync<span class="w"> </span>to<span class="w"> </span>Ch-R-Debugger<span class="w"> </span>chrome://inspect/#devices<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">server</span><span class="o">=</span>SERVER<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>server/IP<span class="w"> </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>tests.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">port</span><span class="o">=</span>PORT<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>port<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span><span class="nb">test</span><span class="w"> </span>server.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="o">(</span>Connect<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>proxy<span class="w"> </span>server:port<span class="w"> </span><span class="k">for</span><span class="w"> </span>tests.<span class="o">)</span>
+-D<span class="w"> </span><span class="nv">proxy</span><span class="o">=</span>USER:PASS@SERVER:PORT<span class="w">  </span><span class="o">(</span>Use<span class="w"> </span>authenticated<span class="w"> </span>proxy<span class="w"> </span>server.<span class="o">)</span>
 
-For the full list of command-line options, type: <span class="s2">&quot;behave --help&quot;</span>.
+For<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>command-line<span class="w"> </span>options,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;behave --help&quot;</span>.
 </code></pre></div>
 <h3>gui / commander</h3>
 
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase gui <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
-sbase commander <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>gui<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
+sbase<span class="w"> </span>commander<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
 </code></pre></div>
 <h3>behave-gui</h3>
 
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase behave-gui <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
-sbase gui-behave <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>behave-gui<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
+sbase<span class="w"> </span>gui-behave<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Examples:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase behave-gui
-sbase behave-gui -i<span class="o">=</span>calculator
-sbase behave-gui features/
-sbase behave-gui features/calculator.feature
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>behave-gui
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>-i<span class="o">=</span>calculator
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/calculator.feature
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -1942,16 +1944,16 @@ sbase behave-gui features/calculator.feature
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase caseplans <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>caseplans<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Examples:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase caseplans
-sbase caseplans -k agent
-sbase caseplans -m marker2
-sbase caseplans test_suite.py
-sbase caseplans offline_examples/
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>caseplans
+sbase<span class="w"> </span>caseplans<span class="w"> </span>-k<span class="w"> </span>agent
+sbase<span class="w"> </span>caseplans<span class="w"> </span>-m<span class="w"> </span>marker2
+sbase<span class="w"> </span>caseplans<span class="w"> </span>test_suite.py
+sbase<span class="w"> </span>caseplans<span class="w"> </span>offline_examples/
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -1962,12 +1964,12 @@ sbase caseplans offline_examples/
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkdir <span class="o">[</span>DIRECTORY<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkdir<span class="w"> </span><span class="o">[</span>DIRECTORY<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkdir ui_tests
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkdir<span class="w"> </span>ui_tests
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -1982,45 +1984,45 @@ sample tests for helping new users get started,
 and Python boilerplates for setting up customized
 test frameworks.</p>
 <div class="highlight"><pre><span></span><code>ui_tests/
-├── __init__.py
-├── my_first_test.py
-├── parameterized_test.py
-├── pytest.ini
-├── requirements.txt
-├── setup.cfg
-├── test_demo_site.py
-└── boilerplates/
-    ├── __init__.py
-    ├── base_test_case.py
-    ├── boilerplate_test.py
-    ├── classic_obj_test.py
-    ├── page_objects.py
-    ├── sb_fixture_test.py
-    └── samples/
-        ├── __init__.py
-        ├── google_objects.py
-        ├── google_test.py
-        ├── sb_swag_test.py
-        └── swag_labs_test.py
+├──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>my_first_test.py
+├──<span class="w"> </span>parameterized_test.py
+├──<span class="w"> </span>pytest.ini
+├──<span class="w"> </span>requirements.txt
+├──<span class="w"> </span>setup.cfg
+├──<span class="w"> </span>test_demo_site.py
+└──<span class="w"> </span>boilerplates/
+<span class="w">    </span>├──<span class="w"> </span>__init__.py
+<span class="w">    </span>├──<span class="w"> </span>base_test_case.py
+<span class="w">    </span>├──<span class="w"> </span>boilerplate_test.py
+<span class="w">    </span>├──<span class="w"> </span>classic_obj_test.py
+<span class="w">    </span>├──<span class="w"> </span>page_objects.py
+<span class="w">    </span>├──<span class="w"> </span>sb_fixture_test.py
+<span class="w">    </span>└──<span class="w"> </span>samples/
+<span class="w">        </span>├──<span class="w"> </span>__init__.py
+<span class="w">        </span>├──<span class="w"> </span>google_objects.py
+<span class="w">        </span>├──<span class="w"> </span>google_test.py
+<span class="w">        </span>├──<span class="w"> </span>sb_swag_test.py
+<span class="w">        </span>└──<span class="w"> </span>swag_labs_test.py
 </code></pre></div>
 <p>If running with the <code>-b</code> or <code>--basic</code> option:</p>
 <div class="highlight"><pre><span></span><code>ui_tests/
-├── __init__.py
-├── pytest.ini
-├── requirements.txt
-└── setup.cfg
+├──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>pytest.ini
+├──<span class="w"> </span>requirements.txt
+└──<span class="w"> </span>setup.cfg
 </code></pre></div>
 <h3>mkfile</h3>
 
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkfile <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkfile<span class="w"> </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkfile new_test.py
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkfile<span class="w"> </span>new_test.py
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2051,16 +2053,16 @@ is included.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkrec <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-sbase codegen <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkrec<span class="w"> </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+sbase<span class="w"> </span>codegen<span class="w"> </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Examples:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkrec new_test.py
-sbase mkrec new_test.py --url<span class="o">=</span>seleniumbase.io
-sbase codegen new_test.py
-sbase codegen new_test.py --url<span class="o">=</span>wikipedia.org
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkrec<span class="w"> </span>new_test.py
+sbase<span class="w"> </span>mkrec<span class="w"> </span>new_test.py<span class="w"> </span>--url<span class="o">=</span>seleniumbase.io
+sbase<span class="w"> </span>codegen<span class="w"> </span>new_test.py
+sbase<span class="w"> </span>codegen<span class="w"> </span>new_test.py<span class="w"> </span>--url<span class="o">=</span>wikipedia.org
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2081,7 +2083,7 @@ If the filename already exists, an error is raised.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase recorder <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>recorder<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2097,12 +2099,12 @@ If the filename already exists, an error is raised.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkpres <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkpres<span class="w"> </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkpres new_presentation.py --en
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkpres<span class="w"> </span>new_presentation.py<span class="w"> </span>--en
 </code></pre></div>
 <ul>
 <li>Language Options:</li>
@@ -2125,12 +2127,12 @@ The slides can be used as a basic boilerplate.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkchart <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkchart<span class="w"> </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase mkchart new_chart.py --en
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkchart<span class="w"> </span>new_chart.py<span class="w"> </span>--en
 </code></pre></div>
 <ul>
 <li>Language Options:</li>
@@ -2153,7 +2155,7 @@ The chart can be used as a basic boilerplate.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase print <span class="o">[</span>FILE<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>print<span class="w"> </span><span class="o">[</span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2169,7 +2171,7 @@ with syntax-highlighting.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase translate <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>LANGUAGE<span class="o">]</span> <span class="o">[</span>ACTION<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>translate<span class="w"> </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANGUAGE<span class="o">]</span><span class="w"> </span><span class="o">[</span>ACTION<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Languages:</li>
@@ -2206,7 +2208,7 @@ plus the 2-letter language code of the new language.
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase extract-objects <span class="o">[</span>SB_FILE.py<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>extract-objects<span class="w"> </span><span class="o">[</span>SB_FILE.py<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -2219,7 +2221,7 @@ seleniumbase Python file and saves those objects to the
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase inject-objects <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>inject-objects<span class="w"> </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2236,7 +2238,7 @@ the selected seleniumbase Python file.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase objectify <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>objectify<span class="w"> </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2255,7 +2257,7 @@ have been replaced with variable names defined in
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase revert-objects <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>revert-objects<span class="w"> </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2273,7 +2275,7 @@ selectors stored in the "page_objects.py" file.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase convert <span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>convert<span class="w"> </span><span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -2310,7 +2312,7 @@ See <a href="https://seleniumbase.io/seleniumbase/utilities/selenium_ide/ReadMe/
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase download server
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>download<span class="w"> </span>server
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -2322,7 +2324,7 @@ See <a href="https://seleniumbase.io/seleniumbase/utilities/selenium_ide/ReadMe/
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase grid-hub <span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>grid-hub<span class="w"> </span><span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2342,7 +2344,7 @@ You can start, restart, or stop the Grid Hub server.</p>
 <ul>
 <li>Usage:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sbase grid-node <span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>grid-node<span class="w"> </span><span class="o">{</span>start<span class="p">|</span>stop<span class="p">|</span>restart<span class="o">}</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -2382,44 +2384,6 @@ You can start, restart, or stop the Grid node.</p>
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../../help_docs/customizing_test_runs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🎛️ Command Line Options" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              🎛️ Command Line Options
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../examples/example_logs/ReadMe/" class="md-footer__link md-footer__link--next" aria-label="Next: 📊 Dashboard / Reports" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              📊 Dashboard / Reports
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2445,12 +2409,11 @@ You can start, restart, or stop the Grid node.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

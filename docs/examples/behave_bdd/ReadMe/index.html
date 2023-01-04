@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/examples/behave_bdd/ReadMe/">
       
+      
+        <link rel="prev" href="../../../help_docs/verify_webdriver/">
+      
+      
+        <link rel="next" href="../../../help_docs/behave_gui/">
+      
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1730,79 +1731,80 @@
                   
 
 
+
   <h1>🐝 Behave-BDD ReadMe</h1>
 
 <h2 id="behave-test-runner-for-seleniumbase"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> 🐝 Behave test runner for SeleniumBase 🐝<a class="headerlink" href="#behave-test-runner-for-seleniumbase" title="Permanent link">&para;</a></h2>
 <p>🐝 (Utilizes the <a href="https://github.com/behave/behave">Behave BDD Python library</a>. For more info, see the <a href="https://behave.readthedocs.io/en/stable/tutorial.html">Behave tutorial</a> and read about <a href="https://behave.readthedocs.io/en/stable/gherkin.html">Behave's Gherkin model</a>.)</p>
 <p>🐝 Behave examples with SeleniumBase: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/behave_bdd">SeleniumBase/examples/behave_bdd</a></p>
-<div class="highlight"><pre><span></span><code>&gt; <span class="nb">cd</span> examples/behave_bdd/
-&gt; behave features/realworld.feature -T -D dashboard -k
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examples/behave_bdd/
+&gt;<span class="w"> </span>behave<span class="w"> </span>features/realworld.feature<span class="w"> </span>-T<span class="w"> </span>-D<span class="w"> </span>dashboard<span class="w"> </span>-k
 
-Dashboard: /Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
+Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
 ********************************************************************************
-Feature: SeleniumBase scenarios <span class="k">for</span> the RealWorld App <span class="c1"># features/realworld.feature:1</span>
+Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>RealWorld<span class="w"> </span>App<span class="w"> </span><span class="c1"># features/realworld.feature:1</span>
 
-  Scenario: Verify RealWorld App <span class="o">(</span>log <span class="k">in</span> / sign out<span class="o">)</span>  <span class="c1"># features/realworld.feature:3</span>
-    Given Open <span class="s2">&quot;seleniumbase.io/realworld/login&quot;</span>      <span class="c1"># ../../sbase/steps.py:10</span>
-    And Clear Session Storage                         <span class="c1"># ../../sbase/steps.py:391</span>
-    When Type <span class="s2">&quot;demo_user&quot;</span> into <span class="s2">&quot;#username&quot;</span>            <span class="c1"># ../../sbase/steps.py:28</span>
-    And Type <span class="s2">&quot;secret_pass&quot;</span> into <span class="s2">&quot;#password&quot;</span>           <span class="c1"># ../../sbase/steps.py:28</span>
-    And Do MFA <span class="s2">&quot;GAXG2MTEOR3DMMDG&quot;</span> into <span class="s2">&quot;#totpcode&quot;</span>    <span class="c1"># ../../sbase/steps.py:194</span>
-    Then Assert exact text <span class="s2">&quot;Welcome!&quot;</span> <span class="k">in</span> <span class="s2">&quot;h1&quot;</span>         <span class="c1"># ../../sbase/steps.py:85</span>
-    And Highlight <span class="s2">&quot;img#image1&quot;</span>                        <span class="c1"># ../../sbase/steps.py:95</span>
-    And Click <span class="s1">&#39;a:contains(&quot;This Page&quot;)&#39;</span>               <span class="c1"># ../../sbase/steps.py:19</span>
-    And Save screenshot to logs                       <span class="c1"># ../../sbase/steps.py:120</span>
-    When Click link <span class="s2">&quot;Sign out&quot;</span>                        <span class="c1"># ../../sbase/steps.py:104</span>
-    Then Assert element <span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span>       <span class="c1"># ../../sbase/steps.py:60</span>
-    And Assert text <span class="s2">&quot;You have been signed out!&quot;</span>       <span class="c1"># ../../sbase/steps.py:77</span>
-   ✅ Scenario Passed!
+<span class="w">  </span>Scenario:<span class="w"> </span>Verify<span class="w"> </span>RealWorld<span class="w"> </span>App<span class="w"> </span><span class="o">(</span>log<span class="w"> </span><span class="k">in</span><span class="w"> </span>/<span class="w"> </span>sign<span class="w"> </span>out<span class="o">)</span><span class="w">  </span><span class="c1"># features/realworld.feature:3</span>
+<span class="w">    </span>Given<span class="w"> </span>Open<span class="w"> </span><span class="s2">&quot;seleniumbase.io/realworld/login&quot;</span><span class="w">      </span><span class="c1"># ../../sbase/steps.py:10</span>
+<span class="w">    </span>And<span class="w"> </span>Clear<span class="w"> </span>Session<span class="w"> </span>Storage<span class="w">                         </span><span class="c1"># ../../sbase/steps.py:391</span>
+<span class="w">    </span>When<span class="w"> </span>Type<span class="w"> </span><span class="s2">&quot;demo_user&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#username&quot;</span><span class="w">            </span><span class="c1"># ../../sbase/steps.py:28</span>
+<span class="w">    </span>And<span class="w"> </span>Type<span class="w"> </span><span class="s2">&quot;secret_pass&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#password&quot;</span><span class="w">           </span><span class="c1"># ../../sbase/steps.py:28</span>
+<span class="w">    </span>And<span class="w"> </span>Do<span class="w"> </span>MFA<span class="w"> </span><span class="s2">&quot;GAXG2MTEOR3DMMDG&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#totpcode&quot;</span><span class="w">    </span><span class="c1"># ../../sbase/steps.py:194</span>
+<span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>exact<span class="w"> </span>text<span class="w"> </span><span class="s2">&quot;Welcome!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="w">         </span><span class="c1"># ../../sbase/steps.py:85</span>
+<span class="w">    </span>And<span class="w"> </span>Highlight<span class="w"> </span><span class="s2">&quot;img#image1&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:95</span>
+<span class="w">    </span>And<span class="w"> </span>Click<span class="w"> </span><span class="s1">&#39;a:contains(&quot;This Page&quot;)&#39;</span><span class="w">               </span><span class="c1"># ../../sbase/steps.py:19</span>
+<span class="w">    </span>And<span class="w"> </span>Save<span class="w"> </span>screenshot<span class="w"> </span>to<span class="w"> </span>logs<span class="w">                       </span><span class="c1"># ../../sbase/steps.py:120</span>
+<span class="w">    </span>When<span class="w"> </span>Click<span class="w"> </span>link<span class="w"> </span><span class="s2">&quot;Sign out&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:104</span>
+<span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>element<span class="w"> </span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:60</span>
+<span class="w">    </span>And<span class="w"> </span>Assert<span class="w"> </span>text<span class="w"> </span><span class="s2">&quot;You have been signed out!&quot;</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:77</span>
+<span class="w">   </span>✅<span class="w"> </span>Scenario<span class="w"> </span>Passed!
 
-- Dashboard: /Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
+-<span class="w"> </span>Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
 <span class="o">==================================================================================</span>
-<span class="m">1</span> feature passed, <span class="m">0</span> failed, <span class="m">0</span> skipped
-<span class="m">1</span> scenario passed, <span class="m">0</span> failed, <span class="m">0</span> skipped
-<span class="m">12</span> steps passed, <span class="m">0</span> failed, <span class="m">0</span> skipped, <span class="m">0</span> undefined
-Took 0m4.682s
+<span class="m">1</span><span class="w"> </span>feature<span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>skipped
+<span class="m">1</span><span class="w"> </span>scenario<span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>skipped
+<span class="m">12</span><span class="w"> </span>steps<span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>skipped,<span class="w"> </span><span class="m">0</span><span class="w"> </span>undefined
+Took<span class="w"> </span>0m4.682s
 </code></pre></div>
 <p>🐝 Another example, which uses higher-level Behave steps to simplify the <code>.feature</code> file:</p>
-<div class="highlight"><pre><span></span><code>&gt; <span class="nb">cd</span> examples/behave_bdd/
-&gt; behave features/calculator.feature:61 -T -D dashboard -k
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examples/behave_bdd/
+&gt;<span class="w"> </span>behave<span class="w"> </span>features/calculator.feature:61<span class="w"> </span>-T<span class="w"> </span>-D<span class="w"> </span>dashboard<span class="w"> </span>-k
 
-Dashboard: /Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
+Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
 ********************************************************************************
-Feature: SeleniumBase scenarios <span class="k">for</span> the Calculator App <span class="c1"># features/calculator.feature:1</span>
+Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>Calculator<span class="w"> </span>App<span class="w"> </span><span class="c1"># features/calculator.feature:1</span>
 
-  Background:   <span class="c1"># features/calculator.feature:3</span>
+<span class="w">  </span>Background:<span class="w">   </span><span class="c1"># features/calculator.feature:3</span>
 
-  Scenario: <span class="m">7</span>.0 × <span class="o">(</span><span class="m">3</span> + <span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">42</span>        <span class="c1"># features/calculator.feature:49</span>
-    Given Open the Calculator App     <span class="c1"># features/steps/calculator.py:4</span>
-    When Press C                      <span class="c1"># features/steps/calculator.py:9</span>
-    And Press <span class="m">7</span>                       <span class="c1"># features/steps/calculator.py:79</span>
-    And Press .                       <span class="c1"># features/steps/calculator.py:104</span>
-    And Press <span class="m">0</span>                       <span class="c1"># features/steps/calculator.py:94</span>
-    And Press ×                       <span class="c1"># features/steps/calculator.py:29</span>
-    And Press <span class="o">(</span>                       <span class="c1"># features/steps/calculator.py:14</span>
-    And Press <span class="m">3</span>                       <span class="c1"># features/steps/calculator.py:59</span>
-    And Press +                       <span class="c1"># features/steps/calculator.py:39</span>
-    And Press <span class="m">3</span>                       <span class="c1"># features/steps/calculator.py:59</span>
-    And Press <span class="o">)</span>                       <span class="c1"># features/steps/calculator.py:19</span>
-    Then Verify output is <span class="s2">&quot;7.0×(3+3)&quot;</span> <span class="c1"># features/steps/calculator.py:135</span>
-    When <span class="nv">Press</span> <span class="o">=</span>                      <span class="c1"># features/steps/calculator.py:44</span>
-    Then Verify output is <span class="s2">&quot;42&quot;</span>        <span class="c1"># features/steps/calculator.py:135</span>
-   ✅ Scenario Passed!
+<span class="w">  </span>Scenario:<span class="w"> </span><span class="m">7</span>.0<span class="w"> </span>×<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="w"> </span>+<span class="w"> </span><span class="m">3</span><span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">42</span><span class="w">        </span><span class="c1"># features/calculator.feature:49</span>
+<span class="w">    </span>Given<span class="w"> </span>Open<span class="w"> </span>the<span class="w"> </span>Calculator<span class="w"> </span>App<span class="w">     </span><span class="c1"># features/steps/calculator.py:4</span>
+<span class="w">    </span>When<span class="w"> </span>Press<span class="w"> </span>C<span class="w">                      </span><span class="c1"># features/steps/calculator.py:9</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="m">7</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:79</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span>.<span class="w">                       </span><span class="c1"># features/steps/calculator.py:104</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="m">0</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:94</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span>×<span class="w">                       </span><span class="c1"># features/steps/calculator.py:29</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="o">(</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:14</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="m">3</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:59</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span>+<span class="w">                       </span><span class="c1"># features/steps/calculator.py:39</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="m">3</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:59</span>
+<span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="o">)</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:19</span>
+<span class="w">    </span>Then<span class="w"> </span>Verify<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;7.0×(3+3)&quot;</span><span class="w"> </span><span class="c1"># features/steps/calculator.py:135</span>
+<span class="w">    </span>When<span class="w"> </span><span class="nv">Press</span><span class="w"> </span><span class="o">=</span><span class="w">                      </span><span class="c1"># features/steps/calculator.py:44</span>
+<span class="w">    </span>Then<span class="w"> </span>Verify<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;42&quot;</span><span class="w">        </span><span class="c1"># features/steps/calculator.py:135</span>
+<span class="w">   </span>✅<span class="w"> </span>Scenario<span class="w"> </span>Passed!
 
-- Dashboard: /Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
+-<span class="w"> </span>Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
 <span class="o">==================================================================================</span>
-<span class="m">1</span> feature passed, <span class="m">0</span> failed, <span class="m">0</span> skipped
-<span class="m">1</span> scenario passed, <span class="m">0</span> failed, <span class="m">8</span> skipped
-<span class="m">14</span> steps passed, <span class="m">0</span> failed, <span class="m">60</span> skipped, <span class="m">0</span> undefined
-Took 0m1.672s
+<span class="m">1</span><span class="w"> </span>feature<span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>skipped
+<span class="m">1</span><span class="w"> </span>scenario<span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">8</span><span class="w"> </span>skipped
+<span class="m">14</span><span class="w"> </span>steps<span class="w"> </span>passed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">60</span><span class="w"> </span>skipped,<span class="w"> </span><span class="m">0</span><span class="w"> </span>undefined
+Took<span class="w"> </span>0m1.672s
 </code></pre></div>
 <p>🐝⚪ With the Dashboard enabled, you'll get one of these:</p>
 <p><img src="https://seleniumbase.github.io/cdn/img/sb_behave_dashboard.png" title="SeleniumBase" width="600"></p>
 <h3 id="behave-gherkin-files">🐝 Behave-Gherkin files<a class="headerlink" href="#behave-gherkin-files" title="Permanent link">&para;</a></h3>
 <p>🐝 The <code>*.feature</code> files can use any step seen from:</p>
-<div class="highlight"><pre><span></span><code>behave --steps-catalog
+<div class="highlight"><pre><span></span><code>behave<span class="w"> </span>--steps-catalog
 </code></pre></div>
 <p>🐝 SeleniumBase includes several pre-made Behave steps, which you can use by creating a Python file with the following line in your <code>features/steps/</code> directory:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.behave</span> <span class="kn">import</span> <span class="n">steps</span>  <span class="c1"># noqa</span>
@@ -1855,24 +1857,24 @@ Took 0m1.672s
 <p>🐝 A <code>*.feature</code> file could look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> SeleniumBase scenarios for the Swag Labs App</span>
 
-<span class="nf">  </span><span class="k">Background:</span><span class="nf"></span>
+<span class="nf">  </span><span class="k">Background:</span>
 <span class="k">    Given </span><span class="nf">Open the Swag Labs Login Page</span>
 
 <span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> User can order a backpack from the store</span>
 <span class="k">    When </span><span class="nf">Login to Swag Labs with standard_user</span>
 <span class="nf">    </span><span class="k">Then </span><span class="nf">Verify that the current user is logged in</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Save price of &quot;</span><span class="s">Backpack</span><span class="nf">&quot; to </span><span class="nv">&lt;item_price&gt;</span><span class="nf"></span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Save price of &quot;</span><span class="s">Backpack</span><span class="nf">&quot; to </span><span class="nv">&lt;item_price&gt;</span>
 <span class="nf">    </span><span class="k">When </span><span class="nf">Add &quot;</span><span class="s">Backpack</span><span class="nf">&quot; to Cart</span>
 <span class="nf">    </span><span class="k">Then </span><span class="nf">Verify shopping cart badge shows </span><span class="s">1</span><span class="nf"> item(s)</span>
 <span class="nf">    </span><span class="k">When </span><span class="nf">Click on shopping cart icon</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Click Checkout</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Enter checkout info: First, Last, </span><span class="s">12345</span><span class="nf"></span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Enter checkout info: First, Last, </span><span class="s">12345</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Click Continue</span>
 <span class="nf">    </span><span class="k">Then </span><span class="nf">Verify </span><span class="s">1</span><span class="nf"> &quot;</span><span class="s">Backpack</span><span class="nf">&quot;(s) in cart</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Verify cost of &quot;</span><span class="s">Backpack</span><span class="nf">&quot; is </span><span class="nv">&lt;item_price&gt;</span><span class="nf"></span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Verify item total is $</span><span class="s">29.99</span><span class="nf"></span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Verify tax amount is $</span><span class="s">2.40</span><span class="nf"></span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Verify total cost is $</span><span class="s">32.39</span><span class="nf"></span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Verify cost of &quot;</span><span class="s">Backpack</span><span class="nf">&quot; is </span><span class="nv">&lt;item_price&gt;</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Verify item total is $</span><span class="s">29.99</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Verify tax amount is $</span><span class="s">2.40</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Verify total cost is $</span><span class="s">32.39</span>
 <span class="nf">    </span><span class="k">When </span><span class="nf">Click Finish</span>
 <span class="nf">    </span><span class="k">Then </span><span class="nf">Verify order complete</span>
 <span class="nf">    </span><span class="k">When </span><span class="nf">Logout from Swag Labs</span>
@@ -1896,30 +1898,30 @@ Took 0m1.672s
 <span class="nf">    </span><span class="k">And </span><span class="nf">Assert text &quot;</span><span class="s">You have been signed out!</span><span class="nf">&quot;</span>
 </code></pre></div>
 <p>🐝 If there's a test failure, that's easy to spot:</p>
-<div class="highlight"><pre><span></span><code>Feature: SeleniumBase scenarios <span class="k">for</span> the Fail Page <span class="c1"># features/fail_page.feature:1</span>
+<div class="highlight"><pre><span></span><code>Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>Fail<span class="w"> </span>Page<span class="w"> </span><span class="c1"># features/fail_page.feature:1</span>
 
-  Scenario: Fail <span class="nb">test</span> on purpose to see what happens  <span class="c1"># features/fail_page.feature:3</span>
-    When Open the Fail Page                           <span class="c1"># features/steps/fail_page.py:4</span>
-    Then Fail <span class="nb">test</span> on purpose                         <span class="c1"># features/steps/fail_page.py:9</span>
-      Assertion Failed: This <span class="nb">test</span> fails on purpose!
-      Captured stdout:
-      &gt;&gt;&gt; STEP FAILED:  <span class="o">(</span><span class="c1">#2) Fail test on purpose</span>
-      Class / Feature:  SeleniumBase scenarios <span class="k">for</span> the Fail Page
-      Test / Scenario:  Fail <span class="nb">test</span> on purpose to see what happens
+<span class="w">  </span>Scenario:<span class="w"> </span>Fail<span class="w"> </span><span class="nb">test</span><span class="w"> </span>on<span class="w"> </span>purpose<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>what<span class="w"> </span>happens<span class="w">  </span><span class="c1"># features/fail_page.feature:3</span>
+<span class="w">    </span>When<span class="w"> </span>Open<span class="w"> </span>the<span class="w"> </span>Fail<span class="w"> </span>Page<span class="w">                           </span><span class="c1"># features/steps/fail_page.py:4</span>
+<span class="w">    </span>Then<span class="w"> </span>Fail<span class="w"> </span><span class="nb">test</span><span class="w"> </span>on<span class="w"> </span>purpose<span class="w">                         </span><span class="c1"># features/steps/fail_page.py:9</span>
+<span class="w">      </span>Assertion<span class="w"> </span>Failed:<span class="w"> </span>This<span class="w"> </span><span class="nb">test</span><span class="w"> </span>fails<span class="w"> </span>on<span class="w"> </span>purpose!
+<span class="w">      </span>Captured<span class="w"> </span>stdout:
+<span class="w">      </span>&gt;&gt;&gt;<span class="w"> </span>STEP<span class="w"> </span>FAILED:<span class="w">  </span><span class="o">(</span><span class="c1">#2) Fail test on purpose</span>
+<span class="w">      </span>Class<span class="w"> </span>/<span class="w"> </span>Feature:<span class="w">  </span>SeleniumBase<span class="w"> </span>scenarios<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>Fail<span class="w"> </span>Page
+<span class="w">      </span>Test<span class="w"> </span>/<span class="w"> </span>Scenario:<span class="w">  </span>Fail<span class="w"> </span><span class="nb">test</span><span class="w"> </span>on<span class="w"> </span>purpose<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>what<span class="w"> </span>happens
 
-   ❌ Scenario Failed!
+<span class="w">   </span>❌<span class="w"> </span>Scenario<span class="w"> </span>Failed!
 </code></pre></div>
 <p>🐝🎖️ For convenience, the <a href="../../../help_docs/behave_gui/">SeleniumBase Behave GUI</a> lets you run <code>behave</code> scripts from a Desktop app.</p>
 <p>🐝🎖️ To launch it, call <code>sbase behave-gui</code> or <code>sbase gui-behave</code>:</p>
-<div class="highlight"><pre><span></span><code>sbase behave-gui
-* Starting the SeleniumBase Behave Commander GUI App...
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>behave-gui
+*<span class="w"> </span>Starting<span class="w"> </span>the<span class="w"> </span>SeleniumBase<span class="w"> </span>Behave<span class="w"> </span>Commander<span class="w"> </span>GUI<span class="w"> </span>App...
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/sbase_behave_gui_wide_5.png" title="SeleniumBase" width="600"></p>
 <p>🐝🎖️ You can customize the tests that show up there:</p>
-<div class="highlight"><pre><span></span><code>sbase behave-gui  <span class="c1"># all tests</span>
-sbase behave-gui -i<span class="o">=</span>calculator  <span class="c1"># tests with &quot;calculator&quot; in the name</span>
-sbase behave-gui features/  <span class="c1"># tests located in the &quot;features/&quot; folder</span>
-sbase behave-gui features/calculator.feature  <span class="c1"># tests in that feature</span>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>behave-gui<span class="w">  </span><span class="c1"># all tests</span>
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>-i<span class="o">=</span>calculator<span class="w">  </span><span class="c1"># tests with &quot;calculator&quot; in the name</span>
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/<span class="w">  </span><span class="c1"># tests located in the &quot;features/&quot; folder</span>
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/calculator.feature<span class="w">  </span><span class="c1"># tests in that feature</span>
 </code></pre></div>
 <hr />
 <div>To learn more about SeleniumBase, check out the Docs Site:</div>
@@ -1953,44 +1955,6 @@ sbase behave-gui features/calculator.feature  <span class="c1"># tests in that f
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../../help_docs/verify_webdriver/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ✔️ Verifying WebDriver" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              ✔️ Verifying WebDriver
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../help_docs/behave_gui/" class="md-footer__link md-footer__link--next" aria-label="Next: 🐝 Behave-BDD GUI App" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              🐝 Behave-BDD GUI App
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2016,12 +1980,11 @@ sbase behave-gui features/calculator.feature  <span class="c1"># tests in that f
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

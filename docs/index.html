@@ -14,8 +14,12 @@
       
         <link rel="canonical" href="https://seleniumbase.io/">
       
+      
+      
+        <link rel="next" href="help_docs/features_list/">
+      
       <link rel="icon" href="img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1653,7 +1652,6 @@
                   
 
 
-  <h1>✅ SeleniumBase README</h1>
 
 <p><meta property="og:site_name" content="SeleniumBase">
 <meta property="og:title" content="SeleniumBase: Python Web Automation and E2E Testing" />
@@ -1661,9 +1659,9 @@
 <meta property="og:keywords" content="Python, pytest, selenium, webdriver, testing, automation, seleniumbase, framework, dashboard, recorder, reports, screenshots">
 <meta property="og:image" content="https://seleniumbase.github.io/cdn/img/mac_sb_logo_5b.png" />
 <link rel="icon" href="https://seleniumbase.github.io/img/logo7.png" /></p>
-<h3 align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.io/cdn/img/mac_sb_logo_b.png" alt="SeleniumBase" title="SeleniumBase" width="408" /></a></h3>
+<h3 align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.io/cdn/img/sb_logo_10t.png" alt="SeleniumBase" title="SeleniumBase" width="350" /></a></h3>
 
-<h2 align="center">SeleniumBase: Enterprise Python Web Testing</h2>
+<h2 align="center">Python Web UI Testing Framework</h2>
 
 <p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/releases" target="_blank"><img src="https://img.shields.io/github/v/release/seleniumbase/SeleniumBase.svg?color=22AAEE" alt="GitHub version" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/CI%20build/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" alt="SeleniumBase" /></a></p>
 
@@ -1678,7 +1676,7 @@
 <a href="help_docs/method_summary/">📘 APIs</a> |
 <a href="help_docs/syntax_formats/"> 🔡 Formats</a> |
 <a href="examples/example_logs/ReadMe/">📊 Dashboard</a> |
-<a href="help_docs/recorder_mode/">⏺️ Recorder</a> |
+<a href="help_docs/recorder_mode/">🔴 Recorder</a> |
 <a href="help_docs/locale_codes/">🗾 Locales</a> |
 <a href="seleniumbase/utilities/selenium_grid/ReadMe/">🌐 Grid</a>
 <br />
@@ -1707,18 +1705,37 @@
 
 <hr />
 <p><a id="multiple_examples"></a></p>
-<p align="left"><b>Example:</b> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py" target="_blank">test_coffee_cart.py</a> from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples" target="_blank">SeleniumBase/examples/</a></p>
+<p align="left"><b>Example:</b> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py" target="_blank">test_coffee_cart.py</a> from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples" target="_blank">./examples/</a></p>
 
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/
-pytest test_coffee_cart.py --demo
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
+pytest<span class="w"> </span>test_coffee_cart.py<span class="w"> </span>--demo
 </code></pre></div>
-<p>(<code>--demo</code> slows the test with highlighting for better visibility.)</p>
+<p>(<code>--demo</code> mode slows down tests and highlights actions)</p>
 
 <p align="left"><a href="https://seleniumbase.io/demo_page" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/coffee_cart.gif" width="480" alt="SeleniumBase Example" title="SeleniumBase Example" /></a></p>
 
+<ul>
+<li>Here's a preview of that test:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+
+<span class="k">class</span> <span class="nc">CoffeeCartTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_coffee_cart</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/coffee/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div[data-sb=&quot;Cappuccino&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div[data-sb=&quot;Flat-White&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div[data-sb=&quot;Cafe-Latte&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[aria-label=&quot;Cart page&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Total: $53.00&quot;</span><span class="p">,</span> <span class="s2">&quot;button.pay&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button.pay&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#name&quot;</span><span class="p">,</span> <span class="s2">&quot;Selenium Coffee&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#email&quot;</span><span class="p">,</span> <span class="s2">&quot;test@test.test&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#submit-payment&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Thanks for your purchase.&quot;</span><span class="p">,</span> <span class="s2">&quot;#app&quot;</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <details>
-<summary> ▶️ How is SeleniumBase different from raw Selenium? (<b>click to expand</b>)</summary>
+<summary> ▶️ How is <b>SeleniumBase</b> different from raw Selenium? (<b>click to expand</b>)</summary>
 <div>
 
 <p>💡 SeleniumBase is a Python framework for browser automation and testing. SeleniumBase uses <a href="https://www.w3.org/TR/webdriver2/#endpoints" target="_blank">Selenium/WebDriver</a> APIs, and incorporates test-runners such as <code>pytest</code>, <code>nosetests</code>, and <code>behave</code> to provide organized structure, test discovery, test execution, test state (<i>eg. passed, failed, or skipped</i>), and command-line options for changing default settings (<i>such as choosing the browser to use</i>). With raw Selenium, you would need to set up your own options-parser for configuring tests from the command-line.</p>
@@ -1822,16 +1839,16 @@ pytest test_coffee_cart.py --demo
 
 <p><strong>You can install <code>seleniumbase</code> from <a href="https://github.com/seleniumbase/SeleniumBase">GitHub</a> or <a href="https://pypi.org/project/seleniumbase/">PyPI</a>:</strong></p>
 <p>🔵 <strong>Installing <code>seleniumbase</code> from a GitHub clone:</strong></p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/seleniumbase/SeleniumBase.git
-<span class="nb">cd</span> SeleniumBase/
-pip install -e .
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
+<span class="nb">cd</span><span class="w"> </span>SeleniumBase/
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
 <p><strong>To upgrade an existing install from a GitHub clone:</strong></p>
-<div class="highlight"><pre><span></span><code>git pull
-pip install -e .
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
 <p>🔵 <strong>Installing <code>seleniumbase</code> from PyPI:</strong></p>
-<div class="highlight"><pre><span></span><code>pip install seleniumbase
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
 </code></pre></div>
 <ul>
 <li>(Add <code>--upgrade</code> OR <code>-U</code> to upgrade SeleniumBase.)</li>
@@ -1839,51 +1856,51 @@ pip install -e .
 <li>(Use <code>pip3</code> if multiple versions of Python are present.)</li>
 </ul>
 <p><strong>To upgrade an existing install from PyPI:</strong></p>
-<div class="highlight"><pre><span></span><code>pip install -U seleniumbase
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>seleniumbase
 </code></pre></div>
 <p>🔵 Type <code>seleniumbase</code> or <code>sbase</code> to verify that SeleniumBase was installed successfully:</p>
-<div class="highlight"><pre><span></span><code>   ______     __           _                  ____                
-  / ____/__  / /__  ____  <span class="o">(</span>_<span class="o">)</span>_  ______ ___   / _  <span class="se">\_</span>___  ________ 
-  <span class="se">\_</span>_ <span class="se">\/</span> _ <span class="se">\/</span> / _ <span class="se">\/</span> __ <span class="se">\/</span> / / / / __ <span class="sb">`</span>__ <span class="se">\ </span>/ /_<span class="o">)</span> / __ <span class="se">\/</span> ___/ _ <span class="se">\</span>
- ___/ /  __/ /  __/ / / / / /_/ / / / / / // /_<span class="o">)</span> / <span class="o">(</span>_/ /__  /  __/
-/____/<span class="se">\_</span>__/_/<span class="se">\_</span>__/_/ /_/_/<span class="se">\_</span>_,_/_/ /_/ /_//_____/<span class="se">\_</span>_,_/____/<span class="se">\_</span>__/ 
+<div class="highlight"><pre><span></span><code><span class="w">   </span>______<span class="w">     </span>__<span class="w">           </span>_<span class="w">                  </span>____<span class="w">                </span>
+<span class="w">  </span>/<span class="w"> </span>____/__<span class="w">  </span>/<span class="w"> </span>/__<span class="w">  </span>____<span class="w">  </span><span class="o">(</span>_<span class="o">)</span>_<span class="w">  </span>______<span class="w"> </span>___<span class="w">   </span>/<span class="w"> </span>_<span class="w">  </span><span class="se">\_</span>___<span class="w">  </span>________<span class="w"> </span>
+<span class="w">  </span><span class="se">\_</span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>__<span class="w"> </span><span class="sb">`</span>__<span class="w"> </span><span class="se">\ </span>/<span class="w"> </span>/_<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>___/<span class="w"> </span>/<span class="w">  </span>__/<span class="w"> </span>/<span class="w">  </span>__/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/_/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>//<span class="w"> </span>/_<span class="o">)</span><span class="w"> </span>/<span class="w"> </span><span class="o">(</span>_/<span class="w"> </span>/__<span class="w">  </span>/<span class="w">  </span>__/
+/____/<span class="se">\_</span>__/_/<span class="se">\_</span>__/_/<span class="w"> </span>/_/_/<span class="se">\_</span>_,_/_/<span class="w"> </span>/_/<span class="w"> </span>/_//_____/<span class="se">\_</span>_,_/____/<span class="se">\_</span>__/<span class="w"> </span>
 ------------------------------------------------------------------
 
- * USAGE: <span class="s2">&quot;seleniumbase [COMMAND] [PARAMETERS]&quot;</span>
- *    OR:        <span class="s2">&quot;sbase [COMMAND] [PARAMETERS]&quot;</span>
+<span class="w"> </span>*<span class="w"> </span>USAGE:<span class="w"> </span><span class="s2">&quot;seleniumbase [COMMAND] [PARAMETERS]&quot;</span>
+<span class="w"> </span>*<span class="w">    </span>OR:<span class="w">        </span><span class="s2">&quot;sbase [COMMAND] [PARAMETERS]&quot;</span>
 
 COMMANDS:
-      get / install    <span class="o">[</span>DRIVER<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      methods          <span class="o">(</span>List common Python methods<span class="o">)</span>
-      options          <span class="o">(</span>List common pytest options<span class="o">)</span>
-      behave-options   <span class="o">(</span>List common behave options<span class="o">)</span>
-      gui / commander  <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
-      behave-gui       <span class="o">(</span>SBase Commander <span class="k">for</span> Behave<span class="o">)</span>
-      caseplans        <span class="o">[</span>OPTIONAL PATH or TEST FILE<span class="o">]</span>
-      mkdir            <span class="o">[</span>DIRECTORY<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      mkfile           <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      mkrec / codegen  <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      recorder         <span class="o">(</span>Open Recorder Desktop App.<span class="o">)</span>
-      record           <span class="o">(</span>If args: mkrec. Else: App.<span class="o">)</span>
-      mkpres           <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span>
-      mkchart          <span class="o">[</span>FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span>
-      print            <span class="o">[</span>FILE<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      translate        <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>LANG<span class="o">]</span> <span class="o">[</span>ACTION<span class="o">]</span>
-      convert          <span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
-      extract-objects  <span class="o">[</span>SB_FILE.py<span class="o">]</span>
-      inject-objects   <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      objectify        <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      revert-objects   <span class="o">[</span>SB_FILE.py<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      encrypt / obfuscate
-      decrypt / unobfuscate
-      download server  <span class="o">(</span>Get Selenium Grid JAR file<span class="o">)</span>
-      grid-hub         <span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span> <span class="o">[</span>OPTIONS<span class="o">]</span>
-      grid-node        <span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span> --hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
- * <span class="o">(</span>EXAMPLE: <span class="s2">&quot;sbase get chromedriver latest&quot;</span><span class="o">)</span> *
+<span class="w">      </span>get<span class="w"> </span>/<span class="w"> </span>install<span class="w">    </span><span class="o">[</span>DRIVER<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>methods<span class="w">          </span><span class="o">(</span>List<span class="w"> </span>common<span class="w"> </span>Python<span class="w"> </span>methods<span class="o">)</span>
+<span class="w">      </span>options<span class="w">          </span><span class="o">(</span>List<span class="w"> </span>common<span class="w"> </span>pytest<span class="w"> </span>options<span class="o">)</span>
+<span class="w">      </span>behave-options<span class="w">   </span><span class="o">(</span>List<span class="w"> </span>common<span class="w"> </span>behave<span class="w"> </span>options<span class="o">)</span>
+<span class="w">      </span>gui<span class="w"> </span>/<span class="w"> </span>commander<span class="w">  </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
+<span class="w">      </span>behave-gui<span class="w">       </span><span class="o">(</span>SBase<span class="w"> </span>Commander<span class="w"> </span><span class="k">for</span><span class="w"> </span>Behave<span class="o">)</span>
+<span class="w">      </span>caseplans<span class="w">        </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
+<span class="w">      </span>mkdir<span class="w">            </span><span class="o">[</span>DIRECTORY<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>mkfile<span class="w">           </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>mkrec<span class="w"> </span>/<span class="w"> </span>codegen<span class="w">  </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>recorder<span class="w">         </span><span class="o">(</span>Open<span class="w"> </span>Recorder<span class="w"> </span>Desktop<span class="w"> </span>App.<span class="o">)</span>
+<span class="w">      </span>record<span class="w">           </span><span class="o">(</span>If<span class="w"> </span>args:<span class="w"> </span>mkrec.<span class="w"> </span>Else:<span class="w"> </span>App.<span class="o">)</span>
+<span class="w">      </span>mkpres<span class="w">           </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span>
+<span class="w">      </span>mkchart<span class="w">          </span><span class="o">[</span>FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span>
+<span class="w">      </span>print<span class="w">            </span><span class="o">[</span>FILE<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>translate<span class="w">        </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>LANG<span class="o">]</span><span class="w"> </span><span class="o">[</span>ACTION<span class="o">]</span>
+<span class="w">      </span>convert<span class="w">          </span><span class="o">[</span>WEBDRIVER_UNITTEST_FILE.py<span class="o">]</span>
+<span class="w">      </span>extract-objects<span class="w">  </span><span class="o">[</span>SB_FILE.py<span class="o">]</span>
+<span class="w">      </span>inject-objects<span class="w">   </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>objectify<span class="w">        </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>revert-objects<span class="w">   </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>encrypt<span class="w"> </span>/<span class="w"> </span>obfuscate
+<span class="w">      </span>decrypt<span class="w"> </span>/<span class="w"> </span>unobfuscate
+<span class="w">      </span>download<span class="w"> </span>server<span class="w">  </span><span class="o">(</span>Get<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>JAR<span class="w"> </span>file<span class="o">)</span>
+<span class="w">      </span>grid-hub<span class="w">         </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w">      </span>grid-node<span class="w">        </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span>--hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
+<span class="w"> </span>*<span class="w"> </span><span class="o">(</span>EXAMPLE:<span class="w"> </span><span class="s2">&quot;sbase get chromedriver latest&quot;</span><span class="o">)</span><span class="w"> </span>*
 
-    Type <span class="s2">&quot;sbase help [COMMAND]&quot;</span> <span class="k">for</span> specific <span class="nb">command</span> info.
-    For info on all commands, type: <span class="s2">&quot;seleniumbase --help&quot;</span>.
-    Use <span class="s2">&quot;pytest&quot;</span> <span class="k">for</span> running tests.
+<span class="w">    </span>Type<span class="w"> </span><span class="s2">&quot;sbase help [COMMAND]&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>specific<span class="w"> </span><span class="nb">command</span><span class="w"> </span>info.
+<span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
+<span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Downloading web drivers:</h3>
 
@@ -1895,8 +1912,8 @@ COMMANDS:
 <p>🔵 If you've cloned SeleniumBase, you can run tests from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder.</p>
 <p align="left">Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</p>
 
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/
-pytest my_first_test.py
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
+pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <blockquote>
 <p>(Uses <code>--chrome</code> by default.)</p>
@@ -1984,9 +2001,9 @@ pytest my_first_test.py
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>SeleniumBase tests can be run with <code>pytest</code> or <code>nosetests</code>. (There's also a <a href="examples/behave_bdd/ReadMe/">behave BDD</a> format.)</p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --chrome
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--chrome
 
-nosetests test_suite.py --firefox
+nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--firefox
 </code></pre></div>
 <p>✅ <code>pytest</code> includes automatic test discovery. If you don't specify a specific file or folder to run, <code>pytest</code> will automatically search through all subdirectories for tests to run based on the following criteria:</p>
 
@@ -1997,13 +2014,13 @@ nosetests test_suite.py --firefox
 <p>With a SeleniumBase <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/pytest.ini">pytest.ini</a> file present, you can modify default discovery settings. The Python class name can be anything because <code>seleniumbase.BaseCase</code> inherits <code>unittest.TestCase</code>, which triggers autodiscovery.</p>
 <p>✅ You can do a pre-flight check to see which tests would get discovered by <code>pytest</code> before the real flight:</p>
 
-<div class="highlight"><pre><span></span><code>pytest --collect-only -q
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--collect-only<span class="w"> </span>-q
 </code></pre></div>
 <p>✅ You can be more specific when calling <code>pytest</code> on a file:</p>
 
-<div class="highlight"><pre><span></span><code>pytest <span class="o">[</span>FILE_NAME.py<span class="o">]</span>::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o">]</span>::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 
-nosetests <span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
+nosetests<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 </code></pre></div>
 <p>✅ No More Flaky Tests! SeleniumBase methods automatically wait for page elements to finish loading before interacting with them (<i>up to a timeout limit</i>). This means <b>you no longer need random <span><code>time.sleep()</code></span> statements</b> in your scripts.</p>
 <p><img src="https://img.shields.io/badge/Flaky%20Tests%3F-%20NO%21-11BBDD.svg" alt="NO MORE FLAKY TESTS!" /></p>
@@ -2023,7 +2040,7 @@ nosetests <span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span cla
 
 <p><a id="seleniumbase_demo_mode"></a>
 🔵 <b>Demo Mode</b> helps you see what a test is doing. If a test is moving too fast for your eyes, run it in <b>Demo Mode</b>, which pauses the browser briefly between actions, highlights page elements being acted on, and displays assertions:</p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --demo
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--demo
 </code></pre></div>
 <p>🔵 You can use the following calls in your scripts to help you debug issues:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
@@ -2031,118 +2048,118 @@ nosetests <span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span cla
 <span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 </code></pre></div>
 <p>🔵 To pause an active test that throws an exception or error, (<em>and keep the browser window open while </em><em>Debug Mode</em><em> begins in the console</em>), add <strong><code>--pdb</code></strong> as a <code>pytest</code> option:</p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --pdb
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--pdb
 </code></pre></div>
 <p>(<strong><code>pdb</code></strong> console commands: <code>n</code>, <code>c</code>, <code>s</code> =&gt; <code>next</code>, <code>continue</code>, <code>step</code>).</p>
 <p><a id="pytest_options"></a>
 🔵 Here are some useful command-line options that come with <code>pytest</code>:</p>
-<div class="highlight"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test and shows more details.</span>
--q  <span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
--x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
---html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
---collect-only <span class="p">|</span> --co  <span class="c1"># Show what tests would get run. (Without running them)</span>
--n<span class="o">=</span>NUM  <span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
--s  <span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
---junit-xml<span class="o">=</span>report.xml  <span class="c1"># Creates a junit-xml report after tests finish.</span>
---pdb  <span class="c1"># If a test fails, enter Post Mortem Debug Mode. (Don&#39;t use with CI!)</span>
---trace  <span class="c1"># Enter Debug Mode at the beginning of each test. (Don&#39;t use with CI!)</span>
--m<span class="o">=</span>MARKER  <span class="c1"># Run tests with the specified pytest marker.</span>
+<div class="highlight"><pre><span></span><code>-v<span class="w">  </span><span class="c1"># Verbose mode. Prints the full name of each test and shows more details.</span>
+-q<span class="w">  </span><span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
+-x<span class="w">  </span><span class="c1"># Stop running the tests after the first failure is reached.</span>
+--html<span class="o">=</span>report.html<span class="w">  </span><span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
+--collect-only<span class="w"> </span><span class="p">|</span><span class="w"> </span>--co<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+-n<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
+-s<span class="w">  </span><span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
+--junit-xml<span class="o">=</span>report.xml<span class="w">  </span><span class="c1"># Creates a junit-xml report after tests finish.</span>
+--pdb<span class="w">  </span><span class="c1"># If a test fails, enter Post Mortem Debug Mode. (Don&#39;t use with CI!)</span>
+--trace<span class="w">  </span><span class="c1"># Enter Debug Mode at the beginning of each test. (Don&#39;t use with CI!)</span>
+-m<span class="o">=</span>MARKER<span class="w">  </span><span class="c1"># Run tests with the specified pytest marker.</span>
 </code></pre></div>
 <p><a id="new_pytest_options"></a>
 🔵 SeleniumBase provides additional <code>pytest</code> command-line options for tests:</p>
-<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
---chrome  <span class="c1"># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
---edge  <span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
---firefox  <span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
---safari  <span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
---cap-file<span class="o">=</span>FILE  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---cap-string<span class="o">=</span>STRING  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---settings-file<span class="o">=</span>FILE  <span class="c1"># (Override default SeleniumBase settings.)</span>
---env<span class="o">=</span>ENV  <span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
---account<span class="o">=</span>STR  <span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
---data<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.data&quot; in tests.)</span>
---var1<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.var1&quot; in tests.)</span>
---var2<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.var2&quot; in tests.)</span>
---var3<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.var3&quot; in tests.)</span>
---variables<span class="o">=</span>DICT  <span class="c1"># (Extra test data. Access with &quot;self.variables&quot;.)</span>
---user-data-dir<span class="o">=</span>DIR  <span class="c1"># (Set the Chrome user data directory to use.)</span>
---protocol<span class="o">=</span>PROTOCOL  <span class="c1"># (The Selenium Grid protocol: http|https.)</span>
---server<span class="o">=</span>SERVER  <span class="c1"># (The Selenium Grid server/IP used for tests.)</span>
---port<span class="o">=</span>PORT  <span class="c1"># (The Selenium Grid port used by the test server.)</span>
---proxy<span class="o">=</span>SERVER:PORT  <span class="c1"># (Connect to a proxy server:port for tests.)</span>
---proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT  <span class="c1"># (Use authenticated proxy server.)</span>
---proxy-bypass-list<span class="o">=</span>STRING  <span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
---proxy-pac-url<span class="o">=</span>URL  <span class="c1"># (Connect to a proxy server using a PAC_URL.pac file.)</span>
---proxy-pac-url<span class="o">=</span>USERNAME:PASSWORD@URL  <span class="c1"># (Authenticated proxy with PAC URL.)</span>
---agent<span class="o">=</span>STRING  <span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
---mobile  <span class="c1"># (Use the mobile device emulator while running tests.)</span>
---metrics<span class="o">=</span>STRING  <span class="c1"># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
---chromium-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span>  <span class="c1"># (Set Chromium args, &quot;,&quot;-separated, no spaces.)</span>
---firefox-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span>  <span class="c1"># (Set Firefox args, comma-separated, no spaces.)</span>
---firefox-pref<span class="o">=</span>SET  <span class="c1"># (Set a Firefox preference:value set, comma-separated.)</span>
---extension-zip<span class="o">=</span>ZIP  <span class="c1"># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
---extension-dir<span class="o">=</span>DIR  <span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
---sjw  <span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
---pls<span class="o">=</span>PLS  <span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
---headless  <span class="c1"># (Run tests in headless mode. The default arg on Linux OS.)</span>
---headless2  <span class="c1"># (Use the new headless mode, which supports extensions.)</span>
---headed  <span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
---xvfb  <span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
---locale<span class="o">=</span>LOCALE_CODE  <span class="c1"># (Set the Language Locale Code for the web browser.)</span>
---interval<span class="o">=</span>SECONDS  <span class="c1"># (The autoplay interval for presentations &amp; tour steps)</span>
---start-page<span class="o">=</span>URL  <span class="c1"># (The starting URL for the web browser when tests begin.)</span>
---archive-logs  <span class="c1"># (Archive existing log files instead of deleting them.)</span>
---archive-downloads  <span class="c1"># (Archive old downloads instead of deleting them.)</span>
---time-limit<span class="o">=</span>SECONDS  <span class="c1"># (Safely fail any test that exceeds the time limit.)</span>
---slow  <span class="c1"># (Slow down the automation. Faster than using Demo Mode.)</span>
---demo  <span class="c1"># (Slow down and visually see test actions as they occur.)</span>
---demo-sleep<span class="o">=</span>SECONDS  <span class="c1"># (Set the wait time after Slow &amp; Demo Mode actions.)</span>
---highlights<span class="o">=</span>NUM  <span class="c1"># (Number of highlight animations for Demo Mode actions.)</span>
---message-duration<span class="o">=</span>SECONDS  <span class="c1"># (The time length for Messenger alerts.)</span>
---check-js  <span class="c1"># (Check for JavaScript errors after page loads.)</span>
---ad-block  <span class="c1"># (Block some types of display ads from loading.)</span>
---block-images  <span class="c1"># (Block images from loading during tests.)</span>
---do-not-track  <span class="c1"># (Indicate to websites that you don&#39;t want to be tracked.)</span>
---verify-delay<span class="o">=</span>SECONDS  <span class="c1"># (The delay before MasterQA verification checks.)</span>
---recorder  <span class="c1"># (Enables the Recorder for turning browser actions into code.)</span>
---rec-behave  <span class="c1"># (Same as Recorder Mode, but also generates behave-gherkin.)</span>
---rec-sleep  <span class="c1"># (If the Recorder is enabled, also records self.sleep calls.)</span>
---rec-print  <span class="c1"># (If the Recorder is enabled, prints output after tests end.)</span>
---disable-js  <span class="c1"># (Disable JavaScript on websites. Pages might break!)</span>
---disable-csp  <span class="c1"># (Disable the Content Security Policy of websites.)</span>
---disable-ws  <span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
---enable-ws  <span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
---enable-sync  <span class="c1"># (Enable &quot;Chrome Sync&quot; on websites.)</span>
---uc <span class="p">|</span> --undetected  <span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
---remote-debug  <span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
---final-debug  <span class="c1"># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
---dashboard  <span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
---dash-title<span class="o">=</span>STRING  <span class="c1"># (Set the title shown for the generated dashboard.)</span>
---swiftshader  <span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
---incognito  <span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
---guest  <span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
---devtools  <span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session <span class="p">|</span> --rs  <span class="c1"># (Reuse browser session for all tests.)</span>
---reuse-class-session <span class="p">|</span> --rcs  <span class="c1"># (Reuse session for tests in class.)</span>
---crumbs  <span class="c1"># (Delete all cookies between tests reusing a session.)</span>
---disable-beforeunload  <span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
---window-size<span class="o">=</span>WIDTH,HEIGHT  <span class="c1"># (Set the browser&#39;s starting window size.)</span>
---maximize  <span class="c1"># (Start tests with the browser window maximized.)</span>
---screenshot  <span class="c1"># (Save a screenshot at the end of each test.)</span>
---no-screenshot  <span class="c1"># (No screenshots saved unless tests directly ask it.)</span>
---visual-baseline  <span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
---wire  <span class="c1"># (Use selenium-wire&#39;s webdriver for replacing selenium webdriver.)</span>
---external-pdf  <span class="c1"># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
---timeout-multiplier<span class="o">=</span>MULTIPLIER  <span class="c1"># (Multiplies the default timeout values.)</span>
---list-fail-page  <span class="c1"># (After each failing test, list the URL of the failure.)</span>
+<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER<span class="w">  </span><span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
+--chrome<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
+--edge<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
+--firefox<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
+--safari<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
+--cap-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--cap-string<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (Override default SeleniumBase settings.)</span>
+--env<span class="o">=</span>ENV<span class="w">  </span><span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
+--account<span class="o">=</span>STR<span class="w">  </span><span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
+--data<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.data&quot; in tests.)</span>
+--var1<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var1&quot; in tests.)</span>
+--var2<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var2&quot; in tests.)</span>
+--var3<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var3&quot; in tests.)</span>
+--variables<span class="o">=</span>DICT<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.variables&quot;.)</span>
+--user-data-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Set the Chrome user data directory to use.)</span>
+--protocol<span class="o">=</span>PROTOCOL<span class="w">  </span><span class="c1"># (The Selenium Grid protocol: http|https.)</span>
+--server<span class="o">=</span>SERVER<span class="w">  </span><span class="c1"># (The Selenium Grid server/IP used for tests.)</span>
+--port<span class="o">=</span>PORT<span class="w">  </span><span class="c1"># (The Selenium Grid port used by the test server.)</span>
+--proxy<span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="c1"># (Connect to a proxy server:port for tests.)</span>
+--proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT<span class="w">  </span><span class="c1"># (Use authenticated proxy server.)</span>
+--proxy-bypass-list<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
+--proxy-pac-url<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (Connect to a proxy server using a PAC_URL.pac file.)</span>
+--proxy-pac-url<span class="o">=</span>USERNAME:PASSWORD@URL<span class="w">  </span><span class="c1"># (Authenticated proxy with PAC URL.)</span>
+--agent<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
+--mobile<span class="w">  </span><span class="c1"># (Use the mobile device emulator while running tests.)</span>
+--metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
+--chromium-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span><span class="w">  </span><span class="c1"># (Set Chromium args, &quot;,&quot;-separated, no spaces.)</span>
+--firefox-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span><span class="w">  </span><span class="c1"># (Set Firefox args, comma-separated, no spaces.)</span>
+--firefox-pref<span class="o">=</span>SET<span class="w">  </span><span class="c1"># (Set a Firefox preference:value set, comma-separated.)</span>
+--extension-zip<span class="o">=</span>ZIP<span class="w">  </span><span class="c1"># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
+--extension-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
+--sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
+--pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
+--headless<span class="w">  </span><span class="c1"># (Run tests in headless mode. The default arg on Linux OS.)</span>
+--headless2<span class="w">  </span><span class="c1"># (Use the new headless mode, which supports extensions.)</span>
+--headed<span class="w">  </span><span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
+--xvfb<span class="w">  </span><span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
+--locale<span class="o">=</span>LOCALE_CODE<span class="w">  </span><span class="c1"># (Set the Language Locale Code for the web browser.)</span>
+--interval<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The autoplay interval for presentations &amp; tour steps)</span>
+--start-page<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (The starting URL for the web browser when tests begin.)</span>
+--archive-logs<span class="w">  </span><span class="c1"># (Archive existing log files instead of deleting them.)</span>
+--archive-downloads<span class="w">  </span><span class="c1"># (Archive old downloads instead of deleting them.)</span>
+--time-limit<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (Safely fail any test that exceeds the time limit.)</span>
+--slow<span class="w">  </span><span class="c1"># (Slow down the automation. Faster than using Demo Mode.)</span>
+--demo<span class="w">  </span><span class="c1"># (Slow down and visually see test actions as they occur.)</span>
+--demo-sleep<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (Set the wait time after Slow &amp; Demo Mode actions.)</span>
+--highlights<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># (Number of highlight animations for Demo Mode actions.)</span>
+--message-duration<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The time length for Messenger alerts.)</span>
+--check-js<span class="w">  </span><span class="c1"># (Check for JavaScript errors after page loads.)</span>
+--ad-block<span class="w">  </span><span class="c1"># (Block some types of display ads from loading.)</span>
+--block-images<span class="w">  </span><span class="c1"># (Block images from loading during tests.)</span>
+--do-not-track<span class="w">  </span><span class="c1"># (Indicate to websites that you don&#39;t want to be tracked.)</span>
+--verify-delay<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The delay before MasterQA verification checks.)</span>
+--recorder<span class="w">  </span><span class="c1"># (Enables the Recorder for turning browser actions into code.)</span>
+--rec-behave<span class="w">  </span><span class="c1"># (Same as Recorder Mode, but also generates behave-gherkin.)</span>
+--rec-sleep<span class="w">  </span><span class="c1"># (If the Recorder is enabled, also records self.sleep calls.)</span>
+--rec-print<span class="w">  </span><span class="c1"># (If the Recorder is enabled, prints output after tests end.)</span>
+--disable-js<span class="w">  </span><span class="c1"># (Disable JavaScript on websites. Pages might break!)</span>
+--disable-csp<span class="w">  </span><span class="c1"># (Disable the Content Security Policy of websites.)</span>
+--disable-ws<span class="w">  </span><span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
+--enable-ws<span class="w">  </span><span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
+--enable-sync<span class="w">  </span><span class="c1"># (Enable &quot;Chrome Sync&quot; on websites.)</span>
+--uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
+--remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
+--final-debug<span class="w">  </span><span class="c1"># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
+--dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
+--dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
+--swiftshader<span class="w">  </span><span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
+--incognito<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
+--guest<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
+--devtools<span class="w">  </span><span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
+--reuse-session<span class="w"> </span><span class="p">|</span><span class="w"> </span>--rs<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
+--reuse-class-session<span class="w"> </span><span class="p">|</span><span class="w"> </span>--rcs<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>
+--crumbs<span class="w">  </span><span class="c1"># (Delete all cookies between tests reusing a session.)</span>
+--disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
+--window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window size.)</span>
+--maximize<span class="w">  </span><span class="c1"># (Start tests with the browser window maximized.)</span>
+--screenshot<span class="w">  </span><span class="c1"># (Save a screenshot at the end of each test.)</span>
+--no-screenshot<span class="w">  </span><span class="c1"># (No screenshots saved unless tests directly ask it.)</span>
+--visual-baseline<span class="w">  </span><span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
+--wire<span class="w">  </span><span class="c1"># (Use selenium-wire&#39;s webdriver for replacing selenium webdriver.)</span>
+--external-pdf<span class="w">  </span><span class="c1"># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
+--timeout-multiplier<span class="o">=</span>MULTIPLIER<span class="w">  </span><span class="c1"># (Multiplies the default timeout values.)</span>
+--list-fail-page<span class="w">  </span><span class="c1"># (After each failing test, list the URL of the failure.)</span>
 </code></pre></div>
 <p>(See the full list of command-line option definitions <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">here</a></strong>. For detailed examples of command-line options, see <strong><a href="help_docs/customizing_test_runs/">customizing_test_runs.md</a></strong>)</p>
 <p>🔵 During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you add --archive_logs to command-line options, or have ARCHIVE_EXISTING_LOGS set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, otherwise log files with be cleaned up at the start of the next test run. The <code>test_suite.py</code> collection contains tests that fail on purpose so that you can see how logging works.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
 
-pytest test_suite.py --browser<span class="o">=</span>chrome
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>chrome
 
-pytest test_suite.py --browser<span class="o">=</span>firefox
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>firefox
 </code></pre></div>
 <p>An easy way to override seleniumbase/config/settings.py is by using a custom settings file.
 Here's the command-line option to add to tests: (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py">examples/custom_settings.py</a>)
@@ -2154,44 +2171,44 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 
 <p>🔵 When running tests with <strong>pytest</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></strong> in your root folders. When running tests with <strong>nosetests</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></strong> in your root folders. These files specify default configuration details for tests. Folders should also include a blank <code>__init__.py</code> file, which allows your tests to import files from that folder.</p>
 <p>🔵 <code>sbase mkdir DIR</code> creates a folder with config files and sample tests:</p>
-<div class="highlight"><pre><span></span><code>sbase mkdir ui_tests
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkdir<span class="w"> </span>ui_tests
 </code></pre></div>
 <blockquote>
 <p>That new folder will have these files:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>ui_tests/
-├── __init__.py
-├── my_first_test.py
-├── parameterized_test.py
-├── pytest.ini
-├── requirements.txt
-├── setup.cfg
-├── test_demo_site.py
-└── boilerplates/
-    ├── __init__.py
-    ├── base_test_case.py
-    ├── boilerplate_test.py
-    ├── classic_obj_test.py
-    ├── page_objects.py
-    ├── sb_fixture_test.py
-    └── samples/
-        ├── __init__.py
-        ├── google_objects.py
-        ├── google_test.py
-        ├── sb_swag_test.py
-        └── swag_labs_test.py
+├──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>my_first_test.py
+├──<span class="w"> </span>parameterized_test.py
+├──<span class="w"> </span>pytest.ini
+├──<span class="w"> </span>requirements.txt
+├──<span class="w"> </span>setup.cfg
+├──<span class="w"> </span>test_demo_site.py
+└──<span class="w"> </span>boilerplates/
+<span class="w">    </span>├──<span class="w"> </span>__init__.py
+<span class="w">    </span>├──<span class="w"> </span>base_test_case.py
+<span class="w">    </span>├──<span class="w"> </span>boilerplate_test.py
+<span class="w">    </span>├──<span class="w"> </span>classic_obj_test.py
+<span class="w">    </span>├──<span class="w"> </span>page_objects.py
+<span class="w">    </span>├──<span class="w"> </span>sb_fixture_test.py
+<span class="w">    </span>└──<span class="w"> </span>samples/
+<span class="w">        </span>├──<span class="w"> </span>__init__.py
+<span class="w">        </span>├──<span class="w"> </span>google_objects.py
+<span class="w">        </span>├──<span class="w"> </span>google_test.py
+<span class="w">        </span>├──<span class="w"> </span>sb_swag_test.py
+<span class="w">        </span>└──<span class="w"> </span>swag_labs_test.py
 </code></pre></div>
 <p><b>ProTip™:</b> You can also create a boilerplate folder without any sample tests in it by adding <code>-b</code> or <code>--basic</code> to the <code>sbase mkdir</code> command:</p>
-<div class="highlight"><pre><span></span><code>sbase mkdir ui_tests --basic
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkdir<span class="w"> </span>ui_tests<span class="w"> </span>--basic
 </code></pre></div>
 <blockquote>
 <p>That new folder will have these files:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>ui_tests/
-├── __init__.py
-├── pytest.ini
-├── requirements.txt
-└── setup.cfg
+├──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>pytest.ini
+├──<span class="w"> </span>requirements.txt
+└──<span class="w"> </span>setup.cfg
 </code></pre></div>
 <p>Of those files, the <code>pytest.ini</code> config file is the most important, followed by a blank <code>__init__.py</code> file. There's also a <code>setup.cfg</code> file (only needed for nosetests). Finally, the <code>requirements.txt</code> file can be used to help you install seleniumbase into your environments (if it's not already installed).</p>
 <hr />
@@ -2208,22 +2225,22 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#ARMY_OF_ROBOTS&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
 </code></pre></div>
 <p>You can run it from the <code>examples/</code> folder like this:</p>
-<div class="highlight"><pre><span></span><code>pytest test_fail.py
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py
 </code></pre></div>
 <p>🔵 You'll notice that a logs folder, "latest_logs", was created to hold information about the failing test, and screenshots. During test runs, past results get moved to the archived_logs folder if you have ARCHIVE_EXISTING_LOGS set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, or if your run tests with <code>--archive-logs</code>. If you choose not to archive existing logs, they will be deleted and replaced by the logs of the latest test run.</p>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> The SeleniumBase Dashboard:</h3>
 
 <p>🔵 The <code>--dashboard</code> option for pytest generates a SeleniumBase Dashboard located at <code>dashboard.html</code>, which updates automatically as tests run and produce results. Example:</p>
-<div class="highlight"><pre><span></span><code>pytest --dashboard --rs --headless
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--dashboard<span class="w"> </span>--rs<span class="w"> </span>--headless
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/dashboard_1.png" alt="The SeleniumBase Dashboard" title="The SeleniumBase Dashboard" width="380" /></p>
 <p>🔵 Additionally, you can host your own SeleniumBase Dashboard Server on a port of your choice. Here's an example of that using Python 3's <code>http.server</code>:</p>
-<div class="highlight"><pre><span></span><code>python -m http.server <span class="m">1948</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">1948</span>
 </code></pre></div>
 <p>🔵 Now you can navigate to <code>http://localhost:1948/dashboard.html</code> in order to view the dashboard as a web app. This requires two different terminal windows: one for running the server, and another for running the tests, which should be run from the same directory. (Use <code>CTRL+C</code> to stop the http server.)</p>
 <p>🔵 Here's a full example of what the SeleniumBase Dashboard may look like:</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --dashboard --rs --headless
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard<span class="w"> </span>--rs<span class="w"> </span>--headless
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/dashboard_2.png" alt="The SeleniumBase Dashboard" title="The SeleniumBase Dashboard" width="480" /></p>
 <hr />
@@ -2233,63 +2250,63 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <h4><b>Pytest Reports:</b></h4>
 
 <p>🔵 Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/html_report.png" alt="Example Pytest Report" title="Example Pytest Report" width="520" /></p>
 <p>🔵 When combining pytest html reports with SeleniumBase Dashboard usage, the pie chart from the Dashboard will get added to the html report. Additionally, if you set the html report URL to be the same as the Dashboard URL when also using the dashboard, (example: <code>--dashboard --html=dashboard.html</code>), then the Dashboard will become an advanced html report when all the tests complete.</p>
 <p>🔵 Here's an example of an upgraded html report:</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --dashboard --html<span class="o">=</span>report.html
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/dash_report.jpg" alt="Dashboard Pytest HTML Report" title="Dashboard Pytest HTML Report" width="520" /></p>
 <p>If viewing pytest html reports in <a href="https://www.jenkins.io/">Jenkins</a>, you may need to <a href="https://stackoverflow.com/a/46197356">configure Jenkins settings</a> for the html to render correctly. This is due to <a href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">Jenkins CSP changes</a>.</p>
 <p>You can also use <code>--junit-xml=report.xml</code> to get an xml report instead. Jenkins can use this file to display better reporting for your tests.</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --junit-xml<span class="o">=</span>report.xml
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--junit-xml<span class="o">=</span>report.xml
 </code></pre></div>
 <h4><b>Nosetest Reports:</b></h4>
 
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
-<div class="highlight"><pre><span></span><code>nosetests test_suite.py --report
+<div class="highlight"><pre><span></span><code>nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--report
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/nose_report.png" alt="Example Nosetest Report" title="Example Nosetest Report" width="320" /></p>
 <p>(NOTE: You can add <code>--show-report</code> to immediately display Nosetest reports after the test suite completes. Only use <code>--show-report</code> when running tests locally because it pauses the test run.)</p>
 <h4><b>Behave Dashboard & Reports:</b></h4>
 
 <p>(The <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/behave_bdd">behave_bdd/</a> folder can be found in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder.)</p>
-<div class="highlight"><pre><span></span><code>behave behave_bdd/features/ -D dashboard -D headless
+<div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>-D<span class="w"> </span>dashboard<span class="w"> </span>-D<span class="w"> </span>headless
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/sb_behave_dashboard.png" title="SeleniumBase" width="500"></p>
 <p>You can also use <code>--junit</code> to get <code>.xml</code> reports for each Behave feature. Jenkins can use these files to display better reporting for your tests.</p>
-<div class="highlight"><pre><span></span><code>behave behave_bdd/features/ --junit -D rs -D headless
+<div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>--junit<span class="w"> </span>-D<span class="w"> </span>rs<span class="w"> </span>-D<span class="w"> </span>headless
 </code></pre></div>
 <h4><b>Allure Reports:</b></h4>
 
 <p>See: <a href="https://docs.qameta.io/allure/#_pytest">https://docs.qameta.io/allure/</a></p>
 <p>SeleniumBase no longer includes <code>allure-pytest</code> as part of installed dependencies. If you want to use it, install it first:</p>
-<div class="highlight"><pre><span></span><code>pip install allure-pytest
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>allure-pytest
 </code></pre></div>
 <p>Now your tests can create Allure results files, which can be processed by Allure Reports.</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --alluredir<span class="o">=</span>allure_results
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--alluredir<span class="o">=</span>allure_results
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Using a Proxy Server:</h3>
 
 <p>If you wish to use a proxy server for your browser tests (Chromium or Firefox), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
 <p>If the proxy server that you wish to use requires authentication, you can do the following (Chromium only):</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
 <p>SeleniumBase also supports SOCKS4 and SOCKS5 proxies:</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span><span class="s2">&quot;socks4://IP_ADDRESS:PORT&quot;</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks4://IP_ADDRESS:PORT&quot;</span>
 
-pytest proxy_test.py --proxy<span class="o">=</span><span class="s2">&quot;socks5://IP_ADDRESS:PORT&quot;</span>
+pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks5://IP_ADDRESS:PORT&quot;</span>
 </code></pre></div>
 <p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>proxy1
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Changing the User-Agent:</h3>
 
 <p>🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
-<div class="highlight"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Handling Pop-Up / Pop Up Alerts:</h3>
 
@@ -2318,7 +2335,7 @@ pytest proxy_test.py --proxy<span class="o">=</span><span class="s2">&quot;socks
 
 Here's an example of running tests with some additional features enabled:
 
-<div class="highlight"><pre><span></span><code>pytest <span class="o">[</span>YOUR_TEST_FILE.py<span class="o">]</span> --with-db-reporting --with-s3-logging
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span><span class="o">[</span>YOUR_TEST_FILE.py<span class="o">]</span><span class="w"> </span>--with-db-reporting<span class="w"> </span>--with-s3-logging
 </code></pre></div>
 
 </details>
@@ -2544,7 +2561,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 <p>🔵 Retrying failing tests automatically:</p>
 <p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
 
-<div class="highlight"><pre><span></span><code>pytest --reruns<span class="o">=</span><span class="m">1</span> --reruns-delay<span class="o">=</span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--reruns<span class="o">=</span><span class="m">1</span><span class="w"> </span>--reruns-delay<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
 <p>You can use the <code>@retry_on_exception()</code> decorator to retry failing methods. (First import: <code>from seleniumbase import decorators</code>). To learn more about SeleniumBase decorators, <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/common">click here</a>.</p>
 
@@ -2600,29 +2617,6 @@ To flush out all the failed deferred asserts into a single exception, make sure 
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-      
-        
-        <a href="help_docs/features_list/" class="md-footer__link md-footer__link--next" aria-label="Next: 🏰 List of Features" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              🏰 List of Features
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2648,12 +2642,11 @@ To flush out all the failed deferred asserts into a single exception, make sure 
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

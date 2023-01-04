@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/help_docs/mysql_installation/">
       
+      
+        <link rel="prev" href="../hidden_files_info/">
+      
+      
+        <link rel="next" href="../desired_capabilities/">
+      
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1840,28 +1841,29 @@
                   
 
 
+
   <h1>🗄️ MySQL Instructions</h1>
 
 <h2 id="mysql-installation-instructions">MySQL Installation Instructions<a class="headerlink" href="#mysql-installation-instructions" title="Permanent link">&para;</a></h2>
 <h4 id="mysql-optional"><a href="http://www.mysql.com/">MySQL</a> (OPTIONAL)<a class="headerlink" href="#mysql-optional" title="Permanent link">&para;</a></h4>
 <p>(NOTE: If you're using this test framework from a local development machine and don't plan on writing to a MySQL DB from your local test runs, you can skip this step.)</p>
 <h5 id="linux-ubuntu">Linux (Ubuntu):<a class="headerlink" href="#linux-ubuntu" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install mysql-server
-sudo mysql_secure_installation
-sudo mysql -e <span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span>
-sudo mysql -h <span class="m">127</span>.0.0.1 -u root test_db &lt; seleniumbase/core/create_db_tables.sql
-sudo service mysql restart
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
+sudo<span class="w"> </span>mysql_secure_installation
+sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span>
+sudo<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>test_db<span class="w"> </span>&lt;<span class="w"> </span>seleniumbase/core/create_db_tables.sql
+sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
 <p>To change the password:
-<div class="highlight"><pre><span></span><code>mysqladmin -u root -p<span class="s1">&#39;OLD_PASSWORD&#39;</span> password NEW_PASSWORD
-sudo service mysql restart
+<div class="highlight"><pre><span></span><code>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s1">&#39;OLD_PASSWORD&#39;</span><span class="w"> </span>password<span class="w"> </span>NEW_PASSWORD
+sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div></p>
 <h5 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code>brew install mysql
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>mysql
 </code></pre></div>
 <p>Then you'll need to start the MySQL service:
-<div class="highlight"><pre><span></span><code>brew services start mysql
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>mysql
 </code></pre></div></p>
 <p>Continue with additional steps below to setup your DB.</p>
 <h5 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h5>
@@ -1877,7 +1879,7 @@ Follow the steps from the MySQL Downloads page.</p>
 <h4 id="allow-tests-to-write-to-your-mysql-database">Allow tests to write to your MySQL database<a class="headerlink" href="#allow-tests-to-write-to-your-mysql-database" title="Permanent link">&para;</a></h4>
 <p>Add the <code>--with-db_reporting</code> argument on the command line when you want tests to write to your MySQL database.
 Example:
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --with-db_reporting
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--with-db_reporting
 </code></pre></div></p>
 
 
@@ -1904,44 +1906,6 @@ Example:
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../hidden_files_info/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 👥 macOS Hidden Files" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              👥 macOS Hidden Files
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../desired_capabilities/" class="md-footer__link md-footer__link--next" aria-label="Next: 📃 Desired Capabilities" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              📃 Desired Capabilities
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1967,12 +1931,11 @@ Example:
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

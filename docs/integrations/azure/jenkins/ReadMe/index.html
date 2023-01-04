@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/integrations/azure/jenkins/ReadMe/">
       
+      
+        <link rel="prev" href="../../azure_pipelines/ReadMe/">
+      
+      
+        <link rel="next" href="../../../google_cloud/ReadMe/">
+      
       <link rel="icon" href="../../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -2342,6 +2343,7 @@
                   
 
 
+
   <h1>🤖 Jenkins on Azure</h1>
 
 <h3 id="building-a-browser-based-test-automation-server-with-jenkins-on-azure-by-using-seleniumbase">Building a browser-based test automation server with Jenkins on Azure by using SeleniumBase<a class="headerlink" href="#building-a-browser-based-test-automation-server-with-jenkins-on-azure-by-using-seleniumbase" title="Permanent link">&para;</a></h3>
@@ -2376,23 +2378,23 @@
 <ul>
 <li><strong>Use that IP Address to SSH into the machine:</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code>ssh USERNAME@IP_ADDRESS
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>USERNAME@IP_ADDRESS
 </code></pre></div>
 <p><img alt="" src="https://seleniumbase.github.io/cdn/img/azure/jenkins_on_azure_07.png" title="Jenkins on Azure" /></p>
 <hr />
 <p><a id="step4"></a></p>
 <h3 id="step-4-clone-the-seleniumbase-repository-from-the-root-directory">Step 4. Clone the SeleniumBase repository from the root ("/") directory.<a class="headerlink" href="#step-4-clone-the-seleniumbase-repository-from-the-root-directory" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /
-sudo git clone https://github.com/seleniumbase/SeleniumBase.git
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/
+sudo<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
 </code></pre></div>
 <h3 id="step-5-enter-the-linux-folder">Step 5. Enter the "linux" folder<a class="headerlink" href="#step-5-enter-the-linux-folder" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> SeleniumBase/integrations/linux/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>SeleniumBase/integrations/linux/
 </code></pre></div>
 <h3 id="step-6-give-the-jenkins-user-sudo-access-see-jenkins_permissionssh-for-details">Step 6. Give the "jenkins" user sudo access (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/jenkins_permissions.sh">jenkins_permissions.sh</a> for details)<a class="headerlink" href="#step-6-give-the-jenkins-user-sudo-access-see-jenkins_permissionssh-for-details" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>./jenkins_permissions.sh
 </code></pre></div>
 <h3 id="step-7-become-the-jenkins-user-and-enter-a-bash-shell">Step 7. Become the "jenkins" user and enter a "bash" shell<a class="headerlink" href="#step-7-become-the-jenkins-user-and-enter-a-bash-shell" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo su jenkins
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>su<span class="w"> </span>jenkins
 bash
 </code></pre></div>
 <h3 id="step-8-install-dependencies-see-linuxfilesh-for-details">Step 8. Install dependencies (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/integrations/linux/Linuxfile.sh">Linuxfile.sh</a> for details)<a class="headerlink" href="#step-8-install-dependencies-see-linuxfilesh-for-details" title="Permanent link">&para;</a></h3>
@@ -2402,21 +2404,21 @@ bash
 <div class="highlight"><pre><span></span><code>./Xvfb_launcher.sh
 </code></pre></div>
 <h3 id="step-10-go-to-the-seleniumbase-directory">Step 10. Go to the SeleniumBase directory<a class="headerlink" href="#step-10-go-to-the-seleniumbase-directory" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /SeleniumBase
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/SeleniumBase
 </code></pre></div>
 <h3 id="step-11-install-the-requirements-for-seleniumbase">Step 11. Install the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/requirements.txt">requirements</a> for SeleniumBase<a class="headerlink" href="#step-11-install-the-requirements-for-seleniumbase" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo pip install -r requirements.txt --upgrade
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--upgrade
 </code></pre></div>
 <h3 id="step-12-install-seleniumbase-make-sure-you-already-installed-the-requirements-above">Step 12. Install SeleniumBase (Make sure you already installed the requirements above)<a class="headerlink" href="#step-12-install-seleniumbase-make-sure-you-already-installed-the-requirements-above" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo python setup.py develop
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>develop
 </code></pre></div>
 <h3 id="step-13-install-chromedriver">Step 13. Install chromedriver<a class="headerlink" href="#step-13-install-chromedriver" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo seleniumbase install chromedriver
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>seleniumbase<span class="w"> </span>install<span class="w"> </span>chromedriver
 </code></pre></div>
 <h3 id="step-14-run-an-example-test-in-chrome-to-verify-installation-may-take-up-to-10-seconds">Step 14. Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">example test</a> in Chrome to verify installation (May take up to 10 seconds)<a class="headerlink" href="#step-14-run-an-example-test-in-chrome-to-verify-installation-may-take-up-to-10-seconds" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://seleniumbase.github.io/cdn/img/azure/jenkins_on_azure_08.png" title="Jenkins on Azure" /></p>
 <hr />
-<div class="highlight"><pre><span></span><code>pytest examples/my_first_test.py --headless --browser<span class="o">=</span>chrome
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>examples/my_first_test.py<span class="w"> </span>--headless<span class="w"> </span>--browser<span class="o">=</span>chrome
 </code></pre></div>
 <h3 id="step-15-secure-your-jenkins-machine">Step 15. Secure your Jenkins machine<a class="headerlink" href="#step-15-secure-your-jenkins-machine" title="Permanent link">&para;</a></h3>
 <h4 id="navigate-to-httpjenkins_ip_addressjenkins-on-azure">Navigate to http://JENKINS_IP_ADDRESS/jenkins-on-azure/<a class="headerlink" href="#navigate-to-httpjenkins_ip_addressjenkins-on-azure" title="Permanent link">&para;</a></h4>
@@ -2434,7 +2436,7 @@ bash
 <p><img alt="" src="https://seleniumbase.github.io/cdn/img/azure/jenkins_on_azure_10.png" title="Jenkins on Azure" /></p>
 <hr />
 <h4 id="youll-need-to-get-the-password-from-the-ssh-terminal-on-the-linux-machine-to-log-in">You'll need to get the password from the SSH terminal on the Linux machine to log in<a class="headerlink" href="#youll-need-to-get-the-password-from-the-ssh-terminal-on-the-linux-machine-to-log-in" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cat<span class="w"> </span>/var/lib/jenkins/secrets/initialAdminPassword
 </code></pre></div>
 <h3 id="step-17-customize-jenkins">Step 17. Customize Jenkins<a class="headerlink" href="#step-17-customize-jenkins" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://seleniumbase.github.io/cdn/img/azure/jenkins_on_azure_11.png" title="Jenkins on Azure" /></p>
@@ -2466,8 +2468,8 @@ bash
 <li><strong>Select "Execute shell".</strong></li>
 <li><strong>For the "Command", paste:</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples
-pytest my_first_test.py --headless
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples
+pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--headless
 </code></pre></div>
 <p><img alt="" src="https://seleniumbase.github.io/cdn/img/azure/jenkins_on_azure_16.png" title="Jenkins on Azure" /></p>
 <hr />
@@ -2513,42 +2515,6 @@ pytest my_first_test.py --headless
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../azure_pipelines/ReadMe/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🤖 Azure Pipelines" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              🤖 Azure Pipelines
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../google_cloud/ReadMe/" class="md-footer__link md-footer__link--next" aria-label="Next: 🤖 Jenkins on Google Cloud" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              🤖 Jenkins on Google Cloud
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2574,12 +2540,11 @@ pytest my_first_test.py --headless
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/examples/master_qa/ReadMe/">
       
+      
+        <link rel="prev" href="../../dialog_boxes/ReadMe/">
+      
+      
+        <link rel="next" href="../../chart_maker/ReadMe/">
+      
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1651,7 +1652,6 @@
                   
 
 
-  <h1>🛂 MasterQA Mode</h1>
 
 <!-- SeleniumBase Docs -->
 
@@ -1678,12 +1678,12 @@
 <p><img alt="" src="https://seleniumbase.github.io/cdn/img/mqa_hybrid.png" title="MasterQA" /></p>
 <p>You may have noticed the <code>Incomplete Test Runs</code> row on the results page. If the value for that is not zero, it means that one of the automated steps failed. This could happen if you tell your script to perform an action on an element that doesn't exist. Now that we're mixing automation with manual QA, it's good to tell apart the failures from each. The results_table CSV file contains a spreadsheet with the details of each failure (if any) for both manual and automated steps.</p>
 <p><strong>How to run the example tests from scratch:</strong></p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/seleniumbase/SeleniumBase.git
-<span class="nb">cd</span> SeleniumBase
-pip install .
-<span class="nb">cd</span> examples/master_qa
-pytest basic_masterqa_test_0.py
-pytest masterqa_test_1.py
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
+<span class="nb">cd</span><span class="w"> </span>SeleniumBase
+pip<span class="w"> </span>install<span class="w"> </span>.
+<span class="nb">cd</span><span class="w"> </span>examples/master_qa
+pytest<span class="w"> </span>basic_masterqa_test_0.py
+pytest<span class="w"> </span>masterqa_test_1.py
 </code></pre></div>
 <p>At the end of your test run, you'll receive a report with results, screenshots, and log files. Close the Results Page window when you're done.</p>
 <p><strong>Check out <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/master_qa/masterqa_test_1.py">masterqa_test_1.py</a> to learn how to write your own MasterQA tests:</strong></p>
@@ -1718,42 +1718,6 @@ pytest masterqa_test_1.py
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../dialog_boxes/ReadMe/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🛂 Dialog Boxes" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              🛂 Dialog Boxes
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../chart_maker/ReadMe/" class="md-footer__link md-footer__link--next" aria-label="Next: 📶 Chart Maker" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              📶 Chart Maker
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1779,12 +1743,11 @@ pytest masterqa_test_1.py
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

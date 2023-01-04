@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://seleniumbase.io/help_docs/chinese/">
       
+      
+        <link rel="prev" href="../translations/">
+      
+      
+        <link rel="next" href="../locale_codes/">
+      
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.1">
     
     
       
@@ -23,15 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3bd4f189.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
       
       
 
@@ -1655,7 +1656,6 @@
                   
 
 
-  <h1>🐲 Chinese Docs</h1>
 
 <p><meta property="og:site_name" content="SeleniumBase | Docs">
 <meta property="og:title" content="SeleniumBase | Reliable Test Automation" />
@@ -1716,20 +1716,20 @@
 <li>建议配合 <a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">Python virtual env</a> . <i><a href="https://seleniumbase.io/help_docs/virtualenv_instructions/">See shortcut</a>.</i></li>
 <li>更新 <strong><a href="https://pypi.org/project/pip/">pip</a></strong> 以防出现警告:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>python -m pip install -U pip
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
 </code></pre></div>
 <p><a id="install_seleniumbase"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 安装 SeleniumBase:</h2>
 
-<p><div class="highlight"><pre><span></span><code>git clone https://github.com/seleniumbase/SeleniumBase.git
-<span class="nb">cd</span> SeleniumBase/
-pip install -r requirements.txt
-python setup.py install
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
+<span class="nb">cd</span><span class="w"> </span>SeleniumBase/
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>setup.py<span class="w"> </span>install
 </code></pre></div>
 如果存在多个安装的python版本, 需要显示具体版本 (E.g. 使用 <code>python3</code> 代替 <code>python</code>).</p>
 <ul>
 <li>你也可以通过<a href="https://pypi.python.org/pypi/seleniumbase">pypi</a>安装 <code>seleniumbase</code>  :
-<div class="highlight"><pre><span></span><code>pip install seleniumbase
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
 </code></pre></div></li>
 <li>添加 <code>--upgrade</code> 或 <code>-U</code> 来更新安装程序.</li>
 <li>添加 <code>--force-reinstall</code> 更新依赖包.</li>
@@ -1737,25 +1737,25 @@ python setup.py install
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 下载 webdriver:</h3>
 
 <p>SeleniumBase 下载 webdriver 驱动到 <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/drivers">seleniumbase/drivers</a> 文件夹下, 使用 <code>install</code> 命令:</p>
-<div class="highlight"><pre><span></span><code>seleniumbase install chromedriver
+<div class="highlight"><pre><span></span><code>seleniumbase<span class="w"> </span>install<span class="w"> </span>chromedriver
 </code></pre></div>
 <ul>
 <li>你可能需要不同的 webdriver 来对应各种网页浏览器来完成自动化测试,例如: <code>chromedriver</code> 对应 Chrome, <code>edgedriver</code> 对应 Edge, <code>geckodriver</code> 对应 Firefox, <code>operadriver</code> 对应 Opera,  <code>iedriver</code> 对应 Internet Explorer.</li>
 <li>如果你需要安装最新版本的浏览器驱动, 以以下命令获取最新版本浏览器驱动 (<i>因兼容性原因,默认下载的版本为 chromedriver 2.44 </i>):
-<div class="highlight"><pre><span></span><code>seleniumbase install chromedriver latest
+<div class="highlight"><pre><span></span><code>seleniumbase<span class="w"> </span>install<span class="w"> </span>chromedriver<span class="w"> </span>latest
 </code></pre></div></li>
 </ul>
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 使用 Chrome 运行用例:</h3>
 
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/
-pytest my_first_test.py
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
+pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <ul>
 <li>如果没指定版本则默认运行的浏览器驱动为 chromedriver, 使用指定版本的命令为: <code>--browser=BROWSER</code>.</li>
 <li>Linux 中 <code>--headless</code> 为默认值 (无界面运行).你也可以在任何系统中运行无界面模式. 如果你的 Linux服务器有 GUI 界面,你也需要在界面中查看浏览器运行用例的过程,你可以添加 <code>--headed</code> 或 <code>--gui</code>.</li>
 </ul>
 <p><b>运行 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a> Demo Mode:</b></p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --demo
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--demo
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/my_first_test_1.gif" title="SeleniumBase" /></p>
 <p><b>此处为相关代码 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
@@ -1878,13 +1878,13 @@ pytest my_first_test.py
 (<i>你可以在你的代码中一直使用 <code>self.driver</code> .</i>)</p>
 <h4>适用 ``pytest`` 或者 ``nosetests`` 在所有的浏览器中运行你的测试用例:</h4>
 <p>(<i>推荐使用 <strong>pytest</strong> . <strong>Chrome</strong> 是默认的浏览器.</i>)</p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --browser<span class="o">=</span>chrome
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--browser<span class="o">=</span>chrome
 
-nosetests test_suite.py --browser<span class="o">=</span>firefox
+nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>firefox
 </code></pre></div>
 <p>Python 文件中所有以 <code>test_</code> 开头的python方法将自动运行当你使用 <code>pytest</code> 或 <code>nosetests</code>, (<i>或包含Python文件的文件夹</i>). 还可以使用以下命令更具体地说明在文件中运行什么: (<i>注意，pytest和nosetests的语法是不同的.</i>)</p>
-<div class="highlight"><pre><span></span><code>pytest <span class="o">[</span>FILE_NAME<span class="o">]</span>.py::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
-nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span><span class="o">[</span>FILE_NAME<span class="o">]</span>.py::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
+nosetests<span class="w"> </span><span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 </code></pre></div>
 <h4>不再有不可靠的测试:</h4>
 <p>在与页面元素进行交互之前，SeleniumBase方法会自动等待页面元素完成加载(<em>直到超时限制</em>)。这意味着您不再需要脚本中随机的' time.sleep() '语句.</p>
@@ -1899,31 +1899,31 @@ nosetests <span class="o">[</span>FILE_NAME<span class="o">]</span>.py:<span cla
 <h4><b>下面介绍如何在各种web浏览器上运行示例脚本:</b></h4>
 
 <p>首先，为您打算使用的每个浏览器安装一个webdriver:</p>
-<div class="highlight"><pre><span></span><code>seleniumbase install chromedriver
-seleniumbase install geckodriver
-seleniumbase install edgedriver
-seleniumbase install iedriver
-seleniumbase install operadriver
+<div class="highlight"><pre><span></span><code>seleniumbase<span class="w"> </span>install<span class="w"> </span>chromedriver
+seleniumbase<span class="w"> </span>install<span class="w"> </span>geckodriver
+seleniumbase<span class="w"> </span>install<span class="w"> </span>edgedriver
+seleniumbase<span class="w"> </span>install<span class="w"> </span>iedriver
+seleniumbase<span class="w"> </span>install<span class="w"> </span>operadriver
 </code></pre></div>
 <p>接着, 在  <strong>pytest</strong> 和 <strong>nosetests</strong> 中选择一个为您的测试启动器. (<i>可以互换.</i>)</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
 
-pytest my_first_test.py --browser<span class="o">=</span>chrome
+pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--browser<span class="o">=</span>chrome
 
-nosetests my_first_test.py --browser<span class="o">=</span>firefox
+nosetests<span class="w"> </span>my_first_test.py<span class="w"> </span>--browser<span class="o">=</span>firefox
 </code></pre></div>
 <p>(<i>如果没有指定浏览器，则默认使用Chrome.</i>)
 对于Pytest，绿色的点表示测试通过。“F”表示测试失败。</p>
 <p><a id="seleniumbase_demo_mode"></a> <strong>使用演示模式来帮助您查看所断言的测试.</strong></p>
 <p>如果示例测试运行得太快，您可以在<strong>Demo模式</strong>下运行它，方法是在命令行上添加<code>--Demo</code>，它会在操作之间短暂地暂停浏览器，突出显示正在操作的页面元素，并让您实时了解测试断言的内容::</p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --demo
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--demo
 </code></pre></div>
 <p><strong>Pytest</strong> 包括测试发现。如果您没有指定要运行的特定文件或文件夹，<code>pytest</code>将根据以下匹配条件自动搜索要运行的测试的所有子目录:
 Python 文件名应是开头为 <code>test_</code> 或者以 <code>_test.py</code>结尾.
 Python 方法应以 <code>test_</code>开头.
 Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>类继承自<code>unittest</code>的TestCase的类。
 你可以看到哪些测试是由<code>pytest</code>发现使用::</p>
-<div class="highlight"><pre><span></span><code>pytest --collect-only -q
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--collect-only<span class="w"> </span>-q
 </code></pre></div>
 <p>您可以在脚本中使用以下内容来帮助您调试问题:
 (<i>如果使用pdb，请确保将“-s”添加到命令行选项中，除非已经在pytest.ini中</i>)</p>
@@ -1932,117 +1932,117 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 <span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 </code></pre></div>
 <p><b>要暂停抛出异常或错误的活动测试，请添加<code>--pdb -s</code>:</b></p>
-<div class="highlight"><pre><span></span><code>pytest my_first_test.py --pdb -s
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--pdb<span class="w"> </span>-s
 </code></pre></div>
 <p>上面的代码将在出现故障时打开浏览器窗口。(pdb命令:'n'， 'c'， 's' =&gt; next, continue, step)。</p>
 <p>下面是Pytest附带的一些有用的命令行选项:</p>
-<div class="highlight"><pre><span></span><code>-v  <span class="c1"># Verbose mode. Prints the full name of each test run.</span>
--q  <span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
--x  <span class="c1"># Stop running the tests after the first failure is reached.</span>
---html<span class="o">=</span>report.html  <span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
---collect-only <span class="p">|</span> --co  <span class="c1"># Show what tests would get run. (Without running them)</span>
--n<span class="o">=</span>NUM  <span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
--s  <span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
---junit-xml<span class="o">=</span>report.xml  <span class="c1"># Creates a junit-xml report after tests finish.</span>
---pdb  <span class="c1"># If a test fails, enter Post Mortem Debug Mode. (Don&#39;t use with CI!)</span>
---trace  <span class="c1"># Enter Debug Mode at the beginning of each test. (Don&#39;t use with CI!)</span>
--m<span class="o">=</span>MARKER  <span class="c1"># Run tests with the specified pytest marker.</span>
+<div class="highlight"><pre><span></span><code>-v<span class="w">  </span><span class="c1"># Verbose mode. Prints the full name of each test run.</span>
+-q<span class="w">  </span><span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
+-x<span class="w">  </span><span class="c1"># Stop running the tests after the first failure is reached.</span>
+--html<span class="o">=</span>report.html<span class="w">  </span><span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
+--collect-only<span class="w"> </span><span class="p">|</span><span class="w"> </span>--co<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+-n<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
+-s<span class="w">  </span><span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
+--junit-xml<span class="o">=</span>report.xml<span class="w">  </span><span class="c1"># Creates a junit-xml report after tests finish.</span>
+--pdb<span class="w">  </span><span class="c1"># If a test fails, enter Post Mortem Debug Mode. (Don&#39;t use with CI!)</span>
+--trace<span class="w">  </span><span class="c1"># Enter Debug Mode at the beginning of each test. (Don&#39;t use with CI!)</span>
+-m<span class="o">=</span>MARKER<span class="w">  </span><span class="c1"># Run tests with the specified pytest marker.</span>
 </code></pre></div>
 <p>SeleniumBase 为测试提供额外的Pytest命令行选项:</p>
-<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER  <span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
---chrome  <span class="c1"># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
---edge  <span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
---firefox  <span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
---safari  <span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
---cap-file<span class="o">=</span>FILE  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---cap-string<span class="o">=</span>STRING  <span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---settings-file<span class="o">=</span>FILE  <span class="c1"># (Override default SeleniumBase settings.)</span>
---env<span class="o">=</span>ENV  <span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
---account<span class="o">=</span>STR  <span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
---data<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.data&quot; in tests.)</span>
---var1<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.var1&quot; in tests.)</span>
---var2<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.var2&quot; in tests.)</span>
---var3<span class="o">=</span>STRING  <span class="c1"># (Extra test data. Access with &quot;self.var3&quot; in tests.)</span>
---variables<span class="o">=</span>DICT  <span class="c1"># (Extra test data. Access with &quot;self.variables&quot;.)</span>
---user-data-dir<span class="o">=</span>DIR  <span class="c1"># (Set the Chrome user data directory to use.)</span>
---protocol<span class="o">=</span>PROTOCOL  <span class="c1"># (The Selenium Grid protocol: http|https.)</span>
---server<span class="o">=</span>SERVER  <span class="c1"># (The Selenium Grid server/IP used for tests.)</span>
---port<span class="o">=</span>PORT  <span class="c1"># (The Selenium Grid port used by the test server.)</span>
---proxy<span class="o">=</span>SERVER:PORT  <span class="c1"># (Connect to a proxy server:port for tests.)</span>
---proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT  <span class="c1"># (Use authenticated proxy server.)</span>
---proxy-bypass-list<span class="o">=</span>STRING  <span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
---proxy-pac-url<span class="o">=</span>URL  <span class="c1"># (Connect to a proxy server using a PAC_URL.pac file.)</span>
---proxy-pac-url<span class="o">=</span>USERNAME:PASSWORD@URL  <span class="c1"># (Authenticated proxy with PAC URL.)</span>
---agent<span class="o">=</span>STRING  <span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
---mobile  <span class="c1"># (Use the mobile device emulator while running tests.)</span>
---metrics<span class="o">=</span>STRING  <span class="c1"># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
---chromium-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span>  <span class="c1"># (Set Chromium args, &quot;,&quot;-separated, no spaces.)</span>
---firefox-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span>  <span class="c1"># (Set Firefox args, comma-separated, no spaces.)</span>
---firefox-pref<span class="o">=</span>SET  <span class="c1"># (Set a Firefox preference:value set, comma-separated.)</span>
---extension-zip<span class="o">=</span>ZIP  <span class="c1"># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
---extension-dir<span class="o">=</span>DIR  <span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
---sjw  <span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
---pls<span class="o">=</span>PLS  <span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
---headless  <span class="c1"># (Run tests in headless mode. The default arg on Linux OS.)</span>
---headless2  <span class="c1"># (Use the new headless mode, which supports extensions.)</span>
---headed  <span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
---xvfb  <span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
---locale<span class="o">=</span>LOCALE_CODE  <span class="c1"># (Set the Language Locale Code for the web browser.)</span>
---interval<span class="o">=</span>SECONDS  <span class="c1"># (The autoplay interval for presentations &amp; tour steps)</span>
---start-page<span class="o">=</span>URL  <span class="c1"># (The starting URL for the web browser when tests begin.)</span>
---archive-logs  <span class="c1"># (Archive existing log files instead of deleting them.)</span>
---archive-downloads  <span class="c1"># (Archive old downloads instead of deleting them.)</span>
---time-limit<span class="o">=</span>SECONDS  <span class="c1"># (Safely fail any test that exceeds the time limit.)</span>
---slow  <span class="c1"># (Slow down the automation. Faster than using Demo Mode.)</span>
---demo  <span class="c1"># (Slow down and visually see test actions as they occur.)</span>
---demo-sleep<span class="o">=</span>SECONDS  <span class="c1"># (Set the wait time after Slow &amp; Demo Mode actions.)</span>
---highlights<span class="o">=</span>NUM  <span class="c1"># (Number of highlight animations for Demo Mode actions.)</span>
---message-duration<span class="o">=</span>SECONDS  <span class="c1"># (The time length for Messenger alerts.)</span>
---check-js  <span class="c1"># (Check for JavaScript errors after page loads.)</span>
---ad-block  <span class="c1"># (Block some types of display ads from loading.)</span>
---block-images  <span class="c1"># (Block images from loading during tests.)</span>
---do-not-track  <span class="c1"># (Indicate to websites that you don&#39;t want to be tracked.)</span>
---verify-delay<span class="o">=</span>SECONDS  <span class="c1"># (The delay before MasterQA verification checks.)</span>
---recorder  <span class="c1"># (Enables the Recorder for turning browser actions into code.)</span>
---rec-behave  <span class="c1"># (Same as Recorder Mode, but also generates behave-gherkin.)</span>
---rec-sleep  <span class="c1"># (If the Recorder is enabled, also records self.sleep calls.)</span>
---rec-print  <span class="c1"># (If the Recorder is enabled, prints output after tests end.)</span>
---disable-js  <span class="c1"># (Disable JavaScript on websites. Pages might break!)</span>
---disable-csp  <span class="c1"># (Disable the Content Security Policy of websites.)</span>
---disable-ws  <span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
---enable-ws  <span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
---enable-sync  <span class="c1"># (Enable &quot;Chrome Sync&quot; on websites.)</span>
---use-auto-ext  <span class="c1"># (Use Chrome&#39;s automation extension.)</span>
---uc <span class="p">|</span> --undetected  <span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
---uc-sub <span class="p">|</span> --uc-subprocess  <span class="c1"># (Use undetected-chromedriver as a subprocess.)</span>
---remote-debug  <span class="c1"># (Enable Chrome&#39;s Remote Debugger on http://localhost:9222)</span>
---final-debug  <span class="c1"># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
---dashboard  <span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
---dash-title<span class="o">=</span>STRING  <span class="c1"># (Set the title shown for the generated dashboard.)</span>
---swiftshader  <span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
---incognito  <span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
---guest  <span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
---devtools  <span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session <span class="p">|</span> --rs  <span class="c1"># (Reuse the browser session between tests.)</span>
---crumbs  <span class="c1"># (Delete all cookies between tests reusing a session.)</span>
---disable-beforeunload  <span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
---window-size<span class="o">=</span>WIDTH,HEIGHT  <span class="c1"># (Set the browser&#39;s starting window size.)</span>
---maximize  <span class="c1"># (Start tests with the browser window maximized.)</span>
---screenshot  <span class="c1"># (Save a screenshot at the end of each test.)</span>
---no-screenshot  <span class="c1"># (No screenshots saved unless tests directly ask it.)</span>
---visual-baseline  <span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
---wire  <span class="c1"># (Use selenium-wire&#39;s webdriver for replacing selenium webdriver.)</span>
---external-pdf  <span class="c1"># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
---timeout-multiplier<span class="o">=</span>MULTIPLIER  <span class="c1"># (Multiplies the default timeout values.)</span>
---list-fail-page  <span class="c1"># (After each failing test, list the URL of the failure.)</span>
+<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER<span class="w">  </span><span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
+--chrome<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
+--edge<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
+--firefox<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
+--safari<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
+--cap-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--cap-string<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (Override default SeleniumBase settings.)</span>
+--env<span class="o">=</span>ENV<span class="w">  </span><span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
+--account<span class="o">=</span>STR<span class="w">  </span><span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
+--data<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.data&quot; in tests.)</span>
+--var1<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var1&quot; in tests.)</span>
+--var2<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var2&quot; in tests.)</span>
+--var3<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var3&quot; in tests.)</span>
+--variables<span class="o">=</span>DICT<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.variables&quot;.)</span>
+--user-data-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Set the Chrome user data directory to use.)</span>
+--protocol<span class="o">=</span>PROTOCOL<span class="w">  </span><span class="c1"># (The Selenium Grid protocol: http|https.)</span>
+--server<span class="o">=</span>SERVER<span class="w">  </span><span class="c1"># (The Selenium Grid server/IP used for tests.)</span>
+--port<span class="o">=</span>PORT<span class="w">  </span><span class="c1"># (The Selenium Grid port used by the test server.)</span>
+--proxy<span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="c1"># (Connect to a proxy server:port for tests.)</span>
+--proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT<span class="w">  </span><span class="c1"># (Use authenticated proxy server.)</span>
+--proxy-bypass-list<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
+--proxy-pac-url<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (Connect to a proxy server using a PAC_URL.pac file.)</span>
+--proxy-pac-url<span class="o">=</span>USERNAME:PASSWORD@URL<span class="w">  </span><span class="c1"># (Authenticated proxy with PAC URL.)</span>
+--agent<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
+--mobile<span class="w">  </span><span class="c1"># (Use the mobile device emulator while running tests.)</span>
+--metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
+--chromium-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span><span class="w">  </span><span class="c1"># (Set Chromium args, &quot;,&quot;-separated, no spaces.)</span>
+--firefox-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span><span class="w">  </span><span class="c1"># (Set Firefox args, comma-separated, no spaces.)</span>
+--firefox-pref<span class="o">=</span>SET<span class="w">  </span><span class="c1"># (Set a Firefox preference:value set, comma-separated.)</span>
+--extension-zip<span class="o">=</span>ZIP<span class="w">  </span><span class="c1"># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
+--extension-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
+--sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
+--pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
+--headless<span class="w">  </span><span class="c1"># (Run tests in headless mode. The default arg on Linux OS.)</span>
+--headless2<span class="w">  </span><span class="c1"># (Use the new headless mode, which supports extensions.)</span>
+--headed<span class="w">  </span><span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
+--xvfb<span class="w">  </span><span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
+--locale<span class="o">=</span>LOCALE_CODE<span class="w">  </span><span class="c1"># (Set the Language Locale Code for the web browser.)</span>
+--interval<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The autoplay interval for presentations &amp; tour steps)</span>
+--start-page<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (The starting URL for the web browser when tests begin.)</span>
+--archive-logs<span class="w">  </span><span class="c1"># (Archive existing log files instead of deleting them.)</span>
+--archive-downloads<span class="w">  </span><span class="c1"># (Archive old downloads instead of deleting them.)</span>
+--time-limit<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (Safely fail any test that exceeds the time limit.)</span>
+--slow<span class="w">  </span><span class="c1"># (Slow down the automation. Faster than using Demo Mode.)</span>
+--demo<span class="w">  </span><span class="c1"># (Slow down and visually see test actions as they occur.)</span>
+--demo-sleep<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (Set the wait time after Slow &amp; Demo Mode actions.)</span>
+--highlights<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># (Number of highlight animations for Demo Mode actions.)</span>
+--message-duration<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The time length for Messenger alerts.)</span>
+--check-js<span class="w">  </span><span class="c1"># (Check for JavaScript errors after page loads.)</span>
+--ad-block<span class="w">  </span><span class="c1"># (Block some types of display ads from loading.)</span>
+--block-images<span class="w">  </span><span class="c1"># (Block images from loading during tests.)</span>
+--do-not-track<span class="w">  </span><span class="c1"># (Indicate to websites that you don&#39;t want to be tracked.)</span>
+--verify-delay<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The delay before MasterQA verification checks.)</span>
+--recorder<span class="w">  </span><span class="c1"># (Enables the Recorder for turning browser actions into code.)</span>
+--rec-behave<span class="w">  </span><span class="c1"># (Same as Recorder Mode, but also generates behave-gherkin.)</span>
+--rec-sleep<span class="w">  </span><span class="c1"># (If the Recorder is enabled, also records self.sleep calls.)</span>
+--rec-print<span class="w">  </span><span class="c1"># (If the Recorder is enabled, prints output after tests end.)</span>
+--disable-js<span class="w">  </span><span class="c1"># (Disable JavaScript on websites. Pages might break!)</span>
+--disable-csp<span class="w">  </span><span class="c1"># (Disable the Content Security Policy of websites.)</span>
+--disable-ws<span class="w">  </span><span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
+--enable-ws<span class="w">  </span><span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
+--enable-sync<span class="w">  </span><span class="c1"># (Enable &quot;Chrome Sync&quot; on websites.)</span>
+--use-auto-ext<span class="w">  </span><span class="c1"># (Use Chrome&#39;s automation extension.)</span>
+--uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
+--uc-sub<span class="w"> </span><span class="p">|</span><span class="w"> </span>--uc-subprocess<span class="w">  </span><span class="c1"># (Use undetected-chromedriver as a subprocess.)</span>
+--remote-debug<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Remote Debugger on http://localhost:9222)</span>
+--final-debug<span class="w">  </span><span class="c1"># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
+--dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
+--dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
+--swiftshader<span class="w">  </span><span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
+--incognito<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
+--guest<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
+--devtools<span class="w">  </span><span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
+--reuse-session<span class="w"> </span><span class="p">|</span><span class="w"> </span>--rs<span class="w">  </span><span class="c1"># (Reuse the browser session between tests.)</span>
+--crumbs<span class="w">  </span><span class="c1"># (Delete all cookies between tests reusing a session.)</span>
+--disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
+--window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window size.)</span>
+--maximize<span class="w">  </span><span class="c1"># (Start tests with the browser window maximized.)</span>
+--screenshot<span class="w">  </span><span class="c1"># (Save a screenshot at the end of each test.)</span>
+--no-screenshot<span class="w">  </span><span class="c1"># (No screenshots saved unless tests directly ask it.)</span>
+--visual-baseline<span class="w">  </span><span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
+--wire<span class="w">  </span><span class="c1"># (Use selenium-wire&#39;s webdriver for replacing selenium webdriver.)</span>
+--external-pdf<span class="w">  </span><span class="c1"># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
+--timeout-multiplier<span class="o">=</span>MULTIPLIER<span class="w">  </span><span class="c1"># (Multiplies the default timeout values.)</span>
+--list-fail-page<span class="w">  </span><span class="c1"># (After each failing test, list the URL of the failure.)</span>
 </code></pre></div>
 <p>(有关详细信息，请参见命令行选项的完整列表 <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">点击这里</a></strong>.)</p>
 <p>在测试失败期间，最近一次测试运行的日志和屏幕截图将被保存到<code>latest_logs/</code>文件夹中。如果在命令行选项中添加——archive_logs，或者在 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>中将<code>ARCHIVE_EXISTING_LOGS</code>设置为<code>True</code>，那么这些日志将被移动到<code>archived_logs/</code>。否则，将在下一次测试运行开始时清理日志文件。<code>test_suite.py</code>集合包含故意失败的测试，以便您可以看到日志记录是如何工作的。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
 
-pytest test_suite.py --browser<span class="o">=</span>chrome
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>chrome
 
-pytest test_suite.py --browser<span class="o">=</span>firefox
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>firefox
 </code></pre></div>
 <p>覆盖seleniumbase/config/settings.py的一个简单方法是使用自定义设置文件。下面是要添加到测试中的命令行选项: (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py">examples/custom_settings.py</a>)
 <code>--settings_file=custom_settings.py</code>
@@ -2053,9 +2053,9 @@ pytest test_suite.py --browser<span class="o">=</span>firefox
 
 <p>用于在SeleniumBase repo之外运行测试 <b>Pytest</b>, 你需要一份 <b><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></b> 在根目录上。用于在SeleniumBase repo之外运行测试 <b>Nosetests</b>, 你需要拷贝 <b><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></b> 在根目录上. (子文件夹应该包括一个空白的 "<strong>init</strong>.py" 文件。)这些文件指定测试的默认配置细节。(对于运行nosetest，还可以使用<code>--config</code>指定.cfg文件。示例<code>nosetests [MY_TEST].py--config=[MY_CONFIG].cfg</code> ')</p>
 <p>作为一个快捷方式，您可以运行<code>seleniumbase mkdir [DIRECTORY_NAME]</code>来创建一个新的文件夹，其中已经包含了必要的文件和一些可以运行的示例测试。例子:</p>
-<div class="highlight"><pre><span></span><code>seleniumbase mkdir ui_tests
-<span class="nb">cd</span> ui_tests/
-pytest my_first_test.py
+<div class="highlight"><pre><span></span><code>seleniumbase<span class="w"> </span>mkdir<span class="w"> </span>ui_tests
+<span class="nb">cd</span><span class="w"> </span>ui_tests/
+pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 日志记录/失败测试的结果:</h3>
 
@@ -2070,7 +2070,7 @@ pytest my_first_test.py
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#ARMY_OF_ROBOTS&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
 </code></pre></div>
 <p>你可以运行在<code>example</code>文件夹运行:</p>
-<div class="highlight"><pre><span></span><code>pytest test_fail.py
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py
 </code></pre></div>
 <p>您会注意到，创建了一个名为“latest_logs”的日志文件夹来保存有关失败测试的信息和屏幕截图。在测试运行期间，如果您在 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>中将ARCHIVE_EXISTING_LOGS设置为True, 或者如果您使用<code>--archive-logs</code>运行测试，那么过去的结果就会移动到archived_logs文件夹中。如果您选择不归档现有的日志，它们将被删除，并被最新测试运行的日志所取代。</p>
 <p><a id="creating_visual_reports"></a></p>
@@ -2080,34 +2080,34 @@ pytest my_first_test.py
 <h4><b>Pytest 报告:</b></h4>
 
 <p>使用 <code>--html=report.html</code> 在您的测试套件完成后，为您提供指定名称的漂亮报告。</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --html<span class="o">=</span>report.html
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/html_report.png" alt="Example Pytest Report" title="Example Pytest Report" width="520" /></p>
 <p>还可以使用<code>--junit-xml=report</code>。获取一个xml报告。Jenkins可以使用这个文件为您的测试显示更好的报告。</p>
-<div class="highlight"><pre><span></span><code>pytest test_suite.py --junit-xml<span class="o">=</span>report.xml
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--junit-xml<span class="o">=</span>report.xml
 </code></pre></div>
 <h4><b>Nosetest 报告:</b></h4>
 
 <p><code>--report</code> 选项将在测试套件完成后为您提供一个漂亮的报告。</p>
-<div class="highlight"><pre><span></span><code>nosetests test_suite.py --report
+<div class="highlight"><pre><span></span><code>nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--report
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/nose_report.png" alt="Example Nosetest Report" title="Example Nosetest Report" width="320" /></p>
 <p>(注意:您可以添加<code>--show-report</code>来在测试套件完成后立即显示Nosetest报告。只在本地运行测试时使用<code>--show-report</code>，因为它会暂停测试运行.)</p>
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 使用代理服务器:</h3>
 
 <p>如果您希望为您的浏览器测试使用代理服务器(仅适用于Chrome和Firefox)，您可以在命令行上添加<code>--proxy=IP_ADDRESS:PORT</code>作为参数。</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>IP_ADDRESS:PORT
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
 <p>如果您希望使用的代理服务器需要身份验证，您可以执行以下操作 (Chrome only):</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
 <p>为了使事情更简单，您可以将您经常使用的代理添加到PROXY_LIST中 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, 然后使用<code>--proxy=KEY_FROM_PROXY_LIST</code>来使用该键的IP_ADDRESS:PORT。</p>
-<div class="highlight"><pre><span></span><code>pytest proxy_test.py --proxy<span class="o">=</span>proxy1
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>proxy1
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 变更 User-Agent:</h3>
 
 <p>如果您希望为您的浏览器测试更改用户代理(仅限Chrome和Firefox)，您可以在命令行上添加<code>--agent="USER agent STRING"</code>作为参数。</p>
-<div class="highlight"><pre><span></span><code>pytest user_agent_test.py --agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 为网站建设导游服务:</h3>
 
@@ -2134,7 +2134,7 @@ pytest my_first_test.py
 </li>
 </ul>
 <p>下面是一个启用了附加功能的测试运行示例:</p>
-<div class="highlight"><pre><span></span><code>pytest <span class="o">[</span>YOUR_TEST_FILE<span class="o">]</span>.py --with-db-reporting --with-s3-logging
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span><span class="o">[</span>YOUR_TEST_FILE<span class="o">]</span>.py<span class="w"> </span>--with-db-reporting<span class="w"> </span>--with-s3-logging
 </code></pre></div>
 <p><a id="detailed_method_specifications"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/sb_icon.png" title="SeleniumBase" width="30" /> 详细的方法说明和实例:</h3>
@@ -2399,44 +2399,6 @@ pytest my_first_test.py
       
         <footer class="md-footer">
   
-    
-      
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../translations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🌏 Translations" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              🌏 Translations
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../locale_codes/" class="md-footer__link md-footer__link--next" aria-label="Next: 🗾 Locale Codes" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              🗾 Locale Codes
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2462,12 +2424,11 @@ pytest my_first_test.py
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>
