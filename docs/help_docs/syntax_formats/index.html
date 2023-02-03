@@ -21,7 +21,7 @@
         <link rel="next" href="../commander/">
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.10">
     
     
       
@@ -1754,8 +1754,9 @@
 <h3><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 1. BaseCase direct class inheritance</h3>
 
 <p>In this format, (which is used by most of the tests in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase examples folder</a>), <code>BaseCase</code> is imported at the top of a Python file, followed by a Python class inheriting <code>BaseCase</code>. Then, any test method defined in that class automatically gains access to SeleniumBase methods, including the <code>setUp()</code> and <code>tearDown()</code> methods that are automatically called for opening and closing web browsers at the start and end of tests.</p>
-<p>To run a test of this format, use <strong><code>pytest</code></strong> or <code>nosetests</code>. If you add: <code>if __name__ == "__main__":</code> <code>pytest.main([__file__])</code> to a file, you can also use <code>python</code> as a test runner, which invokes <code>pytest</code>. Here's an example:</p>
+<p>To run a test of this format, use <strong><code>pytest</code></strong> or <code>nosetests</code>. Adding <code>BaseCase.main(__name__, __file__)</code> enables <code>python</code> to run <code>pytest</code> on your file indirectly. Here's an example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_demo_site</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1767,13 +1768,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;SeleniumBase Demo Page&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Demo Page&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_no_js_errors</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">main</span>
-    <span class="n">main</span><span class="p">([</span><span class="vm">__file__</span><span class="p">,</span> <span class="s2">&quot;-s&quot;</span><span class="p">])</span>
 </code></pre></div>
 <p>(See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py">examples/test_demo_site.py</a> for the full test.)</p>
-<p>Starting with <code>seleniumbase</code> <code>4.11.0</code>, you can also include <code>BaseCase.main(__name__, __file__)</code> in your script to invoke <code>pytest</code> via <code>python</code>. (Eg. <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/coffee_cart_tests.py">coffee_cart_tests.py</a>)</p>
 <p>Using <code>BaseCase</code> inheritance is a great starting point for anyone learning SeleniumBase, and it follows good object-oriented programming principles.</p>
 <p><a id="sb_sf_02"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 2. BaseCase subclass inheritance</h3>
@@ -2547,7 +2543,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
       
     
   </body>
