@@ -8575,6 +8575,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
             })
           }, "Yes, of course!"),
           createBaseVNode("button", {
+            class: "no",
             onClick: _cache[1] || (_cache[1] = ($event) => _ctx.close())
           }, "Nah, I'll skip.")
         ])
