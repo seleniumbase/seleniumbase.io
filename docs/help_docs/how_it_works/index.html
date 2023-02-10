@@ -1755,6 +1755,7 @@
 </code></pre></div>
 <p>Here's what a full test might look like:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">TestMFALogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_mfa_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1804,9 +1805,8 @@ pytest<span class="w"> </span>-k<span class="w"> </span>agent
 <p><code>--sjw</code> --&gt; Skip JS Waits, which include <code>wait_for_ready_state_complete()</code> and <code>wait_for_angularjs()</code>.</p>
 </li>
 </ul>
-<p>(NOTE: Those command-line options were added in SeleniumBase <code>4.2.0</code>. Using both could lead to a 15% increase in test speed, but it could also lead to flaky tests, so use with caution.)</p>
 <hr />
-<p><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.io/cdn/img/super_logo_sb.png" alt="SeleniumBase" title="SeleniumBase" width="300" /></a></p>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" alt="SeleniumBase" title="SeleniumBase" width="300" /></a></p>
 <p><a href="https://www.python.org/downloads/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=22AAEE&logo=python" title="Supported Python Versions" /></a></p>
 
 
