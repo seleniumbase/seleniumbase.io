@@ -1723,6 +1723,7 @@
 <p>🕵️ (<i>Based on: <a href="https://github.com/philipwalton/html-inspector">github.com/philipwalton/html-inspector</a></i>)</p>
 <p>🕵️ Example: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_inspect_html.py">examples/test_inspect_html.py</a> (Chromium-only)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">HtmlInspectorTests</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_html_inspector</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1730,17 +1731,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">inspect_html</span><span class="p">()</span>
 </code></pre></div>
 <hr />
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_inspect_html.py<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_inspect_html.py
 <span class="o">==============</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>session<span class="w"> </span><span class="nv">starts</span><span class="w"> </span><span class="o">==============</span>
 
 *<span class="w"> </span>HTML<span class="w"> </span>Inspection<span class="w"> </span>Results:<span class="w"> </span>https://xkcd.com/1144/
 ⚠️<span class="w">  </span><span class="s1">&#39;property&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>attribute<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>&lt;meta&gt;<span class="w"> </span>element.
 ⚠️<span class="w">  </span>Do<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>&lt;div&gt;<span class="w"> </span>or<span class="w"> </span>&lt;span&gt;<span class="w"> </span>elements<span class="w"> </span>without<span class="w"> </span>any<span class="w"> </span>attributes.
-⚠️<span class="w">  </span>The<span class="w"> </span><span class="s1">&#39;alt&#39;</span><span class="w"> </span>attribute<span class="w"> </span>is<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>&lt;img&gt;<span class="w"> </span>elements.
-⚠️<span class="w">  </span>The<span class="w"> </span><span class="s1">&#39;border&#39;</span><span class="w"> </span>attribute<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>longer<span class="w"> </span>valid<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>&lt;img&gt;<span class="w"> </span>element<span class="w"> </span>and<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used.
 ⚠️<span class="w">  </span><span class="s1">&#39;srcset&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>attribute<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>&lt;img&gt;<span class="w"> </span>element.
+⚠️<span class="w">  </span>The<span class="w"> </span><span class="s1">&#39;border&#39;</span><span class="w"> </span>attribute<span class="w"> </span>is<span class="w"> </span>no<span class="w"> </span>longer<span class="w"> </span>valid<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>&lt;img&gt;<span class="w"> </span>element<span class="w"> </span>and<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used.
 ⚠️<span class="w">  </span>The<span class="w"> </span>&lt;center&gt;<span class="w"> </span>element<span class="w"> </span>is<span class="w"> </span>obsolete<span class="w"> </span>and<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used.
-⚠️<span class="w">  </span>&lt;script&gt;<span class="w"> </span>elements<span class="w"> </span>should<span class="w"> </span>appear<span class="w"> </span>right<span class="w"> </span>before<span class="w"> </span>the<span class="w"> </span>closing<span class="w"> </span>&lt;/body&gt;<span class="w"> </span>tag<span class="w"> </span><span class="k">for</span><span class="w"> </span>optimal<span class="w"> </span>performance.
 ⚠️<span class="w">  </span>The<span class="w"> </span>id<span class="w"> </span><span class="s1">&#39;comicLinks&#39;</span><span class="w"> </span>appears<span class="w"> </span>more<span class="w"> </span>than<span class="w"> </span>once<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>document.
 *<span class="w"> </span><span class="o">(</span>See<span class="w"> </span>the<span class="w"> </span>Console<span class="w"> </span>output<span class="w"> </span><span class="k">for</span><span class="w"> </span>details!<span class="o">)</span>
 </code></pre></div>
