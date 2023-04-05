@@ -1,15 +1,35 @@
 <html>
 <head>
+<title>Python Selenium: Fundamentals to Frameworks (with SeleniumBase)</title>
 <meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html, charset=utf-8;">
 <meta name="viewport" content="shrink-to-fit=no">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reveal.css">
+<meta property="og:site_name" content="Python Selenium: Fundamentals to Frameworks (with SeleniumBase)">
+<meta property="og:title" content="Python Selenium: Fundamentals to Frameworks (with SeleniumBase)" />
+<meta property="og:description" content="Python Selenium: Fundamentals to Frameworks (with SeleniumBase)" />
+<meta property="og:image" content="https://seleniumbase.io/other/sel_and_py_2.png" />
+<link rel="shortcut icon" href="https://seleniumbase.io/other/sel_and_py_2.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reveal.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/serif.min.css">
 <style>
 pre{background-color:#fbe8d4;border-radius:8px;}
 div[flex_div]{height:68vh;margin:0;align-items:center;justify-content:center;}
 img[rounded]{border-radius:16px;max-width:64%;}
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+</script>
 </head>
 
 <body>
@@ -23,15 +43,12 @@ img[rounded]{border-radius:16px;max-width:64%;}
 <br /><hr /><br />
 <h3>Presented by <b>Michael Mintz</b></h3>
 <h3>SeleniumConf 2023 - Chicago</h3>
-
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h3><b>Welcome to Chicago!</b></h3><hr />
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/chicago_skyline.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -39,8 +56,6 @@ img[rounded]{border-radius:16px;max-width:64%;}
 <ul>
 <li><b>The Selenium Org</b> (made everything possible)</li><br /><li><b>Conference organizers</b> (made today possible)</li><br /><li><b>My wife</b> (a major supporter of my work)</li><br /><li><b>iboss</b> (my employer)</li>
 </ul>
-
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -51,7 +66,6 @@ img[rounded]{border-radius:16px;max-width:64%;}
 </ul>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/iboss_booth.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -61,7 +75,6 @@ If one Python session is not enough, come see me afterwards.
 </h3>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/python_3d_logo.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -71,8 +84,6 @@ If one Python session is not enough, come see me afterwards.
 <li>How test frameworks can improve on the fundamentals.</li><br />
 <li>How SeleniumBase makes Python Web Automation easier.</li><br />
 </ul>
-
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -84,7 +95,6 @@ If one Python session is not enough, come see me afterwards.
 </ul>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/presentation_parts.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -93,7 +103,6 @@ If one Python session is not enough, come see me afterwards.
 <h4><b>Selenium provides an automation library!</b></h4><br />
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/selenium_slogan.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -102,7 +111,6 @@ If one Python session is not enough, come see me afterwards.
 <p>(for Python)</p><br />
 <h3><code><mark>pip install selenium</mark></code></h3>
 <div flex_div><img rounded src="https://seleniumbase.io/other/selenium_pypi.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -126,9 +134,7 @@ elem_2 = driver.find_element("css selector", "#docsearch-input")
 elem_2.send_keys("Python")
 
 driver.quit()
-
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -152,9 +158,7 @@ elem_2 = driver.find_element("css selector", "#docsearch-input")
 elem_2.send_keys("Python")
 
 driver.quit()
-
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -180,7 +184,6 @@ elem_2.send_keys("Python")
 driver.quit()
 
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -204,9 +207,7 @@ elem_2 = driver.find_element("css selector", "#docsearch-input")
 elem_2.send_keys("Python")
 
 driver.quit()
-
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -230,9 +231,7 @@ element.click()
 elem_2.send_keys("Python")</mark>
 
 driver.quit()
-
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -256,9 +255,7 @@ elem_2 = driver.find_element("css selector", "#docsearch-input")
 elem_2.send_keys("Python")
 
 <mark>driver.quit()</mark>
-
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -281,7 +278,6 @@ prefs = {
 options.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(options=options)
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -289,14 +285,12 @@ driver = webdriver.Chrome(options=options)
 <br /><a href="https://selenium.dev/documentation/overview/components/#where-frameworks-fit-in">(Where does a framework fit in?)</a>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/with_a_framework.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h4>What are some disadvantages of using <b>raw</b> Selenium without additional libraries or frameworks?</h4><hr /><h4>
 <br />
 <div flex_div><img rounded src="https://seleniumbase.io/other/sel_and_py_2.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -305,34 +299,29 @@ driver = webdriver.Chrome(options=options)
 </h4>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/messy_stacktrace.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h4>What are some disadvantages of using <b>raw</b> Selenium without additional libraries or frameworks?</h4><hr /><h4><br />
 The command statements can get a bit too long:</h4>
 <p><code><mark>driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR).click()</code></mark></p><br /><h4>This is better:</h4><p><code>self.click(CSS_SELECTOR)</code><p><br />
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h4>What are some disadvantages of using <b>raw</b> Selenium without additional libraries or frameworks?</h4><hr /><h4><br />
 The command statements can get a bit too long:</h4>
 <p><code>driver.find_element(By.CSS_SELECTOR, CSS_SELECTOR).click()</code></p><br /><h4>This is better:</h4><p><code><mark>self.click(CSS_SELECTOR)</mark></code><p><br />
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h4>What are some disadvantages of using <b>raw</b> Selenium without additional libraries or frameworks?</h4><hr /><h4><mark><br />
 No HTML reports, dashboards, results, screenshots...</mark><br /><br />A test framework can provide those!<br />
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h5>Raw Selenium disadvantages, continued...</h5><hr /><h4>
 No HTML reports, dashboards, results, screenshots...<br /><mark>A test framework can provide those!</mark>
 <div flex_div><img rounded src="https://seleniumbase.io/cdn/img/dash_report.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -348,7 +337,6 @@ element.submit()
 <br />
 <p>But with a framework, do all that in ONE line:</p>
 <pre>self.type("#password", "secret_sauce\n")</pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -364,7 +352,6 @@ element.submit()
 <br />
 <p><mark>But with a framework, do all that in ONE line:</mark></p>
 <pre>self.type("#password", "secret_sauce\n")</pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -376,8 +363,6 @@ element.submit()
 <li>Command-line options. Eg. <pre>pytest --browser=edge --html=report.html</pre></li>
 <li>Advanced tools (Eg. test recorders)</li>
 <li>Easy to read error messages. Eg. <pre>Element "h2" was not visible after 10s!</pre></li></ul>
-
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -385,7 +370,6 @@ element.submit()
 <h3>Python includes powerful test runners, such as <b>pytest</b>.</h3>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/invoke_pytest.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -398,8 +382,6 @@ element.submit()
 <li>Multithread your tests.</li>
 <li>Use a large number of existing plugins.</li>
 </ul>
-
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -407,7 +389,6 @@ element.submit()
 <h4><b><code>SeleniumBase</code></b> combines the best of both <b><code>Selenium</code></b> and <b><code>pytest</code></b> into a super framework.</h4>
 
 <div flex_div><img rounded src="https://seleniumbase.io/cdn/img/sb_logo_10c.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -419,8 +400,6 @@ element.submit()
 <li>Command-line options. Eg. <pre>pytest --browser=edge --html=report.html</pre></li>
 <li>Advanced tools (Eg. test recorders)</li>
 <li>Easy to read error messages. Eg. <pre>Element "h2" was not visible after 10s!</pre></li></ul>
-
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -428,7 +407,6 @@ element.submit()
 <hr /><br />
 <h3><code><mark>pip install seleniumbase</mark></code></h3>
 <div flex_div><img rounded src="https://seleniumbase.io/other/seleniumbase_github.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -455,7 +433,6 @@ class MyTestClass(BaseCase):
         self.type("#postal-code", "77123")
         self.click("input#continue")
         self.assert_text("Checkout: Overview")</pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -481,7 +458,6 @@ self.switch_to_default_window()  # Go to original window.
 self.assert_element(selector)  # Verify element is visible.
 self.assert_text(text, selector)  # Verify text substring.
 self.assert_exact_text(text, selector)  # Verify exact text.</pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -507,7 +483,6 @@ self.assert_exact_text(text, selector)  # Verify exact text.</pre>
 <span class="kwd">--co -q</span><span class="str">  (Only show full names of discovered tests. No run.)</span>
 <span class="kwd">-x</span><span class="str">  (Stop running tests after the first failure is reached.)</span>
 </pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
@@ -534,13 +509,11 @@ seleniumbase revert-objects [SB_FILE.py]  # Undo objectify
 seleniumbase download server  # Get Selenium Grid JAR file
 seleniumbase grid-hub [start|stop] [OPTIONS]  # Start Grid
 seleniumbase grid-node [start|stop] --hub=[IP]  # Add Node</pre>
-<aside class="notes"></aside>
 </section>
 
 <section data-transition="fade">
 <h2><b>Live Demo Time!</b></h2><hr /><br /><h3>(Starting with raw Selenium, and evolving that into SeleniumBase.)</h3>
 <div flex_div><img rounded src="https://seleniumbase.io/other/python_3d_logo.png" /></div>
-<aside class="notes"></aside>
 </section>
 
 </div>
