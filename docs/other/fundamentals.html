@@ -99,8 +99,9 @@ If one Python session is not enough, come see me afterwards.
 
 <section data-transition="fade">
 <h3>What does Selenium provide?</h3>
-<hr /><br /><br />
-<h4><b>Selenium provides an automation library!</b></h4><br />
+<hr /><br />
+<h4><b>Selenium provides an automation library!</b></h4>
+<br /><h5>(It does NOT provide a test framework.)</h5>
 
 <div flex_div><img rounded src="https://seleniumbase.io/other/selenium_slogan.png" /></div>
 </section>
@@ -182,7 +183,6 @@ elem_2 = driver.find_element("css selector", "#docsearch-input")
 elem_2.send_keys("Python")
 
 driver.quit()
-
 </pre>
 </section>
 
@@ -432,7 +432,8 @@ class MyTestClass(BaseCase):
         self.type("#last-name", "Automation")
         self.type("#postal-code", "77123")
         self.click("input#continue")
-        self.assert_text("Checkout: Overview")</pre>
+        self.assert_text("Checkout: Overview")
+</pre>
 </section>
 
 <section data-transition="fade">
@@ -455,9 +456,10 @@ self.switch_to_parent_frame()  # Exit current iframe.
 self.open_new_window()  # Open new window in same browser.
 self.switch_to_window(window)  # Switch to browser window.
 self.switch_to_default_window()  # Go to original window.
-self.assert_element(selector)  # Verify element is visible.
-self.assert_text(text, selector)  # Verify text substring.
-self.assert_exact_text(text, selector)  # Verify exact text.</pre>
+self.assert_element(selector)  # Verify element visible.
+self.assert_text(text, selector)  # Substring assertion.
+self.assert_exact_text(text, selector)  # String assert.
+</pre>
 </section>
 
 <section data-transition="fade">
@@ -489,26 +491,27 @@ self.assert_exact_text(text, selector)  # Verify exact text.</pre>
 <h3>Common console scripts:</h3><hr />
 <div></div>
 <pre class="prettyprint">
-seleniumbase get [DRIVER] [OPTIONS]  # Eg. chromedriver
-seleniumbase methods  # List common Python methods
-seleniumbase options  # List common pytest options
-seleniumbase gui  # Open the SB GUI for pytest
-seleniumbase caseplans  # Open the SB Case Plans App
-seleniumbase mkdir [DIRECTORY]  # Create a test directory
-seleniumbase mkfile [FILE.py]  # Create a test file
-seleniumbase codegen [FILE.py] [OPTIONS]  # Record a test
-seleniumbase recorder  # Open the SB Recorder App
-seleniumbase mkpres  # Create a Presentation boilerplate
-seleniumbase mkchart  # Create a Chart boilerplate
-seleniumbase print [FILE]  # Print file to console
-seleniumbase translate [FILE.py] [OPTIONS]  # Translate
-seleniumbase extract-objects [SB_FILE.py]  # Get objects
-seleniumbase inject-objects [SB_FILE.py]  # Swap selectors
-seleniumbase objectify [SB_FILE.py]  # Get & swap objects
-seleniumbase revert-objects [SB_FILE.py]  # Undo objectify
-seleniumbase download server  # Get Selenium Grid JAR file
-seleniumbase grid-hub [start|stop] [OPTIONS]  # Start Grid
-seleniumbase grid-node [start|stop] --hub=[IP]  # Add Node</pre>
+sbase get [DRIVER] [OPTIONS]  # Eg. chromedriver
+sbase methods  # List common Python methods
+sbase options  # List common pytest options
+sbase gui  # Open the SB GUI for pytest
+sbase caseplans  # Open the SB Case Plans App
+sbase mkdir [DIRECTORY]  # Create a test directory
+sbase mkfile [FILE.py]  # Create a test file
+sbase codegen [FILE.py] [OPTIONS]  # Record a test
+sbase recorder  # Open the SB Recorder App
+sbase mkpres  # Create a Presentation boilerplate
+sbase mkchart  # Create a Chart boilerplate
+sbase print [FILE]  # Print file to console
+sbase translate [FILE.py] [OPTIONS]  # Translate
+sbase extract-objects [SB_FILE.py]  # Get objects
+sbase inject-objects [SB_FILE.py]  # Swap selectors
+sbase objectify [SB_FILE.py]  # Get & swap objects
+sbase revert-objects [SB_FILE.py]  # Undo objectify
+sbase download server  # Get Selenium Grid JAR file
+sbase grid-hub [start|stop] [OPTIONS]  # Start Grid
+sbase grid-node [start|stop] --hub=[IP]  # Add Node
+</pre>
 </section>
 
 <section data-transition="fade">
