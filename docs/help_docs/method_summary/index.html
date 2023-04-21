@@ -1750,18 +1750,21 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">double_click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">context_click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.right_click(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.right_click(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">click_chain</span><span class="p">(</span><span class="n">selectors_list</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.update_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.input(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.fill(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.write(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.update_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.input(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.fill(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.write(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.add_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.add_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 
@@ -1769,8 +1772,8 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">focus</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">refresh_page</span><span class="p">()</span>
-<span class="c1"># Duplicates: self.refresh(), self.reload(), self.reload_page()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+<span class="c1"># Duplicates: self.refresh_page(), self.reload_page(), self.reload()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
 
@@ -1816,15 +1819,18 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">is_partial_link_text_present</span><span class="p">(</span><span class="n">link_text</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_link_attribute</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">hard_fail</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.get_link_text_attribute(link_text, attribute, hard_fail=True)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.get_link_text_attribute(link_text, attribute, hard_fail=True)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_partial_link_text_attribute</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">hard_fail</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.click_link_text(link_text, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.click_link_text(link_text, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">click_partial_link</span><span class="p">(</span><span class="n">partial_link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.click_partial_link_text(partial_link_text, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.click_partial_link_text(partial_link_text, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -1836,7 +1842,8 @@
     <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.set_attribute_all(selector, attribute, value, by=&quot;css selector&quot;)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.set_attribute_all(selector, attribute, value, by=&quot;css selector&quot;)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_attribute</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -1869,21 +1876,25 @@
     <span class="n">selector</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">is_checked</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.is_selected(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.is_selected(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">check_if_unchecked</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.select_if_unselected(selector, by=&quot;css selector&quot;)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.select_if_unselected(selector, by=&quot;css selector&quot;)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">uncheck_if_checked</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.unselect_if_selected(selector, by=&quot;css selector&quot;)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.unselect_if_selected(selector, by=&quot;css selector&quot;)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">is_element_in_an_iframe</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame_of_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">hover</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.hover_on_element(selector, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.hover_over_element(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.hover_on_element(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.hover_over_element(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">hover_and_click</span><span class="p">(</span>
     <span class="n">hover_selector</span><span class="p">,</span> <span class="n">click_selector</span><span class="p">,</span>
@@ -1895,9 +1906,10 @@
     <span class="n">hover_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">click_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
     <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">drag_and_drop</span><span class="p">(</span><span class="n">drag_selector</span><span class="p">,</span> <span class="n">drop_selector</span><span class="p">,</span>
-                   <span class="n">drag_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">drop_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
-                   <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">jquery</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">drag_and_drop</span><span class="p">(</span>
+    <span class="n">drag_selector</span><span class="p">,</span> <span class="n">drop_selector</span><span class="p">,</span>
+    <span class="n">drag_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">drop_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">jquery</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">drag_and_drop_with_offset</span><span class="p">(</span>
     <span class="n">selector</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -2134,7 +2146,8 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_link_status_code_is_not_404</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_no_404_errors</span><span class="p">(</span><span class="n">multithreaded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.assert_no_broken_links(multithreaded=True)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.assert_no_broken_links(multithreaded=True, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">print_unique_links_with_status_codes</span><span class="p">()</span>
 
@@ -2191,12 +2204,10 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_raises</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_attribute</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_attribute</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
 
@@ -2223,12 +2234,14 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">get_chromium_driver_version</span><span class="p">()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_mfa_code</span><span class="p">(</span><span class="n">totp_key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.get_totp_code(totp_key=None)</span>
-<span class="c1">#             self.get_google_auth_password(totp_key=None)</span>
-<span class="c1">#             self.get_google_auth_code(totp_key=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.get_totp_code(totp_key=None)</span>
+<span class="c1"># self.get_google_auth_password(totp_key=None)</span>
+<span class="c1"># self.get_google_auth_code(totp_key=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">enter_mfa_code</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">totp_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.enter_totp_code(selector, totp_key=None, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.enter_totp_code(selector, totp_key=None, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">convert_css_to_xpath</span><span class="p">(</span><span class="n">css</span><span class="p">)</span>
 
@@ -2239,13 +2252,16 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">js_update_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.js_type(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.set_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.js_type(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.set_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">set_text_content</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">set_text_content</span><span class="p">(</span>
+    <span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">jquery_update_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.jquery_type(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.jquery_type(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -2376,11 +2392,13 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">set_introjs_colors</span><span class="p">(</span><span class="n">theme_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hover_color</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                   <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+    <span class="n">message</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.start_tour(name=None, interval=0):</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.start_tour(name=None, interval=0):</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">export_tour</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_tour.js&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -2410,7 +2428,8 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">post_error_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">max_messages</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span>
+    <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">max_messages</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
 
 <span class="c1">############</span>
 
@@ -2425,7 +2444,8 @@
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_element_present(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_element_present(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_query_selector</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -2436,27 +2456,33 @@
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_element(selector, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.wait_for_element_visible(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_element(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.wait_for_element_visible(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.assert_element_visible(selector, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.assert_element_visible(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_elements</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.assert_elements_visible(*args, **kwargs)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.assert_elements_visible(*args, **kwargs)</span>
 
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">find_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_text(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.wait_for_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_text(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.wait_for_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">find_exact_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_exact_text(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
-<span class="c1">#             self.wait_for_exact_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_exact_text(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.wait_for_exact_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.assert_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.assert_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -2467,25 +2493,29 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_partial_link_text_present</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">find_link_text</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_link_text(link_text, timeout=None)</span>
-<span class="c1">#             self.wait_for_link_text_visible(link_text, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_link_text(link_text, timeout=None)</span>
+<span class="c1"># self.wait_for_link_text_visible(link_text, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_link_text</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">find_partial_link_text</span><span class="p">(</span><span class="n">partial_link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_partial_link_text(partial_link_text, timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_partial_link_text(partial_link_text, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_partial_link_text</span><span class="p">(</span><span class="n">partial_link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_absent</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_element_not_present(selector, by=&quot;css selector&quot;)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_element_not_present(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_element_absent</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.assert_element_not_present(selector, by=&quot;css selector&quot;)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.assert_element_not_present(selector, by=&quot;css selector&quot;, timeout=None)</span>
 
 <span class="c1">############</span>
 
@@ -2518,13 +2548,16 @@
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">accept_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_and_accept_alert(timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_and_accept_alert(timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">dismiss_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_and_dismiss_alert(timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_and_dismiss_alert(timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates: self.wait_for_and_switch_to_alert(timeout=None)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_and_switch_to_alert(timeout=None)</span>
 
 <span class="c1">############</span>
 
@@ -2537,9 +2570,11 @@
 
 <span class="c1">############</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span>
+    <span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>
-<span class="c1"># self.delayed_assert_element(selector, by=&quot;css selector&quot;, timeout=None, fs=False)</span>
+<span class="c1"># self.delayed_assert_element(</span>
+<span class="c1">#     selector, by=&quot;css selector&quot;, timeout=None, fs=False)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element_present</span><span class="p">(</span>
     <span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2566,6 +2601,7 @@
 <span class="c1"># self.delayed_check_window(</span>
 <span class="c1">#     name=&quot;default&quot;, level=0, baseline=False,</span>
 <span class="c1">#     check_domain=True, full_diff=False, fs=False)</span>
+
 <span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">(</span><span class="n">print_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1"># Duplicates: self.process_delayed_asserts(print_only=False)</span>
 
