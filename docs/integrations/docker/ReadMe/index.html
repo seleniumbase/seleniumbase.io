@@ -1956,7 +1956,7 @@ https://docs.docker.com/engine/installation/</p>
 <div class="highlight"><pre><span></span><code>docker build -t seleniumbase .
 </code></pre></div>
 <p>If running on an Apple M1 Mac, use this instead:</p>
-<div class="highlight"><pre><span></span><code>docker build --platform linux/amd64 seleniumbase .
+<div class="highlight"><pre><span></span><code>docker build --platform linux/amd64 -t seleniumbase .
 </code></pre></div>
 <h4 id="6-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell">6. Run <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">the example test</a> with Chrome inside your Docker: (Once the test completes after a few seconds, you'll automatically exit the Docker shell)<a class="headerlink" href="#6-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>docker run seleniumbase ./run_docker_test_in_chrome.sh
