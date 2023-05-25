@@ -1748,7 +1748,7 @@ pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--demo
 pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--headless
 
 <span class="c1"># Run tests multi-threaded using [n] threads</span>
-pytest<span class="w"> </span>test_suite.py<span class="w"> </span>-n<span class="o">=</span><span class="m">4</span>
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>-n4
 
 <span class="c1"># Reuse the browser session for all tests (&quot;--rs&quot;)</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--reuse-session
@@ -1938,7 +1938,11 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 <p>If you want to pass additional data from the command line to your tests, you can use <code>--data=STRING</code>. Now inside your tests, you can use <code>self.data</code> to access that.</p>
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Running tests multithreaded:</h3>
 
-<p>To run pytest tests using multiple processes, add <code>-n=NUM</code> or <code>-n NUM</code> on the command line, where NUM is the number of CPUs you want to use.</p>
+<p>To run <code>pytest</code> with multiple processes, add <code>-n=NUM</code>, <code>-n NUM</code>, or <code>-nNUM</code> on the command line, where <code>NUM</code> is the number of CPUs you want to use.</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>-n<span class="o">=</span><span class="m">8</span>
+pytest<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span>
+pytest<span class="w"> </span>-n8
+</code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Retrying failing tests automatically:</h3>
 
 <p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
@@ -1958,19 +1962,19 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Combinations of options:</h3>
 
 <p>🎛️ There are times when you'll want to combine various command-line options for added effect.
-For instance, the multi-process option, <code>-n=4</code>, can be customized by adding:
+For instance, the multi-process option, <code>-n8</code>, can be customized by adding:
 <code>--dist=loadscope</code> or <code>--dist=loadfile</code> to it.
 Here's more info on that, as taken from <a href="https://pypi.org/project/pytest-xdist/">pytest-xdist</a>:</p>
 <ul>
 <li>
-<p><code>-n=4 --dist=loadscope</code>: Tests are grouped by module for test functions and by class for test methods. Groups are distributed to available workers as whole units. This guarantees that all tests in a group run in the same process. This can be useful if you have expensive module-level or class-level fixtures. Grouping by class takes priority over grouping by module.</p>
+<p><code>-n8 --dist=loadscope</code>: Tests are grouped by module for test functions and by class for test methods. Groups are distributed to available workers as whole units. This guarantees that all tests in a group run in the same process. This can be useful if you have expensive module-level or class-level fixtures. Grouping by class takes priority over grouping by module.</p>
 </li>
 <li>
-<p><code>-n=4 --dist=loadfile</code>: Tests are grouped by their containing file. Groups are distributed to available workers as whole units. This guarantees that all tests in a file run in the same worker.</p>
+<p><code>-n8 --dist=loadfile</code>: Tests are grouped by their containing file. Groups are distributed to available workers as whole units. This guarantees that all tests in a file run in the same worker.</p>
 </li>
 </ul>
 <p>🎛️ You might also want to combine multiple options at once. For example:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--headless<span class="w"> </span>--rs<span class="w"> </span>-n<span class="o">=</span><span class="m">4</span><span class="w"> </span>-v<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--headless<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--crumbs
 </code></pre></div>
 <p>The above not only runs tests in parallel processes, but it also tells tests in the same process to share the same browser session, runs the tests in headless mode, displays the full name of each test on a separate line, creates a realtime dashboard of the test results, and creates a full report after all tests complete.</p>
 <hr />
