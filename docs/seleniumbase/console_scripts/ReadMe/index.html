@@ -2067,16 +2067,25 @@ test frameworks.</p>
 <code>--ko</code> / <code>--Korean</code>     |    <code>--pt</code> / <code>--Portuguese</code>
 <code>--ru</code> / <code>--Russian</code>    |    <code>--es</code> / <code>--Spanish</code></p>
 <ul>
+<li>Syntax Formats:</li>
+</ul>
+<p><code>--bc</code> / <code>--basecase</code>  (BaseCase class inheritance)
+<code>--pf</code> / <code>--pytest-fixture</code>  (sb pytest fixture)
+<code>--cf</code> / <code>--class-fixture</code>  (class + sb pytest fixture)
+<code>--cm</code> / <code>--context-manager</code>  (SB context manager)
+<code>--dc</code> / <code>--driver-context</code>  (DriverContext manager)
+<code>--dm</code> / <code>--driver-manager</code>  (Driver manager)</p>
+<ul>
 <li>Output:</li>
 </ul>
-<p>Creates a new SeleniumBase test file with boilerplate code.
+<p>Creates a new SBase test file with boilerplate code.
 If the file already exists, an error is raised.
-By default, uses English mode and creates a
-boilerplate with the 5 most common SeleniumBase
-methods, which are "open", "type", "click",
-"assert_element", and "assert_text". If using the
-basic boilerplate option, only the "open" method
-is included.</p>
+By default, uses English with BaseCase inheritance,
+and creates a boilerplate with common SeleniumBase
+methods: "open", "type", "click", "assert_element",
+and "assert_text". If using the basic boilerplate
+option, only the "open" method is included. Only the
+BaseCase format supports Languages or Recorder Mode.</p>
 <h3>mkrec / record / codegen</h3>
 
 <ul>
