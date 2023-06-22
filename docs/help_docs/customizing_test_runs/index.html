@@ -1964,7 +1964,7 @@ pytest<span class="w"> </span>-n8
 <p>🎛️ There are times when you'll want to combine various command-line options for added effect.
 For instance, the multi-process option, <code>-n8</code>, can be customized by adding:
 <code>--dist=loadscope</code> or <code>--dist=loadfile</code> to it.
-Here's more info on that, as taken from <a href="https://pypi.org/project/pytest-xdist/">pytest-xdist</a>:</p>
+There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2.5.0/">pytest-xdist</a>:</p>
 <ul>
 <li>
 <p><code>-n8 --dist=loadscope</code>: Tests are grouped by module for test functions and by class for test methods. Groups are distributed to available workers as whole units. This guarantees that all tests in a group run in the same process. This can be useful if you have expensive module-level or class-level fixtures. Grouping by class takes priority over grouping by module.</p>
@@ -1973,6 +1973,27 @@ Here's more info on that, as taken from <a href="https://pypi.org/project/pytest
 <p><code>-n8 --dist=loadfile</code>: Tests are grouped by their containing file. Groups are distributed to available workers as whole units. This guarantees that all tests in a file run in the same worker.</p>
 </li>
 </ul>
+<details>
+<summary> ▶️ <code>-n8 --dist=loadgroup</code> (<b>click to expand</b>)</summary>
+<div>
+
+* Tests are grouped by the ``xdist_group`` mark. Groups are distributed to available workers as whole units. This guarantees that all tests with same ``xdist_group`` name run in the same worker.
+
+<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xdist_group</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;group1&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_1</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Test</span><span class="p">:</span>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xdist_group</span><span class="p">(</span><span class="s2">&quot;group1&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_2</span><span class="p">():</span>
+        <span class="k">pass</span>
+</code></pre></div>
+
+> This makes ``test_1`` and ``Test::test_2`` run in the same worker. Tests without the ``xdist_group`` mark are distributed normally.
+
+</div>
+</details>
+
 <p>🎛️ You might also want to combine multiple options at once. For example:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--headless<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--crumbs
 </code></pre></div>
