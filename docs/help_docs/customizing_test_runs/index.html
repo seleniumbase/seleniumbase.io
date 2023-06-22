@@ -1977,7 +1977,7 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <summary> ▶️ <code>-n8 --dist=loadgroup</code> (<b>click to expand</b>)</summary>
 <div>
 
-* Tests are grouped by the ``xdist_group`` mark. Groups are distributed to available workers as whole units. This guarantees that all tests with same ``xdist_group`` name run in the same worker.
+<ul><li>Tests are grouped by the <code>xdist_group</code> mark. Groups are distributed to available workers as whole units. This guarantees that all tests with same <code>xdist_group</code> name run in the same worker.</li></ul>
 
 <div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xdist_group</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;group1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_1</span><span class="p">():</span>
@@ -1989,7 +1989,7 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
         <span class="k">pass</span>
 </code></pre></div>
 
-> This makes ``test_1`` and ``Test::test_2`` run in the same worker. Tests without the ``xdist_group`` mark are distributed normally.
+<blockquote><p>This makes <code>test_1</code> and <code>Test::test_2</code> run in the same worker. Tests without the <code>xdist_group</code> mark are distributed normally.</p></blockquote>
 
 </div>
 </details>
