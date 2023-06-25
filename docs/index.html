@@ -1875,7 +1875,15 @@ With raw Selenium, that requires more code:<br />
 <p><a id="install_seleniumbase"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Install SeleniumBase:</h2>
 
-<p><strong>You can install <code>seleniumbase</code> from <a href="https://github.com/seleniumbase/SeleniumBase">GitHub</a> or <a href="https://pypi.org/project/seleniumbase/">PyPI</a>:</strong></p>
+<p><strong>You can install <code>seleniumbase</code> from <a href="https://pypi.org/project/seleniumbase/">PyPI</a> or <a href="https://github.com/seleniumbase/SeleniumBase">GitHub</a>:</strong></p>
+<p>🔵 <strong>Installing <code>seleniumbase</code> from PyPI:</strong></p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
+</code></pre></div>
+<ul>
+<li>(Add <code>--upgrade</code> OR <code>-U</code> to upgrade SeleniumBase.)</li>
+<li>(Add <code>--force-reinstall</code> to upgrade indirect packages.)</li>
+<li>(Use <code>pip3</code> if multiple versions of Python are present.)</li>
+</ul>
 <p>🔵 <strong>Installing <code>seleniumbase</code> from a GitHub clone:</strong></p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
 <span class="nb">cd</span><span class="w"> </span>SeleniumBase/
@@ -1884,17 +1892,6 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p><strong>To upgrade an existing install from a GitHub clone:</strong></p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</code></pre></div>
-<p>🔵 <strong>Installing <code>seleniumbase</code> from PyPI:</strong></p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
-</code></pre></div>
-<ul>
-<li>(Add <code>--upgrade</code> OR <code>-U</code> to upgrade SeleniumBase.)</li>
-<li>(Add <code>--force-reinstall</code> to upgrade indirect libraries.)</li>
-<li>(Use <code>pip3</code> if multiple versions of Python are present.)</li>
-</ul>
-<p><strong>To upgrade an existing install from PyPI:</strong></p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>seleniumbase
 </code></pre></div>
 <p>🔵 Type <code>seleniumbase</code> or <code>sbase</code> to verify that SeleniumBase was installed successfully:</p>
 <div class="highlight"><pre><span></span><code><span class="w">   </span>______<span class="w">     </span>__<span class="w">           </span>_<span class="w">                  </span>____<span class="w">                </span>
@@ -1940,9 +1937,9 @@ COMMANDS:
 <span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
 <span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Downloading web drivers:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Downloading webdrivers:</h3>
 
-<p>✅ SeleniumBase automatically downloads web drivers as needed, such as <code>chromedriver</code>, <code>edgedriver</code>, and <code>geckodriver</code>.</p>
+<p>✅ SeleniumBase automatically downloads webdrivers as needed, such as <code>chromedriver</code>.</p>
 <p>✅ To manually download a webdriver, see <a href="https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/">Console Scripts</a> OR <a href="https://seleniumbase.io/help_docs/webdriver_installation/">Webdriver Installation</a>.</p>
 <p><a id="basic_example_and_usage"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Basic Example & Usage:</h3>
