@@ -1957,6 +1957,7 @@ pytest<span class="w"> </span>my_first_test.py
 <p align="left"><b>Here's the code for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1964,20 +1965,21 @@ pytest<span class="w"> </span>my_first_test.py
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;PRODUCTS&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Products&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[name*=&quot;backpack&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#shopping_cart_container a&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;YOUR CART&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Your Cart&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#checkout&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#first-name&quot;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#last-name&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#postal-code&quot;</span><span class="p">,</span> <span class="s2">&quot;77123&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#continue&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;CHECKOUT: OVERVIEW&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Checkout: Overview&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;29.99&quot;</span><span class="p">,</span> <span class="s2">&quot;div.inventory_item_price&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#finish&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;THANK YOU FOR YOUR ORDER&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Thank you for your order!&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Pony Express&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">js_click</span><span class="p">(</span><span class="s2">&quot;a#logout_sidebar_link&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#login_button_container&quot;</span><span class="p">)</span>
@@ -2278,7 +2280,7 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <p>🔵 Additionally, you can host your own SeleniumBase Dashboard Server on a port of your choice. Here's an example of that using Python 3's <code>http.server</code>:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">1948</span>
 </code></pre></div>
-<p>🔵 Now you can navigate to <code>http://localhost:1948/dashboard.html</code> in order to view the dashboard as a web app. This requires two different terminal windows: one for running the server, and another for running the tests, which should be run from the same directory. (Use <code>CTRL+C</code> to stop the http server.)</p>
+<p>🔵 Now you can navigate to <code>http://localhost:1948/dashboard.html</code> in order to view the dashboard as a web app. This requires two different terminal windows: one for running the server, and another for running the tests, which should be run from the same directory. (Use <kbd>Ctrl+C</kbd> to stop the http server.)</p>
 <p>🔵 Here's a full example of what the SeleniumBase Dashboard may look like:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard<span class="w"> </span>--rs<span class="w"> </span>--headless
 </code></pre></div>
@@ -2664,7 +2666,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2014 - 2022 Michael Mintz
+      Copyright &copy; 2014 - 2023 Michael Mintz
     </div>
   
   
