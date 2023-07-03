@@ -21,7 +21,7 @@
         <link rel="next" href="../js_package_manager/">
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -1762,15 +1762,24 @@
 
 <h2 id="how-seleniumbase-works"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> How SeleniumBase Works 👁️<a class="headerlink" href="#how-seleniumbase-works" title="Permanent link">&para;</a></h2>
 <p><a id="how_seleniumbase_works"></a></p>
-<p>👁️🔎 At the core, SeleniumBase works by extending <a href="https://docs.pytest.org/en/latest/">pytest</a> as a direct plugin. SeleniumBase automatically spins up web browsers for tests (using <a href="https://www.selenium.dev/documentation/webdriver/">Selenium WebDriver</a>), and then gives those tests access to the SeleniumBase libraries through the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase class</a>. Tests are also given access to <a href="../customizing_test_runs/">SeleniumBase command-line arguments</a> and <a href="../method_summary/">SeleniumBase methods</a>, which provide additional functionality.</p>
+<p>👁️🔎 At the core, SeleniumBase works by extending <a href="https://docs.pytest.org/en/latest/">pytest</a> as a direct plugin. SeleniumBase automatically spins up web browsers for tests (using <a href="https://www.selenium.dev/documentation/webdriver/">Selenium WebDriver</a>), and then gives those tests access to the SeleniumBase libraries through the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase class</a>. Tests are also given access to <a href="../customizing_test_runs/">SeleniumBase command-line options</a> and <a href="../method_summary/">SeleniumBase methods</a>, which provide additional functionality.</p>
 <p>👁️🔎 <code>pytest</code> uses a feature called test discovery to automatically find and run Python methods that start with <code>test_</code> when those methods are located in Python files that start with <code>test_</code> or end with <code>_test.py</code>.</p>
-<p>👁️🔎 The most common way of using <strong>SeleniumBase</strong> is by inheriting <code>BaseCase</code>:</p>
+<p>👁️🔎 The most common way of using <strong>SeleniumBase</strong> is by importing <code>BaseCase</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 </code></pre></div>
-<p>Then have your test classes inherit <code>BaseCase</code>:</p>
+<p>👁️🔎 This line activates <code>pytest</code> when a file is called directly with <code>python</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
+</code></pre></div>
+<p>👁️🔎 Classes can inherit <code>BaseCase</code> to gain SeleniumBase functionality:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 </code></pre></div>
-<p>Here's what a full test might look like:</p>
+<p>👁️🔎 Test methods inside <code>BaseCase</code> classes become SeleniumBase tests: (These tests automatically launch a web browser before starting, and quit the web browser after ending. Default settings can be changed via command-line options.)</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">test_abc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></pre></div>
+<p>👁️🔎 SeleniumBase APIs can be called from tests via <code>self</code>:</p>
+<div class="highlight"><pre><span></span><code>        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>👁️🔎 Here's what a full test might look like:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
@@ -1790,13 +1799,13 @@
 </code></pre></div>
 <p>(See the example, <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_mfa_login.py">test_mfa_login.py</a>, for reference.)</p>
 <p>👁️🔎 Here are some examples of running tests with <code>pytest</code>:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--headless<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--crumbs
-pytest<span class="w"> </span>test_mfa_login.py
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_mfa_login.py
+pytest<span class="w"> </span>--headless<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--crumbs
 pytest<span class="w"> </span>-m<span class="w"> </span>marker2
-pytest<span class="w"> </span>offline_examples/
 pytest<span class="w"> </span>-k<span class="w"> </span>agent
+pytest<span class="w"> </span>offline_examples/
 </code></pre></div>
-<p>(See <a href="https://seleniumbase.io/help_docs/syntax_formats/">SyntaxFormats</a> for more ways of using <b>SeleniumBase</b>.)</p>
+<p>(See <a href="https://seleniumbase.io/help_docs/syntax_formats/">Syntax_Formats</a> for more ways of structuring <b>SeleniumBase</b> tests.)</p>
 <hr />
 <h3 id="no-more-flaky-tests">✅ No More Flaky Tests!<a class="headerlink" href="#no-more-flaky-tests" title="Permanent link">&para;</a></h3>
 <p>SeleniumBase methods automatically wait for page elements to finish loading before interacting with them (<i>up to a timeout limit</i>). This means <b>you no longer need random <span><code>time.sleep()</code></span> statements</b> in your scripts.</p>
@@ -1807,7 +1816,7 @@ pytest<span class="w"> </span>-k<span class="w"> </span>agent
 <p><strong>(1)</strong>: Selenium's default <code>pageLoadStrategy</code> is <code>normal</code>: This strategy causes Selenium to wait for the full page to load, with HTML content and sub-resources downloaded and parsed.</p>
 </li>
 <li>
-<p><strong>(2)</strong>: SeleniumBase includes methods such as <code>wait_for_ready_state_complete()</code> and <code>wait_for_angularjs()</code>, which run inside other SeleniumBase methods to ensure that it's safe to proceed with the next command.</p>
+<p><strong>(2)</strong>: SeleniumBase includes methods such as <code>wait_for_ready_state_complete()</code>, which run inside other SeleniumBase methods to ensure that it's safe to proceed with the next command.</p>
 </li>
 <li>
 <p><strong>(3)</strong>: SeleniumBase methods automatically wait for elements to be visible and interactable before interacting with those elements.</p>
@@ -1819,12 +1828,12 @@ pytest<span class="w"> </span>-k<span class="w"> </span>agent
 <p><code>--pls=none</code> --&gt; Set <code>pageLoadStrategy</code> to <code>"none"</code>: This strategy causes Selenium to return immediately after the initial HTML content is fully received by the browser.</p>
 </li>
 <li>
-<p><code>--sjw</code> --&gt; Skip JS Waits, which include <code>wait_for_ready_state_complete()</code> and <code>wait_for_angularjs()</code>.</p>
+<p><code>--sjw</code> --&gt; Skip JS Waits, such as <code>wait_for_ready_state_complete()</code>.</p>
 </li>
 </ul>
 <hr />
 <p><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" alt="SeleniumBase" title="SeleniumBase" width="300" /></a></p>
-<p><a href="https://www.python.org/downloads/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=22AAEE&logo=python" title="Supported Python Versions" /></a></p>
+<p><a href="https://www.python.org/downloads/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=22AAEE&logo=python&logoColor=FEDC54" title="Supported Python Versions" /></a></p>
 
 
   
@@ -1875,10 +1884,10 @@ pytest<span class="w"> </span>-k<span class="w"> </span>agent
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

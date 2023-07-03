@@ -21,7 +21,7 @@
         <link rel="next" href="../../dialog_boxes/ReadMe/">
       
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -2013,16 +2013,18 @@ pytest<span class="w"> </span>google_tour.py
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple tours at once. Then, when you're adding a step or playing a tour, SeleniumBase knows which tour you're referring too. You can avoid using the <code>name</code> arg for multiple tours if you play a tour before creating a new one.</p>
 <h3 id="heres-how-the-code-looks">Here's how the code looks<a class="headerlink" href="#heres-how-the-code-looks" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">test_google_tour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://google.com/ncr&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hide_elements</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Welcome to Google!&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;SeleniumBase Tours&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Type in your query here.&quot;</span><span class="p">,</span> <span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Type in your query here.&quot;</span><span class="p">,</span> <span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">highlight_type</span><span class="p">(</span><span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
@@ -2097,10 +2099,10 @@ pytest<span class="w"> </span>google_tour.py
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
