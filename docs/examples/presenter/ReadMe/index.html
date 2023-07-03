@@ -1815,10 +1815,9 @@ Notes are disabled by default. You can enable notes by specifying:
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="24" /> Here's an example of using SeleniumBase Presenter:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
-
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MyPresenterClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-
     <span class="k">def</span> <span class="nf">test_presenter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span>
@@ -1851,8 +1850,7 @@ Notes are disabled by default. You can enable notes by specifying:
             <span class="s1">&#39;&lt;tr&gt;&lt;td&gt;O&lt;/td&gt;&lt;td&gt;Overview Mode Toggle&lt;/td&gt;&lt;/tr&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
             <span class="s1">&#39;&lt;tr&gt;&lt;td&gt;esc&lt;/td&gt;&lt;td&gt;Exit Full Screen / Overview Mode&lt;/td&gt;&lt;/tr&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
             <span class="s1">&#39;&lt;tr&gt;&lt;td&gt;&lt;b&gt;.&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Pause/Resume Toggle&lt;/td&gt;&lt;/tr&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
-            <span class="s1">&#39;&lt;tr&gt;&lt;td&gt;space&lt;/td&gt;&lt;td&gt;Next Slide (alternative)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#39;</span>
-            <span class="p">)</span>
+            <span class="s1">&#39;&lt;tr&gt;&lt;td&gt;space&lt;/td&gt;&lt;td&gt;Next Slide (alternative)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span>
             <span class="s1">&#39;&lt;h3&gt;Add &lt;b&gt;images&lt;/b&gt; to slides:&lt;/h3&gt;&#39;</span><span class="p">,</span>
             <span class="n">image</span><span class="o">=</span><span class="s2">&quot;https://seleniumbase.github.io/other/seagulls.jpg&quot;</span><span class="p">)</span>
