@@ -1765,7 +1765,7 @@ pytest<span class="w"> </span>test_demo_site.py
 <p>Type text, click, select, toggle, drag-and-drop, etc. Even handle iframes.</p>
 </blockquote>
 <hr />
-<p>Looking for overpriced coffee? Try running this test:</p>
+<p>Looking for overpriced coffee? Here's a fun test:</p>
 <p align="left"><b>Example:</b> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py" target="_blank">test_coffee_cart.py</a> from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples" target="_blank">./examples/</a></p>
 
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
@@ -1882,7 +1882,7 @@ With raw Selenium, that requires more code:<br />
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;You have been signed out!&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<p align="left">📕📝 An example test with <b>behave-BDD</b> <a href="https://behave.readthedocs.io/en/stable/gherkin.html" target="_blank">Gherkin</a> structure. Runs with <b><code>behave</code></b>. (<a href="examples/behave_bdd/ReadMe/">Learn more</a>)</p>
+<p align="left">📕📝 An example test with <b>behave-BDD</b> <a href="https://behave.readthedocs.io/en/stable/gherkin.html#features" target="_blank">Gherkin</a> structure. Runs with <b><code>behave</code></b>. (<a href="examples/behave_bdd/ReadMe/">Learn more</a>)</p>
 
 <div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> SeleniumBase scenarios for the RealWorld App</span>
 
@@ -1911,7 +1911,7 @@ With raw Selenium, that requires more code:<br />
 <h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Install SeleniumBase:</h2>
 
 <p><strong>You can install <code>seleniumbase</code> from <a href="https://pypi.org/project/seleniumbase/">PyPI</a> or <a href="https://github.com/seleniumbase/SeleniumBase">GitHub</a>:</strong></p>
-<p>🔵 <strong>Installing <code>seleniumbase</code> from PyPI:</strong></p>
+<p>🔵 <strong>How to install <code>seleniumbase</code> from PyPI:</strong></p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
 </code></pre></div>
 <ul>
@@ -1919,16 +1919,16 @@ With raw Selenium, that requires more code:<br />
 <li>(Add <code>--force-reinstall</code> to upgrade indirect packages.)</li>
 <li>(Use <code>pip3</code> if multiple versions of Python are present.)</li>
 </ul>
-<p>🔵 <strong>Installing <code>seleniumbase</code> from a GitHub clone:</strong></p>
+<p>🔵 <strong>How to install <code>seleniumbase</code> from a GitHub clone:</strong></p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
 <span class="nb">cd</span><span class="w"> </span>SeleniumBase/
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
-<p><strong>To upgrade an existing install from a GitHub clone:</strong></p>
+<p>🔵 <strong>How to upgrade an existing install from a GitHub clone:</strong></p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
-<p>🔵 Type <code>seleniumbase</code> or <code>sbase</code> to verify that SeleniumBase was installed successfully:</p>
+<p>🔵 <strong>Type <code>seleniumbase</code> or <code>sbase</code> to verify that SeleniumBase was installed successfully:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="w">   </span>______<span class="w">     </span>__<span class="w">           </span>_<span class="w">                  </span>____<span class="w">                </span>
 <span class="w">  </span>/<span class="w"> </span>____/__<span class="w">  </span>/<span class="w"> </span>/__<span class="w">  </span>____<span class="w">  </span><span class="o">(</span>_<span class="o">)</span>_<span class="w">  </span>______<span class="w"> </span>___<span class="w">   </span>/<span class="w"> </span>_<span class="w">  </span><span class="se">\_</span>___<span class="w">  </span>________<span class="w"> </span>
 <span class="w">  </span><span class="se">\_</span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>/<span class="w"> </span>__<span class="w"> </span><span class="sb">`</span>__<span class="w"> </span><span class="se">\ </span>/<span class="w"> </span>/_<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>__<span class="w"> </span><span class="se">\/</span><span class="w"> </span>___/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
@@ -1972,9 +1972,30 @@ COMMANDS:
 <span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
 <span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
-<h3>🔵 Downloading webdrivers:</h3>
-
+<p>🔵 <strong>Downloading webdrivers:</strong></p>
 <p>✅ SeleniumBase automatically downloads webdrivers as needed, such as <code>chromedriver</code>.</p>
+<div></div>
+<details>
+<summary> ▶️ Here's output from a download. (<b>click to expand</b>)</summary>
+
+<div class="highlight"><pre><span></span><code>***<span class="w"> </span>chromedriver<span class="w"> </span>version<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">114</span>.0.5735.90<span class="w"> </span><span class="o">(</span>Latest<span class="o">)</span>
+
+Downloading<span class="w"> </span>chromedriver_mac_arm64.zip<span class="w"> </span>from:
+https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_mac_arm64.zip<span class="w"> </span>...
+Download<span class="w"> </span>Complete!
+
+Extracting<span class="w"> </span><span class="o">[</span><span class="s1">&#39;chromedriver&#39;</span><span class="o">]</span><span class="w"> </span>from<span class="w"> </span>chromedriver_mac_arm64.zip<span class="w"> </span>...
+Unzip<span class="w"> </span>Complete!
+
+The<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>chromedriver<span class="o">]</span><span class="w"> </span>was<span class="w"> </span>saved<span class="w"> </span>to:
+/Users/michael/github/SeleniumBase/seleniumbase/drivers/chromedriver
+
+Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w"> </span><span class="m">114</span>.0.5735.90<span class="o">]</span><span class="w"> </span>executable<span class="w"> </span>...
+<span class="o">[</span>chromedriver<span class="w"> </span><span class="m">114</span>.0.5735.90<span class="o">]</span><span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>use!
+</code></pre></div>
+
+</details>
+
 <p>✅ To manually download a webdriver, see <a href="https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/">Console Scripts</a> OR <a href="https://seleniumbase.io/help_docs/webdriver_installation/">Webdriver Installation</a>.</p>
 <p><a id="basic_example_and_usage"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Basic Example & Usage:</h2>
@@ -2075,7 +2096,7 @@ pytest<span class="w"> </span>my_first_test.py
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Most SeleniumBase scripts can be run with <code>pytest</code>, <code>pynose</code>, or pure <code>python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/stable/gherkin.html" target="_blank">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
+<p>Most SeleniumBase scripts can be run with <code>pytest</code>, <code>pynose</code>, or pure <code>python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/stable/gherkin.html#features" target="_blank">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_sb_fixture.py
 pytest<span class="w"> </span>coffee_cart_tests.py<span class="w"> </span>--rs
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>--dashboard
@@ -2640,7 +2661,7 @@ You can also use ``*=`` to search for any partial value in a CSS selector as sho
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This switches to the new tab (0 is the first one)</span>
 </code></pre></div>
 
-<h3>🔵 Handing iframes:</h3>
+<h3>🔵 How to handle iframes:</h3>
 
 🔵 <b>ProTip™:</b> iframes follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:
 
@@ -2658,7 +2679,7 @@ To exit from multiple iframes, use ``self.switch_to_default_content()``. If insi
 <span class="c1"># You have left the iframe!</span>
 </code></pre></div>
 
-<h3>🔵 Executing Custom jQuery Scripts:</h3>
+<h3>🔵 How to execute custom jQuery scripts:</h3>
 
 <p>jQuery is a powerful JavaScript library that allows you to perform advanced actions in a web browser.
 If the web page you're on already has jQuery loaded, you can start executing jQuery scripts immediately.
@@ -2699,7 +2720,7 @@ You'd know this because the web page would contain something like the following 
 
 </details>
 
-<h3>🔵 Handling a restrictive CSP:</h3>
+<h3>🔵 How to handle a restrictive CSP:</h3>
 
 🛑 Some websites have a restrictive [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on such a website, add ``--disable-csp`` as a ``pytest`` command-line option.
 
@@ -2721,7 +2742,7 @@ You'd know this because the web page would contain something like the following 
 
 </details>
 
-<h3>🔵 Using deferred asserts:</h3>
+<h3>🔵 How to use deferred asserts:</h3>
 
 <p>Let's say you want to verify multiple different elements on a web page in a single test, but you don't want the test to fail until you verified several elements at once so that you don't have to rerun the test to find more missing elements on the same page. That's where deferred asserts come in. Here's the example:</p>
 
@@ -2744,7 +2765,7 @@ You'd know this because the web page would contain something like the following 
 <code>deferred_assert_element()</code> and <code>deferred_assert_text()</code> will save any exceptions that would be raised.
 To flush out all the failed deferred asserts into a single exception, make sure to call <code>self.process_deferred_asserts()</code> at the end of your test method. If your test hits multiple pages, you can call <code>self.process_deferred_asserts()</code> before navigating to a new page so that the screenshot from your log files matches the URL where the deferred asserts were made.
 
-<h3>🔵 Accessing Raw <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>:</h3>
+<h3>🔵 How to access raw <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>:</h3>
 
 <p>If you need access to any commands that come with standard <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>, you can call them directly like this:</p>
 
@@ -2755,9 +2776,9 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 
 (In general, you'll want to use the SeleniumBase versions of methods when available.)
 
-<h3>🔵 Retrying failing tests automatically:</h3>
+<h3>🔵 How to retry failing tests automatically:</h3>
 
-<p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
+<p>You can use <code>pytest --reruns=NUM</code> to retry failing tests that many times. Add <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--reruns<span class="o">=</span><span class="m">1</span><span class="w"> </span>--reruns-delay<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
