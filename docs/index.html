@@ -1972,11 +1972,12 @@ COMMANDS:
 <span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
 <span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
-<p>🔵 <strong>Downloading webdrivers:</strong></p>
+<h3>🔵 Downloading webdrivers:</h3>
+
 <p>✅ SeleniumBase automatically downloads webdrivers as needed, such as <code>chromedriver</code>.</p>
 <div></div>
 <details>
-<summary> ▶️ Here's output from a download. (<b>click to expand</b>)</summary>
+<summary> ▶️ Here's output from a chromedriver download. (<b>click to expand</b>)</summary>
 
 <div class="highlight"><pre><span></span><code>***<span class="w"> </span>chromedriver<span class="w"> </span>version<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">114</span>.0.5735.90<span class="w"> </span><span class="o">(</span>Latest<span class="o">)</span>
 
@@ -2490,7 +2491,7 @@ Here's an example of running tests with some additional features enabled:
 <a id="detailed_method_specifications"></a>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Detailed Method Specifications and Examples:</h3>
 
-<h4>🔵 Navigating to a web page: (and related commands)</h4>
+🔵 **Navigating to a web page: (and related commands)**
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
 
@@ -2513,7 +2514,7 @@ Here's an example of running tests with some additional features enabled:
 <span class="n">everything_inside_head</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">head_open_tag</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">):</span><span class="n">head_close_tag</span><span class="p">]</span>
 </code></pre></div>
 
-🔵 Clicking:
+🔵 **Clicking:**
 
 To click an element on the page:
 
@@ -2522,7 +2523,7 @@ To click an element on the page:
 
 **ProTip™:** In most web browsers, you can right-click on a page and select ``Inspect Element`` to see the CSS selector details that you'll need to create your own scripts.
 
-🔵 Typing Text:
+🔵 **Typing Text:**
 
 <code>self.type(selector, text)</code>  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:
 
@@ -2531,24 +2532,24 @@ To click an element on the page:
 
 You can also use <code>self.add_text()</code> or the <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a> <code>.send_keys()</code> command, but those won't clear the text box first if there's already text inside.
 
-🔵 Getting the text from an element on a page:
+🔵 **Getting the text from an element on a page:**
 
 <div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;header h2&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-🔵 Getting the attribute value from an element on a page:
+🔵 **Getting the attribute value from an element on a page:**
 
 <div class="highlight"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-🔵 Asserting existence of an element on a page within some number of seconds:
+🔵 **Asserting existence of an element on a page within some number of seconds:**
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">&quot;div.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
 
 (NOTE: You can also use: ``self.assert_element_present(ELEMENT)``)
 
-🔵 Asserting visibility of an element on a page within some number of seconds:
+🔵 **Asserting visibility of an element on a page within some number of seconds:**
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
@@ -2570,7 +2571,7 @@ You can also use ``*=`` to search for any partial value in a CSS selector as sho
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[name*=&quot;partial_name&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-🔵 Asserting visibility of text inside an element on a page within some number of seconds:
+🔵 **Asserting visibility of text inside an element on a page within some number of seconds:**
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Make it so!&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Tea. Earl Grey. Hot.&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -2578,7 +2579,7 @@ You can also use ``*=`` to search for any partial value in a CSS selector as sho
 
 (NOTE: ``self.find_text(TEXT, ELEMENT)`` and ``self.wait_for_text(TEXT, ELEMENT)`` also do this. For backwards compatibility, older method names were kept, but the default timeout may be different.)
 
-🔵 Asserting Anything:
+🔵 **Asserting Anything:**
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="n">var1</span> <span class="o">==</span> <span class="n">var2</span><span class="p">)</span>
 
@@ -2587,7 +2588,7 @@ You can also use ``*=`` to search for any partial value in a CSS selector as sho
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
 </code></pre></div>
 
-🔵 Useful Conditional Statements: (with creative examples)
+🔵 **Useful Conditional Statements: (with creative examples)**
 
 ❓ ``is_element_visible(selector):``  (visible on the page)
 
