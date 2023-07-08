@@ -1771,7 +1771,7 @@
 <h3><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 1. BaseCase direct class inheritance</h3>
 
 <p>In this format, (which is used by most of the tests in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase examples folder</a>), <code>BaseCase</code> is imported at the top of a Python file, followed by a Python class inheriting <code>BaseCase</code>. Then, any test method defined in that class automatically gains access to SeleniumBase methods, including the <code>setUp()</code> and <code>tearDown()</code> methods that are automatically called for opening and closing web browsers at the start and end of tests.</p>
-<p>To run a test of this format, use <strong><code>pytest</code></strong> or <code>nosetests</code>. Adding <code>BaseCase.main(__name__, __file__)</code> enables <code>python</code> to run <code>pytest</code> on your file indirectly. Here's an example:</p>
+<p>To run a test of this format, use <strong><code>pytest</code></strong> or <code>pynose</code>. Adding <code>BaseCase.main(__name__, __file__)</code> enables <code>python</code> to run <code>pytest</code> on your file indirectly. Here's an example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
@@ -2478,7 +2478,7 @@
 <p><a id="sb_sf_23"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 23. The driver manager (via direct import)</h3>
 
-<p>Another way of running Selenium tests with pure <code>python</code> (as opposed to using <code>pytest</code> or <code>nosetests</code>) is by using this format, which bypasses <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase</a> methods while still giving you a flexible driver with a manager. SeleniumBase includes helper files such as <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/page_actions.py">page_actions.py</a>, which may help you get around some of the limitations of bypassing <code>BaseCase</code>. Here's an example:</p>
+<p>Another way of running Selenium tests with pure <code>python</code> (as opposed to using <code>pytest</code> or <code>pynose</code>) is by using this format, which bypasses <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase</a> methods while still giving you a flexible driver with a manager. SeleniumBase includes helper files such as <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/page_actions.py">page_actions.py</a>, which may help you get around some of the limitations of bypassing <code>BaseCase</code>. Here's an example:</p>
 <div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;This script can be run with pure &quot;python&quot;. (pytest not needed).&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">js_utils</span>

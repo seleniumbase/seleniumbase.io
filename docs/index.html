@@ -1687,7 +1687,7 @@
 <link rel="icon" href="https://seleniumbase.github.io/img/logo7.png" /></p>
 <h1>SeleniumBase</h1>
 
-<h3 align="center">Python-powered web automation and testing — with advanced tools.</h3>
+<h3 align="center">Automate & test web apps on any platform, with Python.</h3>
 
 <h3 align="center"><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/cdn/gif/coffee_pdbp.gif" alt="SeleniumBase test with the pdbp debugger" title="SeleniumBase test with the pdbp debugger" /></a></h3>
 
@@ -1734,7 +1734,38 @@
 </p>
 
 <hr />
+<blockquote>
+<p dir="auto"><strong>Jump to:</strong></p>
+<ul dir="auto">
+<li><a href="#multiple_examples"      ><strong>Multiple Examples</strong></a></li>
+<li><a href="#python_installation"    ><strong>Set up Python & Git</strong></a></li>
+<li><a href="#install_seleniumbase"   ><strong>Install SeleniumBase</strong></a></li>
+<li><a href="#basic_example_and_usage"><strong>Basic Example & Usage</strong></a></li>
+<li><a href="#common_methods"         ><strong>Common Test Methods</strong></a></li>
+<li><a href="#fun_facts"              ><strong>Fun Facts / Learn More</strong></a></li>
+<li><a href="#demo_mode_and_debugging"><strong>Demo / Debug Modes</strong></a></li>
+<li><a href="#pytest_options"         ><strong>Useful pytest Options</strong></a></li>
+<li><a href="#new_pytest_options"     ><strong>SeleniumBase Options</strong></a></li>
+<li><a href="#directory_configuration"><strong>Directory Configuration</strong></a></li>
+<li><a href="#seleniumbase_dashboard" ><strong>SeleniumBase Dashboard</strong></a></li>
+<li><a href="#creating_visual_reports"><strong>Generating Test Reports</strong></a></li>
+</ul>
+</blockquote>
+
+<hr />
 <p><a id="multiple_examples"></a></p>
+<p align="left">Run <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py" target="_blank">test_demo_site.py</a> from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples" target="_blank">examples/</a> (<code>--chrome</code> is the default browser):</p>
+
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
+pytest<span class="w"> </span>test_demo_site.py
+</code></pre></div>
+<p align="left"><a href="https://seleniumbase.io/demo_page" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/demo_page_5.gif" width="480" alt="SeleniumBase Example" title="SeleniumBase Example" /></a></p>
+
+<blockquote>
+<p>Type text, click, select, toggle, drag-and-drop, etc. Even handle iframes.</p>
+</blockquote>
+<hr />
+<p>Looking for overpriced coffee? Try running this test:</p>
 <p align="left"><b>Example:</b> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py" target="_blank">test_coffee_cart.py</a> from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples" target="_blank">./examples/</a></p>
 
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
@@ -1770,7 +1801,7 @@ pytest<span class="w"> </span>test_coffee_cart.py<span class="w"> </span>--demo
 <summary> ▶️ How is <b>SeleniumBase</b> different from raw Selenium? (<b>click to expand</b>)</summary>
 <div>
 
-<p>💡 SeleniumBase is a Python framework for browser automation and testing. SeleniumBase uses <a href="https://www.w3.org/TR/webdriver2/#endpoints" target="_blank">Selenium/WebDriver</a> APIs, and incorporates test-runners such as <code>pytest</code>, <code>nosetests</code>, and <code>behave</code> to provide organized structure, test discovery, test execution, test state (<i>eg. passed, failed, or skipped</i>), and command-line options for changing default settings (<i>such as choosing the browser to use</i>). With raw Selenium, you would need to set up your own options-parser for configuring tests from the command-line.</p>
+<p>💡 SeleniumBase is a Python framework for browser automation and testing. SeleniumBase uses <a href="https://www.w3.org/TR/webdriver2/#endpoints" target="_blank">Selenium/WebDriver</a> APIs, and incorporates test-runners such as <code>pytest</code>, <code>pynose</code>, and <code>behave</code> to provide organized structure, test discovery, test execution, test state (<i>eg. passed, failed, or skipped</i>), and command-line options for changing default settings (<i>such as choosing the browser to use</i>). With raw Selenium, you would need to set up your own options-parser for configuring tests from the command-line.</p>
 
 <p>💡 With raw Selenium, commands that use selectors need to specify the type of selector (eg. <code>"css selector", "button#myButton"</code>). With SeleniumBase, there's auto-detection between CSS Selectors and XPath, which means you don't need to specify the type of selector in your commands (<i>but optionally you could</i>).</p>
 
@@ -1804,7 +1835,7 @@ With raw Selenium, that requires more code:<br />
 <summary> ▶️ Learn about different ways of writing tests (<b>click to expand</b>)</summary>
 <div>
 
-<p align="left">📘📝 An example test with the <b>BaseCase</b> class. Runs with <b><a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a></b> or <b>nosetests</b>. (<a href="examples/ReadMe/">Learn more</a>)</p>
+<p align="left">📘📝 An example test with the <b>BaseCase</b> class. Runs with <b><a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a></b> or <b>pynose</b>. (<a href="examples/ReadMe/">Learn more</a>)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
@@ -1873,6 +1904,7 @@ With raw Selenium, that requires more code:<br />
 <p><a id="python_installation"></a></p>
 <h2><img src="https://seleniumbase.github.io/cdn/img/python_logo.png" title="SeleniumBase" width="42" /> Set up Python & Git:</h2>
 
+<p><a href="https://www.python.org/downloads/"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=FACE42" title="Supported Python Versions" /></a></p>
 <p>🔵 Add <b><a href="https://www.python.org/downloads/">Python</a></b> and <b><a href="https://git-scm.com/">Git</a></b> to your System PATH.</p>
 <p>🔵 Using a <a href="help_docs/virtualenv_instructions/">Python virtual env</a> is recommended.</p>
 <p><a id="install_seleniumbase"></a></p>
@@ -1940,12 +1972,12 @@ COMMANDS:
 <span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
 <span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Downloading webdrivers:</h3>
+<h3>🔵 Downloading webdrivers:</h3>
 
 <p>✅ SeleniumBase automatically downloads webdrivers as needed, such as <code>chromedriver</code>.</p>
 <p>✅ To manually download a webdriver, see <a href="https://seleniumbase.io/seleniumbase/console_scripts/ReadMe/">Console Scripts</a> OR <a href="https://seleniumbase.io/help_docs/webdriver_installation/">Webdriver Installation</a>.</p>
 <p><a id="basic_example_and_usage"></a></p>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Basic Example & Usage:</h3>
+<h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Basic Example & Usage:</h2>
 
 <p>🔵 If you've cloned SeleniumBase, you can run tests from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder.</p>
 <p align="left">Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</p>
@@ -1957,6 +1989,9 @@ pytest<span class="w"> </span>my_first_test.py
 <p>(Uses <code>--chrome</code> by default.)</p>
 </blockquote>
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py"><img src="https://seleniumbase.github.io/cdn/gif/swag_labs_4.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="480" /></a></p>
+<blockquote>
+<p>SeleniumBase easily handles login, shopping, and checkout.</p>
+</blockquote>
 <p align="left"><b>Here's the code for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
@@ -1993,7 +2028,7 @@ pytest<span class="w"> </span>my_first_test.py
 <li>For more reading, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">here's an advanced guide on CSS attribute selectors</a>.</li>
 </ul>
 <p><a id="common_methods"></a></p>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Here are some common SeleniumBase methods that you might find in tests:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Here are some common SeleniumBase methods:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Navigate the browser window to the URL.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Update the field with the text.</span>
@@ -2040,10 +2075,19 @@ pytest<span class="w"> </span>my_first_test.py
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>SeleniumBase tests can be run with <code>pytest</code> or <code>nosetests</code>. (There's also a <a href="examples/behave_bdd/ReadMe/">behave BDD</a> format.)</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--chrome
+<p>Most SeleniumBase scripts can be run with <code>pytest</code>, <code>pynose</code>, or pure <code>python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/stable/gherkin.html" target="_blank">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_sb_fixture.py
+pytest<span class="w"> </span>coffee_cart_tests.py<span class="w"> </span>--rs
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>--dashboard
 
-nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--firefox
+pynose<span class="w"> </span>basic_test.py<span class="w"> </span>--mobile
+pynose<span class="w"> </span>test_suite.py<span class="w"> </span>--headless<span class="w"> </span>--report<span class="w"> </span>--show-report
+
+python<span class="w"> </span>raw_sb.py
+python<span class="w"> </span>raw_test_scripts.py
+
+behave<span class="w"> </span>realworld.feature
+behave<span class="w"> </span>calculator.feature<span class="w"> </span>-D<span class="w"> </span>rs<span class="w"> </span>-D<span class="w"> </span>dashboard
 </code></pre></div>
 <p>✅ <code>pytest</code> includes automatic test discovery. If you don't specify a specific file or folder to run, <code>pytest</code> will automatically search through all subdirectories for tests to run based on the following criteria:</p>
 
@@ -2056,11 +2100,11 @@ nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--firefox
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--collect-only<span class="w"> </span>-q
 </code></pre></div>
-<p>✅ You can be more specific when calling <code>pytest</code> on a file:</p>
+<p>✅ You can be more specific when calling <code>pytest</code> or <code>pynose</code> on a file:</p>
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o">]</span>::<span class="o">[</span>CLASS_NAME<span class="o">]</span>::<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 
-nosetests<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
+pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o">]</span>:<span class="o">[</span>CLASS_NAME<span class="o">]</span>.<span class="o">[</span>METHOD_NAME<span class="o">]</span>
 </code></pre></div>
 <p>✅ No More Flaky Tests! SeleniumBase methods automatically wait for page elements to finish loading before interacting with them (<i>up to a timeout limit</i>). This means <b>you no longer need random <span><code>time.sleep()</code></span> statements</b> in your scripts.</p>
 <p><img src="https://img.shields.io/badge/Flaky%20Tests%3F-%20NO%21-11BBDD.svg" alt="NO MORE FLAKY TESTS!" /></p>
@@ -2078,19 +2122,22 @@ nosetests<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class
 <p><a id="detailed_instructions"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Detailed Instructions:</h2>
 
-<p><a id="seleniumbase_demo_mode"></a>
+<p><a id="demo_mode_and_debugging"></a>
 🔵 <b>Demo Mode</b> helps you see what a test is doing. If a test is moving too fast for your eyes, run it in <b>Demo Mode</b>, which pauses the browser briefly between actions, highlights page elements being acted on, and displays assertions:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--demo
 </code></pre></div>
 <p>🔵 You can use the following calls in your scripts to help you debug issues:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
-<span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
-<span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
+<span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Debug Mode. n: next, c: continue, s: step, u: up, d: down.</span>
+<span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Debug Mode. n: next, c: continue, s: step, u: up, d: down.</span>
 </code></pre></div>
 <p>🔵 To pause an active test that throws an exception or error, (<em>and keep the browser window open while </em><em>Debug Mode</em><em> begins in the console</em>), add <strong><code>--pdb</code></strong> as a <code>pytest</code> option:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--pdb
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py<span class="w"> </span>--pdb
 </code></pre></div>
-<p>(<strong><code>pdb</code></strong> console commands: <code>n</code>, <code>c</code>, <code>s</code> =&gt; <code>next</code>, <code>continue</code>, <code>step</code>).</p>
+<p>🔵 To start tests in Debug Mode, add <strong><code>--trace</code></strong> as a <code>pytest</code> option:</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_coffee_cart.py<span class="w"> </span>--trace
+</code></pre></div>
+<p>(<strong><code>pdb</code></strong> commands: <code>n</code>, <code>c</code>, <code>s</code>, <code>u</code>, <code>d</code> =&gt; <code>next</code>, <code>continue</code>, <code>step</code>, <code>up</code>, <code>down</code>).</p>
 <p><a id="pytest_options"></a>
 🔵 Here are some useful command-line options that come with <code>pytest</code>:</p>
 <div class="highlight"><pre><span></span><code>-v<span class="w">  </span><span class="c1"># Verbose mode. Prints the full name of each test and shows more details.</span>
@@ -2212,9 +2259,10 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 (Settings include default timeout values, a two-factor auth key, DB credentials, S3 credentials, and other important settings used by tests.)</p>
 <p>🔵 To pass additional data from the command-line to tests, add <code>--data="ANY STRING"</code>.
 Inside your tests, you can use <code>self.data</code> to access that.</p>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Test Directory Configuration:</h3>
+<p><a id="directory_configuration"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Directory Configuration:</h2>
 
-<p>🔵 When running tests with <strong>pytest</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></strong> in your root folders. When running tests with <strong>nosetests</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></strong> in your root folders. These files specify default configuration details for tests. Folders should also include a blank <code>__init__.py</code> file, which allows your tests to import files from that folder.</p>
+<p>🔵 When running tests with <strong>pytest</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></strong> in your root folders. When running tests with <strong>pynose</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></strong> in your root folders. These files specify default configuration details for tests. Folders should also include a blank <code>__init__.py</code> file, which allows your tests to import files from that folder.</p>
 <p>🔵 <code>sbase mkdir DIR</code> creates a folder with config files and sample tests:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkdir<span class="w"> </span>ui_tests
 </code></pre></div>
@@ -2255,7 +2303,7 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 ├──<span class="w"> </span>requirements.txt
 └──<span class="w"> </span>setup.cfg
 </code></pre></div>
-<p>Of those files, the <code>pytest.ini</code> config file is the most important, followed by a blank <code>__init__.py</code> file. There's also a <code>setup.cfg</code> file (only needed for nosetests). Finally, the <code>requirements.txt</code> file can be used to help you install seleniumbase into your environments (if it's not already installed).</p>
+<p>Of those files, the <code>pytest.ini</code> config file is the most important, followed by a blank <code>__init__.py</code> file. There's also a <code>setup.cfg</code> file (for pynose). Finally, the <code>requirements.txt</code> file can be used to help you install seleniumbase into your environments (if it's not already installed).</p>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Log files from failed tests:</h3>
 
@@ -2275,7 +2323,8 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 </code></pre></div>
 <p>🔵 You'll notice that a logs folder, "latest_logs", was created to hold information about the failing test, and screenshots. During test runs, past results get moved to the archived_logs folder if you have ARCHIVE_EXISTING_LOGS set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, or if your run tests with <code>--archive-logs</code>. If you choose not to archive existing logs, they will be deleted and replaced by the logs of the latest test run.</p>
 <hr />
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> The SeleniumBase Dashboard:</h3>
+<p><a id="seleniumbase_dashboard"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> SeleniumBase Dashboard:</h2>
 
 <p>🔵 The <code>--dashboard</code> option for pytest generates a SeleniumBase Dashboard located at <code>dashboard.html</code>, which updates automatically as tests run and produce results. Example:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--dashboard<span class="w"> </span>--rs<span class="w"> </span>--headless
@@ -2291,16 +2340,16 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <p><img src="https://seleniumbase.github.io/cdn/img/dashboard_2.png" alt="The SeleniumBase Dashboard" title="The SeleniumBase Dashboard" width="480" /></p>
 <hr />
 <p><a id="creating_visual_reports"></a></p>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Generating Test Reports:</h3>
+<h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Generating Test Reports:</h2>
 
-<h4><b>Pytest Reports:</b></h4>
+<h3>🔵 Pytest Reports:</h3>
 
-<p>🔵 Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
+<p>✅ Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/html_report.png" alt="Example Pytest Report" title="Example Pytest Report" width="520" /></p>
-<p>🔵 When combining pytest html reports with SeleniumBase Dashboard usage, the pie chart from the Dashboard will get added to the html report. Additionally, if you set the html report URL to be the same as the Dashboard URL when also using the dashboard, (example: <code>--dashboard --html=dashboard.html</code>), then the Dashboard will become an advanced html report when all the tests complete.</p>
-<p>🔵 Here's an example of an upgraded html report:</p>
+<p>✅ When combining pytest html reports with SeleniumBase Dashboard usage, the pie chart from the Dashboard will get added to the html report. Additionally, if you set the html report URL to be the same as the Dashboard URL when also using the dashboard, (example: <code>--dashboard --html=dashboard.html</code>), then the Dashboard will become an advanced html report when all the tests complete.</p>
+<p>✅ Here's an example of an upgraded html report:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/dash_report.jpg" alt="Dashboard Pytest HTML Report" title="Dashboard Pytest HTML Report" width="520" /></p>
@@ -2308,60 +2357,90 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <p>You can also use <code>--junit-xml=report.xml</code> to get an xml report instead. Jenkins can use this file to display better reporting for your tests.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--junit-xml<span class="o">=</span>report.xml
 </code></pre></div>
-<h4><b>Nosetest Reports:</b></h4>
+<h3>🔵 pynose Reports:</h3>
 
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
-<div class="highlight"><pre><span></span><code>nosetests<span class="w"> </span>test_suite.py<span class="w"> </span>--report
+<div class="highlight"><pre><span></span><code>pynose<span class="w"> </span>test_suite.py<span class="w"> </span>--report
 </code></pre></div>
-<p><img src="https://seleniumbase.github.io/cdn/img/nose_report.png" alt="Example Nosetest Report" title="Example Nosetest Report" width="320" /></p>
-<p>(NOTE: You can add <code>--show-report</code> to immediately display Nosetest reports after the test suite completes. Only use <code>--show-report</code> when running tests locally because it pauses the test run.)</p>
-<h4><b>Behave Dashboard & Reports:</b></h4>
+<p><img src="https://seleniumbase.github.io/cdn/img/nose_report.png" alt="Example pynose Report" title="Example pynose Report" width="320" /></p>
+<p>(NOTE: You can add <code>--show-report</code> to immediately display pynose reports after the test suite completes. Only use <code>--show-report</code> when running tests locally because it pauses the test run.)</p>
+<h3>🔵 Behave Dashboard & Reports:</h4>
 
-<p>(The <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/behave_bdd">behave_bdd/</a> folder can be found in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder.)</p>
+(The [behave_bdd/](https://github.com/seleniumbase/SeleniumBase/tree/master/examples/behave_bdd) folder can be found in the [examples/](https://github.com/seleniumbase/SeleniumBase/tree/master/examples) folder.)
+
 <div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>-D<span class="w"> </span>dashboard<span class="w"> </span>-D<span class="w"> </span>headless
 </code></pre></div>
-<p><img src="https://seleniumbase.github.io/cdn/img/sb_behave_dashboard.png" title="SeleniumBase" width="500"></p>
-<p>You can also use <code>--junit</code> to get <code>.xml</code> reports for each Behave feature. Jenkins can use these files to display better reporting for your tests.</p>
+
+<img src="https://seleniumbase.github.io/cdn/img/sb_behave_dashboard.png" title="SeleniumBase" width="500">
+
+You can also use ``--junit`` to get ``.xml`` reports for each Behave feature. Jenkins can use these files to display better reporting for your tests.
+
 <div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>--junit<span class="w"> </span>-D<span class="w"> </span>rs<span class="w"> </span>-D<span class="w"> </span>headless
 </code></pre></div>
-<h4><b>Allure Reports:</b></h4>
 
-<p>See: <a href="https://docs.qameta.io/allure/#_pytest">https://docs.qameta.io/allure/</a></p>
-<p>SeleniumBase no longer includes <code>allure-pytest</code> as part of installed dependencies. If you want to use it, install it first:</p>
+<h3>🔵 Allure Reports:</h3>
+
+See: [https://docs.qameta.io/allure/](https://docs.qameta.io/allure/#_pytest)
+
+SeleniumBase no longer includes ``allure-pytest`` as part of installed dependencies. If you want to use it, install it first:
+
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>allure-pytest
 </code></pre></div>
-<p>Now your tests can create Allure results files, which can be processed by Allure Reports.</p>
+
+Now your tests can create Allure results files, which can be processed by Allure Reports.
+
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--alluredir<span class="o">=</span>allure_results
 </code></pre></div>
+
+--------
+
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Using a Proxy Server:</h3>
 
-<p>If you wish to use a proxy server for your browser tests (Chromium or Firefox), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p>
+If you wish to use a proxy server for your browser tests (Chromium or Firefox), you can add ``--proxy=IP_ADDRESS:PORT`` as an argument on the command line.
+
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
-<p>If the proxy server that you wish to use requires authentication, you can do the following (Chromium only):</p>
+
+If the proxy server that you wish to use requires authentication, you can do the following (Chromium only):
+
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
-<p>SeleniumBase also supports SOCKS4 and SOCKS5 proxies:</p>
+
+SeleniumBase also supports SOCKS4 and SOCKS5 proxies:
+
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks4://IP_ADDRESS:PORT&quot;</span>
 
 pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks5://IP_ADDRESS:PORT&quot;</span>
 </code></pre></div>
-<p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p>
+
+To make things easier, you can add your frequently-used proxies to PROXY_LIST in [proxy_list.py](https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py), and then use ``--proxy=KEY_FROM_PROXY_LIST`` to use the IP_ADDRESS:PORT of that key.
+
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>proxy1
 </code></pre></div>
+
+
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Changing the User-Agent:</h3>
 
-<p>🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
+🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add ``--agent="USER AGENT STRING"`` as an argument on the command-line.
+
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
+
+
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Handling Pop-Up / Pop Up Alerts:</h3>
 
-<p>🔵 <code>self.accept_alert()</code> automatically waits for and accepts alert pop-ups. <code>self.dismiss_alert()</code> automatically waits for and dismisses alert pop-ups. On occasion, some methods like <code>self.click(SELECTOR)</code> might dismiss a pop-up on its own because they call JavaScript to make sure that the <code>readyState</code> of the page is <code>complete</code> before advancing. If you're trying to accept a pop-up that got dismissed this way, use this workaround: Call <code>self.find_element(SELECTOR).click()</code> instead, (which will let the pop-up remain on the screen), and then use <code>self.accept_alert()</code> to accept the pop-up (<a href="https://github.com/seleniumbase/SeleniumBase/issues/600#issuecomment-647270426">more on that here</a>). If pop-ups are intermittent, wrap code in a try/except block.</p>
+🔵 <code>self.accept_alert()</code> automatically waits for and accepts alert pop-ups. <code>self.dismiss_alert()</code> automatically waits for and dismisses alert pop-ups. On occasion, some methods like <code>self.click(SELECTOR)</code> might dismiss a pop-up on its own because they call JavaScript to make sure that the <code>readyState</code> of the page is <code>complete</code> before advancing. If you're trying to accept a pop-up that got dismissed this way, use this workaround: Call <code>self.find_element(SELECTOR).click()</code> instead, (which will let the pop-up remain on the screen), and then use <code>self.accept_alert()</code> to accept the pop-up (<a href="https://github.com/seleniumbase/SeleniumBase/issues/600#issuecomment-647270426">more on that here</a>). If pop-ups are intermittent, wrap code in a try/except block.
+
+
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Building Guided Tours for Websites:</h3>
 
-<p>🔵 Learn about <a href="examples/tour_examples/ReadMe/">SeleniumBase Interactive Walkthroughs</a> (in the <code>examples/tour_examples/</code> folder). It's great for prototyping a website onboarding experience.</p>
-<p><a id="utilizing_advanced_features"></a></p>
-<hr />
+🔵 Learn about <a href="examples/tour_examples/ReadMe/">SeleniumBase Interactive Walkthroughs</a> (in the ``examples/tour_examples/`` folder). It's great for prototyping a website onboarding experience.
+
+
+<a id="utilizing_advanced_features"></a>
+
+--------
+
 <div></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Production Environments & Integrations:</h3>
 
@@ -2386,10 +2465,12 @@ Here's an example of running tests with some additional features enabled:
 
 </details>
 
-<p><a id="detailed_method_specifications"></a></p>
+
+<a id="detailed_method_specifications"></a>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Detailed Method Specifications and Examples:</h3>
 
-<p>🔵 Navigating to a web page: (and related commands)</p>
+<h4>🔵 Navigating to a web page: (and related commands)</h4>
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>  <span class="c1"># This method navigates the browser to the previous page.</span>
@@ -2402,79 +2483,118 @@ Here's an example of running tests with some additional features enabled:
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>  <span class="c1"># This method returns the current page source.</span>
 </code></pre></div>
-<p><b>ProTip™:</b> You can use the <code>self.get_page_source()</code> method with Python's <code>find()</code> command to parse through HTML to find something specific. (For more advanced parsing, see the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_parse_soup.py">BeautifulSoup example</a>.)</p>
+
+<b>ProTip™:</b> You can use the <code>self.get_page_source()</code> method with Python's <code>find()</code> command to parse through HTML to find something specific. (For more advanced parsing, see the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_parse_soup.py">BeautifulSoup example</a>.)
+
 <div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
 <span class="n">head_open_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">)</span>
 <span class="n">head_close_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;/head&gt;&#39;</span><span class="p">,</span> <span class="n">head_open_tag</span><span class="p">)</span>
 <span class="n">everything_inside_head</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">head_open_tag</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">):</span><span class="n">head_close_tag</span><span class="p">]</span>
 </code></pre></div>
-<p>🔵 Clicking:</p>
-<p>To click an element on the page:</p>
+
+🔵 Clicking:
+
+To click an element on the page:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div#my_id&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>ProTip™:</strong> In most web browsers, you can right-click on a page and select <code>Inspect Element</code> to see the CSS selector details that you'll need to create your own scripts.</p>
-<p>🔵 Typing Text:</p>
-<p><code>self.type(selector, text)</code>  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:</p>
+
+**ProTip™:** In most web browsers, you can right-click on a page and select ``Inspect Element`` to see the CSS selector details that you'll need to create your own scripts.
+
+🔵 Typing Text:
+
+<code>self.type(selector, text)</code>  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>You can also use <code>self.add_text()</code> or the <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a> <code>.send_keys()</code> command, but those won't clear the text box first if there's already text inside.</p>
-<p>🔵 Getting the text from an element on a page:</p>
+
+You can also use <code>self.add_text()</code> or the <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a> <code>.send_keys()</code> command, but those won't clear the text box first if there's already text inside.
+
+🔵 Getting the text from an element on a page:
+
 <div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;header h2&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>🔵 Getting the attribute value from an element on a page:</p>
+
+🔵 Getting the attribute value from an element on a page:
+
 <div class="highlight"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>🔵 Asserting existence of an element on a page within some number of seconds:</p>
+
+🔵 Asserting existence of an element on a page within some number of seconds:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">&quot;div.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
-<p>(NOTE: You can also use: <code>self.assert_element_present(ELEMENT)</code>)</p>
-<p>🔵 Asserting visibility of an element on a page within some number of seconds:</p>
+
+(NOTE: You can also use: ``self.assert_element_present(ELEMENT)``)
+
+🔵 Asserting visibility of an element on a page within some number of seconds:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-<p>(NOTE: The short versions of that are <code>self.find_element(ELEMENT)</code> and <code>self.assert_element(ELEMENT)</code>. The <code>find_element()</code> version returns the element.)</p>
-<p>Since the line above returns the element, you can combine that with <code>.click()</code> as shown below:</p>
+
+(NOTE: The short versions of that are ``self.find_element(ELEMENT)`` and ``self.assert_element(ELEMENT)``. The ``find_element()`` version returns the element.)
+
+Since the line above returns the element, you can combine that with ``.click()`` as shown below:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 
 <span class="c1"># But you&#39;re better off using the following statement, which does the same thing</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">)</span>  <span class="c1"># DO IT THIS WAY!</span>
 </code></pre></div>
-<p><strong>ProTip™:</strong> You can use dots to signify class names (Ex: <code>div.class_name</code>) as a simplified version of <code>div[class="class_name"]</code> within a CSS selector. </p>
-<p>You can also use <code>*=</code> to search for any partial value in a CSS selector as shown below:</p>
+
+**ProTip™:** You can use dots to signify class names (Ex: ``div.class_name``) as a simplified version of ``div[class="class_name"]`` within a CSS selector. 
+
+You can also use ``*=`` to search for any partial value in a CSS selector as shown below:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[name*=&quot;partial_name&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>🔵 Asserting visibility of text inside an element on a page within some number of seconds:</p>
+
+🔵 Asserting visibility of text inside an element on a page within some number of seconds:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Make it so!&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Tea. Earl Grey. Hot.&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-<p>(NOTE: <code>self.find_text(TEXT, ELEMENT)</code> and <code>self.wait_for_text(TEXT, ELEMENT)</code> also do this. For backwards compatibility, older method names were kept, but the default timeout may be different.)</p>
-<p>🔵 Asserting Anything:</p>
+
+(NOTE: ``self.find_text(TEXT, ELEMENT)`` and ``self.wait_for_text(TEXT, ELEMENT)`` also do this. For backwards compatibility, older method names were kept, but the default timeout may be different.)
+
+🔵 Asserting Anything:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="n">var1</span> <span class="o">==</span> <span class="n">var2</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_false</span><span class="p">(</span><span class="n">var1</span> <span class="o">==</span> <span class="n">var2</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
 </code></pre></div>
-<p>🔵 Useful Conditional Statements: (with creative examples)</p>
-<p>❓ <code>is_element_visible(selector):</code>  (visible on the page)</p>
+
+🔵 Useful Conditional Statements: (with creative examples)
+
+❓ ``is_element_visible(selector):``  (visible on the page)
+
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;div#warning&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Red Alert: Something bad might be happening!&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>❓ <code>is_element_present(selector):</code>  (present in the HTML)</p>
+
+❓ ``is_element_present(selector):``  (present in the HTML)
+
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s1">&#39;div#top_secret img.tracking_cookie&#39;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_cookie_monster</span><span class="p">()</span>  <span class="c1"># Not a real SeleniumBase method</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">current_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_the_nsa</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">current_url</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dark Zone Found&quot;</span><span class="p">)</span>  <span class="c1"># Not a real SeleniumBase method</span>
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
-<p>❓ <code>is_text_visible(text, selector):</code>  (text visible on element)</p>
+
+❓ ``is_text_visible(text, selector):``  (text visible on element)
+
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;You Shall Not Pass!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=3xYXUeSmb-Y&quot;</span><span class="p">)</span>
 </code></pre></div>
+
 <div></div>
 <details>
 <summary> ▶️ Click for a longer example of <code>is_text_visible():</code></summary>
@@ -2507,31 +2627,41 @@ Here's an example of running tests with some additional features enabled:
 
 </details>
 
-<p>❓ <code>is_link_text_visible(link_text):</code></p>
+❓ ``is_link_text_visible(link_text):``
+
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_link_text_visible</span><span class="p">(</span><span class="s2">&quot;Stop! Hammer time!&quot;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Stop! Hammer time!&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>🔵 Switching Tabs:</p>
+
+<h3>🔵 Switching Tabs:</h3>
+
 <p>If your test opens up a new tab/window, you can switch to it. (SeleniumBase automatically switches to new tabs that don't open to <code>about:blank</code> URLs.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This switches to the new tab (0 is the first one)</span>
 </code></pre></div>
-<p>🔵 <b>ProTip™:</b> iframes follow the same principle as new windows - you need to specify the iframe if you want to take action on something in there</p>
+
+🔵 <b>ProTip™:</b> iframes follow the same principle as new windows - you need to specify the iframe if you want to take action on something in there
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;ContentManagerTextBody_ifr&#39;</span><span class="p">)</span>
 <span class="c1"># Now you can act inside the iframe</span>
 <span class="c1"># .... Do something cool (here)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>  <span class="c1"># Exit the iframe when you&#39;re done</span>
 </code></pre></div>
-<p>🔵 Executing Custom jQuery Scripts:</p>
+
+<h3>🔵 Executing Custom jQuery Scripts:</h3>
+
 <p>jQuery is a powerful JavaScript library that allows you to perform advanced actions in a web browser.
 If the web page you're on already has jQuery loaded, you can start executing jQuery scripts immediately.
 You'd know this because the web page would contain something like the following in the HTML:</p>
 
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>🔵 It's OK if you want to use jQuery on a page that doesn't have it loaded yet. To do so, run the following command first:</p>
+
+🔵 It's OK if you want to use jQuery on a page that doesn't have it loaded yet. To do so, run the following command first:
+
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery</span><span class="p">()</span>
 </code></pre></div>
+
 <div></div>
 <details>
 <summary> ▶️ Here are some examples of using jQuery in your scripts. (<b>click to expand</b>)</summary>
@@ -2559,7 +2689,12 @@ You'd know this because the web page would contain something like the following 
 
 </details>
 
-<p>🔵 Some websites have a restrictive <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a> to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on such a website, add <code>--disable-csp</code> on the command-line.</p>
+<h3>🔵 Handling a restrictive CSP:</h3>
+
+🛑 Some websites have a restrictive [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on such a website, add ``--disable-csp`` as a ``pytest`` command-line option.
+
+<h3>🔵 More JavaScript fun:</h3>
+
 <div></div>
 <details>
 <summary> ▶️ In this example, JavaScript creates a referral button on a page, which is then clicked. (<b>click to expand</b>)</summary>
@@ -2576,14 +2711,14 @@ You'd know this because the web page would contain something like the following 
 
 </details>
 
-<p>🔵 Using deferred asserts:</p>
+<h3>🔵 Using deferred asserts:</h3>
+
 <p>Let's say you want to verify multiple different elements on a web page in a single test, but you don't want the test to fail until you verified several elements at once so that you don't have to rerun the test to find more missing elements on the same page. That's where deferred asserts come in. Here's the example:</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-
     <span class="k">def</span> <span class="nf">test_deferred_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://xkcd.com/993/&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;#comic&#39;</span><span class="p">)</span>
@@ -2595,26 +2730,35 @@ You'd know this because the web page would contain something like the following 
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;a[name=&quot;Super Fake !!!&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">()</span>
 </code></pre></div>
-<p><code>deferred_assert_element()</code> and <code>deferred_assert_text()</code> will save any exceptions that would be raised.
-To flush out all the failed deferred asserts into a single exception, make sure to call <code>self.process_deferred_asserts()</code> at the end of your test method. If your test hits multiple pages, you can call <code>self.process_deferred_asserts()</code> before navigating to a new page so that the screenshot from your log files matches the URL where the deferred asserts were made.</p>
-<p>🔵 Accessing Raw <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>:</p>
+
+<code>deferred_assert_element()</code> and <code>deferred_assert_text()</code> will save any exceptions that would be raised.
+To flush out all the failed deferred asserts into a single exception, make sure to call <code>self.process_deferred_asserts()</code> at the end of your test method. If your test hits multiple pages, you can call <code>self.process_deferred_asserts()</code> before navigating to a new page so that the screenshot from your log files matches the URL where the deferred asserts were made.
+
+<h3>🔵 Accessing Raw <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>:</h3>
+
 <p>If you need access to any commands that come with standard <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>, you can call them directly like this:</p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">delete_all_cookies</span><span class="p">()</span>
 <span class="n">capabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">capabilities</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">&quot;partial link text&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>(In general, you'll want to use the SeleniumBase versions of methods when available.)</p>
-<p>🔵 Retrying failing tests automatically:</p>
+
+(In general, you'll want to use the SeleniumBase versions of methods when available.)
+
+<h3>🔵 How to retry failing tests automatically:</h3>
+
 <p>You can use <code>--reruns=NUM</code> to retry failing tests that many times. Use <code>--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--reruns<span class="o">=</span><span class="m">1</span><span class="w"> </span>--reruns-delay<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
+
 <p>You can use the <code>@retry_on_exception()</code> decorator to retry failing methods. (First import: <code>from seleniumbase import decorators</code>). To learn more about SeleniumBase decorators, <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/common">click here</a>.</p>
+
 
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Wrap-Up</h3>
 
-<p><b>Congratulations on getting started with SeleniumBase!</b></p>
+<b>Congratulations on getting started with SeleniumBase!</b>
+
 <p>
 <div><b>If you see something, say something!</b></div>
 <div><a href="https://github.com/seleniumbase/SeleniumBase/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/seleniumbase/SeleniumBase.svg?color=22BB88" title="Closed Issues" /></a>   <a href="https://github.com/seleniumbase/SeleniumBase/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed/seleniumbase/SeleniumBase.svg?logo=github&logoColor=white&color=22BB99" title="Closed Pull Requests" /></a></div>
@@ -2629,19 +2773,18 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 
 <p><div><a href="https://github.com/mdmintz">https://github.com/mdmintz</a></div></p>
 
-<div><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/fancy_logo_14.png" title="SeleniumBase" width="220" /></a></div>
-<div><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://img.shields.io/gitter/room/seleniumbase/SeleniumBase.svg" alt="Gitter chat"/></a></div>
-<div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a></div>
-<div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/fancy_logo_14.png" title="SeleniumBase" width="220" /></a></div> <div><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://img.shields.io/gitter/room/seleniumbase/SeleniumBase.svg" alt="Gitter chat"/></a></div> <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a></div> <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a></div>
 <p><a href="https://pepy.tech/project/seleniumbase" target="_blank"><img src="https://pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a></p>
 
 <p><div>
 <span><a href="https://www.youtube.com/playlist?list=PLp9uKicxkBc5UIlGi2BuE3aWC7JyXpD3m"><img src="https://seleniumbase.github.io/cdn/img/youtube.png" title="SeleniumBase Playlist on YouTube" alt="SeleniumBase Playlist on YouTube" width="54" /></a></span>
 <span><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/img/social/share_github.svg" title="SeleniumBase on GitHub" alt="SeleniumBase on GitHub" width="50" /></a></span>
 <span><a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://seleniumbase.github.io/img/social/share_gitter.svg" title="SeleniumBase on Gitter" alt="SeleniumBase on Gitter" width="38" /></a></span>
+<span><a href="https://twitter.com/seleniumbase" target="_blank"><img src="https://seleniumbase.io/img/social/share_twitter.svg" title="SeleniumBase on Twitter" alt="SeleniumBase on Twitter" width="50" /></a></span>
 </div></p>
 
-<hr />
+--------
+
 <p><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" alt="SeleniumBase" title="SeleniumBase" width="300" /></a></p>
 <p><a href="https://www.python.org/downloads/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=22AAEE&logo=python&logoColor=FEDC54" title="Supported Python Versions" /></a></p>
 
