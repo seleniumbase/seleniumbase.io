@@ -1834,7 +1834,7 @@ With raw Selenium, that requires more code:<br />
 <summary> ▶️ Learn about different ways of writing tests (<b>click to expand</b>)</summary>
 <div>
 
-<p align="left">📘📝 An example test with the <b>BaseCase</b> class. Runs with <b><a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a></b> or <b>pynose</b>. (<a href="examples/ReadMe/">Learn more</a>)</p>
+<p align="left">📘📝 An example test with the <b>BaseCase</b> class. Runs with <b><a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a></b> or <b><a href="https://github.com/mdmintz/pynose">pynose</a></b>. (<a href="examples/ReadMe/">Learn more</a>)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
@@ -2094,11 +2094,11 @@ pytest<span class="w"> </span>my_first_test.py
 
 <p>✅ SeleniumBase uses simple syntax for commands. Example:</p>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># (The &quot;\n&quot; presses ENTER)</span>
 </code></pre></div>
 <p>Most SeleniumBase scripts can be run with <code>pytest</code>, <code>pynose</code>, or pure <code>python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/stable/gherkin.html#features" target="_blank">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>coffee_cart_tests.py<span class="w"> </span>--rs
-pytest<span class="w"> </span>test_sb_fixture.py
+pytest<span class="w"> </span>test_sb_fixture.py<span class="w"> </span>--demo
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>--dashboard
 
 pynose<span class="w"> </span>basic_test.py<span class="w"> </span>--mobile
@@ -2131,12 +2131,14 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 <p><img src="https://img.shields.io/badge/Flaky%20Tests%3F-%20NO%21-11BBDD.svg" alt="NO MORE FLAKY TESTS!" /></p>
 <p>✅ SeleniumBase supports all major browsers and operating systems:</p>
 <p><b>Browsers:</b> Chrome, Edge, Firefox, and Safari.</p>
-<p><b>Systems: </b>Linux/Ubuntu, macOS, and Windows.</p>
+<p><b>Systems:</b> Linux/Ubuntu, macOS, and Windows.</p>
 
 <p>✅ SeleniumBase works on all popular CI/CD platforms:</p>
 <p><a href="integrations/github/workflows/ReadMe/"><img alt="GitHub Actions integration" src="https://img.shields.io/badge/GitHub_Actions-12B2C2.svg?logo=GitHubActions&logoColor=CFFFC2" /></a> <a href="integrations/azure/jenkins/ReadMe/"><img alt="Jenkins integration" src="https://img.shields.io/badge/Jenkins-32B242.svg?logo=jenkins&logoColor=white" /></a> <a href="integrations/azure/azure_pipelines/ReadMe/"><img alt="Azure integration" src="https://img.shields.io/badge/Azure-2288EE.svg?logo=AzurePipelines&logoColor=white" /></a> <a href="integrations/google_cloud/ReadMe/"><img alt="Google Cloud integration" src="https://img.shields.io/badge/Google_Cloud-11CAE8.svg?logo=GoogleCloud&logoColor=EE0066" /></a> <a href="#utilizing_advanced_features"><img alt="AWS integration" src="https://img.shields.io/badge/AWS-4488DD.svg?logo=AmazonAWS&logoColor=FFFF44" /></a> <a href="https://en.wikipedia.org/wiki/Personal_computer" target="_blank"><img alt="Your Computer" src="https://img.shields.io/badge/💻_Your_Computer-44E6E6.svg" /></a></p>
 
-<p>✅ SeleniumBase includes an automated/manual hybrid solution called <b><a href="examples/master_qa/ReadMe/">MasterQA</a></b> to speed up manual testing with automation while the manual tester handles validation.</p>
+<p>✅ SeleniumBase includes an automated/manual hybrid solution called <b><a href="examples/master_qa/ReadMe/">MasterQA</a></b> to speed up manual testing with automation while manual testers handle validation.</p>
+
+<p>✅ SeleniumBase supports <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/offline_examples">running tests while offline</a> (<i>assuming webdrivers have previously been downloaded when online</i>).</p>
 
 <p>✅ For a full list of SeleniumBase features, <a href="help_docs/features_list/">Click Here</a>.</p>
 
@@ -2279,9 +2281,9 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 <p>🔵 During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. Those logs will get moved to <code>archived_logs/</code> if you add --archive_logs to command-line options, or have <code>ARCHIVE_EXISTING_LOGS</code> set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>, otherwise log files with be cleaned up at the start of the next test run. The <code>test_suite.py</code> collection contains tests that fail on purpose so that you can see how logging works.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
 
-pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>chrome
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--chrome
 
-pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--browser<span class="o">=</span>firefox
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--firefox
 </code></pre></div>
 <p>An easy way to override seleniumbase/config/settings.py is by using a custom settings file.
 Here's the command-line option to add to tests: (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/custom_settings.py">examples/custom_settings.py</a>)
@@ -2292,7 +2294,7 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <p><a id="directory_configuration"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Directory Configuration:</h2>
 
-<p>🔵 When running tests with <strong>pytest</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></strong> in your root folders. When running tests with <strong>pynose</strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></strong> in your root folders. These files specify default configuration details for tests. Folders should also include a blank <code>__init__.py</code> file to allow your tests to import files from that folder.</p>
+<p>🔵 When running tests with <strong><code>pytest</code></strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/pytest.ini">pytest.ini</a></strong> in your root folders. When running tests with <strong><code>pynose</code></strong>, you'll want a copy of <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/setup.cfg">setup.cfg</a></strong> in your root folders. These files specify default configuration details for tests. Test folders should also include a blank <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/offline_examples/__init__.py"><strong>init</strong>.py</a></strong> file to allow your test files to import other files from that folder.</p>
 <p>🔵 <code>sbase mkdir DIR</code> creates a folder with config files and sample tests:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkdir<span class="w"> </span>ui_tests
 </code></pre></div>
