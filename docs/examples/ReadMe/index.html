@@ -1748,7 +1748,7 @@
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Example tests with run commands to help you get started:</h3>
 
 <hr />
-<p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py">example test</a>: (Default option: <code>--browser=chrome</code>)</p>
+<p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_demo_site.py">example test</a>: (Default option: <code>--chrome</code>)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/demo_page_4.gif" title="SeleniumBase Demo Page" /><br /></p>
@@ -1757,7 +1757,7 @@
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--browser<span class="o">=</span>firefox
 </code></pre></div>
 <hr />
-<p>Run an example test in Demo Mode: (highlight assertions)</p>
+<p>Run an example test in <code>--demo</code> mode: (highlight assertions)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--demo
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/swag_demo_3.gif" /><br /></p>
@@ -1772,7 +1772,7 @@
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/wordle.gif" title="Solving Wordle with SeleniumBase" /><br /></p>
 <hr />
-<p>Run an example test in Headless Mode: (invisible browser)</p>
+<p>Run an example test in <code>--headless</code> mode: (invisible browser)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--headless
 </code></pre></div>
 <hr />
@@ -1781,7 +1781,7 @@
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/swag_mobile_2.gif" title="SeleniumBase Mobile Mode" /><br /></p>
 <hr />
-<p>Run another <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_xkcd.py">example test</a> in Demo Mode: (highlight assertions)</p>
+<p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_xkcd.py">example test</a> in <code>--demo</code> mode: (highlight assertions)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_xkcd.py<span class="w"> </span>--demo
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/xkcd_vid.gif" title="SeleniumBase Demo Mode" /><br /></p>
@@ -1790,8 +1790,8 @@
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>-v
 </code></pre></div>
 <hr />
-<p>Run a test suite multi-threaded using [n] threads:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>-n<span class="o">=</span><span class="m">4</span>
+<p>Run a test suite using multiple parallel processes (<code>-n=NUM</code>):</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>-n<span class="o">=</span><span class="m">8</span>
 </code></pre></div>
 <hr />
 <p>Run a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/parameterized_test.py">parameterized test</a>: (Generates multiple tests from one)</p>
@@ -1802,7 +1802,7 @@
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard
 </code></pre></div>
 <hr />
-<p>Run a test suite and generate a pytest report:</p>
+<p>Run a test suite and generate a <code>pytest</code> report:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <hr />
@@ -1810,16 +1810,19 @@
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py
 </code></pre></div>
 <hr />
-<p>Run a failing test with Debug-mode enabled: (<code>pdb</code> activates on failures)</p>
+<p>Run a failing test that activates <code>pdb</code> debug mode on failure:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py<span class="w"> </span>--pdb<span class="w"> </span>-s
 </code></pre></div>
+<blockquote>
+<p>(<strong><code>pdb</code></strong> commands: <code>n</code>, <code>c</code>, <code>s</code>, <code>u</code>, <code>d</code> =&gt; <code>next</code>, <code>continue</code>, <code>step</code>, <code>up</code>, <code>down</code>)</p>
+</blockquote>
 <hr />
-<p>Run a test suite that demonstrates the use of pytest markers:</p>
+<p>Run a test suite that demonstrates the use of <code>pytest</code> markers:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>-m<span class="w"> </span>marker_test_suite<span class="w"> </span>-v
 </code></pre></div>
 <hr />
 <p>Run a test suite that reuses the browser session between tests:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--reuse-session
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs
 </code></pre></div>
 <hr />
 <p>Run an <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/rate_limiting_test.py">example test</a> demonstrating the <code>rate_limited</code> Python decorator:</p>
@@ -1830,39 +1833,33 @@
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>upload_file_test.py
 </code></pre></div>
 <hr />
-<p>Try the new SeleniumBase Commander! A GUI for pytest:</p>
+<p>🎖️  <strong>SeleniumBase Commander</strong> is a GUI for <code>pytest</code>:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>gui
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/sbase_commander.png" title="SeleniumBase Commander / GUI for pytest" width="520" /><br /></p>
 <hr />
 <p><b>SeleniumBase tests can also be run with <code>pynose</code>:</b></p>
-<p>Run an example test with pynose:</p>
 <div class="highlight"><pre><span></span><code>pynose<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <hr />
-<p>Run an example test suite and generate a pynose test report:</p>
+<p>Run an example test suite and generate a <code>pynose</code> test report:</p>
 <div class="highlight"><pre><span></span><code>pynose<span class="w"> </span>test_suite.py<span class="w"> </span>--report<span class="w"> </span>--show-report
 </code></pre></div>
 <hr />
-<p>Run an example test using a pynose configuration file:</p>
+<p>Run an example test using a <code>pynose</code> configuration file:</p>
 <div class="highlight"><pre><span></span><code>pynose<span class="w"> </span>my_first_test.py<span class="w"> </span>--config<span class="o">=</span>example_config.cfg
 </code></pre></div>
 <hr />
-<p>For more advanced run commands, such as using a proxy server, see <a href="../../help_docs/customizing_test_runs/">../help_docs/customizing_test_runs.md</a></p>
+<p>For more advanced <strong>run commands</strong>, such as using a proxy server, see <a href="../../help_docs/customizing_test_runs/">../help_docs/customizing_test_runs.md</a></p>
 <hr />
 <p>If you just need to perform some quick website verification on various devices, you can use the <a href="https://seleniumbase.io/devices/">SeleniumBase Device Farm</a>. Just plug in a website URL, and it will display how the website looks on four different devices:</p>
 <p><a href="https://seleniumbase.io/devices/?url=github.com"><img src="https://seleniumbase.github.io/cdn/img/github_demo2.png" width="540" title="SeleniumBase Mobile Mode" /></a><br /></p>
 <hr />
-<p>To make things easier, here's a simple GUI program that allows you to run a few example tests by pressing a button:</p>
+<p>To make things easier, here's a <strong>simple GUI program</strong> that allows you to run a few example tests by pressing a button:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>gui_test_runner.py
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/gui_test_runner.png" title="GUI Test Runner" width="320" /></p>
-<p>(The newer <a href="https://seleniumbase.io/help_docs/commander/">SeleniumBase Commander</a> improves on that.)</p>
-<hr />
-<p>🎖️ To launch the SeleniumBase Commander GUI for pytest:</p>
-<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>gui
-</code></pre></div>
-<p><img src="https://seleniumbase.github.io/cdn/img/sbase_commander_wide.png" title="SeleniumBase Commander" width="600"></p>
+<p>(The newer <strong><a href="https://seleniumbase.io/help_docs/commander/">SeleniumBase Commander</a></strong> improves on that.)</p>
 <hr />
 <p><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" title="SeleniumBase" width="320" /></p>
 <p><a href="https://github.com/seleniumbase/SeleniumBase">
