@@ -21,7 +21,7 @@
         <link rel="next" href="../commander/">
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
@@ -2096,7 +2096,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;麻婆豆腐&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;麻婆豆腐&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;div.thumb div:contains(&quot;一家中餐館的麻婆豆腐&quot;)&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;figure:contains(&quot;一家中餐館的麻婆豆腐&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;精武英雄&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;Fist_of_legend.jpg&quot;]&#39;</span><span class="p">)</span>
@@ -2311,11 +2311,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">escriba</span><span class="p">(</span><span class="s1">&#39;[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;Parque de Atracciones Tibidabo&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">haga_clic</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Buscar&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verificar_texto</span><span class="p">(</span><span class="s2">&quot;Tibidabo&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verificar_elemento</span><span class="p">(</span><span class="s1">&#39;img[alt*=&quot;Tibidabo&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verificar_elemento</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;Tibidabo&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">escriba</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;Palma de Mallorca&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">haga_clic</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Buscar&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verificar_texto</span><span class="p">(</span><span class="s2">&quot;Palma de Mallorca&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verificar_elemento</span><span class="p">(</span><span class="s1">&#39;img[alt*=&quot;Palma&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verificar_elemento</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;Palma&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">volver</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verificar_url_contiene</span><span class="p">(</span><span class="s2">&quot;Tibidabo&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">adelante</span><span class="p">()</span>

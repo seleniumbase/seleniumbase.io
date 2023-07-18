@@ -21,7 +21,7 @@
         <link rel="next" href="../../seleniumbase/console_scripts/ReadMe/">
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
@@ -1800,6 +1800,9 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile
 
 <span class="c1"># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
 pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<span class="w"> </span>--metrics<span class="o">=</span><span class="s2">&quot;360,640,2&quot;</span>
+
+<span class="c1"># Run a test with an option to evade bot-detection services</span>
+pytest<span class="w"> </span>verify_undetected.py<span class="w"> </span>--uc
 
 <span class="c1"># Run tests while changing SeleniumBase default settings</span>
 pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings-file<span class="o">=</span>custom_settings.py
