@@ -1399,15 +1399,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#full-linux-setup-ubuntu-on-github-actions" class="md-nav__link">
-    Full Linux Setup (Ubuntu on GitHub Actions):
+  <a href="#ubuntu-linux-setup-for-github-actions" class="md-nav__link">
+    Ubuntu Linux Setup for GitHub Actions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-linux-setup-ubuntu-with-seleniumbase-already-cloned" class="md-nav__link">
-    Standard Linux Setup (Ubuntu with SeleniumBase already cloned):
+  <a href="#standard-ubuntu-linux-setup" class="md-nav__link">
+    Standard Ubuntu Linux Setup
   </a>
   
 </li>
@@ -1448,8 +1448,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#have-tests-write-to-your-mysql-database" class="md-nav__link">
-    Have tests write to your MySQL database
+  <a href="#have-tests-write-to-your-mysql-db" class="md-nav__link">
+    Have tests write to your MySQL DB
   </a>
   
 </li>
@@ -1795,15 +1795,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#full-linux-setup-ubuntu-on-github-actions" class="md-nav__link">
-    Full Linux Setup (Ubuntu on GitHub Actions):
+  <a href="#ubuntu-linux-setup-for-github-actions" class="md-nav__link">
+    Ubuntu Linux Setup for GitHub Actions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-linux-setup-ubuntu-with-seleniumbase-already-cloned" class="md-nav__link">
-    Standard Linux Setup (Ubuntu with SeleniumBase already cloned):
+  <a href="#standard-ubuntu-linux-setup" class="md-nav__link">
+    Standard Ubuntu Linux Setup
   </a>
   
 </li>
@@ -1844,8 +1844,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#have-tests-write-to-your-mysql-database" class="md-nav__link">
-    Have tests write to your MySQL database
+  <a href="#have-tests-write-to-your-mysql-db" class="md-nav__link">
+    Have tests write to your MySQL DB
   </a>
   
 </li>
@@ -1876,7 +1876,7 @@
 <h3 id="mysql-optional"><a href="http://www.mysql.com/">MySQL</a> (OPTIONAL)<a class="headerlink" href="#mysql-optional" title="Permanent link">&para;</a></h3>
 <p>(NOTE: If you don't plan on using the SeleniumBase MySQL DB feature, then you can skip this section.)</p>
 <hr />
-<h3 id="full-linux-setup-ubuntu-on-github-actions">Full Linux Setup (Ubuntu on GitHub Actions):<a class="headerlink" href="#full-linux-setup-ubuntu-on-github-actions" title="Permanent link">&para;</a></h3>
+<h3 id="ubuntu-linux-setup-for-github-actions">Ubuntu Linux Setup for GitHub Actions<a class="headerlink" href="#ubuntu-linux-setup-for-github-actions" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/etc/init.d/mysql<span class="w"> </span>start
 mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
 wget<span class="w"> </span>https://raw.githubusercontent.com/seleniumbase/SeleniumBase/master/seleniumbase/core/create_db_tables.sql
@@ -1891,7 +1891,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w">
 <div class="highlight"><pre><span></span><code>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;select test_address,browser,state,start_time,runtime from test_db.test_run_data;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-ptest
 </code></pre></div>
 <hr />
-<h3 id="standard-linux-setup-ubuntu-with-seleniumbase-already-cloned">Standard Linux Setup (Ubuntu with SeleniumBase already cloned):<a class="headerlink" href="#standard-linux-setup-ubuntu-with-seleniumbase-already-cloned" title="Permanent link">&para;</a></h3>
+<h3 id="standard-ubuntu-linux-setup">Standard Ubuntu Linux Setup<a class="headerlink" href="#standard-ubuntu-linux-setup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
 sudo<span class="w"> </span>mysql_secure_installation
@@ -1920,9 +1920,9 @@ Follow the steps from the MySQL Downloads page.</p>
 <p>Use the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/core/create_db_tables.sql">create_db_tables.sql</a> file to create the necessary tables for storing test data.</p>
 <h3 id="configure-your-mysql-db-for-seleniumbase">Configure your MySQL DB for SeleniumBase<a class="headerlink" href="#configure-your-mysql-db-for-seleniumbase" title="Permanent link">&para;</a></h3>
 <p>Update your <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> file with your MySQL DB credentials so that tests can write to the database when they run.</p>
-<h3 id="have-tests-write-to-your-mysql-database">Have tests write to your MySQL database<a class="headerlink" href="#have-tests-write-to-your-mysql-database" title="Permanent link">&para;</a></h3>
+<h3 id="have-tests-write-to-your-mysql-db">Have tests write to your MySQL DB<a class="headerlink" href="#have-tests-write-to-your-mysql-db" title="Permanent link">&para;</a></h3>
 <p>Add the <code>--with-db_reporting</code> argument on the command line when you want tests to write to your MySQL database. Example:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--with-db_reporting
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--with-db_reporting
 </code></pre></div>
 
 
