@@ -1899,8 +1899,8 @@ sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </sp
 sudo<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>test_db<span class="w"> </span>&lt;<span class="w"> </span>seleniumbase/core/create_db_tables.sql
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
-<p>To change the password:</p>
-<div class="highlight"><pre><span></span><code>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s1">&#39;OLD_PASSWORD&#39;</span><span class="w"> </span>password<span class="w"> </span>NEW_PASSWORD
+<p>To change the password from <code>root</code> to <code>test</code>:</p>
+<div class="highlight"><pre><span></span><code>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s1">&#39;root&#39;</span><span class="w"> </span>password<span class="w"> </span><span class="s1">&#39;test&#39;</span>
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
 <h3 id="macos-mysql-setup">MacOS MySQL Setup<a class="headerlink" href="#macos-mysql-setup" title="Permanent link">&para;</a></h3>
