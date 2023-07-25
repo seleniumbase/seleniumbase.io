@@ -1399,29 +1399,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu-linux-setup-for-github-actions" class="md-nav__link">
-    Ubuntu Linux Setup for GitHub Actions
+  <a href="#github-actions-ubuntu-linux-mysql-setup" class="md-nav__link">
+    GitHub Actions Ubuntu Linux MySQL Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-ubuntu-linux-setup" class="md-nav__link">
-    Standard Ubuntu Linux Setup
+  <a href="#standard-ubuntu-linux-mysql-setup" class="md-nav__link">
+    Standard Ubuntu Linux MySQL Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#macos-setup" class="md-nav__link">
-    MacOS Setup
+  <a href="#macos-mysql-setup" class="md-nav__link">
+    MacOS MySQL Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows-setup" class="md-nav__link">
-    Windows Setup
+  <a href="#windows-mysql-setup" class="md-nav__link">
+    Windows MySQL Setup
   </a>
   
 </li>
@@ -1448,8 +1448,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#have-tests-write-to-your-mysql-db" class="md-nav__link">
-    Have tests write to your MySQL DB
+  <a href="#have-seleniumbase-tests-write-to-your-mysql-db" class="md-nav__link">
+    Have SeleniumBase tests write to your MySQL DB
   </a>
   
 </li>
@@ -1795,29 +1795,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu-linux-setup-for-github-actions" class="md-nav__link">
-    Ubuntu Linux Setup for GitHub Actions
+  <a href="#github-actions-ubuntu-linux-mysql-setup" class="md-nav__link">
+    GitHub Actions Ubuntu Linux MySQL Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-ubuntu-linux-setup" class="md-nav__link">
-    Standard Ubuntu Linux Setup
+  <a href="#standard-ubuntu-linux-mysql-setup" class="md-nav__link">
+    Standard Ubuntu Linux MySQL Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#macos-setup" class="md-nav__link">
-    MacOS Setup
+  <a href="#macos-mysql-setup" class="md-nav__link">
+    MacOS MySQL Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows-setup" class="md-nav__link">
-    Windows Setup
+  <a href="#windows-mysql-setup" class="md-nav__link">
+    Windows MySQL Setup
   </a>
   
 </li>
@@ -1844,8 +1844,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#have-tests-write-to-your-mysql-db" class="md-nav__link">
-    Have tests write to your MySQL DB
+  <a href="#have-seleniumbase-tests-write-to-your-mysql-db" class="md-nav__link">
+    Have SeleniumBase tests write to your MySQL DB
   </a>
   
 </li>
@@ -1876,7 +1876,7 @@
 <h3 id="mysql-optional"><a href="http://www.mysql.com/">MySQL</a> (OPTIONAL)<a class="headerlink" href="#mysql-optional" title="Permanent link">&para;</a></h3>
 <p>(NOTE: If you don't plan on using the SeleniumBase MySQL DB feature, then you can skip this section.)</p>
 <hr />
-<h3 id="ubuntu-linux-setup-for-github-actions">Ubuntu Linux Setup for GitHub Actions<a class="headerlink" href="#ubuntu-linux-setup-for-github-actions" title="Permanent link">&para;</a></h3>
+<h3 id="github-actions-ubuntu-linux-mysql-setup">GitHub Actions Ubuntu Linux MySQL Setup<a class="headerlink" href="#github-actions-ubuntu-linux-mysql-setup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/etc/init.d/mysql<span class="w"> </span>start
 mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
 wget<span class="w"> </span>https://raw.githubusercontent.com/seleniumbase/SeleniumBase/master/seleniumbase/core/create_db_tables.sql
@@ -1884,14 +1884,14 @@ sudo<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </sp
 sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;ALTER USER &quot;root&quot;@&quot;localhost&quot; IDENTIFIED BY &quot;test&quot;;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
-<p>Have tests write to the MySQL DB:</p>
+<p>Have SeleniumBase tests write to the MySQL DB:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--with-db_reporting
 </code></pre></div>
-<p>Query MySQL Results:</p>
+<p>Query MySQL DB Results:</p>
 <div class="highlight"><pre><span></span><code>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;select test_address,browser,state,start_time,runtime from test_db.test_run_data;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-ptest
 </code></pre></div>
 <hr />
-<h3 id="standard-ubuntu-linux-setup">Standard Ubuntu Linux Setup<a class="headerlink" href="#standard-ubuntu-linux-setup" title="Permanent link">&para;</a></h3>
+<h3 id="standard-ubuntu-linux-mysql-setup">Standard Ubuntu Linux MySQL Setup<a class="headerlink" href="#standard-ubuntu-linux-mysql-setup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
 sudo<span class="w"> </span>mysql_secure_installation
@@ -1903,14 +1903,14 @@ sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w">
 <div class="highlight"><pre><span></span><code>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s1">&#39;OLD_PASSWORD&#39;</span><span class="w"> </span>password<span class="w"> </span>NEW_PASSWORD
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
-<h3 id="macos-setup">MacOS Setup<a class="headerlink" href="#macos-setup" title="Permanent link">&para;</a></h3>
+<h3 id="macos-mysql-setup">MacOS MySQL Setup<a class="headerlink" href="#macos-mysql-setup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>mysql
 </code></pre></div>
 <p>Then start the MySQL service:</p>
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>mysql
 </code></pre></div>
 <p>(Continue with additional steps below to set up your DB.)</p>
-<h3 id="windows-setup">Windows Setup<a class="headerlink" href="#windows-setup" title="Permanent link">&para;</a></h3>
+<h3 id="windows-mysql-setup">Windows MySQL Setup<a class="headerlink" href="#windows-mysql-setup" title="Permanent link">&para;</a></h3>
 <p><a href="http://dev.mysql.com/downloads/windows/">Download MySQL here</a>
 Follow the steps from the MySQL Downloads page.</p>
 <p>(Continue with additional steps below to set up your DB.)</p>
@@ -1920,7 +1920,7 @@ Follow the steps from the MySQL Downloads page.</p>
 <p>Use the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/core/create_db_tables.sql">create_db_tables.sql</a> file to create the necessary tables for storing test data.</p>
 <h3 id="configure-your-mysql-db-for-seleniumbase">Configure your MySQL DB for SeleniumBase<a class="headerlink" href="#configure-your-mysql-db-for-seleniumbase" title="Permanent link">&para;</a></h3>
 <p>Update your <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> file with your MySQL DB credentials so that tests can write to the database when they run.</p>
-<h3 id="have-tests-write-to-your-mysql-db">Have tests write to your MySQL DB<a class="headerlink" href="#have-tests-write-to-your-mysql-db" title="Permanent link">&para;</a></h3>
+<h3 id="have-seleniumbase-tests-write-to-your-mysql-db">Have SeleniumBase tests write to your MySQL DB<a class="headerlink" href="#have-seleniumbase-tests-write-to-your-mysql-db" title="Permanent link">&para;</a></h3>
 <p>Add the <code>--with-db_reporting</code> argument on the command line when you want tests to write to your MySQL database. Example:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--with-db_reporting
 </code></pre></div>
