@@ -21,7 +21,7 @@
         <link rel="next" href="../install_python_pip_git/">
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -1810,6 +1810,8 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">is_exact_text_visible</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 
+<span class="bp">self</span><span class="o">.</span><span class="n">is_non_empty_text_visible</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
+
 <span class="bp">self</span><span class="o">.</span><span class="n">is_attribute_present</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">is_link_text_visible</span><span class="p">(</span><span class="n">link_text</span><span class="p">)</span>
@@ -1836,12 +1838,9 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
-    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hard_fail</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hard_fail</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">set_attribute</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>
@@ -1917,23 +1916,16 @@
     <span class="n">selector</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">select_option_by_text</span><span class="p">(</span>
-    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span>
-    <span class="n">dropdown_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
-    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">dropdown_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">select_option_by_index</span><span class="p">(</span>
-    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span>
-    <span class="n">dropdown_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
-    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">dropdown_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">select_option_by_value</span><span class="p">(</span>
-    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span>
-    <span class="n">dropdown_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
-    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">dropdown_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_select_options</span><span class="p">(</span>
-    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-    <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">dropdown_selector</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">load_html_string</span><span class="p">(</span><span class="n">html_string</span><span class="p">,</span> <span class="n">new_page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -1996,22 +1988,28 @@
     <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">proxy_bypass_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">proxy_pac_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">multi_proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">agent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">switch_to</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">cap_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">cap_string</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">recorder_ext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">disable_js</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">disable_csp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">enable_ws</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">enable_sync</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">use_auto_ext</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">undetectable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">uc_cdp_events</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">uc_subprocess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">no_sandbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">disable_gpu</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">headless2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">incognito</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">guest_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">devtools</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">remote_debug</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">enable_3d_apis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">swiftshader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ad_block_on</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">block_images</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2022,7 +2020,9 @@
     <span class="n">user_data_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">extension_zip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">extension_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">binary_location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">page_load_strategy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_wire</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">external_pdf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">is_mobile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">d_width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2169,8 +2169,7 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">choose_file</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">save_element_as_image_file</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overlay_text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">save_element_as_image_file</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overlay_text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">destination_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -2209,11 +2208,9 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_raises</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">wait_for_attribute</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">wait_for_attribute</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">assert_attribute</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">assert_attribute</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
 
@@ -2264,8 +2261,7 @@
 <span class="c1"># self.js_type(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
 <span class="c1"># self.set_text(selector, text, by=&quot;css selector&quot;, timeout=None)</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">set_text_content</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">set_text_content</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">jquery_update_text</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>
@@ -2403,8 +2399,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">set_introjs_colors</span><span class="p">(</span><span class="n">theme_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hover_color</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
-    <span class="n">message</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">message</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>
@@ -2490,6 +2485,11 @@
 <span class="c1"># self.wait_for_exact_text(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
 <span class="c1"># self.wait_for_exact_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
 
+<span class="bp">self</span><span class="o">.</span><span class="n">find_non_empty_text</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.wait_for_non_empty_text(selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+<span class="c1"># self.wait_for_non_empty_text_visible(selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
+
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>
 <span class="c1"># self.assert_text_visible(text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None)</span>
@@ -2508,6 +2508,8 @@
 <span class="c1"># self.wait_for_link_text_visible(link_text, timeout=None)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_link_text</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.assert_link(link_text, timeout=None)</span>
 
 <span class="c1">############</span>
 
@@ -2546,6 +2548,8 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text_not_visible</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text_not_visible</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">assert_non_empty_text</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="c1">############</span>
 
@@ -2604,9 +2608,14 @@
 <span class="c1"># self.delayed_assert_exact_text(</span>
 <span class="c1">#     text, selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None, fs=False)</span>
 
+<span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_non_empty_text</span><span class="p">(</span>
+    <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># Duplicates</span>
+<span class="c1"># self.delayed_assert_non_empty_text(</span>
+<span class="c1">#     selector=&quot;html&quot;, by=&quot;css selector&quot;, timeout=None, fs=False)</span>
+
 <span class="bp">self</span><span class="o">.</span><span class="n">deferred_check_window</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">check_domain</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">full_diff</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">check_domain</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">full_diff</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>
 <span class="c1"># self.delayed_check_window(</span>
 <span class="c1">#     name=&quot;default&quot;, level=0, baseline=False,</span>

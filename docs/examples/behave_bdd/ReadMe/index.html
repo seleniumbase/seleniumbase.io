@@ -21,7 +21,7 @@
         <link rel="next" href="../../../help_docs/behave_gui/">
       
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -1772,15 +1772,15 @@ Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<sp
 
 <span class="w">  </span>Scenario:<span class="w"> </span>Verify<span class="w"> </span>RealWorld<span class="w"> </span>App<span class="w"> </span><span class="o">(</span>log<span class="w"> </span><span class="k">in</span><span class="w"> </span>/<span class="w"> </span>sign<span class="w"> </span>out<span class="o">)</span><span class="w">  </span><span class="c1"># features/realworld.feature:3</span>
 <span class="w">    </span>Given<span class="w"> </span>Open<span class="w"> </span><span class="s2">&quot;seleniumbase.io/realworld/login&quot;</span><span class="w">      </span><span class="c1"># ../../sbase/steps.py:10</span>
-<span class="w">    </span>And<span class="w"> </span>Clear<span class="w"> </span>Session<span class="w"> </span>Storage<span class="w">                         </span><span class="c1"># ../../sbase/steps.py:613</span>
+<span class="w">    </span>And<span class="w"> </span>Clear<span class="w"> </span>Session<span class="w"> </span>Storage<span class="w">                         </span><span class="c1"># ../../sbase/steps.py:669</span>
 <span class="w">    </span>When<span class="w"> </span>Type<span class="w"> </span><span class="s2">&quot;demo_user&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#username&quot;</span><span class="w">            </span><span class="c1"># ../../sbase/steps.py:40</span>
 <span class="w">    </span>And<span class="w"> </span>Type<span class="w"> </span><span class="s2">&quot;secret_pass&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#password&quot;</span><span class="w">           </span><span class="c1"># ../../sbase/steps.py:40</span>
-<span class="w">    </span>And<span class="w"> </span>Do<span class="w"> </span>MFA<span class="w"> </span><span class="s2">&quot;GAXG2MTEOR3DMMDG&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#totpcode&quot;</span><span class="w">    </span><span class="c1"># ../../sbase/steps.py:309</span>
+<span class="w">    </span>And<span class="w"> </span>Do<span class="w"> </span>MFA<span class="w"> </span><span class="s2">&quot;GAXG2MTEOR3DMMDG&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#totpcode&quot;</span><span class="w">    </span><span class="c1"># ../../sbase/steps.py:322</span>
 <span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>exact<span class="w"> </span>text<span class="w"> </span><span class="s2">&quot;Welcome!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="w">         </span><span class="c1"># ../../sbase/steps.py:157</span>
-<span class="w">    </span>And<span class="w"> </span>Highlight<span class="w"> </span><span class="s2">&quot;img#image1&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:171</span>
+<span class="w">    </span>And<span class="w"> </span>Highlight<span class="w"> </span><span class="s2">&quot;img#image1&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:184</span>
 <span class="w">    </span>And<span class="w"> </span>Click<span class="w"> </span><span class="s1">&#39;a:contains(&quot;This Page&quot;)&#39;</span><span class="w">               </span><span class="c1"># ../../sbase/steps.py:27</span>
-<span class="w">    </span>And<span class="w"> </span>Save<span class="w"> </span>screenshot<span class="w"> </span>to<span class="w"> </span>logs<span class="w">                       </span><span class="c1"># ../../sbase/steps.py:226</span>
-<span class="w">    </span>When<span class="w"> </span>Click<span class="w"> </span>link<span class="w"> </span><span class="s2">&quot;Sign out&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:182</span>
+<span class="w">    </span>And<span class="w"> </span>Save<span class="w"> </span>screenshot<span class="w"> </span>to<span class="w"> </span>logs<span class="w">                       </span><span class="c1"># ../../sbase/steps.py:239</span>
+<span class="w">    </span>When<span class="w"> </span>Click<span class="w"> </span>link<span class="w"> </span><span class="s2">&quot;Sign out&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:195</span>
 <span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>element<span class="w"> </span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:120</span>
 <span class="w">    </span>And<span class="w"> </span>Assert<span class="w"> </span>text<span class="w"> </span><span class="s2">&quot;You have been signed out!&quot;</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:145</span>
 <span class="w">   </span>✅<span class="w"> </span>Scenario<span class="w"> </span>Passed!
