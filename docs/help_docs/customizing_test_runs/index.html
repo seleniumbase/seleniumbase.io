@@ -1305,8 +1305,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../seleniumbase/common/ReadMe/" class="md-nav__link">
-        🔐 Decorators / Security
+      <a href="../handling_iframes/" class="md-nav__link">
+        🖼️ How to handle iframes
       </a>
     </li>
   
@@ -1319,8 +1319,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/docker/ReadMe/" class="md-nav__link">
-        🐳 Docker Start Guide
+      <a href="../../seleniumbase/common/ReadMe/" class="md-nav__link">
+        🔐 Decorators / Security
       </a>
     </li>
   
@@ -1349,6 +1349,20 @@
     <li class="md-nav__item">
       <a href="../using_safari_driver/" class="md-nav__link">
         🧭 Using Safari Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/docker/ReadMe/" class="md-nav__link">
+        🐳 Docker Start Guide
       </a>
     </li>
   
@@ -1432,7 +1446,7 @@
   
     <li class="md-nav__item">
       <a href="../webdriver_installation/" class="md-nav__link">
-        ⚙️ WebDriver Installation
+        ⚙️ Downloading drivers
       </a>
     </li>
   
@@ -1446,7 +1460,7 @@
   
     <li class="md-nav__item">
       <a href="../verify_webdriver/" class="md-nav__link">
-        ✔️ Verifying WebDriver
+        ✔️ Verifying drivers
       </a>
     </li>
   
@@ -1739,7 +1753,7 @@
 pytest<span class="w"> </span>my_first_test.py
 
 <span class="c1"># Run a test in Firefox</span>
-pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--browser<span class="o">=</span>firefox
+pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--firefox
 
 <span class="c1"># Run a test in Demo Mode (highlight assertions)</span>
 pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--demo
@@ -1750,11 +1764,11 @@ pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--headles
 <span class="c1"># Run tests multi-threaded using [n] threads</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>-n4
 
-<span class="c1"># Reuse the browser session for all tests (&quot;--rs&quot;)</span>
-pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--reuse-session
+<span class="c1"># Reuse the browser session for all tests (&quot;--reuse-session&quot;)</span>
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs
 
 <span class="c1"># Reuse the browser session, but erase cookies between tests</span>
-pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--reuse-session<span class="w"> </span>--crumbs
+pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs<span class="w"> </span>--crumbs
 
 <span class="c1"># Create a real-time dashboard for test results</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard
@@ -1814,7 +1828,8 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 -q<span class="w">  </span><span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x<span class="w">  </span><span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html<span class="w">  </span><span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
---collect-only<span class="w"> </span><span class="p">|</span><span class="w"> </span>--co<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+--co<span class="w"> </span><span class="p">|</span><span class="w"> </span>--collect-only<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+--co<span class="w"> </span>-q<span class="w">  </span><span class="c1"># (Both options together!) - Do a dry run with full test names shown.</span>
 -n<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
 -s<span class="w">  </span><span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
 --junit-xml<span class="o">=</span>report.xml<span class="w">  </span><span class="c1"># Creates a junit-xml report after tests finish.</span>
@@ -1899,6 +1914,7 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --swiftshader<span class="w">  </span><span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
 --incognito<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
 --guest<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
+--dark<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Dark mode.)</span>
 --devtools<span class="w">  </span><span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
 --rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
 --rcs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-class-session<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>

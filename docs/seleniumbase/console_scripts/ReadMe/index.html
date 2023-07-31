@@ -1305,8 +1305,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../common/ReadMe/" class="md-nav__link">
-        🔐 Decorators / Security
+      <a href="../../../help_docs/handling_iframes/" class="md-nav__link">
+        🖼️ How to handle iframes
       </a>
     </li>
   
@@ -1319,8 +1319,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/docker/ReadMe/" class="md-nav__link">
-        🐳 Docker Start Guide
+      <a href="../../common/ReadMe/" class="md-nav__link">
+        🔐 Decorators / Security
       </a>
     </li>
   
@@ -1349,6 +1349,20 @@
     <li class="md-nav__item">
       <a href="../../../help_docs/using_safari_driver/" class="md-nav__link">
         🧭 Using Safari Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/docker/ReadMe/" class="md-nav__link">
+        🐳 Docker Start Guide
       </a>
     </li>
   
@@ -1432,7 +1446,7 @@
   
     <li class="md-nav__item">
       <a href="../../../help_docs/webdriver_installation/" class="md-nav__link">
-        ⚙️ WebDriver Installation
+        ⚙️ Downloading drivers
       </a>
     </li>
   
@@ -1446,7 +1460,7 @@
   
     <li class="md-nav__item">
       <a href="../../../help_docs/verify_webdriver/" class="md-nav__link">
-        ✔️ Verifying WebDriver
+        ✔️ Verifying drivers
       </a>
     </li>
   
@@ -1842,13 +1856,14 @@ that are available when using SeleniumBase.</p>
 --headless<span class="w">  </span><span class="o">(</span>Run<span class="w"> </span>tests<span class="w"> </span>headlessly.<span class="w"> </span>Default<span class="w"> </span>mode<span class="w"> </span>on<span class="w"> </span>Linux<span class="w"> </span>OS.<span class="o">)</span>
 --demo<span class="w">  </span><span class="o">(</span>Slow<span class="w"> </span>down<span class="w"> </span>and<span class="w"> </span>visually<span class="w"> </span>see<span class="w"> </span><span class="nb">test</span><span class="w"> </span>actions<span class="w"> </span>as<span class="w"> </span>they<span class="w"> </span>occur.<span class="o">)</span>
 --slow<span class="w">  </span><span class="o">(</span>Slow<span class="w"> </span>down<span class="w"> </span>the<span class="w"> </span>automation.<span class="w"> </span>Faster<span class="w"> </span>than<span class="w"> </span>using<span class="w"> </span>Demo<span class="w"> </span>Mode.<span class="o">)</span>
---reuse-session<span class="w"> </span>/<span class="w"> </span>--rs<span class="w">  </span><span class="o">(</span>Reuse<span class="w"> </span>browser<span class="w"> </span>session<span class="w"> </span>between<span class="w"> </span>tests.<span class="o">)</span>
+--rs<span class="w"> </span>/<span class="w"> </span>--reuse-session<span class="w">  </span><span class="o">(</span>Reuse<span class="w"> </span>browser<span class="w"> </span>session<span class="w"> </span>between<span class="w"> </span>tests.<span class="o">)</span>
 --crumbs<span class="w">  </span><span class="o">(</span>Clear<span class="w"> </span>all<span class="w"> </span>cookies<span class="w"> </span>between<span class="w"> </span>tests<span class="w"> </span>reusing<span class="w"> </span>a<span class="w"> </span>session.<span class="o">)</span>
 --maximize<span class="w">  </span><span class="o">(</span>Start<span class="w"> </span>tests<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>window<span class="w"> </span>maximized.<span class="o">)</span>
 --dashboard<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>SeleniumBase<span class="se">\&#39;</span>s<span class="w"> </span>Dashboard<span class="w"> </span>at<span class="w"> </span>dashboard.html<span class="o">)</span>
---uc<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>undetected-chromedriver<span class="w"> </span>to<span class="w"> </span>evade<span class="w"> </span>bot-detection.<span class="o">)</span>
 --incognito<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Incognito<span class="w"> </span>mode.<span class="o">)</span>
---guest<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Guest<span class="w"> </span>mode.<span class="o">)</span>
+--guest<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Guest<span class="w"> </span>Mode.<span class="o">)</span>
+--dark<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Dark<span class="w"> </span>Mode.<span class="o">)</span>
+--uc<span class="w">  </span><span class="o">(</span>Use<span class="w"> </span>undetected-chromedriver<span class="w"> </span>to<span class="w"> </span>evade<span class="w"> </span>detection.<span class="o">)</span>
 -m<span class="o">=</span>MARKER<span class="w">  </span><span class="o">(</span>Run<span class="w"> </span>tests<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>specified<span class="w"> </span>pytest<span class="w"> </span>marker.<span class="o">)</span>
 -n<span class="o">=</span>NUM<span class="w">  </span><span class="o">(</span>Multithread<span class="w"> </span>the<span class="w"> </span>tests<span class="w"> </span>using<span class="w"> </span>that<span class="w"> </span>many<span class="w"> </span>threads.<span class="o">)</span>
 -v<span class="w">  </span><span class="o">(</span>Verbose<span class="w"> </span>mode.<span class="w"> </span>Print<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>names<span class="w"> </span>of<span class="w"> </span>each<span class="w"> </span><span class="nb">test</span><span class="w"> </span>run.<span class="o">)</span>
@@ -1867,6 +1882,7 @@ that are available when using SeleniumBase.</p>
 --final-debug<span class="w">  </span><span class="o">(</span>Enter<span class="w"> </span>Final<span class="w"> </span>Debug<span class="w"> </span>Mode<span class="w"> </span>after<span class="w"> </span>each<span class="w"> </span><span class="nb">test</span><span class="w"> </span>ends.<span class="o">)</span>
 --recorder<span class="w"> </span>/<span class="w"> </span>--rec<span class="w">  </span><span class="o">(</span>Save<span class="w"> </span>browser<span class="w"> </span>actions<span class="w"> </span>as<span class="w"> </span>Python<span class="w"> </span>scripts.<span class="o">)</span>
 --rec-behave<span class="w"> </span>/<span class="w"> </span>--rec-gherkin<span class="w">  </span><span class="o">(</span>Save<span class="w"> </span>actions<span class="w"> </span>as<span class="w"> </span>Gherkin<span class="w"> </span>code.<span class="o">)</span>
+--rec-print<span class="w">  </span><span class="o">(</span>Display<span class="w"> </span>recorded<span class="w"> </span>scripts<span class="w"> </span>when<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>created.<span class="o">)</span>
 --save-screenshot<span class="w">  </span><span class="o">(</span>Save<span class="w"> </span>a<span class="w"> </span>screenshot<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>each<span class="w"> </span>test.<span class="o">)</span>
 --archive-logs<span class="w">  </span><span class="o">(</span>Archive<span class="w"> </span>old<span class="w"> </span>log<span class="w"> </span>files<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>deleting<span class="w"> </span>them.<span class="o">)</span>
 --check-js<span class="w">  </span><span class="o">(</span>Check<span class="w"> </span><span class="k">for</span><span class="w"> </span>JavaScript<span class="w"> </span>errors<span class="w"> </span>after<span class="w"> </span>page<span class="w"> </span>loads.<span class="o">)</span>
@@ -1907,9 +1923,10 @@ that are available when using SeleniumBase.</p>
 -D<span class="w"> </span>crumbs<span class="w">  </span><span class="o">(</span>Clear<span class="w"> </span>all<span class="w"> </span>cookies<span class="w"> </span>between<span class="w"> </span>tests<span class="w"> </span>reusing<span class="w"> </span>a<span class="w"> </span>session.<span class="o">)</span>
 -D<span class="w"> </span>maximize<span class="w">  </span><span class="o">(</span>Start<span class="w"> </span>tests<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>window<span class="w"> </span>maximized.<span class="o">)</span>
 -D<span class="w"> </span>dashboard<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>SeleniumBase<span class="se">\&#39;</span>s<span class="w"> </span>Dashboard<span class="w"> </span>at<span class="w"> </span>dashboard.html<span class="o">)</span>
--D<span class="w"> </span>uc<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>undetected-chromedriver<span class="w"> </span>to<span class="w"> </span>evade<span class="w"> </span>bot-detection.<span class="o">)</span>
--D<span class="w"> </span>incognito<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Incognito<span class="w"> </span>mode.<span class="o">)</span>
--D<span class="w"> </span>guest<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Guest<span class="w"> </span>mode.<span class="o">)</span>
+-D<span class="w"> </span>incognito<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Incognito<span class="w"> </span>Mode.<span class="o">)</span>
+-D<span class="w"> </span>guest<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Guest<span class="w"> </span>Mode.<span class="o">)</span>
+-D<span class="w"> </span>dark<span class="w">  </span><span class="o">(</span>Enable<span class="w"> </span>Chromium<span class="se">\&#39;</span>s<span class="w"> </span>Dark<span class="w"> </span>Mode.<span class="o">)</span>
+-D<span class="w"> </span>uc<span class="w">  </span><span class="o">(</span>Use<span class="w"> </span>undetected-chromedriver<span class="w"> </span>to<span class="w"> </span>evade<span class="w"> </span>detection.<span class="o">)</span>
 --no-snippets<span class="w"> </span>/<span class="w"> </span>-q<span class="w">  </span><span class="o">(</span>Quiet<span class="w"> </span>mode.<span class="w"> </span>Don<span class="se">\&#39;</span>t<span class="w"> </span>print<span class="w"> </span>snippets.<span class="o">)</span>
 --dry-run<span class="w"> </span>/<span class="w"> </span>-d<span class="w">  </span><span class="o">(</span>Dry<span class="w"> </span>run.<span class="w"> </span>Only<span class="w"> </span>show<span class="w"> </span>discovered<span class="w"> </span>tests.<span class="o">)</span>
 --stop<span class="w">  </span><span class="o">(</span>Stop<span class="w"> </span>running<span class="w"> </span>tests<span class="w"> </span>after<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>failure<span class="w"> </span>is<span class="w"> </span>reached.<span class="o">)</span>
@@ -1920,6 +1937,7 @@ that are available when using SeleniumBase.</p>
 <span class="w">      </span><span class="p">|</span><span class="w"> </span>where<span class="w"> </span>/<span class="w"> </span>w:<span class="w"> </span>Show<span class="w"> </span>stack<span class="w"> </span>spot.<span class="w"> </span>u:<span class="w"> </span>Up<span class="w"> </span>stack.<span class="w"> </span>d:<span class="w"> </span>Down<span class="w"> </span>stack.<span class="w"> </span><span class="p">|</span>
 <span class="w">      </span><span class="p">|</span><span class="w"> </span>longlist<span class="w"> </span>/<span class="w"> </span>ll:<span class="w"> </span>See<span class="w"> </span>code.<span class="w"> </span>dir<span class="o">()</span>:<span class="w"> </span>List<span class="w"> </span>namespace<span class="w"> </span>objects.<span class="w"> </span><span class="p">|</span>
 -D<span class="w"> </span>recorder<span class="w">  </span><span class="o">(</span>Record<span class="w"> </span>browser<span class="w"> </span>actions<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span><span class="nb">test</span><span class="w"> </span>scripts.<span class="o">)</span>
+-D<span class="w"> </span>rec-print<span class="w">  </span><span class="o">(</span>Display<span class="w"> </span>recorded<span class="w"> </span>scripts<span class="w"> </span>when<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>created.<span class="o">)</span>
 -D<span class="w"> </span>save-screenshot<span class="w">  </span><span class="o">(</span>Save<span class="w"> </span>a<span class="w"> </span>screenshot<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>each<span class="w"> </span>test.<span class="o">)</span>
 -D<span class="w"> </span>archive-logs<span class="w">  </span><span class="o">(</span>Archive<span class="w"> </span>old<span class="w"> </span>log<span class="w"> </span>files<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>deleting<span class="w"> </span>them.<span class="o">)</span>
 -D<span class="w"> </span>check-js<span class="w">  </span><span class="o">(</span>Check<span class="w"> </span><span class="k">for</span><span class="w"> </span>JavaScript<span class="w"> </span>errors<span class="w"> </span>after<span class="w"> </span>page<span class="w"> </span>loads.<span class="o">)</span>

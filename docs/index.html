@@ -1269,8 +1269,8 @@
   
   
     <li class="md-nav__item">
-      <a href="seleniumbase/common/ReadMe/" class="md-nav__link">
-        🔐 Decorators / Security
+      <a href="help_docs/handling_iframes/" class="md-nav__link">
+        🖼️ How to handle iframes
       </a>
     </li>
   
@@ -1283,8 +1283,8 @@
   
   
     <li class="md-nav__item">
-      <a href="integrations/docker/ReadMe/" class="md-nav__link">
-        🐳 Docker Start Guide
+      <a href="seleniumbase/common/ReadMe/" class="md-nav__link">
+        🔐 Decorators / Security
       </a>
     </li>
   
@@ -1313,6 +1313,20 @@
     <li class="md-nav__item">
       <a href="help_docs/using_safari_driver/" class="md-nav__link">
         🧭 Using Safari Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integrations/docker/ReadMe/" class="md-nav__link">
+        🐳 Docker Start Guide
       </a>
     </li>
   
@@ -1396,7 +1410,7 @@
   
     <li class="md-nav__item">
       <a href="help_docs/webdriver_installation/" class="md-nav__link">
-        ⚙️ WebDriver Installation
+        ⚙️ Downloading drivers
       </a>
     </li>
   
@@ -1410,7 +1424,7 @@
   
     <li class="md-nav__item">
       <a href="help_docs/verify_webdriver/" class="md-nav__link">
-        ✔️ Verifying WebDriver
+        ✔️ Verifying drivers
       </a>
     </li>
   
@@ -1734,7 +1748,7 @@
 </p>
 
 <hr />
-<p align="left"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_p3.png" alt="SeleniumBase" title="SeleniumBase" width="232" /></a></p>
+<p align="left"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb2.png" alt="SeleniumBase" title="SeleniumBase" width="232" /></a></p>
 
 <blockquote>
 <p dir="auto"><strong>Explore the README:</strong></p>
@@ -2078,6 +2092,7 @@ pytest<span class="w"> </span>my_first_test.py
 <span class="bp">self</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Save a screenshot in .png format.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>  <span class="c1"># Verify the element is visible.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>  <span class="c1"># Verify text in the element.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>  <span class="c1"># Verify text is exact.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>  <span class="c1"># Verify the title of the web page.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_downloaded_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>  <span class="c1"># Verify file was downloaded.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_no_404_errors</span><span class="p">()</span>  <span class="c1"># Verify there are no broken links.</span>
@@ -2116,9 +2131,9 @@ behave<span class="w"> </span>calculator.feature<span class="w"> </span>-D<span 
 <li>Python methods that start with <code>test_</code>.</li>
 </ul>
 <p>With a SeleniumBase <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/pytest.ini">pytest.ini</a> file present, you can modify default discovery settings. The Python class name can be anything because <code>seleniumbase.BaseCase</code> inherits <code>unittest.TestCase</code> to trigger autodiscovery.</p>
-<p>✅ You can do a pre-flight check to see which tests would get discovered by <code translate="no">pytest</code> before the real flight:</p>
+<p>✅ You can do a pre-flight check to see which tests would get discovered by <code translate="no">pytest</code> before the actual run:</p>
 
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--collect-only<span class="w"> </span>-q
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--co<span class="w"> </span>-q
 </code></pre></div>
 <p>✅ You can be more specific when calling <code translate="no">pytest</code> or <code translate="no">pynose</code> on a file:</p>
 
@@ -2174,7 +2189,8 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 -q<span class="w">  </span><span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x<span class="w">  </span><span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html<span class="w">  </span><span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
---collect-only<span class="w"> </span><span class="p">|</span><span class="w"> </span>--co<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+--co<span class="w"> </span><span class="p">|</span><span class="w"> </span>--collect-only<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+--co<span class="w"> </span>-q<span class="w">  </span><span class="c1"># (Both options together!) - Do a dry run with full test names shown.</span>
 -n<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
 -s<span class="w">  </span><span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
 --junit-xml<span class="o">=</span>report.xml<span class="w">  </span><span class="c1"># Creates a junit-xml report after tests finish.</span>
@@ -2260,6 +2276,7 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 --swiftshader<span class="w">  </span><span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
 --incognito<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
 --guest<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
+--dark<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Dark mode.)</span>
 --devtools<span class="w">  </span><span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
 --rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
 --rcs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-class-session<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>
@@ -2673,20 +2690,35 @@ You can also use ``*=`` to search for any partial value in a CSS selector as sho
 
 <h3>🔵 How to handle iframes:</h3>
 
-🔵 <b>ProTip™:</b> iframes follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:
+🔵 <b>iframes</b> follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>  <span class="c1"># Exit the current iframe</span>
 </code></pre></div>
 
-To exit from multiple iframes, use ``self.switch_to_default_content()``. If inside a single iframe, this has the same effect as ``self.switch_to_parent_frame()``.
+To exit from multiple iframes, use ``self.switch_to_default_content()``. (If inside a single iframe, this has the same effect as ``self.switch_to_parent_frame()``.)
+
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">)</span>
+<span class="c1"># ... Now perform actions inside the inner iframe</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>  <span class="c1"># Back to the main page</span>
+</code></pre></div>
 
 🔵 You can also use a context manager to act inside iframes:
 
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">):</span>
     <span class="c1"># ... Now perform actions while inside the code block</span>
-<span class="c1"># You have left the iframe!</span>
+<span class="c1"># You have left the iframe</span>
+</code></pre></div>
+
+This also works with nested iframes:
+
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">):</span>
+        <span class="c1"># ... Now perform actions while inside the code block</span>
+    <span class="c1"># You are now back inside the first iframe</span>
+<span class="c1"># You have left all the iframes</span>
 </code></pre></div>
 
 <h3>🔵 How to execute custom jQuery scripts:</h3>

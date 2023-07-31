@@ -101,6 +101,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://seleniumbase.io/help_docs/handling_iframes/</loc>
+         <lastmod>2023-07-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://seleniumbase.io/help_docs/happy_customers/</loc>
          <lastmod>2023-07-31</lastmod>
          <changefreq>daily</changefreq>
