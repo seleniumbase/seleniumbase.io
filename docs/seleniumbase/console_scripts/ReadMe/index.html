@@ -1787,7 +1787,7 @@
 <span class="w">      </span>download<span class="w"> </span>server<span class="w">  </span><span class="o">(</span>Get<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>JAR<span class="w"> </span>file<span class="o">)</span>
 <span class="w">      </span>grid-hub<span class="w">         </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 <span class="w">      </span>grid-node<span class="w">        </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span>--hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
-<span class="w"> </span>*<span class="w"> </span><span class="o">(</span>EXAMPLE:<span class="w"> </span><span class="s2">&quot;sbase get chromedriver latest&quot;</span><span class="o">)</span><span class="w"> </span>*
+<span class="w"> </span>*<span class="w"> </span><span class="o">(</span>EXAMPLE:<span class="w"> </span><span class="s2">&quot;sbase get chromedriver&quot;</span><span class="o">)</span><span class="w"> </span>*
 
 <span class="w">    </span>Type<span class="w"> </span><span class="s2">&quot;sbase help [COMMAND]&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>specific<span class="w"> </span><span class="nb">command</span><span class="w"> </span>info.
 <span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
@@ -1809,17 +1809,12 @@ sbase<span class="w"> </span>get<span class="w"> </span>geckodriver
 sbase<span class="w"> </span>get<span class="w"> </span>edgedriver
 sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span><span class="m">114</span>
 sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span><span class="m">114</span>.0.5735.90
-sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest
-sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest-1<span class="w">  </span><span class="c1"># (Latest minus one)</span>
 sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>-p
-sbase<span class="w"> </span>get<span class="w"> </span>chromedriver<span class="w"> </span>latest<span class="w"> </span>-p
 </code></pre></div>
 <p>(Drivers:  <code>chromedriver</code>, <code>geckodriver</code>, <code>edgedriver</code>,
            <code>iedriver</code>, <code>operadriver</code>, <code>uc_driver</code>)</p>
-<p>(Options:  <code>latest</code> or a specific driver version.
-           For chromedriver, you can also specify the major
-           version int, or <code>latest-1</code> for latest minus 1.
-           If none specified, installs the default version.
+<p>(Options:  A specific driver version or major version integer.
+           If not set, the driver version matches the browser.
            <code>-p</code> / <code>--path</code>: Also copy to "/usr/local/bin".)</p>
 <ul>
 <li>Output:</li>
