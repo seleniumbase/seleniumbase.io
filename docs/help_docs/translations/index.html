@@ -1759,10 +1759,10 @@
     <span class="k">def</span> <span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="s2">&quot;https://zh.wikipedia.org/wiki/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言标题</span><span class="p">(</span><span class="s2">&quot;维基百科，自由的百科全书&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;a[title=&quot;首页&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;a[title=&quot;Wikipedia:关于&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;新闻动态&quot;</span><span class="p">,</span> <span class="s2">&quot;span#新闻动态&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;舞龍&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;舞龍&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;搜索&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;舞龍&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Here's another example:</p>
@@ -1773,11 +1773,11 @@
     <span class="k">def</span> <span class="nf">test_例1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">を開く</span><span class="p">(</span><span class="s2">&quot;https://ja.wikipedia.org/wiki/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">テキストを確認する</span><span class="p">(</span><span class="s2">&quot;ウィキペディア&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">要素を確認する</span><span class="p">(</span><span class="s1">&#39;[title=&quot;メインページに移動する&quot;]&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">入力</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;アニメ&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">クリックして</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">要素を確認する</span><span class="p">(</span><span class="s1">&#39;[title*=&quot;ウィキペディアへようこそ&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">JS入力</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;アニメ&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">クリックして</span><span class="p">(</span><span class="s2">&quot;#searchform button&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">テキストを確認する</span><span class="p">(</span><span class="s2">&quot;アニメ&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">入力</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;寿司&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">JS入力</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;寿司&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><a id="translation_api"></a></p>
 <h2><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Translation API 🈺</h2>
