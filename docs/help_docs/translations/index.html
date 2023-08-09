@@ -1764,6 +1764,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;舞龍&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;搜索&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;舞龍&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;Chinese_draak.jpg&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>Here's another example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Japanese Translation</span>
@@ -1778,6 +1779,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">クリックして</span><span class="p">(</span><span class="s2">&quot;#searchform button&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">テキストを確認する</span><span class="p">(</span><span class="s2">&quot;アニメ&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">JS入力</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;寿司&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">クリックして</span><span class="p">(</span><span class="s2">&quot;#searchform button&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">テキストを確認する</span><span class="p">(</span><span class="s2">&quot;寿司&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">要素を確認する</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;握り寿司&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p><a id="translation_api"></a></p>
 <h2><img src="https://seleniumbase.io/img/logo6.png" title="SeleniumBase" width="32" /> Translation API 🈺</h2>
