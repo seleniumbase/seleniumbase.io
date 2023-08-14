@@ -2000,6 +2000,7 @@
 <span class="k">def</span> <span class="nf">sb</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
     <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+    <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">sb_config</span>
 
     <span class="k">class</span> <span class="nc">BaseClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">get_new_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -2023,12 +2024,28 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">save_teardown_screenshot</span><span class="p">()</span>  <span class="c1"># On failure or &quot;--screenshot&quot;</span>
             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
 
-    <span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">setUpClass</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
-    <span class="k">yield</span> <span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">tearDownClass</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="p">:</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture_class</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb_config</span><span class="o">.</span><span class="n">_sb_node</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span>
+        <span class="k">yield</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span><span class="p">:</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture_no_class</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb_config</span><span class="o">.</span><span class="n">_sb_node</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="n">sb</span>
+        <span class="k">yield</span> <span class="n">sb</span>
+        <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span><span class="p">:</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="k">def</span> <span class="nf">test_override_fixture_no_class</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
@@ -2047,6 +2064,7 @@
 <span class="k">def</span> <span class="nf">sb</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">sys</span>
     <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+    <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">sb_config</span>
     <span class="kn">from</span> <span class="nn">seleniumwire</span> <span class="kn">import</span> <span class="n">webdriver</span>  <span class="c1"># Requires &quot;pip install selenium-wire&quot;</span>
 
     <span class="k">class</span> <span class="nc">BaseClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
@@ -2069,12 +2087,28 @@
         <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">pass</span>
 
-    <span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">setUpClass</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
-    <span class="k">yield</span> <span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">tearDownClass</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="p">:</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture_class</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb_config</span><span class="o">.</span><span class="n">_sb_node</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span>
+        <span class="k">yield</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span><span class="p">:</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture_no_class</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sb_config</span><span class="o">.</span><span class="n">_sb_node</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="n">sb</span>
+        <span class="k">yield</span> <span class="n">sb</span>
+        <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span><span class="p">:</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="k">def</span> <span class="nf">test_wire_with_no_class</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>

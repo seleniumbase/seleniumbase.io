@@ -2079,22 +2079,13 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Running tests on a remote Selenium Grid:</h3>
 
-<p>🌐 SeleniumBase lets you run tests on remote Selenium Grids such as <a href="https://www.browserstack.com/automate#">BrowserStack</a>'s Selenium Grid, <a href="https://www.lambdatest.com/selenium-automation">LambdaTest</a>'s Selenium Grid, <a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a>'s Selenium Grid, other Grids, and even your own Grid:</p>
+<p>🌐 SeleniumBase lets you run tests on remote Selenium Grids such as <a href="https://www.browserstack.com/automate#">BrowserStack</a>'s Selenium Grid, <a href="https://saucelabs.com/products/open-source-frameworks/selenium">Sauce Labs</a>'s Selenium Grid, other Grids, and even your own Grid:</p>
 <p>🌐 For setting browser desired capabilities while running Selenium remotely, see the ReadMe located here: https://github.com/seleniumbase/SeleniumBase/tree/master/examples/capabilities</p>
 <p>Here's how to connect to a BrowserStack Selenium Grid server for running tests:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
 <p>Here's how to connect to a Sauce Labs Selenium Grid server for running tests:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@ondemand.us-east-1.saucelabs.com<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span><span class="w"> </span>--protocol<span class="o">=</span>https
-</code></pre></div>
-<p>Here's how to connect to a Perfecto Selenium Grid server for running tests:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@demo.perfectomobile.com/nexperience/perfectomobile<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span>
-</code></pre></div>
-<p>Here's how to connect to a TestingBot Selenium Grid server for running tests:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.testingbot.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>
-</code></pre></div>
-<p>Here's how to connect to a LambdaTest Selenium Grid server for running tests:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.lambdatest.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>
 </code></pre></div>
 <p>Here's how to connect to a CrossBrowserTesting Selenium Grid server for running tests:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>

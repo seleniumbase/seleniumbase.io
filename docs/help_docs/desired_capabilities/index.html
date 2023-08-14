@@ -1749,11 +1749,9 @@
   <h1>📃 Desired Capabilities</h1>
 
 <h2 id="using-desired-capabilities"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Using Desired Capabilities<a class="headerlink" href="#using-desired-capabilities" title="Permanent link">&para;</a></h2>
-<p>You can specify browser capabilities when running SeleniumBase tests on a remote Selenium Grid server such as <a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack</a>, <a href="https://www.lambdatest.com/capabilities-generator/" target="_blank">LambdaTest</a>, or <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/" target="_blank">Sauce Labs</a>.</p>
+<p>You can specify browser capabilities when running SeleniumBase tests on a remote Selenium Grid server such as <a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack</a> or <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/" target="_blank">Sauce Labs</a>.</p>
 <p>Sample run commands may look like this when run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a> folder: (The browser is now specified in the capabilities file.)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--browser<span class="o">=</span>remote<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--cap_file<span class="o">=</span>capabilities/sample_cap_file_BS.py
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--browser<span class="o">=</span>remote<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@https://@hub.lambdatest.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--protocol<span class="o">=</span>https<span class="w"> </span>--cap_file<span class="o">=</span>capabilities/sample_cap_file_LT.py
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--browser<span class="o">=</span>remote<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@ondemand.us-east-1.saucelabs.com<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span><span class="w"> </span>--protocol<span class="o">=</span>https<span class="w"> </span>--cap_file<span class="o">=</span>capabilities/sample_cap_file_SL.py
 </code></pre></div>
@@ -1769,17 +1767,6 @@
     <span class="s2">&quot;browserstack.selenium_version&quot;</span> <span class="p">:</span> <span class="s2">&quot;4.1.2&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Here's an example desired capabilities file for LambdaTest:</p>
-<div class="highlight"><pre><span></span><code><span class="n">capabilities</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;build&quot;</span> <span class="p">:</span> <span class="s2">&quot;your build name&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;your test name&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;platform&quot;</span> <span class="p">:</span> <span class="s2">&quot;Windows 11&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;browserName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Chrome&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="s2">&quot;101.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;timezone&quot;</span> <span class="p">:</span> <span class="s2">&quot;UTC+05:30&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;geoLocation&quot;</span> <span class="p">:</span> <span class="s2">&quot;IN&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div>
 <p>Here's an example desired capabilities file for Sauce Labs:</p>
 <div class="highlight"><pre><span></span><code><span class="n">capabilities</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;browserName&quot;</span><span class="p">:</span> <span class="s2">&quot;chrome&quot;</span><span class="p">,</span>
@@ -1793,7 +1780,6 @@
 
 <ul>
     <li><a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack desired capabilities</a></li>
-    <li><a href="https://www.lambdatest.com/capabilities-generator/" target="_blank">LambdaTest desired capabilities</a></li>
     <li><a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/" target="_blank">Sauce Labs desired capabilities</a></li>
 </ul>
 
