@@ -2925,83 +2925,54 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/nose_report.png" alt="Example pynose Report" title="Example pynose Report" width="320" /></p>
 <p>(NOTE: You can add <code>--show-report</code> to immediately display pynose reports after the test suite completes. Only use <code>--show-report</code> when running tests locally because it pauses the test run.)</p>
-<h3>🔵 Behave Dashboard & Reports:</h4>
+<h3>🔵 Behave Dashboard & Reports:</h3>
 
-(The [behave_bdd/](https://github.com/seleniumbase/SeleniumBase/tree/master/examples/behave_bdd) folder can be found in the [examples/](https://github.com/seleniumbase/SeleniumBase/tree/master/examples) folder.)
-
+<p>(The <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/behave_bdd">behave_bdd/</a> folder can be found in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder.)</p>
 <div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>-D<span class="w"> </span>dashboard<span class="w"> </span>-D<span class="w"> </span>headless
 </code></pre></div>
-
-<img src="https://seleniumbase.github.io/cdn/img/sb_behave_dashboard.png" title="SeleniumBase" width="500">
-
-You can also use ``--junit`` to get ``.xml`` reports for each Behave feature. Jenkins can use these files to display better reporting for your tests.
-
+<p><img src="https://seleniumbase.github.io/cdn/img/sb_behave_dashboard.png" title="SeleniumBase" width="500"></p>
+<p>You can also use <code>--junit</code> to get <code>.xml</code> reports for each Behave feature. Jenkins can use these files to display better reporting for your tests.</p>
 <div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>--junit<span class="w"> </span>-D<span class="w"> </span>rs<span class="w"> </span>-D<span class="w"> </span>headless
 </code></pre></div>
-
 <h3>🔵 Allure Reports:</h3>
 
-See: [https://docs.qameta.io/allure/](https://docs.qameta.io/allure/#_pytest)
-
-SeleniumBase no longer includes ``allure-pytest`` as part of installed dependencies. If you want to use it, install it first:
-
+<p>See: <a href="https://docs.qameta.io/allure/#_pytest">https://docs.qameta.io/allure/</a></p>
+<p>SeleniumBase no longer includes <code>allure-pytest</code> as part of installed dependencies. If you want to use it, install it first:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>allure-pytest
 </code></pre></div>
-
-Now your tests can create Allure results files, which can be processed by Allure Reports.
-
+<p>Now your tests can create Allure results files, which can be processed by Allure Reports.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--alluredir<span class="o">=</span>allure_results
 </code></pre></div>
-
---------
-
+<hr />
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Using a Proxy Server:</h3>
 
-If you wish to use a proxy server for your browser tests (Chromium or Firefox), you can add ``--proxy=IP_ADDRESS:PORT`` as an argument on the command line.
-
+<p>If you wish to use a proxy server for your browser tests (Chromium or Firefox), you can add <code>--proxy=IP_ADDRESS:PORT</code> as an argument on the command line.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>IP_ADDRESS:PORT
 </code></pre></div>
-
-If the proxy server that you wish to use requires authentication, you can do the following (Chromium only):
-
+<p>If the proxy server that you wish to use requires authentication, you can do the following (Chromium only):</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
-
-SeleniumBase also supports SOCKS4 and SOCKS5 proxies:
-
+<p>SeleniumBase also supports SOCKS4 and SOCKS5 proxies:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks4://IP_ADDRESS:PORT&quot;</span>
 
 pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks5://IP_ADDRESS:PORT&quot;</span>
 </code></pre></div>
-
-To make things easier, you can add your frequently-used proxies to PROXY_LIST in [proxy_list.py](https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py), and then use ``--proxy=KEY_FROM_PROXY_LIST`` to use the IP_ADDRESS:PORT of that key.
-
+<p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>proxy1
 </code></pre></div>
-
-
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Changing the User-Agent:</h3>
 
-🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add ``--agent="USER AGENT STRING"`` as an argument on the command-line.
-
+<p>🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
-
-
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Handling Pop-Up / Pop Up Alerts:</h3>
 
-🔵 <code translate="no">self.accept_alert()</code> automatically waits for and accepts alert pop-ups. <code translate="no">self.dismiss_alert()</code> automatically waits for and dismisses alert pop-ups. On occasion, some methods like <code translate="no">self.click(SELECTOR)</code> might dismiss a pop-up on its own because they call JavaScript to make sure that the <code translate="no">readyState</code> of the page is <code translate="no">complete</code> before advancing. If you're trying to accept a pop-up that got dismissed this way, use this workaround: Call <code translate="no">self.find_element(SELECTOR).click()</code> instead, (which will let the pop-up remain on the screen), and then use <code translate="no">self.accept_alert()</code> to accept the pop-up (<a href="https://github.com/seleniumbase/SeleniumBase/issues/600#issuecomment-647270426">more on that here</a>). If pop-ups are intermittent, wrap code in a try/except block.
-
-
+<p>🔵 <code translate="no">self.accept_alert()</code> automatically waits for and accepts alert pop-ups. <code translate="no">self.dismiss_alert()</code> automatically waits for and dismisses alert pop-ups. On occasion, some methods like <code translate="no">self.click(SELECTOR)</code> might dismiss a pop-up on its own because they call JavaScript to make sure that the <code translate="no">readyState</code> of the page is <code translate="no">complete</code> before advancing. If you're trying to accept a pop-up that got dismissed this way, use this workaround: Call <code translate="no">self.find_element(SELECTOR).click()</code> instead, (which will let the pop-up remain on the screen), and then use <code translate="no">self.accept_alert()</code> to accept the pop-up (<a href="https://github.com/seleniumbase/SeleniumBase/issues/600#issuecomment-647270426">more on that here</a>). If pop-ups are intermittent, wrap code in a try/except block.</p>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Building Guided Tours for Websites:</h3>
 
-🔵 Learn about <a href="examples/tour_examples/ReadMe/">SeleniumBase Interactive Walkthroughs</a> (in the ``examples/tour_examples/`` folder). It's great for prototyping a website onboarding experience.
-
-
-<a id="utilizing_advanced_features"></a>
-
---------
-
+<p>🔵 Learn about <a href="examples/tour_examples/ReadMe/">SeleniumBase Interactive Walkthroughs</a> (in the <code>examples/tour_examples/</code> folder). It's great for prototyping a website onboarding experience.</p>
+<p><a id="utilizing_advanced_features"></a></p>
+<hr />
 <div></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Production Environments & Integrations:</h3>
 
@@ -3026,12 +2997,10 @@ Here's an example of running tests with some additional features enabled:
 
 </details>
 
-
-<a id="detailed_method_specifications"></a>
+<p><a id="detailed_method_specifications"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Detailed Method Specifications and Examples:</h3>
 
-🔵 **Navigating to a web page: (and related commands)**
-
+<p>🔵 <strong>Navigating to a web page: (and related commands)</strong></p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>  <span class="c1"># This method navigates the browser to the previous page.</span>
@@ -3044,118 +3013,79 @@ Here's an example of running tests with some additional features enabled:
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>  <span class="c1"># This method returns the current page source.</span>
 </code></pre></div>
-
-<b>ProTip™:</b> You can use the <code translate="no">self.get_page_source()</code> method with Python's <code translate="no">find()</code> command to parse through HTML to find something specific. (For more advanced parsing, see the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_parse_soup.py">BeautifulSoup example</a>.)
-
+<p><b>ProTip™:</b> You can use the <code translate="no">self.get_page_source()</code> method with Python's <code translate="no">find()</code> command to parse through HTML to find something specific. (For more advanced parsing, see the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_parse_soup.py">BeautifulSoup example</a>.)</p>
 <div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
 <span class="n">head_open_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">)</span>
 <span class="n">head_close_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;/head&gt;&#39;</span><span class="p">,</span> <span class="n">head_open_tag</span><span class="p">)</span>
 <span class="n">everything_inside_head</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">head_open_tag</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">):</span><span class="n">head_close_tag</span><span class="p">]</span>
 </code></pre></div>
-
-🔵 **Clicking:**
-
-To click an element on the page:
-
+<p>🔵 <strong>Clicking:</strong></p>
+<p>To click an element on the page:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div#my_id&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-**ProTip™:** In most web browsers, you can right-click on a page and select ``Inspect Element`` to see the CSS selector details that you'll need to create your own scripts.
-
-🔵 **Typing Text:**
-
-<code translate="no">self.type(selector, text)</code>  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:
-
+<p><strong>ProTip™:</strong> In most web browsers, you can right-click on a page and select <code>Inspect Element</code> to see the CSS selector details that you'll need to create your own scripts.</p>
+<p>🔵 <strong>Typing Text:</strong></p>
+<p><code translate="no">self.type(selector, text)</code>  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-You can also use <code translate="no">self.add_text()</code> or the <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a> <code translate="no">.send_keys()</code> command, but those won't clear the text box first if there's already text inside.
-
-🔵 **Getting the text from an element on a page:**
-
+<p>You can also use <code translate="no">self.add_text()</code> or the <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a> <code translate="no">.send_keys()</code> command, but those won't clear the text box first if there's already text inside.</p>
+<p>🔵 <strong>Getting the text from an element on a page:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;header h2&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-🔵 **Getting the attribute value from an element on a page:**
-
+<p>🔵 <strong>Getting the attribute value from an element on a page:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-🔵 **Asserting existence of an element on a page within some number of seconds:**
-
+<p>🔵 <strong>Asserting existence of an element on a page within some number of seconds:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">&quot;div.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
-
-(NOTE: You can also use: ``self.assert_element_present(ELEMENT)``)
-
-🔵 **Asserting visibility of an element on a page within some number of seconds:**
-
+<p>(NOTE: You can also use: <code>self.assert_element_present(ELEMENT)</code>)</p>
+<p>🔵 <strong>Asserting visibility of an element on a page within some number of seconds:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-
-(NOTE: The short versions of that are ``self.find_element(ELEMENT)`` and ``self.assert_element(ELEMENT)``. The ``find_element()`` version returns the element.)
-
-Since the line above returns the element, you can combine that with ``.click()`` as shown below:
-
+<p>(NOTE: The short versions of that are <code>self.find_element(ELEMENT)</code> and <code>self.assert_element(ELEMENT)</code>. The <code>find_element()</code> version returns the element.)</p>
+<p>Since the line above returns the element, you can combine that with <code>.click()</code> as shown below:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 
 <span class="c1"># But you&#39;re better off using the following statement, which does the same thing</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">)</span>  <span class="c1"># DO IT THIS WAY!</span>
 </code></pre></div>
-
-**ProTip™:** You can use dots to signify class names (Ex: ``div.class_name``) as a simplified version of ``div[class="class_name"]`` within a CSS selector. 
-
-You can also use ``*=`` to search for any partial value in a CSS selector as shown below:
-
+<p><strong>ProTip™:</strong> You can use dots to signify class names (Ex: <code>div.class_name</code>) as a simplified version of <code>div[class="class_name"]</code> within a CSS selector. </p>
+<p>You can also use <code>*=</code> to search for any partial value in a CSS selector as shown below:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[name*=&quot;partial_name&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>
-
-🔵 **Asserting visibility of text inside an element on a page within some number of seconds:**
-
+<p>🔵 <strong>Asserting visibility of text inside an element on a page within some number of seconds:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Make it so!&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Tea. Earl Grey. Hot.&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-
-(NOTE: ``self.find_text(TEXT, ELEMENT)`` and ``self.wait_for_text(TEXT, ELEMENT)`` also do this. For backwards compatibility, older method names were kept, but the default timeout may be different.)
-
-🔵 **Asserting Anything:**
-
+<p>(NOTE: <code>self.find_text(TEXT, ELEMENT)</code> and <code>self.wait_for_text(TEXT, ELEMENT)</code> also do this. For backwards compatibility, older method names were kept, but the default timeout may be different.)</p>
+<p>🔵 <strong>Asserting Anything:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="n">var1</span> <span class="o">==</span> <span class="n">var2</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_false</span><span class="p">(</span><span class="n">var1</span> <span class="o">==</span> <span class="n">var2</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
 </code></pre></div>
-
-🔵 **Useful Conditional Statements: (with creative examples)**
-
-❓ ``is_element_visible(selector):``  (visible on the page)
-
+<p>🔵 <strong>Useful Conditional Statements: (with creative examples)</strong></p>
+<p>❓ <code>is_element_visible(selector):</code>  (visible on the page)</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;div#warning&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Red Alert: Something bad might be happening!&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-❓ ``is_element_present(selector):``  (present in the HTML)
-
+<p>❓ <code>is_element_present(selector):</code>  (present in the HTML)</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s1">&#39;div#top_secret img.tracking_cookie&#39;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_cookie_monster</span><span class="p">()</span>  <span class="c1"># Not a real SeleniumBase method</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">current_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_the_nsa</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">current_url</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dark Zone Found&quot;</span><span class="p">)</span>  <span class="c1"># Not a real SeleniumBase method</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
-
-❓ ``is_text_visible(text, selector):``  (text visible on element)
-
+<p>❓ <code>is_text_visible(text, selector):</code>  (text visible on element)</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;You Shall Not Pass!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=3xYXUeSmb-Y&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <div></div>
 <details>
 <summary> ▶️ Click for a longer example of <code translate="no">is_text_visible():</code></summary>
@@ -3188,52 +3118,41 @@ You can also use ``*=`` to search for any partial value in a CSS selector as sho
 
 </details>
 
-❓ ``is_link_text_visible(link_text):``
-
+<p>❓ <code>is_link_text_visible(link_text):</code></p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_link_text_visible</span><span class="p">(</span><span class="s2">&quot;Stop! Hammer time!&quot;</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Stop! Hammer time!&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <h3>🔵 Switching Tabs:</h3>
 
 <p>If your test opens up a new tab/window, you can switch to it. (SeleniumBase automatically switches to new tabs that don't open to <code translate="no">about:blank</code> URLs.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This switches to the new tab (0 is the first one)</span>
 </code></pre></div>
-
 <h3>🔵 How to handle iframes:</h3>
 
-🔵 <b>iframes</b> follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:
-
+<p>🔵 <b>iframes</b> follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>  <span class="c1"># Exit the current iframe</span>
 </code></pre></div>
-
-To exit from multiple iframes, use ``self.switch_to_default_content()``. (If inside a single iframe, this has the same effect as ``self.switch_to_parent_frame()``.)
-
+<p>To exit from multiple iframes, use <code>self.switch_to_default_content()</code>. (If inside a single iframe, this has the same effect as <code>self.switch_to_parent_frame()</code>.)</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the inner iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>  <span class="c1"># Back to the main page</span>
 </code></pre></div>
-
-🔵 You can also use a context manager to act inside iframes:
-
+<p>🔵 You can also use a context manager to act inside iframes:</p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">):</span>
     <span class="c1"># ... Now perform actions while inside the code block</span>
 <span class="c1"># You have left the iframe</span>
 </code></pre></div>
-
-This also works with nested iframes:
-
+<p>This also works with nested iframes:</p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">):</span>
     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">):</span>
         <span class="c1"># ... Now perform actions while inside the code block</span>
     <span class="c1"># You are now back inside the first iframe</span>
 <span class="c1"># You have left all the iframes</span>
 </code></pre></div>
-
 <h3>🔵 How to execute custom jQuery scripts:</h3>
 
 <p>jQuery is a powerful JavaScript library that allows you to perform advanced actions in a web browser.
@@ -3242,12 +3161,9 @@ You'd know this because the web page would contain something like the following 
 
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-
-🔵 It's OK if you want to use jQuery on a page that doesn't have it loaded yet. To do so, run the following command first:
-
+<p>🔵 It's OK if you want to use jQuery on a page that doesn't have it loaded yet. To do so, run the following command first:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery</span><span class="p">()</span>
 </code></pre></div>
-
 <div></div>
 <details>
 <summary> ▶️ Here are some examples of using jQuery in your scripts. (<b>click to expand</b>)</summary>
@@ -3277,8 +3193,7 @@ You'd know this because the web page would contain something like the following 
 
 <h3>🔵 How to handle a restrictive CSP:</h3>
 
-❗ Some websites have a restrictive [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on those websites, add ``--disable-csp`` as a ``pytest`` command-line option to load a Chromium extension that bypasses the CSP.
-
+<p>❗ Some websites have a restrictive <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a> to prevent users from loading jQuery and other external libraries onto their websites. If you need to use jQuery or another JS library on those websites, add <code>--disable-csp</code> as a <code>pytest</code> command-line option to load a Chromium extension that bypasses the CSP.</p>
 <h3>🔵 More JavaScript fun:</h3>
 
 <div></div>
@@ -3316,10 +3231,8 @@ You'd know this because the web page would contain something like the following 
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;a[name=&quot;Super Fake !!!&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">()</span>
 </code></pre></div>
-
-<code translate="no">deferred_assert_element()</code> and <code translate="no">deferred_assert_text()</code> will save any exceptions that would be raised.
-To flush out all the failed deferred asserts into a single exception, make sure to call <code translate="no">self.process_deferred_asserts()</code> at the end of your test method. If your test hits multiple pages, you can call <code translate="no">self.process_deferred_asserts()</code> before navigating to a new page so that the screenshot from your log files matches the URL where the deferred asserts were made.
-
+<p><code translate="no">deferred_assert_element()</code> and <code translate="no">deferred_assert_text()</code> will save any exceptions that would be raised.
+To flush out all the failed deferred asserts into a single exception, make sure to call <code translate="no">self.process_deferred_asserts()</code> at the end of your test method. If your test hits multiple pages, you can call <code translate="no">self.process_deferred_asserts()</code> before navigating to a new page so that the screenshot from your log files matches the URL where the deferred asserts were made.</p>
 <h3>🔵 How to access raw <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>:</h3>
 
 <p>If you need access to any commands that come with standard <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a>, you can call them directly like this:</p>
@@ -3328,26 +3241,22 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 <span class="n">capabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">capabilities</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">&quot;partial link text&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">)</span>
 </code></pre></div>
-
-(In general, you'll want to use the SeleniumBase versions of methods when available.)
-
+<p>(In general, you'll want to use the SeleniumBase versions of methods when available.)</p>
 <h3>🔵 How to retry failing tests automatically:</h3>
 
 <p>You can use <code translate="no">pytest --reruns=NUM</code> to retry failing tests that many times. Add <code translate="no">--reruns-delay=SECONDS</code> to wait that many seconds between retries. Example:</p>
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--reruns<span class="o">=</span><span class="m">1</span><span class="w"> </span>--reruns-delay<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
-
 <p>You can use the <code translate="no">@retry_on_exception()</code> decorator to retry failing methods. (First import: <code translate="no">from seleniumbase import decorators</code>). To learn more about SeleniumBase decorators, <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/seleniumbase/common">click here</a>.</p>
 
---------
-
-> "Catch bugs in QA before deploying code to Production!"
-
+<hr />
+<blockquote>
+<p>"Catch bugs in QA before deploying code to Production!"</p>
+</blockquote>
 <p align="left"><a href="https://seleniumbase.io/error_page" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/error_page.gif" alt="Catch bugs in QA before deploying code to Production!" title="Catch bugs in QA before deploying code to Production!" /></a></p>
 
---------
-
+<hr />
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Wrap-Up</h3>
 
 <p>
@@ -3366,13 +3275,15 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 
 <p><div><b><a href="https://github.com/mdmintz">https://github.com/mdmintz</a></b></div></p>
 
-<div><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/fancy_logo_14.png" title="SeleniumBase" width="240" /></a></div> <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a></div> <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a></div> <div><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://img.shields.io/gitter/room/seleniumbase/SeleniumBase.svg" alt="Gitter chat"/></a></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/fancy_logo_14.png" title="SeleniumBase" width="240" /></a></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://img.shields.io/gitter/room/seleniumbase/SeleniumBase.svg" alt="Gitter chat"/></a></div>
 <div><a href="https://pepy.tech/project/seleniumbase" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a></div>
-<img src="https://visitor-badge.laobi.icu/badge?page_id=seleniumbase" alt="visitor badge"/>
+<div><img src="https://visitor-badge.laobi.icu/badge?page_id=seleniumbase" alt="visitor badge"/></div>
 <div><a href="https://github.com/seleniumbase/SeleniumBase/stargazers"><img src="https://img.shields.io/github/stars/seleniumbase/seleniumbase.svg?color=19A57B" title="Stargazers" /></a></div>
 
---------
-
+<hr />
 <p><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" alt="SeleniumBase" title="SeleniumBase" width="300" /></a></p>
 <p><a href="https://pypi.org/project/seleniumbase/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=22AAEE&logo=python&logoColor=FEDC54" title="Supported Python Versions" /></a></p>
 
