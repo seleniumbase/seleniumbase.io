@@ -2430,6 +2430,11 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">hover_and_click</span><span class="p">(</span>
     <span class="n">hover_selector</span><span class="p">,</span> <span class="n">click_selector</span><span class="p">,</span>
     <span class="n">hover_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">click_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">js_click</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">hover_and_js_click</span><span class="p">(</span>
+    <span class="n">hover_selector</span><span class="p">,</span> <span class="n">click_selector</span><span class="p">,</span>
+    <span class="n">hover_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">click_by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
     <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">hover_and_double_click</span><span class="p">(</span>
@@ -2674,6 +2679,8 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">disable_beforeunload</span><span class="p">()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_domain_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">get_active_element_css</span><span class="p">()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_beautiful_soup</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
