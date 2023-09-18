@@ -3008,28 +3008,6 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<span class="sd">&quot;&quot;&quot;Driver() test. Runs with &quot;python&quot;. (pytest not needed).&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
-
-<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">browser</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/apps/calculator&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[id=&quot;4&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[id=&quot;2&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">,</span> <span class="s2">&quot;#output&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#output&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-
-<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.github.io/demo_page&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_browser_launcher.py">examples/raw_browser_launcher.py</a>)</p>
 <p>The above format can be used as a drop-in replacement for virtually every Python/selenium framework, as it uses the raw <code>driver</code> instance for handling commands. The <code>Driver()</code> method simplifies the work of managing drivers with optimal settings, and it can be configured via multiple method args. The Driver also accepts command-line options (such as <code>python --headless</code>) so that you don't need to modify your tests directly to use different settings. These command-line options only take effect if the associated method args remain unset (or set to <code>None</code>) for the specified options.</p>
