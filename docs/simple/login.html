@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <title>Login / Simple App</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="SeleniumBase Simple Login Demo Test Automation" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="follow,index" name="robots">
+    <meta property="og:site_name" content="Simple Test Page">
+    <meta property="og:title" content="Login / Simple App">
+    <meta name="Description" content="Test your automation framework here.">
+    <meta property="og:description" content="Test your automation framework here.">
+    <meta property="og:image" content="https://seleniumbase.io/cdn/img/mfa_login.png">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+    <link href="https://seleniumbase.io/cdn/css/bs_theme.css" rel="stylesheet">
+    <style>
+        #div1,#div2 {
+            width: 401px;
+            height: 65px;
+            padding: 10px;
+            border: 2px solid #aaaaaa;
+        }
+        img:active {
+            box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+            1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+        }
+        html, body {
+            font-size: 100%;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 40;
+            background-image: none;
+            background-origin: padding-box;
+            background-color: #c6d6f0;
+            font-family: "Proxima Nova","proxima-nova",
+            "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            text-rendering: optimizelegibility;
+            -moz-osx-font-smoothing: grayscale;
+            box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+            1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+        }
+        #top_message {
+            color: #FF2222;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        tbody {
+            border: 2px solid #e1e1e1;
+            background-color: #fefefe;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+</head>
+<body class="auth-wrapper">
+    <div class="all-wrapper">
+        <div class="auth-box-w">
+            <h3 class="top-bar"></h3>
+            <h4 class="auth-header">Simple Login Testing Page</h4>
+            <form>
+                <div class="form-group">
+                    <h6 id="top_message" align="center"></h6>
+                    <label for="">Username</label><input id="username" class="form-control" placeholder="Enter your username" type="text" autocomplete="off" onkeypress="performLogin('input', event)">
+                    <div class="pre-icon os-icon os-icon-user-male-circle"></div>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label><input id="password" class="form-control" placeholder="Enter your password" type="password" autocorrect="off" autocapitalize="none" autocomplete="off" onkeypress="performLogin('input', event)">
+                    <div class="pre-icon os-icon os-icon-fingerprint"></div>
+                </div>
+                <div class="buttons-w">
+                <a id="log-in" class="btn btn-primary" href="#" onclick="performLogin('button', event)">Sign in</a> <br><br><h6 align="center">For Login Information, See:<br><a href="https://seleniumbase.io/simple/signup" target="_blank">seleniumbase.io/simple/signup</a></h6>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const setCookie = (name, value, days = 7, path = '/') => {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None;Secure; expires=' + expires + '; path=' + path;
+        }
+        const getCookie = (name) => {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=')
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r
+            }, '');
+        }
+        const deleteCookie = (name, path) => {
+            setCookie(name, '', -1, path);
+        }
+    </script>
+    <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
+    <script type="text/javascript">
+        function performLogin(ty, event) {
+            if (ty == 'button' || event.keyCode == 13) {
+                // Everything is in PLAIN TEXT because this is a TEST SITE!
+                username = document.getElementById('username').value;
+                password = document.getElementById('password').value;
+                top_message_element = document.getElementById('top_message');
+                if (username.trim() == '')
+                {
+                    top_message_element.textContent = 'The Username is Required!';
+                    return;
+                }
+                if (username.trim() !== 'demo_user')
+                {
+                    top_message_element.textContent = 'Invalid Username!';
+                    return;
+                }
+                if (password == '')
+                {
+                    top_message_element.textContent = 'The Password is Required!';
+                    return;
+                }
+                if (password !== 'secret_pass')
+                {
+                    top_message_element.textContent = 'Invalid Password!';
+                    return;
+                }
+                var secret = "OR3DMMDGGAXG2MTE"
+                var totp = new jsOTP.totp();
+                totpcode = totp.getOtp(secret);
+                var code = totp.getOtp(secret);
+                date_now = Date.now()
+                var previous_code = totp.getOtp(secret, date_now - 30000)
+                if (totpcode.trim() == '')
+                {
+                    top_message_element.textContent = 'The MFA Code is Required!';
+                    return;
+                }
+                if (totpcode.trim() != code && totpcode.trim() != previous_code)
+                {
+                    top_message_element.textContent = 'Invalid MFA Code!';
+                    return;
+                }
+                top_message_element.textContent = '';
+                var token = 'T' + String(2000000 - parseInt(code));
+                sessionStorage.setItem('simple_auth_granted', 'true');
+                sessionStorage.setItem('simple_login_token', token);
+                sessionStorage.setItem('simple_start_token', token);
+                sessionStorage.setItem('simple_login_date', date_now);
+                setCookie('simple_login_date', Date.now(), 1);
+                setCookie('simple_login_token', token, 1);
+                setCookie('simple_auth_granted', 'true', 1);
+                window.location.href = 'https://seleniumbase.io/simple/?token=' + token;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+            function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        top_message_element = document.getElementById('top_message');
+        var msg = getUrlVars()["msg"];
+        if (msg == "signinrequired") {
+            top_message_element.textContent = 'Sign-in required!';
+        }
+        else if (msg == "signedout") {
+            top_message_element.textContent = 'You have been signed out!';
+        }
+    </script>
+</body>
+</html>

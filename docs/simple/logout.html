@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <title>Redirecting...</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="Demo Test Automation Logout" name="keywords">
+    <meta content="SeleniumBase Simple Demo App Logout Page" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="follow,index" name="robots">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+    <style>
+        html {
+            background-color: #9988ad;
+        }
+        html, body {
+            font-size: 100%;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 12;
+            background-image: none;
+            background-origin: padding-box;
+            background-color: #c6d6f0;
+            font-family: "Proxima Nova","proxima-nova",
+            "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <script type="text/javascript">
+        const setCookie = (name, value, days = 7, path = '/') => {
+                const expires = new Date(Date.now() + days * 864e5).toUTCString();
+                document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None;Secure; expires=' + expires + '; path=' + path;
+            }
+        const getCookie = (name) => {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=')
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r
+            }, '');
+        }
+        const deleteCookie = (name, path) => {
+            setCookie(name, '', -1, path);
+        }
+        sessionStorage.removeItem('simple_login_date');
+        sessionStorage.removeItem('simple_login_token');
+        sessionStorage.removeItem('simple_start_token');
+        sessionStorage.removeItem('simple_entry_token');
+        sessionStorage.removeItem('simple_login_success');
+        deleteCookie('simple_login_date');
+        deleteCookie('simple_login_token');
+        simple_auth_granted = sessionStorage.getItem('simple_auth_granted');
+        sessionStorage.removeItem('simple_auth_granted');
+        if (simple_auth_granted) {
+            deleteCookie('simple_auth_granted');
+            window.location.href = 'https://seleniumbase.io/simple/login?msg=signedout';
+        }
+        else
+            window.location.href = 'https://seleniumbase.io/simple/login?msg=signinrequired';
+    </script>
+</head>
+<body>
+    <h3 class="auth-header">Redirecting...</h3>
+</body>
+</html>
