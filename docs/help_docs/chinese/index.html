@@ -2255,8 +2255,7 @@
 <img src="https://img.shields.io/github/v/release/seleniumbase/SeleniumBase.svg?color=2277EE" alt="Latest Release on GitHub" /></a> <a href="https://pypi.python.org/pypi/seleniumbase">
 <img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=22AAEE" alt="Latest Release on PyPI" /></a> <a href="https://seleniumbase.io">
 <img src="https://img.shields.io/badge/docs-%20📖-11BBDD.svg" alt="SeleniumBase.io Docs" /></a> <a href="https://seleniumbase.io/help_docs/chinese/">
-<img src="https://img.shields.io/badge/文件-%20中文-11BBDD.svg" alt="SeleniumBase.io Docs" /></a> <a href="https://travis-ci.org/seleniumbase/SeleniumBase">
-<img src="https://img.shields.io/travis/seleniumbase/SeleniumBase/master.svg" alt="SeleniumBase on TravisCI" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions">
+<img src="https://img.shields.io/badge/文件-%20中文-11BBDD.svg" alt="SeleniumBase.io Docs" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions">
 <img src="https://github.com/seleniumbase/SeleniumBase/workflows/CI%20build/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase">
 <img src="https://badges.gitter.im/seleniumbase/SeleniumBase.svg" alt="SeleniumBase" /></a>
 </p>
@@ -2276,7 +2275,6 @@
 <a href="https://seleniumbase.io/help_docs/method_summary/">📖 API语法</a> |
 <a href="https://seleniumbase.io/examples/tour_examples/ReadMe/">🗺️ 创建旅游</a> |
 <a href="https://seleniumbase.io/help_docs/translations/">🌎 语言翻译</a> |
-<a href="https://seleniumbase.io/seleniumbase/utilities/selenium_ide/ReadMe/">⏺️ 录音机工具</a> |
 <a href="https://seleniumbase.io/examples/master_qa/ReadMe/">🛂 MasterQA</a> |
 <a href="https://seleniumbase.io/integrations/github/workflows/ReadMe/">🤖 持续集成</a>
 </p>
@@ -2515,11 +2513,12 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 </code></pre></div>
 <p>上面的代码将在出现故障时打开浏览器窗口。(pdb命令:'n'， 'c'， 's' =&gt; next, continue, step)。</p>
 <p>下面是Pytest附带的一些有用的命令行选项:</p>
-<div class="highlight"><pre><span></span><code>-v<span class="w">  </span><span class="c1"># Verbose mode. Prints the full name of each test run.</span>
+<div class="highlight"><pre><span></span><code>-v<span class="w">  </span><span class="c1"># Verbose mode. Prints the full name of each test and shows more details.</span>
 -q<span class="w">  </span><span class="c1"># Quiet mode. Print fewer details in the console output when running tests.</span>
 -x<span class="w">  </span><span class="c1"># Stop running the tests after the first failure is reached.</span>
 --html<span class="o">=</span>report.html<span class="w">  </span><span class="c1"># Creates a detailed pytest-html report after tests finish.</span>
---collect-only<span class="w"> </span><span class="p">|</span><span class="w"> </span>--co<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+--co<span class="w"> </span><span class="p">|</span><span class="w"> </span>--collect-only<span class="w">  </span><span class="c1"># Show what tests would get run. (Without running them)</span>
+--co<span class="w"> </span>-q<span class="w">  </span><span class="c1"># (Both options together!) - Do a dry run with full test names shown.</span>
 -n<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
 -s<span class="w">  </span><span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
 --junit-xml<span class="o">=</span>report.xml<span class="w">  </span><span class="c1"># Creates a junit-xml report after tests finish.</span>
@@ -2533,8 +2532,6 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 --edge<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
 --firefox<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
 --safari<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
---cap-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---cap-string<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
 --settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (Override default SeleniumBase settings.)</span>
 --env<span class="o">=</span>ENV<span class="w">  </span><span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
 --account<span class="o">=</span>STR<span class="w">  </span><span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
@@ -2547,11 +2544,15 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 --protocol<span class="o">=</span>PROTOCOL<span class="w">  </span><span class="c1"># (The Selenium Grid protocol: http|https.)</span>
 --server<span class="o">=</span>SERVER<span class="w">  </span><span class="c1"># (The Selenium Grid server/IP used for tests.)</span>
 --port<span class="o">=</span>PORT<span class="w">  </span><span class="c1"># (The Selenium Grid port used by the test server.)</span>
---proxy<span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="c1"># (Connect to a proxy server:port for tests.)</span>
---proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT<span class="w">  </span><span class="c1"># (Use authenticated proxy server.)</span>
---proxy-bypass-list<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
+--cap-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--cap-string<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--proxy<span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="c1"># (Connect to a proxy server:port as tests are running)</span>
+--proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT<span class="w">  </span><span class="c1"># (Use an authenticated proxy server)</span>
+--proxy-bypass-list<span class="o">=</span>STRING<span class="w"> </span><span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
 --proxy-pac-url<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (Connect to a proxy server using a PAC_URL.pac file.)</span>
 --proxy-pac-url<span class="o">=</span>USERNAME:PASSWORD@URL<span class="w">  </span><span class="c1"># (Authenticated proxy with PAC URL.)</span>
+--proxy-driver<span class="w">  </span><span class="c1"># (If a driver download is needed, will use: --proxy=PROXY.)</span>
+--multi-proxy<span class="w">  </span><span class="c1"># (Allow multiple authenticated proxies when multi-threaded.)</span>
 --agent<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
 --mobile<span class="w">  </span><span class="c1"># (Use the mobile device emulator while running tests.)</span>
 --metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
@@ -2560,6 +2561,8 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 --firefox-pref<span class="o">=</span>SET<span class="w">  </span><span class="c1"># (Set a Firefox preference:value set, comma-separated.)</span>
 --extension-zip<span class="o">=</span>ZIP<span class="w">  </span><span class="c1"># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
 --extension-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
+--binary-location<span class="o">=</span>PATH<span class="w">  </span><span class="c1"># (Set path of the Chromium browser binary to use.)</span>
+--driver-version<span class="o">=</span>VER<span class="w">  </span><span class="c1"># (Set the chromedriver or uc_driver version to use.)</span>
 --sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
 --pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
 --headless<span class="w">  </span><span class="c1"># (Run tests in headless mode. The default arg on Linux OS.)</span>
@@ -2591,18 +2594,20 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 --disable-ws<span class="w">  </span><span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
 --enable-ws<span class="w">  </span><span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
 --enable-sync<span class="w">  </span><span class="c1"># (Enable &quot;Chrome Sync&quot; on websites.)</span>
---use-auto-ext<span class="w">  </span><span class="c1"># (Use Chrome&#39;s automation extension.)</span>
 --uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
---uc-sub<span class="w"> </span><span class="p">|</span><span class="w"> </span>--uc-subprocess<span class="w">  </span><span class="c1"># (Use undetected-chromedriver as a subprocess.)</span>
---remote-debug<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Remote Debugger on http://localhost:9222)</span>
+--uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events when running in &quot;--undetected&quot; mode.)</span>
+--remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
 --final-debug<span class="w">  </span><span class="c1"># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
 --dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
+--enable-3d-apis<span class="w">  </span><span class="c1"># (Enables WebGL and 3D APIs.)</span>
 --swiftshader<span class="w">  </span><span class="c1"># (Use Chrome&#39;s &quot;--use-gl=swiftshader&quot; feature.)</span>
 --incognito<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
 --guest<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
+--dark<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Dark mode.)</span>
 --devtools<span class="w">  </span><span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
---reuse-session<span class="w"> </span><span class="p">|</span><span class="w"> </span>--rs<span class="w">  </span><span class="c1"># (Reuse the browser session between tests.)</span>
+--rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
+--rcs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-class-session<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>
 --crumbs<span class="w">  </span><span class="c1"># (Delete all cookies between tests reusing a session.)</span>
 --disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
 --window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window size.)</span>
