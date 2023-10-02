@@ -2451,7 +2451,7 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
 --uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events when running in &quot;--undetected&quot; mode.)</span>
 --remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
---final-debug<span class="w">  </span><span class="c1"># (Enter Debug Mode after each test ends. Don&#39;t use with CI!)</span>
+--ftrace<span class="w"> </span><span class="p">|</span><span class="w"> </span>--final-trace<span class="w">  </span><span class="c1"># (Debug Mode after each test. Don&#39;t use with CI!)</span>
 --dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
 --enable-3d-apis<span class="w">  </span><span class="c1"># (Enables WebGL and 3D APIs.)</span>
@@ -2611,6 +2611,25 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--locale<span class="o">=</span>CODE<span class="w">  </span><span class="c1"># Example: --locale=ru</span>
 </code></pre></div>
 <p>Visit <a href="locale_codes/"><b>🗾 Locales</b></a> for a full list of codes.</p>
+<hr />
+<h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Changing the default driver version:</h3>
+
+<p>🔵 By default, SeleniumBase will make sure that the major driver version matches the major browser version for Chromium tests. (Eg. If Chrome <code>117.X</code> is installed and you have chromedriver <code>117.X</code>, then nothing happens, but if you had chromedriver <code>116.X</code> instead, then SeleniumBase would download chromedriver <code>117.X</code> to match the browser version.)</p>
+<p>🎛️ To change this default behavior, you can use:</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--driver-version<span class="o">=</span>VER
+</code></pre></div>
+<p>The <code>VER</code> in <code>--driver-version=VER</code> can be:
+* A major driver version. Eg. <code>117</code>. (milestone)
+* An exact driver version. Eg. <code>117.0.5938.92</code>.
+* <code>"browser"</code> (exact match on browser version)
+* <code>"keep"</code> (keep using the driver you already have)
+* <code>"latest"</code> / <code>"stable"</code> (latest stable version)
+* <code>"previous"</code> / <code>"latest-1"</code> (latest minus one)
+* <code>"beta"</code> (latest beta version)
+* <code>"dev"</code> (latest dev version)
+* <code>"canary"</code> (latest canary version)
+* <code>"mlatest"</code> (latest version for the milestone)</p>
+<p>Note that different options could lead to the same result. (Eg. If you have the latest version of a browser for a milestone, then <code>"browser"</code> and <code>"mlatest"</code> should give you the same driver if the latest driver version for that milestone matches the browser version.)</p>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Customizing default settings:</h3>
 
