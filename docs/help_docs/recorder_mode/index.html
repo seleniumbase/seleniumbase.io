@@ -2314,8 +2314,8 @@
 
 <p>🔴 <b>SeleniumBase Recorder Mode</b> lets you record &amp; export browser actions into test automation scripts.<br></p>
 <p><img src="https://seleniumbase.github.io/cdn/img/sb_recorder_notification.png" title="SeleniumBase" width="380"></p>
-<p>ℹ️ Recorder Mode can be activated from the command-line interface, or from the Recorder Desktop App.</p>
-<p>⏺️ To make a new recording from the command-line interface, use <code>sbase mkrec</code>, <code>sbase codegen</code>, or <code>sbase record</code>):</p>
+<p>⏺️ Recorder Mode can be activated from the command-line interface or the Recorder Desktop App.</p>
+<p>⏺️ To make a new recording from the command-line interface, use <code>sbase mkrec</code>, <code>sbase codegen</code>, or <code>sbase record</code>:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkrec<span class="w"> </span>TEST_NAME.py<span class="w"> </span>--url<span class="o">=</span>URL
 </code></pre></div>
 <p>If the file already exists, you'll get an error. If no URL is provided, you'll start on a blank page and will need to navigate somewhere for the Recorder to activate. (The Recorder captures events on URLs that start with <code>https</code>, <code>http</code>, or <code>file</code>.) The command above runs an empty test that stops at a breakpoint so that you can perform manual browser actions for the Recorder. When you have finished recording, type "<code>c</code>" on the command-line and press <code>[ENTER]</code> to continue from the breakpoint. The test will complete and a file called <code>TEST_NAME_rec.py</code> will be automatically created in the <code>./recordings</code> folder. That file will get copied back to the original folder with the name you gave it. (You can run with Edge instead of Chrome by adding <code>--edge</code> to the command above. For headed Linux machines, add <code>--gui</code> to prevent the default headless mode on Linux.)</p>
