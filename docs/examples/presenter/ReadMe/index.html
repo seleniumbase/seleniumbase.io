@@ -2515,6 +2515,33 @@ Notes are disabled by default. You can enable notes by specifying:
 <p>Presentations automatically get saved when calling:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">show_notes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="24" /> Special abilities:</h3>
+
+<p>If you want to highlight multiple lines at different times in the same slide with the <code>&lt;mark&gt;</code> / <code>&lt;/mark&gt;</code> tags, you can use the new <code>&lt;mk-0&gt;</code>-<code>&lt;/mk-0&gt;</code>, <code>&lt;mk-1&gt;</code>-<code>&lt;/mk-1&gt;</code> tags, which will generate multiple HTML slides from one Python slide.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span>
+    <span class="n">code</span><span class="o">=</span><span class="p">(</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">mk</span><span class="o">-</span><span class="mi">0</span><span class="o">&gt;</span><span class="n">Highlight</span> <span class="n">this</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">1</span><span class="n">st</span> <span class="n">generated</span> <span class="n">slide</span><span class="o">&lt;/</span><span class="n">mk</span><span class="o">-</span><span class="mi">0</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">mk</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span><span class="n">Highlight</span> <span class="n">this</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">generated</span> <span class="n">slide</span><span class="o">&lt;/</span><span class="n">mk</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">mk</span><span class="o">-</span><span class="mi">2</span><span class="o">&gt;</span><span class="n">Highlight</span> <span class="n">this</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">generated</span> <span class="n">slide</span><span class="o">&lt;/</span><span class="n">mk</span><span class="o">-</span><span class="mi">2</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">mk</span><span class="o">-</span><span class="mi">3</span><span class="o">&gt;</span><span class="n">Highlight</span> <span class="n">this</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">4</span><span class="n">th</span> <span class="n">generated</span> <span class="n">slide</span><span class="o">&lt;/</span><span class="n">mk</span><span class="o">-</span><span class="mi">3</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Those should automatically get converted to <code>&lt;mark&gt;</code> ... <code>&lt;/mark&gt;</code> on their turn:</p>
+<p>Eg. First generated slide:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Highlight this on the first generated slide<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Highlight this on the second generated slide<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Highlight this on the third generated slide<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Highlight this on the fourth generated slide&gt;<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Eg. Second generated slide:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Highlight this on the first generated slide<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Highlight this on the second generated slide<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Highlight this on the third generated slide<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Highlight this on the fourth generated slide&gt;<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Etc...</p>
 <hr />
 <h3 align="left"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_b.png" alt="SeleniumBase" width="240" /></h3>
 

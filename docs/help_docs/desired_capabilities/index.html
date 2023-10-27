@@ -2338,7 +2338,7 @@
     <span class="s2">&quot;sauce:options&quot;</span><span class="p">:</span> <span class="p">{},</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>(Note that the browser is now being specified in the capabilities file, rather than with <code>--browser=BROWSER</code> when using a <strong>remote</strong> Selenium Grid. If using a <strong>local</strong> Selenium Grid, specify the browser, eg: <code>--browser=chrome</code> or <code>--browser=firefox</code>.)</p>
+<p>(Note that the browser is now being specified in the capabilities file, rather than with <code>--BROWSER</code> when using a <strong>remote</strong> Selenium Grid. If using a <strong>local</strong> Selenium Grid, specify the browser, eg: <code>--firefox</code>.)</p>
 <div><b>You can generate specific desired capabilities using:</b></div>
 
 <ul>
@@ -2357,15 +2357,14 @@
 <span class="n">caps</span><span class="p">[</span><span class="s1">&#39;KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 </code></pre></div>
 <p>(Each pair must be on a separate line. You can interchange single and double quotes.)</p>
-<p>You can also swap <code>--browser=remote</code> with an actual browser, eg <code>--browser=chrome</code>, which will combine the default SeleniumBase desired capabilities with those that were specified in the capabilities file when using <code>--cap_file=FILE.py</code>. Capabilities will override other parameters, so if you set the browser to one thing and the capabilities browser to another, SeleniumBase will use the capabilities browser as the browser.</p>
+<p>You can also swap <code>--browser=remote</code> with an actual browser, eg <code>--browser=chrome</code>, which will combine the default SeleniumBase desired capabilities with those that were specified in the capabilities file when using <code>--cap_file=FILE.py</code>. Capabilities will override other parameters, so if you set the browser to one thing and the capabilities browser to another, SeleniumBase will use the capabilities browser.</p>
 <p>You'll need default SeleniumBase capabilities for:
 * Using a proxy server (not the same as a Selenium Grid server)
 * Downloading files to a desired folder
 * Disabling some warnings on Chrome
 * Overriding a website's Content Security Policy on Chrome
 * Other possible reasons</p>
-<p>You can also set browser desired capabilities from a command line string:
-Example:</p>
+<p>You can also set browser desired capabilities from a command-line string. Eg:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--cap-string<span class="o">=</span><span class="s1">&#39;{&quot;browserName&quot;:&quot;chrome&quot;,&quot;name&quot;:&quot;test1&quot;}&#39;</span><span class="w"> </span>--server<span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="w"> </span>--browser<span class="o">=</span>remote
 </code></pre></div>
 <p>(Enclose cap-string in single quotes. Enclose parameter keys in double quotes.)</p>
