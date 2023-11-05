@@ -8,7 +8,13 @@
 </head>
 <body>
     <h1>Google reCAPTCHA v2 Test</h1>
-    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/3sU2vDRVDmUU2E0Ro4VadvPr/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-+EucQLX9FjQkBnp1US+TPO2CzxNKzs/l+WSpHcJEldNETFzQEp0i7r+cEaAMWcUk"></script>
+    <div
+        class="g-recaptcha"
+        data-sitekey="6LciXPkoAAAAANEr5GKVksWv4VEeuaH5Pe3-L8If"
+        data-callback="onCaptchaSuccess"
+        data-expired-callback="onCaptchaExpired"
+        data-error-callback="onCaptchaError"
+    ></div>
     <script>
         // fired, when the reCAPTCHA is loaded (onload URL parameter)
         function onCaptchaLoad() {
@@ -27,8 +33,6 @@
             console.log('onCaptchaError')
         }
     </script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" async="" defer=""></script>
-    <div class="g-recaptcha" data-sitekey="6LciXPkoAAAAANEr5GKVksWv4VEeuaH5Pe3-L8If"></div>
-</div>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" async defer></script>
 </body>
 </html>
