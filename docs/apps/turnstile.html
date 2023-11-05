@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnstile Demo</title>
+    <style>#parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    .turnstile_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: space-between;
+        text-align: center;
+        width: 100%;
+        padding-top: 16px;
+    }
+    .turnstile {
+        padding: 48px 64px;
+    }
+    .cell {
+        display: flex;
+        flex-direction: column;
+        padding-right: 64px;
+        width: 350px;
+    }
+    .label {
+        font-size: 1.2em;
+    }
+    .response {
+        overflow: hidden;
+        word-break: break-all;
+    }</style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback0" async="async" defer="defer"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback5" async="async" defer="defer"></script>
+</head>
+<body>
+    <div class="turnstile">
+        <div id="example-container5">
+            <iframe src="https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/if/ov2/av0/rcv0/0/0hw4f/3x00000000000000000000FF/auto/normal" allow="cross-origin-isolated; fullscreen" sandbox="allow-same-origin allow-scripts allow-popups" id="cf-chl-widget-0hw4f" tabindex="0" title="Widget containing a Cloudflare security challenge" style="border: none; overflow: hidden; width: 300px; height: 65px;"></iframe>
+            <input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-0hw4f_response" value="XXXX.DUMMY.TOKEN.XXXX" />
+        </div>
+    </div>
+    <script>window.onloadTurnstileCallback0 = () => turnstile.render('#example-container0', {sitekey: '0x4AAAAAAAA-1LUipBaoBpsG', callback: console.log});
+window.onloadTurnstileCallback5 = () => turnstile.render('#example-container5', {sitekey: '3x00000000000000000000FF', callback: console.log});</script>
+</body>
+</html>
