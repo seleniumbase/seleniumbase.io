@@ -42,7 +42,7 @@
       }
       h1 {
         font-size: 2.9rem;
-        font-family: "Calligraffitti";
+        font-family: "Calligraffitti", cursive;
       }
       .g-recaptcha div {
         margin: 0 auto;
@@ -74,7 +74,7 @@
           <label for="date">Date</label>
         </div>
         <div class="input-field col s12 l6">
-          <select name="time" id="time" novalidate required>
+          <select name="time" id="time" required novalidate>
             <option value="" disabled selected>Time</option>
             <option value="8:00 PM">8:00 PM</option>
             <option value="8:30 PM">8:30 PM</option>
@@ -120,7 +120,7 @@
           </ul>
         </div>
         <div id="donation-options" class="input-field col s12 left-align">
-          Please consider adding a donation to your Virtual Reality experience.
+          Please consider adding a donation to your VR/AR experience.
           <ul>
             <li>
               <label>
@@ -182,5 +182,72 @@
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      var app = {
+        debug: true,
+        now: new Date(),
+        $form: $("form"),
+        $btn: $("button"),
+        $progress: $(".progress"),
+        $donations: $("#donation-options"),
+        init: () => {
+          if (window.location.hash == "#thank-you") return app.showThanks();
+          $("select").formSelect();
+          $(".datepicker").datepicker({
+            minDate: app.now,
+            maxDate: new Date(app.now.getTime() + 7 * 24 * 60 * 60 * 1000),
+            select: app.now,
+            today: "",
+            autoClose: true,
+            format: "dd mmm yyyy",
+          });
+          $("[name='payment']").click(() => {
+            app.pay_type = $("[name='payment']:checked").val();
+            app.reset();
+          });
+          app.$btn.on("click", app.click);
+          app.reset();
+        },
+        checkValidity: () => {
+          let $form = app.$form[0];
+          let isValid = $form.checkValidity();
+          if (!isValid) $form.reportValidity();
+          return isValid;
+        },
+        getData: () => {
+          let result = { debug: app.debug };
+          app.$form.serializeArray().forEach((d) => (result[d.name] = d.value));
+          return result;
+        },
+        reset: () => {
+          app.$btn.text(`Request ${app.pay_type == "cc" ? "& Pay" : "Appointment"}`).removeAttr("disabled");
+          app.$donations.toggle(app.pay_type === "cc");
+          app.$progress.addClass("hide");
+          return app;
+        },
+        showThanks: () => {
+          $(".result").addClass("hide");
+          $(".result.green").removeClass("hide");
+          $("form .row").addClass("hide");
+          return app;
+        },
+        showError: (msg) => {
+          $(".result").addClass("hide");
+          $(".result.red .error").text(msg);
+          $(".result.red").removeClass("hide");
+          $(".result.green").addClass("hide");
+        },
+        click: function () {
+          $(".result").addClass("hide");
+          if (!app.checkValidity()) return false;
+          // form has valid data
+          app.$btn.attr("disabled", "disabled").text("Requesting...");
+          app.$progress.removeClass("hide");
+          let data = app.getData();
+          // app.checkout(data);
+        },
+      };
+      $(document).ready(app.init);
+    </script>
   </body>
 </html>
