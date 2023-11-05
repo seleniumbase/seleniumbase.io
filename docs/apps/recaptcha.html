@@ -18,21 +18,26 @@
     <script>
         // fired, when the reCAPTCHA is loaded (onload URL parameter)
         function onCaptchaLoad() {
-            console.log('onCaptchaLoad')
+            console.log('onCaptchaLoad');
+            document.querySelector('img#success').style.display='none';
         }
         // fired, when the user submits a successful reCAPTCHA response (data-callback attribute)
         function onCaptchaSuccess(token) {
-            console.log('onCaptchaSuccess', token)
+            console.log('onCaptchaSuccess', token);
+            document.querySelector('img#success').style.display='';
         }
         // fired, when the reCAPTCHA response expires and the user needs to re-verify (data-expired-callback attribute)
         function onCaptchaExpired() {
-            console.log('onCaptchaExpired')
+            console.log('onCaptchaExpired');
+            document.querySelector('img#success').style.display='none';
         }
         // fired, when the reCAPTCHA encounters an error (data-error-callback attribute)
         function onCaptchaError() {
-            console.log('onCaptchaError')
+            console.log('onCaptchaError');
+            document.querySelector('img#success').style.display='none';
         }
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" async defer></script>
+    <div><img id="success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;"></div>
 </body>
 </html>
