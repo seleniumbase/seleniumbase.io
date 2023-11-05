@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:url" content="https://seleniumbase.io/apps/form_recaptcha" />
+    <meta property="og:title" content="reCAPTCHA v2 Form Test" />
+    <title>reCAPTCHA v2 Form Test</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <style>
+      #background {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://seleniumbase.io/other/super_server.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      form {
+        margin: 5rem auto !important;
+        max-width: 35rem;
+      }
+      h1 {
+        font-size: 2.9rem;
+        font-family: "Calligraffitti";
+      }
+      .g-recaptcha div {
+        margin: 0 auto;
+      }
+      .result {
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background"></div>
+    <form class="text-flow center-align card-panel">
+      <h1>reCAPTCHA v2 Form Test</h1>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" name="name" id="name" required />
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="email" name="email" id="email" required class="validate" />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" name="phone" id="phone" required />
+          <label for="phone">Phone</label>
+        </div>
+        <div class="input-field col s12 l6">
+          <input type="text" name="date" id="date" class="datepicker" required />
+          <label for="date">Date</label>
+        </div>
+        <div class="input-field col s12 l6">
+          <select name="time" id="time" novalidate required>
+            <option value="" disabled selected>Time</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="8:30 PM">8:30 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="9:30 PM">9:30 PM</option>
+          </select>
+        </div>
+        <div class="input-field col s12 left-align">
+          Choose one:</small>
+          <ul>
+            <li>
+              <label>
+                <input name="headset" value="bath" type="radio" />
+                <span class="black-text">Virtual Reality room access for 60 minutes</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="headset" value="shower" type="radio" />
+                <span class="black-text">Augmented Reality room access for 30 minutes</span>
+              </label>
+            </li>
+          </ul>
+          <div>
+            <strong>Please note</strong>: Even if preparations were done, one still needs to get ready for a high intensity Virtual / Augmented Reality experience.
+          </div>
+        </div>
+        <div id="credit-options" class="input-field col s12 left-align">
+          Payment (choose one)
+          <ul>
+            <li>
+              <label>
+                <input name="payment" value="cc" type="radio" checked />
+                <span class="black-text">Credit Card</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="payment" value="cash" type="radio" />
+                <span class="black-text">Cash or Check</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div id="donation-options" class="input-field col s12 left-align">
+          Please consider adding a donation to your Virtual Reality experience.
+          <ul>
+            <li>
+              <label>
+                <input name="donation" value="" type="radio" checked />
+                <span class="black-text">No additional donation</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_05" type="radio" />
+                <span class="black-text">$5</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_10" type="radio" />
+                <span class="black-text">$10</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_15" type="radio" />
+                <span class="black-text">$15</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_25" type="radio" />
+                <span class="black-text">$25</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="g-recaptcha" data-sitekey="6LciXPkoAAAAANEr5GKVksWv4VEeuaH5Pe3-L8If"></div>
+      </div>
+      <div class="row">
+        <button class="btn btn-lg">Request Appointment & Pay</button>
+        <div class="progress hide">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+      <div class="result green lighten-3 hide">
+        Your appointment request has been sent, but is
+        <strong>not confirmed</strong> until the game keeper contacts you to make final arrangements.
+      </div>
+      <div class="result red lighten-3 hide">
+        There was a problem requesting an appointment. Please contact the game keeper. <br />[Error: <span class="error"></span>]
+      </div>
+      <div class="divider"></div>
+      <p class="grey-text text-darken-1 center-align">
+        To talk to a virtual attendent, press the button on your headset.<br />
+        For other questions, email the game keeper.
+      </p>
+      <div class="divider"></div>
+      <p>Cost is $45 per visit; $55 for special arrangements.</p>
+      <p>Parking is available on the far side of the large parking lot.</p>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
