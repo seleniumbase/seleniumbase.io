@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google reCAPTCHA v2 Test</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
 </head>
 <body>
     <h1>Google reCAPTCHA v2 Test</h1>
@@ -19,25 +26,25 @@
         // fired, when the reCAPTCHA is loaded (onload URL parameter)
         function onCaptchaLoad() {
             console.log('onCaptchaLoad');
-            document.querySelector('img#success').style.display='none';
+            document.querySelector('img#captcha-success').style.display='none';
         }
         // fired, when the user submits a successful reCAPTCHA response (data-callback attribute)
         function onCaptchaSuccess(token) {
             console.log('onCaptchaSuccess', token);
-            document.querySelector('img#success').style.display='';
+            document.querySelector('img#captcha-success').style.display='';
         }
         // fired, when the reCAPTCHA response expires and the user needs to re-verify (data-expired-callback attribute)
         function onCaptchaExpired() {
             console.log('onCaptchaExpired');
-            document.querySelector('img#success').style.display='none';
+            document.querySelector('img#captcha-success').style.display='none';
         }
         // fired, when the reCAPTCHA encounters an error (data-error-callback attribute)
         function onCaptchaError() {
             console.log('onCaptchaError');
-            document.querySelector('img#success').style.display='none';
+            document.querySelector('img#captcha-success').style.display='none';
         }
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" async defer></script>
-    <div><img id="success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;"></div>
+    <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;"></div>
 </body>
 </html>
