@@ -264,22 +264,28 @@
         // fired, when the reCAPTCHA is loaded (onload URL parameter)
         function onCaptchaLoad() {
             console.log('onCaptchaLoad');
-            document.querySelector('img#captcha-success').style.display='none';
+            app.$progress.addClass("hide");
+            document.querySelector('img#captcha-success').style.display = 'none';
         }
         // fired, when the user submits a successful reCAPTCHA response (data-callback attribute)
         function onCaptchaSuccess(token) {
             console.log('onCaptchaSuccess', token);
-            document.querySelector('img#captcha-success').style.display='';
+            document.querySelector('img#captcha-success').style.display = '';
         }
         // fired, when the reCAPTCHA response expires and the user needs to re-verify (data-expired-callback attribute)
         function onCaptchaExpired() {
             console.log('onCaptchaExpired');
-            document.querySelector('img#captcha-success').style.display='none';
+            app.$progress.addClass("hide");
+            document.querySelector('img#captcha-success').style.display = 'none';
+            if (document.querySelector('img#submit-success').style.display != 'none') {
+              location.reload();
+            }
         }
         // fired, when the reCAPTCHA encounters an error (data-error-callback attribute)
         function onCaptchaError() {
             console.log('onCaptchaError');
-            document.querySelector('img#captcha-success').style.display='none';
+            app.$progress.addClass("hide");
+            document.querySelector('img#captcha-success').style.display = 'none';
         }
     </script>
 </body>
