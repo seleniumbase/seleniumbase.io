@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turnstile Demo</title>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback5" async="async" defer="defer"></script>
+    <title>Cloudflare Turnstile Test</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" async="async"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,6 +19,20 @@
         justify-content: center;
         width: 100%;
     }
+    #background {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://seleniumbase.io/other/super_server.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
     .turnstile_container {
         display: flex;
         flex-direction: row;
@@ -29,7 +43,7 @@
         padding-top: 16px;
     }
     .turnstile {
-        padding: 48px 64px;
+        padding: 19px 64px;
     }
     .cell {
         display: flex;
@@ -46,11 +60,38 @@
     }</style>
 </head>
 <body>
-    <div class="turnstile">
-        <div id="example-container5">
-            <input type="hidden" name="cf-turnstile-response" id="cf-chl-widget" value="XXXX.DUMMY.TOKEN.XXXX" />
+    <div id="background"></div>
+    <div style="background: white;">
+        <br />
+        <h1>Cloudflare Turnstile Test</h1>
+        <div class="turnstile">
+            <div class="cf-turnstile" data-sitekey="3x00000000000000000000FF" data-callback="onCaptchaSuccess" data-expired-callback="onCaptchaExpired" data-error-callback="onCaptchaError"></div>
         </div>
+        <br />
     </div>
-    <script>window.onloadTurnstileCallback5 = () => turnstile.render('#example-container5', {sitekey: '3x00000000000000000000FF', callback: console.log});</script>
+    <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;" width="180"></div>
+    <div><img id="captcha-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width="180" style="display: none;"></div>
+    <script>
+        function onCaptchaLoad() {
+            console.log('onCaptchaLoad');
+            document.querySelector('img#captcha-success').style.display='none';
+            document.querySelector('img#captcha-failure').style.display='none';
+        }
+        function onCaptchaSuccess(token) {
+            console.log('onCaptchaSuccess', token);
+            document.querySelector('img#captcha-failure').style.display='none';
+            document.querySelector('img#captcha-success').style.display='';
+        }
+        function onCaptchaExpired() {
+            console.log('onCaptchaExpired');
+            document.querySelector('img#captcha-success').style.display='none';
+            document.querySelector('img#captcha-failure').style.display='none';
+        }
+        function onCaptchaError() {
+            console.log('onCaptchaError');
+            document.querySelector('img#captcha-success').style.display='none';
+            document.querySelector('img#captcha-failure').style.display='';
+        }
+    </script>
 </body>
 </html>
