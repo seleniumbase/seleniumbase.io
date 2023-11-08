@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:url" content="https://seleniumbase.io/apps/form_recaptcha" />
-    <meta property="og:title" content="reCAPTCHA v2 Form Test" />
-    <title>reCAPTCHA v2 Form Test</title>
+    <meta property="og:title" content="reCAPTCHA Form Test" />
+    <title>reCAPTCHA Form Test</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css" />
     <script async src="https://www.google.com/recaptcha/api.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
@@ -35,7 +34,6 @@
         }
         h1 {
             font-size: 2.9rem;
-            font-family: "Calligraffitti", cursive;
         }
         .g-recaptcha div {
             margin: 0 auto;
@@ -48,7 +46,7 @@
 <body>
     <div id="background"></div>
     <form class="text-flow center-align card-panel">
-      <h1>reCAPTCHA v2 Form Test</h1>
+      <h1>reCAPTCHA Form Test</h1>
       <div class="row">
         <div class="input-field col s12">
           <input type="text" name="form-user-name" id="name" required />
@@ -150,7 +148,7 @@
           </ul>
         </div>
       </div>
-      <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" width=120 style="display: none;"></div>
+      <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" width="120" style="display: none;"></div>
       <div class="row">
         <div
             class="g-recaptcha"
@@ -160,8 +158,8 @@
             data-error-callback="onCaptchaError"
         ></div>
       </div>
-      <div><img id="submit-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width=120 style="display: none;"></div>
-      <div><img id="submit-success" src="https://seleniumbase.io/cdn/img/teal_check.png" width=120 style="display: none;"></div>
+      <div><img id="submit-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width="120" style="display: none;"></div>
+      <div><img id="submit-success" src="https://seleniumbase.io/cdn/img/teal_check.png" width="120" style="display: none;"></div>
       <div class="row">
         <button class="btn btn-lg">Request Appointment & Pay</button>
         <div class="progress hide">
