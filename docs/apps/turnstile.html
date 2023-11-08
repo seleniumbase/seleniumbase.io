@@ -51,6 +51,9 @@
         padding-right: 64px;
         width: 350px;
     }
+    .white-part {
+        width: 36%;
+    }
     .label {
         font-size: 1.2em;
     }
@@ -61,13 +64,12 @@
 </head>
 <body>
     <div id="background"></div>
-    <div style="background: white;">
-        <br />
+    <div style="background: white;" class="white-part">
+        <br /><br />
         <h1>Cloudflare Turnstile Test</h1>
         <div class="turnstile">
             <div class="cf-turnstile" data-sitekey="3x00000000000000000000FF" data-callback="onCaptchaSuccess" data-expired-callback="onCaptchaExpired" data-error-callback="onCaptchaError"></div>
-        </div>
-        <br />
+        </div><br /><br />
     </div>
     <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;" width="180"></div>
     <div><img id="captcha-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width="180" style="display: none;"></div>
