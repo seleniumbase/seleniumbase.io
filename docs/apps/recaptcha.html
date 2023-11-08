@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google reCAPTCHA v2 Test</title>
+    <title>Google reCAPTCHA Test</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,39 +12,70 @@
         gtag('js', new Date());
         gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
     </script>
+    <style>
+        #background {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://seleniumbase.io/other/super_server.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        .buffer {
+            padding: 14.5px 60px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Google reCAPTCHA v2 Test</h1>
-    <div
-        class="g-recaptcha"
-        data-sitekey="6LciXPkoAAAAANEr5GKVksWv4VEeuaH5Pe3-L8If"
-        data-callback="onCaptchaSuccess"
-        data-expired-callback="onCaptchaExpired"
-        data-error-callback="onCaptchaError"
-    ></div>
+    <div id="background"></div>
+    <div style="background: white;">
+        <br />
+        <h1>Google reCAPTCHA Test</h1>
+        <div class="buffer">
+            <div
+                class="g-recaptcha"
+                data-sitekey="6LciXPkoAAAAANEr5GKVksWv4VEeuaH5Pe3-L8If"
+                data-callback="onCaptchaSuccess"
+                data-expired-callback="onCaptchaExpired"
+                data-error-callback="onCaptchaError"
+            ></div>
+            <br />
+        </div>
+    </div>
+    <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;" width="180"></div>
+    <div><img id="captcha-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width="180" style="display: none;"></div>
     <script>
         // fired, when the reCAPTCHA is loaded (onload URL parameter)
         function onCaptchaLoad() {
             console.log('onCaptchaLoad');
             document.querySelector('img#captcha-success').style.display='none';
+            document.querySelector('img#captcha-failure').style.display='none';
         }
         // fired, when the user submits a successful reCAPTCHA response (data-callback attribute)
         function onCaptchaSuccess(token) {
             console.log('onCaptchaSuccess', token);
+            document.querySelector('img#captcha-failure').style.display='none';
             document.querySelector('img#captcha-success').style.display='';
         }
         // fired, when the reCAPTCHA response expires and the user needs to re-verify (data-expired-callback attribute)
         function onCaptchaExpired() {
             console.log('onCaptchaExpired');
             document.querySelector('img#captcha-success').style.display='none';
+            document.querySelector('img#captcha-failure').style.display='none';
         }
         // fired, when the reCAPTCHA encounters an error (data-error-callback attribute)
         function onCaptchaError() {
             console.log('onCaptchaError');
             document.querySelector('img#captcha-success').style.display='none';
+            document.querySelector('img#captcha-failure').style.display='';
         }
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" async defer></script>
-    <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;"></div>
 </body>
 </html>
