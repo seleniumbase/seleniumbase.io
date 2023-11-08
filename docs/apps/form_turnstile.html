@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:url" content="https://seleniumbase.io/apps/form_turnstile" />
+    <meta property="og:title" content="CF Turnstile Form Test" />
+    <title>CF Turnstile Form Test</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" async="async"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <style>
+        #background {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://seleniumbase.io/other/super_server.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        form {
+            margin: 5.05rem auto !important;
+            max-width: 35.1rem;
+        }
+        h1 {
+            font-size: 2.9rem;
+        }
+        .turnstile div {
+            margin: 0 auto;
+        }
+        .result {
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <form class="text-flow center-align card-panel">
+      <h1>CF Turnstile Form Test</h1>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" name="form-user-name" id="name" required />
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="email" name="form-user-email" id="email" required class="validate" />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" name="form-user-phone" id="phone" required />
+          <label for="phone">Phone</label>
+        </div>
+        <div class="input-field col s12 l6">
+          <input type="text" name="form-select-date" id="date" class="datepicker" required />
+          <label for="date">Date</label>
+        </div>
+        <div class="input-field col s12 l6">
+          <select name="time" id="time" required novalidate>
+            <option value="" disabled selected>Time</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="8:30 PM">8:30 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="9:30 PM">9:30 PM</option>
+          </select>
+        </div>
+        <div class="input-field col s12 left-align">
+          Choose a virtual experience:</small>
+          <ul>
+            <li>
+              <label>
+                <input name="headset" value="VR" type="radio" checked />
+                <span class="black-text">Virtual Reality room access for 30 minutes.<br />(HTC Vive Pro 2, Oculus Rift 3, Valve Pro, PlayStation VR.)</span>
+              </label>
+            </li>
+            <br />
+            <li>
+              <label>
+                <input name="headset" value="AR" type="radio" />
+                <span class="black-text">Augmented Reality room access for 30 minutes.<br />(Microsoft Hololens, Google Glass 360, Apple Vision Pro.)</span>
+              </label>
+            </li>
+          </ul>
+          <div>
+            <strong>Please note</strong>: Unless special arrangements are made in advance,<br />no outside food or equipment is allowed in the arena.
+          </div>
+        </div>
+        <div id="credit-options" class="input-field col s12 left-align">
+          Payment type (choose one)
+          <ul>
+            <li>
+              <label>
+                <input name="payment" value="cc" type="radio" />
+                <span class="black-text">Credit Card</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="payment" value="cash" type="radio" checked />
+                <span class="black-text">Cash or Check</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div id="donation-options" class="input-field col s12 left-align">
+          Consider buying additional credits for your VR/AR experience.<br />
+          Credits can be used for making in-game purchases and more.
+          <ul>
+            <li>
+              <label>
+                <input name="donation" value="" type="radio" checked />
+                <span class="black-text">No additional credits</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_05" type="radio" />
+                <span class="black-text">$5</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_10" type="radio" />
+                <span class="black-text">$10</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_15" type="radio" />
+                <span class="black-text">$15</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="donation" value="donate_20" type="radio" />
+                <span class="black-text">$20</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" width="120" style="display: none;"></div>
+      <div class="row">
+        <div
+            class="cf-turnstile"
+            data-sitekey="3x00000000000000000000FF"
+            data-callback="onCaptchaSuccess"
+            data-expired-callback="onCaptchaExpired"
+            data-error-callback="onCaptchaError"
+        ></div>
+      </div>
+      <div><img id="submit-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width="120" style="display: none;"></div>
+      <div><img id="submit-success" src="https://seleniumbase.io/cdn/img/teal_check.png" width="120" style="display: none;"></div>
+      <div class="row">
+        <button class="btn btn-lg">Request Appointment & Pay</button>
+        <div class="progress hide">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+      <div class="result green lighten-3 hide">
+        Your appointment request has been sent, but is
+        <strong>not confirmed</strong> until the game keeper contacts you to make final arrangements.
+      </div>
+      <div class="result red lighten-3 hide">
+        There was a problem requesting an appointment. Please contact the game keeper. <br />[Error: <span class="error"></span>]
+      </div>
+      <div class="divider"></div>
+      <p class="grey-text text-darken-1 center-align">
+        For questions before your session begins, email the game keeper.<br /><br />
+        To speak with a virtual attendant while your session is in progress, press the golden button located on your VR/AR headset.
+      </p>
+      <div class="divider"></div>
+      <p>Cost is $45 per time block; $55 for special arrangements.</p>
+      <p>Parking is available on the far side of the large parking lot.</p>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/js/materialize.min.js"></script>
+    <script>
+      var app = {
+        debug: true,
+        now: new Date(),
+        $form: $("form"),
+        $btn: $("button"),
+        $progress: $(".progress"),
+        $donations: $("#donation-options"),
+        init: () => {
+          if (window.location.hash == "#thank-you") return app.showThanks();
+          $("select").formSelect();
+          $(".datepicker").datepicker({
+            minDate: app.now,
+            maxDate: new Date(app.now.getTime() + 7 * 24 * 60 * 60 * 1000),
+            select: app.now,
+            today: "",
+            autoClose: true,
+            format: "dd mmm yyyy",
+          });
+          $("[name='payment']").click(() => {
+            app.pay_type = $("[name='payment']:checked").val();
+            app.reset();
+          });
+          app.$btn.on("click", app.click);
+          app.reset();
+        },
+        checkValidity: () => {
+          let $form = app.$form[0];
+          let isValid = $form.checkValidity();
+          if (!isValid) $form.reportValidity();
+          return isValid;
+        },
+        getData: () => {
+          let result = { debug: app.debug };
+          app.$form.serializeArray().forEach((d) => (result[d.name] = d.value));
+          return result;
+        },
+        reset: () => {
+          app.$btn.text(`Request ${app.pay_type == "cc" ? "& Pay" : "Appointment"}`).removeAttr("disabled");
+          app.$donations.toggle(app.pay_type === "cc");
+          app.$progress.addClass("hide");
+          return app;
+        },
+        showThanks: () => {
+          $(".result").addClass("hide");
+          $(".result.green").removeClass("hide");
+          $("form .row").addClass("hide");
+          return app;
+        },
+        showError: (msg) => {
+          $(".result").addClass("hide");
+          $(".result.red .error").text(msg);
+          $(".result.red").removeClass("hide");
+          $(".result.green").addClass("hide");
+        },
+        click: function () {
+          $(".result").addClass("hide");
+          if (!app.checkValidity()) return false;
+          // form has valid data
+          app.$progress.removeClass("hide");
+          let data = app.getData();
+          if (document.querySelector('img#captcha-success').style.display != 'none') {
+            document.querySelector('img#submit-success').style.display = '';
+            app.$btn.attr("disabled", "disabled").text("Success!");
+          }
+          else {
+            document.querySelector('img#submit-failure').style.display = '';
+            app.$btn.attr("disabled", "disabled").text("Failure!");
+          }
+        },
+      };
+      $(document).ready(app.init);
+    </script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" async defer></script>
+    <script>
+        // fired, when the Turnstile is loaded (onload URL parameter)
+        function onCaptchaLoad() {
+            console.log('onCaptchaLoad');
+            app.$progress.addClass("hide");
+            document.querySelector('img#captcha-success').style.display = 'none';
+        }
+        // fired, when the user submits a successful Turnstile response (data-callback attribute)
+        function onCaptchaSuccess(token) {
+            console.log('onCaptchaSuccess', token);
+            document.querySelector('img#captcha-success').style.display = '';
+        }
+        // fired, when the Turnstile response expires and the user needs to re-verify (data-expired-callback attribute)
+        function onCaptchaExpired() {
+            console.log('onCaptchaExpired');
+            app.$progress.addClass("hide");
+            document.querySelector('img#captcha-success').style.display = 'none';
+            if (document.querySelector('img#submit-success').style.display != 'none') {
+              location.reload();
+            }
+        }
+        // fired, when the Turnstile encounters an error (data-error-callback attribute)
+        function onCaptchaError() {
+            console.log('onCaptchaError');
+            app.$progress.addClass("hide");
+            document.querySelector('img#captcha-success').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
