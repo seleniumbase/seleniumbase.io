@@ -285,6 +285,8 @@
             app.$progress.addClass("hide");
             document.querySelector('img#captcha-success').style.display = 'none';
         }
+        if (!location.href.includes("mbase") && !location.href.includes("local"))
+            location.href = "https://seleniumbase.io/apps/form_turnstile";
     </script>
 </body>
 </html>
