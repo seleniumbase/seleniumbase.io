@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloudflare Turnstile Test</title>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" async="async"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -80,6 +80,10 @@
     <div><img id="captcha-success" src="https://seleniumbase.io/cdn/img/green_check.png" style="display: none;" width="180"></div>
     <div><img id="captcha-failure" src="https://seleniumbase.io/cdn/img/red_x.png" width="180" style="display: none;"></div>
     <script>
+        if (!location.href.includes("mbase") && !location.href.includes("local"))
+            location.href = "https://seleniumbase.github.io/apps/turnstile";
+    </script>
+    <script>
         function onCaptchaLoad() {
             console.log('onCaptchaLoad');
             document.querySelector('img#captcha-success').style.display='none';
@@ -100,8 +104,6 @@
             document.querySelector('img#captcha-success').style.display='none';
             document.querySelector('img#captcha-failure').style.display='';
         }
-        if (!location.href.includes("mbase") && !location.href.includes("local"))
-            location.href = "https://seleniumbase.io/apps/turnstile";
     </script>
 </body>
 </html>
