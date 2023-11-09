@@ -8,7 +8,6 @@
     <title>CF Turnstile Form Test</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css" />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" async="async"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -257,7 +256,11 @@
       };
       $(document).ready(app.init);
     </script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onCaptchaLoad" defer></script>
+    <script>
+        if (!location.href.includes("mbase") && !location.href.includes("local"))
+            location.href = "https://seleniumbase.io/apps/form_turnstile";
+    </script>
     <script>
         // fired, when the Turnstile is loaded (onload URL parameter)
         function onCaptchaLoad() {
@@ -285,8 +288,6 @@
             app.$progress.addClass("hide");
             document.querySelector('img#captcha-success').style.display = 'none';
         }
-        if (!location.href.includes("mbase") && !location.href.includes("local"))
-            location.href = "https://seleniumbase.io/apps/form_turnstile";
     </script>
 </body>
 </html>
