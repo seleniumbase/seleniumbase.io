@@ -8,7 +8,6 @@
     <title>reCAPTCHA Form Test</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css" />
-    <script async src="https://www.google.com/recaptcha/api.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -257,7 +256,7 @@
       };
       $(document).ready(app.init);
     </script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onCaptchaLoad" defer></script>
     <script>
         // fired, when the reCAPTCHA is loaded (onload URL parameter)
         function onCaptchaLoad() {
