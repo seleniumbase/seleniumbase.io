@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -2596,9 +2596,13 @@ pytest<span class="w"> </span>test_coffee_cart.py<span class="w"> </span>--demo
     <span class="k">def</span> <span class="nf">test_coffee_cart</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/coffee/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="s2">&quot;Coffee Cart&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Total: $0.00&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div[data-sb=&quot;Cappuccino&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;cart (1)&quot;</span><span class="p">,</span> <span class="s1">&#39;a[aria-label=&quot;Cart page&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div[data-sb=&quot;Flat-White&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;cart (2)&quot;</span><span class="p">,</span> <span class="s1">&#39;a[aria-label=&quot;Cart page&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div[data-sb=&quot;Cafe-Latte&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;cart (3)&quot;</span><span class="p">,</span> <span class="s1">&#39;a[aria-label=&quot;Cart page&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[aria-label=&quot;Cart page&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Total: $53.00&quot;</span><span class="p">,</span> <span class="s2">&quot;button.pay&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button.pay&quot;</span><span class="p">)</span>
