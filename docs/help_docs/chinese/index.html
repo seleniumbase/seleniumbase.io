@@ -2597,6 +2597,7 @@ pytest<span class="w"> </span>my_first_test.py
 <p><img src="https://seleniumbase.github.io/cdn/gif/my_first_test_1.gif" title="SeleniumBase" /></p>
 <p><b>此处为相关代码 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2604,20 +2605,21 @@ pytest<span class="w"> </span>my_first_test.py
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;PRODUCTS&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Products&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[name*=&quot;backpack&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#shopping_cart_container a&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;YOUR CART&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Your Cart&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#checkout&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#first-name&quot;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#last-name&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#postal-code&quot;</span><span class="p">,</span> <span class="s2">&quot;77123&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#continue&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;CHECKOUT: OVERVIEW&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Checkout: Overview&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;29.99&quot;</span><span class="p">,</span> <span class="s2">&quot;div.inventory_item_price&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#finish&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;THANK YOU FOR YOUR ORDER&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Thank you for your order!&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Pony Express&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">js_click</span><span class="p">(</span><span class="s2">&quot;a#logout_sidebar_link&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#login_button_container&quot;</span><span class="p">)</span>
@@ -2651,23 +2653,28 @@ pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/translations/chinese_test_1.py">chinese_test_1.py</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.translate.chinese</span> <span class="kn">import</span> <span class="n">硒测试用例</span>
+<span class="n">硒测试用例</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="s2">&quot;https://zh.wikipedia.org/wiki/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言标题</span><span class="p">(</span><span class="s2">&quot;维基百科，自由的百科全书&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;a[title=&quot;首页&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;a[title=&quot;Wikipedia:关于&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;创建账号&quot;)&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;登录&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;新闻动态&quot;</span><span class="p">,</span> <span class="s2">&quot;span#新闻动态&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;舞龍&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;舞龍&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;搜索&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;舞龍&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;Chinese_draak.jpg&quot;]&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;麻婆豆腐&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">回去</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;麻婆豆腐&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;搜索&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;麻婆豆腐&quot;</span><span class="p">,</span> <span class="s2">&quot;#firstHeading&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;div.thumb div:contains(&quot;一家中餐館的麻婆豆腐&quot;)&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s2">&quot;#searchInput&quot;</span><span class="p">,</span> <span class="s2">&quot;精武英雄&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s2">&quot;#searchButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;figure:contains(&quot;一家中餐館的麻婆豆腐&quot;)&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">回去</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">输入文本</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;精武英雄&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">单击</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;搜索&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;Fist_of_legend.jpg&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言文本</span><span class="p">(</span><span class="s2">&quot;李连杰&quot;</span><span class="p">,</span> <span class="s1">&#39;li a[title=&quot;李连杰&quot;]&#39;</span><span class="p">)</span>
 </code></pre></div>

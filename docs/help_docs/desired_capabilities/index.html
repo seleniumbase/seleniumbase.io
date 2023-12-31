@@ -2556,22 +2556,35 @@
   <h1>📃 Desired Capabilities</h1>
 
 <h2 id="using-desired-capabilities"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Using Desired Capabilities<a class="headerlink" href="#using-desired-capabilities" title="Permanent link">&para;</a></h2>
-<p>You can specify browser capabilities when running SeleniumBase tests on a remote Selenium Grid server such as <a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack</a> or <a href="https://saucelabs.com/products/platform-configurator" target="_blank">Sauce Labs</a>.</p>
+<p>You can specify browser capabilities when running SeleniumBase tests on a remote Selenium Grid server (such as <a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack</a> or <a href="https://saucelabs.com/products/platform-configurator" target="_blank">Sauce Labs</a>).</p>
 <p>Sample run commands may look like this when run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a> folder: (The browser is now specified in the capabilities file.)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--browser<span class="o">=</span>remote<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--cap_file<span class="o">=</span>capabilities/sample_cap_file_BS.py
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--browser<span class="o">=</span>remote<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@ondemand.us-east-1.saucelabs.com<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span><span class="w"> </span>--protocol<span class="o">=</span>https<span class="w"> </span>--cap_file<span class="o">=</span>capabilities/sample_cap_file_SL.py
 </code></pre></div>
 <p>(Parameters: <code>--browser=remote</code>, <code>--server=SERVER</code>, <code>--port=PORT</code>, and <code>--cap_file=CAP_FILE.py</code>)</p>
-<p>Here's an example desired capabilities file for BrowserStack:</p>
+<p>Here's an example desired capabilities file for BrowserStack using the newer SDK format in a <code>.yml</code> / <code>.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code>platforms:
+  - browserName: safari
+    osVersion: 17
+    deviceName: iPhone 15 Pro Max
+buildIdentifier: ${BUILD_NUMBER}
+parallelsPerPlatform: 1
+projectName: My Project
+browserstackLocal: true
+debug: true
+networkLogs: true
+</code></pre></div>
+<p>Here's an example desired capabilities file for BrowserStack using the legacy JSONWP format in a <code>.py</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="n">desired_cap</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;os&quot;</span> <span class="p">:</span> <span class="s2">&quot;Windows&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;os_version&quot;</span> <span class="p">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;browser&quot;</span> <span class="p">:</span> <span class="s2">&quot;Chrome&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;browser_version&quot;</span> <span class="p">:</span> <span class="s2">&quot;101.0&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;browserstack.local&quot;</span> <span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;browserstack.debug&quot;</span> <span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;browserstack.selenium_version&quot;</span> <span class="p">:</span> <span class="s2">&quot;4.1.2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;browser&quot;</span><span class="p">:</span> <span class="s2">&quot;Chrome&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;os&quot;</span><span class="p">:</span> <span class="s2">&quot;Windows&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;os_version&quot;</span><span class="p">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;browser_version&quot;</span><span class="p">:</span> <span class="s2">&quot;latest&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;browserstack.console&quot;</span><span class="p">:</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;browserstack.debug&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;browserstack.networkLogs&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;browserstack.local&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Here's an example desired capabilities file for Sauce Labs:</p>
@@ -2586,7 +2599,7 @@
 <div><b>You can generate specific desired capabilities using:</b></div>
 
 <ul>
-    <li><a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack desired capabilities</a></li>
+    <li><a href="https://www.browserstack.com/docs/automate/capabilities" target="_blank">BrowserStack desired capabilities</a></li>
     <li><a href="https://saucelabs.com/products/platform-configurator" target="_blank">Sauce Labs desired capabilities</a></li>
 </ul>
 
@@ -2612,7 +2625,7 @@
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--cap-string<span class="o">=</span><span class="s1">&#39;{&quot;browserName&quot;:&quot;chrome&quot;,&quot;name&quot;:&quot;test1&quot;}&#39;</span><span class="w"> </span>--server<span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="w"> </span>--browser<span class="o">=</span>remote
 </code></pre></div>
 <p>(Enclose cap-string in single quotes. Enclose parameter keys in double quotes.)</p>
-<p>If you pass <code>"*"</code> into the <code>"name"</code> field of <code>--cap-string</code>, the name will become the test identifier. Example:</p>
+<p>If you pass <code>"*"</code> into the <code>"name"</code> field of <code>--cap-string</code>, the name will become the test identifier. Eg:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--cap-string<span class="o">=</span><span class="s1">&#39;{&quot;browserName&quot;:&quot;chrome&quot;,&quot;name&quot;:&quot;*&quot;}&#39;</span><span class="w"> </span>--server<span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="w"> </span>--browser<span class="o">=</span>chrome
 </code></pre></div>
 <p>Example name: <code>"my_first_test.MyTestClass.test_basics"</code></p>
