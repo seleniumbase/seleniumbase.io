@@ -3540,21 +3540,23 @@ You'd know this because the web page would contain something like the following 
 
 <h3>🔵 How to use deferred asserts:</h3>
 
-<p>Let's say you want to verify multiple different elements on a web page in a single test, but you don't want the test to fail until you verified several elements at once so that you don't have to rerun the test to find more missing elements on the same page. That's where deferred asserts come in. Here's the example:</p>
+<p>Let's say you want to verify multiple different elements on a web page in a single test, but you don't want the test to fail until you verified several elements at once so that you don't have to rerun the test to find more missing elements on the same page. That's where deferred asserts come in. Here's an example:</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">DeferredAssertTests</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_deferred_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://xkcd.com/993/&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;#comic&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/993/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">&quot;#comic&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Brand Identity&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Rocket Ship&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;#comicmap&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s1">&#39;Fake Item&#39;</span><span class="p">,</span> <span class="s1">&#39;#middleContainer&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="s1">&#39;#middleContainer&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s2">&quot;#comicmap&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s2">&quot;Fake Item&quot;</span><span class="p">,</span> <span class="s2">&quot;ul.comicNav&quot;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s2">&quot;Random&quot;</span><span class="p">,</span> <span class="s2">&quot;ul.comicNav&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;a[name=&quot;Super Fake !!!&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Brand Identity&quot;</span><span class="p">,</span> <span class="s2">&quot;#ctitle&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Fake Food&quot;</span><span class="p">,</span> <span class="s2">&quot;#comic&quot;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">()</span>
 </code></pre></div>
 <p><code translate="no">deferred_assert_element()</code> and <code translate="no">deferred_assert_text()</code> will save any exceptions that would be raised.
