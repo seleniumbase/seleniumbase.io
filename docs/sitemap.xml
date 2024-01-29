@@ -186,6 +186,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://seleniumbase.io/help_docs/uc_mode/</loc>
+         <lastmod>2024-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://seleniumbase.io/help_docs/useful_grep_commands/</loc>
          <lastmod>2024-01-29</lastmod>
          <changefreq>daily</changefreq>
