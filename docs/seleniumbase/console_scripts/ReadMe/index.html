@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -486,14 +486,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
@@ -617,14 +617,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
@@ -811,14 +811,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
@@ -1110,14 +1110,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
@@ -1262,14 +1262,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
@@ -1750,14 +1750,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
@@ -1902,14 +1902,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
@@ -2222,14 +2222,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
@@ -2311,14 +2311,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
@@ -2421,14 +2421,14 @@
     
     
     
-    
-    
       
+        
+        
       
+    
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
@@ -2612,6 +2612,7 @@
 <span class="w">      </span>revert-objects<span class="w">   </span><span class="o">[</span>SB_FILE.py<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 <span class="w">      </span>encrypt<span class="w"> </span>/<span class="w"> </span>obfuscate
 <span class="w">      </span>decrypt<span class="w"> </span>/<span class="w"> </span>unobfuscate
+<span class="w">      </span>proxy<span class="w">            </span><span class="o">(</span>Start<span class="w"> </span>a<span class="w"> </span>basic<span class="w"> </span>proxy<span class="w"> </span>server<span class="o">)</span>
 <span class="w">      </span>download<span class="w"> </span>server<span class="w">  </span><span class="o">(</span>Get<span class="w"> </span>Selenium<span class="w"> </span>Grid<span class="w"> </span>JAR<span class="w"> </span>file<span class="o">)</span>
 <span class="w">      </span>grid-hub<span class="w">         </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 <span class="w">      </span>grid-node<span class="w">        </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span>--hub<span class="o">=[</span>HOST/IP<span class="o">]</span>
@@ -3188,6 +3189,25 @@ Works on both Selenium IDE &amp; Katalon Recorder scripts.</p>
 </ul>
 <p>Runs the password decryption/unobfuscation tool.
 (Where you can enter an encrypted password to decrypt.)</p>
+<h3>proxy</h3>
+
+<ul>
+<li>Usage:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>proxy<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+<ul>
+<li>Options:</li>
+</ul>
+<p><code>--hostname=HOSTNAME</code>  (Set hostname) (Default: <code>127.0.0.1</code>)
+<code>--port=PORT</code>          (Set port)     (Default: <code>8899</code>)
+<code>-h</code> / <code>--help</code>      (More info about the <code>proxy</code> command)
+<em>(The <code>help</code> option lists a lot more available options.)</em></p>
+<ul>
+<li>Output:</li>
+</ul>
+<p>Launch a basic proxy server on the current machine.
+(Uses <code>127.0.0.1:8899</code> as the default address.)</p>
 <h3>download</h3>
 
 <ul>
@@ -3306,7 +3326,7 @@ You can start, restart, or stop the Grid node.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>
