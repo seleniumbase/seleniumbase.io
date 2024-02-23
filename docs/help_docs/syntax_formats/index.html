@@ -3235,17 +3235,16 @@
 <p>This format provides a pure Python way of using SeleniumBase without a test runner. Options can be passed via method instantiation or from the command-line. When setting the <code translate="no">test</code> option to <code translate="no">True</code> (or calling <code translate="no">python --test</code>), then standard test logging will occur, such as screenshots and reports for failing tests. All the usual SeleniumBase options are available, such as customizing the browser settings, etc. Here are some examples:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">()</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>  <span class="c1"># By default, browser=&quot;chrome&quot; if not set.</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.github.io/realworld/login&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">()</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">enter_mfa_code</span><span class="p">(</span><span class="s2">&quot;#totpcode&quot;</span><span class="p">,</span> <span class="s2">&quot;GAXG2MTEOR3DMMDG&quot;</span><span class="p">)</span>  <span class="c1"># 6-digit</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>  <span class="c1"># A fancier assert_element() call</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;This Page&quot;)&#39;</span><span class="p">)</span>  <span class="c1"># Use :contains() on any tag</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>  <span class="c1"># Link must be &quot;a&quot; tag. Not &quot;button&quot;.</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;You have been signed out!&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_sb.py">examples/raw_sb.py</a> for the test.)</p>
 <p>Here's another example, which uses <code translate="no">test</code> mode:</p>
@@ -3276,11 +3275,11 @@
 <h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 22. The driver manager (via context manager)</h2>
 
 <p>This pure Python format gives you a raw <code translate="no">webdriver</code> instance in a <code translate="no">with</code> block. The SeleniumBase Driver Manager will automatically make sure that your driver is compatible with your browser version. It gives you full access to customize driver options via method args or via the command-line. The driver will automatically call <code translate="no">quit()</code> after the code leaves the <code translate="no">with</code> block. Here are some examples:</p>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Can run with &quot;python&quot;. (pytest not needed).&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;DriverContext() example. (Runs with &quot;python&quot;).&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">DriverContext</span>
 
 <span class="k">with</span> <span class="n">DriverContext</span><span class="p">()</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.github.io/&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;SeleniumBase&quot;]&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">DriverContext</span><span class="p">(</span><span class="n">browser</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
@@ -3291,7 +3290,7 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#output&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">DriverContext</span><span class="p">()</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.github.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
@@ -3302,8 +3301,18 @@
 <h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 23. The driver manager (via direct import)</h2>
 
 <p>Another way of running Selenium tests with pure <code>python</code> (as opposed to using <code>pytest</code> or <code>pynose</code>) is by using this format, which bypasses <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase</a> methods while still giving you a flexible driver with a manager. SeleniumBase includes helper files such as <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/page_actions.py">page_actions.py</a>, which may help you get around some of the limitations of bypassing <code>BaseCase</code>. Here's an example:</p>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Driver() test. Runs with &quot;python&quot;. (pytest not needed).&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Driver() example. (Runs with &quot;python&quot;).&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
+
+<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">browser</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
@@ -3314,18 +3323,8 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#output&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-
-<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.github.io/demo_page&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
-<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_browser_launcher.py">examples/raw_browser_launcher.py</a>)</p>
+<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_driver_manager.py">examples/raw_driver_manager.py</a>)</p>
 <p>Here's how the <a href="https://github.com/wkeeling/selenium-wire">selenium-wire</a> integration may look when using the <code>Driver()</code> format:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 
@@ -3334,6 +3333,19 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://wikipedia.org&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">requests</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
+<p>Here's another <code>selenium-wire</code> example with the <code>Driver()</code> format:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
+
+<span class="k">def</span> <span class="nf">intercept_response</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">wire</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">response_interceptor</span> <span class="o">=</span> <span class="n">intercept_response</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://wikipedia.org&quot;</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
