@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -2662,26 +2662,26 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p>👤 Here's an example with the <code>SB</code> manager: (Has more methods than the <code>Driver</code> format, and also quits the driver automatically after the <code>with</code> block ends.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 Here's a longer example, which includes a retry if the CAPTCHA isn't bypassed on the first attempt:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Discord Bots&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Discord Bots&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_center&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;Selenium wasn&#39;t detected!&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">):</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 Here's an example where clicking the checkbox is required, even for humans: (Commonly seen with forms that are CAPTCHA-protected.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
@@ -2704,7 +2704,7 @@
         <span class="n">open_the_turnstile_page</span><span class="p">(</span><span class="n">sb</span><span class="p">)</span>
         <span class="n">click_turnstile_and_verify</span><span class="p">(</span><span class="n">sb</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;Selenium wasn&#39;t detected!&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="here-are-some-examples-that-use-uc-mode">👤 Here are some examples that use UC Mode<a class="headerlink" href="#here-are-some-examples-that-use-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2737,15 +2737,17 @@
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Faster, but Selenium can be detected</span>
 </code></pre></div>
 <p>👤 Here are some examples of using those special UC Mode methods: (Use <code>self.driver</code> for <code>BaseCase</code> formats. Use <code>sb.driver</code> for <code>SB()</code> formats):</p>
-<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 You can also set the <code>reconnect_time</code> / <code>timeout</code> to <code>"breakpoint"</code> as a valid option. This allows the user to perform manual actions (until typing <code>c</code> and pressing ENTER to continue from the breakpoint):</p>
-<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://top.gg/&quot;</span><span class="p">,</span> <span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
@@ -2761,6 +2763,31 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(If you remain undetected while loading the page and performing manual actions, then you know you can create a working script once you swap the breakpoint with a time, and add special methods like <code>uc_click</code> as needed.)</p>
+<p>👤 <b>Multithreaded UC Mode:</b></p>
+<p>If you're using <code>pytest</code> for multithreaded UC Mode (which requires using one of the <code>pytest</code> <a href="../syntax_formats/">syntax formats</a>), then all you have to do is set the number of threads when your script runs. (<code>-n NUM</code>) Eg:</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--uc<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+<p>(Then <code>pytest-xdist</code> is automatically used to spin up and process the threads.)</p>
+<p>If you don't want to use <code>pytest</code> for multithreading, then you'll need to do a little more work. That involves using a different multithreading library, (eg. <code>concurrent.futures</code>), and making sure that thread-locking is done correctly for processes that share resources. To handle that thread-locking, include <code>sys.argv.append("-n")</code> in your SeleniumBase file.</p>
+<p>Here's a sample script that uses <code>concurrent.futures</code> for spinning up multiple processes:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">)</span>  <span class="c1"># Tell SeleniumBase to do thread-locking as needed</span>
+
+<span class="k">def</span> <span class="nf">launch_driver</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">driver</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://seleniumbase.io/demo_page&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">))</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+        <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">launch_driver</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+</code></pre></div>
 
 
 
