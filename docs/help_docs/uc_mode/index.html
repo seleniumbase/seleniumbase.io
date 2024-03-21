@@ -2688,13 +2688,13 @@
 
 <span class="k">def</span> <span class="nf">open_the_turnstile_page</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span>
-        <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+        <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">click_turnstile_and_verify</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;span.mark&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#captcha-success&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">3.33</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#captcha-success&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">open_the_turnstile_page</span><span class="p">(</span><span class="n">sb</span><span class="p">)</span>
