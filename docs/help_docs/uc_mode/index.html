@@ -2648,14 +2648,12 @@
 
 <p>👤 <b>UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>, but includes multiple updates, fixes, and improvements to support a wider range of features and edge cases:</p>
 <ul>
-<li>Includes driver version-detection &amp; management.</li>
-<li>Allows mismatched browser/driver versions.</li>
-<li>Automatically changes the user agent to prevent detection. (<code>HeadlessChrome</code> to <code>Chrome</code>)</li>
-<li>Automatically disconnects chromedriver from Chrome as needed. (And reconnects)</li>
+<li>Automatically changes the user agent to prevent detection.</li>
 <li>Supports multithreaded tests in parallel via <code>pytest-xdist</code>.</li>
-<li>Adjusts configuration based on the environment. (Linux/Ubuntu vs Windows vs macOS)</li>
+<li>Adjusts some configuration based on the environment.</li>
+<li>Includes driver version-detection and management.</li>
 <li>Has options for setting proxy and proxy-with-auth.</li>
-<li>Has ways of adjusting timings from default values.</li>
+<li>Has args for adjusting timings from default values.</li>
 <li>Includes multiple ways of structuring test scripts.</li>
 </ul>
 <p>👤 Here's an example with the <code>Driver</code> manager:</p>
@@ -2665,7 +2663,7 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
-<p>👤 Here's an example with the <code>SB</code> manager: (Has more methods than the <code>Driver</code> format, and also quits the driver automatically after the <code>with</code> block ends.)</p>
+<p>👤 Here's an example with the <code>SB</code> manager (which has more methods and functionality than the <code>Driver</code> format):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
@@ -2706,16 +2704,19 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="500"></p>
 <h3 id="here-are-some-examples-that-use-uc-mode">👤 Here are some examples that use UC Mode<a class="headerlink" href="#here-are-some-examples-that-use-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/verify_undetected.py">SeleniumBase/examples/verify_undetected.py</a></li>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/uc_cdp_events.py">SeleniumBase/examples/uc_cdp_events.py</a></li>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_bing_captcha.py">SeleniumBase/examples/raw_bing_captcha.py</a></li>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_uc_mode.py">SeleniumBase/examples/raw_uc_mode.py</a></li>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pixelscan.py">SeleniumBase/examples/raw_pixelscan.py</a></li>
 </ul>
 <h3 id="here-are-some-uc-mode-examples-where-clicking-is-required">👤 Here are some UC Mode examples where clicking is required<a class="headerlink" href="#here-are-some-uc-mode-examples-where-clicking-is-required" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_turnstile.py">SeleniumBase/examples/raw_turnstile.py</a></li>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_form_turnstile.py">SeleniumBase/examples/raw_form_turnstile.py</a></li>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/uc_cdp_events.py">SeleniumBase/examples/uc_cdp_events.py</a></li>
 </ul>
 <h3 id="here-are-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue">👤 Here are <code>driver</code>-specific methods added by SeleniumBase for UC Mode: <code>--uc</code> / <code>uc=True</code><a class="headerlink" href="#here-are-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
