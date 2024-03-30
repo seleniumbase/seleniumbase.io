@@ -867,18 +867,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#here-are-some-uc-mode-examples-where-clicking-is-required" class="md-nav__link">
+  <a href="#here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required" class="md-nav__link">
     <span class="md-ellipsis">
-      👤 Here are some UC Mode examples where clicking is required
+      👤 Here are some UC Mode examples that bypass CAPTCHAs when clicking is required
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#here-are-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" class="md-nav__link">
+  <a href="#here-are-the-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" class="md-nav__link">
     <span class="md-ellipsis">
-      👤 Here are driver-specific methods added by SeleniumBase for UC Mode: --uc / uc=True
+      👤 Here are the driver-specific methods added by SeleniumBase for UC Mode: --uc / uc=True
     </span>
   </a>
   
@@ -2603,18 +2603,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#here-are-some-uc-mode-examples-where-clicking-is-required" class="md-nav__link">
+  <a href="#here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required" class="md-nav__link">
     <span class="md-ellipsis">
-      👤 Here are some UC Mode examples where clicking is required
+      👤 Here are some UC Mode examples that bypass CAPTCHAs when clicking is required
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#here-are-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" class="md-nav__link">
+  <a href="#here-are-the-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" class="md-nav__link">
     <span class="md-ellipsis">
-      👤 Here are driver-specific methods added by SeleniumBase for UC Mode: --uc / uc=True
+      👤 Here are the driver-specific methods added by SeleniumBase for UC Mode: --uc / uc=True
     </span>
   </a>
   
@@ -2643,10 +2643,10 @@
   <h1>👤 UC Mode</h1>
 
 <h2 id="uc-mode"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> UC Mode 👤<a class="headerlink" href="#uc-mode" title="Permanent link">&para;</a></h2>
-<p>👤 SeleniumBase <b>UC Mode</b> (Undetected-Chromedriver Mode) allows bots to appear human, which lets them evade detection from anti-bot services that try to block them or trigger CAPTCHAs on various websites.</p>
+<p>👤 <b translate="no">SeleniumBase</b> <b translate="no">UC Mode</b> (Undetected-Chromedriver Mode) allows bots to appear human, which lets them evade detection from anti-bot services that try to block them or trigger CAPTCHAs on various websites.</p>
 <figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/5dMFI3e85ig?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
 
-<p>👤 <b>UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>, but includes multiple updates, fixes, and improvements to support a wider range of features and edge cases:</p>
+<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>, but includes multiple updates, fixes, and improvements to support a wider range of features and edge cases:</p>
 <ul>
 <li>Automatically changes the user agent to prevent detection.</li>
 <li>Supports multithreaded tests in parallel via <code>pytest-xdist</code>.</li>
@@ -2656,14 +2656,14 @@
 <li>Has args for adjusting timings from default values.</li>
 <li>Includes multiple ways of structuring test scripts.</li>
 </ul>
-<p>👤 Here's an example with the <code>Driver</code> manager:</p>
+<p>👤 Here's an example with the <b><code translate="no">Driver</code></b> manager:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
-<p>👤 Here's an example with the <code>SB</code> manager (which has more methods and functionality than the <code>Driver</code> format):</p>
+<p>👤 Here's an example with the <b><code translate="no">SB</code></b> manager (which has more methods and functionality than the <b><code translate="no">Driver</code></b> format):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
@@ -2681,7 +2681,8 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
-<p>👤 Here's an example where clicking the checkbox is required, even for humans: (Commonly seen with forms that are CAPTCHA-protected.)</p>
+<p>👤 Here's an example <b>where clicking the checkbox is required</b>, even for humans:<br />(Commonly seen on forms that are CAPTCHA-protected.)</p>
+<p><img src="https://seleniumbase.github.io/other/cf_turnstile.png" title="SeleniumBase" width="260"></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">def</span> <span class="nf">open_the_turnstile_page</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
@@ -2704,7 +2705,8 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-<p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="500"></p>
+<p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
+<hr />
 <h3 id="here-are-some-examples-that-use-uc-mode">👤 Here are some examples that use UC Mode<a class="headerlink" href="#here-are-some-examples-that-use-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/verify_undetected.py">SeleniumBase/examples/verify_undetected.py</a></li>
@@ -2712,13 +2714,15 @@
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_uc_mode.py">SeleniumBase/examples/raw_uc_mode.py</a></li>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pixelscan.py">SeleniumBase/examples/raw_pixelscan.py</a></li>
 </ul>
-<h3 id="here-are-some-uc-mode-examples-where-clicking-is-required">👤 Here are some UC Mode examples where clicking is required<a class="headerlink" href="#here-are-some-uc-mode-examples-where-clicking-is-required" title="Permanent link">&para;</a></h3>
+<p><img src="https://seleniumbase.github.io/other/pixelscan.jpg" title="SeleniumBase" width="540"></p>
+<h3 id="here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required">👤 Here are some UC Mode examples that bypass CAPTCHAs when clicking is required<a class="headerlink" href="#here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_turnstile.py">SeleniumBase/examples/raw_turnstile.py</a></li>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_form_turnstile.py">SeleniumBase/examples/raw_form_turnstile.py</a></li>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/uc_cdp_events.py">SeleniumBase/examples/uc_cdp_events.py</a></li>
 </ul>
-<h3 id="here-are-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue">👤 Here are <code>driver</code>-specific methods added by SeleniumBase for UC Mode: <code>--uc</code> / <code>uc=True</code><a class="headerlink" href="#here-are-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" title="Permanent link">&para;</a></h3>
+<p><img src="https://seleniumbase.github.io/other/cf_bypass.png" title="SeleniumBase" width="260"></p>
+<h3 id="here-are-the-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue">👤 Here are the <b><code translate="no">driver</code></b>-specific methods added by SeleniumBase for UC Mode: <code>--uc</code> / <b><code translate="no">uc=True</code></b><a class="headerlink" href="#here-are-the-driver-specific-methods-added-by-seleniumbase-for-uc-mode-uc-uctrue" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -2737,11 +2741,11 @@
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
-<p>(Note that the <code>reconnect_time</code> is used to specify how long the driver should be disconnected from Chrome to prevent detection before reconnecting again.)</p>
-<p>👤 Since <code>driver.get(url)</code> is slower in UC Mode for bypassing detection, use <code>driver.default_get(url)</code> for a standard page load instead:</p>
+<p>(Note that the <b><code translate="no">reconnect_time</code></b> is used to specify how long the driver should be disconnected from Chrome to prevent detection before reconnecting again.)</p>
+<p>👤 Since <b><code translate="no">driver.get(url)</code></b> is slower in UC Mode for bypassing detection, use <b><code translate="no">driver.default_get(url)</code></b> for a standard page load instead:</p>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Faster, but Selenium can be detected</span>
 </code></pre></div>
-<p>👤 Here are some examples of using those special UC Mode methods: (Use <code>self.driver</code> for <code>BaseCase</code> formats. Use <code>sb.driver</code> for <code>SB()</code> formats):</p>
+<p>👤 Here are some examples of using those special <b translate="no">UC Mode</b> methods: (Use <b><code translate="no">self.driver</code></b> for <b><code translate="no">BaseCase</code></b> formats. Use <b><code translate="no">sb.driver</code></b> for <b><code translate="no">SB()</code></b> formats):</p>
 <div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -2749,7 +2753,7 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-<p>👤 You can also set the <code>reconnect_time</code> / <code>timeout</code> to <code>"breakpoint"</code> as a valid option. This allows the user to perform manual actions (until typing <code>c</code> and pressing ENTER to continue from the breakpoint):</p>
+<p>👤 You can also set the <b><code translate="no">reconnect_time</code></b> / <b><code translate="no">timeout</code></b> to <b><code translate="no">"breakpoint"</code></b> as a valid option. This allows the user to perform manual actions (until typing <b><code translate="no">c</code></b> and pressing <b><code>ENTER</code></b> to continue from the breakpoint):</p>
 <div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
@@ -2757,24 +2761,25 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>(Note that while the special UC Mode breakpoint is active, you can't issue Selenium commands to the browser, and the browser can't detect Selenium.)</p>
-<p>👤 The two main causes of getting detected in UC Mode (which are both easily handled) are:
-* Timing. (UC Mode methods let you customize default values that aren't good enough for your environment.)
-* Not using <code>driver.uc_click(selector)</code> when you need to remain undetected while clicking something.</p>
-<p>👤 To find out if UC Mode will work at all on a specific site (before adjusting for timing), load your site with the following script:</p>
+<p>(Note that while the special <b><code translate="no">UC Mode</code></b> breakpoint is active, you can't use <b><code translate="no">Selenium</code></b> commands in the browser, and the browser can't detect <b><code translate="no">Selenium</code></b>.)</p>
+<p>👤 The two main causes of getting detected in <b translate="no">UC Mode</b> (which are both easily handled) are:</p>
+<li>Timing. (<b translate="no">UC Mode</b> methods let you customize default values that aren't good enough for your environment.)</li>
+<li>Not using <b><code translate="no">driver.uc_click(selector)</code></b> when you need to remain undetected while clicking something.</li>
+
+<p>👤 To find out if <b translate="no">UC Mode</b> will work at all on a specific site (before adjusting for timing), load your site with the following script:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>(If you remain undetected while loading the page and performing manual actions, then you know you can create a working script once you swap the breakpoint with a time, and add special methods like <code>uc_click</code> as needed.)</p>
+<p>(If you remain undetected while loading the page and performing manual actions, then you know you can create a working script once you swap the breakpoint with a time and add special methods like <b><code translate="no">driver.uc_click</code></b> as needed.)</p>
 <p>👤 <b>Multithreaded UC Mode:</b></p>
-<p>If you're using <code>pytest</code> for multithreaded UC Mode (which requires using one of the <code>pytest</code> <a href="../syntax_formats/">syntax formats</a>), then all you have to do is set the number of threads when your script runs. (<code>-n NUM</code>) Eg:</p>
+<p>If you're using <b><code translate="no">pytest</code></b> for multithreaded <b translate="no">UC Mode</b> (which requires using one of the <b><code translate="no">pytest</code></b> <a href="../syntax_formats/">syntax formats</a>), then all you have to do is set the number of threads when your script runs. (<code>-n NUM</code>) Eg:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--uc<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span>
 </code></pre></div>
-<p>(Then <code>pytest-xdist</code> is automatically used to spin up and process the threads.)</p>
-<p>If you don't want to use <code>pytest</code> for multithreading, then you'll need to do a little more work. That involves using a different multithreading library, (eg. <code>concurrent.futures</code>), and making sure that thread-locking is done correctly for processes that share resources. To handle that thread-locking, include <code>sys.argv.append("-n")</code> in your SeleniumBase file.</p>
-<p>Here's a sample script that uses <code>concurrent.futures</code> for spinning up multiple processes:</p>
+<p>(Then <b><code translate="no">pytest-xdist</code></b> is automatically used to spin up and process the threads.)</p>
+<p>If you don't want to use <b><code translate="no">pytest</code></b> for multithreading, then you'll need to do a little more work. That involves using a different multithreading library, (eg. <b><code translate="no">concurrent.futures</code></b>), and making sure that thread-locking is done correctly for processes that share resources. To handle that thread-locking, include <b><code translate="no">sys.argv.append("-n")</code></b> in your <b>SeleniumBase</b> file.</p>
+<p>Here's a sample script that uses <b><code translate="no">concurrent.futures</code></b> for spinning up multiple processes:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
 <span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
@@ -2794,10 +2799,50 @@
         <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">launch_driver</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
 </code></pre></div>
 <hr />
+<p>👥 <b>Double Duty:</b> Here's an example of handling two CAPTCHAs on one page:</p>
 <p><img src="https://seleniumbase.github.io/other/nopecha.png" title="SeleniumBase" align="center" width="630"></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;nopecha.com/demo/turnstile&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container5 iframe&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;span.mark&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">):</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;circle.success-circle&quot;</span><span class="p">):</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;span.mark&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;circle.success-circle&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>
+
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container5 iframe&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;svg#success-icon&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_center&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
 <hr />
-<p><img src="https://seleniumbase.github.io/cdn/img/sb_text_f.png" title="SeleniumBase" align="center" width="335"></p>
-<div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_gs.png" alt="SeleniumBase" width="335" /></a></div>
+<p>👤 <b>What makes UC Mode work?</b></p>
+<p>Here are the 3 primary things that <b translate="no">UC Mode</b> does to make bots appear human:</p>
+<li>Modifies <b><code translate="no">chromedriver</code></b> to rename <b translate="no">Chrome DevTools Console</b> variables.</li>
+<li>Launches <b translate="no">Chrome</b> browsers before attaching <b><code translate="no">chromedriver</code></b> to them.</li>
+<li>Disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b> during stealthy actions.</li>
+
+<p>For example, if the <b translate="no">Chrome DevTools Console</b> variables aren't renamed, you can expect to find them with a quick search:</p>
+<p><img src="https://seleniumbase.github.io/other/cdc_args.png" title="SeleniumBase" width="370"></p>
+<p>(If those variables are still there, then websites can easily detect your bots.)</p>
+<p>If you launch <b translate="no">Chrome</b> using <b><code translate="no">chromedriver</code></b>, then there will be some things that you won't be able to to hide. (Instead, <b translate="no">UC Mode</b> connects <b><code translate="no">chromedriver</code></b> to <b translate="no">Chrome</b> after it is launched.)</p>
+<p>While <b><code translate="no">chromedriver</code></b> is connected to <b translate="no">Chrome</b>, website services can detect it. Thankfully, <b><code translate="no">selenium</code></b> already includes <b><code translate="no">driver.service.stop()</code></b> for stopping the service, and <b><code translate="no">driver.service.start()</code></b> for starting it back up again. (<b translate="no">SeleniumBase UC Mode</b> uses those <b><code translate="no">selenium</code></b> methods as needed.)</p>
+<hr />
+<p>🏆 <b>Choosing the right CAPTCHA service</b> for your business / website:</p>
+<p><img src="https://seleniumbase.github.io/other/me_se_conf.jpg" title="SeleniumBase" width="340"></p>
+<p>As an ethical hacker / cybersecurity researcher who builds bots that bypass CAPTCHAs for sport, <b>the CAPTCHA service that I personally recommend</b> for keeping bots out is <b translate="no">Google's reCAPTCHA</b>:</p>
+<p><img src="https://seleniumbase.github.io/other/g_recaptcha.png" title="SeleniumBase" width="260"></p>
+<p>Since Google makes Chrome, Google's own <b translate="no">reCAPTCHA</b> service has access to more data than other CAPTCHA services (eg. hCaptcha, CloudFlare, DataDome, etc.), and can therefore use that data to make better decisions about whether or not web activity is coming from real humans or automated bots.</p>
+<hr />
+<p><img src="https://seleniumbase.github.io/cdn/img/sb_text_f.png" alt="SeleniumBase" title="SeleniumBase" align="center" width="335"></p>
+<div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_gs.png" alt="SeleniumBase" title="SeleniumBase" width="335" /></a></div>
 
 
 
