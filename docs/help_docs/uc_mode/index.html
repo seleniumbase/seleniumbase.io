@@ -2829,16 +2829,30 @@
 <li>Launches <b translate="no">Chrome</b> browsers before attaching <b><code translate="no">chromedriver</code></b> to them.</li>
 <li>Disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b> during stealthy actions.</li>
 
-<p>For example, if the <b translate="no">Chrome DevTools Console</b> variables aren't renamed, you can expect to find them with a quick search:</p>
-<p><img src="https://seleniumbase.github.io/other/cdc_args.png" title="SeleniumBase" width="370"></p>
+<p>For example, if the <b translate="no">Chrome DevTools Console</b> variables aren't renamed, you can expect to find them easily when using <b><code>selenium</code></b> for browser automation:</p>
+<p><img src="https://seleniumbase.github.io/other/cdc_args.png" title="SeleniumBase" width="380"></p>
 <p>(If those variables are still there, then websites can easily detect your bots.)</p>
-<p>If you launch <b translate="no">Chrome</b> using <b><code translate="no">chromedriver</code></b>, then there will be some things that you won't be able to to hide. (Instead, <b translate="no">UC Mode</b> connects <b><code translate="no">chromedriver</code></b> to <b translate="no">Chrome</b> after it is launched.)</p>
-<p>While <b><code translate="no">chromedriver</code></b> is connected to <b translate="no">Chrome</b>, website services can detect it. Thankfully, <b><code translate="no">selenium</code></b> already includes <b><code translate="no">driver.service.stop()</code></b> for stopping the service, and <b><code translate="no">driver.service.start()</code></b> for starting it back up again. (<b translate="no">SeleniumBase UC Mode</b> uses those <b><code translate="no">selenium</code></b> methods as needed.)</p>
+<p>If you launch <b translate="no">Chrome</b> using <b><code translate="no">chromedriver</code></b>, then there will be settings that make your browser look like a bot. (Instead, <b translate="no">UC Mode</b> connects <b><code translate="no">chromedriver</code></b> to <b translate="no">Chrome</b> after the browser is launched, which makes <b translate="no">Chrome</b> look like a normal, human-controlled web browser.)</p>
+<p>While <b><code translate="no">chromedriver</code></b> is connected to <b translate="no">Chrome</b>, website services can detect it. Thankfully, raw <b><code translate="no">selenium</code></b> already includes <b><code translate="no">driver.service.stop()</code></b> for stopping the <b><code translate="no">chromedriver</code></b> service, <b><code translate="no">driver.service.start()</code></b> for starting the <b><code translate="no">chromedriver</code></b> service, and <b><code translate="no">driver.start_session(capabilities)</code></b> for reviving the active browser session with the given capabilities. (<b translate="no"><code>SeleniumBase</code> UC Mode</b> methods automatically use those raw <b><code translate="no">selenium</code></b> methods as needed.)</p>
+<p>Links to those <a href="https://github.com/SeleniumHQ/selenium">raw <b>Selenium</b></a> method definitions have been provided for reference (but you don't need to call those methods directly):</p>
+<li><b><code translate="no"><a href="https://github.com/SeleniumHQ/selenium/blob/9c6ccdbf40356284fad342f70fbdc0afefd27bd3/py/selenium/webdriver/common/service.py#L135">driver.service.stop()</a></code></b></li>
+<li><b><code translate="no"><a href="https://github.com/SeleniumHQ/selenium/blob/9c6ccdbf40356284fad342f70fbdc0afefd27bd3/py/selenium/webdriver/common/service.py#L91">driver.service.start()</a></code></b></li>
+<li><b><code translate="no"><a href="https://github.com/SeleniumHQ/selenium/blob/9c6ccdbf40356284fad342f70fbdc0afefd27bd3/py/selenium/webdriver/remote/webdriver.py#L284">driver.start_session(capabilities)</a></code></b></li>
+
+<p>Also note that <b><code translate="no">chromedriver</code></b> isn't detectable in a browser tab if it never touches that tab. Here's a JS command that lets you open a URL in a new tab (from your current tab):</p>
+<li><b><code>window.open("URL");</code></b> --> (Info: <a href="https://www.w3schools.com/jsref/met_win_open.asp" target="_blank">W3Schools</a>)</li>
+
+<p>The above JS method is used within <b translate="no"><code>SeleniumBase</code></b> <b translate="no">UC Mode</b> methods for opening URLs in a stealthy way. Since some websites try to detect if your browser is a bot on the initial page load, this allows you to bypass detection in those situations. After a few seconds (customizable), <b translate="no">UC Mode</b> tells <b><code translate="no">chromedriver</code></b> to connect to that tab so that automated commands can now be issued. At that point, <b><code translate="no">chromedriver</code></b> could be detected if websites are looking for it (but generally websites only look for it during specific events, such as page loads, form submissions, and button clicks).</p>
+<p>Avoiding detection while clicking is easy if you schedule your clicks to happen at a future point when the <b><code translate="no">chromedriver</code></b> service has been stopped. Here's a JS command that lets you schedule events (such as clicks) to happen in the future:</p>
+<li><b><code>
+window.setTimeout(function() { SCRIPT }, MS);</code></b> --> (Info: <a href="https://www.w3schools.com/jsref/met_win_settimeout.asp" target="_blank">W3Schools</a>)</li>
+
+<p>The above JS method is used within the <b translate="no"><code>SeleniumBase</code></b> <b translate="no">UC Mode</b> method: <b><code>driver.uc_click(selector)</code></b> so that clicking can be done in a stealthy way. <b translate="no">UC Mode</b> schedules your click, disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b>, waits a little (customizable), and reconnects.</p>
 <hr />
 <p>🏆 <b>Choosing the right CAPTCHA service</b> for your business / website:</p>
 <p><img src="https://seleniumbase.github.io/other/me_se_conf.jpg" title="SeleniumBase" width="340"></p>
 <p>As an ethical hacker / cybersecurity researcher who builds bots that bypass CAPTCHAs for sport, <b>the CAPTCHA service that I personally recommend</b> for keeping bots out is <b translate="no">Google's reCAPTCHA</b>:</p>
-<p><img src="https://seleniumbase.github.io/other/g_recaptcha.png" title="SeleniumBase" width="260"></p>
+<p><img src="https://seleniumbase.github.io/other/g_recaptcha.png" title="SeleniumBase" width="315"></p>
 <p>Since Google makes Chrome, Google's own <b translate="no">reCAPTCHA</b> service has access to more data than other CAPTCHA services (eg. hCaptcha, CloudFlare, DataDome, etc.), and can therefore use that data to make better decisions about whether or not web activity is coming from real humans or automated bots.</p>
 <hr />
 <p><img src="https://seleniumbase.github.io/cdn/img/sb_text_f.png" alt="SeleniumBase" title="SeleniumBase" align="center" width="335"></p>
