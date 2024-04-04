@@ -2905,6 +2905,16 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">delete_saved_cookies</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cookies.txt&quot;</span><span class="p">)</span>
 
+<span class="bp">self</span><span class="o">.</span><span class="n">get_saved_cookies</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cookies.txt&quot;</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">get_cookie</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">()</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">add_cookie</span><span class="p">(</span><span class="n">cookie_dict</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">add_cookies</span><span class="p">(</span><span class="n">cookies</span><span class="p">)</span>
+
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_ready_state_complete</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_angularjs</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -3165,6 +3175,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_local_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">clear_local_storage</span><span class="p">()</span>
+<span class="c1"># Duplicates: delete_local_storage()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_local_storage_keys</span><span class="p">()</span>
 
@@ -3177,6 +3188,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_session_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">clear_session_storage</span><span class="p">()</span>
+<span class="c1"># Duplicates: delete_session_storage()</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_session_storage_keys</span><span class="p">()</span>
 
