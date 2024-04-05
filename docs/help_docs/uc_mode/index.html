@@ -2703,7 +2703,7 @@
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
 <hr />
-<p>👤 Note that <code>driver.get(url)</code> has been slightly modified from it's original version so that if anti-bot services are detected from a <code>requests.get(url)</code> call before navigating to the website, then <code>driver.uc_open_with_reconnect(url)</code> will be used instead. To open a URL normally, use <code>driver.default_get(url)</code>.</p>
+<p>👤 In <b translate="no">UC Mode</b>, <code translate="no">driver.get(url)</code> has been modified from its original version: If anti-bot services are detected from a <code translate="no">requests.get(url)</code> call that's made before navigating to the website, then <code translate="no">driver.uc_open_with_reconnect(url)</code> will be used instead. To open a URL normally in <b translate="no">UC Mode</b>, use <code translate="no">driver.default_get(url)</code>.</p>
 <hr />
 <h3 id="here-are-some-examples-that-use-uc-mode">👤 Here are some examples that use UC Mode<a class="headerlink" href="#here-are-some-examples-that-use-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
