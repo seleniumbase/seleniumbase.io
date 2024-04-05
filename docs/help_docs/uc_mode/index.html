@@ -2646,15 +2646,11 @@
 <p>👤 <b translate="no">SeleniumBase</b> <b translate="no">UC Mode</b> (Undetected-Chromedriver Mode) allows bots to appear human, which lets them evade detection from anti-bot services that try to block them or trigger CAPTCHAs on various websites.</p>
 <figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/5dMFI3e85ig?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
 
-<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>, but includes multiple updates, fixes, and improvements to support a wider range of features and edge cases:</p>
+<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>, but includes multiple updates, fixes, and improvements, such as:</p>
 <ul>
-<li>Automatically changes the user agent to prevent detection.</li>
-<li>Supports multithreaded tests in parallel via <code>pytest-xdist</code>.</li>
-<li>Adjusts some configuration based on the environment.</li>
-<li>Includes driver version-detection and management.</li>
-<li>Has options for setting proxy and proxy-with-auth.</li>
-<li>Has args for adjusting timings from default values.</li>
-<li>Includes multiple ways of structuring test scripts.</li>
+<li>Automatically changing user agents to prevent detection.</li>
+<li>Automatically setting various chromium args as needed.</li>
+<li>Has special methods. Eg. <code>driver.uc_click(selector)</code></li>
 </ul>
 <p>👤 Here's an example with the <b><code translate="no">Driver</code></b> manager:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
@@ -2706,6 +2702,8 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
+<hr />
+<p>👤 Note that <code>driver.get(url)</code> has been slightly modified from it's original version so that if anti-bot services are detected from a <code>requests.get(url)</code> call before navigating to the website, then <code>driver.uc_open_with_reconnect(url)</code> will be used instead. To open a URL normally, use <code>driver.default_get(url)</code>.</p>
 <hr />
 <h3 id="here-are-some-examples-that-use-uc-mode">👤 Here are some examples that use UC Mode<a class="headerlink" href="#here-are-some-examples-that-use-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
