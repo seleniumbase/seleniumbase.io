@@ -2802,21 +2802,25 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;nopecha.com/demo/turnstile&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container5 iframe&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;span.mark&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;nopecha.com/demo/turnstile&quot;</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">):</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;circle.success-circle&quot;</span><span class="p">):</span>
             <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;span.mark&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
             <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">)</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;circle.success-circle&quot;</span><span class="p">)</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>
 
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container5 iframe&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;span.mark&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container5 iframe&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;svg#success-icon&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">):</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;#example-container0 iframe&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;circle.success-circle&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>
+
     <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_center&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
