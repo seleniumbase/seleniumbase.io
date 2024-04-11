@@ -2656,14 +2656,17 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="370"></p>
 <p>👤 Here's an example with the <b><code translate="no">SB</code></b> manager (which has more methods and functionality than the <b><code translate="no">Driver</code></b> format):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 Here's a longer example, which includes a retry if the CAPTCHA isn't bypassed on the first attempt:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
@@ -2682,9 +2685,8 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">def</span> <span class="nf">open_the_turnstile_page</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span>
-        <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;seleniumbase.io/apps/turnstile&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">click_turnstile_and_verify</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
@@ -2702,6 +2704,38 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
+<p>👤 Here's an example <b>where the CAPTCHA appears after submitting a form</b>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ahrefs.com/website-authority-checker&quot;</span>
+    <span class="n">input_field</span> <span class="o">=</span> <span class="s1">&#39;input[placeholder=&quot;Enter domain&quot;]&#39;</span>
+    <span class="n">submit_button</span> <span class="o">=</span> <span class="s1">&#39;span:contains(&quot;Check Authority&quot;)&#39;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># The bot-check is later</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="s2">&quot;github.com/seleniumbase/SeleniumBase&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">submit_button</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text_not_visible</span><span class="p">(</span><span class="s2">&quot;Checking&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;p:contains(&quot;github.com/seleniumbase/SeleniumBase&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Top 100 backlinks&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;bottom_center&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/ahrefs_bypass.png" title="SeleniumBase" width="540"></p>
+<p>👤 Here, <b>the CAPTCHA appears after clicking to go to the sign-in screen</b>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block_on</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.thaiticketmajor.com/concert/&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;button.btn-signin&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[title*=&quot;Cloudflare&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#success svg#success-icon&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_center&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/ttm_bypass.png" title="SeleniumBase" width="540"></p>
 <hr />
 <p>👤 In <b translate="no">UC Mode</b>, <code translate="no">driver.get(url)</code> has been modified from its original version: If anti-bot services are detected from a <code translate="no">requests.get(url)</code> call that's made before navigating to the website, then <code translate="no">driver.uc_open_with_reconnect(url)</code> will be used instead. To open a URL normally in <b translate="no">UC Mode</b>, use <code translate="no">driver.default_get(url)</code>.</p>
 <hr />
@@ -2832,7 +2866,7 @@
 <li>Disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b> during stealthy actions.</li>
 
 <p>For example, if the <b translate="no">Chrome DevTools Console</b> variables aren't renamed, you can expect to find them easily when using <b><code translate="no">selenium</code></b> for browser automation:</p>
-<p><img src="https://seleniumbase.github.io/other/cdc_args.png" title="SeleniumBase" width="380"></p>
+<p><img src="https://seleniumbase.github.io/other/cdc_args.png" title="SeleniumBase" width="390"></p>
 <p>(If those variables are still there, then websites can easily detect your bots.)</p>
 <p>If you launch <b translate="no">Chrome</b> using <b><code translate="no">chromedriver</code></b>, then there will be settings that make your browser look like a bot. (Instead, <b translate="no">UC Mode</b> connects <b><code translate="no">chromedriver</code></b> to <b translate="no">Chrome</b> after the browser is launched, which makes <b translate="no">Chrome</b> look like a normal, human-controlled web browser.)</p>
 <p>While <b><code translate="no">chromedriver</code></b> is connected to <b translate="no">Chrome</b>, website services can detect it. Thankfully, raw <b><code translate="no">selenium</code></b> already includes <b><code translate="no">driver.service.stop()</code></b> for stopping the <b><code translate="no">chromedriver</code></b> service, <b><code translate="no">driver.service.start()</code></b> for starting the <b><code translate="no">chromedriver</code></b> service, and <b><code translate="no">driver.start_session(capabilities)</code></b> for reviving the active browser session with the given capabilities. (<b translate="no"><code>SeleniumBase</code> UC Mode</b> methods automatically use those raw <b><code translate="no">selenium</code></b> methods as needed.)</p>
@@ -2852,10 +2886,17 @@ window.setTimeout(function() { SCRIPT }, MS);</code></b> --> (Info: <a href="htt
 <p>The above JS method is used within the <b><code translate="no">SeleniumBase</code></b> <b translate="no">UC Mode</b> method: <b><code translate="no">driver.uc_click(selector)</code></b> so that clicking can be done in a stealthy way. <b translate="no">UC Mode</b> schedules your click, disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b>, waits a little (customizable), and reconnects.</p>
 <hr />
 <p>🏆 <b>Choosing the right CAPTCHA service</b> for your business / website:</p>
-<p><img src="https://seleniumbase.github.io/other/me_se_conf.jpg" title="SeleniumBase" width="340"></p>
+<p><img src="https://seleniumbase.github.io/other/me_se_conf.jpg" title="SeleniumBase" width="370"></p>
 <p>As an ethical hacker / cybersecurity researcher who builds bots that bypass CAPTCHAs for sport, <b>the CAPTCHA service that I personally recommend</b> for keeping bots out is <b translate="no">Google's reCAPTCHA</b>:</p>
 <p><img src="https://seleniumbase.github.io/other/g_recaptcha.png" title="SeleniumBase" width="315"></p>
 <p>Since Google makes Chrome, Google's own <b translate="no">reCAPTCHA</b> service has access to more data than other CAPTCHA services (eg. hCaptcha, CloudFlare, DataDome, etc.), and can therefore use that data to make better decisions about whether or not web activity is coming from real humans or automated bots.</p>
+<hr />
+<p>⚖️ <b>Legal implications of web-scraping</b>:</p>
+<p>Based on the following article, https://nubela.co/blog/meta-lost-the-scraping-legal-battle-to-bright-data/, (which outlines a court case where social-networking company: Meta lost the legal battle to data-scraping company: Bright Data), it was determined that web scraping is 100% legal in the eyes of the courts as long as:
+1. The scraping is only done with <b>public data</b> and <b>not private data</b>.
+2. The scraping isn’t done while logged in to the site being scraped.</p>
+<p>If the above criteria are met, then scrape away! (According to the article)</p>
+<p>(Note: I'm not a lawyer, so I can't officially offer legal advice, but I can direct people to existing articles online where people can find their own answers.)</p>
 <hr />
 <p><img src="https://seleniumbase.github.io/cdn/img/sb_text_f.png" alt="SeleniumBase" title="SeleniumBase" align="center" width="335"></p>
 <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_gs.png" alt="SeleniumBase" title="SeleniumBase" width="335" /></a></div>
