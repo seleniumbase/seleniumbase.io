@@ -2519,7 +2519,7 @@
 <link rel="icon" href="https://seleniumbase.github.io/img/logo7.png" /></p>
 <h1>SeleniumBase</h1>
 
-<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_i.png" alt="SeleniumBase" title="SeleniumBase" width="400" /></a></p>
+<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb2.png" alt="SeleniumBase" title="SeleniumBase" width="350" /></a></p>
 
 <p align="center" class="hero__title"><b>All-in-one Browser Automation Framework:<br />Web Crawling / Testing / Scraping / Stealth</b></p>
 
@@ -3226,7 +3226,7 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <p><a id="creating_visual_reports"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Generating Test Reports:</h2>
 
-<h3>🔵 Pytest Reports:</h3>
+<h3>🔵 <code>pytest</code> HTML Reports:</h3>
 
 <p>✅ Using <code>--html=report.html</code> gives you a fancy report of the name specified after your test suite completes.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--html<span class="o">=</span>report.html
@@ -3241,14 +3241,14 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <p>You can also use <code>--junit-xml=report.xml</code> to get an xml report instead. Jenkins can use this file to display better reporting for your tests.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--junit-xml<span class="o">=</span>report.xml
 </code></pre></div>
-<h3>🔵 pynose Reports:</h3>
+<h3>🔵 <code>pynose</code> Reports:</h3>
 
 <p>The <code>--report</code> option gives you a fancy report after your test suite completes.</p>
 <div class="highlight"><pre><span></span><code>pynose<span class="w"> </span>test_suite.py<span class="w"> </span>--report
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/nose_report.png" alt="Example pynose Report" title="Example pynose Report" width="320" /></p>
 <p>(NOTE: You can add <code>--show-report</code> to immediately display pynose reports after the test suite completes. Only use <code>--show-report</code> when running tests locally because it pauses the test run.)</p>
-<h3>🔵 Behave Dashboard & Reports:</h3>
+<h3>🔵 <code>behave</code> Dashboard & Reports:</h3>
 
 <p>(The <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/behave_bdd">behave_bdd/</a> folder can be found in the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder.)</p>
 <div class="highlight"><pre><span></span><code>behave<span class="w"> </span>behave_bdd/features/<span class="w"> </span>-D<span class="w"> </span>dashboard<span class="w"> </span>-D<span class="w"> </span>headless
@@ -3288,7 +3288,7 @@ pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span 
 <p>🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
 </code></pre></div>
-<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Handling Pop-Up / Pop Up Alerts:</h3>
+<h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Handling Pop-Up Alerts:</h3>
 
 <p>🔵 <code translate="no">self.accept_alert()</code> automatically waits for and accepts alert pop-ups. <code translate="no">self.dismiss_alert()</code> automatically waits for and dismisses alert pop-ups. On occasion, some methods like <code translate="no">self.click(SELECTOR)</code> might dismiss a pop-up on its own because they call JavaScript to make sure that the <code translate="no">readyState</code> of the page is <code translate="no">complete</code> before advancing. If you're trying to accept a pop-up that got dismissed this way, use this workaround: Call <code translate="no">self.find_element(SELECTOR).click()</code> instead, (which will let the pop-up remain on the screen), and then use <code translate="no">self.accept_alert()</code> to accept the pop-up (<a href="https://github.com/seleniumbase/SeleniumBase/issues/600#issuecomment-647270426">more on that here</a>). If pop-ups are intermittent, wrap code in a try/except block.</p>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Building Guided Tours for Websites:</h3>
@@ -3601,7 +3601,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 
 <p><div><b><a href="https://github.com/mdmintz">https://github.com/mdmintz</a></b></div></p>
 
-<div><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" title="SeleniumBase" width="240" /></a></div>
+<div><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb2.png" title="SeleniumBase" width="240" /></a></div>
 <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a></div>
 <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a></div>
 <div><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://gitter.im/seleniumbase/SeleniumBase" target="_blank"><img src="https://img.shields.io/gitter/room/seleniumbase/SeleniumBase.svg" alt="Gitter chat"/></a></div>
