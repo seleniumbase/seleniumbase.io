@@ -2863,6 +2863,7 @@
     <span class="n">enable_3d_apis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">swiftshader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ad_block_on</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">host_resolver_rules</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">block_images</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">do_not_track</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">chromium_arg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2871,6 +2872,7 @@
     <span class="n">user_data_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">extension_zip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">extension_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">disable_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">binary_location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">driver_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">page_load_strategy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -3505,7 +3507,7 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># Calls Python&#39;s print() / Allows for translations</span>
 
-<span class="c1">############ # &quot;driver&quot;-specific methods added by SeleniumBase</span>
+<span class="c1">############ # &quot;driver&quot;-specific methods added (or modified) by SeleniumBase</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Because driver.get(url) works differently in UC Mode</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Like driver.get(), but allows partial URLs without protocol</span>
@@ -3535,6 +3537,10 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
 
@@ -3592,24 +3598,24 @@
 
 <span class="n">driver</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
 
-<span class="c1">############ # &quot;driver&quot;-specific methods added by SeleniumBase for UC Mode: &quot;--uc&quot; / uc=True</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="c1">############ # &quot;driver&quot;-specific methods added (or modified) by SeleniumBase for UC Mode</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># If UC Mode and site detects bots, then uc_open_with_tab(url)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># (Open in same tab with default reconnect_time)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># (New tab with default reconnect_time)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># (New tab)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>  <span class="c1"># disconnect() + sleep(timeout) + connect()</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>  <span class="c1"># Stops the webdriver service to prevent detection</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
-    <span class="n">timeout</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">SMALL_TIMEOUT</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>  <span class="c1"># Starts the webdriver service to allow actions again</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>  <span class="c1"># A stealthy click for evading bot-detection</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>  <span class="c1"># switch_to_frame() in a stealthy way</span>
 </code></pre></div>
 <hr />
 <h2>🔵 Examples</h2>
