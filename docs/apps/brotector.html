@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Brotector CAPTCHA</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <style>
+        #parent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+        #background {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        #description {
+            margin: 20px;
+        }
+        #copy-button {
+           margin: 20px;
+        }
+        button {
+          box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
+        }
+        table {
+          border: 2px solid black;
+          margin: 20px;
+          width: 80%;
+        }
+        th, td {
+          border-top: 1px solid black;
+          border-right: 1px solid black;
+          margin: 0px;
+        }
+        a {
+          border:2px solid red;
+        }
+        p {
+          margin: 20px;
+        }
+        @keyframes borderBlink {
+            from, to {
+                border-color: black;
+            }
+            50% {
+                border-color: purple;
+            }
+        }
+        .borderBlink{    
+            -webkit-animation: borderBlink 0.5s step-end infinite;
+            animation: borderBlink 0.5s step-end infinite;
+        }
+        .borderBlink:hover {    
+            border: 5px solid purple;
+            box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <noscript>
+        <p>
+            <h2>JavaScript is not enabled in your browser!<br /></h2>
+            <h2>This site requires JavaScript to function!<br /></h2>
+        </p>
+        <hr /><br /><br />
+    </noscript>
+    <div id="description">
+        <h1>Brotector CAPTCHA</h1>
+    </div>
+    <p>
+        <button onclick="buttonFunction1()" id="myButton" type="button" disabled="disabled" class="borderBlink"
+            style="border: 5px solid purple; color: gray; font-size: 2.2rem; visibility: hidden; width: 302px;"><span id="mySpan">Verifying...</span></button>
+    </p>
+    <p>
+        <svg id="mySVG" name="svgName" width="302" height="20">
+            <rect id="svgRect" width="302" height="20"
+                  stroke="teal" stroke-width="4" fill="#4CA0A0">
+                <animate attributeType="CSS" attributeName="opacity"
+                         from="0.1" to="1" dur="0.5s" repeatCount="1"/>
+                <animate attributeType="CSS" attributeName="width"
+                         from="1" to="302" dur="0.5s" repeatCount="1"/>
+            </rect>
+        </svg>
+    </p>
+    <div>
+    <p><label id="pText" style="color: purple; font-size: 30px; visibility: hidden; width: 302px;">Click the button above to prove you're human!</label></p>
+    <p><label id="pText2" style="color: purple; font-size: 30px; visibility: hidden; width: 302px;">Devtools must remain closed at all times!</label></p>
+    </div>
+  <table id="detections">
+    <tr bgcolor="darkgreen" id="table-keys">
+      <th>Detection</th>
+      <th style="white-space: nowrap;">ms since load</th>
+      <th>Type</th>
+      <th>score</th>
+      <th>data</th>
+    </tr>
+    <tr bgcolor="blue">
+      <td>Average</td>
+      <td id="avg-ms-load"></td>
+      <td></td>
+      <td id="avg-score">0</td>
+      <td></td>
+    </tr>
+  </table>
+  <button id="copy-button" onclick="copyAsJSON()" style="visibility: hidden;">
+    Copy detections as JSON
+  </button>
+    <script>
+        var x = document.getElementById("myButton");
+        var y = document.getElementById("pText");
+        var z = document.getElementById("mySpan");
+        setTimeout(unHideButton, 75);
+        setTimeout(unDisableButton, 548);
+        setTimeout(delayedFunction0, 545);
+        function unHideButton() {
+            x.style.visibility = "visible";
+        }
+        function unDisableButton() {
+            x.disabled = false;
+            x.style.color = "blue";
+            z.textContent = "I am not a robot!";
+            y.style.visibility = "visible";
+        }
+        function delayedFunction0() {
+            var x = document.getElementById("myButton");
+            var y = document.getElementById("pText");
+            var z = document.getElementById("mySVG");
+            var y2 = document.getElementById("pText2");
+            var bg_color = document.querySelector("table tr").bgColor;
+            if (bg_color != "red" && document.devtools_open === true) {
+                y.style.color = "red";
+                y.style.border = "thick solid #660000";
+                y.textContent = "Devtools was detected!";
+                y.style.fontSize = "33px";
+                x.remove();
+                z.remove();
+                y.style.padding = "2px";
+                var td = document.getElementById("detections");
+                var cb = document.getElementById("copy-button");
+                td.style.visibility = "hidden";
+                cb.style.visibility = "hidden";
+                y2.style.visibility = "visible";
+            }
+            else if (bg_color === "red") {
+                y.style.color = "red";
+                y.textContent = "ROBOT DETECTED!";
+                y.style.border = "thick solid #EA0000";
+                y.style.padding = "2px";
+                y.style.fontSize = "34px";
+                x.remove();
+                z.remove();
+            }
+        }
+    </script>
+    <script>
+        if (!location.href.includes("mbase") && !location.href.includes("local"))
+            location.href = "https://seleniumbase.io/apps/brotector";
+    </script>
+    <script>
+        function getDebuggerTiming(){
+            var start = globalThis.performance.now();
+            debugger;
+            return globalThis.performance.now()-start;
+        }
+        function isEmpty() {
+            for (var prop in this) if (this.hasOwnProperty(prop)) return false;
+            return true;
+        };
+        function hookFunc(obj, func, callback){
+            proxy = new Proxy(globalThis[obj].prototype[func], {
+              apply: (target, thisArg, argumentsList) => {
+                callback(target, thisArg, argumentsList);
+                return Reflect.apply(target, thisArg, argumentsList);
+              }
+            }
+            );
+            Object.defineProperty(globalThis[obj].prototype, func, {value:proxy});
+        }
+        async function getHighEntropyValues(){
+            const n = globalThis.navigator? globalThis.navigator: globalThis.WorkerNavigator;
+            data = await n.userAgentData.getHighEntropyValues([
+                "architecture",
+                "bitness",
+                "formFactor",
+                "model",
+                "platform",
+                "platformVersion",
+                "uaFullVersion",
+                "wow64"
+            ]);
+            data["userAgent"] = n.userAgent;
+            return data;
+        }
+        function get_worker_response(fn, timeout=undefined) {
+                try {
+                    const URL = window.URL || window.webkitURL;
+                    var fn = "self.onmessage=async function(e){postMessage(await (" + fn.toString() + ")())}";
+                    var blob;
+                    try {
+                        blob = new Blob([fn], { type: "application/javascript" });
+                    } catch (e) {
+                        // Backwards-compatibility
+                        window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
+                        blob = new BlobBuilder();
+                        blob.append(response);
+                        blob = blob.getBlob();
+                    }
+                    var url = URL.createObjectURL(blob);
+                    var worker = new Worker(url);
+                    var _promise = new Promise((resolve, reject) => {
+                        if(timeout !== undefined){setTimeout(()=>{worker.terminate(); reject(new Error("timeout"))}, timeout)}
+                        worker.onmessage = (m) => {
+                            worker.terminate();
+                            resolve(m.data);
+                        };
+                        worker.onerror = (e)=>{reject(new Error("Worker onerror"))};
+                    });
+                    worker.postMessage("call");
+                    return _promise;
+                } catch (e) {
+                    return new Promise((resolve, reject) => {
+                        reject(e);
+                    });
+                }
+            }
+            const startTime = window.performance.now();
+            class Brotector {
+              constructor(on_detection, interval=70) {
+                // on_detection(data:dict)
+                this._isMouseHooked = false;
+                this.on_detection = on_detection;
+                this.detections = [];
+                this.mousePos = [0, 0];
+                this._detections = [];
+                this.interval = interval;
+                this.init_done = this.init();
+                this._doing_stacklookup = false;
+                this.devtools_open = false;
+                this._runtime_detected = false;
+                this._canvasMouseVisualizer = false;
+              }
+              log(data){
+                data["msSinceLoad"] = window.performance.now() - startTime;
+                this.detections.push(data);
+                this._detections.push(data.detection);
+                this.on_detection(data);
+              }
+              async init(){
+                this.test_navigator_webdriver();
+                this.test_stackLookup();
+                this.test_window_cdc();
+                this.test_HighEntropyValues();
+                this.hook_mouseEvents();
+                this.hook_canvasVisualize();
+                setInterval(this.intervalled.bind(this), this.interval);
+                return this.detections;
+              }
+              async intervalled(){
+                this.test_stackLookup();
+              }
+              test_navigator_webdriver(){
+                if(navigator.webdriver === true){
+                    this.log({detection:"navigator.webdriver", score:1});
+                }
+              }
+              test_window_cdc(){
+                let matches = [];
+                for(let prop in window) {
+                   prop.match(/cdc_[a-z0-9]/ig) && matches.push(prop);
+                }
+                if(matches.length > 0){
+                    this.log({detection:"window.cdc", data:matches, score:1});
+                }
+              }
+              async test_stackLookup() {
+                const key = "runtime.enabled.stacklookup";
+                var type = "webdriver";
+                var score = 1;
+                if (this._runtime_detected === false){
+                    let stackLookup = false;
+                    const e = new Error();
+                    // there might be several ways to catch property access from console print functions
+                    Object.defineProperty(e, "stack", {
+                        configurable: false,
+                        enumerable: false,
+                        get: function() {
+                            stackLookup = true;
+                            return '';
+                            }
+                        });
+                    console.debug(e);
+                    if(stackLookup){
+                        if(this._doing_stacklookup){return}
+                        this._doing_stacklookup = true;
+                        this._runtime_detected = true;
+                        var start = globalThis.performance.now();
+                        try{await get_worker_response(()=>{debugger}, 200)}
+                        catch(e){if(e.message !== "timeout"){throw e}}
+                        var time = globalThis.performance.now()-start;
+                        if (time > 180) {
+                            type = "devtools";
+                            score = score * 0.5;
+                            this.devtools_open = true;
+                            document.devtools_open = true;
+                        } else {
+                            this.devtools_open = false;
+                            this.log({detection:key, score:score, "type":type});
+                            this._doing_stacklookup = false;
+                        }
+                    }
+                }
+            }
+            async test_HighEntropyValues(){
+            let data = await get_worker_response(getHighEntropyValues);
+            var score = 0;
+            if(data.architecture === "" &&
+               data.model === "" && data.platformVersion == "" &&
+               data.uaFullVersion === "" && data.bitness == ""){
+               this.log({"detection":"Headless", "type":"HighEntropyValues.empty", score:0.9});
+            }
+            }
+            hook_mouseEvents() {
+            if (!this._isMouseHooked){
+                for (let event of ["mousedown", "mouseup", "mousemove", "pointermove", "click", "touchstart", "touchend", "touchmove", "touch", "wheel"]){
+                    document.addEventListener(event,this.mouseEventHandler.bind(this));
+                }
+            }
+            }
+            mouseEventHandler(e) {
+                const key = "Input.cordinatesLeak";
+                var is_touch = false;
+                if (["touchstart", "touchend", "touchmove", "touch"].includes(e.type)) {
+                        is_touch = true;
+                        e = e.touches[0] || e.changedTouches[0];
+                    }
+                if(e.type === "mousemove"){
+                    this.mousePos = [e.clientX, e.clientY];
+                }
+                if(e.pageY == e.screenY && e.pageX == e.screenX){var score=1}else{var score=0};
+                if (score !== 0 && 1 >= outerHeight - innerHeight) {
+                        // fullscreen
+                        score = 0;
+                    };
+                if (score !== 0 && is_touch && navigator.userAgentData.mobile) {
+                        score = 0.5; // mobile touch can have e.pageY == e.screenY && e.pageX == e.screenX
+                    }
+                if (e.isTrusted === false) {
+                        this.log({"detection":"Input.untrusted", "type":e.type, score:1});
+                    }
+                else if(document.activeElement === e.srcElement &&
+                        document.activeElement === e.target &&
+                        e.type === "click" && e.x === 0 && e.y === 0 &&
+                        e.screenX === 0 &&  e.screenY === 0 &&
+                        e.clientX === 0 && e.clientY === 0){} // click over select via TAB + (ENTER or SPACE)
+                else if (score > 0){
+                    this.log({"detection":key, "type":e.type, "score":score});
+                }
+            }
+            hook_canvasVisualize() {
+            hookFunc("CanvasRenderingContext2D", "arc", this.canvasVisualizeHandler.bind(this));
+            }
+            canvasVisualizeHandler(target, thisArg, argumentsList){
+              if(this._canvasMouseVisualizer){return}
+              var pos = this.mousePos;
+              const canvas = thisArg.canvas;
+              var range = 5;
+              if(
+                canvas.style.position === "fixed" && canvas.style.pointerEvents == "none" &&
+                canvas.style.left[0] === "0" && canvas.style.top[0] === "0" &&
+                ((canvas.width - 1) <= window.innerWidth) && ((canvas.height - 1) <= window.innerHeight) &&
+                ((pos[0] - range) <= argumentsList[0] && (pos[0] + range) >= argumentsList[0]) &&
+                ((pos[0] - range) <= argumentsList[0] && (pos[0] + range) >= argumentsList[0])
+              ){
+                this._canvasMouseVisualizer = true;
+                this.log({"detection":"canvasMouseVisualizer",  "score":0.8});
+              }
+            }
+        }
+    </script>
+    <script>
+        const scores = [];
+        const perfs = [];
+        function avg(array){
+            sum = array.reduce((a,c) => a + c, 0);
+            return sum / array.length;
+        };
+        function copyAsJSON(){
+            const data = JSON.stringify(window.brotector.detections, null, 2);
+            navigator.clipboard.writeText(data);
+        };
+        async function log(data){
+            console.log(data);
+            const table = document.querySelector("#detections");
+            const detection = data.detection;
+            const msSinceLoad = data.msSinceLoad;
+            const type = data.type;
+            const score = data.score;
+            data = data.data;
+            scores.push(score);
+            perfs.push(msSinceLoad);
+            row = table.insertRow(-1);
+            var cell = row.insertCell(0);
+            cell.textContent = detection;
+            row.appendChild(cell);
+            var cell = row.insertCell(1);
+            cell.textContent = msSinceLoad.toFixed(2).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, "'");
+            row.appendChild(cell);
+            var cell = row.insertCell(2);
+            cell.textContent = type;
+            row.appendChild(cell);
+            var cell = row.insertCell(3);
+            cell.textContent = score;
+            row.appendChild(cell);
+            var cell = row.insertCell(4);
+            cell.textContent = JSON.stringify(data, null, 2);
+            document.querySelector("#avg-score").textContent = avg(scores).toFixed(2);
+            document.querySelector("#avg-ms-load").textContent =avg(perfs).toFixed(2).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, "'");
+            document.querySelector("#table-keys").setAttribute("bgcolor", "red");
+            document.getElementById("copy-button").style.visibility = "visible";
+        }
+        async function main(){
+            window.brotector = new Brotector(log);
+        }
+        window.onload = main;
+    </script>
+    <script>
+        function buttonFunction1() {
+            setTimeout(delayedFunction1, 550);
+            function delayedFunction1() {
+              var x = document.getElementById("myButton");
+              var y = document.getElementById("pText");
+              var z = document.getElementById("mySVG");
+              var y2 = document.getElementById("pText2");
+              var bg_color = document.querySelector("table tr").bgColor;
+              if (bg_color != "red") {
+                message = "**** SUCCESS ****";
+                y.style.color = "darkgreen";
+                y.style.border = "thick solid #006600";
+                if (document.devtools_open === true) {
+                    message = "Devtools was detected!";
+                    y.style.fontSize = "33px";
+                    y.style.color = "red";
+                    y.style.border = "thick solid #660000";
+                    y2.style.visibility = "visible";
+                }
+                else {
+                    y.style.fontSize = "35px";
+                }
+                var td = document.getElementById("detections");
+                var cb = document.getElementById("copy-button");
+                td.style.visibility = "hidden";
+                cb.style.visibility = "hidden";
+                y.textContent = message;
+              }
+              else {
+                y.style.color = "red";
+                y.textContent = "ROBOT DETECTED!";
+                y.style.border = "thick solid #EA0000";
+                y.style.fontSize = "34px";
+              }
+              y.style.padding = "2px";
+              x.remove();
+              z.remove();
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("myButton").addEventListener("click", evt => {
+            document.querySelectorAll("animate").forEach(element => {
+                element.beginElement();
+            });
+        });
+    </script>
+</body>
+</html>
