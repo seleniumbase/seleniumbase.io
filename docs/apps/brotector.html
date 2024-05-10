@@ -59,10 +59,12 @@
         }
         @keyframes borderBlink {
             from, to {
-                border-color: black;
+                border-color: #172217;
+                box-shadow: 3px 3px 5px rgba(10, 60, 10, 0.5);
             }
             50% {
-                border-color: purple;
+                border-color: #772277;
+                box-shadow: 3px 3px 5px rgba(60, 10, 60, 0.5);
             }
         }
         .borderBlink{    
@@ -88,22 +90,22 @@
     </div>
     <p>
         <button onclick="buttonFunction1()" id="myButton" type="button" disabled="disabled" class="borderBlink"
-            style="border: 5px solid purple; color: gray; font-size: 2.2rem; visibility: hidden; width: 302px;"><span id="mySpan">Verifying...</span></button>
+            style="border: 5px solid purple; color: gray; font-size: 2.2rem; visibility: hidden; width: 322px;"><span id="mySpan">Verifying...</span></button>
     </p>
     <p>
-        <svg id="mySVG" name="svgName" width="302" height="20">
-            <rect id="svgRect" width="302" height="20"
+        <svg id="mySVG" name="svgName" width="322" height="20">
+            <rect id="svgRect" width="322" height="20"
                   stroke="teal" stroke-width="4" fill="#4CA0A0">
                 <animate attributeType="CSS" attributeName="opacity"
                          from="0.1" to="1" dur="0.5s" repeatCount="1"/>
                 <animate attributeType="CSS" attributeName="width"
-                         from="1" to="302" dur="0.5s" repeatCount="1"/>
+                         from="1" to="322" dur="0.5s" repeatCount="1"/>
             </rect>
         </svg>
     </p>
     <div>
-    <p><label id="pText" style="color: purple; font-size: 30px; visibility: hidden; width: 302px;">Click the button above to prove you're human!</label></p>
-    <p><label id="pText2" style="color: purple; font-size: 30px; visibility: hidden; width: 302px;">Devtools must remain closed at all times!</label></p>
+    <p><label id="pText" style="color: purple; font-size: 30px; visibility: hidden; width: 322px;">Click the button above to prove you're human!</label></p>
+    <p><label id="pText2" style="color: purple; font-size: 30px; visibility: hidden; width: 322px;">Devtools must remain closed at all times!</label></p>
     </div>
   <table id="detections">
     <tr bgcolor="darkgreen" id="table-keys">
@@ -444,6 +446,11 @@
     </script>
     <script>
         function buttonFunction1() {
+            var b = document.getElementById("myButton");
+            var s = document.getElementById("mySpan");
+            b.disabled = "disabled";
+            b.style.color = "gray";
+            s.textContent = "Verifying...";
             setTimeout(delayedFunction1, 550);
             function delayedFunction1() {
               var x = document.getElementById("myButton");
