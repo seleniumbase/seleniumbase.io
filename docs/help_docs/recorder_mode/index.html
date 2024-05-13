@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -2651,6 +2651,7 @@ cp<span class="w"> </span>./recordings/TEST_NAME_rec.py<span class="w"> </span>.
 <p>⏺️ As an alternative to activating Recorder Mode with the <code>--rec</code> command-line arg, you can also call <code>self.activate_recorder()</code> from your tests. Using the Recorder this way is only useful for tests that stay on the same URL. This is because the standard Recorder Mode functions as a Chrome extension and persists wherever the browser goes. (This version only stays on the page where called.)</p>
 <p>⏺️ (Note that <b>same domain/origin</b> is not the same as <b>same URL</b>. Example: <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353</a> and <a href="https://xkcd.com/1537/" target="_blank">https://xkcd.com/1537</a> are two different URLs with the <b>same domain/origin</b>. That means both URLs share the same sessionStorage, and that changes persist to different URLs of the same domain/origin. If you want to find out a website's origin during a test, just call: <code>self.get_origin()</code>, which returns the value of <code>window.location.origin</code> from the browser's console.)</p>
 <p>⏺️ Inside recorded tests, you might find the <code>self.open_if_not_url(URL)</code> method, which opens the URL given if the browser is not currently on that page. SeleniumBase uses this method in recorded scripts when the Recorder detects that a browser action changed the current URL. This method prevents an unnecessary page load and shows what page the test visited after a browser action.</p>
+<p>⏺️ By launching the Recorder App with <code>sbase recorder --ee</code>, you can end the recording by pressing {<code>SHIFT</code>+<code>ESC</code>} instead of the usual way of ending the recording by typing <code>c</code> from a <code>breakpoint()</code> and pressing <code>Enter</code>. Those buttons don't need to be pressed at the same time, but <code>SHIFT</code> must be pressed directly before <code>ESC</code>.</p>
 <hr />
 <div>To learn more about SeleniumBase, check out the Docs Site:</div>
 <p><a href="https://seleniumbase.io">
@@ -2724,7 +2725,7 @@ cp<span class="w"> </span>./recordings/TEST_NAME_rec.py<span class="w"> </span>.
     <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
     
   </body>
