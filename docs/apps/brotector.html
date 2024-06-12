@@ -102,7 +102,7 @@
     </p>
     <div>
     <p><label id="pText" style="color: purple; font-size: 30px; visibility: hidden; width: 322px;">Click the button above to prove you're human!</label></p>
-    <p><label id="pText2" style="color: purple; font-size: 30px; visibility: hidden; width: 322px;">Devtools must remain closed at all times!</label></p>
+    <p><label id="pText2" style="color: purple; font-size: 0px; visibility: hidden; width: 322px;">Devtools must remain closed at all times!</label></p>
     </div>
   <table id="detections" style="visibility: hidden;">
     <tr bgcolor="darkgreen" id="table-keys">
@@ -158,6 +158,7 @@
                 td.style.visibility = "hidden";
                 cb.style.visibility = "hidden";
                 y2.style.visibility = "visible";
+                y2.style.fontSize = "30";
             }
             else if (bg_color === "red") {
                 y.style.color = "red";
@@ -465,6 +466,7 @@
                     y.style.color = "red";
                     y.style.border = "thick solid #660000";
                     y2.style.visibility = "visible";
+                    y2.style.fontSize = "30";
                 }
                 else {
                     y.style.fontSize = "35px";
