@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Brotector CAPTCHA</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Brotector CAPTCHA</title>
+    <meta content="follow,index" name="robots">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="apple-touch-icon">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,23 +39,29 @@
             margin: 20px;
         }
         #copy-button {
-           margin: 20px;
+            margin: 20px;
         }
         button {
-          box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
+            box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
         }
         table {
-          border: 2px solid black;
-          margin: 20px;
-          width: 80%;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin-left: 20px;
+            margin-top: 30px;
+            width: 84%;
+        }
+        tbody {
+            border: 1px solid #e1e1e1;
+            background-color: #fefefe;
         }
         th, td {
-          border-top: 1px solid black;
-          border-right: 1px solid black;
-          margin: 0px;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            margin: 0px;
         }
         p {
-          margin: 20px;
+            margin: 20px;
         }
         @keyframes borderBlink {
             from, to {
@@ -101,7 +110,7 @@
         </svg>
     </p>
     <div>
-    <p><label id="pText" style="color: purple; font-size: 30px; visibility: hidden; width: 322px;">Click the button above to prove you're human!</label></p>
+    <p><label id="pText" style="color: purple; font-size: 30px; visibility: hidden; display: none; width: 322px;">Click the button above to prove you're human!</label></p>
     <p><label id="pText2" style="color: purple; font-size: 0px; visibility: hidden; width: 322px;">Devtools must remain closed at all times!</label></p>
     </div>
   <table id="detections" style="visibility: hidden;">
@@ -111,13 +120,6 @@
       <th>Type</th>
       <th>Score</th>
       <th>Data</th>
-    </tr>
-    <tr bgcolor="blue">
-      <td>Average</td>
-      <td id="avg-ms-load"></td>
-      <td></td>
-      <td id="avg-score">0</td>
-      <td></td>
     </tr>
   </table>
   <button id="copy-button" onclick="copyAsJSON()" style="visibility: hidden;">
@@ -138,6 +140,7 @@
             x.style.color = "blue";
             z.textContent = "I am not a robot!";
             y.style.visibility = "visible";
+            y.style.display = "block";
         }
         function delayedFunction0() {
             var x = document.getElementById("myButton");
@@ -292,7 +295,7 @@
                 }
               }
               async test_stackLookup() {
-                const key = "runtime.enabled.stacklookup";
+                const key = "Runtime.stack.access";
                 var type = "webdriver";
                 var score = 1;
                 if (this._runtime_detected === false){
@@ -335,7 +338,7 @@
             if(data.architecture === "" &&
                data.model === "" && data.platformVersion == "" &&
                data.uaFullVersion === "" && data.bitness == ""){
-               this.log({"detection":"Headless", "type":"HighEntropyValues.empty", score:0.9});
+               this.log({"detection":"UserAgent.untrusted", "type":"headers", score:1});
             }
             }
             hook_mouseEvents() {
@@ -432,8 +435,6 @@
             row.appendChild(cell);
             var cell = row.insertCell(4);
             cell.textContent = JSON.stringify(data, null, 2);
-            document.querySelector("#avg-score").textContent = avg(scores).toFixed(2);
-            document.querySelector("#avg-ms-load").textContent =avg(perfs).toFixed(2).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
             document.querySelector("#table-keys").setAttribute("bgcolor", "red");
             document.getElementById("detections").style.visibility = "visible";
             document.getElementById("copy-button").style.visibility = "visible";
