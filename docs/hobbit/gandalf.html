@@ -25,11 +25,17 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                width: 72%;
+                width: 60%;
             }
             h1 {
                 text-align: center;
                 color: #882288;
+                z-index: 2;
+                position: relative;
+                text-shadow: #FAFAFA 0.7px 0.7px 1.2px;
+            }
+            img {
+                z-index: 0.5;
             }
             img:active {
                 box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
@@ -81,6 +87,26 @@
                 box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
             }
         </style>
+        <script>
+            var img_scale = 1;
+            function img_enlarge() {
+                img_scale = img_scale + 0.002;
+                if (img_scale >= 1.2) {
+                    img_scale = img_scale + 0.0005;
+                }
+                if (img_scale >= 1.4) {
+                    img_scale = img_scale + 0.0005;
+                }
+                if (img_scale >= 1.6) {
+                    img_scale = 1.6;
+                    window.location.href = "https://seleniumbase.io/hobbit/logout"
+                }
+                width = document.querySelector("img").style.scale = img_scale;
+            }
+            function img_click() {
+                setInterval(img_enlarge, 10);
+            }
+        </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -97,7 +123,7 @@
                     <h1><span style="color: #DF0040;">Access Denied:</span> Gandalf blocked you! 🧙‍♂️</h1>
                 </thead>
                 <tbody id="tbodyId">
-                    <img id="image1" class="center borderBlink" src="https://seleniumbase.io/other/gandalf.jpg">
+                    <img id="image1" class="center borderBlink" src="https://seleniumbase.io/other/gandalf.jpg" onclick="img_click()">
                 </tbody>
             </table>
         </form>

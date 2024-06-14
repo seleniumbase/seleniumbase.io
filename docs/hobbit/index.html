@@ -1,0 +1,307 @@
+<html lang="en">
+    <head>
+        <title>Welcome to Middle Earth!</title>
+        <meta property="og:site_name" content="Hobbit Anti-Bot Welcome Page">
+        <meta property="og:title" content="Hobbit Anti-Bot Welcome Page (Test Site)">
+        <meta name="Description" content="Hobbit Anti-Bot Welcome Page. (Test Site)">
+        <meta property="og:description" content="Hobbit Anti-Bot Welcome Page. (Test Site)">
+        <meta name="Keywords" content="Hobbit SeleniumBase Anti-Bot">
+        <meta property="og:keywords" content="Hobbit Welcome Page">
+        <meta property="og:image" content="https://seleniumbase.io/other/the_shire_page.jpg">
+        <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="follow,index" name="robots">
+        <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+        <link href="https://seleniumbase.io/img/green_logo.png" rel="apple-touch-icon">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+        <link href="https://seleniumbase.io/cdn/css/bs_theme.css" rel="stylesheet">
+        <style>
+            #div1,#div2 {
+                width: 401px;
+                height: 65px;
+                padding: 10px;
+                border: 2px solid #aaaaaa;
+            }
+            img:active {
+                box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+                1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+            }
+            html {
+                background-color: #9988ad;
+            }
+            html, body {
+                font-size: 100%;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: none;
+                background-origin: padding-box;
+                background-color: #c6d6f0;
+                padding: 2;
+                font-family: "Proxima Nova","proxima-nova",
+                "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+                text-rendering: optimizelegibility;
+                -moz-osx-font-smoothing: grayscale;
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+                1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            tbody {
+                border: 1px solid #e1e1e1;
+                background-color: #fefefe;
+            }
+            h1 {
+                text-align: center;
+                color: #2288CC;
+                background-color: rgba(198, 214, 240, 0.3);
+                z-index: 2;
+                position: relative;
+                text-shadow: #FFEEAA 1px 1px 1px;
+            }
+            img {
+                z-index: 0.5;
+            }
+            a {
+                cursor: pointer;
+                padding: 0px;
+                border: 1px solid #444444;
+            }
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 62%;
+            }
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 12px 14px;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+            @keyframes borderBlink {
+                from, to {
+                    border-color: #27C247;
+                    box-shadow: 3px 3px 5px rgba(10, 180, 10, 0.5);
+                }
+                50% {
+                    border-color: #47B267;
+                    box-shadow: 3px 3px 5px rgba(60, 120, 60, 0.5);
+                }
+            }
+            .borderBlink{
+                -webkit-animation: borderBlink 0.5s step-end infinite;
+                animation: borderBlink 0.5s step-end infinite;
+                border: 5px solid green;
+                box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
+            }
+        </style>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+        <script>
+            var map_scale = 1;
+            function map_enlarge() {
+                map_scale = map_scale + 0.0032;
+                if (map_scale >= 1.5) {
+                    map_scale = map_scale + 0.0003;
+                }
+                if (map_scale >= 2) {
+                    map_scale = map_scale + 0.0007;
+                }
+                if (map_scale >= 3) {
+                    map_scale = map_scale + 0.0012;
+                }
+                if (map_scale >= 4) {
+                    map_scale = map_scale + 0.0018;
+                }
+                if (map_scale >= 5) {
+                    map_scale = map_scale + 0.0025;
+                }
+                if (map_scale >= 6) {
+                    map_scale = 6;
+                    window.location.href = "https://seleniumbase.io/hobbit/logout"
+                }
+                width = document.querySelector("img").style.scale = map_scale;
+            }
+            function map_click() {
+                setInterval(map_enlarge, 10);
+            }
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+        </script>
+        <script type="text/javascript">
+            function signOut() {
+                //window.location.href = 'https://seleniumbase.io/hobbit/logout';
+            }
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                function(m,key,value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+            token = getUrlVars()["token"];
+            if (token) {
+                if (token != sessionStorage.getItem('hobbit_start_token'))
+                    signOut();
+                sessionStorage.setItem('hobbit_entry_token', token);
+                window.location.replace('https://seleniumbase.io/hobbit/');
+            }
+        </script>
+        <script type="text/javascript">
+            const setCookie = (name, value, days = 7, path = '/') => {
+                const expires = new Date(Date.now() + days * 864e5).toUTCString();
+                document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None;Secure; expires=' + expires + '; path=' + path;
+            }
+            const getCookie = (name) => {
+                return document.cookie.split('; ').reduce((r, v) => {
+                    const parts = v.split('=')
+                    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+                }, '');
+            }
+            const deleteCookie = (name, path) => {
+                setCookie(name, '', -1, path);
+            }
+            const getCodeFromToken = (token) => {
+                return String(2000000 - parseInt(token.substring(1))).padStart(6, '0');
+            }
+            const getTokenFromCode = (code) => {
+                return 'T' + String(2000000 - parseInt(code));
+            }
+        </script>
+        <script type="text/javascript">
+            hobbit_auth_granted = sessionStorage.getItem('hobbit_auth_granted');
+            if (hobbit_auth_granted != 'true') {
+                signOut();
+            }
+            hobbit_auth_granted_cookie = getCookie('hobbit_auth_granted');
+            if (hobbit_auth_granted_cookie != 'true') {
+                signOut();
+            }
+        </script>
+        <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
+        <script type="text/javascript">
+            function refreshCode() {
+                date_now = Date.now();
+                var secret = "MEGAXG2OR3DTGDMM";
+                var totp = new jsOTP.totp();
+                var code = totp.getOtp(secret);
+                var previous_code = totp.getOtp(secret, date_now - 30000);
+                var pre_pre_code = totp.getOtp(secret, date_now - 60000);
+                var token = getTokenFromCode(code)
+                var previous_token = getTokenFromCode(previous_code);
+                var pre_pre_token = getTokenFromCode(pre_pre_code);
+                session_token = sessionStorage.getItem('hobbit_login_token');
+                if (session_token == token || session_token == previous_token || session_token == pre_pre_token)
+                {
+                    //window.location.hash = token;
+                    setCookie('hobbit_login_token', token, 1);
+                    sessionStorage.setItem('hobbit_login_token', token);
+                }
+            }
+            function startInterval() {
+                setInterval(function () {
+                    var ttl = Math.floor(Date.now() / 1000 % 30);
+                    if (ttl === 0) {
+                        refreshCode();
+                    }
+                }, 1000);
+            }
+            function sync2NextSecond() {
+                var ms2NextSecond = 1000 - (Date.now() % 1000);
+                setTimeout(startInterval, ms2NextSecond);
+            }
+            sync2NextSecond();
+            refreshCode();
+        </script>
+        <script type="text/javascript">
+            top_message_element = document.getElementById('top_message');
+            date_now = Date.now();
+            var secret = "GAXG2MTEOR3DMMDG";
+            var totp = new jsOTP.totp();
+            var code = totp.getOtp(secret);
+            var previous_code = totp.getOtp(secret, date_now - 30000);
+            var pre_pre_code = totp.getOtp(secret, date_now - 60000);
+            token = getUrlVars()["token"];
+            if (token) {
+                if (token != sessionStorage.getItem('hobbit_start_token'))
+                    signOut();
+                sessionStorage.setItem('hobbit_entry_token', token);
+                window.location.replace('https://seleniumbase.io/hobbit/');
+            }
+            if (token === undefined) {
+                entry_token = sessionStorage.getItem('hobbit_entry_token', token);
+                if (entry_token) {
+                    entry_token_totp_code = getCodeFromToken(entry_token);
+                    if (entry_token_totp_code != code && entry_token_totp_code != previous_code) {
+                        signOut();
+                    }
+                    sessionStorage.removeItem('hobbit_entry_token');
+                    sessionStorage.setItem('hobbit_login_success', 'true');
+                }
+                hobbit_login_success = sessionStorage.getItem('hobbit_login_success');
+                hobbit_start_token = sessionStorage.getItem('hobbit_start_token');
+                if (hobbit_login_success === undefined || hobbit_start_token === undefined)
+                    signOut();
+                token = sessionStorage.getItem('hobbit_login_token');
+                token_totp_code = getCodeFromToken(token);
+                if (token_totp_code != code
+                    && token_totp_code != previous_code
+                    && token_totp_code != pre_pre_code)
+                {
+                    signOut();
+                }
+                sessionStorage.setItem('hobbit_login_token', token);
+                setCookie('hobbit_login_token', token, 1);
+            }
+            else {
+                signOut();
+            }
+        </script>
+    </head>
+    <body contenteditable="false">
+        <!-- Tested with SeleniumBase - https://seleniumbase.io -->
+        <div class="topnav" style="display: none;">
+            <a class="active">This Page</a>
+            <a href="https://seleniumbase.io/demo_page" target="_blank">Demo Page</a>
+            <a href="https://seleniumbase.io" target="_blank">SeleniumBase Docs</a>
+            <a href="https://seleniumbase.io/help_docs/method_summary/" target="_blank">The API</a>
+            <a href="https://seleniumbase.io/devices/?url=seleniumbase.io" target="_blank">Virtual Device Farm</a>
+            <a href="https://github.com/seleniumbase/SeleniumBase" target="_blank">GitHub Page</a>
+            <a href="https://seleniumbase.io/w3schools/" target="_blank">HTML Playground</a>
+            <a href="https://seleniumbase.io/hobbit/logout">Sign out</a>
+        </div>
+        <p></p>
+        <h1>Welcome to Middle Earth!</h1>
+        <img id="image1" class="center borderBlink" src="https://seleniumbase.io/other/middle_earth.jpg" onclick="map_click()">
+    </body>
+</html>
