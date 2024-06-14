@@ -1,0 +1,696 @@
+<html lang="en">
+<head>
+    <title>Login / Anti-Bot Demo App</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="SeleniumBase Anti-Bot Login Demo Test Automation" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="follow,index" name="robots">
+    <meta property="og:site_name" content="Anti-Bot Test Page">
+    <meta property="og:title" content="Login / Anti-Bot Demo App">
+    <meta name="Description" content="Test your automation framework here.">
+    <meta property="og:description" content="Test your automation framework here.">
+    <meta property="og:image" content="https://seleniumbase.io/cdn/img/antibot_login.png">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="shortcut icon">
+    <link href="https://seleniumbase.io/img/green_logo.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+    <link href="https://seleniumbase.io/cdn/css/bs_theme.css" rel="stylesheet">
+    <style>
+        #div1,#div2 {
+            width: 401px;
+            height: 65px;
+            padding: 10px;
+            border: 2px solid #aaaaaa;
+        }
+        img:active {
+            box-shadow: 0px 2px 5px 1px rgba(105, 165, 155, 0.9),
+            1px 2px 12px 0px rgba(105, 165, 155, 0.6) !important;
+        }
+        html, body {
+            font-size: 100%;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 20;
+            background-image: none;
+            background-origin: padding-box;
+            background-color: #c6d6f0;
+            font-family: "Proxima Nova","proxima-nova",
+            "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            text-rendering: optimizelegibility;
+            -moz-osx-font-smoothing: grayscale;
+            box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.24),
+            1px 2px 12px 0px rgba(0, 0, 0, 0.18) !important;
+        }
+        #top_message {
+            color: #FF2222;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        tbody {
+            border: 1px solid #e1e1e1;
+            background-color: #fefefe;
+        }
+    </style>
+    <style>
+        #parent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+        #background {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        #description {
+            margin: 20px;
+        }
+        #copy-button {
+            margin: 20px;
+        }
+        button {
+            box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
+        }
+        table#detections {
+            border: 2px solid black;
+            margin-left: 20px;
+            margin-top: 30px;
+            width: 84%;
+        }
+        th, td {
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            margin: 0px;
+        }
+        p {
+            margin: 20px;
+        }
+        @keyframes borderBlink {
+            from, to {
+                border-color: #172217;
+                box-shadow: 3px 3px 5px rgba(10, 60, 10, 0.5);
+            }
+            50% {
+                border-color: #772277;
+                box-shadow: 3px 3px 5px rgba(60, 10, 60, 0.5);
+            }
+        }
+        .borderBlink{
+            -webkit-animation: borderBlink 0.5s step-end infinite;
+            animation: borderBlink 0.5s step-end infinite;
+        }
+        .borderBlink:hover {
+            border: 5px solid purple;
+            box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
+        }
+    </style>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0,0);
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5KFWRNLRN', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
+    </script>
+</head>
+<body class="auth-wrapper">
+    <div class="all-wrapper">
+        <div class="auth-box-w">
+            <h3 class="top-bar"></h3>
+            <h4 class="auth-header">Anti-Bot Login Test Page</h4>
+            <form>
+                <h6 id="top_message" align="center"></h6>
+                <div class="form-group">
+                    <label for="">Username</label><input id="username" class="form-control" placeholder="Enter your username" type="text" autocomplete="off" onkeypress="performLogin('input', event)">
+                    <div class="pre-icon os-icon os-icon-user-male-circle"></div>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label><input id="password" class="form-control" placeholder="Enter your password" type="password" autocorrect="off" autocapitalize="none" autocomplete="off" onkeypress="performLogin('input', event)">
+                    <div class="pre-icon os-icon os-icon-fingerprint"></div>
+                </div>
+                <div class="form-group" style="display: none;">
+                    <label for="">Multi-Factor Auth Code</label><input id="totpcode" class="form-control" placeholder="Enter the 6-digit MFA Code" type="text" autocomplete="off" onkeypress="performLogin('input', event)"><div class="pre-icon os-icon os-icon-grid-squares"></div>
+                </div>
+                <p><h6>(Protected by Brotector CAPTCHA)</h6></p>
+                <button onclick="buttonFunction1()" id="myButton" type="button" disabled="disabled" class="borderBlink"
+                    style="border: 5px solid purple; color: gray; font-size: 2.2rem; visibility: hidden; width: 322px;"><span id="mySpan">Verifying...</span></button>
+                <p></p>
+                <svg id="mySVG" name="svgName" width="322" height="20">
+                    <rect id="svgRect" width="322" height="20"
+                          stroke="teal" stroke-width="4" fill="#4CA0A0">
+                        <animate attributeType="CSS" attributeName="opacity"
+                                 from="0.1" to="1" dur="0.5s" repeatCount="1"/>
+                        <animate attributeType="CSS" attributeName="width"
+                                 from="1" to="322" dur="0.5s" repeatCount="1"/>
+                    </rect>
+                </svg>
+                <div>
+                <label id="pText" style="color: purple; font-size: 20px; visibility: hidden; display: none; width: 322px;">Click above to prove you're human!</label>
+                <label id="pText2" style="color: purple; font-size: 0px; visibility: hidden; width: 322px;">Reload page with Devtools closed!</label>
+                </div>
+                <div class="buttons-w">
+                <a id="log-in" style="font-size: 20;" class="btn btn-primary" href="#" onclick="performLogin('button', event)">Sign in</a> <br><br><h6 align="center">For Login Information, See:<br><a href="https://seleniumbase.io/antibot/signup" target="_blank">seleniumbase.io/antibot/signup</a></h6>
+                </div>
+            </form>
+        </div>
+        <table id="detections" style="visibility: hidden;">
+            <tr bgcolor="darkgreen" id="table-keys">
+                <th>Detection</th>
+                <th style="white-space: nowrap;">Time (ms)</th>
+                <th>Type</th>
+                <th>Score</th>
+                <th>Data</th>
+            </tr>
+        </table>
+        <button id="copy-button" onclick="copyAsJSON()" style="visibility: hidden;">
+        Copy detections as JSON
+        </button>
+    </div>
+    <script type="text/javascript">
+        const setCookie = (name, value, days = 7, path = '/') => {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None;Secure; expires=' + expires + '; path=' + path;
+        }
+        const getCookie = (name) => {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=');
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r
+            }, '');
+        }
+        const deleteCookie = (name, path) => {
+            setCookie(name, '', -1, path);
+        }
+    </script>
+    <script src="https://seleniumbase.io/cdn/js/js-otp.min.js"></script>
+    <script type="text/javascript">
+        function performLogin(ty, event) {
+            if (ty == 'button' || event.keyCode == 13) {
+                // Everything is in PLAIN TEXT because this is a TEST SITE!
+                username = document.getElementById('username').value;
+                password = document.getElementById('password').value;
+                totpcode = document.getElementById('totpcode').value;
+                top_message_el = document.getElementById('top_message');
+                cap_text = document.getElementById('pText').textContent;
+                y = document.getElementById("pText");
+                if (cap_text.includes("Devtools"))
+                {
+                    top_message_el.textContent = 'Reload page with Devtools closed!';
+                    return;
+                }
+                if (cap_text.includes("Detected"))
+                {
+                    top_message_el.textContent = 'Sorry! Access Denied for Robots!';
+                    return;
+                }
+                if (window.getComputedStyle(document.querySelector("#detections")).visibility == "visible")
+                {
+                    top_message_el.textContent = 'Sorry! Access Denied for Robots!';
+                    y.style.color = "red";
+                    y.textContent = "❌ - Robot Detected!";
+                    y.style.border = "none";
+                    y.style.fontSize = "28px";
+                    return;
+                }
+                if (username.trim() == '')
+                {
+                    top_message_el.textContent = 'The Username is Required!';
+                    return;
+                }
+                if (username.trim() !== 'demo_user')
+                {
+                    top_message_el.textContent = 'Invalid Username!';
+                    return;
+                }
+                if (password == '')
+                {
+                    top_message_el.textContent = 'The Password is Required!';
+                    return;
+                }
+                if (password !== 'secret_pass')
+                {
+                    top_message_el.textContent = 'Invalid Password!';
+                    return;
+                }
+                var secret = "DMGMTEORAXM3DG2G";
+                var totp = new jsOTP.totp();
+                var code = totp.getOtp(secret);
+                date_now = Date.now()
+                var previous_code = totp.getOtp(secret, date_now - 30000)
+                if (!cap_text.includes("✅"))
+                {
+                    top_message_el.textContent = "Verify that you're a human first!";
+                    return;
+                }
+                else {
+                    totpcode = code;
+                }
+                if (totpcode.trim() == '')
+                {
+                    top_message_el.textContent = 'The MFA Code is Required!';
+                    return;
+                }
+                if (totpcode.trim() != code && totpcode.trim() != previous_code)
+                {
+                    top_message_el.textContent = 'Invalid MFA Code!';
+                    return;
+                }
+                top_message_el.textContent = '';
+                var token = 'T' + String(2000000 - parseInt(code));
+                sessionStorage.setItem('antibot_auth_granted', 'true');
+                sessionStorage.setItem('antibot_login_token', token);
+                sessionStorage.setItem('antibot_start_token', token);
+                sessionStorage.setItem('antibot_login_date', date_now);
+                setCookie('antibot_login_date', Date.now(), 1);
+                setCookie('antibot_login_token', token, 1);
+                setCookie('antibot_auth_granted', 'true', 1);
+                window.location.href = 'https://seleniumbase.io/antibot/?token=' + token;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+            function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        top_message_el = document.getElementById('top_message');
+        var msg = getUrlVars()["msg"];
+        if (msg == "signinrequired") {
+            top_message_el.textContent = 'Sign-in required!';
+        }
+        else if (msg == "signedout") {
+            top_message_el.textContent = 'You have been signed out!';
+        }
+    </script>
+    <script>
+        var x = document.getElementById("myButton");
+        var y = document.getElementById("pText");
+        var z = document.getElementById("mySpan");
+        setTimeout(unHideButton, 75);
+        setTimeout(unDisableButton, 548);
+        setTimeout(delayedFunction0, 545);
+        function unHideButton() {
+            x.style.visibility = "visible";
+        }
+        function unDisableButton() {
+            x.disabled = false;
+            x.style.color = "blue";
+            z.textContent = "I am not a robot!";
+            y.style.visibility = "visible";
+            y.style.display = "block";
+        }
+        function delayedFunction0() {
+            var x = document.getElementById("myButton");
+            var y = document.getElementById("pText");
+            var z = document.getElementById("mySVG");
+            var y2 = document.getElementById("pText2");
+            var bg_color = document.querySelector("table tr").bgColor;
+            if (bg_color != "red" && document.devtools_open === true) {
+                y.style.color = "red";
+                y.style.border = "thick solid #660000";
+                y.textContent = "Devtools detected!";
+                y.style.fontSize = "33px";
+                x.remove();
+                z.remove();
+                y.style.padding = "2px";
+                var td = document.getElementById("detections");
+                var cb = document.getElementById("copy-button");
+                td.style.visibility = "hidden";
+                cb.style.visibility = "hidden";
+                y2.style.visibility = "visible";
+                y2.style.fontSize = "30";
+            }
+            else if (bg_color === "red") {
+                y.style.color = "red";
+                y.textContent = "❌ - Robot Detected!";
+                y.style.border = "none";
+                y.style.padding = "2px";
+                y.style.fontSize = "28px";
+                x.remove();
+                z.remove();
+            }
+            else {
+                z.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        if (!location.href.includes("mbase") && !location.href.includes("local"))
+            location.href = "https://seleniumbase.io/antibot/login";
+    </script>
+    <script>
+        function getDebuggerTiming(){
+            var start = globalThis.performance.now();
+            debugger;
+            return globalThis.performance.now()-start;
+        }
+        function isEmpty() {
+            for (var prop in this) if (this.hasOwnProperty(prop)) return false;
+            return true;
+        };
+        function hookFunc(obj, func, callback){
+            proxy = new Proxy(globalThis[obj].prototype[func], {
+              apply: (target, thisArg, argumentsList) => {
+                callback(target, thisArg, argumentsList);
+                return Reflect.apply(target, thisArg, argumentsList);
+              }
+            }
+            );
+            Object.defineProperty(globalThis[obj].prototype, func, {value:proxy});
+        }
+        async function getHighEntropyValues(){
+            const n = globalThis.navigator? globalThis.navigator: globalThis.WorkerNavigator;
+            data = await n.userAgentData.getHighEntropyValues([
+                "architecture",
+                "bitness",
+                "formFactor",
+                "model",
+                "platform",
+                "platformVersion",
+                "uaFullVersion",
+                "wow64"
+            ]);
+            data["userAgent"] = n.userAgent;
+            return data;
+        }
+        function get_worker_response(fn, timeout=undefined) {
+                try {
+                    const URL = window.URL || window.webkitURL;
+                    var fn = "self.onmessage=async function(e){postMessage(await (" + fn.toString() + ")())}";
+                    var blob;
+                    try {
+                        blob = new Blob([fn], { type: "application/javascript" });
+                    } catch (e) {
+                        // Backwards-compatibility
+                        window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
+                        blob = new BlobBuilder();
+                        blob.append(response);
+                        blob = blob.getBlob();
+                    }
+                    var url = URL.createObjectURL(blob);
+                    var worker = new Worker(url);
+                    var _promise = new Promise((resolve, reject) => {
+                        if(timeout !== undefined){setTimeout(()=>{worker.terminate(); reject(new Error("timeout"))}, timeout)}
+                        worker.onmessage = (m) => {
+                            worker.terminate();
+                            resolve(m.data);
+                        };
+                        worker.onerror = (e)=>{reject(new Error("Worker onerror"))};
+                    });
+                    worker.postMessage("call");
+                    return _promise;
+                } catch (e) {
+                    return new Promise((resolve, reject) => {
+                        reject(e);
+                    });
+                }
+            }
+            const startTime = window.performance.now();
+            class Brotector {
+              constructor(on_detection, interval=70) {
+                // on_detection(data:dict)
+                this._isMouseHooked = false;
+                this.on_detection = on_detection;
+                this.detections = [];
+                this.mousePos = [0, 0];
+                this._detections = [];
+                this.interval = interval;
+                this.init_done = this.init();
+                this._doing_stacklookup = false;
+                this.devtools_open = false;
+                this._runtime_detected = false;
+                this._canvasMouseVisualizer = false;
+              }
+              log(data){
+                data["msSinceLoad"] = window.performance.now() - startTime;
+                this.detections.push(data);
+                this._detections.push(data.detection);
+                this.on_detection(data);
+              }
+              async init(){
+                this.test_navigator_webdriver();
+                this.test_stackLookup();
+                this.test_window_cdc();
+                this.test_HighEntropyValues();
+                this.hook_mouseEvents();
+                this.hook_canvasVisualize();
+                setInterval(this.intervalled.bind(this), this.interval);
+                return this.detections;
+              }
+              async intervalled(){
+                this.test_stackLookup();
+              }
+              test_navigator_webdriver(){
+                if(navigator.webdriver === true){
+                    this.log({detection:"navigator.webdriver", score:1});
+                }
+              }
+              test_window_cdc(){
+                let matches = [];
+                for(let prop in window) {
+                   prop.match(/cdc_[a-z0-9]/ig) && matches.push(prop);
+                }
+                if(matches.length > 0){
+                    this.log({detection:"window.cdc", data:matches, score:1});
+                }
+              }
+              async test_stackLookup() {
+                const key = "Runtime.stack.access";
+                var type = "webdriver";
+                var score = 1;
+                if (this._runtime_detected === false){
+                    let stackLookup = false;
+                    const e = new Error();
+                    // there might be several ways to catch property access from console print functions
+                    Object.defineProperty(e, "stack", {
+                        configurable: false,
+                        enumerable: false,
+                        get: function() {
+                            stackLookup = true;
+                            return '';
+                            }
+                        });
+                    console.debug(e);
+                    if(stackLookup){
+                        if(this._doing_stacklookup){return}
+                        this._doing_stacklookup = true;
+                        this._runtime_detected = true;
+                        var start = globalThis.performance.now();
+                        try{await get_worker_response(()=>{debugger}, 200)}
+                        catch(e){if(e.message !== "timeout"){throw e}}
+                        var time = globalThis.performance.now()-start;
+                        if (time > 180) {
+                            type = "devtools";
+                            score = score * 0.5;
+                            this.devtools_open = true;
+                            document.devtools_open = true;
+                        } else {
+                            this.devtools_open = false;
+                            this.log({detection:key, score:score, "type":type});
+                            this._doing_stacklookup = false;
+                        }
+                    }
+                }
+            }
+            async test_HighEntropyValues(){
+            let data = await get_worker_response(getHighEntropyValues);
+            var score = 0;
+            if(data.architecture === "" &&
+               data.model === "" && data.platformVersion == "" &&
+               data.uaFullVersion === "" && data.bitness == ""){
+               this.log({"detection":"UserAgent.untrusted", "type":"headers", score:1});
+            }
+            }
+            hook_mouseEvents() {
+            if (!this._isMouseHooked){
+                for (let event of ["mousedown", "mouseup", "mousemove", "pointermove", "click", "touchstart", "touchend", "touchmove", "touch", "wheel"]){
+                    document.addEventListener(event,this.mouseEventHandler.bind(this));
+                }
+            }
+            }
+            mouseEventHandler(e) {
+                const key = "Input.cordinatesLeak";
+                var is_touch = false;
+                if (["touchstart", "touchend", "touchmove", "touch"].includes(e.type)) {
+                        is_touch = true;
+                        e = e.touches[0] || e.changedTouches[0];
+                    }
+                if(e.type === "mousemove"){
+                    this.mousePos = [e.clientX, e.clientY];
+                }
+                if(e.pageY == e.screenY && e.pageX == e.screenX){var score=1}else{var score=0};
+                if (score !== 0 && 1 >= outerHeight - innerHeight) {
+                        // fullscreen
+                        score = 0;
+                    };
+                if (score !== 0 && is_touch && navigator.userAgentData.mobile) {
+                        score = 0.5; // mobile touch can have e.pageY == e.screenY && e.pageX == e.screenX
+                    }
+                if (e.isTrusted === false) {
+                        this.log({"detection":"Input.untrusted", "type":e.type, score:1});
+                    }
+                else if(document.activeElement === e.srcElement &&
+                        document.activeElement === e.target &&
+                        e.type === "click" && e.x === 0 && e.y === 0 &&
+                        e.screenX === 0 &&  e.screenY === 0 &&
+                        e.clientX === 0 && e.clientY === 0){} // click over select via TAB + (ENTER or SPACE)
+                else if (score > 0){
+                    this.log({"detection":key, "type":e.type, "score":score});
+                }
+            }
+            hook_canvasVisualize() {
+            hookFunc("CanvasRenderingContext2D", "arc", this.canvasVisualizeHandler.bind(this));
+            }
+            canvasVisualizeHandler(target, thisArg, argumentsList){
+              if(this._canvasMouseVisualizer){return}
+              var pos = this.mousePos;
+              const canvas = thisArg.canvas;
+              var range = 5;
+              if(
+                canvas.style.position === "fixed" && canvas.style.pointerEvents == "none" &&
+                canvas.style.left[0] === "0" && canvas.style.top[0] === "0" &&
+                ((canvas.width - 1) <= window.innerWidth) && ((canvas.height - 1) <= window.innerHeight) &&
+                ((pos[0] - range) <= argumentsList[0] && (pos[0] + range) >= argumentsList[0]) &&
+                ((pos[0] - range) <= argumentsList[0] && (pos[0] + range) >= argumentsList[0])
+              ){
+                this._canvasMouseVisualizer = true;
+                this.log({"detection":"canvasMouseVisualizer",  "score":0.8});
+              }
+            }
+        }
+    </script>
+    <script>
+        const scores = [];
+        const perfs = [];
+        function avg(array){
+            sum = array.reduce((a,c) => a + c, 0);
+            return sum / array.length;
+        };
+        function copyAsJSON(){
+            const data = JSON.stringify(window.brotector.detections, null, 2);
+            navigator.clipboard.writeText(data);
+        };
+        async function log(data){
+            console.log(data);
+            const table = document.querySelector("#detections");
+            const detection = data.detection;
+            const msSinceLoad = data.msSinceLoad;
+            const type = data.type;
+            const score = data.score;
+            data = data.data;
+            scores.push(score);
+            perfs.push(msSinceLoad);
+            row = table.insertRow(-1);
+            var cell = row.insertCell(0);
+            cell.textContent = detection;
+            row.appendChild(cell);
+            var cell = row.insertCell(1);
+            cell.textContent = msSinceLoad.toFixed(2).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            row.appendChild(cell);
+            var cell = row.insertCell(2);
+            cell.textContent = type;
+            row.appendChild(cell);
+            var cell = row.insertCell(3);
+            cell.textContent = score;
+            row.appendChild(cell);
+            var cell = row.insertCell(4);
+            cell.textContent = JSON.stringify(data, null, 2);
+            document.querySelector("#table-keys").setAttribute("bgcolor", "red");
+            document.getElementById("detections").style.visibility = "visible";
+            document.getElementById("copy-button").style.visibility = "visible";
+        }
+        async function main(){
+            window.brotector = new Brotector(log);
+        }
+        window.onload = main;
+    </script>
+    <script>
+        function buttonFunction1() {
+            var b = document.getElementById("myButton");
+            var s = document.getElementById("mySpan");
+            var y = document.getElementById("pText");
+            var z = document.getElementById("mySVG");
+            b.style.color = "gray";
+            s.textContent = "Verifying...";
+            y.style.display = "none";
+            z.style.display = "block";
+            setTimeout(delayedFunction1, 550);
+            function delayedFunction1() {
+                var x = document.getElementById("myButton");
+                var y2 = document.getElementById("pText2");
+                var bg_color = document.querySelector("table tr").bgColor;
+                top_message_el = document.getElementById('top_message');
+                y.style.display = "block";
+                if (bg_color != "red") {
+                    message = "✅ - No robots found.";
+                    y.style.color = "darkgreen";
+                    y.style.border = "none";
+                    if (document.devtools_open === true) {
+                        message = "Devtools detected!";
+                        y.style.fontSize = "33px";
+                        y.style.color = "red";
+                        y.style.border = "thick solid #660000";
+                        y2.style.visibility = "visible";
+                        y2.style.fontSize = "30";
+                    }
+                    else {
+                        y.style.fontSize = "28px";
+                        if (top_message_el.textContent.includes("Verify")) {
+                            top_message_el.textContent = "";
+                        }
+                    }
+                    var td = document.getElementById("detections");
+                    var cb = document.getElementById("copy-button");
+                    td.style.visibility = "hidden";
+                    cb.style.visibility = "hidden";
+                    y.textContent = message;
+                }
+                else {
+                    y.style.color = "red";
+                    y.textContent = "❌ - Robot Detected!";
+                    y.style.border = "none";
+                    y.style.fontSize = "28px";
+                }
+                y.style.padding = "2px";
+                x.remove();
+                z.remove();
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("myButton").addEventListener("click", evt => {
+            document.querySelectorAll("animate").forEach(element => {
+                element.beginElement();
+            });
+        });
+    </script>
+</body>
+</html>
