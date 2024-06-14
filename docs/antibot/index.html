@@ -107,6 +107,21 @@
                 box-shadow: 3px 3px 5px rgba(20, 60, 120, 0.3);
             }
         </style>
+        <script>
+            var img_pos = 0;
+            function img_move() {
+                img_pos = img_pos + 1;
+                if (img_pos >= 300) {
+                    img_pos = 300
+                    window.location.href = "https://seleniumbase.io/antibot/logout"
+                }
+                document.querySelector("img").style.left = img_pos;
+            }
+            function img_click() {
+                document.querySelector("img").style.position = "absolute";
+                setInterval(img_move, 10);
+            }
+        </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -266,6 +281,6 @@
         </div>
         <p></p>
         <h1>Welcome! You passed the anti-bot test!</h1>
-        <img id="image1" class="center borderBlink" src="https://seleniumbase.io/other/different_bots.jpg">
+        <img id="image1" class="center borderBlink" src="https://seleniumbase.io/other/different_bots.jpg" onclick="img_click()">
     </body>
 </html>
