@@ -108,18 +108,20 @@
             }
         </style>
         <script>
+            var refreshIntervalId;
             var img_pos = 0;
             function img_move() {
                 img_pos = img_pos + 1;
                 if (img_pos >= 300) {
-                    img_pos = 300
-                    window.location.href = "https://seleniumbase.io/antibot/logout"
+                    img_pos = 300;
+                    clearInterval(refreshIntervalId);
+                    window.location.href = "https://seleniumbase.io/antibot/logout";
                 }
                 document.querySelector("img").style.left = img_pos;
             }
             function img_click() {
                 document.querySelector("img").style.position = "absolute";
-                setInterval(img_move, 10);
+                refreshIntervalId = setInterval(img_move, 10);
             }
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>

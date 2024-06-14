@@ -123,6 +123,7 @@
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
         <script>
+            var refreshIntervalId;
             var map_scale = 1;
             function map_enlarge() {
                 map_scale = map_scale + 0.0032;
@@ -143,12 +144,13 @@
                 }
                 if (map_scale >= 6) {
                     map_scale = 6;
+                    clearInterval(refreshIntervalId);
                     window.location.href = "https://seleniumbase.io/hobbit/logout"
                 }
                 width = document.querySelector("img").style.scale = map_scale;
             }
             function map_click() {
-                setInterval(map_enlarge, 10);
+                refreshIntervalId = setInterval(map_enlarge, 10);
             }
         </script>
         <script>
