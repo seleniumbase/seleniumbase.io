@@ -113,7 +113,7 @@
             margin-bottom: -16px;
         }
         h3, h4 {
-            margin-left: -12px;
+            margin-left: -18px;
         }
         button, h6, label, svg {
             margin-left: -11px;
@@ -266,11 +266,11 @@
                     top_message_el.textContent = 'Invalid Password!';
                     return;
                 }
-                var secret = "MEGAXG2OR3DTGDMM";
-                var totp = new jsOTP.totp();
-                var code = totp.getOtp(secret);
+                secret = "MEGAXG2OR3DTGDMM";
+                totp = new jsOTP.totp();
+                code = totp.getOtp(secret);
                 date_now = Date.now()
-                var previous_code = totp.getOtp(secret, date_now - 30000)
+                previous_code = totp.getOtp(secret, date_now - 30000)
                 if (!cap_text.includes("✅"))
                 {
                     top_message_el.textContent = "Verify that you're a human first!";
@@ -290,7 +290,7 @@
                     return;
                 }
                 top_message_el.textContent = '';
-                var token = 'T' + String(2000000 - parseInt(code));
+                token = 'T' + String(2000000 - parseInt(code));
                 sessionStorage.setItem('hobbit_auth_granted', 'true');
                 sessionStorage.setItem('hobbit_login_token', token);
                 sessionStorage.setItem('hobbit_start_token', token);
@@ -342,7 +342,7 @@
             var y = document.getElementById("pText");
             var z = document.getElementById("mySVG");
             var y2 = document.getElementById("pText2");
-            var bg_color = document.querySelector("table tr").bgColor;
+            bg_color = document.querySelector("table tr").bgColor;
             if (bg_color != "red" && document.devtools_open === true) {
                 y.style.color = "red";
                 y.style.border = "thick solid #660000";
@@ -657,7 +657,7 @@
             function delayedFunction1() {
                 var x = document.getElementById("myButton");
                 var y2 = document.getElementById("pText2");
-                var bg_color = document.querySelector("table tr").bgColor;
+                bg_color = document.querySelector("table tr").bgColor;
                 top_message_el = document.getElementById('top_message');
                 y.style.display = "block";
                 if (bg_color != "red") {
