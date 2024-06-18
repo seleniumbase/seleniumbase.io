@@ -57,11 +57,11 @@
             }
             h1 {
                 text-align: center;
-                color: #2288CC;
+                color: #3355DD;
                 background-color: rgba(198, 214, 240, 0.3);
                 z-index: 2;
                 position: relative;
-                text-shadow: #FFEEAA 1px 1px 1px;
+                text-shadow: #FFEEDD 1px 1px 1px;
             }
             img {
                 z-index: 0.5;
@@ -127,20 +127,35 @@
             var map_scale = 1;
             function map_enlarge() {
                 map_scale = map_scale + 0.0028;
+                if (map_scale >= 1.2) {
+                    map_scale = map_scale + 0.0001;
+                }
                 if (map_scale >= 1.5) {
-                    map_scale = map_scale + 0.0003;
+                    map_scale = map_scale + 0.0004;
                 }
                 if (map_scale >= 2) {
-                    map_scale = map_scale + 0.0008;
+                    map_scale = map_scale + 0.0007;
+                }
+                if (map_scale >= 2.5) {
+                    map_scale = map_scale + 0.0005;
                 }
                 if (map_scale >= 3) {
-                    map_scale = map_scale + 0.0014;
+                    map_scale = map_scale + 0.0012;
+                }
+                if (map_scale >= 3.5) {
+                    map_scale = map_scale + 0.0006;
                 }
                 if (map_scale >= 4) {
-                    map_scale = map_scale + 0.0021;
+                    map_scale = map_scale + 0.0017;
+                }
+                if (map_scale >= 4.5) {
+                    map_scale = map_scale + 0.0007;
                 }
                 if (map_scale >= 5) {
-                    map_scale = map_scale + 0.0029;
+                    map_scale = map_scale + 0.0025;
+                }
+                if (map_scale >= 5.5) {
+                    map_scale = map_scale + 0.0008;
                 }
                 if (map_scale >= 6) {
                     map_scale = 6;
