@@ -91,12 +91,12 @@
             var refreshIntervalId;
             var img_scale = 1;
             function img_enlarge() {
-                img_scale = img_scale + 0.002;
+                img_scale = img_scale + 0.001;
                 if (img_scale >= 1.2) {
-                    img_scale = img_scale + 0.0006;
+                    img_scale = img_scale + 0.0003;
                 }
                 if (img_scale >= 1.4) {
-                    img_scale = img_scale + 0.0006;
+                    img_scale = img_scale + 0.0003;
                 }
                 if (img_scale >= 1.6) {
                     img_scale = 1.6;
@@ -106,7 +106,7 @@
                 width = document.querySelector("img").style.scale = img_scale;
             }
             function img_click() {
-                refreshIntervalId = setInterval(img_enlarge, 10);
+                refreshIntervalId = setInterval(img_enlarge, 8);
             }
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
