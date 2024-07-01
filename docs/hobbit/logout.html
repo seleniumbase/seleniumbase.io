@@ -57,10 +57,13 @@
         sessionStorage.removeItem('hobbit_auth_granted');
         if (hobbit_auth_granted) {
             deleteCookie('hobbit_auth_granted');
-            window.location.href = 'https://seleniumbase.io/hobbit/login?msg=signedout';
+            // window.location.href = 'https://seleniumbase.io/hobbit/login?msg=signedout';
+            window.location.href = 'https://seleniumbase.io/hobbit/login';
         }
-        else
-            window.location.href = 'https://seleniumbase.io/hobbit/login?msg=signinrequired';
+        else {
+            // window.location.href = 'https://seleniumbase.io/hobbit/login?msg=signinrequired';
+            window.location.href = 'https://seleniumbase.io/hobbit/login';
+        }
     </script>
 </head>
 <body>
