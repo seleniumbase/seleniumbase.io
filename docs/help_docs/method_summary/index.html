@@ -3639,7 +3639,11 @@
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># PyAutoGUI click screen</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># (*)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_rc</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># reC</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># CFT</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>  <span class="c1"># PyAutoGUI click CF Turnstile</span>
 

@@ -2692,7 +2692,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;seleniumbase.io/apps/turnstile&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_handle_cf</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#captcha-success&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -2700,7 +2700,7 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
-<p>If running on a Linux server, <code>uc_gui_handle_cf()</code> might not be good enough. Switch to <code>uc_gui_click_cf()</code> to be more stealthy.</p>
+<p>If running on a Linux server, <code>uc_gui_handle_cf()</code> might not be good enough. Switch to <code>uc_gui_click_cf()</code> to be more stealthy. You can also use <code>uc_gui_click_captcha()</code> as a generic CAPTCHA-clicker, which auto-detects between CF Turnstile and reCAPTCHA.</p>
 <p>👤 Here's an example <b>where the CAPTCHA appears after submitting a form</b>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
@@ -2795,6 +2795,10 @@
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
 
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_rc</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
@@ -2824,6 +2828,8 @@
 <p>(Note that while the special <b><code translate="no">UC Mode</code></b> breakpoint is active, you can't use <b><code translate="no">Selenium</code></b> commands in the browser, and the browser can't detect <b><code translate="no">Selenium</code></b>.)</p>
 <p>👤 On Linux, you may need to use <code>driver.uc_gui_click_cf()</code> to successfully bypass a Cloudflare CAPTCHA. If there's more than one iframe on that website (and Cloudflare isn't the first one) then put the CSS Selector of that iframe as the first arg to <code>driver.uc_gui_click_cf()</code>. This method uses <code>pyautogui</code>. In order for <code>pyautogui</code> to focus on the correct element, use <code>xvfb=True</code> / <code>--xvfb</code> to activate a special virtual display on Linux.</p>
 <p>👤 <code>driver.uc_gui_click_cf(frame="iframe", retry=False, blind=False)</code> has three args. (All optional). The first one, <code>frame</code>, lets you specify the iframe in case the CAPTCHA is not located in the first iframe on the page. The second one, <code>retry</code>, lets you retry the click after reloading the page if the first one didn't work (and a CAPTCHA is still present after the page reload). The third arg, <code>blind</code>, will retry after a page reload (if the first click failed) by clicking at the last known coordinates of the CAPTCHA checkbox without confirming first with Selenium that a CAPTCHA is still on the page.</p>
+<p>👤 <code>driver.uc_gui_click_rc(frame="iframe", retry=False, blind=False)</code> is for reCAPTCHA. This may only work a few times before not working anymore... not because Selenium was detected, but because reCAPTCHA uses advanced AI to detect unusual activity, unlike the CF Turnstile, which only uses basic detection.</p>
+<p>👤 <code>driver.uc_gui_click_captcha()</code> auto-detects the CAPTCHA type before trying to click it. This is a generic method for both CF Turnstile and Google reCAPTCHA. It will use the code from <code>uc_gui_click_cf()</code> and <code>uc_gui_click_rc()</code> as needed.</p>
 <p>👤 To find out if <b translate="no">UC Mode</b> will work at all on a specific site (before adjusting for timing), load your site with the following script:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
