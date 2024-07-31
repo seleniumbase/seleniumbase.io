@@ -2659,12 +2659,12 @@
 <li>Automatically setting various chromium args as needed.</li>
 <li>Has special <code>uc_*()</code> methods.</li>
 </ul>
-<p>👤 Here's an example with the <b><code translate="no">Driver</code></b> manager:</p>
+<p>👤 Here's a simple example with the <b><code translate="no">Driver</code></b> manager:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="370"></p>
@@ -2673,18 +2673,19 @@
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
-<p>👤 Here's a longer example, which includes a retry if the CAPTCHA isn't bypassed on the first attempt:</p>
+<p>👤 Here's a longer example, which includes a special click if the CAPTCHA isn't bypassed on the initial page load:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab.com&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 Here's an example <b>where clicking the checkbox is required</b>, even for humans:<br />(Commonly seen on forms that are CAPTCHA-protected.)</p>
@@ -2700,18 +2701,19 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
-<p>If running on a Linux server, <code>uc_gui_handle_cf()</code> might not be good enough. Switch to <code>uc_gui_click_cf()</code> to be more stealthy. You can also use <code>uc_gui_click_captcha()</code> as a generic CAPTCHA-clicker, which auto-detects between CF Turnstile and reCAPTCHA.</p>
+<p>If running on a Linux server, <code>uc_gui_handle_cf()</code> might not be good enough. Switch to <code>uc_gui_click_cf()</code> to be more stealthy. You can also use <code>uc_gui_click_captcha()</code> as a generic CAPTCHA-clicker, which auto-detects between CF Turnstile and Google reCAPTCHA.</p>
 <p>👤 Here's an example <b>where the CAPTCHA appears after submitting a form</b>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ahrefs.com/website-authority-checker&quot;</span>
     <span class="n">input_field</span> <span class="o">=</span> <span class="s1">&#39;input[placeholder=&quot;Enter domain&quot;]&#39;</span>
     <span class="n">submit_button</span> <span class="o">=</span> <span class="s1">&#39;span:contains(&quot;Check Authority&quot;)&#39;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># The bot-check is later</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># The bot-check is later</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="s2">&quot;github.com/seleniumbase/SeleniumBase&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">submit_button</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text_not_visible</span><span class="p">(</span><span class="s2">&quot;Checking&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;p:contains(&quot;github.com/seleniumbase/SeleniumBase&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Top 100 backlinks&quot;)&#39;</span><span class="p">)</span>
@@ -2724,13 +2726,9 @@
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.thaiticketmajor.com/concert/&quot;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;button.btn-signin&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[title*=&quot;Cloudflare&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#success svg#success-icon&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_center&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mf">6.111</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;button.btn-signin&quot;</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/ttm_bypass.png" title="SeleniumBase" width="540"></p>
 <p>👤 <b>On Linux</b>, use <code>sb.uc_gui_click_cf()</code> to handle Cloudflare Turnstiles:</p>
@@ -2826,7 +2824,7 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(Note that while the special <b><code translate="no">UC Mode</code></b> breakpoint is active, you can't use <b><code translate="no">Selenium</code></b> commands in the browser, and the browser can't detect <b><code translate="no">Selenium</code></b>.)</p>
-<p>👤 On Linux, you may need to use <code>driver.uc_gui_click_cf()</code> to successfully bypass a Cloudflare CAPTCHA. If there's more than one iframe on that website (and Cloudflare isn't the first one) then put the CSS Selector of that iframe as the first arg to <code>driver.uc_gui_click_cf()</code>. This method uses <code>pyautogui</code>. In order for <code>pyautogui</code> to focus on the correct element, use <code>xvfb=True</code> / <code>--xvfb</code> to activate a special virtual display on Linux.</p>
+<p>👤 On Linux, you may need to use <code>driver.uc_gui_click_cf()</code> to successfully bypass a Cloudflare CAPTCHA. If there's more than one Cloudflare iframe on that website, then put the CSS Selector of an element that's above the iframe as the first arg to <code>driver.uc_gui_click_cf()</code>. This method uses <code>pyautogui</code>. In order for <code>pyautogui</code> to focus on the correct element, use <code>xvfb=True</code> / <code>--xvfb</code> to activate a special virtual display on Linux.</p>
 <p>👤 <code>driver.uc_gui_click_cf(frame="iframe", retry=False, blind=False)</code> has three args. (All optional). The first one, <code>frame</code>, lets you specify the iframe in case the CAPTCHA is not located in the first iframe on the page. The second one, <code>retry</code>, lets you retry the click after reloading the page if the first one didn't work (and a CAPTCHA is still present after the page reload). The third arg, <code>blind</code>, will retry after a page reload (if the first click failed) by clicking at the last known coordinates of the CAPTCHA checkbox without confirming first with Selenium that a CAPTCHA is still on the page.</p>
 <p>👤 <code>driver.uc_gui_click_rc(frame="iframe", retry=False, blind=False)</code> is for reCAPTCHA. This may only work a few times before not working anymore... not because Selenium was detected, but because reCAPTCHA uses advanced AI to detect unusual activity, unlike the CF Turnstile, which only uses basic detection.</p>
 <p>👤 <code>driver.uc_gui_click_captcha()</code> auto-detects the CAPTCHA type before trying to click it. This is a generic method for both CF Turnstile and Google reCAPTCHA. It will use the code from <code>uc_gui_click_cf()</code> and <code>uc_gui_click_rc()</code> as needed.</p>
@@ -2893,6 +2891,11 @@
 <li><b><code translate="no">window.setTimeout(function() { SCRIPT }, MS);</code></b> --> (Info: <a href="https://www.w3schools.com/jsref/met_win_settimeout.asp" target="_blank">W3Schools</a>)</li>
 
 <p>The above JS method is used within the <b><code translate="no">SeleniumBase</code></b> <b translate="no">UC Mode</b> method: <b><code translate="no">driver.uc_click(selector)</code></b> so that clicking can be done in a stealthy way. <b translate="no">UC Mode</b> schedules your click, disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b>, waits a little (customizable), and reconnects.</p>
+<hr />
+<p>🛠️ <b>Troubleshooting UC Mode</b></p>
+<p>On Windows, the <code>uc_gui_click_cf()</code> and <code>uc_gui_click_captcha()</code> methods require "Scaling" to be set at "100%". (Note that "100%" may be different from the system's "Recommended" percent, which can be higher depending on your screen resolution and monitor size.)</p>
+<p><img src="https://seleniumbase.github.io/other/ts_uc_1.jpg" title="Make sure Scaling is set to 100%" width="410"></p>
+<p>As an alternative to using the <code>uc_gui_click_cf()</code> or <code>uc_gui_click_captcha()</code> methods on Windows, you can use <code>sb.uc_gui_handle_cf()</code>, which does not require "Scaling" to be set to a specific value. Instead of using the mouse to click a CAPTCHA, <code>sb.uc_gui_handle_cf()</code> uses a combination of the <code>TAB</code> key and the <code>SPACEBAR</code>.</p>
 <hr />
 <p>🏆 <b>Choosing the right CAPTCHA service</b> for your business / website:</p>
 <p><img src="https://seleniumbase.github.io/other/me_se_conf.jpg" title="SeleniumBase" width="370"></p>
