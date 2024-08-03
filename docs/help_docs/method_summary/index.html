@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -3640,13 +3640,12 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># PyAutoGUI click screen</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># driver.uc_gui_click_cf(frame=&quot;iframe&quot;, retry=False, blind=False)</span>
+<span class="c1"># driver.uc_gui_click_rc(frame=&quot;iframe&quot;, retry=False, blind=False)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_rc</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># reC</span>
-
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># CFT</span>
-
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_cf</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>  <span class="c1"># PyAutoGUI click CF Turnstile</span>
-
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>  <span class="c1"># (Auto-detects the CAPTCHA)</span>
+<span class="c1"># driver.uc_gui_handle_cf(frame=&quot;iframe&quot;)  # PyAutoGUI click CF Turnstile</span>
+<span class="c1"># driver.uc_gui_handle_rc(frame=&quot;iframe&quot;)  # PyAutoGUI click G. reCAPTCHA</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>  <span class="c1"># Stealthy switch_to_frame()</span>
 </code></pre></div>
 <hr />
