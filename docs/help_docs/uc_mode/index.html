@@ -2893,11 +2893,6 @@
 
 <p>The above JS method is used within the <b><code translate="no">SeleniumBase</code></b> <b translate="no">UC Mode</b> method: <b><code translate="no">driver.uc_click(selector)</code></b> so that clicking can be done in a stealthy way. <b translate="no">UC Mode</b> schedules your click, disconnects <b><code translate="no">chromedriver</code></b> from <b translate="no">Chrome</b>, waits a little (customizable), and reconnects.</p>
 <hr />
-<p>🛠️ <b>Troubleshooting UC Mode</b></p>
-<p>On Windows, the <code>uc_gui_click_captcha()</code> method requires "Scaling" to be set at "100%". (Note that "100%" may be different from the system's "Recommended" percent, which can be higher depending on your screen resolution and monitor size.)</p>
-<p><img src="https://seleniumbase.github.io/other/ts_uc_1.jpg" title="Make sure Scaling is set to 100%" width="410"></p>
-<p>As an alternative to using the <code>uc_gui_click_captcha()</code> method on Windows, you can use <code>sb.uc_gui_handle_captcha()</code>, which does not require "Scaling" to be set to a specific value. Instead of using the mouse to click a CAPTCHA, <code>sb.uc_gui_handle_captcha()</code> uses a combination of the <code>TAB</code> key and the <code>SPACEBAR</code>.</p>
-<hr />
 <p>🏆 <b>Choosing the right CAPTCHA service</b> for your business / website:</p>
 <p><img src="https://seleniumbase.github.io/other/me_se_conf.jpg" title="SeleniumBase" width="370"></p>
 <p>As an ethical hacker / cybersecurity researcher who builds bots that bypass CAPTCHAs for sport, <b>the CAPTCHA service that I personally recommend</b> for keeping bots out is <b translate="no">Google's reCAPTCHA</b>:</p>
