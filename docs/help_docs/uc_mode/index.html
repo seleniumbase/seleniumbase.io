@@ -2801,8 +2801,6 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 <span class="c1"># driver.uc_gui_handle_cf(frame=&quot;iframe&quot;)</span>
 <span class="c1"># driver.uc_gui_handle_rc(frame=&quot;iframe&quot;)</span>
-
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 <p>(Note that the <b><code translate="no">reconnect_time</code></b> is used to specify how long the driver should be disconnected from Chrome to prevent detection before reconnecting again.)</p>
 <p>👤 Since <b><code translate="no">driver.get(url)</code></b> is slower in UC Mode for bypassing detection, use <b><code translate="no">driver.default_get(url)</code></b> for a standard page load instead:</p>
