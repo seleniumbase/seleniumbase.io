@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.33">
     
     
       
@@ -2900,9 +2900,10 @@ test frameworks.</p>
 <ul>
 <li>Options:</li>
 </ul>
-<p><code>-b</code> / <code>--basic</code>  (Basic boilerplate / single-line test)
-<code>-r</code> / <code>--rec</code>  (adds Pdb+ breakpoint for Recorder Mode)
-<code>--url=URL</code>  (makes the test start on a specific page)</p>
+<p><code>--uc</code>  (UC Mode boilerplate using SB context manager)
+<code>-b</code> / <code>--basic</code>  (Basic boilerplate / single-line test)
+<code>-r</code> / <code>--rec</code>  (Adds Pdb+ breakpoint for Recorder Mode)
+<code>--url=URL</code>  (Makes the test start on a specific page)</p>
 <ul>
 <li>Language Options:</li>
 </ul>
@@ -2930,7 +2931,8 @@ and creates a boilerplate with common SeleniumBase
 methods: "open", "type", "click", "assert_element",
 and "assert_text". If using the basic boilerplate
 option, only the "open" method is included. Only the
-BaseCase format supports Languages or Recorder Mode.</p>
+BaseCase format supports Languages or Recorder Mode.
+UC Mode automatically uses English with SB() format.</p>
 <h3>mkrec / record / codegen</h3>
 
 <ul>
