@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -2704,11 +2704,13 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --binary-location<span class="o">=</span>PATH<span class="w">  </span><span class="c1"># (Set path of the Chromium browser binary to use.)</span>
 --driver-version<span class="o">=</span>VER<span class="w">  </span><span class="c1"># (Set the chromedriver or uc_driver version to use.)</span>
 --sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
+--wfa<span class="w">  </span><span class="c1"># (Wait for AngularJS to be done loading after specific web actions.)</span>
 --pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
 --headless<span class="w">  </span><span class="c1"># (Run tests in headless mode. The default arg on Linux OS.)</span>
 --headless2<span class="w">  </span><span class="c1"># (Use the new headless mode, which supports extensions.)</span>
 --headed<span class="w">  </span><span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
 --xvfb<span class="w">  </span><span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
+--xvfb-metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set Xvfb display size on Linux: &quot;Width,Height&quot;.)</span>
 --locale<span class="o">=</span>LOCALE_CODE<span class="w">  </span><span class="c1"># (Set the Language Locale Code for the web browser.)</span>
 --interval<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The autoplay interval for presentations &amp; tour steps)</span>
 --start-page<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (The starting URL for the web browser when tests begin.)</span>
@@ -2753,6 +2755,7 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --rcs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-class-session<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>
 --crumbs<span class="w">  </span><span class="c1"># (Delete all cookies between tests reusing a session.)</span>
 --disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
+--window-position<span class="o">=</span>X,Y<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window position.)</span>
 --window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window size.)</span>
 --maximize<span class="w">  </span><span class="c1"># (Start tests with the browser window maximized.)</span>
 --screenshot<span class="w">  </span><span class="c1"># (Save a screenshot at the end of each test.)</span>
@@ -2881,7 +2884,7 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/dash_report.jpg" alt="Dashboard Pytest HTML Report" title="Dashboard Pytest HTML Report" width="520" /></p>
-<p>If viewing pytest html reports in <a href="https://www.jenkins.io/">Jenkins</a>, you may need to <a href="https://stackoverflow.com/a/46197356">configure Jenkins settings</a> for the html to render correctly. This is due to <a href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">Jenkins CSP changes</a>.</p>
+<p>If viewing pytest html reports in <a href="https://www.jenkins.io/">Jenkins</a>, you may need to <a href="https://stackoverflow.com/a/46197356/7058266">configure Jenkins settings</a> for the html to render correctly. This is due to <a href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">Jenkins CSP changes</a>.</p>
 <p>You can also use <code>--junit-xml=report.xml</code> to get an xml report instead. Jenkins can use this file to display better reporting for your tests.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--junit-xml<span class="o">=</span>report.xml
 </code></pre></div>
@@ -3045,7 +3048,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
