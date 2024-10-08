@@ -2657,11 +2657,11 @@
 <p>(<b><a href="https://www.youtube.com/watch?v=-EpZlhGWo9k">Watch the 3rd UC Mode tutorial on YouTube! ▶️</a></b>)</p>
 
 <hr />
-<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>, but includes multiple updates, fixes, and improvements, such as:</p>
+<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>. <span translate="no">UC Mode</span> includes multiple updates, fixes, and improvements, such as:</p>
 <ul>
-<li>Automatically changing user agents to prevent detection.</li>
-<li>Automatically setting various chromium args as needed.</li>
-<li>Has special <code>uc_*()</code> methods.</li>
+<li>Automatically changing user-agents to prevent detection.</li>
+<li>Automatically setting various Chromium args as needed.</li>
+<li>Has special <code>uc_*()</code> methods for bypassing CAPTCHAs.</li>
 </ul>
 <p>👤 Here's a simple example with the <b><code translate="no">Driver</code></b> manager:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
@@ -2739,6 +2739,7 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/ttm_bypass.png" title="SeleniumBase" width="540"></p>
+<hr />
 <p>👤 <b>On Linux</b>, use <code>sb.uc_gui_click_captcha()</code> to handle CAPTCHAs (Cloudflare Turnstiles):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
@@ -2755,6 +2756,7 @@
 </code></pre></div>
 <p><a href="https://github.com/mdmintz/undetected-testing/actions/runs/9637461606/job/26576722411"><img width="540" alt="uc_gui_click_captcha on Linux" src="https://github.com/seleniumbase/SeleniumBase/assets/6788579/6aceb2a3-2a32-4521-b30a-f79446d2ce28"></a></p>
 <p>The 2nd <code translate="no">print()</code> should output <code translate="no">Virtual Manager</code>, which means that the automation successfully passed the Turnstile.</p>
+<p>(Note: <span translate="no">UC Mode</span> is detectable in Headless Mode, so don't combine those options. Instead, use <code translate="no">xvfb=True</code> / <code>--xvfb</code>on Linux for the special virtual display, which is enabled by default when not changing headed/headless settings.)</p>
 <hr />
 <p>👤 In <b translate="no">UC Mode</b>, <code translate="no">driver.get(url)</code> has been modified from its original version: If anti-bot services are detected from a <code translate="no">requests.get(url)</code> call that's made before navigating to the website, then <code translate="no">driver.uc_open_with_reconnect(url)</code> will be used instead. To open a URL normally in <b translate="no">UC Mode</b>, use <code translate="no">driver.default_get(url)</code>.</p>
 <hr />
@@ -2766,7 +2768,7 @@
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_cf.py">SeleniumBase/examples/raw_cf.py</a></li>
 </ul>
 <hr />
-<p>👤 Here's an example where <strong><code>incognito=True</code> is needed for bypassing detection</strong>:</p>
+<p>👤 Here's an example where <b><code translate="no">incognito=True</code> is needed for bypassing detection</b>:</p>
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pixelscan.py">SeleniumBase/examples/raw_pixelscan.py</a></li>
 </ul>
@@ -2790,7 +2792,7 @@
 </ul>
 <p><img src="https://seleniumbase.github.io/other/cf_bypass.png" title="SeleniumBase" width="260"></p>
 <hr />
-<h3 id="here-are-the-seleniumbase-uc-mode-methods-uc-uctrue">👤 Here are the SeleniumBase UC Mode methods: (<code>--uc</code> / <strong><code>uc=True</code></strong>)<a class="headerlink" href="#here-are-the-seleniumbase-uc-mode-methods-uc-uctrue" title="Permanent link">&para;</a></h3>
+<h3 id="here-are-the-seleniumbase-uc-mode-methods-uc-uctrue">👤 Here are the SeleniumBase UC Mode methods: (<strong><code>--uc</code></strong> / <strong><code>uc=True</code></strong>)<a class="headerlink" href="#here-are-the-seleniumbase-uc-mode-methods-uc-uctrue" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -2826,7 +2828,7 @@
 <span class="c1"># driver.uc_gui_handle_rc(frame=&quot;iframe&quot;)</span>
 </code></pre></div>
 <p>(Note that the <b><code translate="no">reconnect_time</code></b> is used to specify how long the driver should be disconnected from Chrome to prevent detection before reconnecting again.)</p>
-<p>👤 Since <b><code translate="no">driver.get(url)</code></b> is slower in UC Mode for bypassing detection, use <b><code translate="no">driver.default_get(url)</code></b> for a standard page load instead:</p>
+<p>👤 Since <b><code translate="no">driver.get(url)</code></b> is slower in <span translate="no">UC Mode</span> for bypassing detection, use <b><code translate="no">driver.default_get(url)</code></b> for a standard page load instead:</p>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Faster, but Selenium can be detected</span>
 </code></pre></div>
 <p>👤 Here are some examples of using those special <b translate="no">UC Mode</b> methods: (Use <b><code translate="no">self.driver</code></b> for <b><code translate="no">BaseCase</code></b> formats. Use <b><code translate="no">sb.driver</code></b> for <b><code translate="no">SB()</code></b> formats):</p>
@@ -2847,7 +2849,8 @@
 </code></pre></div>
 <p>(Note that while the special <b><code translate="no">UC Mode</code></b> breakpoint is active, you can't use <b><code translate="no">Selenium</code></b> commands in the browser, and the browser can't detect <b><code translate="no">Selenium</code></b>.)</p>
 <hr />
-<p>👤 On Linux, you may need to use <code translate="no">uc_gui_click_captcha()</code> to successfully bypass a CAPTCHA. If there's more than one CAPTCHA on a website, then put the CSS Selector of an element that's above the CAPTCHA as the first arg to <code translate="no">uc_gui_click_captcha()</code>. This method uses <code translate="no">pyautogui</code>. In order for <code translate="no">pyautogui</code> to focus on the correct element, use <code translate="no">xvfb=True</code> / <code translate="no">--xvfb</code> to activate a special virtual display on Linux.</p>
+<p>👤 <b>On Linux</b>, use <code translate="no">xvfb=True</code> / <code>--xvfb</code> to activate a special virtual display. This allows you to run a regular browser in an environment that has no GUI. This is important for two reasons: One: <span translate="no">UC Mode</span> is detectable in headless mode. Two: <code translate="no">pyautogui</code> doesn't work in headless mode. (Note that some methods such as <code translate="no">uc_gui_click_captcha()</code> require <code translate="no">pyautogui</code> for performing special actions.)</p>
+<hr />
 <p>👤 <code translate="no">uc_gui_click_captcha()</code> auto-detects the CAPTCHA type before trying to click it. This is a generic method for both CF Turnstile and Google reCAPTCHA. It will use the code from <code translate="no">uc_gui_click_cf()</code> and <code translate="no">uc_gui_click_rc()</code> as needed.</p>
 <p>👤 <code translate="no">uc_gui_click_cf(frame="iframe", retry=False, blind=False)</code> has three args. (All optional). The first one, <code translate="no">frame</code>, lets you specify the selector above the <code translate="no">iframe</code> in case the CAPTCHA is not located in the first <code translate="no">iframe</code> on the page. (In the case of Shadow-DOM, specify the selector of an element that's above the Shadow-DOM.) The second one, <code translate="no">retry</code>, lets you retry the click after reloading the page if the first one didn't work (and a CAPTCHA is still present after the page reload). The third arg, <code translate="no">blind</code>, (if <code translate="no">True</code>), will retry after a page reload (if the first click failed) by clicking at the last known coordinates of the CAPTCHA checkbox without confirming first with Selenium that a CAPTCHA is still on the page.</p>
 <p>👤 <code translate="no">uc_gui_click_rc(frame="iframe", retry=False, blind=False)</code> is for reCAPTCHA. This may only work a few times before not working anymore... not because Selenium was detected, but because reCAPTCHA uses advanced AI to detect unusual activity, unlike the CF Turnstile, which only uses basic detection.</p>
@@ -2898,7 +2901,7 @@
 <p><img src="https://seleniumbase.github.io/other/cdc_args.png" title="SeleniumBase" width="390"></p>
 <p>(If those variables are still there, then websites can easily detect your bots.)</p>
 <p>If you launch <b translate="no">Chrome</b> using <b><code translate="no">chromedriver</code></b>, then there will be settings that make your browser look like a bot. (Instead, <b translate="no">UC Mode</b> connects <b><code translate="no">chromedriver</code></b> to <b translate="no">Chrome</b> after the browser is launched, which makes <b translate="no">Chrome</b> look like a normal, human-controlled web browser.)</p>
-<p>While <b><code translate="no">chromedriver</code></b> is connected to <b translate="no">Chrome</b>, website services can detect it. Thankfully, raw <b><code translate="no">selenium</code></b> already includes <b><code translate="no">driver.service.stop()</code></b> for stopping the <b><code translate="no">chromedriver</code></b> service, <b><code translate="no">driver.service.start()</code></b> for starting the <b><code translate="no">chromedriver</code></b> service, and <b><code translate="no">driver.start_session(capabilities)</code></b> for reviving the active browser session with the given capabilities. (<b translate="no"><code>SeleniumBase</code> UC Mode</b> methods automatically use those raw <b><code translate="no">selenium</code></b> methods as needed.)</p>
+<p>While <b><code translate="no">chromedriver</code></b> is connected to <b translate="no">Chrome</b>, website services can detect it. Thankfully, raw <b><code translate="no">selenium</code></b> already includes <b><code translate="no">driver.service.stop()</code></b> for stopping the <b><code translate="no">chromedriver</code></b> service, <b><code translate="no">driver.service.start()</code></b> for starting the <b><code translate="no">chromedriver</code></b> service, and <b><code translate="no">driver.start_session(capabilities)</code></b> for reviving the active browser session with the given capabilities. (<b translate="no"><code>SeleniumBase</code> <span translate="no">UC Mode</span></b> methods automatically use those raw <b><code translate="no">selenium</code></b> methods as needed.)</p>
 <p>Links to those <a href="https://github.com/SeleniumHQ/selenium">raw <b>Selenium</b></a> method definitions have been provided for reference (but you don't need to call those methods directly):</p>
 <ul>
 <li><b><code translate="no"><a href="https://github.com/SeleniumHQ/selenium/blob/9c6ccdbf40356284fad342f70fbdc0afefd27bd3/py/selenium/webdriver/common/service.py#L135">driver.service.stop()</a></code></b></li>
