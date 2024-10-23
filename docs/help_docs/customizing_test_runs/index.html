@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -854,6 +854,27 @@
   
   <span class="md-ellipsis">
     👤 UC Mode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/cdp_mode/ReadMe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐙 CDP Mode
   </span>
   
 
@@ -2575,13 +2596,13 @@
   <h1>🎛️ Command Line Options</h1>
 
 <h2 id="pytest-options-for-seleniumbase"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> pytest options for SeleniumBase<a class="headerlink" href="#pytest-options-for-seleniumbase" title="Permanent link">&para;</a></h2>
-<p>🎛️ SeleniumBase's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">pytest plugin</a> lets you customize test runs from the CLI (Command-Line Interface), which adds options for setting/enabling the browser type, Dashboard Mode, Demo Mode, Headless Mode, Mobile Mode, Multi-threading Mode, Recorder Mode, reuse-session mode, proxy config, user agent config, browser extensions, html-report mode, and more.</p>
+<p>🎛️ SeleniumBase's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">pytest plugin</a> lets you customize test runs from the CLI (Command-Line Interface), which adds options for setting/enabling the browser type, Dashboard Mode, Demo Mode, Headless Mode, Mobile Mode, Multi-threading Mode, Recorder Mode, UC Mode (stealth), reuse-session mode, Proxy Mode, and more.</p>
 <p>🎛️ Here are some examples of configuring tests, which can be run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Run a test in Chrome (default browser)</span>
 pytest<span class="w"> </span>my_first_test.py
 
-<span class="c1"># Run a test in Firefox</span>
-pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--firefox
+<span class="c1"># Run a test in Edge</span>
+pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--edge
 
 <span class="c1"># Run a test in Demo Mode (highlight assertions)</span>
 pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--demo
@@ -2601,23 +2622,26 @@ pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs<span cla
 <span class="c1"># Create a real-time dashboard for test results</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--dashboard
 
-<span class="c1"># Create a pytest html report after tests are done</span>
+<span class="c1"># Create a pytest-html report after tests are done</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--html<span class="o">=</span>report.html
-
-<span class="c1"># Activate Debug Mode on failures (&quot;c&quot; to continue)</span>
-pytest<span class="w"> </span>test_fail.py<span class="w"> </span>--pdb<span class="w"> </span>-s
 
 <span class="c1"># Rerun failing tests more times</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--reruns<span class="o">=</span><span class="m">1</span>
 
-<span class="c1"># Activate Debug Mode as the test begins (&quot;n&quot;: next. &quot;c&quot;: continue)</span>
+<span class="c1"># Activate Debug Mode at the start (&quot;n&quot;: next. &quot;c&quot;: continue)</span>
 pytest<span class="w"> </span>test_null.py<span class="w"> </span>--trace<span class="w"> </span>-s
+
+<span class="c1"># Activate Debug Mode on failures (&quot;n&quot;: next. &quot;c&quot;: continue)</span>
+pytest<span class="w"> </span>test_fail.py<span class="w"> </span>--pdb<span class="w"> </span>-s
+
+<span class="c1"># Activate Debug Mode at the end (&quot;n&quot;: next. &quot;c&quot;: continue)</span>
+pytest<span class="w"> </span>test_fail.py<span class="w"> </span>--ftrace<span class="w"> </span>-s
 
 <span class="c1"># Activate Recorder/Debug Mode as the test begins (&quot;c&quot; to continue)</span>
 pytest<span class="w"> </span>test_null.py<span class="w"> </span>--recorder<span class="w"> </span>--trace<span class="w"> </span>-s
 
 <span class="c1"># Pass extra data into tests (retrieve by calling self.data)</span>
-pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;ABC,DEF&quot;</span>
+pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;ABC&quot;</span>
 
 <span class="c1"># Run tests on a local Selenium Grid</span>
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--server<span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
@@ -2643,7 +2667,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile
 <span class="c1"># Run mobile tests specifying CSS Width, CSS Height, and Pixel-Ratio</span>
 pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<span class="w"> </span>--metrics<span class="o">=</span><span class="s2">&quot;360,640,2&quot;</span>
 
-<span class="c1"># Run a test with an option to evade bot-detection services</span>
+<span class="c1"># Run tests using UC Mode to evade bot-detection services</span>
 pytest<span class="w"> </span>verify_undetected.py<span class="w"> </span>--uc
 
 <span class="c1"># Run tests while changing SeleniumBase default settings</span>
@@ -3053,7 +3077,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
     <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

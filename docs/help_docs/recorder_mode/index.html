@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -854,6 +854,27 @@
   
   <span class="md-ellipsis">
     👤 UC Mode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/cdp_mode/ReadMe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐙 CDP Mode
   </span>
   
 
@@ -2616,7 +2637,7 @@ pytest<span class="w"> </span>new_test.py<span class="w"> </span>--rec<span clas
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/img/recorder_desktop_2.png" title="SeleniumBase" width="340"></p>
 <p>⏺️ While a recording is in progress, you can press the <code>[ESC]</code> key to pause the Recorder. To resume the recording, you can hit the <code>[~`]</code> key, which is located directly below the <code>[ESC]</code> key on most keyboards.</p>
-<p>⏺️ From within Recorder Mode there are two additional modes: "Assert Element Mode" and "Assert Text Mode". To switch into "Assert Element Mode", press the <code>[^]-key (SHIFT+6)</code>: The border will become purple, and you'll be able to click on elements to assert from your test. To switch into "Assert Text Mode", press the <code>[&amp;]-key (SHIFT+7)</code>: The border will become teal, and you'll be able to click on elements for asserting text from your test.</p>
+<p>⏺️ From within Recorder Mode there are two additional modes: "Assert Element Mode" and "Assert Text Mode". To switch into "Assert Element Mode", press the <code>[^]-key (SHIFT+6 on standard QWERTY keyboards)</code>: The border will become purple, and you'll be able to click on elements to assert from your test. To switch into "Assert Text Mode", press the <code>[&amp;]-key (SHIFT+7 on standard QWERTY keyboards)</code>: The border will become teal, and you'll be able to click on elements for asserting text from your test.</p>
 <p>⏺️ While using either of the two special Assertion Modes, certain actions such as clicking on links won't have any effect. This lets you make assertions on elements without navigating away from the page, etc. To add an assertion for buttons without triggering default "click" behavior, mouse-down on the button and then mouse-up somewhere else. (This prevents a detected click while still recording the assert.) To return back to the original Recorder Mode, press any key other than <code>[SHIFT]</code> or <code>[BACKSPACE]</code> (Eg: Press <code>[CONTROL]</code>, etc.). Press <code>[ESC]</code> once to leave the Assertion Modes, but it'll stop the Recorder if you press it again.</p>
 <p>⏺️ For extra flexibility, the <code>sbase mkrec</code> command can be split into four separate commands:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>mkfile<span class="w"> </span>TEST_NAME.py<span class="w"> </span>--rec
@@ -2652,6 +2673,7 @@ cp<span class="w"> </span>./recordings/TEST_NAME_rec.py<span class="w"> </span>.
 <p>⏺️ (Note that <b>same domain/origin</b> is not the same as <b>same URL</b>. Example: <a href="https://xkcd.com/353/" target="_blank">https://xkcd.com/353</a> and <a href="https://xkcd.com/1537/" target="_blank">https://xkcd.com/1537</a> are two different URLs with the <b>same domain/origin</b>. That means both URLs share the same sessionStorage, and that changes persist to different URLs of the same domain/origin. If you want to find out a website's origin during a test, just call: <code>self.get_origin()</code>, which returns the value of <code>window.location.origin</code> from the browser's console.)</p>
 <p>⏺️ Inside recorded tests, you might find the <code>self.open_if_not_url(URL)</code> method, which opens the URL given if the browser is not currently on that page. SeleniumBase uses this method in recorded scripts when the Recorder detects that a browser action changed the current URL. This method prevents an unnecessary page load and shows what page the test visited after a browser action.</p>
 <p>⏺️ By launching the Recorder App with <code>sbase recorder --ee</code>, you can end the recording by pressing {<code>SHIFT</code>+<code>ESC</code>} instead of the usual way of ending the recording by typing <code>c</code> from a <code>breakpoint()</code> and pressing <code>Enter</code>. Those buttons don't need to be pressed at the same time, but <code>SHIFT</code> must be pressed directly before <code>ESC</code>.</p>
+<p>⏺️ Use <code>sbase recorder --uc</code> to launch the Recorder App with UC Mode enabled. (The driver will be disconnected from Chrome, but the Recorder extension will still capture any browser actions.)</p>
 <hr />
 <div>To learn more about SeleniumBase, check out the Docs Site:</div>
 <p><a href="https://seleniumbase.io">
@@ -2725,7 +2747,7 @@ cp<span class="w"> </span>./recordings/TEST_NAME_rec.py<span class="w"> </span>.
     <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
