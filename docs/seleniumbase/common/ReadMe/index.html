@@ -2784,7 +2784,7 @@ $^*ENCRYPT<span class="o">=</span><span class="nv">RXlYMSJWTz8HSwM</span><span c
 <span class="n">password</span> <span class="o">=</span> <span class="n">encryption</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="s1">&#39;$^*ENCRYPT=RXlYMSJWTz8HSwM=?&amp;#$&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>(You'll notice that encrypted strings have a common start token and end token. This is to help tell them apart from non-encrypted strings. You can customize these tokens in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>. The current default setting is <code>$^*ENCRYPT=</code> for the start token and <code>?&amp;#$</code> for the end token.)</p>
-<p>See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/decryption_test.py">decryption_test.py</a> for an example of decrypting encrypted passwords in tests.</p>
+<p>See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_decryption.py">test_decryption.py</a> for an example of decrypting encrypted passwords in tests.</p>
 
 
 
