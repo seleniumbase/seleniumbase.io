@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
@@ -2808,7 +2808,7 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 <p>🔵 During test failures, logs and screenshots from the most recent test run will get saved to the <code>latest_logs/</code> folder. If <code>--archive-logs</code> is specified (or if ARCHIVE_EXISTING_LOGS is set to True in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>), test logs will also get archived to the <code>archived_logs/</code> folder. Otherwise, the log files will be cleaned out when the next test run begins (by default).</p>
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Demo Mode:</h3>
 
-<p>🔵 If any test is moving too fast for your eyes to see what's going on, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real time:</p>
+<p>🔵 If any test is moving too fast for your eyes to see what's going on, you can run it in <strong>Demo Mode</strong> by adding <code>--demo</code> on the command line, which pauses the browser briefly between actions, highlights page elements being acted on, and lets you know what test assertions are happening in real-time:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--demo
 </code></pre></div>
 <p>🔵 You can override the default wait time by either updating <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a> or by using <code>--demo-sleep=NUM</code> when using Demo Mode. (NOTE: If you use <code>--demo-sleep=NUM</code> without using <code>--demo</code>, nothing will happen.)</p>
@@ -2882,7 +2882,7 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <p>🎛️ You might also want to combine multiple options at once. For example:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--headless<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--crumbs
 </code></pre></div>
-<p>The above not only runs tests in parallel processes, but it also tells tests in the same process to share the same browser session, runs the tests in headless mode, displays the full name of each test on a separate line, creates a realtime dashboard of the test results, and creates a full report after all tests complete.</p>
+<p>The above not only runs tests in parallel processes, but it also tells tests in the same process to share the same browser session, runs the tests in headless mode, displays the full name of each test on a separate line, creates a real-time dashboard of the test results, and creates a full report after all tests complete.</p>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> The SeleniumBase Dashboard:</h3>
 
