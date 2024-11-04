@@ -931,6 +931,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#example-4-walmart-site-using-akamai-protection-with-perimeterx" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔖 Example 4: (Walmart site using Akamai protection with PerimeterX)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-nike-site-using-shape-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔖 Example 5: (Nike site using Shape Security)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cdp-mode-api-methods" class="md-nav__link">
     <span class="md-ellipsis">
       🐙 CDP Mode API / Methods
@@ -2710,6 +2728,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#example-4-walmart-site-using-akamai-protection-with-perimeterx" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔖 Example 4: (Walmart site using Akamai protection with PerimeterX)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-nike-site-using-shape-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔖 Example 5: (Nike site using Shape Security)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cdp-mode-api-methods" class="md-nav__link">
     <span class="md-ellipsis">
       🐙 CDP Mode API / Methods
@@ -2890,7 +2926,7 @@
         <span class="s1">&#39;div[data-booking-status=&quot;BOOKABLE&quot;] [class*=&quot;HotelCard_header&quot;]&#39;</span>
     <span class="p">)</span>
     <span class="n">hotel_prices</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span>
-        <span class="s1">&#39;div[data-booking-status=&quot;BOOKABLE&quot;] div.rate-currency&#39;</span>
+        <span class="s1">&#39;div[data-booking-status=&quot;BOOKABLE&quot;] div.rate&#39;</span>
     <span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hotel_names</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">hotel_prices</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hyatt Hotels in </span><span class="si">%s</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">location</span><span class="p">)</span>
@@ -2942,6 +2978,80 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> =&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
                 <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hotel</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">price</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
             <span class="p">)</span>
+</code></pre></div>
+
+</details>
+
+<h3 id="example-4-walmart-site-using-akamai-protection-with-perimeterx">🔖 Example 4: (Walmart site using Akamai protection with PerimeterX)<a class="headerlink" href="#example-4-walmart-site-using-akamai-protection-with-perimeterx" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode/raw_walmart.py">SeleniumBase/examples/cdp_mode/raw_walmart.py</a></li>
+</ul>
+<div></div>
+<details>
+<summary> ▶️ (<b>Click to expand code preview</b>)</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.walmart.com/&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">mouse_click</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="s2">&quot;Settlers of Catan Board Game&quot;</span>
+    <span class="n">required_text</span> <span class="o">=</span> <span class="s2">&quot;Catan&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="n">search</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">3.8</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** Walmart Search for &quot;</span><span class="si">%s</span><span class="s1">&quot;:&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    (Results must contain &quot;</span><span class="si">%s</span><span class="s1">&quot;.)&#39;</span> <span class="o">%</span> <span class="n">required_text</span><span class="p">)</span>
+    <span class="n">unique_item_text</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;div[data-testid=&quot;list-view&quot;]&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">required_text</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
+                <span class="s1">&#39;[data-automation-id=&quot;product-price&quot;] + span&#39;</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">description</span> <span class="ow">and</span> <span class="n">description</span><span class="o">.</span><span class="n">text</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_item_text</span><span class="p">:</span>
+                <span class="n">unique_item_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">description</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">description</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                <span class="n">price</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
+                    <span class="s1">&#39;[data-automation-id=&quot;product-price&quot;]&#39;</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">price</span><span class="p">:</span>
+                    <span class="n">price_text</span> <span class="o">=</span> <span class="n">price</span><span class="o">.</span><span class="n">text</span>
+                    <span class="n">price_text</span> <span class="o">=</span> <span class="n">price_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;current price Now &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">price_text</span> <span class="o">=</span> <span class="n">price_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;current price &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">price_text</span> <span class="o">=</span> <span class="n">price_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  (&quot;</span> <span class="o">+</span> <span class="n">price_text</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+
+<h3 id="example-5-nike-site-using-shape-security">🔖 Example 5: (Nike site using Shape Security)<a class="headerlink" href="#example-5-nike-site-using-shape-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode/raw_nike.py">SeleniumBase/examples/cdp_mode/raw_nike.py</a></li>
+</ul>
+<div></div>
+<details>
+<summary> ▶️ (<b>Click to expand code preview</b>)</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.nike.com/&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">gui_click_element</span><span class="p">(</span><span class="s1">&#39;div[data-testid=&quot;user-tools-container&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="s2">&quot;Nike Air Force 1&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s1">&#39;input[type=&quot;search&quot;]&#39;</span><span class="p">,</span> <span class="n">search</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s1">&#39;ul[data-testid*=&quot;products&quot;] figure .details&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">elements</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;**** Found results for &quot;</span><span class="si">%s</span><span class="s1">&quot;: ****&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
