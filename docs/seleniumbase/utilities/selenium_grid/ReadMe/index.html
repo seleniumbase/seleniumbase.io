@@ -2585,11 +2585,6 @@
 </ul>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@ondemand.us-east-1.saucelabs.com<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span><span class="w"> </span>--protocol<span class="o">=</span>https
 </code></pre></div>
-<ul>
-<li><a href="https://help.crossbrowsertesting.com/selenium-testing/getting-started/python/">CrossBrowserTesting</a> Selenium Grid:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>
-</code></pre></div>
 <p>To use a server on the <code>https</code> protocol, add <code>--protocol=https</code>:
 (<i>SeleniumBase 1.65.2 and newer uses <code>https</code> automatically for <code>--port=443</code>.</i>)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--protocol<span class="o">=</span>https<span class="w"> </span>--server<span class="o">=</span>IP_ADDRESS<span class="w"> </span>--port<span class="o">=</span>PORT

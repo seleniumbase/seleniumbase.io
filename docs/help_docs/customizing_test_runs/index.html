@@ -2967,9 +2967,6 @@ Here's the command-line option to add to tests: (See <a href="https://github.com
 <p>Here's how to connect to a Sauce Labs Selenium Grid server for running tests:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@ondemand.us-east-1.saucelabs.com<span class="w"> </span>--port<span class="o">=</span><span class="m">443</span><span class="w"> </span>--protocol<span class="o">=</span>https
 </code></pre></div>
-<p>Here's how to connect to a CrossBrowserTesting Selenium Grid server for running tests:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.crossbrowsertesting.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>
-</code></pre></div>
 <p>🌐 Or you can create your own Selenium Grid for test distribution. (<a href="../../seleniumbase/utilities/selenium_grid/ReadMe/">See this ReadMe for details</a>)</p>
 <p>🌐 To use a server on the <code>https</code> protocol, add <code>--protocol=https</code>: (<em>Now automatic if the port is 443.</em>)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--protocol<span class="o">=</span>https<span class="w"> </span>--server<span class="o">=</span>IP_ADDRESS<span class="w"> </span>--port<span class="o">=</span>PORT
