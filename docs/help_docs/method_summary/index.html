@@ -3579,6 +3579,44 @@
 
 <span class="bp">self</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="n">TEXT</span><span class="p">)</span>  <span class="c1"># Calls Python&#39;s print() / Allows for translations</span>
 
+<span class="c1">############</span>
+
+<span class="c1"># **** UC Mode methods. (uc=True / --uc) ****</span>
+
+<span class="c1"># (Mainly for CDP Mode)  -  (For all CDP methods, see the CDP Mode Docs)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># Activate CDP Mode on the given URL</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># disconnect() + sleep(timeout) + connect()</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>  <span class="c1"># Stops the webdriver service to prevent detection</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>  <span class="c1"># Starts the webdriver service to allow actions again</span>
+
+<span class="c1"># (For regular UC Mode)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># (Open in same tab with default reconnect_time)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_open_with_tab</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># (New tab with default reconnect_time)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># (New tab)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_open_with_disconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># New tab + sleep()</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>  <span class="c1"># A stealthy click for evading bot-detection</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_gui_press_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>  <span class="c1"># Use PyAutoGUI to press the keyboard key</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_gui_press_keys</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>  <span class="c1"># Use PyAutoGUI to press a list of keys</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_gui_write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Similar to uc_gui_press_keys(), but faster</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_gui_click_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># PyAutoGUI click screen</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
+
 <span class="c1">############ # &quot;driver&quot;-specific methods added (or modified) by SeleniumBase</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Because driver.get(url) works differently in UC Mode</span>
 
@@ -3681,7 +3719,9 @@
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_disconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># New tab + sleep()</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>  <span class="c1"># disconnect() + sleep(timeout) + connect()</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># Activate CDP Mode on the given URL</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># disconnect() + sleep(timeout) + connect()</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>  <span class="c1"># Stops the webdriver service to prevent detection</span>
 
@@ -3698,12 +3738,8 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># PyAutoGUI click screen</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># driver.uc_gui_click_cf(frame=&quot;iframe&quot;, retry=False, blind=False)</span>
-<span class="c1"># driver.uc_gui_click_rc(frame=&quot;iframe&quot;, retry=False, blind=False)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>  <span class="c1"># (Auto-detects the CAPTCHA)</span>
-<span class="c1"># driver.uc_gui_handle_cf(frame=&quot;iframe&quot;)  # PyAutoGUI click CF Turnstile</span>
-<span class="c1"># driver.uc_gui_handle_rc(frame=&quot;iframe&quot;)  # PyAutoGUI click G. reCAPTCHA</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2>🔵 Examples</h2>
