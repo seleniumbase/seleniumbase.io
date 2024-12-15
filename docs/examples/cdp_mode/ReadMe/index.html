@@ -899,7 +899,7 @@
           <li class="md-nav__item">
   <a href="#cdp-mode-examples-seleniumbaseexamplescdp_mode" class="md-nav__link">
     <span class="md-ellipsis">
-      🐙 CDP Mode Examples (SeleniumBase/examples/cdp_mode)
+      🐙 CDP Mode examples (SeleniumBase/examples/cdp_mode)
     </span>
   </a>
   
@@ -2674,7 +2674,7 @@
           <li class="md-nav__item">
   <a href="#cdp-mode-examples-seleniumbaseexamplescdp_mode" class="md-nav__link">
     <span class="md-ellipsis">
-      🐙 CDP Mode Examples (SeleniumBase/examples/cdp_mode)
+      🐙 CDP Mode examples (SeleniumBase/examples/cdp_mode)
     </span>
   </a>
   
@@ -2721,14 +2721,14 @@
   <h1>🐙 CDP Mode</h1>
 
 <h2 id="cdp-mode"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> CDP Mode 🐙<a class="headerlink" href="#cdp-mode" title="Permanent link">&para;</a></h2>
-<p>🐙 <b translate="no">SeleniumBase</b> <b translate="no">CDP Mode</b> (Chrome Devtools Protocol Mode) is a special mode inside of <b><a href="../../../help_docs/uc_mode/" translate="no"><span translate="no">SeleniumBase UC Mode</span></a></b> that lets bots appear human while controlling the browser with the <b translate="no">CDP-Driver</b>. Although regular <span translate="no">UC Mode</span> can't perform <span translate="no">WebDriver</span> actions while the <code>driver</code> is disconnected from the browser, the <span translate="no">CDP-Driver</span> can still perform actions while maintaining its cover.</p>
+<p>🐙 <b translate="no">SeleniumBase</b> <b translate="no">CDP Mode</b> (Chrome Devtools Protocol Mode) is a special mode inside of <b><a href="../../../help_docs/uc_mode/" translate="no"><span translate="no">SeleniumBase UC Mode</span></a></b> that lets bots appear human while controlling the browser with the <b translate="no">CDP-Driver</b>. Although regular <b translate="no">UC Mode</b> can't perform <span translate="no">WebDriver</span> actions while the <code>driver</code> is disconnected from the browser, the <b translate="no">CDP-Driver</b> can.</p>
 <hr />
 <figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/Mr90iQmNsKM?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
 <p>(<b><a href="https://www.youtube.com/watch?v=Mr90iQmNsKM">Watch the CDP Mode tutorial on YouTube! ▶️</a></b>)</p>
 
 <hr />
 <p>👤 <b translate="no">UC Mode</b> avoids bot-detection by first disconnecting WebDriver from the browser at strategic times, calling special <code>PyAutoGUI</code> methods to bypass CAPTCHAs (as needed), and finally reconnecting the <code>driver</code> afterwards so that WebDriver actions can be performed again. Although this approach works for bypassing simple CAPTCHAs, more flexibility is needed for bypassing bot-detection on websites with advanced protection. (That's where <b translate="no">CDP Mode</b> comes in.)</p>
-<p>🐙 <b translate="no">CDP Mode</b> is based on <a href="https://github.com/HyperionGray/python-chrome-devtools-protocol" translate="no">python-cdp</a>, <a href="https://github.com/HyperionGray/trio-chrome-devtools-protocol" translate="no">trio-cdp</a>, and <a href="https://github.com/ultrafunkamsterdam/nodriver" translate="no">nodriver</a>. <code>trio-cdp</code> is an early implementation of <code>python-cdp</code>, and <code>nodriver</code> is a modern implementation of <code>python-cdp</code>. (Refactored Python-CDP code is imported from <a href="https://github.com/mdmintz/MyCDP" translate="no">MyCDP</a>.)</p>
+<p>🐙 <b translate="no">CDP Mode</b> is based on <a href="https://github.com/HyperionGray/python-chrome-devtools-protocol" translate="no">python-cdp</a>, <a href="https://github.com/HyperionGray/trio-chrome-devtools-protocol" translate="no">trio-cdp</a>, and <a href="https://github.com/ultrafunkamsterdam/nodriver" translate="no">nodriver</a>. <code>trio-cdp</code> is an early implementation of <code>python-cdp</code>, and <code>nodriver</code> is a modern implementation of <code>python-cdp</code>. (Refactored <code>Python-CDP</code> code is imported from <a href="https://github.com/mdmintz/MyCDP" translate="no">MyCDP</a>.)</p>
 <p>🐙 <b translate="no">CDP Mode</b> includes multiple updates to the above, such as:</p>
 <ul>
 <li>Sync methods. (Using <code>async</code>/<code>await</code> is not necessary!)</li>
@@ -2748,17 +2748,41 @@
 <p>(Call that from a <strong>UC Mode</strong> script)</p>
 </blockquote>
 <p>That disconnects WebDriver from Chrome (which prevents detection), and gives you access to <code>sb.cdp</code> methods (which don't trigger anti-bot checks).</p>
+<p>Simple example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;www.planetminecraft.com/account/sign_in/&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">gui_click_element</span><span class="p">(</span><span class="s2">&quot;#turnstile-widget div&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/planet_mc.png" title="SeleniumBase" width="480"></p>
+<p>(If the CAPTCHA wasn't initially bypassed, then the click gets the job done.)</p>
+<p>Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> will install it at run-time, which pauses the script briefly.</p>
+<p>For standard Cloudflare pages, use <code>sb.uc_gui_click_captcha()</code> if Turnstiles aren't initially bypassed. Example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="404"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="350"></p>
+<hr />
 <h3 id="here-are-a-few-common-sbcdp-methods">🐙 Here are a few common <code>sb.cdp</code> methods<a class="headerlink" href="#here-are-a-few-common-sbcdp-methods" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>sb.cdp.click(selector)</code></li>
+<li><code>sb.cdp.click(selector)</code>  (Uses the CDP API to click)</li>
 <li><code>sb.cdp.click_if_visible(selector)</code></li>
-<li><code>sb.cdp.gui_click_element(selector)</code></li>
+<li><code>sb.cdp.gui_click_element(selector)</code>  (Uses <code>PyAutoGUI</code>)</li>
 <li><code>sb.cdp.type(selector, text)</code></li>
-<li><code>sb.cdp.press_keys(selector, text)</code></li>
+<li><code>sb.cdp.press_keys(selector, text)</code>  (Human-speed <code>type</code>)</li>
 <li><code>sb.cdp.select_all(selector)</code></li>
 <li><code>sb.cdp.get_text(selector)</code></li>
 </ul>
-<p>When <code>type()</code> is too fast, use the slower <code>press_keys()</code> to avoid detection. You can also use <code>sb.sleep(seconds)</code> to slow things down. Methods that start with <code>sb.cdp.gui</code> use <code>PyAutoGUI</code> for interaction.</p>
+<p>Methods that start with <code>sb.cdp.gui</code> use <code>PyAutoGUI</code> for interaction.</p>
 <p>To use WebDriver methods again, call:</p>
 <ul>
 <li><strong><code>sb.reconnect()</code></strong> or <strong><code>sb.connect()</code></strong></li>
@@ -2768,13 +2792,14 @@
 <ul>
 <li><strong><code>sb.disconnect()</code></strong></li>
 </ul>
-<p>While disconnected, if you accidentally call a WebDriver method, then SeleniumBase will attempt to use the CDP Mode version of that method (if available). For example, if you accidentally call <code>sb.click(selector)</code> instead of <code>sb.cdp.click(selector)</code>, then your WebDriver call will automatically be redirected to the CDP Mode version. Not all WebDriver methods have a matching CDP Mode method. In that scenario, calling a WebDriver method while disconnected could raise an error, or make WebDriver automatically reconnect first.</p>
+<p>While disconnected, if you accidentally call a WebDriver method, then <b translate="no">SeleniumBase</b> will attempt to use the <b translate="no">CDP Mode</b> version of that method (if available). For example, if you accidentally call <code>sb.click(selector)</code> instead of <code>sb.cdp.click(selector)</code>, then your WebDriver call will automatically be redirected to the <b translate="no">CDP Mode</b> version. Not all WebDriver methods have a matching <b translate="no">CDP Mode</b> method. In that scenario, calling a WebDriver method while disconnected could raise an error, or make WebDriver automatically reconnect first.</p>
 <p>To find out if WebDriver is connected or disconnected, call:</p>
 <ul>
 <li><strong><code>sb.is_connected()</code></strong></li>
 </ul>
+<p><b>Note:</b> When <b translate="no">CDP Mode</b> is initialized from <b translate="no">UC Mode</b>, the WebDriver is disconnected from the browser. (The stealthy <b translate="no">CDP-Driver</b> takes over.)</p>
 <hr />
-<h3 id="cdp-mode-examples-seleniumbaseexamplescdp_mode">🐙 <b translate="no">CDP Mode</b> Examples (<a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">SeleniumBase/examples/cdp_mode</a>)<a class="headerlink" href="#cdp-mode-examples-seleniumbaseexamplescdp_mode" title="Permanent link">&para;</a></h3>
+<h3 id="cdp-mode-examples-seleniumbaseexamplescdp_mode">🐙 <b translate="no">CDP Mode</b> examples (<a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">SeleniumBase/examples/cdp_mode</a>)<a class="headerlink" href="#cdp-mode-examples-seleniumbaseexamplescdp_mode" title="Permanent link">&para;</a></h3>
 <p><div /></p>
 
 <div></div>

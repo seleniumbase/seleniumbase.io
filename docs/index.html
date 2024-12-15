@@ -2609,16 +2609,53 @@
 
 <hr />
 <p>📚 Learn from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples"><strong>over 200 examples</strong> in the <strong>SeleniumBase/examples/</strong> folder</a>.</p>
-<p>👤 Note that <span translate="no">SeleniumBase</span> <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b> (Stealth Mode) has its own ReadMe</a>.</p>
-<p>🐙 Also note that Seleniumbase <a href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b> has its own separate ReadMe</a>.</p>
-<p>ℹ️ Scripts can be called via <code translate="no"><b>python</b></code>, although some <a href="help_docs/syntax_formats/">Syntax Formats</a> expect <a href="https://docs.pytest.org/en/latest/how-to/usage.html" translate="no"><b>pytest</b></a> (a Python unit-testing framework included with SeleniumBase that can discover, collect, and run tests automatically).</p>
-<p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>, which tests login, shopping, and checkout:</p>
+<p>🐙 Note that <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b></a> and <a href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> (Stealth Mode) have separate docs</a>.</p>
+<p>ℹ️ Most scripts run with raw <code translate="no"><b>python</b></code>, although some scripts use <a href="help_docs/syntax_formats/">Syntax Formats</a> that expect <a href="https://docs.pytest.org/en/latest/how-to/usage.html" translate="no"><b>pytest</b></a> (a Python unit-testing framework included with SeleniumBase that can discover, collect, and run tests automatically).</p>
+<hr />
+<p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">raw_google.py</a>, which performs a Google search:</p>
 
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase GitHub page</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[href*=&quot;github.com/seleniumbase/SeleniumBase&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">save_screenshot_to_logs</span><span class="p">()</span>  <span class="c1"># (See ./latest_logs folder)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
 </code></pre></div>
-<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="520" /></a></p>
 <blockquote>
-<p><code>pytest</code> uses <code>--chrome</code> by default unless set differently.</p>
+<p><code>python raw_google.py</code></p>
+</blockquote>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py"><img src="https://seleniumbase.github.io/cdn/gif/google_search.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="480" /></a></p>
+<hr />
+<p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py">test_get_swag.py</a>, which tests a fake shopping site:</p>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>  <span class="c1"># Call pytest</span>
+
+<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[name*=&quot;backpack&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#shopping_cart_container a&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#checkout&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#first-name&quot;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#last-name&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#postal-code&quot;</span><span class="p">,</span> <span class="s2">&quot;77123&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#continue&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#finish&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Thank you for your order!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p><code>pytest test_get_swag.py</code></p>
+</blockquote>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="520" /></a></p>
+<blockquote>
+<p>(The default browser is <code>--chrome</code> if not set.)</p>
 </blockquote>
 <hr />
 <p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py" target="_blank">test_coffee_cart.py</a>, which verifies an e-commerce site:</p>
@@ -2703,7 +2740,7 @@ With raw Selenium, that requires more code:<br />
 <hr />
 <p>📚 <b>Learn about different ways of writing tests:</b></p>
 
-<p align="left">📘📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_simple_login.py">test_simple_login.py</a>, which uses <code translate="no"><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase</a></code> class inheritance, and runs with <a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a> or <a href="https://github.com/mdmintz/pynose">pynose</a>. (Use <code translate="no">self.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
+<p align="left">📗📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_simple_login.py">test_simple_login.py</a>, which uses <code translate="no"><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase</a></code> class inheritance, and runs with <a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a> or <a href="https://github.com/mdmintz/pynose">pynose</a>. (Use <code translate="no">self.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
@@ -2720,20 +2757,7 @@ With raw Selenium, that requires more code:<br />
         <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p align="left">📗📝 Here's a test from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/sb_fixture_tests.py">sb_fixture_tests.py</a>, which uses the <b><code translate="no">sb</code></b> <code translate="no">pytest</code> fixture. Runs with <a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a>. (Use <code translate="no">sb.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
-
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_sb_fixture_with_no_class</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p align="left">📙📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_sb.py">raw_login_sb.py</a>, which uses the <b><code translate="no">SB</code></b> Context Manager. Runs with pure <code translate="no">python</code>. (Use <code translate="no">sb.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
+<p align="left">📘📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_sb.py">raw_login_sb.py</a>, which uses the <b><code translate="no">SB</code></b> Context Manager. Runs with pure <code translate="no">python</code>. (Use <code translate="no">sb.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
@@ -2748,22 +2772,7 @@ With raw Selenium, that requires more code:<br />
     <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p align="left">📔📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_context.py">raw_login_context.py</a>, which uses the <b><code translate="no">DriverContext</code></b> Manager. Runs with pure <code translate="no">python</code>. (The <code translate="no">driver</code> is an improved version of Selenium's raw <code translate="no">driver</code>, with more methods.)</p>
-
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">DriverContext</span>
-
-<span class="k">with</span> <span class="n">DriverContext</span><span class="p">()</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p align="left">📔📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_driver.py">raw_login_driver.py</a>, which uses the <b><code translate="no">Driver</code></b> Manager. Runs with pure <code translate="no">python</code>. (The <code>driver</code> is an improved version of Selenium's raw <code translate="no">driver</code>, with more methods.)</p>
+<p align="left">📙📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_driver.py">raw_login_driver.py</a>, which uses the <b><code translate="no">Driver</code></b> Manager. Runs with pure <code translate="no">python</code>. (The <code>driver</code> is an improved version of Selenium's raw <code translate="no">driver</code>, with more methods.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
 
@@ -2780,21 +2789,6 @@ With raw Selenium, that requires more code:<br />
     <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</code></pre></div>
-<p align="left">📕📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/behave_bdd/features/login_app.feature">login_app.feature</a>, which uses <a translate="no" href="https://behave.readthedocs.io/en/stable/gherkin.html#features" target="_blank">behave-BDD Gherkin</a> syntax. Runs with <code translate="no">behave</code>. (<a href="examples/behave_bdd/ReadMe/">Learn about the <b>SeleniumBase behave-BDD</b> integration</a>)</p>
-
-<div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> SeleniumBase scenarios for the Simple App</span>
-
-<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Verify the Simple App (Login / Logout)</span>
-<span class="k">    Given </span><span class="nf">Open &quot;</span><span class="s">seleniumbase.io/simple/login</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Type &quot;</span><span class="s">demo_user</span><span class="nf">&quot; into &quot;</span><span class="s">#username</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Type &quot;</span><span class="s">secret_pass</span><span class="nf">&quot; into &quot;</span><span class="s">#password</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Click &#39;a:contains(&quot;</span><span class="s">Sign in</span><span class="nf">&quot;)&#39;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Assert exact text &quot;</span><span class="s">Welcome!</span><span class="nf">&quot; in &quot;</span><span class="s">h1</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Assert element &quot;</span><span class="s">img#image1</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Highlight &quot;</span><span class="s">#image1</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Click link &quot;</span><span class="s">Sign out</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Assert text &quot;</span><span class="s">signed out</span><span class="nf">&quot; in &quot;</span><span class="s">#top_message</span><span class="nf">&quot;</span>
 </code></pre></div>
 <hr />
 <p><a id="python_installation"></a></p>
@@ -2876,20 +2870,21 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <details>
 <summary> ▶️ Here's sample output from a chromedriver download. (<b>click to expand</b>)</summary>
 
-<div class="highlight"><pre><span></span><code>***<span class="w"> </span>chromedriver<span class="w"> </span>to<span class="w"> </span><span class="nv">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">121</span>.0.6167.85<span class="w"> </span><span class="o">(</span>Latest<span class="w"> </span>Stable<span class="o">)</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code>***<span class="w"> </span>chromedriver<span class="w"> </span>to<span class="w"> </span><span class="nv">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">131</span>.0.6778.108<span class="w"> </span><span class="o">(</span>Latest<span class="w"> </span>Stable<span class="o">)</span><span class="w"> </span>
 
 Downloading<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </span>from:
-https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.85/mac-arm64/chromedriver-mac-arm64.zip<span class="w"> </span>...
+https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.108/mac-arm64/chromedriver-mac-arm64.zip<span class="w"> </span>...
 Download<span class="w"> </span>Complete!
 
 Extracting<span class="w"> </span><span class="o">[</span><span class="s1">&#39;chromedriver&#39;</span><span class="o">]</span><span class="w"> </span>from<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </span>...
 Unzip<span class="w"> </span>Complete!
 
 The<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>chromedriver<span class="o">]</span><span class="w"> </span>was<span class="w"> </span>saved<span class="w"> </span>to:
-/Users/michael/github/SeleniumBase/seleniumbase/drivers/chromedriver
+~/github/SeleniumBase/seleniumbase/drivers/
+chromedriver
 
-Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w"> </span><span class="m">121</span>.0.6167.85<span class="o">]</span><span class="w"> </span>executable<span class="w"> </span>...
-<span class="o">[</span>chromedriver<span class="w"> </span><span class="m">121</span>.0.6167.85<span class="o">]</span><span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>use!
+Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w"> </span><span class="m">131</span>.0.6778.108<span class="o">]</span><span class="w"> </span>executable<span class="w"> </span>...
+<span class="o">[</span>chromedriver<span class="w"> </span><span class="m">131</span>.0.6778.108<span class="o">]</span><span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>use!
 </code></pre></div>
 
 </details>
@@ -2904,7 +2899,7 @@ Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w
 pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="520" /></a></p>
-<p align="left"><b>Here's the code for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
+<p align="left"><b>Here's the full code for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
