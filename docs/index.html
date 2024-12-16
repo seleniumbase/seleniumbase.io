@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -2609,26 +2609,38 @@
 
 <hr />
 <p>📚 Learn from <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples"><strong>over 200 examples</strong> in the <strong>SeleniumBase/examples/</strong> folder</a>.</p>
-<p>🐙 Note that <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b></a> and <a href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> (Stealth Mode) have separate docs</a>.</p>
+<p>🐙 Note that <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b></a> / <a href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> (Stealth Mode) have their own ReadMe files.</p>
 <p>ℹ️ Most scripts run with raw <code translate="no"><b>python</b></code>, although some scripts use <a href="help_docs/syntax_formats/">Syntax Formats</a> that expect <a href="https://docs.pytest.org/en/latest/how-to/usage.html" translate="no"><b>pytest</b></a> (a Python unit-testing framework included with SeleniumBase that can discover, collect, and run tests automatically).</p>
 <hr />
 <p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">raw_google.py</a>, which performs a Google search:</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase GitHub page</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[href*=&quot;github.com/seleniumbase/SeleniumBase&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">save_screenshot_to_logs</span><span class="p">()</span>  <span class="c1"># (See ./latest_logs folder)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[href*=&quot;github.com/seleniumbase/&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">save_screenshot_to_logs</span><span class="p">()</span>  <span class="c1"># ./latest_logs/</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
 </code></pre></div>
 <blockquote>
 <p><code>python raw_google.py</code></p>
 </blockquote>
-<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py"><img src="https://seleniumbase.github.io/cdn/gif/google_search.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="480" /></a></p>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py"><img src="https://seleniumbase.github.io/cdn/gif/google_search.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="420" /></a></p>
 <hr />
-<p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py">test_get_swag.py</a>, which tests a fake shopping site:</p>
+<p align="left">📗 Here's an example of bypassing bot-detection on a site that uses Cloudflare: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a></p>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>  <span class="c1"># PyAutoGUI if needed</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">save_screenshot_to_logs</span><span class="p">()</span>
+</code></pre></div>
+<p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="332"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="288"></p>
+<hr />
+<p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py">test_get_swag.py</a>, which tests a QA shopping site:</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>  <span class="c1"># Call pytest</span>
@@ -2653,7 +2665,7 @@
 <blockquote>
 <p><code>pytest test_get_swag.py</code></p>
 </blockquote>
-<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="520" /></a></p>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="480" /></a></p>
 <blockquote>
 <p>(The default browser is <code>--chrome</code> if not set.)</p>
 </blockquote>
@@ -2662,7 +2674,7 @@
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_coffee_cart.py<span class="w"> </span>--demo
 </code></pre></div>
-<p align="left"><a href="https://seleniumbase.io/coffee/" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/coffee_cart.gif" width="520" alt="SeleniumBase Coffee Cart Test" title="SeleniumBase Coffee Cart Test" /></a></p>
+<p align="left"><a href="https://seleniumbase.io/coffee/" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/coffee_cart.gif" width="480" alt="SeleniumBase Coffee Cart Test" title="SeleniumBase Coffee Cart Test" /></a></p>
 
 <blockquote>
 <p><p>(<code translate="no">--demo</code> mode slows down tests and highlights actions)</p></p>
@@ -2673,7 +2685,7 @@
 
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py
 </code></pre></div>
-<p align="left"><a href="https://seleniumbase.io/demo_page" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/demo_page_5.gif" width="520" alt="SeleniumBase Example" title="SeleniumBase Example" /></a></p>
+<p align="left"><a href="https://seleniumbase.io/demo_page" target="_blank"><img src="https://seleniumbase.github.io/cdn/gif/demo_page_5.gif" width="480" alt="SeleniumBase Example" title="SeleniumBase Example" /></a></p>
 
 <blockquote>
 <p>Easy to type, click, select, toggle, drag &amp; drop, and more.</p>
@@ -2898,7 +2910,7 @@ Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/
 pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
-<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="520" /></a></p>
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="480" /></a></p>
 <p align="left"><b>Here's the full code for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
@@ -3720,7 +3732,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
     <script id="__config" type="application/json">{"base": ".", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
