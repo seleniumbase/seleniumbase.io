@@ -2614,7 +2614,7 @@
 <hr />
 <p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">raw_google.py</a>, which performs a Google search:</p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
@@ -2630,7 +2630,7 @@
 <hr />
 <p align="left">📗 Here's an example of bypassing Cloudflare's challenge page: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a></p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
@@ -2642,11 +2642,11 @@
 <hr />
 <p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py">test_get_swag.py</a>, which tests an e-commerce site:</p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>  <span class="c1"># Call pytest</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -2754,11 +2754,11 @@ With raw Selenium, that requires more code:<br />
 
 <p align="left">📗📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_simple_login.py">test_simple_login.py</a>, which uses <code translate="no"><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase</a></code> class inheritance, and runs with <a href="https://docs.pytest.org/en/latest/how-to/usage.html">pytest</a> or <a href="https://github.com/mdmintz/pynose">pynose</a>. (Use <code translate="no">self.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
@@ -2771,7 +2771,7 @@ With raw Selenium, that requires more code:<br />
 </code></pre></div>
 <p align="left">📘📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_sb.py">raw_login_sb.py</a>, which uses the <b><code translate="no">SB</code></b> Context Manager. Runs with pure <code translate="no">python</code>. (Use <code translate="no">sb.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">()</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
@@ -2786,7 +2786,7 @@ With raw Selenium, that requires more code:<br />
 </code></pre></div>
 <p align="left">📙📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_driver.py">raw_login_driver.py</a>, which uses the <b><code translate="no">Driver</code></b> Manager. Runs with pure <code translate="no">python</code>. (The <code>driver</code> is an improved version of Selenium's raw <code translate="no">driver</code>, with more methods.)</p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
@@ -2913,11 +2913,11 @@ pytest<span class="w"> </span>my_first_test.py
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" title="SeleniumBase Test" width="480" /></a></p>
 <p align="left"><b>Here's the full code for <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -3048,11 +3048,11 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--demo
 </code></pre></div>
 <p>🔵 <code>time.sleep(seconds)</code> can be used to make a test wait at a specific spot:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Do nothing for 3 seconds.</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Do nothing for 3 seconds.</span>
 </code></pre></div>
 <p>🔵 <strong>Debug Mode</strong> with Python's built-in <strong><a href="https://docs.python.org/3/library/pdb.html">pdb</a></strong> library helps you debug tests:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
-<span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
 <span class="nb">breakpoint</span><span class="p">()</span>  <span class="c1"># Shortcut for &quot;import pdb; pdb.set_trace()&quot;</span>
 </code></pre></div>
 <blockquote>
@@ -3252,12 +3252,12 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 
 <p>Let's try an example of a test that fails:</p>
 <div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot; test_fail.py &quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">test_find_army_of_robots_on_xkcd_desert_island</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_find_army_of_robots_on_xkcd_desert_island</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/731/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#ARMY_OF_ROBOTS&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
 </code></pre></div>
@@ -3459,7 +3459,7 @@ Here's an example of running tests with some additional features enabled:
     <span class="n">current_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_the_nsa</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">current_url</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dark Zone Found&quot;</span><span class="p">)</span>  <span class="c1"># Not a real SeleniumBase method</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
@@ -3472,7 +3472,7 @@ Here's an example of running tests with some additional features enabled:
 <details>
 <summary> ▶️ Click for a longer example of <code translate="no">is_text_visible():</code></summary>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="s2">&quot;div.superbowl_</span><span class="si">%s</span><span class="s2"> div.commercials div.transcript div.picard&quot;</span> <span class="o">%</span> <span class="n">superbowl_year</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Yes, it was I who summoned you all here.&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Picard Paramount+ Superbowl Ad 2020&quot;</span>
@@ -3598,11 +3598,11 @@ You'd know this because the web page would contain something like the following 
 
 <p>Let's say you want to verify multiple different elements on a web page in a single test, but you don't want the test to fail until you verified several elements at once so that you don't have to rerun the test to find more missing elements on the same page. That's where deferred asserts come in. Here's an example:</p>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">DeferredAssertTests</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_deferred_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DeferredAssertTests</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_deferred_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/993/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">&quot;#comic&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Brand Identity&quot;]&#39;</span><span class="p">)</span>

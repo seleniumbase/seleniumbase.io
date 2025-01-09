@@ -2731,7 +2731,7 @@
 <li>Has special <code>uc_*()</code> methods for bypassing CAPTCHAs.</li>
 </ul>
 <p>👤 Here's a simple example with the <b><code translate="no">Driver</code></b> manager:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
@@ -2741,7 +2741,7 @@
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="370"></p>
 <p>👤 Here's an example with the <b><code translate="no">SB</code></b> manager (which has more methods and functionality than the <b><code translate="no">Driver</code></b> format):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
@@ -2750,7 +2750,7 @@
 </code></pre></div>
 <p>(Note: If running UC Mode scripts on headless Linux machines, then you'll need to use the <b><code translate="no">SB</code></b> manager instead of the <b><code translate="no">Driver</code></b> manager because the <b><code translate="no">SB</code></b> manager includes a special virtual display that allows for <b><code translate="no">PyAutoGUI</code></b> actions.)</p>
 <p>👤 Here's a longer example: (Note that <code translate="no">sb.uc_gui_click_captcha()</code> performs a special click using <b><code translate="no">PyAutoGUI</code></b> if a CAPTCHA is detected.)</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
@@ -2764,7 +2764,7 @@
 </code></pre></div>
 <p>👤 Here's an example <b>where clicking the checkbox is required</b>, even for humans:<br />(Commonly seen on forms that are CAPTCHA-protected.)</p>
 <p><img src="https://seleniumbase.github.io/other/cf_turnstile.png" title="SeleniumBase" width="260"></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span>
@@ -2778,7 +2778,7 @@
 <p>If running on a Linux server, <code>uc_gui_handle_captcha()</code> might not be good enough. Switch to <code>uc_gui_click_captcha()</code> to be more stealthy. Note that these methods auto-detect between CF Turnstile and Google reCAPTCHA.</p>
 <p>Sometimes you need to add <code translate="no">incognito=True</code> with <code translate="no">uc=True</code> to maximize your anti-detection abilities. (Some websites can detect you if you don't do that.)</p>
 <p>👤 Here's an example <b>where the CAPTCHA appears after submitting a form</b>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ahrefs.com/website-authority-checker&quot;</span>
@@ -2797,7 +2797,7 @@
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/ahrefs_bypass.png" title="SeleniumBase" width="540"></p>
 <p>👤 Here, <b>the CAPTCHA appears after clicking to go to the sign-in screen</b>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.thaiticketmajor.com/concert/&quot;</span>
@@ -2808,7 +2808,7 @@
 <p><img src="https://seleniumbase.github.io/other/ttm_bypass.png" title="SeleniumBase" width="540"></p>
 <hr />
 <p>👤 <b>On Linux</b>, use <code>sb.uc_gui_click_captcha()</code> to handle CAPTCHAs (Cloudflare Turnstiles):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.virtualmanager.com/en/login&quot;</span>
@@ -2839,7 +2839,7 @@
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pixelscan.py">SeleniumBase/examples/raw_pixelscan.py</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://pixelscan.net/&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -2923,7 +2923,7 @@
 <p>👤 <code translate="no">uc_gui_click_rc(frame="iframe", retry=False, blind=False)</code> is for reCAPTCHA. This may only work a few times before not working anymore... not because Selenium was detected, but because reCAPTCHA uses advanced AI to detect unusual activity, unlike the CF Turnstile, which only uses basic detection.</p>
 <hr />
 <p>👤 To find out if <b translate="no">UC Mode</b> will work at all on a specific site (before adjusting for timing), load your site with the following script:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
@@ -2937,12 +2937,12 @@
 <p>(Then <b><code translate="no">pytest-xdist</code></b> is automatically used to spin up and process the threads.)</p>
 <p>If you don't want to use <b><code translate="no">pytest</code></b> for multithreading, then you'll need to do a little more work. That involves using a different multithreading library, (eg. <b><code translate="no">concurrent.futures</code></b>), and making sure that thread-locking is done correctly for processes that share resources. To handle that thread-locking, include <b><code translate="no">sys.argv.append("-n")</code></b> in your <b>SeleniumBase</b> file.</p>
 <p>Here's a sample script that uses <b><code translate="no">concurrent.futures</code></b> for spinning up multiple processes:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
-<span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">Driver</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">)</span>  <span class="c1"># Tell SeleniumBase to do thread-locking as needed</span>
 
-<span class="k">def</span> <span class="nf">launch_driver</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">launch_driver</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>

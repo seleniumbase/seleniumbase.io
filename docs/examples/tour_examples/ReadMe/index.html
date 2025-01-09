@@ -2944,12 +2944,12 @@ pytest<span class="w"> </span>google_tour.py
 </blockquote>
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple tours at once. Then, when you're adding a step or playing a tour, SeleniumBase knows which tour you're referring too. You can avoid using the <code>name</code> arg for multiple tours if you play a tour before creating a new one.</p>
 <h3 id="heres-how-the-code-looks">Here's how the code looks<a class="headerlink" href="#heres-how-the-code-looks" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">test_google_tour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_google_tour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://google.com/ncr&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hide_elements</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>

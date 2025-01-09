@@ -2659,11 +2659,11 @@ pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/cdn/gif/my_first_test_1.gif" title="SeleniumBase" /></p>
 <p><b>此处为相关代码 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">my_first_test.py</a>:</b></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -2715,11 +2715,11 @@ pytest<span class="w"> </span>my_first_test.py
 <span class="bp">self</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="n">FILE_NAME</span><span class="p">)</span>  <span class="c1"># 保存当前页面的截图</span>
 </code></pre></div>
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/translations/chinese_test_1.py">chinese_test_1.py</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.translate.chinese</span> <span class="kn">import</span> <span class="n">硒测试用例</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.translate.chinese</span><span class="w"> </span><span class="kn">import</span> <span class="n">硒测试用例</span>
 <span class="n">硒测试用例</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="s2">&quot;https://zh.wikipedia.org/wiki/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言标题</span><span class="p">(</span><span class="s2">&quot;维基百科，自由的百科全书&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;a[title=&quot;Wikipedia:关于&quot;]&#39;</span><span class="p">)</span>
@@ -2775,7 +2775,7 @@ pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <p>上述相似的代码在 Webdriver中变现的不是特别好:
 (<i>而且下面的代码不包含 SeleniumBase 的智能等待.</i>)</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.common.by</span><span class="w"> </span><span class="kn">import</span> <span class="n">By</span>
 <span class="n">element</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">)</span>
 <span class="n">element</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="n">element</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&quot;dogs&quot;</span><span class="p">)</span>
@@ -2835,9 +2835,9 @@ Python类名可以是任何东西，因为SeleniumBase的<code>BaseCase</code>�
 </code></pre></div>
 <p>您可以在脚本中使用以下内容来帮助您调试问题:
 (<i>如果使用pdb，请确保将“-s”添加到命令行选项中，除非已经在pytest.ini中</i>)</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
-<span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
-<span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Enter debugging mode. n = next, c = continue, s = step.</span>
 </code></pre></div>
 <p><b>要暂停抛出异常或错误的活动测试，请添加<code>--pdb -s</code>:</b></p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--pdb<span class="w"> </span>-s
@@ -2976,11 +2976,11 @@ pytest<span class="w"> </span>my_first_test.py
 
 <p>让我们尝试一个失败的测试示例:</p>
 <div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot; test_fail.py &quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">test_find_army_of_robots_on_xkcd_desert_island</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_find_army_of_robots_on_xkcd_desert_island</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/731/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#ARMY_OF_ROBOTS&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
 </code></pre></div>
@@ -3087,7 +3087,7 @@ pytest<span class="w"> </span>my_first_test.py
 </code></pre></div>
 <p>您也可以使用self.add_text()或WebDriver .send_keys()命令，但是如果文本框中已经有文本，这些命令不会首先清除文本框
 如果您想键入特殊的键，这也很容易。这里有一个例子:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.common.keys</span><span class="w"> </span><span class="kn">import</span> <span class="n">Keys</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;textarea&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">SPACE</span> <span class="o">+</span> <span class="n">Keys</span><span class="o">.</span><span class="n">BACK_SPACE</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># The backspace should cancel out the space, leaving you with the newline</span>
 </code></pre></div>
 <h4>从页面上的元素获取文本</h4>
@@ -3144,13 +3144,13 @@ pytest<span class="w"> </span>my_first_test.py
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_the_nsa</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">current_url</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dark Zone Found&quot;</span><span class="p">)</span>  <span class="c1"># Not a real SeleniumBase method</span>
 </code></pre></div></p>
 <p>Another example:
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></p>
 <p>is_text_visible(text, selector)  # is text visible on a page</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="s2">&quot;div.superbowl_</span><span class="si">%s</span><span class="s2"> div.commercials div.transcript div.picard&quot;</span> <span class="o">%</span> <span class="n">superbowl_year</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;For the Love of Marketing and Earl Grey Tea!&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Picard HubSpot Superbowl Ad 2015&quot;</span>
@@ -3232,11 +3232,11 @@ pytest<span class="w"> </span>my_first_test.py
 <h4>使用延迟的断言:</h4>
 
 <p>假设您想在单个测试中验证web页面上的多个不同元素，但是您不希望在一次验证多个元素之前测试失败，这样您就不必重新运行测试来查找同一页面上的更多缺失元素。这就是延迟断言的用武之地。这里的例子:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 
-<span class="k">class</span> <span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">test_delayed_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_delayed_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://xkcd.com/993/&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;#comic&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">delayed_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Brand Identity&quot;]&#39;</span><span class="p">)</span>

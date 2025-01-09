@@ -2727,6 +2727,10 @@
 <p>(<b><a href="https://www.youtube.com/watch?v=Mr90iQmNsKM">Watch the CDP Mode tutorial on YouTube! ▶️</a></b>)</p>
 
 <hr />
+<figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/vt2zsdiNh3U?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
+<p>(<b><a href="https://www.youtube.com/watch?v=vt2zsdiNh3U">Watch "Hacking websites with CDP" on YouTube! ▶️</a></b>)</p>
+
+<hr />
 <p>👤 <b translate="no">UC Mode</b> avoids bot-detection by first disconnecting WebDriver from the browser at strategic times, calling special <code>PyAutoGUI</code> methods to bypass CAPTCHAs (as needed), and finally reconnecting the <code>driver</code> afterwards so that WebDriver actions can be performed again. Although this approach works for bypassing simple CAPTCHAs, more flexibility is needed for bypassing bot-detection on websites with advanced protection. (That's where <b translate="no">CDP Mode</b> comes in.)</p>
 <p>🐙 <b translate="no">CDP Mode</b> is based on <a href="https://github.com/HyperionGray/python-chrome-devtools-protocol" translate="no">python-cdp</a>, <a href="https://github.com/HyperionGray/trio-chrome-devtools-protocol" translate="no">trio-cdp</a>, and <a href="https://github.com/ultrafunkamsterdam/nodriver" translate="no">nodriver</a>. <code>trio-cdp</code> is an early implementation of <code>python-cdp</code>, and <code>nodriver</code> is a modern implementation of <code>python-cdp</code>. (Refactored <code>Python-CDP</code> code is imported from <a href="https://github.com/mdmintz/MyCDP" translate="no">MyCDP</a>.)</p>
 <p>🐙 <b translate="no">CDP Mode</b> includes multiple updates to the above, such as:</p>
@@ -2749,7 +2753,7 @@
 </blockquote>
 <p>That disconnects WebDriver from Chrome (which prevents detection), and gives you access to <code>sb.cdp</code> methods (which don't trigger anti-bot checks).</p>
 <p>Simple example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
@@ -2762,7 +2766,7 @@
 <p>Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
 <hr />
 <p>For Cloudflare CAPTCHAs that appear as part of a websites, you may need to use <code>sb.cdp.gui_click_element(selector)</code> instead (if the Turnstile wasn't bypassed automatically). Example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;www.planetminecraft.com/account/sign_in/&quot;</span>
@@ -2810,7 +2814,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <details>
 <summary> ▶️ 🔖 <b>Example 1: (Pokemon site using Incapsula/Imperva protection with invisible reCAPTCHA)</b></summary>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.pokemon.com/us&quot;</span>
@@ -2868,7 +2872,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <details>
 <summary> ▶️ 🔖 <b>Example 2: (Hyatt site using Kasada protection)</b></summary>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.hyatt.com/&quot;</span>
@@ -2914,7 +2918,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <details>
 <summary> ▶️ 🔖 <b>Example 3: (BestWestern site using DataDome protection)</b></summary>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.bestwestern.com/en_US.html&quot;</span>
@@ -2956,18 +2960,20 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <details>
 <summary> ▶️ 🔖 <b>Example 4: (Walmart site using Akamai protection with PerimeterX)</b></summary>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.walmart.com/&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;[data-automation-id*=&quot;close-mark&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">mouse_click</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">search</span> <span class="o">=</span> <span class="s2">&quot;Settlers of Catan Board Game&quot;</span>
     <span class="n">required_text</span> <span class="o">=</span> <span class="s2">&quot;Catan&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="n">search</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">3.8</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="s1">&#39;[data-testid=&quot;skyline-ad&quot;]&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** Walmart Search for &quot;</span><span class="si">%s</span><span class="s1">&quot;:&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    (Results must contain &quot;</span><span class="si">%s</span><span class="s1">&quot;.)&#39;</span> <span class="o">%</span> <span class="n">required_text</span><span class="p">)</span>
     <span class="n">unique_item_text</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3000,7 +3006,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <details>
 <summary> ▶️ 🔖 <b>Example 5: (Nike site using Shape Security)</b></summary>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">SB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_code</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.nike.com/&quot;</span>

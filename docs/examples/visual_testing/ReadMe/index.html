@@ -2666,11 +2666,11 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;helloworld&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p>Here's an example where clicking a button makes a hidden element visible:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_applitools_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_applitools_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://applitools.com/helloworld?diff1&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creating baseline in &quot;visual_baseline&quot; folder.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;helloworld&quot;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2694,11 +2694,11 @@ First differing element 39:
 * HTML tag attribute values don&#39;t match the baseline!
 </code></pre></div>
 <p>Here's an example where a button is removed from a web page:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_python_home_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_python_home_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://python.org/&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creating baseline in &quot;visual_baseline&quot; folder.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;python_home&quot;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2723,11 +2723,11 @@ First differing element 33:
 <p>Here's the <code>side_by_side.html</code> file for that, (from the <code>./latest_logs/</code> folder), which shows a visual comparison of the two screenshots as a result of the missing "Donate" button:</p>
 <p><img style="border: 1px solid #222222;" src="https://seleniumbase.github.io/cdn/img/visual_comparison.png" title="SeleniumBase Visual Comparison" /></p>
 <p>Here's another example, where a web site logo is resized:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_xkcd_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_xkcd_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://xkcd.com/554/&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creating baseline in &quot;visual_baseline&quot; folder.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xkcd_554&quot;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>

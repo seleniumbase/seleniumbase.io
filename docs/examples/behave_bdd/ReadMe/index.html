@@ -2723,42 +2723,42 @@ Took<span class="w"> </span>0m1.672s
 <div class="highlight"><pre><span></span><code>behave<span class="w"> </span>--steps-catalog
 </code></pre></div>
 <p>🐝 SeleniumBase includes several pre-made Behave steps, which you can use by creating a Python file with the following line in your <code>features/steps/</code> directory:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase.behave</span> <span class="kn">import</span> <span class="n">steps</span>  <span class="c1"># noqa</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave</span><span class="w"> </span><span class="kn">import</span> <span class="n">steps</span>  <span class="c1"># noqa</span>
 </code></pre></div>
 <p>🐝 Inside your <code>features/environment.py</code> file, you should have the following:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave</span> <span class="kn">import</span> <span class="n">behave_sb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave</span><span class="w"> </span><span class="kn">import</span> <span class="n">behave_sb</span>
 <span class="n">behave_sb</span><span class="o">.</span><span class="n">set_base_class</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">)</span>  <span class="c1"># Accepts a BaseCase subclass</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">before_all</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">before_feature</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">before_scenario</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">before_step</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">after_step</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">after_scenario</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">after_feature</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.behave.behave_sb</span> <span class="kn">import</span> <span class="n">after_all</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">before_all</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">before_feature</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">before_scenario</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">before_step</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">after_step</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">after_scenario</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">after_feature</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.behave.behave_sb</span><span class="w"> </span><span class="kn">import</span> <span class="n">after_all</span>  <span class="c1"># noqa</span>
 </code></pre></div>
 <p>🐝 If you've already created a subclass of <code>BaseCase</code> with custom methods, you can swap <code>BaseCase</code> in with your own subclass, which will allow you to easily use your own custom methods in your Behave step definitions.</p>
 <p>🐝 Here's an example Python file in the <code>features/steps/</code> folder:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">behave</span> <span class="kn">import</span> <span class="n">step</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">behave</span><span class="w"> </span><span class="kn">import</span> <span class="n">step</span>
 
 
 <span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Open the Swag Labs Login Page&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">go_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">go_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">clear_local_storage</span><span class="p">()</span>
 
 
 <span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Login to Swag Labs with </span><span class="si">{user}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">login_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">login_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Verify that the current user is logged in&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">verify_logged_in</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">verify_logged_in</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#header_container&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#react-burger-menu-btn&quot;</span><span class="p">)</span>
@@ -2766,7 +2766,7 @@ Took<span class="w"> </span>0m1.672s
 
 
 <span class="nd">@step</span><span class="p">(</span><span class="s1">&#39;Add &quot;</span><span class="si">{item}</span><span class="s1">&quot; to cart&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">add_item_to_cart</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_item_to_cart</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div.inventory_item:contains(&quot;</span><span class="si">%s</span><span class="s1">&quot;) button[name*=&quot;add&quot;]&#39;</span> <span class="o">%</span> <span class="n">item</span><span class="p">)</span>
 </code></pre></div>

@@ -2854,9 +2854,9 @@ pytest<span class="w"> </span>-n8
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Debugging tests:</h3>
 
 <p>🔵 You can use the following calls in your scripts to help you debug issues:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
-<span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Debug Mode. n: next, c: continue, s: step, u: up, d: down.</span>
-<span class="kn">import</span> <span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Debug Mode. n: next, c: continue, s: step, u: up, d: down.</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Makes the test wait and do nothing for 5 seconds.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Debug Mode. n: next, c: continue, s: step, u: up, d: down.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span><span class="p">;</span> <span class="n">pytest</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Debug Mode. n: next, c: continue, s: step, u: up, d: down.</span>
 </code></pre></div>
 <p>🔵 To pause an active test that throws an exception or error, (<em>and keep the browser window open while </em><em>Debug Mode</em><em> begins in the console</em>), add <strong><code>--pdb</code></strong> as a <code>pytest</code> option:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py<span class="w"> </span>--pdb
@@ -2886,12 +2886,12 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <ul><li>Tests are grouped by the <code translate="no">xdist_group</code> mark. Groups are distributed to available workers as whole units. This guarantees that all tests with the same <code translate="no">xdist_group</code> name run in the same worker.</li></ul>
 
 <div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xdist_group</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;group1&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_1</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_1</span><span class="p">():</span>
     <span class="k">pass</span>
 
-<span class="k">class</span> <span class="nc">Test</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="p">:</span>
     <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">xdist_group</span><span class="p">(</span><span class="s2">&quot;group1&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">test_2</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_2</span><span class="p">():</span>
         <span class="k">pass</span>
 </code></pre></div>
 

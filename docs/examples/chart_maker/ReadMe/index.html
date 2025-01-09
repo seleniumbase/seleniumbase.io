@@ -2628,11 +2628,11 @@
 pytest<span class="w"> </span>my_chart.py
 </code></pre></div>
 <p>Here's the code for that pie chart presentation (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/chart_maker/my_chart.py">GitHub =&gt; seleniumbase/SeleniumBase/examples/chart_maker/my_chart.py</a>):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Automated Tests&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Passed&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#95d96f&quot;</span><span class="p">)</span>
@@ -2654,11 +2654,11 @@ pytest<span class="w"> </span>chart_presentation.py
 <p><a href="https://seleniumbase.github.io/other/multi_series_chart.png"><img width="500" src="https://seleniumbase.github.io/other/multi_series_chart.png" title="Screenshot"></a><br></p>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Here's a line chart example:</h3>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Time Outside&quot;</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;Last Week&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;Minutes&quot;</span><span class="p">)</span>
@@ -2678,11 +2678,11 @@ pytest<span class="w"> </span>chart_presentation.py
 <p>Because that presentation above has an <code>interval</code> set to <code>8</code>, it will automatically advance to the next slide after 8 seconds. (Or exit if there are no more slides.)</p>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> For a more advanced example (multiple charts in a presentation):</h3>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_chart_maker_presentation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_chart_maker_presentation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;sky&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Automated Tests&quot;</span><span class="p">)</span>

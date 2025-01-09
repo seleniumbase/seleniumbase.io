@@ -2623,10 +2623,10 @@
 <p><b>SeleniumBase</b> supports the following 10 languages: <i>English</i>, <i>Chinese</i>, <i>Dutch</i>, <i>French</i>, <i>Italian</i>, <i>Japanese</i>, <i>Korean</i>, <i>Portuguese</i>, <i>Russian</i>, and <i>Spanish</i>. (Examples can be found in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/translations">SeleniumBase/examples/translations</a>)</p>
 <p>Multi-language tests run with <strong>pytest</strong> like other tests. Test methods have a one-to-one mapping to supported languages. Here's an example of a translated test:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Chinese Translation</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.translate.chinese</span> <span class="kn">import</span> <span class="n">硒测试用例</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.translate.chinese</span><span class="w"> </span><span class="kn">import</span> <span class="n">硒测试用例</span>
 
-<span class="k">class</span> <span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">我的测试类</span><span class="p">(</span><span class="n">硒测试用例</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_例子1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">开启</span><span class="p">(</span><span class="s2">&quot;https://zh.wikipedia.org/wiki/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言标题</span><span class="p">(</span><span class="s2">&quot;维基百科，自由的百科全书&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">断言元素</span><span class="p">(</span><span class="s1">&#39;a[title=&quot;Wikipedia:关于&quot;]&#39;</span><span class="p">)</span>
@@ -2641,10 +2641,10 @@
 </code></pre></div>
 <p>Here's another example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Japanese Translation</span>
-<span class="kn">from</span> <span class="nn">seleniumbase.translate.japanese</span> <span class="kn">import</span> <span class="n">セレニウムテストケース</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.translate.japanese</span><span class="w"> </span><span class="kn">import</span> <span class="n">セレニウムテストケース</span>
 
-<span class="k">class</span> <span class="nc">私のテストクラス</span><span class="p">(</span><span class="n">セレニウムテストケース</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_例1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">私のテストクラス</span><span class="p">(</span><span class="n">セレニウムテストケース</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_例1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">を開く</span><span class="p">(</span><span class="s2">&quot;https://ja.wikipedia.org/wiki/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">テキストを確認する</span><span class="p">(</span><span class="s2">&quot;ウィキペディア&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">要素を確認する</span><span class="p">(</span><span class="s1">&#39;[title*=&quot;ウィキペディアへようこそ&quot;]&#39;</span><span class="p">)</span>

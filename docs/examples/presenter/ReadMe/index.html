@@ -2698,11 +2698,11 @@ Notes are disabled by default. You can enable notes by specifying:
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple presentations at once.</p>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="24" /> Here's an example of using SeleniumBase Presenter:</h3>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MyPresenterClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_presenter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyPresenterClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_presenter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span>
             <span class="s1">&#39;&lt;h1&gt;Welcome&lt;/h1&gt;&lt;br /&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>

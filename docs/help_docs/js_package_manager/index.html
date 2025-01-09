@@ -2661,7 +2661,7 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 
 <p>🕹️ If you're wondering how SeleniumBase does this, here's the full Python code from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/js_utils.py">js_utils.py</a>, which uses WebDriver's <code>execute_script()</code> method for making JS calls after escaping quotes with backslashes as needed:</p>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
     <span class="n">script_to_add_js</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;function injectJS(link) {</span>
 <span class="sd">              var body = document.getElementsByTagName(&quot;body&quot;)[0];</span>
@@ -2687,7 +2687,7 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 </code></pre></div>
 <p>🕹️ And here's the Python WebDriver code that makes this possible:</p>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_css_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">css_link</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_css_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">css_link</span><span class="p">):</span>
     <span class="n">script_to_add_css</span> <span class="o">=</span> <span class="p">(</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;function injectCSS(css) {</span>
 <span class="sd">              var head = document.getElementsByTagName(&quot;head&quot;)[0];</span>
