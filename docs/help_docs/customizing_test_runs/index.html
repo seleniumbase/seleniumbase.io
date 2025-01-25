@@ -2904,12 +2904,13 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--headless<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--crumbs
 </code></pre></div>
 <p>The above not only runs tests in parallel processes, but it also tells tests in the same process to share the same browser session, runs the tests in headless mode, displays the full name of each test on a separate line, creates a real-time dashboard of the test results, and creates a full report after all tests complete.</p>
+<hr />
 <p>🎛️ For extra speed, run your tests using <code>chrome-headless-shell</code>:</p>
 <p>First, get <code>chrome-headless-shell</code> if you don't already have it:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>get<span class="w"> </span>chs
 </code></pre></div>
-<p>Then, run scripts with <code>binary_location</code> / <code>bl</code> set to <code>"chs"</code>:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--bl<span class="o">=</span><span class="s2">&quot;chs&quot;</span><span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs
+<p>Then, run scripts with <code>--chs</code> / <code>chs=True</code>:</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--chs<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs
 </code></pre></div>
 <p>That makes your tests run very quickly in headless mode.</p>
 <hr />
@@ -2990,6 +2991,16 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 * <code>"chs"</code> as a special option for <code>Chrome-Headless-Shell</code>.</p>
 <p>Before using the <code>"cft"</code> / <code>"chs"</code> options, call <code>sbase get cft</code> / <code>sbase get chs</code> in order to download the specified binaries into the <code>seleniumbase/drivers</code> folder. The default version is the latest stable version on https://googlechromelabs.github.io/chrome-for-testing/. You can change that by specifying the arg as a parameter. (Eg. <code>sbase get cft 131</code>, <code>sbase get chs 132</code>, etc.)</p>
 <p>With the <code>SB()</code> and <code>Driver()</code> formats, the binary location is set via the <code>binary_location</code> parameter.</p>
+<hr />
+<p>🎛️ To use the special <code>Chrome for Testing</code> binary:</p>
+<div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>get<span class="w"> </span>cft
+</code></pre></div>
+<p>Then, run scripts with <code>--cft</code> / <code>cft=True</code>:</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--cft<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--headless
+</code></pre></div>
+<hr />
+<p>(Note that <code>--chs</code> / <code>chs=True</code> activates <code>Chrome-Headless-Shell</code>)</p>
+<p><code>Chrome-Headless-Shell</code> is the fastest version of Chrome, designed specifically for headless automation. (This mode is NOT compatible with UC Mode!)</p>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Customizing default settings:</h3>
 
