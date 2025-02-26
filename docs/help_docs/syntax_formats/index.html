@@ -2689,7 +2689,7 @@
 <li><a href="#sb_sf_22"><strong>22. The driver manager (via context manager)</strong></a></li>
 <li><a href="#sb_sf_23"><strong>23. The driver manager (via direct import)</strong></a></li>
 <li><a href="#sb_sf_24"><strong>24. CDP driver (async/await API. No Selenium)</strong></a></li>
-<li><a href="#sb_sf_25"><strong>25. CDP driver (SB-CDP sync API. No Selenium)</strong></a></li>
+<li><a href="#sb_sf_25"><strong>25. CDP driver (SB CDP Sync API. No Selenium)</strong></a></li>
 </ul>
 </blockquote>
 
@@ -3532,14 +3532,13 @@
 <p>This format provides a pure CDP way of using SeleniumBase (without Selenium or a test runner). The async/await API is used. Here's an example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.undetected</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp_driver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp_driver</span>
 
 
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="n">cdp_driver</span><span class="o">.</span><span class="n">cdp_util</span><span class="o">.</span><span class="n">start_async</span><span class="p">()</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="k">await</span> <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;about:blank&quot;</span><span class="p">)</span>
-    <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">set_locale</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
-    <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.priceline.com/&quot;</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.priceline.com/&quot;</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="n">cdp_driver</span><span class="o">.</span><span class="n">start_async</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="k">await</span> <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&quot;document.title&quot;</span><span class="p">))</span>
     <span class="n">element</span> <span class="o">=</span> <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;[data-testid*=&quot;endLocation&quot;]&#39;</span><span class="p">)</span>
@@ -3554,23 +3553,15 @@
 </code></pre></div>
 <p>(See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_async.py">examples/cdp_mode/raw_async.py</a> for the test.)</p>
 <p><a id="sb_sf_25"></a></p>
-<h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 25. CDP driver (SB-CDP sync API. No Selenium)</h2>
+<h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 25. CDP driver (SB CDP Sync API. No Selenium)</h2>
 
-<p>This format provides a pure CDP way of using SeleniumBase (without Selenium or a test runner). The expanded SB-CDP sync API is used. Here's an example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase.undetected</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp_driver</span>
+<p>This format provides a pure CDP way of using SeleniumBase (without Selenium or a test runner). The expanded SB CDP Sync API is used. Here's an example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="n">url0</span> <span class="o">=</span> <span class="s2">&quot;about:blank&quot;</span>  <span class="c1"># Set Locale code from here first</span>
-    <span class="n">url1</span> <span class="o">=</span> <span class="s2">&quot;https://www.priceline.com/&quot;</span>  <span class="c1"># (The &quot;real&quot; URL)</span>
-    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="n">cdp_driver</span><span class="o">.</span><span class="n">cdp_util</span><span class="o">.</span><span class="n">start_sync</span><span class="p">()</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url0</span><span class="p">))</span>
-    <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">CDPMethods</span><span class="p">(</span><span class="n">loop</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">driver</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">set_locale</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>  <span class="c1"># This test expects English locale</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url1</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.priceline.com/&quot;</span>
+    <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">internalize_links</span><span class="p">()</span>  <span class="c1"># Don&#39;t open links in a new tab</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#link_header_nav_experiences&quot;</span><span class="p">)</span>

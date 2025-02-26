@@ -2895,12 +2895,17 @@ https://www.docker.com/products/docker-desktop/</p>
 https://docs.docker.com/engine/install/</p>
 <h4 id="2-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo">2. Go to the SeleniumBase home directory on the command line, which is where <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/Dockerfile">Dockerfile</a> is located. (This assumes you've already cloned the SeleniumBase repo.)<a class="headerlink" href="#2-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo" title="Permanent link">&para;</a></h4>
 <h4 id="3-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile">3. Create your Docker image from your Dockerfile: (Get ready to wait awhile)<a class="headerlink" href="#3-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile" title="Permanent link">&para;</a></h4>
+<p><strong>(Windows / Linux / Intel macOS)</strong></p>
 <div class="highlight"><pre><span></span><code>docker build -t seleniumbase .
 </code></pre></div>
-<p><strong>(NOTE) - If running on an Apple M1/M2 Mac, use this instead:</strong></p>
-<div class="highlight"><pre><span></span><code>docker build --platform linux/amd64 -t seleniumbase .
+<p><strong>(Apple Silicon macOS, eg. M1/M2/M3/M4):</strong></p>
+<p>Users should first <a href="https://stackoverflow.com/a/76586216/7058266">Enable Rosetta in Docker Desktop</a>. (Otherwise Chrome will crash on launch with errors such as: <code>"InvalidSessionIdException"</code> and <code>"Unable to receive message from renderer"</code>)</p>
+<p><img width="420" alt="Enable Rosetta" src="https://seleniumbase.github.io/other/docker_rosetta.jpg" /></p>
+<p>Then you can run these commands:</p>
+<div class="highlight"><pre><span></span><code>export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+docker build --platform linux/amd64 -t seleniumbase .
 </code></pre></div>
-<p><strong>M1/M2 Mac users</strong> should also see <a href="https://stackoverflow.com/a/76586216/7058266">StackOverflow.com/a/76586216/7058266</a> to <strong>Enable Rosetta in Docker Desktop</strong>. (Otherwise <strong>you will</strong> encounter errors like this when Chrome tries to launch: <code>"Chrome failed to start: crashed."</code>)</p>
 <h4 id="4-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell">4. Run <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">the example test</a> with Chrome inside your Docker: (Once the test completes after a few seconds, you'll automatically exit the Docker shell)<a class="headerlink" href="#4-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>docker run seleniumbase ./run_docker_test_in_chrome.sh
 </code></pre></div>
