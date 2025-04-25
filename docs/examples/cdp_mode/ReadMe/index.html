@@ -3185,6 +3185,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;[data-automation-id*=&quot;close-mark&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">mouse_click</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">search</span> <span class="o">=</span> <span class="s2">&quot;Settlers of Catan Board Game&quot;</span>
@@ -3199,7 +3200,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">required_text</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
             <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
-                <span class="s1">&#39;[data-automation-id=&quot;product-price&quot;] + span&#39;</span>
+                <span class="s1">&#39;[data-automation-id=&quot;product-title&quot;]&#39;</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="n">description</span> <span class="ow">and</span> <span class="n">description</span><span class="o">.</span><span class="n">text</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_item_text</span><span class="p">:</span>
                 <span class="n">unique_item_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">description</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
@@ -3313,7 +3314,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">maximize</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">minimize</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">medimize</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_window_rect</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_window_rect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">reset_window_size</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">open_new_window</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">switch_to</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
