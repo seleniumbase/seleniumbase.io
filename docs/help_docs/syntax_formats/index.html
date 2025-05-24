@@ -3656,6 +3656,7 @@
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">await</span> <span class="n">element</span><span class="o">.</span><span class="n">send_keys_async</span><span class="p">(</span><span class="s2">&quot;Boston&quot;</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
@@ -3694,6 +3695,7 @@
     <span class="n">cards</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s1">&#39;span[data-automation*=&quot;product-list-card&quot;]&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">cards</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">card</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
