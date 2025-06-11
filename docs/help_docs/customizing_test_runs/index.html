@@ -85,11 +85,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#pytest-options-for-seleniumbase" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -315,19 +310,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    🎛️ Command Line Options
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -339,32 +321,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pytest-options-for-seleniumbase" class="md-nav__link">
-    <span class="md-ellipsis">
-      pytest options for SeleniumBase
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2793,23 +2749,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pytest-options-for-seleniumbase" class="md-nav__link">
-    <span class="md-ellipsis">
-      pytest options for SeleniumBase
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2828,7 +2767,26 @@
 
   <h1>🎛️ Command Line Options</h1>
 
-<h2 id="pytest-options-for-seleniumbase"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> pytest options for SeleniumBase<a class="headerlink" href="#pytest-options-for-seleniumbase" title="Permanent link">&para;</a></h2>
+<p><a id="customizing_test_runs"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="40"> Options / Customization</h2>
+
+<h3>🎛️ SeleniumBase has different ways of setting options, depending on which format you're using. Options can be set via the command-line or method call.</h3>
+
+<blockquote>
+<p dir="auto"></p>
+<ul dir="auto">
+<li><a href="#pytest_options"><strong>01. <code>pytest</code> command-line options</strong></a></li>
+<li><a href="#sb_options"><strong>02. <code>SB()</code> method options</strong></a></li>
+<li><a href="#driver_options"><strong>03. <code>Driver()</code> method options</strong></a></li>
+<li><a href="#sb_cdp_chrome_options"><strong>04. <code>sb_cdp.Chrome()</code> method options</strong></a></li>
+<li><a href="#activate_cdp_mode_options"><strong>05. <code>activate_cdp_mode()</code> method options</strong></a></li>
+</ul>
+</blockquote>
+
+<hr />
+<p><a id="pytest_options"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> 01. <code>pytest</code> command-line options</h2>
+
 <p>🎛️ SeleniumBase's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/plugins/pytest_plugin.py">pytest plugin</a> lets you customize test runs from the CLI (Command-Line Interface), which adds options for setting/enabling the browser type, Dashboard Mode, Demo Mode, Headless Mode, Mobile Mode, Multi-threading Mode, Recorder Mode, UC Mode (stealth), reuse-session mode, Proxy Mode, and more.</p>
 <p>🎛️ Here are some examples of configuring tests, which can be run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">examples/</a> folder:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Run a test in Chrome (default browser)</span>
@@ -3271,6 +3229,239 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <span class="c1"># Run mobile tests specifying the user agent</span>
 pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Linux; Android 9; Pixel 3 XL)&quot;</span>
 </code></pre></div>
+<hr />
+<p><a id="sb_options"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> 02. <code>SB()</code> method options</h2>
+
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Test Mode: Output, Logging, Continue on failure unless &quot;rtf&quot;.</span>
+<span class="n">rtf</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;raise_test_failure&quot;.</span>
+<span class="n">raise_test_failure</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># If &quot;test&quot; mode, raise Exception on 1st failure.</span>
+<span class="n">browser</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Choose from &quot;chrome&quot;, &quot;edge&quot;, &quot;firefox&quot;, or &quot;safari&quot;.</span>
+<span class="n">headless</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use the default headless mode for Chromium and Firefox.</span>
+<span class="n">headless1</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium&#39;s old headless mode. (Fast, but limited)</span>
+<span class="n">headless2</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium&#39;s new headless mode. (Has more features)</span>
+<span class="n">locale_code</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the Language Locale Code for the web browser.</span>
+<span class="n">protocol</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid protocol: &quot;http&quot; or &quot;https&quot;.</span>
+<span class="n">servername</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid server/IP used for tests.</span>
+<span class="n">port</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid port used by the test server.</span>
+<span class="n">proxy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use proxy. Format: &quot;SERVER:PORT&quot; or &quot;USER:PASS@SERVER:PORT&quot;.</span>
+<span class="n">proxy_bypass_list</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Skip proxy when using the listed domains.</span>
+<span class="n">proxy_pac_url</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use PAC file. (Format: URL or USERNAME:PASSWORD@URL)</span>
+<span class="n">multi_proxy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Allow multiple proxies with auth when multi-threaded.</span>
+<span class="n">agent</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Modify the web browser&#39;s User-Agent string.</span>
+<span class="n">cap_file</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The desired capabilities to use with a Selenium Grid.</span>
+<span class="n">cap_string</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The desired capabilities to use with a Selenium Grid.</span>
+<span class="n">recorder_ext</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enables the SeleniumBase Recorder Chromium extension.</span>
+<span class="n">disable_cookies</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable Cookies on websites. (Pages might break!)</span>
+<span class="n">disable_js</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable JavaScript on websites. (Pages might break!)</span>
+<span class="n">disable_csp</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable the Content Security Policy of websites.</span>
+<span class="n">enable_ws</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Web Security on Chromium-based browsers.</span>
+<span class="n">enable_sync</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable &quot;Chrome Sync&quot; on websites.</span>
+<span class="n">use_auto_ext</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chrome&#39;s automation extension.</span>
+<span class="n">undetectable</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use undetected-chromedriver to evade bot-detection.</span>
+<span class="n">uc_cdp_events</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Capture CDP events in undetected-chromedriver mode.</span>
+<span class="n">uc_subprocess</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use undetected-chromedriver as a subprocess.</span>
+<span class="n">log_cdp_events</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Capture {&quot;performance&quot;: &quot;ALL&quot;, &quot;browser&quot;: &quot;ALL&quot;}</span>
+<span class="n">incognito</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chromium&#39;s Incognito mode.</span>
+<span class="n">guest_mode</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chromium&#39;s Guest mode.</span>
+<span class="n">dark_mode</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chromium&#39;s Dark mode.</span>
+<span class="n">devtools</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Open Chromium&#39;s DevTools when the browser opens.</span>
+<span class="n">remote_debug</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chrome&#39;s Debugger on &quot;http://localhost:9222&quot;.</span>
+<span class="n">enable_3d_apis</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable WebGL and 3D APIs.</span>
+<span class="n">swiftshader</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Chrome: --use-gl=angle / --use-angle=swiftshader-webgl</span>
+<span class="n">ad_block_on</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Block some types of display ads from loading.</span>
+<span class="n">host_resolver_rules</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set host-resolver-rules, comma-separated.</span>
+<span class="n">block_images</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Block images from loading during tests.</span>
+<span class="n">do_not_track</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Tell websites that you don&#39;t want to be tracked.</span>
+<span class="n">chromium_arg</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># &quot;ARG=N,ARG2&quot; (Set Chromium args, &quot;,&quot;-separated.)</span>
+<span class="n">firefox_arg</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># &quot;ARG=N,ARG2&quot; (Set Firefox args, comma-separated.)</span>
+<span class="n">firefox_pref</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># SET (Set Firefox PREFERENCE:VALUE set, &quot;,&quot;-separated)</span>
+<span class="n">user_data_dir</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the Chrome user data directory to use.</span>
+<span class="n">extension_zip</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Load a Chrome Extension .zip|.crx, comma-separated.</span>
+<span class="n">extension_dir</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Load a Chrome Extension directory, comma-separated.</span>
+<span class="n">disable_features</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># &quot;F1,F2&quot; (Disable Chrome features, &quot;,&quot;-separated.)</span>
+<span class="n">binary_location</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set path of the Chromium browser binary to use.</span>
+<span class="n">driver_version</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the chromedriver or uc_driver version to use.</span>
+<span class="n">skip_js_waits</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Skip JS Waits (readyState==&quot;complete&quot; and Angular).</span>
+<span class="n">wait_for_angularjs</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Wait for AngularJS to load after some actions.</span>
+<span class="n">use_wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use selenium-wire&#39;s webdriver over selenium webdriver.</span>
+<span class="n">external_pdf</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome &quot;plugins.always_open_pdf_externally&quot;:True.</span>
+<span class="n">window_position</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window position: &quot;X,Y&quot;</span>
+<span class="n">window_size</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window size: &quot;Width,Height&quot;</span>
+<span class="n">is_mobile</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use the mobile device emulator while running tests.</span>
+<span class="n">mobile</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;is_mobile&quot;.</span>
+<span class="n">device_metrics</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;</span>
+<span class="n">xvfb</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Run tests using the Xvfb virtual display server on Linux OS.</span>
+<span class="n">xvfb_metrics</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Xvfb display size on Linux: &quot;Width,Height&quot;.</span>
+<span class="n">start_page</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The starting URL for the web browser when tests begin.</span>
+<span class="n">rec_print</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># If Recorder is enabled, prints output after tests end.</span>
+<span class="n">rec_behave</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Like Recorder Mode, but also generates behave-gherkin.</span>
+<span class="n">record_sleep</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># If Recorder enabled, also records self.sleep calls.</span>
+<span class="n">data</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Extra test data. Access with &quot;self.data&quot; in tests.</span>
+<span class="n">var1</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Extra test data. Access with &quot;self.var1&quot; in tests.</span>
+<span class="n">var2</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Extra test data. Access with &quot;self.var2&quot; in tests.</span>
+<span class="n">var3</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Extra test data. Access with &quot;self.var3&quot; in tests.</span>
+<span class="n">variables</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># DICT (Extra test data. Access with &quot;self.variables&quot;)</span>
+<span class="n">account</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set account. Access with &quot;self.account&quot; in tests.</span>
+<span class="n">environment</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the test env. Access with &quot;self.env&quot; in tests.</span>
+<span class="n">headed</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Run tests in headed/GUI mode on Linux, where not default.</span>
+<span class="n">maximize</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Start tests with the browser window maximized.</span>
+<span class="n">disable_ws</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Reverse of &quot;enable_ws&quot;. (None and False are different)</span>
+<span class="n">disable_beforeunload</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable the &quot;beforeunload&quot; event on Chromium.</span>
+<span class="n">settings_file</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># A file for overriding default SeleniumBase settings.</span>
+<span class="n">position</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;window_position&quot;.</span>
+<span class="n">size</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;window_size&quot;.</span>
+<span class="n">uc</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;undetectable&quot;.</span>
+<span class="n">undetected</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;undetectable&quot;.</span>
+<span class="n">uc_cdp</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;uc_cdp_events&quot;.</span>
+<span class="n">uc_sub</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;uc_subprocess&quot;.</span>
+<span class="n">locale</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;locale_code&quot;.</span>
+<span class="n">log_cdp</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;log_cdp_events&quot;.</span>
+<span class="n">ad_block</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;ad_block_on&quot;.</span>
+<span class="n">server</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;servername&quot;.</span>
+<span class="n">guest</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;guest_mode&quot;.</span>
+<span class="n">wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;use_wire&quot;.</span>
+<span class="n">pls</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;page_load_strategy&quot;.</span>
+<span class="n">sjw</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;skip_js_waits&quot;.</span>
+<span class="n">wfa</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;wait_for_angularjs&quot;.</span>
+<span class="n">cft</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use &quot;Chrome for Testing&quot;</span>
+<span class="n">chs</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use &quot;Chrome-Headless-Shell&quot;</span>
+<span class="n">save_screenshot</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Save a screenshot at the end of each test.</span>
+<span class="n">no_screenshot</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># No screenshots saved unless tests directly ask it.</span>
+<span class="n">page_load_strategy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome PLS to &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.</span>
+<span class="n">timeout_multiplier</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Multiplies the default timeout values.</span>
+<span class="n">js_checking_on</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Check for JavaScript errors after page loads.</span>
+<span class="n">slow</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Slow down the automation. Faster than using Demo Mode.</span>
+<span class="n">demo</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Slow down and visually see test actions as they occur.</span>
+<span class="n">demo_sleep</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># SECONDS (Set wait time after Slow &amp; Demo Mode actions.)</span>
+<span class="n">message_duration</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># SECONDS (The time length for Messenger alerts.)</span>
+<span class="n">highlights</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Number of highlight animations for Demo Mode actions.</span>
+<span class="n">interval</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># SECONDS (Autoplay interval for SB Slides &amp; Tour steps.)</span>
+<span class="n">time_limit</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># SECONDS (Safely fail tests that exceed the time limit.)</span>
+</code></pre></div>
+<p>Example: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_robot.py">SeleniumBase/examples/raw_robot.py</a></p>
+<hr />
+<p><a id="driver_options"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> 03. <code>Driver()</code> method options</h2>
+
+<div class="highlight"><pre><span></span><code><span class="n">browser</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Choose from &quot;chrome&quot;, &quot;edge&quot;, &quot;firefox&quot;, or &quot;safari&quot;.</span>
+<span class="n">headless</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use the default headless mode for Chromium and Firefox.</span>
+<span class="n">headless1</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium&#39;s old headless mode. (Fast, but limited)</span>
+<span class="n">headless2</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium&#39;s new headless mode. (Has more features)</span>
+<span class="n">headed</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Run tests in headed/GUI mode on Linux, where not default.</span>
+<span class="n">locale_code</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the Language Locale Code for the web browser.</span>
+<span class="n">protocol</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid protocol: &quot;http&quot; or &quot;https&quot;.</span>
+<span class="n">servername</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid server/IP used for tests.</span>
+<span class="n">port</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid port used by the test server.</span>
+<span class="n">proxy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use proxy. Format: &quot;SERVER:PORT&quot; or &quot;USER:PASS@SERVER:PORT&quot;.</span>
+<span class="n">proxy_bypass_list</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Skip proxy when using the listed domains.</span>
+<span class="n">proxy_pac_url</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use PAC file. (Format: URL or USERNAME:PASSWORD@URL)</span>
+<span class="n">multi_proxy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Allow multiple proxies with auth when multi-threaded.</span>
+<span class="n">agent</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Modify the web browser&#39;s User-Agent string.</span>
+<span class="n">cap_file</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The desired capabilities to use with a Selenium Grid.</span>
+<span class="n">cap_string</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The desired capabilities to use with a Selenium Grid.</span>
+<span class="n">recorder_ext</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enables the SeleniumBase Recorder Chromium extension.</span>
+<span class="n">disable_cookies</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable Cookies on websites. (Pages might break!)</span>
+<span class="n">disable_js</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable JavaScript on websites. (Pages might break!)</span>
+<span class="n">disable_csp</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Disable the Content Security Policy of websites.</span>
+<span class="n">enable_ws</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Web Security on Chromium-based browsers.</span>
+<span class="n">disable_ws</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Reverse of &quot;enable_ws&quot;. (None and False are different)</span>
+<span class="n">enable_sync</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable &quot;Chrome Sync&quot; on websites.</span>
+<span class="n">use_auto_ext</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chrome&#39;s automation extension.</span>
+<span class="n">undetectable</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use undetected-chromedriver to evade bot-detection.</span>
+<span class="n">uc_cdp_events</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Capture CDP events in undetected-chromedriver mode.</span>
+<span class="n">uc_subprocess</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use undetected-chromedriver as a subprocess.</span>
+<span class="n">log_cdp_events</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Capture {&quot;performance&quot;: &quot;ALL&quot;, &quot;browser&quot;: &quot;ALL&quot;}</span>
+<span class="n">no_sandbox</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># (DEPRECATED) - &quot;--no-sandbox&quot; is always used now.</span>
+<span class="n">disable_gpu</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># (DEPRECATED) - GPU is disabled if not &quot;swiftshader&quot;.</span>
+<span class="n">incognito</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chromium&#39;s Incognito mode.</span>
+<span class="n">guest_mode</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chromium&#39;s Guest mode.</span>
+<span class="n">dark_mode</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chromium&#39;s Dark mode.</span>
+<span class="n">devtools</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Open Chromium&#39;s DevTools when the browser opens.</span>
+<span class="n">remote_debug</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable Chrome&#39;s Debugger on &quot;http://localhost:9222&quot;.</span>
+<span class="n">enable_3d_apis</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Enable WebGL and 3D APIs.</span>
+<span class="n">swiftshader</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Chrome: --use-gl=angle / --use-angle=swiftshader-webgl</span>
+<span class="n">ad_block_on</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Block some types of display ads from loading.</span>
+<span class="n">host_resolver_rules</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set host-resolver-rules, comma-separated.</span>
+<span class="n">block_images</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Block images from loading during tests.</span>
+<span class="n">do_not_track</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Tell websites that you don&#39;t want to be tracked.</span>
+<span class="n">chromium_arg</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># &quot;ARG=N,ARG2&quot; (Set Chromium args, &quot;,&quot;-separated.)</span>
+<span class="n">firefox_arg</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># &quot;ARG=N,ARG2&quot; (Set Firefox args, comma-separated.)</span>
+<span class="n">firefox_pref</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># SET (Set Firefox PREFERENCE:VALUE set, &quot;,&quot;-separated)</span>
+<span class="n">user_data_dir</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the Chrome user data directory to use.</span>
+<span class="n">extension_zip</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Load a Chrome Extension .zip|.crx, comma-separated.</span>
+<span class="n">extension_dir</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Load a Chrome Extension directory, comma-separated.</span>
+<span class="n">disable_features</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># &quot;F1,F2&quot; (Disable Chrome features, &quot;,&quot;-separated.)</span>
+<span class="n">binary_location</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set path of the Chromium browser binary to use.</span>
+<span class="n">driver_version</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the chromedriver or uc_driver version to use.</span>
+<span class="n">page_load_strategy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome PLS to &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.</span>
+<span class="n">use_wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use selenium-wire&#39;s webdriver over selenium webdriver.</span>
+<span class="n">external_pdf</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome &quot;plugins.always_open_pdf_externally&quot;:True.</span>
+<span class="n">window_position</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window position: &quot;X,Y&quot;</span>
+<span class="n">window_size</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window size: &quot;Width,Height&quot;</span>
+<span class="n">is_mobile</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use the mobile device emulator while running tests.</span>
+<span class="n">mobile</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;is_mobile&quot;.</span>
+<span class="n">d_width</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set device width</span>
+<span class="n">d_height</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set device height</span>
+<span class="n">d_p_r</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set device pixel ratio</span>
+<span class="n">position</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;window_position&quot;.</span>
+<span class="n">size</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;window_size&quot;.</span>
+<span class="n">uc</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;undetectable&quot;.</span>
+<span class="n">undetected</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;undetectable&quot;.</span>
+<span class="n">uc_cdp</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;uc_cdp_events&quot;.</span>
+<span class="n">uc_sub</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;uc_subprocess&quot;.</span>
+<span class="n">locale</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;locale_code&quot;.</span>
+<span class="n">log_cdp</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;log_cdp_events&quot;.</span>
+<span class="n">ad_block</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;ad_block_on&quot;.</span>
+<span class="n">server</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;servername&quot;.</span>
+<span class="n">guest</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;guest_mode&quot;.</span>
+<span class="n">wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;use_wire&quot;.</span>
+<span class="n">pls</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;page_load_strategy&quot;.</span>
+<span class="n">cft</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use &quot;Chrome for Testing&quot;</span>
+<span class="n">chs</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use &quot;Chrome-Headless-Shell&quot;</span>
+</code></pre></div>
+<p>Example: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_driver_manager.py">SeleniumBase/examples/raw_driver_manager.py</a></p>
+<hr />
+<p><a id="sb_cdp_chrome_options"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> 04. <code>sb_cdp.Chrome()</code> method options</h2>
+
+<div class="highlight"><pre><span></span><code><span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">user_data_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">headless</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">incognito</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">guest</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">browser_executable_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">browser_args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">xvfb_metrics</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &quot;Width,Height&quot; for Linux</span>
+<span class="n">ad_block</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">sandbox</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lang</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set the Language Locale Code</span>
+<span class="n">host</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Chrome remote-debugging-host</span>
+<span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Chrome remote-debugging-port</span>
+<span class="n">xvfb</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Use a special virtual display on Linux</span>
+<span class="n">headed</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Override default Xvfb mode on Linux</span>
+<span class="n">expert</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Open up closed Shadow-root elements</span>
+<span class="n">agent</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set the user-agent string</span>
+<span class="n">proxy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &quot;host:port&quot; or &quot;user:pass@host:port&quot;</span>
+<span class="n">tzone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Eg &quot;America/New_York&quot;, &quot;Asia/Kolkata&quot;</span>
+<span class="n">geoloc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Eg (48.87645, 2.26340)</span>
+<span class="n">extension_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Chrome extension directory</span>
+<span class="n">platform</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set the Platform. Eg: &quot;MacIntel&quot;</span>
+</code></pre></div>
+<p>Example: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_geolocation.py">SeleniumBase/examples/cdp_mode/raw_geolocation.py</a></p>
+<hr />
+<p><a id="activate_cdp_mode_options"></a></p>
+<h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> 05. <code>activate_cdp_mode()</code> method options</h2>
+
+<div class="highlight"><pre><span></span><code><span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># The URL to navigate to</span>
+<span class="n">lang</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set the Language Locale Code</span>
+<span class="n">agent</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set the user-agent string</span>
+<span class="n">tzone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Eg &quot;America/New_York&quot;, &quot;Asia/Kolkata&quot;</span>
+<span class="n">geoloc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Eg (48.87645, 2.26340)</span>
+<span class="n">platform</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set the Platform. Eg: &quot;MacIntel&quot;</span>
+</code></pre></div>
+<p>Example: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_geolocation_sb.py">SeleniumBase/examples/cdp_mode/raw_geolocation_sb.py</a></p>
+<p>Note that if CDP Mode is already active, the options above can also be used when calling <code>sb.cdp.open()</code>. (The <code>url</code> arg is required in this case.)</p>
 <hr />
 <p><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://seleniumbase.github.io/cdn/img/fancy_logo_14.png" title="SeleniumBase" width="290"></a></p>
 
