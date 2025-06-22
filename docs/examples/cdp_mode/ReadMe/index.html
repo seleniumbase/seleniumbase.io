@@ -2981,7 +2981,7 @@
 <p>(If the CAPTCHA wasn't bypassed automatically, then <code>sb.uc_gui_click_captcha()</code> gets the job done.)</p>
 <p>Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
 <hr />
-<p>For Cloudflare CAPTCHAs that appear as part of a websites, you may need to use <code>sb.cdp.gui_click_element(selector)</code> instead (if the Turnstile wasn't bypassed automatically). Example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
+<p>For some Cloudflare CAPTCHAs that appear within websites, you may need to use <code>sb.cdp.gui_click_element(selector)</code> instead (if the Turnstile wasn't bypassed automatically). For the <code>selector</code>, use the element directly above the <code>Shadow-root</code>. Example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
