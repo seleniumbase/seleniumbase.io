@@ -2984,7 +2984,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">maximize_window</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">minimize_window</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">reset_window_size</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">invisible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>
 <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -3577,6 +3577,8 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">is_cdp_mode_active</span><span class="p">()</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">is_connected</span><span class="p">()</span>  <span class="c1"># UC / CDP Mode can disconnect WebDriver</span>
 
 <span class="c1">############ # &quot;driver&quot;-specific methods added (or modified) by SeleniumBase for UC Mode</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># If UC Mode and site detects bots, then uc_open_with_tab(url)</span>
