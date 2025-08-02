@@ -12,22 +12,28 @@
         <meta name="author" content="Michael Mintz">
       
       
+        <link rel="canonical" href="https://seleniumbase.io/seleniumbase/common/ReadMe/">
       
       
+        <link rel="prev" href="../../../help_docs/handling_iframes/">
       
-      <link rel="icon" href="/img/green_logo3.png">
+      
+        <link rel="next" href="../../../examples/case_summary/">
+      
+      
+      <link rel="icon" href="../../../img/green_logo3.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>SeleniumBase Docs</title>
+        <title>🔐 Decorators / Security - SeleniumBase Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -79,6 +85,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#seleniumbasecommon-decorators-and-security" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,9 +102,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="SeleniumBase Docs" class="md-header__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
+    <a href="../../.." title="SeleniumBase Docs" class="md-header__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
       
-  <img src="/img/logo3c.png" alt="logo">
+  <img src="../../../img/logo3c.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -110,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              🔐 Decorators / Security
             
           </span>
         </div>
@@ -200,9 +211,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="SeleniumBase Docs" class="md-nav__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
+    <a href="../../.." title="SeleniumBase Docs" class="md-nav__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
       
-  <img src="/img/logo3c.png" alt="logo">
+  <img src="../../../img/logo3c.png" alt="logo">
 
     </a>
     SeleniumBase Docs
@@ -229,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -251,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/features_list/" class="md-nav__link">
+      <a href="../../../help_docs/features_list/" class="md-nav__link">
         
   
   
@@ -273,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/ReadMe/" class="md-nav__link">
         
   
   
@@ -295,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/customizing_test_runs/" class="md-nav__link">
+      <a href="../../../help_docs/customizing_test_runs/" class="md-nav__link">
         
   
   
@@ -317,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/console_scripts/ReadMe/" class="md-nav__link">
+      <a href="../../console_scripts/ReadMe/" class="md-nav__link">
         
   
   
@@ -339,7 +350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/example_logs/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/example_logs/ReadMe/" class="md-nav__link">
         
   
   
@@ -361,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/syntax_formats/" class="md-nav__link">
+      <a href="../../../help_docs/syntax_formats/" class="md-nav__link">
         
   
   
@@ -383,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/commander/" class="md-nav__link">
+      <a href="../../../help_docs/commander/" class="md-nav__link">
         
   
   
@@ -405,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/recorder_mode/" class="md-nav__link">
+      <a href="../../../help_docs/recorder_mode/" class="md-nav__link">
         
   
   
@@ -427,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/method_summary/" class="md-nav__link">
+      <a href="../../../help_docs/method_summary/" class="md-nav__link">
         
   
   
@@ -492,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/install_python_pip_git/" class="md-nav__link">
+      <a href="../../../help_docs/install_python_pip_git/" class="md-nav__link">
         
   
   
@@ -515,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/virtualenv_instructions/" class="md-nav__link">
+      <a href="../../../help_docs/virtualenv_instructions/" class="md-nav__link">
         
   
   
@@ -538,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/install/" class="md-nav__link">
+      <a href="../../../help_docs/install/" class="md-nav__link">
         
   
   
@@ -561,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/how_it_works/" class="md-nav__link">
+      <a href="../../../help_docs/how_it_works/" class="md-nav__link">
         
   
   
@@ -634,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/js_package_manager/" class="md-nav__link">
+      <a href="../../../help_docs/js_package_manager/" class="md-nav__link">
         
   
   
@@ -657,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/demo_mode/" class="md-nav__link">
+      <a href="../../../help_docs/demo_mode/" class="md-nav__link">
         
   
   
@@ -680,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/tour_examples/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/tour_examples/ReadMe/" class="md-nav__link">
         
   
   
@@ -703,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/dialog_boxes/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/dialog_boxes/ReadMe/" class="md-nav__link">
         
   
   
@@ -726,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/master_qa/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/master_qa/ReadMe/" class="md-nav__link">
         
   
   
@@ -749,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/chart_maker/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/chart_maker/ReadMe/" class="md-nav__link">
         
   
   
@@ -772,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/presenter/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/presenter/ReadMe/" class="md-nav__link">
         
   
   
@@ -845,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/uc_mode/" class="md-nav__link">
+      <a href="../../../help_docs/uc_mode/" class="md-nav__link">
         
   
   
@@ -868,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/cdp_mode/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/cdp_mode/ReadMe/" class="md-nav__link">
         
   
   
@@ -891,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/github/workflows/ReadMe/" class="md-nav__link">
+      <a href="../../../integrations/github/workflows/ReadMe/" class="md-nav__link">
         
   
   
@@ -914,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/masterqa/ReadMe/" class="md-nav__link">
+      <a href="../../masterqa/ReadMe/" class="md-nav__link">
         
   
   
@@ -937,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/case_plans/" class="md-nav__link">
+      <a href="../../../help_docs/case_plans/" class="md-nav__link">
         
   
   
@@ -960,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/mobile_testing/" class="md-nav__link">
+      <a href="../../../help_docs/mobile_testing/" class="md-nav__link">
         
   
   
@@ -983,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/utilities/selenium_grid/ReadMe/" class="md-nav__link">
+      <a href="../../utilities/selenium_grid/ReadMe/" class="md-nav__link">
         
   
   
@@ -1006,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/visual_testing/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/visual_testing/ReadMe/" class="md-nav__link">
         
   
   
@@ -1029,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/html_inspector/" class="md-nav__link">
+      <a href="../../../help_docs/html_inspector/" class="md-nav__link">
         
   
   
@@ -1052,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/azure/azure_pipelines/ReadMe/" class="md-nav__link">
+      <a href="../../../integrations/azure/azure_pipelines/ReadMe/" class="md-nav__link">
         
   
   
@@ -1075,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/azure/jenkins/ReadMe/" class="md-nav__link">
+      <a href="../../../integrations/azure/jenkins/ReadMe/" class="md-nav__link">
         
   
   
@@ -1098,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/google_cloud/ReadMe/" class="md-nav__link">
+      <a href="../../../integrations/google_cloud/ReadMe/" class="md-nav__link">
         
   
   
@@ -2011,8 +2022,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -2023,11 +2036,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" checked>
         
           
           <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="">
@@ -2043,7 +2056,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_17">
             <span class="md-nav__icon md-icon"></span>
             Additional Help Docs
@@ -2057,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/ReadMe/" class="md-nav__link">
+      <a href="../../../help_docs/ReadMe/" class="md-nav__link">
         
   
   
@@ -2080,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/handling_iframes/" class="md-nav__link">
+      <a href="../../../help_docs/handling_iframes/" class="md-nav__link">
         
   
   
@@ -2100,10 +2113,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/seleniumbase/common/ReadMe/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🔐 Decorators / Security
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2114,6 +2147,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#seleniumbasecommon-decorators-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      seleniumbase/common decorators and security.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="seleniumbase/common decorators and security.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-decorators-from-decoratorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Decorators - (from decorators.py)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Decorators - (from decorators.py)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-these-python-decorators-with-your-test-methods-as-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use these Python decorators with your test methods as needed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-stringpassword-obfuscation-encryption-and-decryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: String/Password Obfuscation, Encryption, and Decryption
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: String/Password Obfuscation, Encryption, and Decryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2126,7 +2249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/case_summary/" class="md-nav__link">
+      <a href="../../../examples/case_summary/" class="md-nav__link">
         
   
   
@@ -2149,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/using_safari_driver/" class="md-nav__link">
+      <a href="../../../help_docs/using_safari_driver/" class="md-nav__link">
         
   
   
@@ -2172,7 +2295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/docker/ReadMe/" class="md-nav__link">
+      <a href="../../../integrations/docker/ReadMe/" class="md-nav__link">
         
   
   
@@ -2195,7 +2318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/shadow_dom/" class="md-nav__link">
+      <a href="../../../help_docs/shadow_dom/" class="md-nav__link">
         
   
   
@@ -2218,7 +2341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/hidden_files_info/" class="md-nav__link">
+      <a href="../../../help_docs/hidden_files_info/" class="md-nav__link">
         
   
   
@@ -2241,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/mysql_installation/" class="md-nav__link">
+      <a href="../../../help_docs/mysql_installation/" class="md-nav__link">
         
   
   
@@ -2264,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/desired_capabilities/" class="md-nav__link">
+      <a href="../../../help_docs/desired_capabilities/" class="md-nav__link">
         
   
   
@@ -2287,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/useful_grep_commands/" class="md-nav__link">
+      <a href="../../../help_docs/useful_grep_commands/" class="md-nav__link">
         
   
   
@@ -2310,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/webdriver_installation/" class="md-nav__link">
+      <a href="../../../help_docs/webdriver_installation/" class="md-nav__link">
         
   
   
@@ -2333,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/migration/raw_selenium/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/migration/raw_selenium/ReadMe/" class="md-nav__link">
         
   
   
@@ -2356,7 +2479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/verify_webdriver/" class="md-nav__link">
+      <a href="../../../help_docs/verify_webdriver/" class="md-nav__link">
         
   
   
@@ -2429,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/behave_bdd/ReadMe/" class="md-nav__link">
+      <a href="../../../examples/behave_bdd/ReadMe/" class="md-nav__link">
         
   
   
@@ -2452,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/behave_gui/" class="md-nav__link">
+      <a href="../../../help_docs/behave_gui/" class="md-nav__link">
         
   
   
@@ -2525,7 +2648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/translations/" class="md-nav__link">
+      <a href="../../../help_docs/translations/" class="md-nav__link">
         
   
   
@@ -2548,7 +2671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/chinese/" class="md-nav__link">
+      <a href="../../../help_docs/chinese/" class="md-nav__link">
         
   
   
@@ -2571,7 +2694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/locale_codes/" class="md-nav__link">
+      <a href="../../../help_docs/locale_codes/" class="md-nav__link">
         
   
   
@@ -2667,7 +2790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/happy_customers/" class="md-nav__link">
+      <a href="../../../help_docs/happy_customers/" class="md-nav__link">
         
   
   
@@ -2690,7 +2813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/thank_you/" class="md-nav__link">
+      <a href="../../../help_docs/thank_you/" class="md-nav__link">
         
   
   
@@ -2731,6 +2854,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#seleniumbasecommon-decorators-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      seleniumbase/common decorators and security.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="seleniumbase/common decorators and security.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-decorators-from-decoratorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Decorators - (from decorators.py)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Decorators - (from decorators.py)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-these-python-decorators-with-your-test-methods-as-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use these Python decorators with your test methods as needed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-stringpassword-obfuscation-encryption-and-decryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: String/Password Obfuscation, Encryption, and Decryption
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: String/Password Obfuscation, Encryption, and Decryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2741,8 +2944,93 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+  <h1>🔐 Decorators / Security</h1>
+
+<!-- SeleniumBase Docs -->
+
+<h2 id="seleniumbasecommon-decorators-and-security"><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common">seleniumbase/common</a> decorators and security.<a class="headerlink" href="#seleniumbasecommon-decorators-and-security" title="Permanent link">&para;</a></h2>
+<h3 id="part-1-decorators-from-decoratorspy">Part 1: Decorators - (from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common/decorators.py">decorators.py</a>)<a class="headerlink" href="#part-1-decorators-from-decoratorspy" title="Permanent link">&para;</a></h3>
+<h4 id="use-these-python-decorators-with-your-test-methods-as-needed">Use these Python decorators with your test methods as needed<a class="headerlink" href="#use-these-python-decorators-with-your-test-methods-as-needed" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>@print_runtime(description=None, limit=None)</code></p>
+</li>
+<li>
+<p><code>@runtime_limit(limit, description=None)</code></p>
+</li>
+<li>
+<p><code>@retry_on_exception(tries=6, delay=1, backoff=2, max_delay=32)</code></p>
+</li>
+<li>
+<p><code>@rate_limited(max_per_second)</code></p>
+</li>
+</ul>
+<p>Example demonstrating a rate-limited printing functionality:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">decorators</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@decorators</span><span class="o">.</span><span class="n">rate_limited</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>  <span class="c1"># The arg is max calls per second</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">print_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_rate_limited_printing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Running rate-limited print test:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="part-2-stringpassword-obfuscation-encryption-and-decryption">Part 2: String/Password Obfuscation, Encryption, and Decryption<a class="headerlink" href="#part-2-stringpassword-obfuscation-encryption-and-decryption" title="Permanent link">&para;</a></h3>
+<h4 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h4>
+<p>Often in your tests, you may need to login to a website to perform testing. This generally means storing passwords in plaintext formats. For security reasons, that may not be an optimal solution. For this reason, encryption/obfuscation tools have been built here to help you mask your passwords in your tests. It's not a bulletproof solution, but it can keep anyone looking over your shoulder during test creation from getting your login passwords if they don't have your encryption key, which is stored in a separate file.</p>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>First, set your custom encryption/decryption key in your local clone of <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>. (If you modify the key later, you'll need to encrypt all your passwords again.)</p>
+</li>
+<li>
+<p>Next, use <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common/obfuscate.py">obfuscate.py</a> to obfuscate/encrypt passwords into coded strings:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>obfuscate.py
+
+Enter<span class="w"> </span>password<span class="w"> </span>to<span class="w"> </span>obfuscate:<span class="w"> </span><span class="o">(</span>CTRL+C<span class="w"> </span>to<span class="w"> </span><span class="nb">exit</span><span class="o">)</span>
+Password:<span class="w"> </span>*********
+Verify<span class="w"> </span>password:
+Password:<span class="w"> </span>*********
+
+Here<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>obfuscated<span class="w"> </span>password:
+$^*ENCRYPT<span class="o">=</span><span class="nv">RXlYMSJWTz8HSwM</span><span class="o">=</span>?<span class="p">&amp;</span><span class="c1">#$</span>
+</code></pre></div>
+<p>(You can also use <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/common/unobfuscate.py">unobfuscate.py</a> to encrypt passwords without having them masked while typing them. Or you can use it to decrypt an obfuscated password.)</p>
+<ul>
+<li>Finally, in your tests you can now decrypt obfuscated passwords for use in login methods like this:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">encryption</span>
+<span class="o">...</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">encryption</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="s1">&#39;$^*ENCRYPT=RXlYMSJWTz8HSwM=?&amp;#$&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>(You'll notice that encrypted strings have a common start token and end token. This is to help tell them apart from non-encrypted strings. You can customize these tokens in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>. The current default setting is <code>$^*ENCRYPT=</code> for the start token and <code>?&amp;#$</code> for the end token.)</p>
+<p>See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_decryption.py">test_decryption.py</a> for an example of decrypting encrypted passwords in tests.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
               </article>
             </div>
           
@@ -2788,10 +3076,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
