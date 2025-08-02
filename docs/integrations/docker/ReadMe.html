@@ -12,22 +12,28 @@
         <meta name="author" content="Michael Mintz">
       
       
+        <link rel="canonical" href="https://seleniumbase.io/integrations/docker/ReadMe.html">
       
       
+        <link rel="prev" href="../../help_docs/using_safari_driver.html">
       
-      <link rel="icon" href="/img/green_logo3.png">
+      
+        <link rel="next" href="../../help_docs/shadow_dom.html">
+      
+      
+      <link rel="icon" href="../../img/green_logo3.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>SeleniumBase Docs</title>
+        <title>🐳 Docker Start Guide - SeleniumBase Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -79,6 +85,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#docker-setup-instructions-for-seleniumbase" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,9 +102,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="SeleniumBase Docs" class="md-header__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
+    <a href="../../index.html" title="SeleniumBase Docs" class="md-header__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
       
-  <img src="/img/logo3c.png" alt="logo">
+  <img src="../../img/logo3c.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -110,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              🐳 Docker Start Guide
             
           </span>
         </div>
@@ -200,9 +211,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="SeleniumBase Docs" class="md-nav__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
+    <a href="../../index.html" title="SeleniumBase Docs" class="md-nav__button md-logo" aria-label="SeleniumBase Docs" data-md-component="logo">
       
-  <img src="/img/logo3c.png" alt="logo">
+  <img src="../../img/logo3c.png" alt="logo">
 
     </a>
     SeleniumBase Docs
@@ -229,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -251,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/features_list.html" class="md-nav__link">
+      <a href="../../help_docs/features_list.html" class="md-nav__link">
         
   
   
@@ -273,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/ReadMe.html" class="md-nav__link">
         
   
   
@@ -295,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/customizing_test_runs.html" class="md-nav__link">
+      <a href="../../help_docs/customizing_test_runs.html" class="md-nav__link">
         
   
   
@@ -317,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/console_scripts/ReadMe.html" class="md-nav__link">
+      <a href="../../seleniumbase/console_scripts/ReadMe.html" class="md-nav__link">
         
   
   
@@ -339,7 +350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/example_logs/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/example_logs/ReadMe.html" class="md-nav__link">
         
   
   
@@ -361,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/syntax_formats.html" class="md-nav__link">
+      <a href="../../help_docs/syntax_formats.html" class="md-nav__link">
         
   
   
@@ -383,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/commander.html" class="md-nav__link">
+      <a href="../../help_docs/commander.html" class="md-nav__link">
         
   
   
@@ -405,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/recorder_mode.html" class="md-nav__link">
+      <a href="../../help_docs/recorder_mode.html" class="md-nav__link">
         
   
   
@@ -427,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/method_summary.html" class="md-nav__link">
+      <a href="../../help_docs/method_summary.html" class="md-nav__link">
         
   
   
@@ -492,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/install_python_pip_git.html" class="md-nav__link">
+      <a href="../../help_docs/install_python_pip_git.html" class="md-nav__link">
         
   
   
@@ -515,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/virtualenv_instructions.html" class="md-nav__link">
+      <a href="../../help_docs/virtualenv_instructions.html" class="md-nav__link">
         
   
   
@@ -538,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/install.html" class="md-nav__link">
+      <a href="../../help_docs/install.html" class="md-nav__link">
         
   
   
@@ -561,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/how_it_works.html" class="md-nav__link">
+      <a href="../../help_docs/how_it_works.html" class="md-nav__link">
         
   
   
@@ -634,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/js_package_manager.html" class="md-nav__link">
+      <a href="../../help_docs/js_package_manager.html" class="md-nav__link">
         
   
   
@@ -657,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/demo_mode.html" class="md-nav__link">
+      <a href="../../help_docs/demo_mode.html" class="md-nav__link">
         
   
   
@@ -680,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/tour_examples/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/tour_examples/ReadMe.html" class="md-nav__link">
         
   
   
@@ -703,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/dialog_boxes/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/dialog_boxes/ReadMe.html" class="md-nav__link">
         
   
   
@@ -726,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/master_qa/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/master_qa/ReadMe.html" class="md-nav__link">
         
   
   
@@ -749,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/chart_maker/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/chart_maker/ReadMe.html" class="md-nav__link">
         
   
   
@@ -772,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/presenter/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/presenter/ReadMe.html" class="md-nav__link">
         
   
   
@@ -845,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/uc_mode.html" class="md-nav__link">
+      <a href="../../help_docs/uc_mode.html" class="md-nav__link">
         
   
   
@@ -868,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/cdp_mode/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/cdp_mode/ReadMe.html" class="md-nav__link">
         
   
   
@@ -891,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/github/workflows/ReadMe.html" class="md-nav__link">
+      <a href="../github/workflows/ReadMe.html" class="md-nav__link">
         
   
   
@@ -914,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/masterqa/ReadMe.html" class="md-nav__link">
+      <a href="../../seleniumbase/masterqa/ReadMe.html" class="md-nav__link">
         
   
   
@@ -937,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/case_plans.html" class="md-nav__link">
+      <a href="../../help_docs/case_plans.html" class="md-nav__link">
         
   
   
@@ -960,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/mobile_testing.html" class="md-nav__link">
+      <a href="../../help_docs/mobile_testing.html" class="md-nav__link">
         
   
   
@@ -983,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/utilities/selenium_grid/ReadMe.html" class="md-nav__link">
+      <a href="../../seleniumbase/utilities/selenium_grid/ReadMe.html" class="md-nav__link">
         
   
   
@@ -1006,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/visual_testing/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/visual_testing/ReadMe.html" class="md-nav__link">
         
   
   
@@ -1029,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/html_inspector.html" class="md-nav__link">
+      <a href="../../help_docs/html_inspector.html" class="md-nav__link">
         
   
   
@@ -1052,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/azure/azure_pipelines/ReadMe.html" class="md-nav__link">
+      <a href="../azure/azure_pipelines/ReadMe.html" class="md-nav__link">
         
   
   
@@ -1075,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/azure/jenkins/ReadMe.html" class="md-nav__link">
+      <a href="../azure/jenkins/ReadMe.html" class="md-nav__link">
         
   
   
@@ -1098,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/integrations/google_cloud/ReadMe.html" class="md-nav__link">
+      <a href="../google_cloud/ReadMe.html" class="md-nav__link">
         
   
   
@@ -2011,8 +2022,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -2023,11 +2036,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" checked>
         
           
           <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="">
@@ -2043,7 +2056,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_17">
             <span class="md-nav__icon md-icon"></span>
             Additional Help Docs
@@ -2057,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/ReadMe.html" class="md-nav__link">
+      <a href="../../help_docs/ReadMe.html" class="md-nav__link">
         
   
   
@@ -2080,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/handling_iframes.html" class="md-nav__link">
+      <a href="../../help_docs/handling_iframes.html" class="md-nav__link">
         
   
   
@@ -2103,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/seleniumbase/common/ReadMe.html" class="md-nav__link">
+      <a href="../../seleniumbase/common/ReadMe.html" class="md-nav__link">
         
   
   
@@ -2126,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/case_summary.html" class="md-nav__link">
+      <a href="../../examples/case_summary.html" class="md-nav__link">
         
   
   
@@ -2149,7 +2162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/using_safari_driver.html" class="md-nav__link">
+      <a href="../../help_docs/using_safari_driver.html" class="md-nav__link">
         
   
   
@@ -2169,10 +2182,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/integrations/docker/ReadMe.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🐳 Docker Start Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ReadMe.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2183,6 +2216,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-setup-instructions-for-seleniumbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker setup instructions for SeleniumBase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker setup instructions for SeleniumBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-the-docker-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install the Docker Desktop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Go to the SeleniumBase home directory on the command line, which is where Dockerfile is located. (This assumes you've already cloned the SeleniumBase repo.)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Create your Docker image from your Dockerfile: (Get ready to wait awhile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Run the example test with Chrome inside your Docker: (Once the test completes after a few seconds, you'll automatically exit the Docker shell)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-you-can-also-enter-docker-and-stay-inside-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. You can also enter Docker and stay inside the shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-now-you-can-run-the-example-test-from-inside-the-docker-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Now you can run the example test from inside the Docker shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-when-youre-satisfied-you-may-exit-the-docker-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. When you're satisfied, you may exit the Docker shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-optional-since-docker-images-and-containers-take-up-a-lot-of-space-you-may-want-to-clean-up-your-machine-from-time-to-time-when-theyre-not-being-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Optional) Since Docker images and containers take up a lot of space, you may want to clean up your machine from time to time when they’re not being used
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-optional-more-reading-on-docker-can-be-found-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. (Optional) More reading on Docker can be found here
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2195,7 +2342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/shadow_dom.html" class="md-nav__link">
+      <a href="../../help_docs/shadow_dom.html" class="md-nav__link">
         
   
   
@@ -2218,7 +2365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/hidden_files_info.html" class="md-nav__link">
+      <a href="../../help_docs/hidden_files_info.html" class="md-nav__link">
         
   
   
@@ -2241,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/mysql_installation.html" class="md-nav__link">
+      <a href="../../help_docs/mysql_installation.html" class="md-nav__link">
         
   
   
@@ -2264,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/desired_capabilities.html" class="md-nav__link">
+      <a href="../../help_docs/desired_capabilities.html" class="md-nav__link">
         
   
   
@@ -2287,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/useful_grep_commands.html" class="md-nav__link">
+      <a href="../../help_docs/useful_grep_commands.html" class="md-nav__link">
         
   
   
@@ -2310,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/webdriver_installation.html" class="md-nav__link">
+      <a href="../../help_docs/webdriver_installation.html" class="md-nav__link">
         
   
   
@@ -2333,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/migration/raw_selenium/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/migration/raw_selenium/ReadMe.html" class="md-nav__link">
         
   
   
@@ -2356,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/verify_webdriver.html" class="md-nav__link">
+      <a href="../../help_docs/verify_webdriver.html" class="md-nav__link">
         
   
   
@@ -2429,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/behave_bdd/ReadMe.html" class="md-nav__link">
+      <a href="../../examples/behave_bdd/ReadMe.html" class="md-nav__link">
         
   
   
@@ -2452,7 +2599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/behave_gui.html" class="md-nav__link">
+      <a href="../../help_docs/behave_gui.html" class="md-nav__link">
         
   
   
@@ -2525,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/translations.html" class="md-nav__link">
+      <a href="../../help_docs/translations.html" class="md-nav__link">
         
   
   
@@ -2548,7 +2695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/chinese.html" class="md-nav__link">
+      <a href="../../help_docs/chinese.html" class="md-nav__link">
         
   
   
@@ -2571,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/locale_codes.html" class="md-nav__link">
+      <a href="../../help_docs/locale_codes.html" class="md-nav__link">
         
   
   
@@ -2667,7 +2814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/happy_customers.html" class="md-nav__link">
+      <a href="../../help_docs/happy_customers.html" class="md-nav__link">
         
   
   
@@ -2690,7 +2837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/help_docs/thank_you.html" class="md-nav__link">
+      <a href="../../help_docs/thank_you.html" class="md-nav__link">
         
   
   
@@ -2731,6 +2878,110 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-setup-instructions-for-seleniumbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker setup instructions for SeleniumBase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker setup instructions for SeleniumBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-the-docker-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install the Docker Desktop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Go to the SeleniumBase home directory on the command line, which is where Dockerfile is located. (This assumes you've already cloned the SeleniumBase repo.)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Create your Docker image from your Dockerfile: (Get ready to wait awhile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Run the example test with Chrome inside your Docker: (Once the test completes after a few seconds, you'll automatically exit the Docker shell)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-you-can-also-enter-docker-and-stay-inside-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. You can also enter Docker and stay inside the shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-now-you-can-run-the-example-test-from-inside-the-docker-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Now you can run the example test from inside the Docker shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-when-youre-satisfied-you-may-exit-the-docker-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. When you're satisfied, you may exit the Docker shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-optional-since-docker-images-and-containers-take-up-a-lot-of-space-you-may-want-to-clean-up-your-machine-from-time-to-time-when-theyre-not-being-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Optional) Since Docker images and containers take up a lot of space, you may want to clean up your machine from time to time when they’re not being used
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-optional-more-reading-on-docker-can-be-found-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. (Optional) More reading on Docker can be found here
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2741,8 +2992,79 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+  <h1>🐳 Docker Start Guide</h1>
+
+<h2 id="docker-setup-instructions-for-seleniumbase">Docker setup instructions for SeleniumBase<a class="headerlink" href="#docker-setup-instructions-for-seleniumbase" title="Permanent link">&para;</a></h2>
+<h4 id="1-install-the-docker-desktop">1. Install the Docker Desktop<a class="headerlink" href="#1-install-the-docker-desktop" title="Permanent link">&para;</a></h4>
+<p>You can get that from here:
+https://www.docker.com/products/docker-desktop/</p>
+<p>You might also want to install the Docker Engine:
+https://docs.docker.com/engine/install/</p>
+<h4 id="2-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo">2. Go to the SeleniumBase home directory on the command line, which is where <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/Dockerfile">Dockerfile</a> is located. (This assumes you've already cloned the SeleniumBase repo.)<a class="headerlink" href="#2-go-to-the-seleniumbase-home-directory-on-the-command-line-which-is-where-dockerfile-is-located-this-assumes-youve-already-cloned-the-seleniumbase-repo" title="Permanent link">&para;</a></h4>
+<h4 id="3-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile">3. Create your Docker image from your Dockerfile: (Get ready to wait awhile)<a class="headerlink" href="#3-create-your-docker-image-from-your-dockerfile-get-ready-to-wait-awhile" title="Permanent link">&para;</a></h4>
+<p><strong>(Windows / Linux / Intel macOS)</strong></p>
+<div class="highlight"><pre><span></span><code>docker build -t seleniumbase .
+</code></pre></div>
+<p><strong>(Apple Silicon macOS, eg. M1/M2/M3/M4):</strong></p>
+<p>Users should first <a href="https://stackoverflow.com/a/76586216/7058266">Enable Rosetta in Docker Desktop</a>. (Otherwise Chrome will crash on launch with errors such as: <code>"InvalidSessionIdException"</code> and <code>"Unable to receive message from renderer"</code>)</p>
+<p><img width="420" alt="Enable Rosetta" src="https://seleniumbase.github.io/other/docker_rosetta.jpg" /></p>
+<p>Then you can run these commands:</p>
+<div class="highlight"><pre><span></span><code>export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+docker build --platform linux/amd64 -t seleniumbase .
+</code></pre></div>
+<h4 id="4-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell">4. Run <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/my_first_test.py">the example test</a> with Chrome inside your Docker: (Once the test completes after a few seconds, you'll automatically exit the Docker shell)<a class="headerlink" href="#4-run-the-example-test-with-chrome-inside-your-docker-once-the-test-completes-after-a-few-seconds-youll-automatically-exit-the-docker-shell" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>docker run seleniumbase ./run_docker_test_in_chrome.sh
+</code></pre></div>
+<h4 id="5-you-can-also-enter-docker-and-stay-inside-the-shell">5. You can also enter Docker and stay inside the shell<a class="headerlink" href="#5-you-can-also-enter-docker-and-stay-inside-the-shell" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>docker run -i -t seleniumbase
+</code></pre></div>
+<h4 id="6-now-you-can-run-the-example-test-from-inside-the-docker-shell">6. Now you can run the example test from inside the Docker shell<a class="headerlink" href="#6-now-you-can-run-the-example-test-from-inside-the-docker-shell" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>./run_docker_test_in_chrome.sh
+</code></pre></div>
+<h4 id="7-when-youre-satisfied-you-may-exit-the-docker-shell">7. When you're satisfied, you may exit the Docker shell<a class="headerlink" href="#7-when-youre-satisfied-you-may-exit-the-docker-shell" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>exit
+</code></pre></div>
+<h4 id="8-optional-since-docker-images-and-containers-take-up-a-lot-of-space-you-may-want-to-clean-up-your-machine-from-time-to-time-when-theyre-not-being-used">8. (Optional) Since Docker images and containers take up a lot of space, you may want to clean up your machine from time to time when they’re not being used<a class="headerlink" href="#8-optional-since-docker-images-and-containers-take-up-a-lot-of-space-you-may-want-to-clean-up-your-machine-from-time-to-time-when-theyre-not-being-used" title="Permanent link">&para;</a></h4>
+<p>Details on that can be found here:
+http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers</p>
+<p>Here are a few of those cleanup commands:</p>
+<div class="highlight"><pre><span></span><code>docker container prune
+docker system prune
+docker images | grep &quot;&lt;none&gt;&quot; | awk &#39;{print $3}&#39; | xargs docker rmi
+docker rm &#39;docker ps --no-trunc -aq&#39;
+</code></pre></div>
+<p>If you want to completely remove all of your Docker containers and images, use these commands: (If there's nothing to delete, those commands will return an error.)</p>
+<div class="highlight"><pre><span></span><code>docker rm -f $(docker ps -a -q)
+docker rmi -f $(docker images -q)
+</code></pre></div>
+<p>For more cleanup commands, check out:
+https://codefresh.io/blog/everyday-hacks-docker/</p>
+<h4 id="9-optional-more-reading-on-docker-can-be-found-here">9. (Optional) More reading on Docker can be found here<a class="headerlink" href="#9-optional-more-reading-on-docker-can-be-found-here" title="Permanent link">&para;</a></h4>
+<ul>
+<li>https://docs.docker.com</li>
+<li>https://docs.docker.com/get-started/</li>
+<li>https://docs.docker.com/docker-for-mac/</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
               </article>
             </div>
           
@@ -2788,10 +3110,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
