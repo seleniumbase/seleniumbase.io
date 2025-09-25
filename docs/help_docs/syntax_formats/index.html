@@ -3644,18 +3644,20 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp_driver</span>
 
-
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.priceline.com/&quot;</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="n">cdp_driver</span><span class="o">.</span><span class="n">start_async</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;seleniumbase.io/simple/login&quot;</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="n">cdp_driver</span><span class="o">.</span><span class="n">start_async</span><span class="p">(</span><span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="k">await</span> <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&quot;document.title&quot;</span><span class="p">))</span>
-    <span class="n">element</span> <span class="o">=</span> <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;[data-testid*=&quot;endLocation&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">element</span><span class="o">.</span><span class="n">send_keys_async</span><span class="p">(</span><span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">element</span><span class="o">.</span><span class="n">send_keys_async</span><span class="p">(</span><span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;#log-in&quot;</span><span class="p">)</span>
     <span class="k">await</span> <span class="n">element</span><span class="o">.</span><span class="n">click_async</span><span class="p">()</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">await</span> <span class="n">element</span><span class="o">.</span><span class="n">send_keys_async</span><span class="p">(</span><span class="s2">&quot;Boston&quot;</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="k">await</span> <span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;Welcome!&quot;</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -3669,7 +3671,7 @@
 <p>This format provides a pure CDP way of using SeleniumBase (without Selenium or a test runner). The expanded SB CDP Sync API is used. Here's an example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-
+<span class="nd">@decorators</span><span class="o">.</span><span class="n">print_runtime</span><span class="p">(</span><span class="s2">&quot;CDP Priceline Example&quot;</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.priceline.com/&quot;</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
@@ -3682,11 +3684,14 @@
     <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Amsterdam&quot;</span>
     <span class="n">where_to</span> <span class="o">=</span> <span class="s1">&#39;div[data-automation*=&quot;experiences&quot;] input&#39;</span>
     <span class="n">button</span> <span class="o">=</span> <span class="s1">&#39;button[data-automation*=&quot;experiences-search&quot;]&#39;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text</span><span class="p">(</span><span class="s2">&quot;Where to?&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">gui_click_element</span><span class="p">(</span><span class="n">where_to</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="n">where_to</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">gui_click_element</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button[aria-label=&quot;Close&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_title</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;************&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
@@ -3696,7 +3701,6 @@
     <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">cards</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">card</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
