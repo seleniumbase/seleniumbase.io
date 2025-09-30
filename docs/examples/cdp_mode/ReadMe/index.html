@@ -975,6 +975,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pure-cdp-mode-sb_cdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐙 Pure CDP Mode (sb_cdp)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cdp-mode-webelement-api-methods" class="md-nav__link">
     <span class="md-ellipsis">
       🐙 CDP Mode WebElement API / Methods
@@ -2899,6 +2908,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pure-cdp-mode-sb_cdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐙 Pure CDP Mode (sb_cdp)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cdp-mode-webelement-api-methods" class="md-nav__link">
     <span class="md-ellipsis">
       🐙 CDP Mode WebElement API / Methods
@@ -2968,21 +2986,20 @@
 <p>(Call that from a <strong>UC Mode</strong> script)</p>
 </blockquote>
 <p>That disconnects WebDriver from Chrome (which prevents detection), and gives you access to <code>sb.cdp</code> methods (which don't trigger anti-bot checks).</p>
-<p>Simple example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a>)</p>
+<p>Simple example from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="332"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="288"></p>
-<p>(If the CAPTCHA wasn't bypassed automatically, then <code>sb.uc_gui_click_captcha()</code> gets the job done.)</p>
-<p>Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
+<p>(If the CAPTCHA wasn't bypassed automatically when going to the URL, then <code>sb.uc_gui_click_captcha()</code> gets the job done with a mouse click from <a href="https://github.com/asweigart/pyautogui">PyAutoGUI</a>.)</p>
+<p>ℹ️ Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
 <hr />
-<p>For some Cloudflare CAPTCHAs that appear within websites, you may need to use <code>sb.cdp.gui_click_element(selector)</code> instead (if the Turnstile wasn't bypassed automatically). Example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
+<p>You can also use <code>sb.cdp.gui_click_element(selector)</code> to click on elements using <code>PyAutoGUI</code>. (This is useful when clicking inside <code>#shadow-root</code>.) Example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
@@ -2996,16 +3013,17 @@
 <p>When using <code>sb.cdp.gui_click_element(selector)</code> on CF Turnstiles, use the parent <code>selector</code> that appears <strong>above</strong> the <code>#shadow-root</code> element:
 Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <p><img src="https://seleniumbase.github.io/other/above_shadow.png" title="SeleniumBase" width="480"></p>
+<p>In most cases, <code>sb.uc_gui_click_captcha()</code> is good enough for CF Turnstiles without needing <code>sb.cdp.gui_click_element(selector)</code>. (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
 <hr />
 <h3 id="here-are-a-few-common-sbcdp-methods">🐙 Here are a few common <code>sb.cdp</code> methods<a class="headerlink" href="#here-are-a-few-common-sbcdp-methods" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>sb.cdp.click(selector)</code>  (Uses the CDP API to click)</li>
-<li><code>sb.cdp.click_if_visible(selector)</code></li>
+<li><code>sb.cdp.click_if_visible(selector)</code>  (Click if visible)</li>
 <li><code>sb.cdp.gui_click_element(selector)</code>  (Uses <code>PyAutoGUI</code>)</li>
-<li><code>sb.cdp.type(selector, text)</code></li>
+<li><code>sb.cdp.type(selector, text)</code>  (Type text into a selector)</li>
 <li><code>sb.cdp.press_keys(selector, text)</code>  (Human-speed <code>type</code>)</li>
-<li><code>sb.cdp.select_all(selector)</code></li>
-<li><code>sb.cdp.get_text(selector)</code></li>
+<li><code>sb.cdp.select_all(selector)</code>  (Returns matching elements)</li>
+<li><code>sb.cdp.get_text(selector)</code>  (Returns the element's text)</li>
 </ul>
 <p>Methods that start with <code>sb.cdp.gui</code> use <code>PyAutoGUI</code> for interaction.</p>
 <p>To use WebDriver methods again, call:</p>
@@ -3063,18 +3081,12 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">highlight_overlay</span><span class="p">(</span><span class="s2">&quot;div.pokemon-ability-info&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[href=&quot;https://www.pokemon.com/us/play-pokemon/&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;h3:contains(&quot;Find an Event&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Concord, MA, USA&quot;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[data-testid=&quot;location-search&quot;]&#39;</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div.autocomplete-dropdown-container div.suggestion-item&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;search-icon&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">events</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s1">&#39;div[data-testid=&quot;event-name&quot;]&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** Pokemon events near </span><span class="si">%s</span><span class="s2">: ***&quot;</span> <span class="o">%</span> <span class="n">location</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://events.pokemon.com/EventLocator/&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button span:contains(&quot;Premier Events&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s1">&#39;div[class=&quot;event-info&quot;]&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** Upcoming Premier Events for Pokémon: ***&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">event</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -3265,6 +3277,9 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">find_visible_elements</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_visible_elements</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_nth_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_nth_visible_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="n">link_text</span><span class="p">)</span>
@@ -3285,10 +3300,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">bring_to_front</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_active_element</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_active_element_css</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_active_element</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_visible_elements</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">mouse_click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">nested_click</span><span class="p">(</span><span class="n">parent_selector</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_nested_element</span><span class="p">(</span><span class="n">parent_selector</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>
@@ -3417,8 +3429,48 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">print_to_pdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">save_as_pdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
+<p>ℹ️ When available, calling <code>sb.METHOD()</code> redirects to <code>sb.cdp.METHOD()</code> because regular SB methods automatically call their CDP Mode counterparts to maintain stealth when CDP Mode is active.</p>
+<hr />
+<h3 id="pure-cdp-mode-sb_cdp">🐙 <b translate="no">Pure CDP Mode</b> (<code translate="no">sb_cdp</code>)<a class="headerlink" href="#pure-cdp-mode-sb_cdp" title="Permanent link">&para;</a></h3>
+<p><b translate="no">Pure CDP Mode</b> doesn't use WebDriver for anything. The browser is launched using CDP, and all browser actions are performed using CDP (or <code>PyAutoGUI</code>). Initialization:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
+
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+<p><b translate="no">Pure CDP Mode</b> includes all methods from regular CDP Mode, except that they're called directly from <code>sb</code> instead of <code>sb.cdp</code>. Eg: <code>sb.gui_click_captcha()</code>. To quit a CDP-launched browser, use <code>sb.driver.stop()</code>.</p>
+<p>Basic example from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_turnstile.py">SeleniumBase/examples/cdp_mode/raw_cdp_turnstile.py</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">gui_click_captcha</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<p>Another example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_methods.py">SeleniumBase/examples/cdp_mode/raw_cdp_methods.py</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;Text&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span> <span class="s2">&quot;Here are some words&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;input#mySlider&quot;</span><span class="p">,</span> <span class="s2">&quot;100&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click_visible_elements</span><span class="p">(</span><span class="s2">&quot;input.checkBoxClassB&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">select_option_by_text</span><span class="p">(</span><span class="s2">&quot;#mySelect&quot;</span><span class="p">,</span> <span class="s2">&quot;Set to 75%&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">gui_hover_and_click</span><span class="p">(</span><span class="s2">&quot;#myDropdown&quot;</span><span class="p">,</span> <span class="s2">&quot;#dropOption2&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">gui_click_element</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">gui_drag_and_drop</span><span class="p">(</span><span class="s2">&quot;img#logo&quot;</span><span class="p">,</span> <span class="s2">&quot;div#drop2&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">nested_click</span><span class="p">(</span><span class="s2">&quot;iframe#myFrame3&quot;</span><span class="p">,</span> <span class="s2">&quot;.fBox&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<p>ℹ️ Even if you don't call <code>sb.driver.stop()</code>, the browser still quits after the script goes out-of-scope.</p>
 <hr />
 <h3 id="cdp-mode-webelement-api-methods">🐙 <b translate="no">CDP Mode</b> WebElement API / Methods<a class="headerlink" href="#cdp-mode-webelement-api-methods" title="Permanent link">&para;</a></h3>
+<p>After finding an element in CDP Mode, you can access <code>WebElement</code> methods:</p>
+<p>(Eg. After <code>element = sb.find_element(selector)</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="n">element</span><span class="o">.</span><span class="n">clear_input</span><span class="p">()</span>
 <span class="n">element</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 <span class="n">element</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;EE4488&quot;</span><span class="p">)</span>
