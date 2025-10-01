@@ -3543,7 +3543,8 @@
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;www.planetminecraft.com/account/sign_in/&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">gui_click_element</span><span class="p">(</span><span class="s2">&quot;#turnstile-widget div&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_element_absent</span><span class="p">(</span><span class="s2">&quot;input[disabled]&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <p>(See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">examples/cdp_mode/raw_planetmc.py</a> for the test.)</p>
