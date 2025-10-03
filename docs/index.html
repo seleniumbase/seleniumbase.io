@@ -2822,7 +2822,7 @@
 <p>🐙 Note that <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b></a> / <a href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> (Stealth Mode) have their own ReadMe files.</p>
 <p>ℹ️ Most scripts run with raw <code translate="no"><b>python</b></code>, although some scripts use <a href="help_docs/syntax_formats/">Syntax Formats</a> that expect <a href="https://docs.pytest.org/en/latest/how-to/usage.html" translate="no"><b>pytest</b></a> (a Python unit-testing framework included with SeleniumBase that can discover, collect, and run tests automatically).</p>
 <hr />
-<p align="left">📗 For performing a Google Search without hitting the "unusual traffic" page, you can use SeleniumBase UC Mode.<br />Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">SeleniumBase/examples/raw_google.py</a>, which exports results into different formats (PDF, HTML, PNG):</p>
+<p align="left">📗 Here's a test script that performs a Google Search using SeleniumBase UC Mode:<br /><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">SeleniumBase/examples/raw_google.py</a> (Results are saved as PDF, HTML, and PNG)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
@@ -2843,7 +2843,7 @@
 </blockquote>
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py"><img src="https://seleniumbase.github.io/cdn/img/google_sb_result.png" alt="SeleniumBase on Google" title="SeleniumBase on Google" width="480" /></a></p>
 <hr />
-<p align="left">📗 Here's an example of bypassing Cloudflare's challenge page with UC Mode + CDP Mode: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a></p>
+<p align="left">📗 Here's a script that bypasses Cloudflare's challenge page with UC Mode + CDP Mode: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a></p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
@@ -2860,7 +2860,7 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="332"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="288"></p>
-<p align="left">📙 You can also use SeleniumBase's pure CDP Mode, which doesn't use chromedriver, Selenium, or a Python context manager at all: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_gitlab.py">SeleniumBase/examples/cdp_mode/raw_cdp_gitlab.py</a></p>
+<p align="left">📙 There's also SeleniumBase's "Pure CDP Mode", which doesn't use WebDriver or Selenium at all: <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_gitlab.py">SeleniumBase/examples/cdp_mode/raw_cdp_gitlab.py</a></p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
@@ -2873,7 +2873,7 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </code></pre></div>
 <blockquote>
-<p>(Due to a change in Chrome 137 where the --load-extension switch was removed, one limitation with this format is that you can't load extensions directly. The other formats weren't affected by this change.)</p>
+<p>(Due to changes in Chrome 137 where the <code>--load-extension</code> switch was removed, you can't load extensions directly from this format.)</p>
 </blockquote>
 <hr />
 <p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py">SeleniumBase/examples/test_get_swag.py</a>, which tests an e-commerce site:</p>
