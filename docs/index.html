@@ -2856,7 +2856,7 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab.com&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="332"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="288"></p>
@@ -2868,13 +2868,10 @@
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">gui_click_captcha</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab.com&quot;)&#39;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab&quot;)&#39;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </code></pre></div>
-<blockquote>
-<p>(Due to changes in Chrome 137 where the <code>--load-extension</code> switch was removed, you can't load extensions directly from this format.)</p>
-</blockquote>
 <hr />
 <p align="left">📗 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py">SeleniumBase/examples/test_get_swag.py</a>, which tests an e-commerce site:</p>
 
