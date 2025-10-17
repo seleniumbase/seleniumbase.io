@@ -2833,10 +2833,9 @@
 <h2 id="mobile-mode-mobile-testing"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Mobile Mode / Mobile Testing<a class="headerlink" href="#mobile-mode-mobile-testing" title="Permanent link">&para;</a></h2>
 <p>Use <code>--mobile</code> to run SeleniumBase tests using Chrome's mobile device emulator with default values for Device Metrics and User-Agent.</p>
 <p><b>Here's an example mobile test:</b></p>
-<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_skype_site.py">SeleniumBase/examples/test_skype_site.py</a></p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_skype_site.py<span class="w"> </span>--mobile
+<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_roblox_mobile.py">SeleniumBase/examples/test_roblox_mobile.py</a></p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_roblox_mobile.py<span class="w"> </span>--mobile
 </code></pre></div>
-<p><a href="https://seleniumbase.github.io/cdn/gif/skype_mobile_test_2.gif"><img src="https://seleniumbase.github.io/cdn/gif/skype_mobile_test_2.gif" title="SeleniumBase Mobile Testing"></a></p>
 <p>To configure Device Metrics, use:</p>
 <div class="highlight"><pre><span></span><code>--metrics<span class="o">=</span><span class="s2">&quot;CSS_Width,CSS_Height,Pixel_Ratio&quot;</span>
 </code></pre></div>
@@ -2873,17 +2872,11 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">mobile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.skype.com/en/get-skype/&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;[aria-label=&quot;Microsoft&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Download Skype&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;div.appBannerContent&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Skype for Mobile&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#get-skype-0&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight_click</span><span class="p">(</span><span class="s2">&quot;span[data-dropdown-icon]&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#get-skype-0_android-download&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;[data-bi-id*=&quot;ios&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.roblox.com/&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#download-the-app-container&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Roblox for Android&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;Roblox for Android&quot;)&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;Continue in App&quot;)&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
