@@ -2862,7 +2862,7 @@
 
 <h2 id="how-seleniumbase-works"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> How SeleniumBase Works 👁️<a class="headerlink" href="#how-seleniumbase-works" title="Permanent link">&para;</a></h2>
 <p><a id="how_seleniumbase_works"></a></p>
-<p>👁️🔎 The primary <a href="../syntax_formats/">SeleniumBase syntax format</a> works by extending <a href="https://docs.pytest.org/en/latest/">pytest</a> as a direct plugin. SeleniumBase automatically spins up web browsers for tests (using <a href="https://www.selenium.dev/documentation/webdriver/">Selenium WebDriver</a>), and then gives those tests access to the SeleniumBase libraries through the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase class</a>. Tests are also given access to <a href="../customizing_test_runs/">SeleniumBase command-line options</a> and <a href="../method_summary/">SeleniumBase methods</a>, which provide additional functionality.</p>
+<p>👁️🔎 The primary <a href="../syntax_formats/">SeleniumBase syntax format</a> works by extending <a href="https://docs.pytest.org/en/latest/">pytest</a> as a direct plugin. SeleniumBase automatically spins up web browsers for tests, and then gives those tests access to the SeleniumBase libraries through the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">BaseCase class</a>. Tests are also given access to <a href="../customizing_test_runs/">SeleniumBase command-line options</a> and <a href="../method_summary/">SeleniumBase methods</a>.</p>
 <p>👁️🔎 <code>pytest</code> uses a feature called test discovery to automatically find and run Python methods that start with <code>test_</code> when those methods are located in Python files that start with <code>test_</code> or end with <code>_test.py</code>.</p>
 <p>👁️🔎 The primary <a href="../syntax_formats/">SeleniumBase syntax format</a> starts by importing <code>BaseCase</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
@@ -2889,7 +2889,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -2912,7 +2912,7 @@ pytest<span class="w"> </span>offline_examples/
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
