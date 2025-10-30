@@ -2860,14 +2860,12 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">focus</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.refresh_page(), self.reload_page(), self.reload()</span>
+<span class="c1"># Duplicates: self.refresh_page(), self.reload_page(), self.reload()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_origin</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.get_page_title()</span>
+<span class="c1"># Duplicates: self.get_page_title()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_user_agent</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_locale_code</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>
@@ -2982,7 +2980,9 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">set_window_size</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">set_window_position</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">maximize_window</span><span class="p">()</span>
+<span class="c1"># Duplicates: self.maximize()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">minimize_window</span><span class="p">()</span>
+<span class="c1"># Duplicates: self.minimize()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">reset_window_size</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">invisible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>
@@ -2991,23 +2991,17 @@
     <span class="c1"># Indented Code Block for Context Manager (Must use &quot;with&quot;)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">set_content_to_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">set_content_to_default</span><span class="p">(</span><span class="n">nested</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.set_content_to_default_content(nested=False)</span>
+<span class="c1"># Duplicates: self.set_content_to_default_content(nested=False)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">set_content_to_parent</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.set_content_to_parent_frame()</span>
+<span class="c1"># Duplicates: self.set_content_to_parent_frame()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">open_new_window</span><span class="p">(</span><span class="n">switch_to</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.open_new_tab(switch_to=True)</span>
+<span class="c1"># Duplicates: self.open_new_tab(switch_to=True)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_window</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.switch_to_tab(tab, timeout=None)</span>
+<span class="c1"># Duplicates: self.switch_to_tab(tab, timeout=None)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_window</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.switch_to_default_tab()</span>
+<span class="c1"># Duplicates: self.switch_to_default_tab()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_newest_window</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.switch_to_newest_tab()</span>
+<span class="c1"># Duplicates: self.switch_to_newest_tab()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_new_driver</span><span class="p">(</span>
     <span class="n">browser</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">headless</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -3075,13 +3069,11 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">append_data_to_logs</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">save_page_source_to_logs</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">save_page_source</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.save_as_html(name, folder=None)</span>
+<span class="c1"># Duplicates: self.save_as_html(name, folder=None)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">save_cookies</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cookies.txt&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">load_cookies</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cookies.txt&quot;</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">delete_all_cookies</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.clear_all_cookies()</span>
+<span class="c1"># Duplicates: self.clear_all_cookies()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">delete_saved_cookies</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cookies.txt&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_saved_cookies</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cookies.txt&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_cookie</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -3092,8 +3084,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_ready_state_complete</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_angularjs</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.wait(seconds)</span>
+<span class="c1"># Duplicates: self.wait(seconds)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">install_addon</span><span class="p">(</span><span class="n">xpi_file</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">activate_demo_mode</span><span class="p">()</span>
@@ -3125,6 +3116,10 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">scroll_into_view</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">scroll_to_top</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">scroll_to_bottom</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">scroll_to_y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">scroll_by_y</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">scroll_up</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">scroll_down</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click_xpath</span><span class="p">(</span><span class="n">xpath</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">js_click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">all_matches</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">js_click_if_present</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -3139,8 +3134,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_element</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">ad_block</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.block_ads()</span>
+<span class="c1"># Duplicates: self.block_ads()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">show_file_choosers</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">disable_beforeunload</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_domain_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -3168,8 +3162,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">append_data_to_file</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">destination_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_file_data</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">print_to_pdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.save_as_pdf(name, folder=None)</span>
+<span class="c1"># Duplicates: self.save_as_pdf(name, folder=None)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_downloads_folder</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_browser_downloads_folder</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_downloaded_files</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -3178,8 +3171,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">is_downloaded_file_present</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">is_downloaded_file_regex_present</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">delete_downloaded_file_if_present</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.delete_downloaded_file(file, browser=False)</span>
+<span class="c1"># Duplicates: self.delete_downloaded_file(file, browser=False)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_downloaded_file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_downloaded_file_regex</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_data_in_downloaded_file</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -3246,16 +3238,14 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">get_local_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_local_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">clear_local_storage</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.delete_local_storage()</span>
+<span class="c1"># Duplicates: self.delete_local_storage()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_local_storage_keys</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_local_storage_items</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">set_session_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_session_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">remove_session_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">clear_session_storage</span><span class="p">()</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.delete_session_storage()</span>
+<span class="c1"># Duplicates: self.delete_session_storage()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_session_storage_keys</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_session_storage_items</span><span class="p">()</span>
 
@@ -3319,8 +3309,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">set_introjs_colors</span><span class="p">(</span><span class="n">theme_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hover_color</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.start_tour(name=None, interval=0):</span>
+<span class="c1"># Duplicates: self.start_tour(name=None, interval=0):</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">export_tour</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_tour.js&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="c1">############</span>
@@ -3407,8 +3396,7 @@
 <span class="c1"># self.wait_for_link_text(link_text, timeout=None)</span>
 <span class="c1"># self.wait_for_link_text_visible(link_text, timeout=None)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_link_text</span><span class="p">(</span><span class="n">link_text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.assert_link(link_text, timeout=None)</span>
+<span class="c1"># Duplicates: self.assert_link(link_text, timeout=None)</span>
 
 <span class="c1">############</span>
 
@@ -3453,14 +3441,11 @@
 <span class="c1">############</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">accept_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.wait_for_and_accept_alert(timeout=None)</span>
+<span class="c1"># Duplicates: self.wait_for_and_accept_alert(timeout=None)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">dismiss_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.wait_for_and_dismiss_alert(timeout=None)</span>
+<span class="c1"># Duplicates: self.wait_for_and_dismiss_alert(timeout=None)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_alert</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.wait_for_and_switch_to_alert(timeout=None)</span>
+<span class="c1"># Duplicates: self.wait_for_and_switch_to_alert(timeout=None)</span>
 
 <span class="c1">############</span>
 
@@ -3501,8 +3486,7 @@
 <span class="c1">#     name=&quot;default&quot;, level=0, baseline=False,</span>
 <span class="c1">#     check_domain=True, full_diff=False, fs=False)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">(</span><span class="n">print_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># Duplicates</span>
-<span class="c1"># self.process_delayed_asserts(print_only=False)</span>
+<span class="c1"># Duplicates: self.process_delayed_asserts(print_only=False)</span>
 
 <span class="c1">############</span>
 
