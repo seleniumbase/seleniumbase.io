@@ -2965,7 +2965,7 @@
 <p>(<b><a href="https://www.youtube.com/watch?v=gEZhTfaIxHQ">Watch "Web-Scraping with GitHub Actions" on YouTube! ▶️</a></b>)</p>
 
 <hr />
-<p>👤 <b translate="no">UC Mode</b> avoids bot-detection by first disconnecting WebDriver from the browser at strategic times, calling special <code>PyAutoGUI</code> methods to bypass CAPTCHAs (as needed), and finally reconnecting the <code>driver</code> afterwards so that WebDriver actions can be performed again. Although this approach works for bypassing simple CAPTCHAs, more flexibility is needed for bypassing bot-detection on websites with advanced protection. (That's where <b translate="no">CDP Mode</b> comes in.)</p>
+<p>👤 <b translate="no">UC Mode</b> avoids bot-detection by first disconnecting WebDriver from the browser at strategic times, calling special <code><a href="https://github.com/asweigart/pyautogui">PyAutoGUI</a></code> methods to bypass CAPTCHAs (as needed), and finally reconnecting the <code>driver</code> afterwards so that WebDriver actions can be performed again. Although this approach works for bypassing simple CAPTCHAs, more flexibility is needed for bypassing bot-detection on websites with advanced protection. (That's where <b translate="no">CDP Mode</b> comes in.)</p>
 <p>🐙 <b translate="no">CDP Mode</b> is based on <a href="https://github.com/HyperionGray/python-chrome-devtools-protocol" translate="no">python-cdp</a>, <a href="https://github.com/HyperionGray/trio-chrome-devtools-protocol" translate="no">trio-cdp</a>, and <a href="https://github.com/ultrafunkamsterdam/nodriver" translate="no">nodriver</a>. <code>trio-cdp</code> is an early implementation of <code>python-cdp</code>, and <code>nodriver</code> is a modern implementation of <code>python-cdp</code>. (Refactored <code>Python-CDP</code> code is imported from <a href="https://github.com/mdmintz/MyCDP" translate="no">MyCDP</a>.)</p>
 <p>🐙 <b translate="no">CDP Mode</b> includes multiple updates to the above, such as:</p>
 <ul>
@@ -2993,13 +2993,12 @@
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="332"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="288"></p>
-<p>(If the CAPTCHA wasn't bypassed automatically when going to the URL, then <code>sb.uc_gui_click_captcha()</code> gets the job done with a mouse click from <a href="https://github.com/asweigart/pyautogui">PyAutoGUI</a>.)</p>
-<p>ℹ️ Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
+<p>(If the CAPTCHA wasn't bypassed automatically when going to the URL, then <code>sb.solve_captcha()</code> gets the job done.)</p>
 <hr />
-<p>You can also use <code>sb.cdp.gui_click_element(selector)</code> to click on elements using <code>PyAutoGUI</code>. (This is useful when clicking inside <code>#shadow-root</code>.) Example:</p>
+<p><code>sb.cdp.gui_click_element(selector)</code> lets you click on elements using <code>PyAutoGUI</code>. Example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
@@ -3014,12 +3013,14 @@
 <p>When using <code>sb.cdp.gui_click_element(selector)</code> on CF Turnstiles, use the parent <code>selector</code> that appears <strong>above</strong> the <code>#shadow-root</code> element:
 Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <p><img src="https://seleniumbase.github.io/other/above_shadow.png" title="SeleniumBase" width="480"></p>
-<p>In most cases, <code>sb.uc_gui_click_captcha()</code> is good enough for CF Turnstiles without needing <code>sb.cdp.gui_click_element(selector)</code>. (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
+<p>In most cases, <code>sb.solve_captcha()</code> is good enough for CF Turnstiles without needing <code>sb.cdp.gui_click_element(selector)</code>. (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
+<p>ℹ️ Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
 <hr />
 <h3 id="here-are-a-few-common-sbcdp-methods">🐙 Here are a few common <code>sb.cdp</code> methods<a class="headerlink" href="#here-are-a-few-common-sbcdp-methods" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>sb.cdp.click(selector)</code>  (Uses the CDP API to click)</li>
 <li><code>sb.cdp.click_if_visible(selector)</code>  (Click if visible)</li>
+<li><code>sb.cdp.solve_captcha()</code>  (Uses CDP to click a CAPTCHA)</li>
 <li><code>sb.cdp.gui_click_element(selector)</code>  (Uses <code>PyAutoGUI</code>)</li>
 <li><code>sb.cdp.type(selector, text)</code>  (Type text into a selector)</li>
 <li><code>sb.cdp.press_keys(selector, text)</code>  (Human-speed <code>type</code>)</li>
@@ -3056,37 +3057,37 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.pokemon.com/us&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#onetrust-accept-btn-handler&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#onetrust-accept-btn-handler&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a span.icon_pokeball&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a span.icon_pokeball&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;b:contains(&quot;Show Advanced Search&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;b:contains(&quot;Show Advanced Search&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;span[data-type=&quot;type&quot;][data-value=&quot;electric&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;span[data-type=&quot;type&quot;][data-value=&quot;electric&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">scroll_into_view</span><span class="p">(</span><span class="s2">&quot;a#advSearch&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a#advSearch&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a#advSearch&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;img/pokedex/detail/025.png&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Pikachu&quot;</span><span class="p">,</span> <span class="s1">&#39;div[class*=&quot;title&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Pikachu&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">scroll_into_view</span><span class="p">(</span><span class="s2">&quot;div.pokemon-ability-info&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;img[src*=&quot;img/pokedex/detail/025.png&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Pikachu&quot;</span><span class="p">,</span> <span class="s1">&#39;div[class*=&quot;title&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Pikachu&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">scroll_into_view</span><span class="p">(</span><span class="s2">&quot;div.pokemon-ability-info&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s1">&#39;div[class*=&quot;title&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Pikachu&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;div.pokemon-ability-info&quot;</span><span class="p">)</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;label.styled-select&quot;</span><span class="p">)</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;div.version-descriptions p.active&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;label.styled-select&quot;</span><span class="p">)</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;div.version-descriptions p.active&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** </span><span class="si">%s</span><span class="s2">: ***</span><span class="se">\n</span><span class="s2">* </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">info</span><span class="p">))</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">highlight_overlay</span><span class="p">(</span><span class="s2">&quot;div.pokemon-ability-info&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://events.pokemon.com/EventLocator/&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://events.pokemon.com/EventLocator/&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;Championship&quot;)&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;Championship&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">events</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">&quot;div.event-info__title&quot;</span><span class="p">)</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">&quot;div.event-info__title&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** Pokémon Championship Events: ***&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">event</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
@@ -3120,9 +3121,9 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button.be-button-shop&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
     <span class="n">card_info</span> <span class="o">=</span> <span class="s1">&#39;div[data-booking-status=&quot;BOOKABLE&quot;] [class*=&quot;HotelCard_info&quot;]&#39;</span>
-    <span class="n">hotels</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">card_info</span><span class="p">)</span>
+    <span class="n">hotels</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">card_info</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hyatt Hotels in </span><span class="si">%s</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">location</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s1">&#39;span[class*=&quot;summary_destination&quot;]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s1">&#39;span[class*=&quot;summary_destination&quot;]&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hotels</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No availability over the selected dates!&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">hotel</span> <span class="ow">in</span> <span class="n">hotels</span><span class="p">:</span>
@@ -3151,26 +3152,26 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.bestwestern.com/en_US.html&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s2">&quot;.onetrust-close-btn-handler&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s2">&quot;.onetrust-close-btn-handler&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#destination-input&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#destination-input&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Palm Springs, CA, USA&quot;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s2">&quot;input#destination-input&quot;</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s2">&quot;input#destination-input&quot;</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;ul#google-suggestions li&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;ul#google-suggestions li&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#btn-modify-stay-update&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#btn-modify-stay-update&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;label#available-label&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;label#available-label&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Western Hotels in </span><span class="si">%s</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">location</span><span class="p">)</span>
-    <span class="n">summary_details</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;#summary-details-column&quot;</span><span class="p">)</span>
+    <span class="n">summary_details</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;#summary-details-column&quot;</span><span class="p">)</span>
     <span class="n">dates</span> <span class="o">=</span> <span class="n">summary_details</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;DESTINATION&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; CHECK-OUT&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; CHECK-OUT&quot;</span>
     <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Dates: </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">dates</span><span class="p">)</span>
-    <span class="n">flip_cards</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">&quot;.flipCard&quot;</span><span class="p">)</span>
+    <span class="n">flip_cards</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">&quot;.flipCard&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">flip_card</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flip_cards</span><span class="p">):</span>
         <span class="n">hotel</span> <span class="o">=</span> <span class="n">flip_card</span><span class="o">.</span><span class="n">query_selector</span><span class="p">(</span><span class="s2">&quot;.hotelName&quot;</span><span class="p">)</span>
         <span class="n">price</span> <span class="o">=</span> <span class="n">flip_card</span><span class="o">.</span><span class="n">query_selector</span><span class="p">(</span><span class="s2">&quot;.priceSection&quot;</span><span class="p">)</span>
@@ -3207,12 +3208,12 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
         <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;#px-captcha&quot;</span><span class="p">):</span>
             <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">gui_click_and_hold</span><span class="p">(</span><span class="s2">&quot;#px-captcha&quot;</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">)</span>
             <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="s1">&#39;[data-testid=&quot;skyline-ad&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="s1">&#39;[data-testid=&quot;sba-container&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="s1">&#39;[data-testid=&quot;skyline-ad&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="s1">&#39;[data-testid=&quot;sba-container&quot;]&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** Walmart Search for &quot;</span><span class="si">%s</span><span class="s1">&quot;:&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    (Results must contain &quot;</span><span class="si">%s</span><span class="s1">&quot;.)&#39;</span> <span class="o">%</span> <span class="n">required_text</span><span class="p">)</span>
     <span class="n">unique_item_text</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;div[data-testid=&quot;list-view&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;div[data-testid=&quot;list-view&quot;]&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">required_text</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
             <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
@@ -3471,8 +3472,10 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span>
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">gui_click_captcha</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#captcha-success&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </code></pre></div>
 <p>Another example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_methods.py">SeleniumBase/examples/cdp_mode/raw_cdp_methods.py</a>)</p>
@@ -3501,6 +3504,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <p>(Eg. After <code>element = sb.find_element(selector)</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="n">element</span><span class="o">.</span><span class="n">clear_input</span><span class="p">()</span>
 <span class="n">element</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<span class="n">element</span><span class="o">.</span><span class="n">click_with_offset</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">element</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;EE4488&quot;</span><span class="p">)</span>
 <span class="n">element</span><span class="o">.</span><span class="n">focus</span><span class="p">()</span>
 <span class="n">element</span><span class="o">.</span><span class="n">gui_click</span><span class="p">(</span><span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
