@@ -916,9 +916,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-the-successor-to-default-uc-mode-see-cdp-mode" class="md-nav__link">
+  <a href="#for-the-successor-to-plain-uc-mode-see-cdp-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      (For the successor to default UC Mode, see CDP Mode 🐙)
+      (For the successor to plain UC Mode, see CDP Mode 🐙)
     </span>
   </a>
   
@@ -928,15 +928,6 @@
   <a href="#here-are-some-examples-that-use-uc-mode" class="md-nav__link">
     <span class="md-ellipsis">
       👤 Here are some examples that use UC Mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      👤 Here are some UC Mode examples that bypass CAPTCHAs when clicking is required
     </span>
   </a>
   
@@ -2854,9 +2845,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-the-successor-to-default-uc-mode-see-cdp-mode" class="md-nav__link">
+  <a href="#for-the-successor-to-plain-uc-mode-see-cdp-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      (For the successor to default UC Mode, see CDP Mode 🐙)
+      (For the successor to plain UC Mode, see CDP Mode 🐙)
     </span>
   </a>
   
@@ -2866,15 +2857,6 @@
   <a href="#here-are-some-examples-that-use-uc-mode" class="md-nav__link">
     <span class="md-ellipsis">
       👤 Here are some examples that use UC Mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      👤 Here are some UC Mode examples that bypass CAPTCHAs when clicking is required
     </span>
   </a>
   
@@ -2917,7 +2899,7 @@
 <h2 id="uc-mode"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> UC Mode 👤<a class="headerlink" href="#uc-mode" title="Permanent link">&para;</a></h2>
 <p>👤 <b translate="no">SeleniumBase</b> <b translate="no">UC Mode</b> (Undetected-Chromedriver Mode) allows bots to appear human, which lets them evade detection from anti-bot services that try to block them or trigger CAPTCHAs on various websites.</p>
 <blockquote>
-<h4 id="for-the-successor-to-default-uc-mode-see-cdp-mode">(For the successor to default UC Mode, see <strong><a href="../../examples/cdp_mode/ReadMe/">CDP Mode 🐙</a></strong>)<a class="headerlink" href="#for-the-successor-to-default-uc-mode-see-cdp-mode" title="Permanent link">&para;</a></h4>
+<h3 id="for-the-successor-to-plain-uc-mode-see-cdp-mode">(For the successor to plain UC Mode, see <strong><a href="../../examples/cdp_mode/ReadMe/">CDP Mode 🐙</a></strong>)<a class="headerlink" href="#for-the-successor-to-plain-uc-mode-see-cdp-mode" title="Permanent link">&para;</a></h3>
 </blockquote>
 <hr />
 <figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/5dMFI3e85ig?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
@@ -2936,12 +2918,7 @@
 <p>(<b><a href="https://www.youtube.com/watch?v=Mr90iQmNsKM">Watch the 4th UC Mode tutorial on YouTube! ▶️</a></b>)</p>
 
 <hr />
-<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>. <span translate="no">UC Mode</span> includes multiple updates, fixes, and improvements, such as:</p>
-<ul>
-<li>Automatically changing user-agents to prevent detection.</li>
-<li>Automatically setting various Chromium args as needed.</li>
-<li>Has special <code>uc_*()</code> methods for bypassing CAPTCHAs.</li>
-</ul>
+<p>👤 <b translate="no">UC Mode</b> is based on <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a>. <span translate="no">UC Mode</span> includes multiple updates, fixes, and improvements, such as having special <code>uc_*()</code> methods for bypassing CAPTCHAs.</p>
 <p>👤 Here's a simple example with the <b><code translate="no">Driver</code></b> manager:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
 
@@ -2998,26 +2975,16 @@
     <span class="n">submit_button</span> <span class="o">=</span> <span class="s1">&#39;span:contains(&quot;Check Authority&quot;)&#39;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># The bot-check is later</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="s2">&quot;github.com/seleniumbase/SeleniumBase&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">submit_button</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">submit_button</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mf">3.25</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text_not_visible</span><span class="p">(</span><span class="s2">&quot;Checking&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text_not_visible</span><span class="p">(</span><span class="s2">&quot;Checking&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button[data-cky-tag=&quot;close-button&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;p:contains(&quot;github.com/seleniumbase/SeleniumBase&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Top 100 backlinks&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;bottom_center&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/ahrefs_bypass.png" title="SeleniumBase" width="540"></p>
-<p>👤 Here, <b>the CAPTCHA appears after clicking to go to the sign-in screen</b>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
-
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.thaiticketmajor.com/concert/&quot;</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mf">6.111</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="s2">&quot;button.btn-signin&quot;</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
-</code></pre></div>
-<p><img src="https://seleniumbase.github.io/other/ttm_bypass.png" title="SeleniumBase" width="540"></p>
 <hr />
 <p>👤 <b>On Linux</b>, use <code>sb.uc_gui_click_captcha()</code> to handle CAPTCHAs (Cloudflare Turnstiles):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
@@ -3042,34 +3009,20 @@
 <h3 id="here-are-some-examples-that-use-uc-mode">👤 Here are some examples that use UC Mode<a class="headerlink" href="#here-are-some-examples-that-use-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/verify_undetected.py">SeleniumBase/examples/verify_undetected.py</a></li>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_bing_captcha.py">SeleniumBase/examples/raw_bing_captcha.py</a></li>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_turnstile.py">SeleniumBase/examples/raw_turnstile.py</a></li>
+<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_form_turnstile.py">SeleniumBase/examples/raw_form_turnstile.py</a></li>
 <li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_uc_mode.py">SeleniumBase/examples/raw_uc_mode.py</a></li>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_cf.py">SeleniumBase/examples/raw_cf.py</a></li>
 </ul>
+<p><img src="https://seleniumbase.github.io/other/cf_bypass.png" title="SeleniumBase" width="260"></p>
 <hr />
 <p>👤 Here's an example where <b><code translate="no">incognito=True</code> is needed for bypassing detection</b>:</p>
-<ul>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pixelscan.py">SeleniumBase/examples/raw_pixelscan.py</a></li>
-</ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://pixelscan.net/&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">remove_elements</span><span class="p">(</span><span class="s2">&quot;jdiv&quot;</span><span class="p">)</span>  <span class="c1"># Remove chat widgets</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;span.text-success&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;.bot-detection-context&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/pixelscan.jpg" title="SeleniumBase" width="540"></p>
-<hr />
-<h3 id="here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required">👤 Here are some UC Mode examples that bypass CAPTCHAs when clicking is required<a class="headerlink" href="#here-are-some-uc-mode-examples-that-bypass-captchas-when-clicking-is-required" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pyautogui.py">SeleniumBase/examples/raw_pyautogui.py</a></li>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_turnstile.py">SeleniumBase/examples/raw_turnstile.py</a></li>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_form_turnstile.py">SeleniumBase/examples/raw_form_turnstile.py</a></li>
-<li><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/uc_cdp_events.py">SeleniumBase/examples/uc_cdp_events.py</a></li>
-</ul>
-<p><img src="https://seleniumbase.github.io/other/cf_bypass.png" title="SeleniumBase" width="260"></p>
 <hr />
 <h3 id="here-are-the-seleniumbase-uc-mode-methods-uc-uctrue">👤 Here are the SeleniumBase UC Mode methods: (<strong><code>--uc</code></strong> / <strong><code>uc=True</code></strong>)<a class="headerlink" href="#here-are-the-seleniumbase-uc-mode-methods-uc-uctrue" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">uc_open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>

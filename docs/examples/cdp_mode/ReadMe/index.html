@@ -2951,7 +2951,7 @@
   <h1>🐙 CDP Mode</h1>
 
 <h2 id="cdp-mode"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> CDP Mode 🐙<a class="headerlink" href="#cdp-mode" title="Permanent link">&para;</a></h2>
-<p>🐙 <b translate="no">SeleniumBase</b> <b translate="no">CDP Mode</b> is a stealth mode of SeleniumBase that uses the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no"><span translate="no">Chrome Devtools Protocol</span></a> (via <a href="https://github.com/mdmintz/MyCDP" translate="no"><span translate="no">MyCDP</span></a>) to control the web browser. <b translate="no">CDP Mode</b> can be used either as a subset of <b><a href="../../../help_docs/uc_mode/" translate="no"><span translate="no">SeleniumBase UC Mode</span></a></b>, or via <b><a href="#Pure_CDP_Mode" translate="no">Pure CDP Mode</a></b> (<code>sb_cdp</code>), which doesn't use WebDriver at all, and has a slightly different setup.</p>
+<p>🐙 <b translate="no">SeleniumBase</b> <b translate="no">CDP Mode</b> is a stealth mode of SeleniumBase that uses the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no">Chrome Devtools Protocol</a> (via <a href="https://github.com/mdmintz/MyCDP" translate="no"><span translate="no">MyCDP</span></a>) to control the web browser. <b translate="no">CDP Mode</b> can be used either as a subset of <b><a href="../../../help_docs/uc_mode/" translate="no"><span translate="no">SeleniumBase UC Mode</span></a></b>, or via <b><a href="#Pure_CDP_Mode" translate="no">Pure CDP Mode</a></b> (<code>sb_cdp</code>), which doesn't use WebDriver at all, and has a slightly different setup.</p>
 <hr />
 <figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/Mr90iQmNsKM?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
 <p>(<b><a href="https://www.youtube.com/watch?v=Mr90iQmNsKM">Watch the CDP Mode tutorial on YouTube! ▶️</a></b>)</p>
@@ -2994,11 +2994,12 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" title="SeleniumBase" width="332"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" title="SeleniumBase" width="288"></p>
 <p>(If the CAPTCHA wasn't bypassed automatically when going to the URL, then <code>sb.solve_captcha()</code> gets the job done.)</p>
 <hr />
-<p><code>sb.cdp.gui_click_element(selector)</code> lets you click on elements using <code>PyAutoGUI</code>. Example:</p>
+<p>You can also use <code>PyAutoGUI</code> to click on elements with the mouse by calling <code>sb.cdp.gui_click_element(selector)</code>. Example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
@@ -3014,7 +3015,7 @@
 Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
 <p><img src="https://seleniumbase.github.io/other/above_shadow.png" title="SeleniumBase" width="480"></p>
 <p>In most cases, <code>sb.solve_captcha()</code> is good enough for CF Turnstiles without needing <code>sb.cdp.gui_click_element(selector)</code>. (See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_planetmc.py">SeleniumBase/examples/cdp_mode/raw_planetmc.py</a>)</p>
-<p>ℹ️ Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at run-time.</p>
+<p>ℹ️ Note that <code>PyAutoGUI</code> is an optional dependency. If calling a method that uses it when not already installed, then <code>SeleniumBase</code> installs <code>PyAutoGUI</code> at runtime.</p>
 <hr />
 <h3 id="here-are-a-few-common-sbcdp-methods">🐙 Here are a few common <code>sb.cdp</code> methods<a class="headerlink" href="#here-are-a-few-common-sbcdp-methods" title="Permanent link">&para;</a></h3>
 <ul>
