@@ -2823,16 +2823,18 @@
 <p>🐙 Stealth modes: <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b></a> and <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> help you evade bot-detection.</p>
 <p>ℹ️ Most scripts run with raw <code translate="no"><b>python</b></code>, although some scripts use <a href="help_docs/syntax_formats/">Syntax Formats</a> that expect <a href="https://docs.pytest.org/en/latest/how-to/usage.html" translate="no"><b>pytest</b></a> (a Python unit-testing framework included with SeleniumBase that can discover, collect, and run tests automatically).</p>
 <hr />
-<p align="left">📗 Here's a test script that performs a Google Search using SeleniumBase UC Mode:<br /><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">SeleniumBase/examples/raw_google.py</a> (Results are saved as PDF, HTML, and PNG)</p>
+<p align="left">📗 This script performs a Google Search using SeleniumBase UC Mode + CDP Mode:<br /><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py">SeleniumBase/examples/raw_google.py</a> (Results are saved as PDF, HTML, and PNG)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://google.com/ncr&quot;</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase GitHub page&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div:not([jsname]) &gt; * &gt; input&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Wait for the &quot;AI Overview&quot; result</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Wait for the &quot;AI Overview&quot; result</span>
     <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Generating&quot;</span><span class="p">):</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text</span><span class="p">(</span><span class="s2">&quot;AI Overview&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">save_as_pdf_to_logs</span><span class="p">()</span>  <span class="c1"># Saved to ./latest_logs/</span>
@@ -2851,7 +2853,7 @@
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.2</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
     <span class="c1"># (The rest is for testing and demo purposes)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>

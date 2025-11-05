@@ -3515,12 +3515,10 @@
 <p>Here's another example, which uses <code translate="no">test</code> mode:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase on GitHub</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[href*=&quot;github.com/seleniumbase&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;div.Layout-main&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;div.Layout-sidebar&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;a[href*=&quot;github.com/seleniumbase&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rtf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">demo</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
@@ -3543,7 +3541,7 @@
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;www.planetminecraft.com/account/sign_in/&quot;</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_element_absent</span><span class="p">(</span><span class="s2">&quot;input[disabled]&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
