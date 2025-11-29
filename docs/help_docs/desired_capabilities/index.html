@@ -85,11 +85,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#using-desired-capabilities" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -2286,19 +2281,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    📃 Desired Capabilities
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2310,32 +2292,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-desired-capabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Desired Capabilities
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2795,23 +2751,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-desired-capabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Desired Capabilities
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2830,7 +2769,8 @@
 
   <h1>📃 Desired Capabilities</h1>
 
-<h2 id="using-desired-capabilities"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Using Desired Capabilities<a class="headerlink" href="#using-desired-capabilities" title="Permanent link">&para;</a></h2>
+<h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Using Desired Capabilities</h2>
+
 <p>You can specify browser capabilities when running SeleniumBase tests on a remote Selenium Grid server (such as <a href="https://www.browserstack.com/automate/capabilities" target="_blank">BrowserStack</a> or <a href="https://saucelabs.com/products/platform-configurator" target="_blank">Sauce Labs</a>).</p>
 <p>Sample run commands may look like this when run from the <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a> folder: (The browser is now specified in the capabilities file.)</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_demo_site.py<span class="w"> </span>--browser<span class="o">=</span>remote<span class="w"> </span>--server<span class="o">=</span>USERNAME:KEY@hub.browserstack.com<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--cap_file<span class="o">=</span>capabilities/sample_cap_file_BS.py
