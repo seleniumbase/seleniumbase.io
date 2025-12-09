@@ -2816,7 +2816,7 @@
 
 <h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"> JS Package Manager and Code Generators</h2>
 
-<h3>🕹️ SeleniumBase lets you load JavaScript packages from any CDN link into any website via Python.</h3>
+<h3>❇️ SeleniumBase lets you load JavaScript packages from any CDN link into any website via Python.</h3>
 
 <p><b>🎨 The following SeleniumBase solutions utilize this feature:</b></p>
 <p>🎦 (<a href="https://seleniumbase.io/help_docs/demo_mode/">Demo Mode</a>)</p>
@@ -2833,7 +2833,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/tour_examples
 pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--interval<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
-<p>🕹️ SeleniumBase includes powerful JS code generators for converting Python into JavaScript for using the supported JS packages. A few lines of Python in your tests might generate hundreds of lines of JavaScript.</p>
+<p>❇️ SeleniumBase includes powerful JS code generators for converting Python into JavaScript for using the supported JS packages. A few lines of Python in your tests might generate hundreds of lines of JavaScript.</p>
 
 <p>🗺️ Here is some tour code in Python from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/maps_introjs_tour.py">maps_introjs_tour.py</a> that expands into a lot of JavaScript.</p>
 
@@ -2846,17 +2846,17 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 <span class="bp">self</span><span class="o">.</span><span class="n">export_tour</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;maps_introjs_tour.js&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 </code></pre></div>
-<p><div>🕹️ For existing features, SeleniumBase already takes care of loading all the necessary JS and CSS files into the web browser. To load other packages, here are a few useful methods that you should know about:</div></p>
+<p><div>❇️ For existing features, SeleniumBase already takes care of loading all the necessary JS and CSS files into the web browser. To load other packages, here are a few useful methods that you should know about:</div></p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="n">js_link</span><span class="p">)</span>
 </code></pre></div>
-<p><div>🕹️ This example loads the <a href="https://introjs.com/">IntroJS</a> JavaScript library:</div></p>
+<p><div>❇️ This example loads the <a href="https://introjs.com/">IntroJS</a> JavaScript library:</div></p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/intro.js@5.1.0/intro.min.js&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div>🕹️ You can load any JS package this way as long as you know the URL.</div>
+<div>❇️ You can load any JS package this way as long as you know the URL.</div>
 
-<p>🕹️ If you're wondering how SeleniumBase does this, here's the full Python code from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/js_utils.py">js_utils.py</a>, which uses WebDriver's <code>execute_script()</code> method for making JS calls after escaping quotes with backslashes as needed:</p>
+<p>❇️ If you're wondering how SeleniumBase does this, here's the full Python code from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/js_utils.py">js_utils.py</a>, which uses WebDriver's <code>execute_script()</code> method for making JS calls after escaping quotes with backslashes as needed:</p>
 
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
     <span class="n">script_to_add_js</span> <span class="o">=</span> <span class="p">(</span>
@@ -2874,15 +2874,15 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
     <span class="n">js_link</span> <span class="o">=</span> <span class="n">escape_quotes_if_needed</span><span class="p">(</span><span class="n">js_link</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_js</span> <span class="o">%</span> <span class="n">js_link</span><span class="p">)</span>
 </code></pre></div>
-<p>🕹️ Now that you've loaded JavaScript into the browser, you may also want to load some CSS to go along with it:</p>
+<p>❇️ Now that you've loaded JavaScript into the browser, you may also want to load some CSS to go along with it:</p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>
-<p>🕹️ Here's code that loads the <a href="https://introjs.com/">IntroJS</a> CSS:</p>
+<p>❇️ Here's code that loads the <a href="https://introjs.com/">IntroJS</a> CSS:</p>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>🕹️ And here's the Python WebDriver code that makes this possible:</p>
+<p>❇️ And here's the Python WebDriver code that makes this possible:</p>
 
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_css_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">css_link</span><span class="p">):</span>
     <span class="n">script_to_add_css</span> <span class="o">=</span> <span class="p">(</span>
@@ -2899,7 +2899,7 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
     <span class="n">css_link</span> <span class="o">=</span> <span class="n">escape_quotes_if_needed</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_css</span> <span class="o">%</span> <span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>
-<div>🕹️ Website tours are just one of the many uses of the JS Package Manager.</div>
+<div>❇️ Website tours are just one of the many uses of the JS Package Manager.</div>
 <p><div>🛂 The following example shows the <a href="https://github.com/craftpip/jquery-confirm">JqueryConfirm</a> package loaded into a website for creating fancy dialog boxes:</div></p>
 
 <p><img src="https://seleniumbase.github.io/cdn/img/emoji_sports_dialog.png" alt="SeleniumBase" width="480" /></p>
@@ -2913,7 +2913,7 @@ pytest<span class="w"> </span>test_dialog_boxes.py
 </code></pre></div>
 <p><div>(Example from the <a href="https://seleniumbase.io/examples/dialog_boxes/ReadMe/">Dialog Boxes ReadMe</a>)</div></p>
 
-<div>🕹️ Since packages are loaded directly from a CDN link, you won't need other package managers like NPM, Bower, or Yarn to get the packages that you need into the websites that you want.</div>
+<div>❇️ Since packages are loaded directly from a CDN link, you won't need other package managers like NPM, Bower, or Yarn to get the packages that you need into the websites that you want.</div>
 
 <hr />
 <p><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb.png" title="SeleniumBase" width="220"></a></p>
