@@ -3121,7 +3121,7 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">print_to_pdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">save_as_pdf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
-<p>ℹ️ When available, calling <code>sb.METHOD()</code> redirects to <code>sb.cdp.METHOD()</code> because regular SB methods automatically call their CDP Mode counterparts to maintain stealth when CDP Mode is active.</p>
+<p>ℹ️ When available, calling <code>sb.METHOD()</code> redirects to <code>sb.cdp.METHOD()</code> when CDP Mode is active. From Pure CDP Mode, always call these methods with <code>sb.METHOD()</code> instead of <code>sb.cdp.METHOD()</code>.</p>
 <hr />
 <p><a id="Pure_CDP_Mode"></a></p>
 <h3 id="pure-cdp-mode-sb_cdp">🐙 <b translate="no">Pure CDP Mode</b> (<code translate="no">sb_cdp</code>)<a class="headerlink" href="#pure-cdp-mode-sb_cdp" title="Permanent link">&para;</a></h3>
