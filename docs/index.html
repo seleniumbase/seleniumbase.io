@@ -2607,29 +2607,6 @@
   
   
     <li class="md-nav__item">
-      <a href="help_docs/chinese/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    🐲 Chinese Docs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="help_docs/locale_codes/" class="md-nav__link">
         
   
@@ -3529,6 +3506,12 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 └──<span class="w"> </span>setup.cfg
 </code></pre></div>
 <p>Of those files, the <code>pytest.ini</code> config file is the most important, followed by a blank <code>__init__.py</code> file. There's also a <code>setup.cfg</code> file (for pynose). Finally, the <code>requirements.txt</code> file can be used to help you install seleniumbase into your environments (if it's not already installed).</p>
+<p><b>ProTip™:</b> Add <code>--gha</code> to include a GitHub Actions <code>.yml</code> file with default settings:</p>
+<div class="highlight"><pre><span></span><code>ui_tests/
+└──<span class="w"> </span>.github<span class="w">                    </span>
+<span class="w">    </span>└──<span class="w"> </span>workflows/<span class="w">             </span>
+<span class="w">        </span>└──<span class="w"> </span>python-package.yml
+</code></pre></div>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Log files from failed tests:</h3>
 

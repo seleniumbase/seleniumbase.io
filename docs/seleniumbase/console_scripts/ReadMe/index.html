@@ -2609,29 +2609,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../help_docs/chinese/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    🐲 Chinese Docs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../help_docs/locale_codes/" class="md-nav__link">
         
   
@@ -2861,7 +2838,7 @@
 <span class="w">    </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>commands,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;seleniumbase --help&quot;</span>.
 <span class="w">    </span>Use<span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>running<span class="w"> </span>tests.
 </code></pre></div>
-<h3>get / install</h3>
+<h3><code>get</code> / <code>install</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -2884,19 +2861,28 @@ sbase<span class="w"> </span>get<span class="w"> </span>chromium
 sbase<span class="w"> </span>get<span class="w"> </span>cft<span class="w"> </span><span class="m">131</span>
 sbase<span class="w"> </span>get<span class="w"> </span>chs
 </code></pre></div>
-<p>(Drivers:  <code>chromedriver</code>, <code>cft</code>, <code>uc_driver</code>,
-           <code>edgedriver</code>, <code>chs</code>, <code>geckodriver</code>)</p>
-<p>(Options:  A specific driver version or major version integer.
-           If not set, the driver version matches the browser.
-           <code>-p</code> / <code>--path</code>: Also copy to "/usr/local/bin".)</p>
+<ul>
+<li>Drivers:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sb">`</span>chromedriver<span class="sb">`</span><span class="w"> </span>,<span class="w"> </span><span class="sb">`</span>cft<span class="sb">`</span>,<span class="w"> </span><span class="sb">`</span>uc_driver<span class="sb">`</span>
+<span class="sb">`</span>edgedriver<span class="sb">`</span><span class="w"> </span>,<span class="w"> </span><span class="sb">`</span>chs<span class="sb">`</span><span class="w"> </span>,<span class="w"> </span><span class="sb">`</span>geckodriver<span class="sb">`</span>
+</code></pre></div>
+<ul>
+<li>Options:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>NUM:<span class="w"> </span>A<span class="w"> </span>specific<span class="w"> </span>driver<span class="w"> </span>version<span class="w"> </span>or<span class="w"> </span>major<span class="w"> </span>version<span class="w"> </span>integer.
+<span class="w">     </span>If<span class="w"> </span>not<span class="w"> </span>set,<span class="w"> </span>the<span class="w"> </span>driver<span class="w"> </span>version<span class="w"> </span>matches<span class="w"> </span>the<span class="w"> </span>browser.
+
+<span class="sb">`</span>-p<span class="sb">`</span><span class="w"> </span>/<span class="w"> </span><span class="sb">`</span>--path<span class="sb">`</span>:<span class="w"> </span>Also<span class="w"> </span>copy<span class="w"> </span>the<span class="w"> </span>driver<span class="w"> </span>to<span class="w"> </span>/usr/local/bin.
+</code></pre></div>
 <ul>
 <li>Output:</li>
 </ul>
-<p>Downloads the webdriver to <code>seleniumbase/drivers/</code>
-(<code>chromedriver</code> is required for Chrome automation)
-(<code>geckodriver</code> is required for Firefox automation)
-(<code>edgedriver</code> is required for MS__Edge automation)</p>
-<h3>methods</h3>
+<p>Downloads the webdriver to <code>seleniumbase/drivers/</code></p>
+<p>(<code>chromedriver</code> is required for Chrome automation)<br />
+(<code>geckodriver</code> is required for Firefox automation)<br />
+(<code>edgedriver</code> is required for Edge automation)</p>
+<h3><code>methods</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -2907,7 +2893,7 @@ sbase<span class="w"> </span>get<span class="w"> </span>chs
 <li>Output:</li>
 </ul>
 <p>Displays common SeleniumBase Python methods.</p>
-<h3>options</h3>
+<h3><code>options</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -2971,7 +2957,7 @@ that are available when using SeleniumBase.</p>
 
 For<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>command-line<span class="w"> </span>options,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;pytest --help&quot;</span>.
 </code></pre></div>
-<h3>behave-options</h3>
+<h3><code>behave-options</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3026,7 +3012,7 @@ that are available when using SeleniumBase.</p>
 
 For<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>command-line<span class="w"> </span>options,<span class="w"> </span>type:<span class="w"> </span><span class="s2">&quot;behave --help&quot;</span>.
 </code></pre></div>
-<h3>gui / commander</h3>
+<h3><code>gui</code> / <code>commander</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3034,7 +3020,7 @@ For<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </spa
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>gui<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
 sbase<span class="w"> </span>commander<span class="w"> </span><span class="o">[</span>OPTIONAL<span class="w"> </span>PATH<span class="w"> </span>or<span class="w"> </span>TEST<span class="w"> </span>FILE<span class="o">]</span>
 </code></pre></div>
-<h3>behave-gui</h3>
+<h3><code>behave-gui</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3054,7 +3040,7 @@ sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/calculat
 <li>Output:</li>
 </ul>
 <p>Launches SeleniumBase Commander / GUI for Behave.</p>
-<h3>caseplans</h3>
+<h3><code>caseplans</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3074,7 +3060,7 @@ sbase<span class="w"> </span>caseplans<span class="w"> </span>offline_examples/
 <li>Output:</li>
 </ul>
 <p>Launches the SeleniumBase Case Plans Generator.</p>
-<h3>mkdir</h3>
+<h3><code>mkdir</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3090,6 +3076,7 @@ sbase<span class="w"> </span>caseplans<span class="w"> </span>offline_examples/
 <li>Options:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>-b<span class="w"> </span>/<span class="w"> </span>--basic<span class="w">  </span><span class="o">(</span>Only<span class="w"> </span>config<span class="w"> </span>files.<span class="w"> </span>No<span class="w"> </span>tests<span class="w"> </span>added.<span class="o">)</span>
+--gha<span class="w">  </span><span class="o">(</span>Include<span class="w"> </span>GitHub<span class="w"> </span>Actions<span class="w"> </span>YML<span class="w"> </span>with<span class="w"> </span>defaults.<span class="o">)</span>
 </code></pre></div>
 <ul>
 <li>Output:</li>
@@ -3128,7 +3115,13 @@ test frameworks.</p>
 ├──<span class="w"> </span>requirements.txt
 └──<span class="w"> </span>setup.cfg
 </code></pre></div>
-<h3>mkfile</h3>
+<p>If running with the <code>--gha</code> option, this is added:</p>
+<div class="highlight"><pre><span></span><code>ui_tests/
+└──<span class="w"> </span>.github<span class="w">                    </span>
+<span class="w">    </span>└──<span class="w"> </span>workflows/<span class="w">             </span>
+<span class="w">        </span>└──<span class="w"> </span>python-package.yml
+</code></pre></div>
+<h3><code>mkfile</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3179,7 +3172,7 @@ and "assert_text". If using the basic boilerplate
 option, only the "open" method is included. Only the
 BaseCase format supports Languages or Recorder Mode.
 UC Mode automatically uses English with SB() format.</p>
-<h3>mkrec / record / codegen</h3>
+<h3><code>mkrec</code> / <code>record</code> / <code>codegen</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3211,7 +3204,7 @@ sbase<span class="w"> </span>codegen<span class="w"> </span>new_test.py<span cla
 </ul>
 <p>Creates a new SeleniumBase test using the Recorder.
 If the filename already exists, an error is raised.</p>
-<h3>recorder</h3>
+<h3><code>recorder</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3228,7 +3221,7 @@ If the filename already exists, an error is raised.</p>
 <li>Output:</li>
 </ul>
 <p>Launches the SeleniumBase Recorder Desktop App.</p>
-<h3>mkpres</h3>
+<h3><code>mkpres</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3257,7 +3250,7 @@ If the file already exists, an error is raised.
 By default, the slides are written in English,
 and use "serif" theme with "slide" transition.
 The slides can be used as a basic boilerplate.</p>
-<h3>mkchart</h3>
+<h3><code>mkchart</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3286,7 +3279,7 @@ If the file already exists, an error is raised.
 By default, the slides are written in English,
 and use a "sky" theme with "slide" transition.
 The chart can be used as a basic boilerplate.</p>
-<h3>print</h3>
+<h3><code>print</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3303,7 +3296,7 @@ The chart can be used as a basic boilerplate.</p>
 </ul>
 <p>Prints the code/text of any file
 with syntax-highlighting.</p>
-<h3>translate</h3>
+<h3><code>translate</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3324,7 +3317,7 @@ with syntax-highlighting.</p>
 </ul>
 <div class="highlight"><pre><span></span><code>-p<span class="w"> </span>/<span class="w"> </span>--print<span class="w">  </span><span class="o">(</span>Print<span class="w"> </span>translation<span class="w"> </span>output<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>screen<span class="o">)</span>
 -o<span class="w"> </span>/<span class="w"> </span>--overwrite<span class="w">  </span><span class="o">(</span>Overwrite<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>being<span class="w"> </span>translated<span class="o">)</span>
--c<span class="w"> </span>/<span class="w"> </span>--copy<span class="w">  </span><span class="o">(</span>Copy<span class="w"> </span>the<span class="w"> </span>translation<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span><span class="sb">``</span>.py<span class="sb">``</span><span class="w"> </span>file<span class="o">)</span>
+-c<span class="w"> </span>/<span class="w"> </span>--copy<span class="w">  </span><span class="o">(</span>Copy<span class="w"> </span>the<span class="w"> </span>translation<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span><span class="sb">`</span>.py<span class="sb">`</span><span class="w"> </span>file<span class="o">)</span>
 </code></pre></div>
 <ul>
 <li>Options:</li>
@@ -3343,7 +3336,7 @@ will be the original name appended with an underscore
 plus the 2-letter language code of the new language.
 (Example: Translating "test_1.py" into Japanese with
 <code>-c</code> will create a new file called "test_1_ja.py".)</p>
-<h3>extract-objects</h3>
+<h3><code>extract-objects</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3356,7 +3349,7 @@ plus the 2-letter language code of the new language.
 <p>Creates page objects based on selectors found in a
 seleniumbase Python file and saves those objects to the
 "page_objects.py" file in the same folder as the tests.</p>
-<h3>inject-objects</h3>
+<h3><code>inject-objects</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3374,7 +3367,7 @@ seleniumbase Python file and saves those objects to the
 <p>Takes the page objects found in the "page_objects.py"
 file and uses those to replace matching selectors in
 the selected seleniumbase Python file.</p>
-<h3>objectify</h3>
+<h3><code>objectify</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3394,7 +3387,7 @@ have been replaced with variable names defined in
 "page_objects.py", supporting the Page Object Pattern.
 (This has the same outcome as combining
 <code>extract-objects</code> with <code>inject-objects</code>)</p>
-<h3>revert-objects</h3>
+<h3><code>revert-objects</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3413,7 +3406,7 @@ have been replaced with variable names defined in
 <code>seleniumbase inject-objects ...</code> when run against a
 seleniumbase Python file. Objects will get replaced by
 selectors stored in the "page_objects.py" file.</p>
-<h3>convert</h3>
+<h3><code>convert</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3427,7 +3420,7 @@ selectors stored in the "page_objects.py" file.</p>
 file into a SeleniumBase file. Adds <code>_SB</code> to the
 new filename while keeping the original file intact.
 Works on both Selenium IDE &amp; Katalon Recorder scripts.</p>
-<h3>encrypt / obfuscate</h3>
+<h3><code>encrypt</code> / <code>obfuscate</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3438,7 +3431,7 @@ Works on both Selenium IDE &amp; Katalon Recorder scripts.</p>
 </ul>
 <p>Runs the password encryption/obfuscation tool.
 (Where you can enter a password to encrypt/obfuscate.)</p>
-<h3>decrypt / unobfuscate</h3>
+<h3><code>decrypt</code> / <code>unobfuscate</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3449,7 +3442,7 @@ Works on both Selenium IDE &amp; Katalon Recorder scripts.</p>
 </ul>
 <p>Runs the password decryption/unobfuscation tool.
 (Where you can enter an encrypted password to decrypt.)</p>
-<h3>proxy</h3>
+<h3><code>proxy</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3468,7 +3461,7 @@ Works on both Selenium IDE &amp; Katalon Recorder scripts.</p>
 </ul>
 <p>Launch a basic proxy server on the current machine.
 (Uses <code>127.0.0.1:8899</code> as the default address.)</p>
-<h3>download</h3>
+<h3><code>download</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3480,7 +3473,7 @@ Works on both Selenium IDE &amp; Katalon Recorder scripts.</p>
 </ul>
 <p>Downloads the Selenium Server JAR file for Grid usage.
 (That JAR file is required when using a Selenium Grid)</p>
-<h3>grid-hub</h3>
+<h3><code>grid-hub</code></h3>
 
 <ul>
 <li>Usage:</li>
@@ -3501,7 +3494,7 @@ for running tests on multiple machines in parallel
 to speed up test runs and reduce the total time
 of test suite execution.
 You can start, restart, or stop the Grid Hub server.</p>
-<h3>grid-node</h3>
+<h3><code>grid-node</code></h3>
 
 <ul>
 <li>Usage:</li>
