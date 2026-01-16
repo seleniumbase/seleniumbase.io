@@ -3132,9 +3132,13 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[id=&quot;search-term&quot;]&#39;</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;li[data-js=&quot;suggestion&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button[aria-label=&quot;Close&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button.be-button-shop&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;[label=&quot;Find Hotels&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">card_info</span> <span class="o">=</span> <span class="s1">&#39;div[data-booking-status=&quot;BOOKABLE&quot;] [class*=&quot;HotelCard_info&quot;]&#39;</span>
     <span class="n">hotels</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">card_info</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hyatt Hotels in </span><span class="si">%s</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">location</span><span class="p">)</span>
@@ -3232,7 +3236,7 @@ Eg. <code>sb.cdp.gui_click_element("#turnstile-widget div")</code></p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** Walmart Search for &quot;</span><span class="si">%s</span><span class="s1">&quot;:&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    (Results must contain &quot;</span><span class="si">%s</span><span class="s1">&quot;.)&#39;</span> <span class="o">%</span> <span class="n">required_text</span><span class="p">)</span>
     <span class="n">unique_item_text</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;div[data-testid=&quot;list-view&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;div[data-test-id=&quot;gpt-main&quot;]&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">required_text</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
             <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
