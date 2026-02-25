@@ -3178,6 +3178,10 @@
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">set_window_state</span><span class="p">(</span>
     <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1280</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_navigation_history</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_user_agent</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_cookie_string</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_locale_code</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">is_online</span><span class="p">()</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">open_external_inspector</span><span class="p">()</span>  <span class="c1"># Open separate browser for debugging</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">scroll_down</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
@@ -3201,6 +3205,7 @@
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_gui_element_rect</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># (screen-based)</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get_origin</span><span class="p">()</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
