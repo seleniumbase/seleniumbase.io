@@ -3071,7 +3071,7 @@
 <ul>
 <li><strong><code>sb.disconnect()</code></strong></li>
 </ul>
-<p>While disconnected, if you accidentally call a WebDriver method, then <b translate="no">SeleniumBase</b> will attempt to use the <b translate="no">CDP Mode</b> version of that method (if available). For example, if you call <code>sb.click(selector)</code> instead of <code>sb.cdp.click(selector)</code>, then your WebDriver call will automatically be redirected to the <b translate="no">CDP Mode</b> version. Not all WebDriver methods have a matching <b translate="no">CDP Mode</b> method. In that scenario, calling a WebDriver method while disconnected could raise an error, or make WebDriver automatically reconnect first.</p>
+<p>While disconnected, if you call a WebDriver method, then <b translate="no">SeleniumBase</b> will attempt to use the <b translate="no">CDP Mode</b> version of that method (if available). For example, if you call <code>sb.click(selector)</code> instead of <code>sb.cdp.click(selector)</code>, then your WebDriver call will automatically be redirected to the <b translate="no">CDP Mode</b> version. Not all WebDriver methods have a matching <b translate="no">CDP Mode</b> method. In that scenario, calling a WebDriver method while disconnected could raise an error, or make WebDriver automatically reconnect first.</p>
 <p>To find out if WebDriver is connected or disconnected, call:</p>
 <ul>
 <li><strong><code>sb.is_connected()</code></strong></li>
