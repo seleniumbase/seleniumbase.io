@@ -960,9 +960,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cdp-mode-usage" class="md-nav__link">
+  <a href="#cdp-mode-usage-when-used-as-a-subset-of-uc-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      🐙 CDP Mode Usage
+      🐙 CDP Mode Usage (when used as a subset of UC Mode):
     </span>
   </a>
   
@@ -2896,9 +2896,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cdp-mode-usage" class="md-nav__link">
+  <a href="#cdp-mode-usage-when-used-as-a-subset-of-uc-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      🐙 CDP Mode Usage
+      🐙 CDP Mode Usage (when used as a subset of UC Mode):
     </span>
   </a>
   
@@ -2981,7 +2981,9 @@
 <h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> CDP Mode 🐙</h2>
 
 <p>🐙 <b translate="no">SeleniumBase</b> <b translate="no">CDP Mode</b> is a stealth mode that uses the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no">Chrome Devtools Protocol</a> (via <a href="https://github.com/mdmintz/MyCDP" translate="no"><span translate="no">MyCDP</span></a>) to control the web browser. <b translate="no">CDP Mode</b> can be used as a subset of <b><a href="../../../help_docs/uc_mode/" translate="no"><span translate="no">UC Mode</span></a></b>, or via <b><a href="#Pure_CDP_Mode" translate="no">Pure CDP Mode</a></b>, which has sync and async formats. From CDP Mode, you can make Playwright stealthy (<a translate="no" href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/ReadMe/">Stealthy Playwright Mode</a>).</p>
-<p><img src="https://seleniumbase.github.io/other/sb_stealth.png" width="632" alt="High-Level Stealthy Architecture Overview" title="High-Level Stealthy Architecture Overview" /></p>
+<hr />
+<p>⚙️ This diagram shows the stealthy architecture with <b>CDP Mode</b>:</p>
+<p><img src="https://seleniumbase.github.io/other/sb_stealth.png" width="585" alt="High-Level Stealthy Architecture Overview" title="High-Level Stealthy Architecture Overview" /></p>
 <hr />
 <h3 id="youtube-tutorials-that-cover-cdp-mode">🎞️ YouTube tutorials that cover CDP Mode<a class="headerlink" href="#youtube-tutorials-that-cover-cdp-mode" title="Permanent link">&para;</a></h3>
 <figure class="wp-block-embed wp-block-embed-youtube is-type-video is-provider-youtube"><div class="wp-block-embed__wrapper"><div class="epyt-video-wrapper fluid-width-video-wrapper" style="padding-top: 3px !important;"><iframe loading="lazy" id="_ytid_36718" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/Mr90iQmNsKM?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1" data-skipgform_ajax_framebjll=""></iframe></div></div></figure>
@@ -2997,6 +2999,7 @@
 <p>(<b><a href="https://www.youtube.com/watch?v=gEZhTfaIxHQ">Watch "Web-Scraping with GitHub Actions" on YouTube! ▶️</a></b>)</p>
 
 <hr />
+<p>ℹ️ Note the differences between <b>UC Mode</b> and <b>CDP Mode</b>:</p>
 <p>👤 <b translate="no">UC Mode</b>'s stealth is based on a modified chromedriver  (<code>uc_driver</code>) that avoids bot-detection by disconnecting and reconnecting WebDriver from the browser at strategic times. Due to advancements in anti-bot technology, more stealth was needed to bypass advanced bot-detection. (That's where <b translate="no">CDP Mode</b> comes in.)</p>
 <p>🐙 <b translate="no">CDP Mode</b> includes multiple updates to the above, such as:</p>
 <ul>
@@ -3008,13 +3011,10 @@
 <li>Can be used to make the Playwright library stealthy.</li>
 </ul>
 <hr />
-<h3 id="cdp-mode-usage">🐙 <b translate="no">CDP Mode</b> Usage<a class="headerlink" href="#cdp-mode-usage" title="Permanent link">&para;</a></h3>
+<h3 id="cdp-mode-usage-when-used-as-a-subset-of-uc-mode">🐙 <b translate="no">CDP Mode</b> Usage (when used as a subset of UC Mode):<a class="headerlink" href="#cdp-mode-usage-when-used-as-a-subset-of-uc-mode" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong><code>sb.activate_cdp_mode(url)</code></strong></li>
 </ul>
-<blockquote>
-<p>(Call that from a <strong>UC Mode</strong> script)</p>
-</blockquote>
 <p>That disconnects WebDriver from Chrome (which prevents detection), and gives you access to <code>sb.cdp</code> methods (which don't trigger anti-bot checks).</p>
 <blockquote>
 <p>(<strong>New:</strong> Calling <strong><code>sb.open(url)</code></strong> from UC Mode also activates CDP Mode now.)</p>
