@@ -3255,7 +3255,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** Walmart Search for &quot;</span><span class="si">%s</span><span class="s1">&quot;:&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    (Results must contain &quot;</span><span class="si">%s</span><span class="s1">&quot;.)&#39;</span> <span class="o">%</span> <span class="n">required_text</span><span class="p">)</span>
     <span class="n">unique_item_text</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;div[data-test-id=&quot;gpt-main&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;[data-automation-id=&quot;sb-btn-close-mark&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;[data-item-id]&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">required_text</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
             <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
