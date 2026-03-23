@@ -3402,7 +3402,7 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_active_tab</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_tabs</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_window</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_origin</span><span class="p">()</span>
@@ -3513,10 +3513,10 @@
 <hr />
 <p><a id="Pure_CDP_Mode"></a></p>
 <h3 id="pure-cdp-mode-sb_cdp">🐙 <b translate="no">Pure CDP Mode</b> (<code translate="no">sb_cdp</code>)<a class="headerlink" href="#pure-cdp-mode-sb_cdp" title="Permanent link">&para;</a></h3>
-<p><b translate="no">Pure CDP Mode</b> doesn't use WebDriver for anything. The browser is launched using CDP, and all browser actions are performed using CDP (or <code>PyAutoGUI</code>). Initialization:</p>
+<p>In <b translate="no">Pure CDP Mode</b>, the browser is launched using CDP, and browser actions are performed using CDP. WebDriver isn't available at all, but SeleniumBase can still call <code>PyAutoGUI</code> methods when CDP isn't enough. Here's how to initialize Pure CDP Mode:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div>
 <p><b translate="no">Pure CDP Mode</b> includes all methods from regular CDP Mode, except that they're called directly from <code>sb</code> instead of <code>sb.cdp</code>. Eg: <code>sb.gui_click_captcha()</code>. To quit a CDP-launched browser, use <code>sb.driver.stop()</code>.</p>
 <p>Basic example from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_turnstile.py">SeleniumBase/examples/cdp_mode/raw_cdp_turnstile.py</a>:</p>
