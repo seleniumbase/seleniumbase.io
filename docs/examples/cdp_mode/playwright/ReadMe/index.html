@@ -3080,10 +3080,8 @@
 </code></pre></div>
 <hr />
 <h3 id="proxy-with-auth-in-stealthy-playwright-mode">🎭 Proxy with auth in <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#proxy-with-auth-in-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
-<p>To use an authenticated proxy in Stealthy Playwright Mode, <strong>do these two things</strong>:
-<strong>1.</strong> Set the<code>proxy</code> arg when launching Chrome.
--- Eg: <code>sb_cdp.Chrome(proxy="USER:PASS@IP:PORT")</code> or <code>cdp_driver.start_async("USER:PASS@IP:PORT")</code>.
-<strong>2.</strong> Open the URL with SeleniumBase <strong>before</strong> using <code>endpoint_url</code> to connect to the browser with Playwright.</p>
+<p>To use an authenticated proxy in Stealthy Playwright Mode, <strong>do these two things</strong>:<br /><strong>1.</strong> Set the<code>proxy</code> arg when launching Chrome.
+-- Eg: <code>sb_cdp.Chrome(proxy="USER:PASS@IP:PORT")</code> or <code>cdp_driver.start_async("USER:PASS@IP:PORT")</code>.<br /><strong>2.</strong> Open the URL with SeleniumBase <strong>before</strong> using <code>endpoint_url</code> to connect to the browser with Playwright.</p>
 <p>⚠️ If any trouble with the above, set <code>use_chromium=True</code> so that you can use the base Chromium browser, which still allows extensions, unlike regular branded Chrome, which removed the <code>--load-extension</code> command-line switch. (<em>An extension is used to set the auth for the proxy, which is needed when CDP can't set the proxy alone, such as for navigation after the initial page load</em>).</p>
 <p>In the sync format, use <code>sb.open(url)</code> to open the url before connecting Playwright:
 <div class="highlight"><pre><span></span><code><span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">use_chromium</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="s2">&quot;user:pass@server:port&quot;</span><span class="p">)</span>
@@ -3097,8 +3095,7 @@
 <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
 <span class="c1"># ...</span>
 </code></pre></div></p>
-<p>Here's an example of using an authenticated proxy with Stealthy Playwright Mode:
-(The URL is opened before attaching Playwright so that proxy settings take effect)
+<p>Here's an example of using an authenticated proxy with Stealthy Playwright Mode:<br />(The URL is opened before attaching Playwright so that proxy settings take effect)
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
