@@ -3156,6 +3156,7 @@ pytest<span class="w"> </span>google_tour.py
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">undetectable</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_new_driver</span><span class="p">(</span><span class="n">undetectable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://google.com/ncr&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Accept all&quot;)&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hide_elements</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 
