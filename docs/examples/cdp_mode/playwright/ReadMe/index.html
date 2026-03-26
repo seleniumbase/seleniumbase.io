@@ -360,10 +360,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🎭 Getting started with Stealthy Playwright Mode:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sb_cdp-sync-format-minimal-boilerplate" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 sb_cdp sync format (minimal boilerplate):
@@ -371,8 +370,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#sb-nested-sync-format-minimal-boilerplate" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 SB() nested sync format (minimal boilerplate):
@@ -380,18 +379,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#cdp_driver-async-format-minimal-boilerplate" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 cdp_driver async format (minimal boilerplate):
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2943,10 +2937,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🎭 Getting started with Stealthy Playwright Mode:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sb_cdp-sync-format-minimal-boilerplate" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 sb_cdp sync format (minimal boilerplate):
@@ -2954,8 +2947,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#sb-nested-sync-format-minimal-boilerplate" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 SB() nested sync format (minimal boilerplate):
@@ -2963,18 +2956,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#cdp_driver-async-format-minimal-boilerplate" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 cdp_driver async format (minimal boilerplate):
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3084,21 +3072,21 @@
 
 <h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Stealthy Playwright Mode 🎭</h2>
 
-<p>🎭 <b translate="no">Stealthy Playwright Mode</b> is a subset of <strong><a href="../../ReadMe/">SeleniumBase CDP Mode</a></strong> that launches <strong><a href="https://github.com/microsoft/playwright-python">Playwright</a></strong> from an existing <b translate="no">SeleniumBase</b> browser to make <span translate="no">Playwright</span> stealthy (for bypassing bot-detection).  <span translate="no">Playwright</span> uses <code><b>connect_over_cdp()</b></code> to attach itself onto an existing <span translate="no">SeleniumBase</span> session via the <code>remote-debugging-port</code>. From here, APIs of both frameworks can be used together.</p>
+<p>🎭 <b translate="no">Stealthy Playwright Mode</b> is a subset of <strong><a href="../../ReadMe/">SeleniumBase CDP Mode</a></strong> where <span translate="no"><strong><a href="https://github.com/microsoft/playwright-python">Playwright</a></strong></span> calls <code><b>connect_over_cdp()</b></code> to attach itself onto a stealthy <span translate="no">SeleniumBase</span> browser session via the <code>remote-debugging-port</code>. This gives <span translate="no">Playwright</span> the ability to bypass bot-detection, and allows APIs of both frameworks to be used together.</p>
 <hr />
 <div style="text-align: left;"><iframe width="390" height="220" loading="lazy" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/PnFD_gSmGUc?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1"></iframe></div>
 <p>(<b><a href="https://www.youtube.com/watch?v=PnFD_gSmGUc">See Stealthy Playwright Mode on YouTube! ▶️</a></b>)</p>
 
 <hr />
 <h3 id="getting-started-with-stealthy-playwright-mode">🎭 Getting started with <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#getting-started-with-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
-<p>🎭 If <code>playwright</code> isn't already installed, then install it first:</p>
+<p>If <strong><code>playwright</code></strong> isn't already installed, then install it first:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>playwright
 </code></pre></div>
-<p>🎭 Stealthy Playwright Mode comes in 3 formats:
+<p><strong>Stealthy Playwright Mode</strong> comes in 3 formats:
 1. <code>sb_cdp</code> sync format
 2. <code>SB()</code> nested sync format
 3. <code>cdp_driver</code> async format</p>
-<h4 id="sb_cdp-sync-format-minimal-boilerplate">🎭  <code>sb_cdp</code> sync format (minimal boilerplate):<a class="headerlink" href="#sb_cdp-sync-format-minimal-boilerplate" title="Permanent link">&para;</a></h4>
+<h3 id="sb_cdp-sync-format-minimal-boilerplate">🎭  <code>sb_cdp</code> sync format (minimal boilerplate):<a class="headerlink" href="#sb_cdp-sync-format-minimal-boilerplate" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
@@ -3111,7 +3099,7 @@
     <span class="n">page</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="sb-nested-sync-format-minimal-boilerplate">🎭  <code>SB()</code> nested sync format (minimal boilerplate):<a class="headerlink" href="#sb-nested-sync-format-minimal-boilerplate" title="Permanent link">&para;</a></h4>
+<h3 id="sb-nested-sync-format-minimal-boilerplate">🎭  <code>SB()</code> nested sync format (minimal boilerplate):<a class="headerlink" href="#sb-nested-sync-format-minimal-boilerplate" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
@@ -3125,7 +3113,7 @@
         <span class="n">page</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="cdp_driver-async-format-minimal-boilerplate">🎭 <code>cdp_driver</code> async format (minimal boilerplate):<a class="headerlink" href="#cdp_driver-async-format-minimal-boilerplate" title="Permanent link">&para;</a></h4>
+<h3 id="cdp_driver-async-format-minimal-boilerplate">🎭 <code>cdp_driver</code> async format (minimal boilerplate):<a class="headerlink" href="#cdp_driver-async-format-minimal-boilerplate" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp_driver</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">playwright.async_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">async_playwright</span>
