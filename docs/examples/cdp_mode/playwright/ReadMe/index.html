@@ -3034,6 +3034,9 @@
 <p>The <code>sb_cdp</code> and <code>cdp_driver</code> formats don't use WebDriver at all, meaning that <code>chromedriver</code> isn't needed. From these two formats, Stealthy Playwright Mode can call <a href="../../../../help_docs/cdp_mode_methods/">CDP Mode methods</a> and Playwright methods.</p>
 <p>The <code>SB()</code> format requires WebDriver, therefore <code>chromedriver</code> will be downloaded (as <code>uc_driver</code>) if the driver isn't already present on the local machine. The <code>SB()</code> format has access to Selenium WebDriver methods via <a href="../../../../help_docs/method_summary/">the SeleniumBase API</a>. Using Stealthy Playwright Mode from <code>SB()</code> grants access to all the APIs: Selenium, SeleniumBase, <a href="../../../../help_docs/uc_mode/">UC Mode</a>, <a href="../../ReadMe/">CDP Mode</a>, and Playwright.</p>
 <p>In the sync formats, <code>get_endpoint_url()</code> also applies <code>nest-asyncio</code> so that nested event loops are allowed. (Python doesn't allow nested event loops by default). Without this, you'd get the error: <code>"Cannot run the event loop while another loop is running"</code> when calling CDP Mode methods (such as <code>solve_captcha()</code>) from within the Playwright context manager. This <code>nest-asyncio</code> call is done behind-the-scenes so that users don't need to handle this on their own.</p>
+<p>Default timeout values are different between Playwright and SeleniumBase. For instance, a 30-second default timeout in a Playwright method might be 10 seconds in the equivalent SeleniumBase method. When specifying custom timeout values, Playwright uses milliseconds, whereas SeleniumBase uses seconds. Eg. <code>page.wait_for_timeout(500)</code> is the equivalent of <code>sb.sleep(0.5)</code>.</p>
+<p>Playwright's <code>:has-text()</code> selector is the equivalent of SeleniumBase's <code>:contains()</code> selector, except for one small difference: <code>:has-text()</code> isn't case-sensitive, but <code>:contains()</code> is.</p>
+<p>Unlike normal Playwright, you don't need to run <code>playwright install</code> before running Stealthy Playwright Mode scripts because the system Chrome will be used. There's also the option of setting <code>use_chromium=True</code> to use the unbranded Chromium browser instead, which still supports extensions.</p>
 <h3 id="stealthy-playwright-mode-examples">🎭 <b translate="no">Stealthy Playwright Mode</b> examples<a class="headerlink" href="#stealthy-playwright-mode-examples" title="Permanent link">&para;</a></h3>
 <p>Here's an example that queries Microsoft Copilot:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
@@ -3048,16 +3051,16 @@
     <span class="n">page</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://copilot.microsoft.com&quot;</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="s2">&quot;textarea#userInput&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
     <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;Playwright Python connect_over_cdp() sync example&quot;</span>
     <span class="n">page</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;textarea#userInput&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[data-testid=&quot;submit-button&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="s1">&#39;button[data-testid*=&quot;-thumbs-up&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[data-testid*=&quot;scroll-to-bottom&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
     <span class="n">chat_results</span> <span class="o">=</span> <span class="s1">&#39;[data-testid=&quot;highlighted-chats&quot;]&#39;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">locator</span><span class="p">(</span><span class="n">chat_results</span><span class="p">)</span><span class="o">.</span><span class="n">inner_text</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
@@ -3074,9 +3077,9 @@
     <span class="n">context</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.bing.com/turing/captcha/challenge&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="proxy-with-auth-in-stealthy-playwright-mode">🎭 Proxy with auth in <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#proxy-with-auth-in-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
