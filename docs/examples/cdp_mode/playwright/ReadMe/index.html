@@ -409,6 +409,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#converting-regular-playwright-scripts-to-stealthy-playwright-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Converting regular Playwright scripts to Stealthy Playwright Mode:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#stealthy-playwright-mode-details" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 Stealthy Playwright Mode details
@@ -438,15 +447,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#converting-regular-playwright-scripts-to-stealthy-playwright-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎭 Converting regular Playwright scripts to Stealthy Playwright Mode:
-    </span>
-  </a>
   
 </li>
         
@@ -3010,6 +3010,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#converting-regular-playwright-scripts-to-stealthy-playwright-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Converting regular Playwright scripts to Stealthy Playwright Mode:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#stealthy-playwright-mode-details" class="md-nav__link">
     <span class="md-ellipsis">
       🎭 Stealthy Playwright Mode details
@@ -3039,15 +3048,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#converting-regular-playwright-scripts-to-stealthy-playwright-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎭 Converting regular Playwright scripts to Stealthy Playwright Mode:
-    </span>
-  </a>
   
 </li>
         
@@ -3135,9 +3135,9 @@
 </blockquote>
 <h2 id="usage">💻 Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p><strong>Stealthy Playwright Mode</strong> comes in three different formats:
-* <code>sb_cdp</code> "sync" format
-* <code>SB()</code> "nested sync" format
-* <code>cdp_driver</code> "async" format</p>
+1. <code>sb_cdp</code> "sync" format
+2. <code>SB()</code> "nested sync" format
+3. <code>cdp_driver</code> "async" format</p>
 <h3 id="1-the-lightweight-sync-format-sb_cdp">1. The lightweight "sync" format (<code>sb_cdp</code>)<a class="headerlink" href="#1-the-lightweight-sync-format-sb_cdp" title="Permanent link">&para;</a></h3>
 <p>Ideal for standalone scripts that primarily use Playwright but need SeleniumBase's stealth and CAPTCHA-solving power without the overhead of WebDriver.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
@@ -3152,7 +3152,7 @@
     <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="2-the-full-suite-nested-sync-format-sb">2. The full-suite "nested sync" format (<code>SB()</code>)<a class="headerlink" href="#2-the-full-suite-nested-sync-format-sb" title="Permanent link">&para;</a></h3>
-<p>Best for hybrid projects where you need to switch between Selenium WebDriver and Playwright APIs in the same session. This is for power users!</p>
+<p>Best for hybrid projects where you need to switch between WebDriver and Playwright APIs in the same session.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
@@ -3196,6 +3196,28 @@
 <p><strong><code>cdp_driver</code></strong>: Best for performance. <code>asyncio</code> handles non-blocking tasks. CDP launches a stealthy browser. (No WebDriver)</p>
 </li>
 </ul>
+<hr />
+<h3 id="converting-regular-playwright-scripts-to-stealthy-playwright-mode">🎭 Converting regular <b translate="no">Playwright</b> scripts to <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#converting-regular-playwright-scripts-to-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
+<p>If you have a regular Playwright script that looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
+
+<span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+    <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span><span class="o">.</span><span class="n">new_page</span><span class="p">()</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Then the Stealthy Playwright Mode version of that would look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
+
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+    <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h3 id="stealthy-playwright-mode-details">🎭 <b translate="no">Stealthy Playwright Mode</b> details<a class="headerlink" href="#stealthy-playwright-mode-details" title="Permanent link">&para;</a></h3>
 <p>The <code>sb_cdp</code> and <code>cdp_driver</code> formats don't use WebDriver at all, meaning that <code>chromedriver</code> isn't needed. From these two formats, Stealthy Playwright Mode can call <a href="../../../../help_docs/cdp_mode_methods/">CDP Mode methods</a> and Playwright methods.</p>
@@ -3249,28 +3271,6 @@
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/raw_bing_cap_sync.py">examples/cdp_mode/playwright/raw_bing_cap_sync.py</a>)</p>
 <h4 id="for-all-included-examples-see-examplescdp_modeplaywright">🎭 For all included examples, see <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode/playwright">examples/cdp_mode/playwright</a>.<a class="headerlink" href="#for-all-included-examples-see-examplescdp_modeplaywright" title="Permanent link">&para;</a></h4>
-<hr />
-<h3 id="converting-regular-playwright-scripts-to-stealthy-playwright-mode">🎭 Converting regular <b translate="no">Playwright</b> scripts to <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#converting-regular-playwright-scripts-to-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
-<p>If you have a regular Playwright script that looks like this:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
-
-<span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
-    <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span><span class="o">.</span><span class="n">new_page</span><span class="p">()</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>Then the Stealthy Playwright Mode version of that would look like this:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
-
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
-
-<span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
-    <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
-</code></pre></div>
 <hr />
 <h3 id="more-details-about-stealthy-playwright-mode">🎭 More details about <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#more-details-about-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
 <p>Stealthy Playwright Mode uses the system's Chrome browser by default. There's also the option of setting <code>use_chromium=True</code> to use the unbranded Chromium browser instead, which still supports extensions. (With regular Playwright, you would generally need to run <code>playwright install</code> to download a special version of Chrome before running Playwright scripts, unless you set <code>channel="chrome"</code> to use the system's Chrome browser instead.)</p>
