@@ -2816,7 +2816,7 @@
 <a href="https://seleniumbase.io/demo_page">📰 TestPage</a> |
 <a href="help_docs/uc_mode/">👤 UC Mode</a> |
 <a href="examples/cdp_mode/ReadMe/">🐙 CDP Mode</a> |
-<a href="examples/chart_maker/ReadMe/">📶 Charts</a>  |
+<a href="examples/chart_maker/ReadMe/">📶 Charts</a> |
 <a href="https://seleniumbase.io/devices/?url=seleniumbase.com">🖥️ Farm</a>
 <br />
 <a href="help_docs/how_it_works/">👁️ How</a> |
@@ -2837,7 +2837,7 @@
 <p>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> bypasses bot-detection and handles CAPTCHAs by driving the browser directly through the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no">Chrome DevTools Protocol</a>. Includes <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a>, which extends these advanced anti-detection patches to Playwright scripts.</p>
 <p>📚 The <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a> folder includes over 100 ready-to-run examples of E2E testing. Examples that start with <code>test_</code> or end with <code>_test.py</code>/<code>_tests.py</code> are specifically designed to run with <code>pytest</code>. Other examples run directly with raw <code>python</code> (those files generally start with <code>raw_</code> to avoid confusion).</p>
 <p>🥷 Stealthy CDP Mode examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
-<p>🎭 Stealthy Playwright examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/">./examples/cdp_mode/playwright</a>.</p>
+<p>🎭 Stealthy Playwright examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/">./examples/cdp_mode/playwright/</a>.</p>
 <hr />
 <h3 align="left">⚙️ Stealthy architecture flowchart:</h3>
 
@@ -2852,7 +2852,7 @@
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Test Results&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;strong:contains(&quot;Normal&quot;)&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bot Not detected&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bot Not Detected&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s1">&#39;strong:contains(&quot;Normal&quot;)&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 
