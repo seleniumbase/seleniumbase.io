@@ -561,7 +561,7 @@
   
   
   <span class="md-ellipsis">
-    🪄 Console Scripts
+    💻 Console Scripts
     
   </span>
   
@@ -671,7 +671,7 @@
   
   
   <span class="md-ellipsis">
-    📘 API Reference
+    📗 API Reference
     
   </span>
   
@@ -693,7 +693,7 @@
   
   
   <span class="md-ellipsis">
-    📗 CDP Mode APIs
+    📘 CDP Mode APIs
     
   </span>
   
@@ -900,7 +900,7 @@
   
   
   <span class="md-ellipsis">
-    ❇️ JS Package Manager
+    🟨 JS Package Manager
     
   </span>
   
@@ -3239,11 +3239,12 @@
     <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://copilot.microsoft.com&quot;</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="s2">&quot;textarea#userInput&quot;</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
     <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;Playwright Python connect_over_cdp() sync example&quot;</span>
     <span class="n">page</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;textarea#userInput&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[data-testid=&quot;submit-button&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">5.25</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="s1">&#39;button[data-testid*=&quot;-thumbs-up&quot;]&#39;</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
