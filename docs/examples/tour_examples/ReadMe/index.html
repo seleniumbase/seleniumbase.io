@@ -3084,15 +3084,9 @@
 
   <h1>🚎 Tour Maker</h1>
 
-<h3 align="left"><img src="https://seleniumbase.github.io/cdn/img/g_maps_tour.png" alt="SeleniumBase Tour" width="340" /></h3>
-
 <h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> 🌏 Interactive Product Tours 🚎</h2>
 
-<p><b>Increase SaaS Product Adoption by 10x or more.</b></p>
-
-<ul>
-<li>SeleniumBase Tours utilize 5 JavaScript libraries for creating interactive walkthroughs on <strong>any website</strong>:</li>
-</ul>
+<p>SeleniumBase Tours utilize 5 JavaScript libraries for creating interactive walkthroughs on <strong>any website</strong>:</p>
 <blockquote>
 <p><strong><a href="https://introjs.com/">IntroJS</a></strong>, <strong><a href="http://bootstraptour.com/">Bootstrap Tour</a></strong>, <strong><a href="https://kamranahmed.info/driver.js/">DriverJS</a></strong>, <strong><a href="https://shepherdjs.dev/">Shepherd</a></strong>, and <strong><a href="https://linkedinattic.github.io/hopscotch/">Hopscotch</a></strong>.</p>
 </blockquote>
@@ -3150,27 +3144,105 @@ pytest<span class="w"> </span>google_tour.py
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">,</span> <span class="s2">&quot;--uc&quot;</span><span class="p">)</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_google_tour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">undetectable</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_new_driver</span><span class="p">(</span><span class="n">undetectable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://google.com/ncr&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Accept all&quot;)&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hide_elements</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
 
+        <span class="c1"># Create a website tour using the ShepherdJS library with &quot;dark&quot; theme</span>
+        <span class="c1"># Same as:  self.create_shepherd_tour(theme=&quot;dark&quot;)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Welcome to Google!&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;SeleniumBase Tours&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Type in your query here.&quot;</span><span class="p">,</span> <span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">highlight_type</span><span class="p">(</span><span class="s1">&#39;input[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight_type</span><span class="p">(</span><span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;Google&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[role=&quot;listbox&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Wait for autocomplete</span>
 
+        <span class="c1"># Create a website tour using the ShepherdJS library with &quot;light&quot; theme</span>
+        <span class="c1"># Same as:  self.create_shepherd_tour(theme=&quot;light&quot;)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;light&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Then click to search.&quot;</span><span class="p">,</span> <span class="s1">&#39;[value=&quot;Google Search&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Or press [ENTER] after entry.&quot;</span><span class="p">,</span> <span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight_type</span><span class="p">(</span><span class="s1">&#39;[title=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;GitHub</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ad_block</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">&quot;#search&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Create a website tour using the Bootstrap Tour JS library</span>
+        <span class="c1"># Same as:  self.create_bootstrap_tour()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;bootstrap&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;3-second autoplay...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Here&#39;s the next tour:&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Tour automatically continues after 3 sec</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.google.com/maps/@42.3591234,-71.0915634,15z&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[aria-label=&quot;Interactive map&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[aria-label=&quot;Zoom in&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[aria-label=&quot;Zoom out&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">&#39;[jsaction*=&quot;minimap.main;&quot;]&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="c1"># Create a website tour using the IntroJS library</span>
+        <span class="c1"># Same as:  self.create_introjs_tour()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;introjs&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Welcome to Google Maps&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;SeleniumBase Tour&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;The location goes here.&quot;</span><span class="p">,</span> <span class="s1">&#39;[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Search Box&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Then click here to show it on the map.&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;[aria-label=&quot;Search&quot;]&#39;</span><span class="p">,</span>
+            <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Or click here to get driving directions.&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;button[aria-label=&quot;Directions&quot;]&#39;</span><span class="p">,</span>
+            <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Use this button to switch to Satellite view.&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;button[jsaction*=&quot;minimap.main;&quot;]&#39;</span><span class="p">,</span>
+            <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Click here to zoom in.&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;[aria-label=&quot;Zoom in&quot;]&#39;</span><span class="p">,</span>
+            <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Or click here to zoom out.&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;[aria-label=&quot;Zoom out&quot;]&#39;</span><span class="p">,</span>
+            <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;button[jsaction*=&quot;settings.open;&quot;]&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+                <span class="s2">&quot;Use the Menu button to see more options.&quot;</span><span class="p">,</span>
+                <span class="s1">&#39;button[jsaction*=&quot;settings.open;&quot;]&#39;</span><span class="p">,</span>
+                <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;button[jsaction=&quot;navigationrail.more&quot;]&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+                <span class="s2">&quot;Use the Menu button to see more options.&quot;</span><span class="p">,</span>
+                <span class="s1">&#39;button[jsaction=&quot;navigationrail.more&quot;]&#39;</span><span class="p">,</span>
+                <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Or click here to see more Google apps.&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;[aria-label=&quot;Google apps&quot;]&#39;</span><span class="p">,</span>
+            <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span>
+            <span class="s2">&quot;Thanks for using SeleniumBase Tours!&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;End of Guided Tour&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">export_tour</span><span class="p">()</span>  <span class="c1"># The default name for exports is &quot;my_tour.js&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 </code></pre></div>
 <h4 id="that-code-is-from-google_tourpy-which-you-can-run-from-the-tour_examples-folder-with-the-following-command">That code is from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">google_tour.py</a>, which you can run from the <code>tour_examples/</code> folder with the following command<a class="headerlink" href="#that-code-is-from-google_tourpy-which-you-can-run-from-the-tour_examples-folder-with-the-following-command" title="Permanent link">&para;</a></h4>
