@@ -20,22 +20,18 @@ pre{background-color:#fbe8d4;border-radius:8px;}
 div[flex_div]{height:68vh;margin:0;align-items:center;justify-content:center;}
 img[rounded]{border-radius:16px;max-width:64%;}
 </style>
-<!-- Google tag (gtag.js) (Universal Analytics) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167313767-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
-</script>
-<!-- Google tag (gtag.js) (Google Analytics 4) -->
+<!-- Single Google tag (gtag.js) Initialization -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5KFWRNLRN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  // Route directly to your native GA4 property
   gtag('config', 'G-P5KFWRNLRN');
+
+  // Route via the legacy UA tracking ID fallback
+  gtag('config', 'UA-167313767-1', { cookie_flags: 'SameSite=None;Secure' });
 </script>
 </head>
 
