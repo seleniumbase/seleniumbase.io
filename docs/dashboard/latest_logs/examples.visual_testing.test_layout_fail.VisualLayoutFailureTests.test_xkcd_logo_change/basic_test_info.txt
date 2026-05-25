@@ -1,0 +1,36 @@
+visual_testing/test_layout_fail.py::VisualLayoutFailureTests::test_xkcd_logo_change
+--------------------------------------------------------------------
+Last Page: https://xkcd.com/554/
+ Duration: 0.90s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715421  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:41 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/visual_testing/test_layout_fail.py", line 26, in test_xkcd_logo_change
+    self.check_window(name="xkcd_554", level=3)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 11493, in check_window
+    self.__assert_eq(level_3_data, level_3, level_3_failure)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 11221, in __assert_eq
+    raise VisualException(minified_exception)
+Exception: 
+AssertionError:
+First differing element 28:
+['img[30 chars]['height', '83'], ['src', '/s/0b7742.png'], ['width', '185']]]
+['img[30 chars]['height', '110'], ['src', '/s/0b7742.png'], ['width', '120']]]
+
+-    ['height', '83'],
+?                ^^
++    ['height', '110'],
+?                ^^^
+-    ['width', '185']]],
+?                ^^
++    ['width', '120']]],
+?                ^^
+*
+*** Exception: <Level 3> Visual Diff Failure:
+* HTML tag attribute values don't match the baseline!
