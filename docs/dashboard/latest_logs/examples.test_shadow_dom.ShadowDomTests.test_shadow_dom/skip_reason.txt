@@ -1,0 +1,10 @@
+test_shadow_dom.py::ShadowDomTests::test_shadow_dom
+--------------------------------------------------------------------
+       Outcome: SKIPPED
+       Browser: Chrome 148.0.7778.167 / headless
+        Driver: chromedriver 148.0.7778.167
+     Timestamp: 1779715413  (Unix Timestamp)
+          Date: Monday, May 25, 2026
+          Time: 9:23:33 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+ * Skip Reason: Unsupported mode for this test.

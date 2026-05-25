@@ -1,0 +1,34 @@
+test_fail.py::FailingTests::test_find_army_of_robots_on_xkcd_desert_island
+--------------------------------------------------------------------
+Last Page: https://xkcd.com/731/
+ Duration: 1.66s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715405  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:25 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/test_fail.py", line 16, in test_find_army_of_robots_on_xkcd_desert_island
+    self.assert_element("div#ARMY_OF_ROBOTS", timeout=1)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 10230, in assert_element
+    self.wait_for_element_visible(selector, by=by, timeout=timeout)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 9447, in wait_for_element_visible
+    return page_actions.wait_for_element_visible(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.driver,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        original_selector=original_selector,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/page_actions.py", line 517, in wait_for_element_visible
+    timeout_exception(NoSuchElementException, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/page_actions.py", line 270, in timeout_exception
+    raise exc(msg)
+Exception: Message: 
+ Element {div#ARMY_OF_ROBOTS} was not present after 1 second!

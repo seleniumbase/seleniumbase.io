@@ -1,0 +1,10 @@
+test_download_images.py::DownloadImages::test_download_images_directly
+--------------------------------------------------------------------
+       Outcome: SKIPPED
+       Browser: Chrome 148.0.7778.167 / headless
+        Driver: chromedriver 148.0.7778.167
+     Timestamp: 1779715411  (Unix Timestamp)
+          Date: Monday, May 25, 2026
+          Time: 9:23:31 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+ * Skip Reason: Skipping test in multi-threaded mode.

@@ -1,0 +1,27 @@
+test_detect_404s.py::BrokenLinkTests::test_link_checking
+--------------------------------------------------------------------
+Last Page: https://seleniumbase.io/other/broken_page.html
+ Duration: 1.27s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715412  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:32 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/test_detect_404s.py", line 9, in test_link_checking
+    self.assert_no_404_errors()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 7324, in assert_no_404_errors
+    self.fail("Broken links detected:\n%s" % bad_links_str)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 9075, in fail
+    super().fail(msg)
+    ~~~~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 750, in fail
+    raise self.failureException(msg)
+Exception: Broken links detected:
+https://seleniumbase.io/broken_links/bad_image_1.png
+https://seleniumbase.io/broken_links/bad_image_2.png
+https://seleniumbase.io/broken_links/bad_image_3.png
+https://seleniumbase.io/broken_links/bad_image_4.png

@@ -1,0 +1,10 @@
+test_roblox_mobile.py::RobloxTests::test_roblox_mobile_site
+--------------------------------------------------------------------
+       Outcome: SKIPPED
+       Browser: Chrome 148.0.7778.167 / headless
+        Driver: chromedriver 148.0.7778.167
+     Timestamp: 1779715414  (Unix Timestamp)
+          Date: Monday, May 25, 2026
+          Time: 9:23:34 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+ * Skip Reason: Use "--mobile" to run this test in Mobile Mode!
