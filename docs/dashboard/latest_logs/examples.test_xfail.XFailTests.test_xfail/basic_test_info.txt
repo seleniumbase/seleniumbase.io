@@ -1,0 +1,20 @@
+test_xfail.py::XFailTests::test_xfail
+--------------------------------------------------------------------
+Last Page: https://xkcd.com/376/
+ Duration: 1.35s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715418  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:38 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/test_xfail.py", line 14, in test_xfail
+    self.fail("There is a known bug here!")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 9075, in fail
+    super().fail(msg)
+    ~~~~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 750, in fail
+    raise self.failureException(msg)
+Exception: There is a known bug here!
