@@ -39,7 +39,6 @@ operadriver.exe
 
 # Logs
 logs
-latest_logs
 log_archives
 archived_logs
 geckodriver.log
