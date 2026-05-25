@@ -1,0 +1,10 @@
+wordle_test.py::WordleTests::test_wordle
+--------------------------------------------------------------------
+       Outcome: SKIPPED
+       Browser: Chrome 148.0.7778.167 / headless
+        Driver: chromedriver 148.0.7778.167
+     Timestamp: 1779715420  (Unix Timestamp)
+          Date: Monday, May 25, 2026
+          Time: 9:23:40 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+ * Skip Reason: Skip this test in headless mode!

@@ -1,0 +1,42 @@
+visual_testing/test_layout_fail.py::VisualLayout_FixtureTests::test_python_home_change
+--------------------------------------------------------------------
+Last Page: https://www.python.org/
+ Duration: 1.86s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715419  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:39 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/visual_testing/test_layout_fail.py", line 14, in test_python_home_change
+    sb.check_window(name="python_home", level=3)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 11493, in check_window
+    self.__assert_eq(level_3_data, level_3, level_3_failure)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 11221, in __assert_eq
+    raise VisualException(minified_exception)
+Exception: 
+AssertionError:
+First differing element 33:
+['a', [['class', ['donate-button']], ['href', 'https://donate.python.org/']]]
+['div', [['class', ['options-bar']]]]
+
+-  ['a', [['class', ['donate-button']], ['href', 'https://donate.python.org/']]],
+-     'display: list-item; opacity: 0.0568982;']]],
+?                                     ^^^  ^^
++     'display: list-item; opacity: 0.789641;']]],
+?                                     ^  ^^^
++  ['a',
+-  ['a', [['href', 'https://status.python.org/']]],
+?  -----                                        --
++   [['href', 'https://status.python.org/'],
++    ['title', 'All Systems Operational']]],
+-   [['class', ['python-status-indicator-default']],
+?                                        ^ -----
++   [['class', ['python-status-indicator-none']],
+?                                        ^^^
+*
+*** Exception: <Level 3> Visual Diff Failure:
+* HTML tag attribute values don't match the baseline!
