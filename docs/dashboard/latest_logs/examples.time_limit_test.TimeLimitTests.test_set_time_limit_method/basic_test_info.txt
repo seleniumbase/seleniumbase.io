@@ -1,0 +1,24 @@
+time_limit_test.py::TimeLimitTests::test_set_time_limit_method
+--------------------------------------------------------------------
+Last Page: https://xkcd.com/1658/
+ Duration: 2.53s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715419  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:39 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/time_limit_test.py", line 28, in test_set_time_limit_method
+    self.sleep(3)
+    ~~~~~~~~~~^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 5011, in sleep
+    shared_utils.check_if_time_limit_exceeded()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/shared_utils.py", line 317, in check_if_time_limit_exceeded
+    __time_limit_exceeded(message)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/shared_utils.py", line 295, in __time_limit_exceeded
+    raise TimeLimitExceededException(message)
+Exception: 
+ This test has exceeded the time limit of 2.2 seconds!

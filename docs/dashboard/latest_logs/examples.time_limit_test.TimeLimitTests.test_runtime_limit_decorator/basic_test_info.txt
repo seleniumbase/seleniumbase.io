@@ -1,0 +1,21 @@
+time_limit_test.py::TimeLimitTests::test_runtime_limit_decorator
+--------------------------------------------------------------------
+Last Page: https://xkcd.com/2511/
+ Duration: 1.32s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715420  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:40 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/time_limit_test.py", line 14, in test_runtime_limit_decorator
+    with decorators.runtime_limit(0.7):
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 148, in __exit__
+    next(self.gen)
+    ~~~~^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/common/decorators.py", line 123, in runtime_limit
+    raise TimeoutException(message)
+Exception: 
+ {Code Block} duration of 0.95s exceeded the time limit of 0.70s!
