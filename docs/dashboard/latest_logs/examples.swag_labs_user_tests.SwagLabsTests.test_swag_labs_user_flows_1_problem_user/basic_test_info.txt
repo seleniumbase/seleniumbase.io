@@ -1,0 +1,22 @@
+swag_labs_user_tests.py::SwagLabsTests::test_swag_labs_user_flows_1_problem_user
+--------------------------------------------------------------------
+Last Page: https://www.saucedemo.com/inventory.html
+ Duration: 3.49s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715402  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:22 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/.virtualenvs/sbase14/lib/python3.14/site-packages/parameterized/parameterized.py", line 620, in standalone_func
+    return func(*(a + p.args), **p.kwargs, **kw)
+  File "/Users/michael/github/SeleniumBase/examples/swag_labs_user_tests.py", line 40, in test_swag_labs_user_flows
+    self.fail('Sort Failed! Expecting "%s" on top!' % item_name)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 9075, in fail
+    super().fail(msg)
+    ~~~~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 750, in fail
+    raise self.failureException(msg)
+Exception: Sort Failed! Expecting "Test.allTheThings() T-Shirt" on top!

@@ -1,0 +1,10 @@
+test_cdp_ad_blocking.py::CDPNetworkBlockingTests::test_cdp_network_blocking
+--------------------------------------------------------------------
+       Outcome: SKIPPED
+       Browser: Chrome 148.0.7778.167 / headless
+        Driver: chromedriver 148.0.7778.167
+     Timestamp: 1779715403  (Unix Timestamp)
+          Date: Monday, May 25, 2026
+          Time: 9:23:23 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+ * Skip Reason: Skipping test if reusing session or not Chromium!

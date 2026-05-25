@@ -1,0 +1,33 @@
+test_deferred_asserts.py::DeferredAssertTests::test_deferred_asserts
+--------------------------------------------------------------------
+Last Page: https://xkcd.com/993/
+ Duration: 3.28s
+  Browser: Chrome 148.0.7778.167 / headless
+   Driver: chromedriver 148.0.7778.167
+Timestamp: 1779715406  (Unix Timestamp)
+     Date: Monday, May 25, 2026
+     Time: 9:23:26 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+Traceback:
+  File "/Users/michael/github/SeleniumBase/examples/test_deferred_asserts.py", line 23, in test_deferred_asserts
+    self.process_deferred_asserts()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/michael/github/SeleniumBase/seleniumbase/fixtures/base_case.py", line 11900, in process_deferred_asserts
+    raise Exception(exception_output.replace("\\n", "\n"))
+Exception: 
+***** DEFERRED ASSERTION FAILURES:
+TEST: examples.test_deferred_asserts.DeferredAssertTests.test_deferred_asserts
+
+DEFERRED ASSERT #2: (https://xkcd.com/993/) 
+ Element {img[alt="Rocket Ship"]} was not present after 0.6 seconds!
+
+DEFERRED ASSERT #4: (https://xkcd.com/993/) 
+ Expected text substring {Fake Item} for {ul.comicNav} was not visible after 0.6 seconds!
+ (Actual string found was {|< < Prev Random Next > >|})
+
+DEFERRED ASSERT #6: (https://xkcd.com/993/) 
+ Element {a[name="Super Fake !!!"]} was not present after 0.6 seconds!
+
+DEFERRED ASSERT #8: (https://xkcd.com/993/) 
+ Expected exact text {Fake Food} for {#comic} was not visible after 0.6 seconds!
+

@@ -1,0 +1,10 @@
+boilerplates/samples/google_test.py::GoogleTests::test_google_dot_com
+--------------------------------------------------------------------
+       Outcome: SKIPPED
+       Browser: Chrome 148.0.7778.167 / headless
+        Driver: chromedriver 148.0.7778.167
+     Timestamp: 1779715395  (Unix Timestamp)
+          Date: Monday, May 25, 2026
+          Time: 9:23:15 AM  (EDT, UTC-04:00)
+--------------------------------------------------------------------
+ * Skip Reason: Skipping test in headless mode.
