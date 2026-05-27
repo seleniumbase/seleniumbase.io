@@ -2883,10 +2883,10 @@
 <meta property="og:keywords" content="Python, pytest, selenium, webdriver, testing, automation, seleniumbase, framework, dashboard, recorder, reports, screenshots, playwright, stealth, CAPTCHA">
 <meta property="og:image" content="https://seleniumbase.github.io/cdn/img/mac_sb_logo_5b.png" />
 <link rel="icon" href="https://seleniumbase.github.io/img/logo6.png" /></p>
-<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_gemini_2.jpg" alt="SeleniumBase" width="866" /></a></p>
+<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_gemini_5.jpg" alt="SeleniumBase" width="864" /></a></p>
 
-<p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://discord.gg/EdhQTn3EyE" target="_blank"><img src="https://img.shields.io/discord/727927627830001734?color=7289DA&label=Discord&logo=discord&logoColor=white"/></a><br /> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/youtube/channel/subscribers/UCSQElO8vQmNPuTgdd83BHdw?style=flat&logo=youtube&logoColor=white&label=YouTube%20Subscribers&color=red" alt="YouTube Subscribers"></a><br /><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/CI%20build/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/github/stars/seleniumbase/SeleniumBase" alt="Stars"></a></p>
-<p align="center"></p>
+<p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/Tests/badge.svg" alt="SeleniumBase GitHub Actions" /></a><br />
+<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/github/stars/seleniumbase/SeleniumBase" alt="Stars"></a> <a href="https://discord.gg/EdhQTn3EyE" target="_blank"><img src="https://img.shields.io/badge/join-discord-informational"/></a> <a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/youtube/channel/subscribers/UCSQElO8vQmNPuTgdd83BHdw?style=flat&logo=youtube&logoColor=white&label=YouTube%20Subscribers&color=red" alt="YouTube Subscribers"></a></p>
 
 <h3 align="center">Stealthy Chromium Automation and E2E Testing.</h3>
 
@@ -2925,17 +2925,19 @@
 <a href="help_docs/case_plans/">🗂️ CPlans</a>
 <br />
 </p>
+<hr />
 
-<p>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> <b>bypasses bot-detection</b> and handles CAPTCHAs with the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no">Chrome DevTools Protocol</a>. Includes <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a>, which extends CDP Mode's anti-detection to <b>Playwright</b> scripts. <b><code>sb.solve_captcha()</code></b> handles CAPTCHAs that aren't bypassed automatically.</p>
-<p><b>Python sync version of SeleniumBase's CDP Mode: (<code>sb_cdp</code>)</b></p>
+<p>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> <b>bypasses bot-detection</b> with the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no">Chrome DevTools Protocol</a>.<br /><a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a> extends CDP Mode to make <b>Playwright</b> stealthy.<br /><b><code>sb.solve_captcha()</code></b> <b>handles CAPTCHAs</b> that aren't bypassed automatically.</p>
+<p><b>🐍 Python sync version of SeleniumBase's CDP Mode: (<code>sb_cdp</code>)</b></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://demo.fingerprint.com/playground&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
-<p><b>Playwright can use SeleniumBase's stealth browser:</b></p>
+<p><img src="https://seleniumbase.io/cdn/img/results_normal.jpg" width="600" alt="Browserscan Test Results" /></p>
+<p><b>🎭 Playwright can use SeleniumBase's stealth browser:</b></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
@@ -2957,7 +2959,7 @@
 <hr />
 <h3 align="left">⚙️ Stealthy architecture flowchart:</h3>
 
-<p><img src="https://seleniumbase.github.io/other/sb_architecture.png" width="596" alt="Stealthy architecture flowchart" /></p>
+<p><img src="https://seleniumbase.github.io/other/sb_architecture.png" width="646" alt="Stealthy architecture flowchart" /></p>
 <p>(For maximum stealth, use <a translate="no" href="examples/cdp_mode/ReadMe/">CDP Mode</a>, which includes <a translate="no" href="examples/cdp_mode/playwright/ReadMe/">Stealthy Playwright Mode</a>)</p>
 <hr />
 <p align="left">📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_browserscan.py" target="_blank">This example</a> verifies that <a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp">Pure CDP Mode</a> is stealthy on <a href="https://www.browserscan.net/bot-detection">BrowserScan</a>:
@@ -2971,8 +2973,6 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bot Not Detected&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s1">&#39;strong:contains(&quot;Normal&quot;)&#39;</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-
-<img src="https://seleniumbase.github.io/other/b_scan_results.jpg" width="628" alt="Stealthy architecture flowchart" />
 
 📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/raw_browserscan_sync.py">This example</a> demonstrates the drop-in patch that makes Playwright stealthy:
 
@@ -3257,7 +3257,7 @@ With raw Selenium, that requires more code:<br />
 <a id="python_installation"></a>
 <h2><img src="https://seleniumbase.github.io/cdn/img/python_logo.png" title="SeleniumBase" width="42" /> Set up Python & Git:</h2>
 
-<a href="https://www.python.org/downloads/"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=FACE42" title="Supported Python Versions" /></a>
+<a href="https://pypi.org/project/seleniumbase/" target="_blank"><img src="https://img.shields.io/pypi/pyversions/seleniumbase.svg?color=22AAEE&logo=python&logoColor=FEDC54" title="Supported Python Versions" /></a>
 
 🔵 Add <b><a href="https://www.python.org/downloads/">Python</a></b> and <b><a href="https://git-scm.com/">Git</a></b> to your System PATH.
 
@@ -4303,6 +4303,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/tested%20with-SeleniumBase-04C38E.svg" alt="Tested with SeleniumBase" /></a> <img src="https://views.whatilearened.today/views/github/seleniumbase/SeleniumBase.svg" width="98px" height="20px" alt="Views" /></div>
 <div align="left"></div>
 <div><a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://discord.gg/EdhQTn3EyE" target="_blank"><img src="https://img.shields.io/discord/727927627830001734?color=7289DA&label=Discord&logo=discord&logoColor=white"/></a></div>
+<div><a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/youtube/channel/subscribers/UCSQElO8vQmNPuTgdd83BHdw?style=flat&logo=youtube&logoColor=white&label=YouTube%20Subscribers&color=red" alt="YouTube Subscribers"></a></div>
 
 
 
