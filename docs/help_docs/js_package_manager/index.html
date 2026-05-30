@@ -2921,9 +2921,7 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/intro.js@5.1.0/intro.min.js&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div>🟨 You can load any JS package this way as long as you know the URL.</div>
-
-<p>🟨 If you're wondering how SeleniumBase does this, here's the full Python code from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/js_utils.py">js_utils.py</a>, which uses WebDriver's <code>execute_script()</code> method for making JS calls after escaping quotes with backslashes as needed:</p>
+<p>🟨 If you're wondering how SeleniumBase does this, here's the code from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/js_utils.py">js_utils.py</a> that loads JavaScript packages:</p>
 
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
     <span class="n">script_to_add_js</span> <span class="o">=</span> <span class="p">(</span>
@@ -2966,7 +2964,7 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
     <span class="n">css_link</span> <span class="o">=</span> <span class="n">escape_quotes_if_needed</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_css</span> <span class="o">%</span> <span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>
-<div>🟨 Website tours are just one of the many uses of the JS Package Manager.</div>
+<div>🗺️ Website tours are just one of the many uses of the JS Package Manager.</div>
 <p><div>🛂 The following example shows the <a href="https://github.com/craftpip/jquery-confirm">JqueryConfirm</a> package loaded into a website for creating fancy dialog boxes:</div></p>
 
 <p><img src="https://seleniumbase.github.io/cdn/img/emoji_sports_dialog.png" alt="SeleniumBase" width="480" /></p>

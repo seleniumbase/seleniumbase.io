@@ -83,11 +83,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#quick-start" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -247,19 +242,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    ✅ SeleniumBase README
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -271,32 +253,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Quick Start
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2903,23 +2859,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Quick Start
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2944,9 +2883,9 @@
 <meta property="og:keywords" content="Python, pytest, selenium, webdriver, testing, automation, seleniumbase, framework, dashboard, recorder, reports, screenshots, playwright, stealth, CAPTCHA">
 <meta property="og:image" content="https://seleniumbase.github.io/cdn/img/mac_sb_logo_5b.png" />
 <link rel="icon" href="https://seleniumbase.github.io/img/logo6.png" /></p>
-<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/nice_logo_8t.png" alt="SeleniumBase" width="424" /></a></p>
+<p align="center"><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/cdn/img/super_logo_sb3.png" alt="SeleniumBase" title="SeleniumBase" width="350" /></a></p>
 
-<p align="center" class="hero__title"><b>Multi-purpose browser automation framework:<br />Testing / Scraping / Stealth / CAPTCHA-bypass</b></p>
+<p align="center" class="hero__title"><b>All-in-one Browser Automation Framework:<br />Web Crawling / Testing / Scraping / Stealth</b></p>
 
 <p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/Tests/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/youtube/channel/subscribers/UCSQElO8vQmNPuTgdd83BHdw?style=flat&logo=youtube&logoColor=white&label=YouTube%20Subscribers&color=red" alt="YouTube Subscribers"></a></p>
 
@@ -2987,17 +2926,15 @@
 </p>
 
 <hr />
-<p>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> <b>bypasses bot-detection</b> with any Chromium-based browser.</p>
-<p>🎭 <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a> extends CDP Mode's stealth to <b>Playwright</b>.</p>
+<ul>
+<li>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> <b>bypasses bot-detection with Chromium-based browsers.</b></li>
+<li>🎭 <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a> <b>extends CDP Mode's stealth to Playwright.</b></li>
+<li><b><code>pip install seleniumbase</code></b> for the main framework.</li>
+<li><b><code>pip install playwright</code></b> for the Playwright integration.</li>
+</ul>
+
 <hr />
-<h3 id="quick-start">⚙️ Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
-</code></pre></div>
-<p>If using Stealthy Playwright Mode, also run:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>playwright
-</code></pre></div>
-<hr />
-<p><b>📝 Here's a Python example that uses <a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp">Pure CDP Mode</a> (<code>sb_cdp</code>):</b></p>
+<p><b>📝 Here's a Python example that uses <a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp">Pure CDP Mode</a> (<code>sb_cdp</code>):</b><br />(It navigates to Browserscan to show it bypassing bot-detection.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
@@ -3010,7 +2947,7 @@
 <br><em>(All BrowserScan bot-detection checks were passed successfully.)</em>
 </p>
 
-<p><b>🎭 Here's an example script that uses <a href="examples/cdp_mode/playwright/ReadMe/"><span translate="no">Stealthy Playwright Mode</span></a>:</b></p>
+<p><b>🎭 Here's an example script that uses <a href="examples/cdp_mode/playwright/ReadMe/"><span translate="no">Stealthy Playwright Mode</span></a>:</b><br />(Playwright connects to a stealthy SeleniumBase browser session.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
@@ -3049,7 +2986,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<p>🥷 Stealthy CDP Mode examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
+<p>🐙 Stealthy CDP Mode examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
 <p>🎭 Stealthy Playwright examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/">./examples/cdp_mode/playwright/</a>.</p>
 <hr />
 <h3 align="left">⚙️ Stealthy architecture flowchart:</h3>
@@ -3123,7 +3060,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3>🧪 Comprehensive Functional UI Testing with <code>pytest</code>:</h3>
+<h3>🧪 Comprehensive E2E Testing with <code>pytest</code>:</h3>
 
 <p>📚 The <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples">SeleniumBase/examples/</a> folder includes over 150 ready-to-run examples of E2E testing. Examples that start with <code>test_</code> or end with <code>_test.py</code>/<code>_tests.py</code> run with <code>pytest</code>. Other examples run directly with raw <code>python</code> (those generally start with <code>raw_</code> to avoid confusion).</p>
 <p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py" target="_blank">This example</a> tests an e-commerce site with <code>pytest</code>:</b></p>
