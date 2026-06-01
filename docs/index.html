@@ -2934,7 +2934,7 @@
 </ul>
 
 <hr />
-<p><b>📝 Here's a Python example that uses <a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp">Pure CDP Mode</a> (<code>sb_cdp</code>):</b><br />(It navigates to Browserscan to show it bypassing bot-detection.)</p>
+<p><b>📝 Here's a Python example that uses <a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp">Pure CDP Mode</a> (<code>sb_cdp</code>):</b><br />(It navigates to Browserscan where it bypasses bot-detection.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
@@ -2944,7 +2944,7 @@
 </code></pre></div>
 <p align="center">
 <img src="https://seleniumbase.github.io/cdn/img/results_normal.jpg" width="578" alt="BrowserScan Test Results: Normal">
-<br><em>(All BrowserScan bot-detection checks were passed successfully.)</em>
+<br><em>(All BrowserScan bot-detection checks were passed successfully.)</em></br>
 </p>
 
 <p><b>🎭 Here's an example script that uses <a href="examples/cdp_mode/playwright/ReadMe/"><span translate="no">Stealthy Playwright Mode</span></a>:</b><br />(Playwright connects to a stealthy SeleniumBase browser session.)</p>
@@ -2993,7 +2993,7 @@
 
 <p align="center">
 <img src="https://seleniumbase.github.io/other/sb_architecture.png" width="646" alt="Stealthy architecture flowchart">
-<br><em>(For maximum stealth, use <a translate="no" href="examples/cdp_mode/ReadMe/">CDP Mode</a>, which includes <a translate="no" href="examples/cdp_mode/playwright/ReadMe/">Stealthy Playwright Mode</a>)</em>
+<br><em>(For maximum stealth, use <a translate="no" href="examples/cdp_mode/ReadMe/">CDP Mode</a>, which includes <a translate="no" href="examples/cdp_mode/playwright/ReadMe/">Stealthy Playwright Mode</a>.)</em></br>
 </p>
 
 <hr />
@@ -3011,7 +3011,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 <div class="highlight"><pre><span></span><code><span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">use_chromium</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py" target="_blank">This example</a> saves Google Search results with UC + CDP Mode:</b><br />(Results are saved as PDF, HTML, and PNG files)</p>
+<p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_google.py" target="_blank">This example</a> saves Google Search results with UC + CDP Mode:</b><br />(Results are saved as PDF, HTML, and PNG files to <code>./latest_logs/</code>)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
@@ -3029,7 +3029,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logs have been saved to: ./latest_logs/&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py" target="_blank">This example</a> bypasses Cloudflare's challenge page with UC + CDP Mode:</b></p>
+<p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py" target="_blank">This example</a> bypasses Cloudflare's challenge page with UC + CDP Mode:</b><br />(If the Turnstile isn't bypassed automatically,  <b><code>sb.solve_captcha()</code></b> handles it.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
@@ -3045,8 +3045,12 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
-<p><img src="https://seleniumbase.github.io/other/cf_sec.jpg" alt="SeleniumBase" width="346"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" alt="SeleniumBase" width="300"></p>
-<p>(<b><code>sb.solve_captcha()</code></b> <b>handles CAPTCHAs</b> that aren't bypassed automatically.)</p>
+<p align="center">
+<img src="https://seleniumbase.github.io/other/cf_sec.jpg" alt="SeleniumBase" width="346"> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" alt="SeleniumBase" width="300">
+<br><em>(Successfully bypassed bot-detection on a Cloudflare challenge page.)</em></br>
+</p>
+
+<p>💡 <b><code>sb.solve_captcha()</code></b> handles CAPTCHAs that aren't bypassed automatically.<br />(If no CAPTCHA is present on the current page, then nothing happens.)</p>
 <hr />
 <p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_gitlab.py" target="_blank">This example</a> handles a CAPTCHA page with Pure CDP Mode:</b></p>
 
@@ -3301,10 +3305,10 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <details>
 <summary> ▶️ Here's sample output from a chromedriver download. (<b>click to expand</b>)</summary>
 
-<div class="highlight"><pre><span></span><code>***<span class="w"> </span>chromedriver<span class="w"> </span>to<span class="w"> </span><span class="nv">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">141</span>.0.7390.78<span class="w"> </span><span class="o">(</span>Latest<span class="w"> </span>Stable<span class="o">)</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code>***<span class="w"> </span>chromedriver<span class="w"> </span>to<span class="w"> </span><span class="nv">download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">148</span>.0.7778.178<span class="w"> </span><span class="o">(</span>Latest<span class="w"> </span>Stable<span class="o">)</span>
 
 Downloading<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </span>from:
-https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.78/mac-arm64/chromedriver-mac-arm64.zip<span class="w"> </span>...
+https://storage.googleapis.com/chrome-for-testing-public/148.0.7778.178/mac-arm64/chromedriver-mac-arm64.zip<span class="w"> </span>...
 Download<span class="w"> </span>Complete!
 
 Extracting<span class="w"> </span><span class="o">[</span><span class="s1">&#39;chromedriver&#39;</span><span class="o">]</span><span class="w"> </span>from<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </span>...
@@ -3314,8 +3318,8 @@ The<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>c
 ~/github/SeleniumBase/seleniumbase/drivers/
 chromedriver
 
-Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w"> </span><span class="m">141</span>.0.7390.78<span class="o">]</span><span class="w"> </span>executable<span class="w"> </span>...
-<span class="o">[</span>chromedriver<span class="w"> </span><span class="m">141</span>.0.7390.78<span class="o">]</span><span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>use!
+Making<span class="w"> </span><span class="o">[</span>chromedriver<span class="w"> </span><span class="m">148</span>.0.7778.178<span class="o">]</span><span class="w"> </span>executable<span class="w"> </span>...
+<span class="o">[</span>chromedriver<span class="w"> </span><span class="m">148</span>.0.7778.178<span class="o">]</span><span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>use!
 </code></pre></div>
 
 </details>
