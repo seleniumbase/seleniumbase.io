@@ -2943,27 +2943,30 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p align="center">
-<img src="https://seleniumbase.github.io/cdn/img/results_normal.jpg" width="578" alt="BrowserScan Test Results: Normal">
-<br><em>(All BrowserScan bot-detection checks were passed successfully.)</em></br>
+<img src="https://seleniumbase.github.io/cdn/img/results_normal.jpg" width="588" alt="BrowserScan Test Results: Normal">
+<br><em>(All BrowserScan bot-detection tests passed successfully.)</em></br>
 </p>
 
 <p><b>🎭 Here's an example script that uses <a href="examples/cdp_mode/playwright/ReadMe/"><span translate="no">Stealthy Playwright Mode</span></a>:</b><br />(Playwright connects to a stealthy SeleniumBase browser session.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">guest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
 
 <span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
     <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
-
-<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://bot.sannysoft.com/&quot;</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div>
+<p align="center">
+<img src="https://seleniumbase.github.io/other/sannysoft_success.jpg" width="470" alt="All Sannysoft tests passed successfully">
+<br><em>(All Sannysoft bot-detection tests passed successfully.)</em></br>
+</p>
+
 <hr />
-<p><b><strong>📝</strong> The Browserscan example can be expanded into a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_browserscan.py">test demo</a>:</b><br />(Assertions added and a few elements highlighted with JavaScript)</p>
+<p><b><strong>📝</strong> The Browserscan example can be expanded into a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_browserscan.py">test demo</a>:</b><br />(Assertions added and elements highlighted with JavaScript.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
