@@ -3121,26 +3121,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Demo Page&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_override_driver.py">examples/test_override_driver.py</a>)</p>
-<p>The above format lets you customize <a href="https://github.com/wkeeling/selenium-wire">selenium-wire</a> for intercepting and inspecting requests and responses during SeleniumBase tests. Here's how a <code>selenium-wire</code> integration may look:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumwire</span><span class="w"> </span><span class="kn">import</span> <span class="n">webdriver</span>  <span class="c1"># Requires &quot;pip install selenium-wire&quot;</span>
-<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">WireTestCase</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_new_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
-        <span class="n">options</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span>
-            <span class="s2">&quot;excludeSwitches&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;enable-automation&quot;</span><span class="p">]</span>
-        <span class="p">)</span>
-        <span class="n">options</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s2">&quot;useAutomationExtension&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">test_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">requests</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-</code></pre></div>
-<p>(NOTE: The <code>selenium-wire</code> integration is now included with <code>seleniumbase</code>: Add <code>--wire</code> as a <code>pytest</code> command-line option to activate.)</p>
 <p><a id="sb_sf_10"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 10. Overriding the driver via "sb" fixture</h2>
 
@@ -3217,71 +3197,6 @@
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;This is Automated&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_override_sb_fixture.py">examples/test_override_sb_fixture.py</a>)</p>
-<p>Here's how the <a href="https://github.com/wkeeling/selenium-wire">selenium-wire</a> integration may look when overriding the <code>sb</code> pytest fixture to override the driver:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">sb</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">sb_config</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumwire</span><span class="w"> </span><span class="kn">import</span> <span class="n">webdriver</span>  <span class="c1"># Requires &quot;pip install selenium-wire&quot;</span>
-
-    <span class="k">class</span><span class="w"> </span><span class="nc">BaseClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">get_new_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
-            <span class="k">if</span> <span class="s2">&quot;linux&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">:</span>
-                <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--headless=new&quot;</span><span class="p">)</span>
-            <span class="n">options</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span>
-                <span class="s2">&quot;excludeSwitches&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;enable-automation&quot;</span><span class="p">],</span>
-            <span class="p">)</span>
-            <span class="k">return</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">save_teardown_screenshot</span><span class="p">()</span>  <span class="c1"># On failure or &quot;--screenshot&quot;</span>
-            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">pass</span>
-
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="p">:</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture_class</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">sb_config</span><span class="o">.</span><span class="n">_sb_node</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span>
-        <span class="k">yield</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span>
-        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span><span class="p">:</span>
-            <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
-            <span class="n">request</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">sb</span> <span class="o">=</span> <span class="n">BaseClass</span><span class="p">(</span><span class="s2">&quot;base_method&quot;</span><span class="p">)</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">_using_sb_fixture_no_class</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">sb_config</span><span class="o">.</span><span class="n">_sb_node</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">nodeid</span><span class="p">]</span> <span class="o">=</span> <span class="n">sb</span>
-        <span class="k">yield</span> <span class="n">sb</span>
-        <span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span><span class="p">:</span>
-            <span class="n">sb</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
-            <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">test_wire_with_no_class</span><span class="p">(</span><span class="n">sb</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">requests</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">TestWire</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">test_wire_inside_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sb</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">requests</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-</code></pre></div>
-<p>(NOTE: The <code>selenium-wire</code> integration is now included with <code>seleniumbase</code>: Add <code>--wire</code> as a <code>pytest</code> command-line option to activate. If you need both <code>--wire</code> with <code>--undetected</code> modes together, you'll still need to override <code>get_new_driver()</code>.)</p>
 <p><a id="sb_sf_11"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 11. BaseCase with Chinese translations</h2>
 
@@ -3712,30 +3627,6 @@
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_driver_manager.py">examples/raw_driver_manager.py</a>)</p>
-<p>Here's how the <a href="https://github.com/wkeeling/selenium-wire">selenium-wire</a> integration may look when using the <code>Driver()</code> format:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
-
-<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">wire</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://wikipedia.org&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">requests</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</code></pre></div>
-<p>Here's another <code>selenium-wire</code> example with the <code>Driver()</code> format:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">intercept_response</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
-
-<span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">wire</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">response_interceptor</span> <span class="o">=</span> <span class="n">intercept_response</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://wikipedia.org&quot;</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</code></pre></div>
 <p>Here's an example of basic login with the <code>Driver()</code> format:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
 

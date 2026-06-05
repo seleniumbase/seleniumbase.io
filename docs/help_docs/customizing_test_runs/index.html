@@ -3090,7 +3090,6 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --screenshot<span class="w">  </span><span class="c1"># (Save a screenshot at the end of each test.)</span>
 --no-screenshot<span class="w">  </span><span class="c1"># (No screenshots saved unless tests directly ask it.)</span>
 --visual-baseline<span class="w">  </span><span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
---wire<span class="w">  </span><span class="c1"># (Use selenium-wire&#39;s webdriver for replacing selenium webdriver.)</span>
 --external-pdf<span class="w">  </span><span class="c1"># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
 --timeout-multiplier<span class="o">=</span>MULTIPLIER<span class="w">  </span><span class="c1"># (Multiplies the default timeout values.)</span>
 --list-fail-page<span class="w">  </span><span class="c1"># (After each failing test, list the URL of the failure.)</span>
@@ -3401,7 +3400,6 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <span class="n">driver_version</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the chromedriver or uc_driver version to use.</span>
 <span class="n">skip_js_waits</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Skip JS Waits (readyState==&quot;complete&quot; and Angular).</span>
 <span class="n">wait_for_angularjs</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Wait for AngularJS to load after some actions.</span>
-<span class="n">use_wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use selenium-wire&#39;s webdriver over selenium webdriver.</span>
 <span class="n">external_pdf</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome &quot;plugins.always_open_pdf_externally&quot;:True.</span>
 <span class="n">window_position</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window position: &quot;X,Y&quot;</span>
 <span class="n">window_size</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window size: &quot;Width,Height&quot;</span>
@@ -3437,7 +3435,6 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <span class="n">ad_block</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;ad_block_on&quot;.</span>
 <span class="n">server</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;servername&quot;.</span>
 <span class="n">guest</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;guest_mode&quot;.</span>
-<span class="n">wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;use_wire&quot;.</span>
 <span class="n">pls</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;page_load_strategy&quot;.</span>
 <span class="n">sjw</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;skip_js_waits&quot;.</span>
 <span class="n">wfa</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;wait_for_angularjs&quot;.</span>
@@ -3513,7 +3510,6 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <span class="n">binary_location</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set path of the Chromium browser binary to use.</span>
 <span class="n">driver_version</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the chromedriver or uc_driver version to use.</span>
 <span class="n">page_load_strategy</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome PLS to &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.</span>
-<span class="n">use_wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use selenium-wire&#39;s webdriver over selenium webdriver.</span>
 <span class="n">external_pdf</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set Chrome &quot;plugins.always_open_pdf_externally&quot;:True.</span>
 <span class="n">window_position</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window position: &quot;X,Y&quot;</span>
 <span class="n">window_size</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the browser&#39;s starting window size: &quot;Width,Height&quot;</span>
@@ -3533,7 +3529,6 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <span class="n">ad_block</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;ad_block_on&quot;.</span>
 <span class="n">server</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;servername&quot;.</span>
 <span class="n">guest</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;guest_mode&quot;.</span>
-<span class="n">wire</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;use_wire&quot;.</span>
 <span class="n">pls</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of &quot;page_load_strategy&quot;.</span>
 <span class="n">use_chromium</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use base &quot;Chromium&quot;</span>
 <span class="n">cft</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use &quot;Chrome for Testing&quot;</span>
