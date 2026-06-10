@@ -3374,24 +3374,24 @@
 <p>To use an authenticated proxy in Stealthy Playwright Mode, <strong>do these two things</strong>:<br /><strong>1.</strong> Set the<code>proxy</code> arg when launching Chrome.
 -- Eg: <code>sb_cdp.Chrome(proxy="USER:PASS@IP:PORT")</code> or <code>cdp_driver.start_async("USER:PASS@IP:PORT")</code>.<br /><strong>2.</strong> Open the URL with SeleniumBase <strong>before</strong> using <code>endpoint_url</code> to connect to the browser with Playwright.</p>
 <p>⚠️ If any trouble with the above, set <code>use_chromium=True</code> so that you can use the base Chromium browser, which still allows extensions, unlike regular branded Chrome, which removed the <code>--load-extension</code> command-line switch. (<em>An extension is used to set the auth for the proxy, which is needed when CDP can't set the proxy alone, such as for navigation after the initial page load</em>).</p>
-<p>In the sync format, use <code>sb.open(url)</code> to open the url before connecting Playwright:
+<p>In the sync format, use <code>sb.goto(url)</code> to open the url before connecting Playwright:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">use_chromium</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="s2">&quot;user:pass@server:port&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
 <span class="c1"># ...</span>
-</code></pre></div></p>
-<p>In the async format, use, <code>driver.get(url)</code> to open the url before connecting Playwright:
+</code></pre></div>
+<p>In the async format, use, <code>driver.get(url)</code> to open the url before connecting Playwright:</p>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span> <span class="o">=</span> <span class="k">await</span> <span class="n">cdp_driver</span><span class="o">.</span><span class="n">start_async</span><span class="p">(</span><span class="n">use_chromium</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="s2">&quot;user:pass@server:port&quot;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
 <span class="c1"># ...</span>
-</code></pre></div></p>
-<p>Here's an example of using an authenticated proxy with Stealthy Playwright Mode:<br />(The URL is opened before attaching Playwright so that proxy settings take effect)
+</code></pre></div>
+<p>Here's an example of using an authenticated proxy with Stealthy Playwright Mode:<br />(The URL is opened before attaching Playwright so that proxy settings take effect)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">use_chromium</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="s2">&quot;user:pass@server:port&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
 
 <span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
@@ -3399,8 +3399,8 @@
     <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="c1"># ...</span>
 </code></pre></div>
-(Fill in the <code>url</code> and the <code>proxy</code> details to complete the script.)</p>
-<p>Here's the same thing for the <code>async</code> format:
+<p>(Fill in the <code>url</code> and the <code>proxy</code> details to complete the script.)</p>
+<p>Here's the same thing for the <code>async</code> format:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">playwright.async_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">async_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">cdp_driver</span>
@@ -3419,7 +3419,7 @@
     <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
     <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-(Fill in the <code>url</code> and the <code>proxy</code> details to complete the script.)</p>
+<p>(Fill in the <code>url</code> and the <code>proxy</code> details to complete the script.)</p>
 <hr />
 <h4 id="this-flowchart-shows-how-stealthy-playwright-mode-fits-into-cdp-mode">🎭 This flowchart shows how Stealthy Playwright Mode fits into CDP Mode:</h3><a class="headerlink" href="#this-flowchart-shows-how-stealthy-playwright-mode-fits-into-cdp-mode" title="Permanent link">&para;</a></h4>
 <p><img src="https://seleniumbase.github.io/other/sb_architecture.png" width="596" alt="Stealthy architecture flowchart" /></p>

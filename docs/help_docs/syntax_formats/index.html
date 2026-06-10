@@ -2926,7 +2926,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_demo_site</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;This is Automated&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#myButton&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;tbody#tbodyId&quot;</span><span class="p">)</span>
@@ -2988,7 +2988,7 @@
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">test_sb_fixture_with_no_class</span><span class="p">(</span><span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/help_docs/install/&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/help_docs/install/&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;GUI Commander&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;mark:contains(&quot;Commander&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_title_contains</span><span class="p">(</span><span class="s2">&quot;GUI / Commander&quot;</span><span class="p">)</span>
@@ -3003,7 +3003,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Test_SB_Fixture</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_sb_fixture_inside_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/help_docs/install/&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/help_docs/install/&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;input[aria-label=&quot;Search&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;GUI Commander&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;mark:contains(&quot;Commander&quot;)&#39;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">assert_title_contains</span><span class="p">(</span><span class="s2">&quot;GUI / Commander&quot;</span><span class="p">)</span>
@@ -3018,7 +3018,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">LoginPage</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">login_to_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;input[type=&quot;submit&quot;]&#39;</span><span class="p">)</span>
@@ -3039,7 +3039,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">LoginPage</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">login_to_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;input[type=&quot;submit&quot;]&#39;</span><span class="p">)</span>
@@ -3062,7 +3062,7 @@
 
 <span class="k">def</span><span class="w"> </span><span class="nf">test_request_sb_fixture</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">getfixturevalue</span><span class="p">(</span><span class="s2">&quot;sb&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;SeleniumBase&quot;</span><span class="p">,</span> <span class="s2">&quot;#myForm h2&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;input#myTextInput&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextarea&quot;</span><span class="p">,</span> <span class="s2">&quot;This is me&quot;</span><span class="p">)</span>
@@ -3080,7 +3080,7 @@
 <span class="k">class</span><span class="w"> </span><span class="nc">Test_Request_Fixture</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_request_sb_fixture_in_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
         <span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">getfixturevalue</span><span class="p">(</span><span class="s2">&quot;sb&quot;</span><span class="p">)</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;input#myTextInput&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextarea&quot;</span><span class="p">,</span> <span class="s2">&quot;Automated&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;This Text is Green&quot;</span><span class="p">,</span> <span class="s2">&quot;#pText&quot;</span><span class="p">)</span>
@@ -3117,7 +3117,7 @@
         <span class="k">return</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Demo Page&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_override_driver.py">examples/test_override_driver.py</a>)</p>
@@ -3188,12 +3188,12 @@
             <span class="n">sb</span><span class="o">.</span><span class="n">_needs_tearDown</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">test_override_fixture_no_class</span><span class="p">(</span><span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;This is Automated&quot;</span><span class="p">)</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestOverride</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_override_fixture_inside_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sb</span><span class="p">:</span> <span class="n">BaseCase</span><span class="p">):</span>
-        <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+        <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
         <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;This is Automated&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_override_sb_fixture.py">examples/test_override_sb_fixture.py</a>)</p>
@@ -3511,7 +3511,7 @@
 <span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Open the Swag Labs Login Page&quot;</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">go_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">clear_local_storage</span><span class="p">()</span>
 
 <span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Login to Swag Labs with </span><span class="si">{user}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -3528,7 +3528,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">()</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -3543,13 +3543,13 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://google.com/ncr&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase on GitHub</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;a[href*=&quot;github.com/seleniumbase&quot;]&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rtf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">demo</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.github.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.github.io/demo_page&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;This is Automated&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;This is Automated&quot;</span><span class="p">,</span> <span class="s2">&quot;#myTextInput&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;This Text is Green&quot;</span><span class="p">,</span> <span class="s2">&quot;#pText&quot;</span><span class="p">)</span>
@@ -3581,18 +3581,18 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">DriverContext</span>
 
 <span class="k">with</span> <span class="n">DriverContext</span><span class="p">()</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;SeleniumBase&quot;]&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">DriverContext</span><span class="p">(</span><span class="n">browser</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/apps/calculator&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/apps/calculator&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[id=&quot;4&quot;]&#39;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[id=&quot;2&quot;]&#39;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">,</span> <span class="s2">&quot;#output&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#output&quot;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">DriverContext</span><span class="p">()</span> <span class="k">as</span> <span class="n">driver</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
@@ -3608,7 +3608,7 @@
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#myTextInput&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
@@ -3618,7 +3618,7 @@
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">browser</span><span class="o">=</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span> <span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/apps/calculator&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/apps/calculator&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[id=&quot;4&quot;]&#39;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[id=&quot;2&quot;]&#39;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">,</span> <span class="s2">&quot;#output&quot;</span><span class="p">)</span>
@@ -3632,7 +3632,7 @@
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -3669,7 +3669,7 @@
     <span class="n">links</span> <span class="o">=</span> <span class="k">await</span> <span class="n">top_nav</span><span class="o">.</span><span class="n">query_selector_all_async</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">nav_item</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">nav_item</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
@@ -3696,7 +3696,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">nav_item</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p>(See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_basic_cdp.py">examples/cdp_mode/raw_basic_cdp.py</a> for the test.)</p>
 <p>Here's a Pure CDP Mode example that bypasses bot-detection to scrape data from a website:</p>
@@ -3730,7 +3730,7 @@
     <span class="n">cards</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s1">&#39;span[data-automation*=&quot;product-list-card&quot;]&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">cards</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">card</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>

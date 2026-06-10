@@ -2924,7 +2924,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">mobile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.roblox.com/&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.roblox.com/&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#download-the-app-container&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Roblox for Android&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;Roblox for Android&quot;)&#39;</span><span class="p">,</span> <span class="n">loops</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>

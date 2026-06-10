@@ -2878,8 +2878,8 @@
   <h1>✅ SeleniumBase README</h1>
 
 <p><meta property="og:site_name" content="SeleniumBase">
-<meta property="og:title" content="SeleniumBase: Stealthy Chromium Automation with Python; and E2E Testing." />
-<meta property="og:description" content="Stealthy Chromium Automation, including fast, easy, and reliable Web/UI testing with Python." />
+<meta property="og:title" content="SeleniumBase: Stealthy Chromium Automation and E2E Testing with Python." />
+<meta property="og:description" content="Stealthy Chromium Automation and E2E Testing with Python." />
 <meta property="og:keywords" content="Python, pytest, selenium, webdriver, testing, automation, seleniumbase, framework, dashboard, recorder, reports, screenshots, playwright, stealth, CAPTCHA">
 <meta property="og:image" content="https://seleniumbase.github.io/cdn/img/mac_sb_logo_5b.png" />
 <link rel="icon" href="https://seleniumbase.github.io/img/logo6.png" /></p>
@@ -2938,7 +2938,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
@@ -2970,7 +2970,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Test Results&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;strong:contains(&quot;Normal&quot;)&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bot Not Detected&quot;</span><span class="p">)</span>
@@ -3077,7 +3077,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
@@ -3186,7 +3186,7 @@ With raw Selenium, that requires more code:<br />
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -3201,7 +3201,7 @@ With raw Selenium, that requires more code:<br />
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">()</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -3217,7 +3217,7 @@ With raw Selenium, that requires more code:<br />
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -3344,7 +3344,7 @@ pytest<span class="w"> </span>my_first_test.py
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
@@ -3375,7 +3375,8 @@ pytest<span class="w"> </span>my_first_test.py
 <p><a id="common_methods"></a></p>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Here are some common SeleniumBase methods:</h3>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Navigate the browser window to the URL.</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Navigate the browser window to the URL.</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Same as `self.goto(url)`</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">()</span>  <span class="c1"># Activate CDP Mode from UC Mode.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Update the field with the text.</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>  <span class="c1"># Click the element with the selector.</span>
@@ -3692,7 +3693,7 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_find_army_of_robots_on_xkcd_desert_island</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/731/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/731/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#ARMY_OF_ROBOTS&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
 </code></pre></div>
 <p>You can run it from the <code>examples/</code> folder like this:</p>
@@ -3817,7 +3818,7 @@ Here's an example of running tests with some additional features enabled:
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Detailed Method Specifications and Examples:</h3>
 
 <p>🔵 <strong>Navigating to a web page: (and related commands)</strong></p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>  <span class="c1"># This method navigates the browser to the previous page.</span>
 
@@ -3900,7 +3901,7 @@ Here's an example of running tests with some additional features enabled:
 </code></pre></div>
 <p>❓ <code>is_text_visible(text, selector):</code>  (text visible on element)</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;You Shall Not Pass!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=3xYXUeSmb-Y&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=3xYXUeSmb-Y&quot;</span><span class="p">)</span>
 </code></pre></div>
 <div></div>
 <details>
@@ -4018,7 +4019,7 @@ You'd know this because the web page would contain something like the following 
 
 <div class="highlight"><pre><span></span><code><span class="n">start_page</span> <span class="o">=</span> <span class="s2">&quot;https://xkcd.com/465/&quot;</span>
 <span class="n">destination_page</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/seleniumbase/SeleniumBase&quot;</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">start_page</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start_page</span><span class="p">)</span>
 <span class="n">referral_link</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&lt;a class=&#39;analytics test&#39; href=&#39;</span><span class="si">%s</span><span class="s1">&#39;&gt;Free-Referral Button!&lt;/a&gt;&#39;&#39;&#39;</span> <span class="o">%</span> <span class="n">destination_page</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;document.body.innerHTML = </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s1">&#39;&#39;&#39;</span> <span class="o">%</span> <span class="n">referral_link</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a.analytics&quot;</span><span class="p">)</span>  <span class="c1"># Clicks the generated button</span>
@@ -4037,7 +4038,7 @@ You'd know this because the web page would contain something like the following 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">DeferredAssertTests</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_deferred_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/993/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/993/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">&quot;#comic&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Brand Identity&quot;]&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Rocket Ship&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>

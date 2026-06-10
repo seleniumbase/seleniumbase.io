@@ -3115,7 +3115,7 @@
 </ul>
 <p>That disconnects WebDriver from Chrome (which prevents detection), and gives you access to <code>sb.cdp</code> methods (which don't trigger anti-bot checks).</p>
 <blockquote>
-<p>(<strong>New:</strong> Calling <strong><code>sb.open(url)</code></strong> from UC Mode also activates CDP Mode now.)</p>
+<p>(<strong>New:</strong> Calling <strong><code>sb.goto(url)</code></strong> from UC Mode also activates CDP Mode now.)</p>
 </blockquote>
 <p>Simple example from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py">SeleniumBase/examples/cdp_mode/raw_gitlab.py</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
@@ -3215,7 +3215,7 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">highlight_overlay</span><span class="p">(</span><span class="s2">&quot;div.pokemon-ability-info&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://events.pokemon.com/EventLocator/&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://events.pokemon.com/EventLocator/&quot;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;span:contains(&quot;Championship&quot;)&#39;</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -3416,6 +3416,7 @@
 <hr />
 <h3 id="cdp-mode-api-methods">🐙 <b translate="no">CDP Mode</b> API / Methods<a class="headerlink" href="#cdp-mode-api-methods" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># Same as sb.cdp.get(url, **kwargs)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># Same as sb.cdp.get(url, **kwargs)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">ignore_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">script_to_evaluate_on_load</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -3451,6 +3452,7 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">grant_permissions</span><span class="p">(</span><span class="n">permissions</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">grant_all_permissions</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">reset_permissions</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_all_urls</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_all_cookies</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_all_cookies</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">save_cookies</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -3533,6 +3535,11 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">activate_messenger</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">save_file_as</span><span class="p">(</span><span class="n">file_url</span><span class="p">,</span> <span class="n">new_file_name</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">assert_downloaded_file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">get_path_of_downloaded_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_download_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_locale</span><span class="p">(</span><span class="n">locale</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_local_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">cdp</span><span class="o">.</span><span class="n">set_session_storage_item</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
@@ -3618,7 +3625,7 @@
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div>
-<p><b translate="no">Pure CDP Mode</b> includes all methods from regular CDP Mode, except that they're called directly from <code>sb</code> instead of <code>sb.cdp</code>. Eg: <code>sb.gui_click_captcha()</code>. To quit a CDP-launched browser, use <code>sb.driver.stop()</code>.</p>
+<p><b translate="no">Pure CDP Mode</b> includes all methods from regular CDP Mode, except that they're called directly from <code>sb</code> instead of <code>sb.cdp</code>. Eg: <code>sb.gui_click_captcha()</code>. To quit a CDP-launched browser, use <code>sb.quit()</code>.</p>
 <p>Basic example from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_turnstile.py">SeleniumBase/examples/cdp_mode/raw_cdp_turnstile.py</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
@@ -3628,7 +3635,7 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#captcha-success&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <p>Another example: (<a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_methods.py">SeleniumBase/examples/cdp_mode/raw_cdp_methods.py</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
@@ -3647,9 +3654,9 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">gui_drag_and_drop</span><span class="p">(</span><span class="s2">&quot;img#logo&quot;</span><span class="p">,</span> <span class="s2">&quot;div#drop2&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">nested_click</span><span class="p">(</span><span class="s2">&quot;iframe#myFrame3&quot;</span><span class="p">,</span> <span class="s2">&quot;.fBox&quot;</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
-<p>ℹ️ Even if you don't call <code>sb.driver.stop()</code>, the browser still quits after the script goes out-of-scope.</p>
+<p>ℹ️ Even if you don't call <code>sb.quit()</code>, the browser still quits after the script goes out-of-scope.</p>
 <hr />
 <h3 id="cdp-mode-async-api-methods">🐙 <b translate="no">CDP Mode</b> Async API / Methods<a class="headerlink" href="#cdp-mode-async-api-methods" title="Permanent link">&para;</a></h3>
 <p>Initialization:</p>
@@ -3660,7 +3667,8 @@
 </code></pre></div>
 <p>Methods: (Sometimes <code>tab</code> is named <code>page</code> in examples)</p>
 <div class="highlight"><pre><span></span><code><span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;about:blank&quot;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;about:blank&quot;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;about:blank&quot;</span><span class="p">)</span>  <span class="c1"># Same as await tab.get(url)</span>
+<span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;about:blank&quot;</span><span class="p">)</span>  <span class="c1"># Same as await tab.get(url)</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">best_match</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># text can be selector</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># text can be selector</span>
 <span class="k">await</span> <span class="n">tab</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>

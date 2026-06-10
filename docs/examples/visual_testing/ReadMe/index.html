@@ -2935,7 +2935,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_applitools_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://applitools.com/helloworld?diff1&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s1">&#39;https://applitools.com/helloworld?diff1&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creating baseline in &quot;visual_baseline&quot; folder.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;helloworld&quot;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="c1"># Click a button that changes the text of an element</span>
@@ -2963,7 +2963,7 @@ First differing element 39:
 
 <span class="k">class</span><span class="w"> </span><span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_python_home_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://python.org/&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s1">&#39;https://python.org/&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creating baseline in &quot;visual_baseline&quot; folder.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;python_home&quot;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="c1"># Remove the &quot;Donate&quot; button</span>
@@ -2992,7 +2992,7 @@ First differing element 33:
 
 <span class="k">class</span><span class="w"> </span><span class="nc">VisualLayoutTest</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_xkcd_layout_change_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://xkcd.com/554/&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s1">&#39;https://xkcd.com/554/&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Creating baseline in &quot;visual_baseline&quot; folder.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">check_window</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xkcd_554&quot;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="c1"># Change height: (83 -&gt; 130) , Change width: (185 -&gt; 120)</span>

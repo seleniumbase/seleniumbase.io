@@ -2885,11 +2885,11 @@
 
 <p>Here's a list of SeleniumBase method definitions, which are defined in <strong><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/base_case.py">base_case.py</a></strong></p>
 <p>For backwards compatibility, older versions of method names have remained to keep older scripts working. <em>(E.g: wait_for_element_visible was shortened to wait_for_element and then to find_element.)</em></p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="c1"># Duplicates: self.open_url(url), self.visit(url), visit_url(url),</span>
-<span class="c1">#             self.goto(url), self.go_to(url)</span>
+<span class="c1">#             self.open(url), self.go_to(url)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="c1"># If the url parameter is a URL: Perform self.open(url)</span>
+<span class="c1"># If the url parameter is a URL: Perform self.goto(url)</span>
 <span class="c1"># Otherwise: return self.get_element(URL_AS_A_SELECTOR)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scroll</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">slow_click</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -2923,8 +2923,10 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">get_locale_code</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">go_forward</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">open_start_page</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">open_if_not_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">goto_start_page</span><span class="p">()</span>
+<span class="c1"># Duplicates: self.open_start_page()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">goto_if_not_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="c1"># Duplicates: self.open_if_not_url()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">is_element_clickable</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">)</span>
@@ -3575,8 +3577,8 @@
 
 <span class="c1">############ # &quot;driver&quot;-specific methods added (or modified) by SeleniumBase</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Because driver.get(url) works differently in UC Mode</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Like driver.get(), but allows partial URLs without protocol</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Same as driver.open(url)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Like driver.get(), but allows partial URLs without protocol</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Same as driver.goto(url)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="n">link_text</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>

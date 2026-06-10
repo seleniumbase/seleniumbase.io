@@ -2886,12 +2886,12 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MasterQATests</span><span class="p">(</span><span class="n">MasterQA</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_masterqa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1700/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1700/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Do you see a webcomic?&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Do you see elements in a table?&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/devices/&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/devices/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;div.mockup-wrapper&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Do you see 4 computer devices?&quot;</span><span class="p">)</span>
 </code></pre></div>

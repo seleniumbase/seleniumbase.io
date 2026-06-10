@@ -2895,13 +2895,13 @@ pytest<span class="w"> </span>test_dialog_boxes.py
 </code></pre></div>
 <h4>Here's a code snippet from that:</h4>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1920/&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1920/&quot;</span><span class="p">)</span>
 <span class="n">skip_button</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SKIP&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">]</span>  <span class="c1"># Can be a [text, color] list or tuple.</span>
 <span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Fencing&quot;</span><span class="p">,</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Metaball&quot;</span><span class="p">,</span> <span class="s2">&quot;Go/Chess&quot;</span><span class="p">,</span> <span class="n">skip_button</span><span class="p">]</span>
 <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Choose a sport:&quot;</span>
 <span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">buttons</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;Fencing&quot;</span><span class="p">:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1424/&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1424/&quot;</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li>You can create forms that include buttons and input fields.</li>

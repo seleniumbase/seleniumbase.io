@@ -2964,7 +2964,7 @@
 <p>👁️🔎 <a href="../method_summary/">SeleniumBase APIs</a> can be called from tests via <code>self</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_abc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>👁️🔎 Here's what a full test might look like:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
@@ -2972,7 +2972,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
@@ -2995,7 +2995,7 @@ pytest<span class="w"> </span>offline_examples/
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
