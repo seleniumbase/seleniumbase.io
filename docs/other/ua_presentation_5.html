@@ -1305,8 +1305,8 @@ Note that if automation performs actions too quickly,<br />websites may detect t
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1330,8 +1330,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 <mark>from seleniumbase import SB</mark>
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1355,8 +1355,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 <mark>with SB(uc=True, test=True, ad_block=True) as sb:</mark>
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1380,8 +1380,8 @@ from seleniumbase import SB
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-<mark>    url = "https://www.amazon.com"</mark>
-    sb.activate_cdp_mode(url)
+<mark>    sb.activate_cdp_mode()</mark>
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1405,8 +1405,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-<mark>    sb.activate_cdp_mode(url)</mark>
+    sb.activate_cdp_mode()
+<mark>    sb.goto("https://www.amazon.com")</mark>
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1430,8 +1430,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
 <mark>    sb.sleep(2)</mark>
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1455,8 +1455,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
 <mark>    sb.click_if_visible('button[alt="Continue shopping"]')</mark>
     sb.sleep(2)
@@ -1480,8 +1480,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
 <mark>    sb.sleep(2)</mark>
@@ -1505,8 +1505,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1530,8 +1530,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1555,8 +1555,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1580,8 +1580,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1605,8 +1605,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1630,8 +1630,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1655,8 +1655,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1680,8 +1680,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1705,8 +1705,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, ad_block=True) as sb:
-    url = "https://www.amazon.com"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.amazon.com")
     sb.sleep(2)
     sb.click_if_visible('button[alt="Continue shopping"]')
     sb.sleep(2)
@@ -1757,8 +1757,8 @@ with SB(uc=True, test=True, ad_block=True) as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1782,8 +1782,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 <mark>from seleniumbase import SB</mark>
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1807,8 +1807,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 <mark>with SB(uc=True, test=True, locale="en", pls="none") as sb:</mark>
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1832,8 +1832,8 @@ from seleniumbase import SB
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-<mark>    url = "https://www.nike.com/"</mark>
-    sb.activate_cdp_mode(url)
+<mark>    sb.activate_cdp_mode()</mark>
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1857,8 +1857,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-<mark>    sb.activate_cdp_mode(url)</mark>
+    sb.activate_cdp_mode()
+<mark>    sb.goto("https://www.nike.com/")</mark>
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1882,8 +1882,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
 <mark>    sb.sleep(2.5)</mark>
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1907,8 +1907,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
 <mark>    sb.click('[data-testid="user-tools-container"] search')</mark>
     sb.sleep(1.5)
@@ -1932,8 +1932,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
 <mark>    sb.sleep(1.5)</mark>
@@ -1957,8 +1957,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -1982,8 +1982,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2007,8 +2007,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2032,8 +2032,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2057,8 +2057,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2082,8 +2082,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2107,8 +2107,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2132,8 +2132,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
@@ -2157,8 +2157,8 @@ with SB(uc=True, test=True, locale="en", pls="none") as sb:
 from seleniumbase import SB
 
 with SB(uc=True, test=True, locale="en", pls="none") as sb:
-    url = "https://www.nike.com/"
-    sb.activate_cdp_mode(url)
+    sb.activate_cdp_mode()
+    sb.goto("https://www.nike.com/")
     sb.sleep(2.5)
     sb.click('[data-testid="user-tools-container"] search')
     sb.sleep(1.5)
