@@ -3003,6 +3003,7 @@
 <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># Same as sb.get(url, **kwargs) in CDP Mode</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">ignore_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">script_to_evaluate_on_load</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto_if_not_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">get_rd_host</span><span class="p">()</span>  <span class="c1"># Returns the remote-debugging host</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">get_rd_port</span><span class="p">()</span>  <span class="c1"># Returns the remote-debugging port</span>
