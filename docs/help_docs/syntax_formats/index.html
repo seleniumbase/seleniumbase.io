@@ -3647,6 +3647,8 @@
 <p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_driver.py">examples/raw_login_driver.py</a>)</p>
 <p>The <code>Driver()</code> manager format can be used as a drop-in replacement for virtually every Python/selenium framework, as it uses the raw <code>driver</code> instance for handling commands. The <code>Driver()</code> method simplifies the work of managing drivers with optimal settings, and it can be configured with multiple args. The <code>Driver()</code> also accepts command-line options (such as <code>python --headless</code>) so that you don't need to modify your tests directly to use different settings. These command-line options only take effect if the associated method args remain unset (or set to <code>None</code>) for the specified options.</p>
 <p>When using the <code>Driver()</code> format, you may need to activate a Virtual Display on your own if you want to run headed tests in a headless Linux environment. (See https://github.com/mdmintz/sbVirtualDisplay for details.) One such example of this is using an authenticated proxy, which is configured via a Chrome extension that is generated at runtime. (Note that regular headless mode in Chrome doesn't support extensions.)</p>
+<p>Set <code>uc=True</code> in order to make the <code>driver</code> stealthy:
+<code>driver = Driver(uc=True)</code></p>
 <p><a id="sb_sf_24"></a></p>
 <h2><img src="https://seleniumbase.github.io/img/logo3b.png" title="SeleniumBase" width="32" /> 24. Pure CDP Mode (Async API. No Selenium)</h2>
 

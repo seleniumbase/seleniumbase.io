@@ -2998,6 +2998,11 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --edge<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
 --firefox<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
 --safari<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
+--opera<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=opera&quot;.)</span>
+--brave<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=brave&quot;.)</span>
+--comet<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=comet&quot;.)</span>
+--atlas<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=atlas&quot;.)</span>
+--chromium<span class="w">  </span><span class="c1"># (Shortcut for using base `Chromium`)</span>
 --settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (Override default SeleniumBase settings.)</span>
 --env<span class="o">=</span>ENV<span class="w">  </span><span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
 --account<span class="o">=</span>STR<span class="w">  </span><span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
@@ -3243,13 +3248,13 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Changing the default driver version:</h3>
 
-<p>🔵 By default, SeleniumBase will make sure that the major driver version matches the major browser version for Chromium tests. (Eg. If Chrome <code>117.X</code> is installed and you have chromedriver <code>117.X</code>, then nothing happens, but if you had chromedriver <code>116.X</code> instead, then SeleniumBase would download chromedriver <code>117.X</code> to match the browser version.)</p>
+<p>🔵 By default, SeleniumBase will make sure that the major driver version matches the major browser version for Chromium tests. (Eg. If Chrome <code>149.X</code> is installed and you have chromedriver <code>149.X</code>, then nothing happens, but if you had chromedriver <code>148.X</code> instead, then SeleniumBase would download chromedriver <code>149.X</code> to match the browser version.)</p>
 <p>🎛️ To change this default behavior, you can use:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--driver-version<span class="o">=</span>VER
 </code></pre></div>
 <p>The <code>VER</code> in <code>--driver-version=VER</code> can be:
-* A major driver version. Eg. <code>117</code>. (milestone)
-* An exact driver version. Eg. <code>117.0.5938.92</code>.
+* A major driver version. Eg. <code>149</code>. (milestone)
+* An exact driver version. Eg. <code>149.0.7827.155</code>.
 * <code>"browser"</code> (exact match on browser version)
 * <code>"keep"</code> (keep using the driver you already have)
 * <code>"latest"</code> / <code>"stable"</code> (latest stable version)
@@ -3276,8 +3281,8 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <p>🎛️ To use the special <code>Chromium</code> binary:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>get<span class="w"> </span>chromium
 </code></pre></div>
-<p>Then, run scripts with <code>--use-chromium</code> / <code>use_chromium=True</code>:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--use-chromium<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--headless
+<p>Then, run scripts with <code>--chromium</code> / <code>use_chromium=True</code>:</p>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--chromium<span class="w"> </span>-n8<span class="w"> </span>--dashboard<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>-v<span class="w"> </span>--rs<span class="w"> </span>--headless
 </code></pre></div>
 <hr />
 <p>🎛️ To use the special <code>Chrome for Testing</code> binary:</p>
