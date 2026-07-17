@@ -3348,13 +3348,13 @@
     <span class="n">items</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s1">&#39;[data-item-id]&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">required_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-            <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">query_selector</span><span class="p">(</span>
                 <span class="s1">&#39;[data-automation-id=&quot;product-title&quot;]&#39;</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="n">description</span> <span class="ow">and</span> <span class="n">description</span><span class="o">.</span><span class="n">text</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_item_text</span><span class="p">:</span>
                 <span class="n">unique_item_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">description</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">description</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-                <span class="n">price</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span>
+                <span class="n">price</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">query_selector</span><span class="p">(</span>
                     <span class="s1">&#39;[data-automation-id=&quot;product-price&quot;]&#39;</span>
                 <span class="p">)</span>
                 <span class="k">if</span> <span class="n">price</span><span class="p">:</span>
