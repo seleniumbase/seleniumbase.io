@@ -3212,7 +3212,7 @@
 
 <h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> Stealthy Playwright Mode 🎭</h2>
 
-<p>🎭 <b translate="no">Stealthy Playwright Mode</b> is a subset of <strong><a href="../../ReadMe/">SeleniumBase CDP Mode</a></strong> where  <b translate="no"><a href="https://github.com/microsoft/playwright-python">Playwright</a></b> attaches to a stealthy browser session via the remote-debugging URL. This lets <span translate="no">Playwright</span> bypass bot-detection while allowing APIs of both frameworks to work in tandem. Under the hood, Playwright calls <code><b>connect_over_cdp()</b></code> to achieve this stealth.</p>
+<p>🎭 <b translate="no">Stealthy Playwright Mode</b> is a subset of <strong><a href="../../ReadMe/">SeleniumBase CDP Mode</a></strong> where <b translate="no"><a href="https://github.com/microsoft/playwright-python">playwright-python</a></b> attaches to a stealthy browser session via the remote-debugging URL. This lets <span translate="no">Playwright</span> bypass bot-detection while allowing APIs of both frameworks to work in tandem. Under the hood, Playwright achieves stealth via <code><b>connect_over_cdp()</b></code>.</p>
 <hr />
 <div style="text-align: left;"><iframe width="390" height="220" loading="lazy" data-origwidth="1200" data-origheight="675" src="https://www.youtube.com/embed/PnFD_gSmGUc?enablejsapi=1&amp;origin=https://seleniumbase.io&amp;autoplay=0&amp;cc_load_policy=0&amp;cc_lang_pref=&amp;iv_load_policy=1&amp;loop=0&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;playsinline=0&amp;autohide=2&amp;theme=dark&amp;color=red&amp;controls=1&amp;" class="__youtube_prefs__ no-lazyload" title="YouTube player" allow="autoplay; encrypted-media" allowfullscreen="" data-no-lazy="1"></iframe></div>
 <p>(<b><a href="https://www.youtube.com/watch?v=PnFD_gSmGUc">See Stealthy Playwright Mode on YouTube! ▶️</a></b>)</p>
@@ -3311,41 +3311,73 @@
 </code></pre></div>
 <hr />
 <h3 id="stealthy-playwright-mode-details">🎭 <b translate="no">Stealthy Playwright Mode</b> details<a class="headerlink" href="#stealthy-playwright-mode-details" title="Permanent link">&para;</a></h3>
-<p>The <code>sb_cdp</code> and <code>cdp_driver</code> formats don't use WebDriver at all, meaning that <code>chromedriver</code> isn't needed. From these two formats, Stealthy Playwright Mode can call <a href="../../../../help_docs/cdp_mode_methods/">CDP Mode methods</a> and Playwright methods.</p>
-<p>The <code>SB()</code> format requires WebDriver, therefore <code>chromedriver</code> will be downloaded, modified for stealth, and renamed as <code>uc_driver</code> if not already present. The <code>SB()</code> format has access to Selenium WebDriver methods via <a href="../../../../help_docs/method_summary/">the SeleniumBase API</a>. When using Stealthy Playwright Mode from the <code>SB()</code> format, all the APIs are accessible: Selenium, SeleniumBase, <a href="../../../../help_docs/uc_mode/">UC Mode</a>, <a href="../../ReadMe/">CDP Mode</a>, and Playwright.</p>
-<p>Default timeout values are different between Playwright and SeleniumBase. For instance, a 30-second default timeout in a Playwright method might only be 10 seconds in the equivalent SeleniumBase method.</p>
-<p>When specifying custom timeout values, Playwright uses milliseconds, whereas SeleniumBase uses seconds. Eg. <code>page.wait_for_timeout(2000)</code> in Playwright is the equivalent of <code>sb.sleep(2)</code> in SeleniumBase.</p>
-<p>Although hard sleeps are generally discouraged, they become a tactical tool in stealth mode because that extra waiting helps the automation look more human. Hard sleeps are used in multiple examples to prevent rate limits from being exceeded.</p>
+<p>ℹ️ The <code>sb_cdp</code> and <code>cdp_driver</code> formats don't use WebDriver at all, meaning that <code>chromedriver</code> isn't needed. From these two formats, Stealthy Playwright Mode can call <a href="../../../../help_docs/cdp_mode_methods/">CDP Mode methods</a> and Playwright methods.</p>
+<p>ℹ️ The <code>SB()</code> format requires WebDriver, therefore <code>chromedriver</code> will be downloaded, modified for stealth, and renamed as <code>uc_driver</code> if not already present. The <code>SB()</code> format has access to Selenium WebDriver methods via <a href="../../../../help_docs/method_summary/">the SeleniumBase API</a>. When using Stealthy Playwright Mode from the <code>SB()</code> format, all the APIs are accessible: Selenium, SeleniumBase, <a href="../../../../help_docs/uc_mode/">UC Mode</a>, <a href="../../ReadMe/">CDP Mode</a>, and Playwright.</p>
+<p>ℹ️ Default timeout values are different between Playwright and SeleniumBase. For instance, a 30-second default timeout in a Playwright method might only be 10 seconds in the equivalent SeleniumBase method.</p>
+<p>ℹ️ When specifying custom timeout values, Playwright uses milliseconds, whereas SeleniumBase uses seconds. Eg. <code>page.wait_for_timeout(2000)</code> in Playwright is the equivalent of <code>sb.sleep(2)</code> in SeleniumBase.</p>
+<p>ℹ️ Although hard sleeps are generally discouraged, they become a tactical tool in stealth mode because that extra waiting helps the automation look more human. Hard sleeps are used in multiple examples to prevent rate limits from being exceeded.</p>
+<p>🌠 For additional stealth, use <code>sb.goto(URL)</code> instead of <code>page.goto(URL)</code>.</p>
 <hr />
 <h3 id="a-few-examples-of-stealthy-playwright-mode">🎭 A few examples of <b translate="no">Stealthy Playwright Mode</b>:<a class="headerlink" href="#a-few-examples-of-stealthy-playwright-mode" title="Permanent link">&para;</a></h3>
-<p>🎭 Here's an example that queries Microsoft Copilot:</p>
+<p>🎭 Here's an example that searches SeatGeek:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seatgeek.com/&quot;</span><span class="p">)</span>
 <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
 
 <span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
     <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://copilot.microsoft.com&quot;</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="s2">&quot;textarea#userInput&quot;</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;Playwright Python connect_over_cdp() sync example&quot;</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;textarea#userInput&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[data-testid=&quot;submit-button&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">5.25</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="s1">&#39;button[data-testid*=&quot;-thumbs-up&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[data-testid*=&quot;scroll-to-bottom&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
-    <span class="n">chat_results</span> <span class="o">=</span> <span class="s1">&#39;[data-testid=&quot;highlighted-chats&quot;]&#39;</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">locator</span><span class="p">(</span><span class="n">chat_results</span><span class="p">)</span><span class="o">.</span><span class="n">inner_text</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
+    <span class="n">input_field</span> <span class="o">=</span> <span class="s1">&#39;input[name=&quot;search&quot;]&#39;</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="n">input_field</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">1600</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;Jerry Seinfeld&quot;</span>
+    <span class="n">search_box</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">locator</span><span class="p">(</span><span class="n">input_field</span><span class="p">)</span>
+    <span class="n">search_box</span><span class="o">.</span><span class="n">press_sequentially</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">1600</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;li#active-result-item&quot;</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">4200</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*** SeatGeek Search for &quot;</span><span class="si">%s</span><span class="s1">&quot;:&#39;</span> <span class="o">%</span> <span class="n">query</span><span class="p">)</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">locator</span><span class="p">(</span><span class="s1">&#39;[data-testid=&quot;listing-item&quot;]&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">items</span><span class="o">.</span><span class="n">count</span><span class="p">()):</span>
+        <span class="n">item_text</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">inner_text</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
 </code></pre></div>
-<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/raw_copilot_sync.py">examples/cdp_mode/playwright/raw_copilot_sync.py</a>)</p>
+<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/raw_seatgeek_sync.py">examples/cdp_mode/playwright/raw_seatgeek_sync.py</a>)</p>
+<p>🎭 Here's an example that searches Foot Locker:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
+
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.footlocker.com/&quot;</span><span class="p">)</span>
+<span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">get_endpoint_url</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+    <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">input_field</span> <span class="o">=</span> <span class="s1">&#39;input[name=&quot;query&quot;]&#39;</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="n">input_field</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button[id*=&quot;Agree&quot;]&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">input_field</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="s2">&quot;Nike Shoes&quot;</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="n">search</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;ul[id*=&quot;typeahead&quot;] li div&#39;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">&quot;a.ProductCard-link&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">elements</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;**** Found results for &quot;</span><span class="si">%s</span><span class="s1">&quot;: ****&#39;</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------ &gt;&gt;&gt;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/raw_footlocker_sync.py">examples/cdp_mode/playwright/raw_footlocker_sync.py</a>)</p>
 <p>🎭 Here's an example that solves the Bing CAPTCHA:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">playwright.sync_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_playwright</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
