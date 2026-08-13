@@ -2887,7 +2887,7 @@
 
 <p align="center" class="hero__title"><b>All-in-one Browser Automation Framework:<br />Web Crawling / Testing / Scraping / Stealth</b></p>
 
-<p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/Tests/badge.svg" alt="SeleniumBase GitHub Actions" /></a></p>
+<p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/Tests/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://www.youtube.com/playlist?list=PLp9uKicxkBc5UIlGi2BuE3aWC7JyXpD3m"><img src="https://img.shields.io/badge/docs-📺-F12345.svg?style=flat&logo=YouTube&logoColor=white&label=YouTube" alt="YouTube Channel" /></a></p>
 
 <p align="center">
 <a href="#python_installation">🚀 Start</a> |
@@ -2908,7 +2908,7 @@
 <a href="help_docs/uc_mode/">👤 UC Mode</a> |
 <a href="examples/cdp_mode/ReadMe/">🐙 CDP Mode</a> |
 <a href="examples/chart_maker/ReadMe/">📶 Charts</a> |
-<a href="https://seleniumbase.io/devices/?url=seleniumbase.com">🖥️ Farm</a>
+<a href="https://seleniumbase.io/devices/?url=seleniumbase.io">🖥️ Farm</a>
 <br />
 <a href="help_docs/how_it_works/">👁️ How</a> |
 <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/migration/raw_selenium">🚝 Migration</a> |
@@ -2925,16 +2925,14 @@
 <br />
 </p>
 
-<p align="center"><a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/badge/docs-MichaelMintz-FF1111.svg?style=flat&logo=YouTube&logoColor=white&label=YouTube" alt="YouTube Channel" /></a> (<a href="https://www.youtube.com/@MichaelMintz">SeleniumBase Tutorials</a>)</p>
-
 <hr />
 <ul>
 <li>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> <b>bypasses bot-detection with Chromium-based browsers.</b></li>
 <li>🎭 <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a> <b>extends CDP Mode's stealth to Playwright.</b></li>
 </ul>
 <ul>
-<li><code>pip install seleniumbase</code> or <code>uv add seleniumbase</code> (main framework).</li>
-<li><code>pip install playwright</code> or <code>uv add playwright</code> (optional integration).</li>
+<li><code><b>pip install seleniumbase</b></code> for the main framework. (Or use <code>uv add</code>)</li>
+<li><code><b>pip install playwright</b></code> for the optional integration. (Or use <code>uv add</code>)</li>
 </ul>
 
 <hr />
@@ -2970,7 +2968,28 @@
 </p>
 
 <hr />
-<p><b>📝 The Browserscan example can be expanded into a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_browserscan.py">test demo</a>:</b><br />(Assertions added and elements highlighted with JavaScript.)</p>
+<p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_methods.py" target="_blank">This example</a> shows off multiple methods:</b></p>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
+
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;Quickly type text!&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span> <span class="s2">&quot;Slowly type text!&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#myButton&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;input#mySlider&quot;</span><span class="p">,</span> <span class="s2">&quot;100&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click_visible_elements</span><span class="p">(</span><span class="s2">&quot;input.checkBoxClassB&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">select_option_by_text</span><span class="p">(</span><span class="s2">&quot;#mySelect&quot;</span><span class="p">,</span> <span class="s2">&quot;Set to 75%&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">hover_and_click</span><span class="p">(</span><span class="s2">&quot;#myDropdown&quot;</span><span class="p">,</span> <span class="s2">&quot;#dropOption2&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">drag_and_drop</span><span class="p">(</span><span class="s2">&quot;img#logo&quot;</span><span class="p">,</span> <span class="s2">&quot;div#drop2&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">nested_click</span><span class="p">(</span><span class="s2">&quot;iframe#myFrame3&quot;</span><span class="p">,</span> <span class="s2">&quot;.fBox&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#myButton&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_browserscan.py" target="_blank">This example</a> expands the Browserscan script into a test demo:</b><br />(Assertions added and elements highlighted with JavaScript.)</p>
+
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -3013,7 +3032,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--cft<span class=
 python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--edge<span class="w">  </span><span class="c1"># Use Microsoft Edge</span>
 python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span class="w">  </span><span class="c1"># Use Brave browser</span>
 </code></pre></div>
-<p>Google Chrome is the default browser. Only unbranded Chromium and Chrome-for-Testing get installed automatically if not already installed.</p>
+<p>Google Chrome is the default browser. Only unbranded Chromium and Chrome-for-Testing get downloaded automatically if not already present on the system.</p>
 <p>The Chromium browser can also be set via method args, eg: <code>cft=True</code>, <code>use_chromium=True</code>, <code>browser="edge"</code>, <code>browser="brave"</code>, etc. Eg:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">use_chromium</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
@@ -4106,7 +4125,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 <div><a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> </div>
 <div align="left"></div>
 <div><a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://discord.gg/EdhQTn3EyE" target="_blank"><img src="https://img.shields.io/discord/727927627830001734?color=7289DA&label=Discord&logo=discord&logoColor=white" /></a></div>
-<div><a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/badge/docs-MichaelMintz-FF1111.svg?style=flat&logo=YouTube&logoColor=white&label=YouTube" alt="YouTube Channel" /></a></div>
+<div><a href="https://www.youtube.com/@MichaelMintz"><img src="https://img.shields.io/badge/docs-MichaelMintz-D12345.svg?style=flat&logo=YouTube&logoColor=white&label=YouTube" alt="YouTube Channel" /></a></div>
 
 
 
