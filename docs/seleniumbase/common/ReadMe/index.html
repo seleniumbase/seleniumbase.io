@@ -3092,7 +3092,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_rate_limited_printing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Running rate-limited print test:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Running rate-limited print test:"</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">print_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></div>
@@ -3124,7 +3124,7 @@ $^*ENCRYPT<span class="o">=</span><span class="nv">RXlYMSJWTz8HSwM</span><span c
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">encryption</span>
 <span class="o">...</span>
-<span class="n">password</span> <span class="o">=</span> <span class="n">encryption</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="s1">&#39;$^*ENCRYPT=RXlYMSJWTz8HSwM=?&amp;#$&#39;</span><span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">encryption</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="s1">'$^*ENCRYPT=RXlYMSJWTz8HSwM=?&amp;#$'</span><span class="p">)</span>
 </code></pre></div>
 <p>(You'll notice that encrypted strings have a common start token and end token. This is to help tell them apart from non-encrypted strings. You can customize these tokens in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/settings.py">settings.py</a>. The current default setting is <code>$^*ENCRYPT=</code> for the start token and <code>?&amp;#$</code> for the end token.)</p>
 <p>See <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_decryption.py">test_decryption.py</a> for an example of decrypting encrypted passwords in tests.</p>

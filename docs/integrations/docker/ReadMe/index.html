@@ -3147,8 +3147,8 @@ http://stackoverflow.com/questions/17236796/how-to-remove-old-docker-containers<
 <p>Here are a few of those cleanup commands:</p>
 <div class="highlight"><pre><span></span><code>docker container prune
 docker system prune
-docker images | grep &quot;&lt;none&gt;&quot; | awk &#39;{print $3}&#39; | xargs docker rmi
-docker rm &#39;docker ps --no-trunc -aq&#39;
+docker images | grep "&lt;none&gt;" | awk '{print $3}' | xargs docker rmi
+docker rm 'docker ps --no-trunc -aq'
 </code></pre></div>
 <p>If you want to completely remove all of your Docker containers and images, use these commands: (If there's nothing to delete, those commands will return an error.)</p>
 <div class="highlight"><pre><span></span><code>docker rm -f $(docker ps -a -q)

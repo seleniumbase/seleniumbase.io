@@ -2947,15 +2947,15 @@
 <h2 id="shadow-dom-support-shadow-root-interaction">Shadow DOM support / Shadow-root interaction<a class="headerlink" href="#shadow-dom-support-shadow-root-interaction" title="Permanent link">&para;</a></h2>
 <p>🔵 SeleniumBase lets you pierce through open Shadow DOM selectors (to interact with elements inside) by adding <code>::shadow</code> to CSS fragments that include a shadow-root element. For multi-layered shadow-roots, you must individually pierce through each shadow-root element that you want to get through.</p>
 <p>🔵 Here are some examples of Shadow DOM selectors:</p>
-<div class="highlight"><pre><span></span><code><span class="n">css_1</span> <span class="o">=</span> <span class="s2">&quot;downloads-manager::shadow #no-downloads&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">css_1</span> <span class="o">=</span> <span class="s2">"downloads-manager::shadow #no-downloads"</span>
 
-<span class="n">css_2</span> <span class="o">=</span> <span class="s2">&quot;downloads-manager::shadow #downloadsList downloads-item::shadow #file-link&quot;</span>
+<span class="n">css_2</span> <span class="o">=</span> <span class="s2">"downloads-manager::shadow #downloadsList downloads-item::shadow #file-link"</span>
 
-<span class="n">css_3</span> <span class="o">=</span> <span class="s2">&quot;downloads-manager::shadow downloads-toolbar::shadow cr-toolbar::shadow cr-toolbar-search-field::shadow cr-icon-button&quot;</span>
+<span class="n">css_3</span> <span class="o">=</span> <span class="s2">"downloads-manager::shadow downloads-toolbar::shadow cr-toolbar::shadow cr-toolbar-search-field::shadow cr-icon-button"</span>
 
-<span class="n">css_4</span> <span class="o">=</span> <span class="s2">&quot;downloads-manager::shadow downloads-toolbar::shadow cr-toolbar::shadow cr-toolbar-search-field::shadow #searchInput&quot;</span>
+<span class="n">css_4</span> <span class="o">=</span> <span class="s2">"downloads-manager::shadow downloads-toolbar::shadow cr-toolbar::shadow cr-toolbar-search-field::shadow #searchInput"</span>
 
-<span class="n">css_5</span> <span class="o">=</span> <span class="s2">&quot;downloads-manager::shadow downloads-toolbar::shadow cr-toolbar::shadow cr-toolbar-search-field::shadow #clearSearch&quot;</span>
+<span class="n">css_5</span> <span class="o">=</span> <span class="s2">"downloads-manager::shadow downloads-toolbar::shadow cr-toolbar::shadow cr-toolbar-search-field::shadow #clearSearch"</span>
 </code></pre></div>
 <p>🔵 The shadow-root (<code>::shadow</code>) elements are transitional, and therefore cannot be the final part of your CSS selectors. Complete your CSS selectors by including an element that's inside a shadow-root.</p>
 <p>🔵 NOTE: <code>::shadow</code> selectors only exist within SeleniumBase. (They are not part of standard CSS.)</p>

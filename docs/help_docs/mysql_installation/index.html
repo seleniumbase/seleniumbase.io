@@ -3122,29 +3122,29 @@
 <hr />
 <h3 id="github-actions-ubuntu-linux-mysql-setup">GitHub Actions Ubuntu Linux MySQL Setup<a class="headerlink" href="#github-actions-ubuntu-linux-mysql-setup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/etc/init.d/mysql<span class="w"> </span>start
-mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
+mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">'CREATE DATABASE IF NOT EXISTS test_db;'</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
 wget<span class="w"> </span>https://raw.githubusercontent.com/seleniumbase/SeleniumBase/master/seleniumbase/core/create_db_tables.sql
 sudo<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-uroot<span class="w"> </span>-proot<span class="w"> </span>test_db<span class="w"> </span>&lt;<span class="w"> </span>create_db_tables.sql
-sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;ALTER USER &quot;root&quot;@&quot;localhost&quot; IDENTIFIED BY &quot;test&quot;;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
+sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">'ALTER USER "root"@"localhost" IDENTIFIED BY "test";'</span><span class="w"> </span>-uroot<span class="w"> </span>-proot
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
 <p>Have SeleniumBase tests write to the MySQL DB:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--with-db_reporting
 </code></pre></div>
 <p>Query MySQL DB Results:</p>
-<div class="highlight"><pre><span></span><code>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;select test_address,browser,state,start_time,runtime from test_db.test_run_data;&#39;</span><span class="w"> </span>-uroot<span class="w"> </span>-ptest
+<div class="highlight"><pre><span></span><code>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">'select test_address,browser,state,start_time,runtime from test_db.test_run_data;'</span><span class="w"> </span>-uroot<span class="w"> </span>-ptest
 </code></pre></div>
 <hr />
 <h3 id="standard-ubuntu-linux-mysql-setup">Standard Ubuntu Linux MySQL Setup<a class="headerlink" href="#standard-ubuntu-linux-mysql-setup" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
 sudo<span class="w"> </span>mysql_secure_installation
-sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;CREATE DATABASE IF NOT EXISTS test_db;&#39;</span>
+sudo<span class="w"> </span>mysql<span class="w"> </span>-e<span class="w"> </span><span class="s1">'CREATE DATABASE IF NOT EXISTS test_db;'</span>
 sudo<span class="w"> </span>mysql<span class="w"> </span>-h<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>test_db<span class="w"> </span>&lt;<span class="w"> </span>seleniumbase/core/create_db_tables.sql
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
 <p>To change the password from <code>root</code> to <code>test</code>:</p>
-<div class="highlight"><pre><span></span><code>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s1">&#39;root&#39;</span><span class="w"> </span>password<span class="w"> </span><span class="s1">&#39;test&#39;</span>
+<div class="highlight"><pre><span></span><code>mysqladmin<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="s1">'root'</span><span class="w"> </span>password<span class="w"> </span><span class="s1">'test'</span>
 sudo<span class="w"> </span>service<span class="w"> </span>mysql<span class="w"> </span>restart
 </code></pre></div>
 <h3 id="macos-mysql-setup">MacOS MySQL Setup<a class="headerlink" href="#macos-mysql-setup" title="Permanent link">&para;</a></h3>

@@ -2895,48 +2895,48 @@ pytest<span class="w"> </span>test_dialog_boxes.py
 </code></pre></div>
 <h4>Here's a code snippet from that:</h4>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1920/&quot;</span><span class="p">)</span>
-<span class="n">skip_button</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SKIP&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">]</span>  <span class="c1"># Can be a [text, color] list or tuple.</span>
-<span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Fencing&quot;</span><span class="p">,</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Metaball&quot;</span><span class="p">,</span> <span class="s2">&quot;Go/Chess&quot;</span><span class="p">,</span> <span class="n">skip_button</span><span class="p">]</span>
-<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Choose a sport:&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://xkcd.com/1920/"</span><span class="p">)</span>
+<span class="n">skip_button</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"SKIP"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">]</span>  <span class="c1"># Can be a [text, color] list or tuple.</span>
+<span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Fencing"</span><span class="p">,</span> <span class="s2">"Football"</span><span class="p">,</span> <span class="s2">"Metaball"</span><span class="p">,</span> <span class="s2">"Go/Chess"</span><span class="p">,</span> <span class="n">skip_button</span><span class="p">]</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">"Choose a sport:"</span>
 <span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">buttons</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;Fencing&quot;</span><span class="p">:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1424/&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"Fencing"</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://xkcd.com/1424/"</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li>You can create forms that include buttons and input fields.</li>
 </ul>
 <h4>Here's a simple form with only buttons as input:</h4>
 
-<div class="highlight"><pre><span></span><code><span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="s2">&quot;Ready?&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;NO&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>  <span class="c1"># This prints &quot;YES&quot; or &quot;NO&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="s2">"Ready?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"YES"</span><span class="p">,</span> <span class="s2">"NO"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>  <span class="c1"># This prints "YES" or "NO"</span>
 
 <span class="c1"># You may want to customize the color of buttons</span>
-<span class="n">buttons</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)]</span>
-<span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="s2">&quot;Ready?&quot;</span><span class="p">,</span> <span class="n">buttons</span><span class="p">)</span>
+<span class="n">buttons</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"YES"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"NO"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)]</span>
+<span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="s2">"Ready?"</span><span class="p">,</span> <span class="n">buttons</span><span class="p">)</span>
 </code></pre></div>
 <h4>Here's a simple form with an input field:</h4>
 
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_text_input</span><span class="p">(</span><span class="s2">&quot;Enter text:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Search&quot;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_text_input</span><span class="p">(</span><span class="s2">"Enter text:"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Search"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># This prints the text entered</span>
 </code></pre></div>
 <h4>This form has an input field and buttons:</h4>
 
-<div class="highlight"><pre><span></span><code><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Type your name and choose a language:&quot;</span>
-<span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">message</span> <span class="o">=</span> <span class="s2">"Type your name and choose a language:"</span>
+<span class="n">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"JavaScript"</span><span class="p">]</span>
 <span class="n">text</span><span class="p">,</span> <span class="n">choice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_form_inputs</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">buttons</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your name is: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">text</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You picked </span><span class="si">%s</span><span class="s2">!&quot;</span> <span class="o">%</span> <span class="n">choice</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Your name is: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You picked </span><span class="si">%s</span><span class="s2">!"</span> <span class="o">%</span> <span class="n">choice</span><span class="p">)</span>
 </code></pre></div>
 <h4>You can customize options if you want:</h4>
 
 <div class="highlight"><pre><span></span><code><span class="c1"># Themes: bootstrap, modern, material, supervan, light, dark, seamless</span>
-<span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;theme&quot;</span><span class="p">,</span> <span class="s2">&quot;modern&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">)]</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_text_input</span><span class="p">(</span><span class="s2">&quot;You Won!&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;OK&quot;</span><span class="p">],</span> <span class="n">options</span><span class="p">)</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"theme"</span><span class="p">,</span> <span class="s2">"modern"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"50%"</span><span class="p">)]</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_text_input</span><span class="p">(</span><span class="s2">"You Won!"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"OK"</span><span class="p">],</span> <span class="n">options</span><span class="p">)</span>
 </code></pre></div>
 <h4>Default options can be set with <code>set_jqc_theme()</code>:</h4>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">set_jqc_theme</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;38%&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">set_jqc_theme</span><span class="p">(</span><span class="s2">"light"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">"38%"</span><span class="p">)</span>
 
 <span class="c1"># To reset jqc theme settings to factory defaults</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">reset_jqc_theme</span><span class="p">()</span>
@@ -2958,79 +2958,79 @@ pytest<span class="w"> </span>test_dialog_boxes.py
 <h3>Detailed method summaries for Dialog Boxes:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_button_input</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="sd">Pop up a jquery-confirm box and return the text of the button clicked.</span>
 <span class="sd">If running in headless mode, the last button text is returned.</span>
 <span class="sd">@Params</span>
 <span class="sd">message: The message to display in the jquery-confirm dialog.</span>
 <span class="sd">buttons: A list of tuples for text and color.</span>
-<span class="sd">    Example: [(&quot;Yes!&quot;, &quot;green&quot;), (&quot;No!&quot;, &quot;red&quot;)]</span>
+<span class="sd">    Example: [("Yes!", "green"), ("No!", "red")]</span>
 <span class="sd">    Available colors: blue, green, red, orange, purple, default, dark.</span>
-<span class="sd">    A simple text string also works: &quot;My Button&quot;. (Uses default color.)</span>
+<span class="sd">    A simple text string also works: "My Button". (Uses default color.)</span>
 <span class="sd">options: A list of tuples for options to set.</span>
-<span class="sd">    Example: [(&quot;theme&quot;, &quot;bootstrap&quot;), (&quot;width&quot;, &quot;450px&quot;)]</span>
+<span class="sd">    Example: [("theme", "bootstrap"), ("width", "450px")]</span>
 <span class="sd">    Available theme options: bootstrap, modern, material, supervan,</span>
 <span class="sd">                             light, dark, and seamless.</span>
 <span class="sd">    Available colors: (For the BORDER color, NOT the button color.)</span>
-<span class="sd">        &quot;blue&quot;, &quot;default&quot;, &quot;green&quot;, &quot;red&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;dark&quot;.</span>
-<span class="sd">    Example option for changing the border color: (&quot;color&quot;, &quot;default&quot;)</span>
-<span class="sd">    Width can be set using percent or pixels. Eg: &quot;36.0%&quot;, &quot;450px&quot;.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        "blue", "default", "green", "red", "purple", "orange", "dark".</span>
+<span class="sd">    Example option for changing the border color: ("color", "default")</span>
+<span class="sd">    Width can be set using percent or pixels. Eg: "36.0%", "450px".</span>
+<span class="sd">"""</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_text_input</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="sd">Pop up a jquery-confirm box and return the text submitted by the input.</span>
-<span class="sd">If running in headless mode, the text returned is &quot;&quot; by default.</span>
+<span class="sd">If running in headless mode, the text returned is "" by default.</span>
 <span class="sd">@Params</span>
 <span class="sd">message: The message to display in the jquery-confirm dialog.</span>
 <span class="sd">button: A 2-item list or tuple for text and color. Or just the text.</span>
-<span class="sd">    Example: [&quot;Submit&quot;, &quot;blue&quot;] -&gt; (default button if not specified)</span>
+<span class="sd">    Example: ["Submit", "blue"] -&gt; (default button if not specified)</span>
 <span class="sd">    Available colors: blue, green, red, orange, purple, default, dark.</span>
-<span class="sd">    A simple text string also works: &quot;My Button&quot;. (Uses default color.)</span>
+<span class="sd">    A simple text string also works: "My Button". (Uses default color.)</span>
 <span class="sd">options: A list of tuples for options to set.</span>
-<span class="sd">    Example: [(&quot;theme&quot;, &quot;bootstrap&quot;), (&quot;width&quot;, &quot;450px&quot;)]</span>
+<span class="sd">    Example: [("theme", "bootstrap"), ("width", "450px")]</span>
 <span class="sd">    Available theme options: bootstrap, modern, material, supervan,</span>
 <span class="sd">                             light, dark, and seamless.</span>
 <span class="sd">    Available colors: (For the BORDER color, NOT the button color.)</span>
-<span class="sd">        &quot;blue&quot;, &quot;default&quot;, &quot;green&quot;, &quot;red&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;dark&quot;.</span>
-<span class="sd">    Example option for changing the border color: (&quot;color&quot;, &quot;default&quot;)</span>
-<span class="sd">    Width can be set using percent or pixels. Eg: &quot;36.0%&quot;, &quot;450px&quot;.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        "blue", "default", "green", "red", "purple", "orange", "dark".</span>
+<span class="sd">    Example option for changing the border color: ("color", "default")</span>
+<span class="sd">    Width can be set using percent or pixels. Eg: "36.0%", "450px".</span>
+<span class="sd">"""</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">get_jqc_form_inputs</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="sd">Pop up a jquery-confirm box and return the input/button texts as tuple.</span>
-<span class="sd">If running in headless mode, returns the (&quot;&quot;, buttons[-1][0]) tuple.</span>
+<span class="sd">If running in headless mode, returns the ("", buttons[-1][0]) tuple.</span>
 <span class="sd">@Params</span>
 <span class="sd">message: The message to display in the jquery-confirm dialog.</span>
 <span class="sd">buttons: A list of tuples for text and color.</span>
-<span class="sd">    Example: [(&quot;Yes!&quot;, &quot;green&quot;), (&quot;No!&quot;, &quot;red&quot;)]</span>
+<span class="sd">    Example: [("Yes!", "green"), ("No!", "red")]</span>
 <span class="sd">    Available colors: blue, green, red, orange, purple, default, dark.</span>
-<span class="sd">    A simple text string also works: &quot;My Button&quot;. (Uses default color.)</span>
+<span class="sd">    A simple text string also works: "My Button". (Uses default color.)</span>
 <span class="sd">options: A list of tuples for options to set.</span>
-<span class="sd">    Example: [(&quot;theme&quot;, &quot;bootstrap&quot;), (&quot;width&quot;, &quot;450px&quot;)]</span>
+<span class="sd">    Example: [("theme", "bootstrap"), ("width", "450px")]</span>
 <span class="sd">    Available theme options: bootstrap, modern, material, supervan,</span>
 <span class="sd">                             light, dark, and seamless.</span>
 <span class="sd">    Available colors: (For the BORDER color, NOT the button color.)</span>
-<span class="sd">        &quot;blue&quot;, &quot;default&quot;, &quot;green&quot;, &quot;red&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;dark&quot;.</span>
-<span class="sd">    Example option for changing the border color: (&quot;color&quot;, &quot;default&quot;)</span>
-<span class="sd">    Width can be set using percent or pixels. Eg: &quot;36.0%&quot;, &quot;450px&quot;.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        "blue", "default", "green", "red", "purple", "orange", "dark".</span>
+<span class="sd">    Example option for changing the border color: ("color", "default")</span>
+<span class="sd">    Width can be set using percent or pixels. Eg: "36.0%", "450px".</span>
+<span class="sd">"""</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">set_jqc_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot; Sets the default jquery-confirm theme and width (optional).</span>
-<span class="sd">Available themes: &quot;bootstrap&quot;, &quot;modern&quot;, &quot;material&quot;, &quot;supervan&quot;,</span>
-<span class="sd">                  &quot;light&quot;, &quot;dark&quot;, and &quot;seamless&quot;.</span>
+<span class="sd">""" Sets the default jquery-confirm theme and width (optional).</span>
+<span class="sd">Available themes: "bootstrap", "modern", "material", "supervan",</span>
+<span class="sd">                  "light", "dark", and "seamless".</span>
 <span class="sd">Available colors: (This sets the BORDER color, NOT the button color.)</span>
-<span class="sd">    &quot;blue&quot;, &quot;default&quot;, &quot;green&quot;, &quot;red&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;dark&quot;.</span>
-<span class="sd">Width can be set using percent or pixels. Eg: &quot;36.0%&quot;, &quot;450px&quot;.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    "blue", "default", "green", "red", "purple", "orange", "dark".</span>
+<span class="sd">Width can be set using percent or pixels. Eg: "36.0%", "450px".</span>
+<span class="sd">"""</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">reset_jqc_theme</span><span class="p">()</span>
-<span class="sd">&quot;&quot;&quot; Resets the jqc theme settings to factory defaults. &quot;&quot;&quot;</span>
+<span class="sd">""" Resets the jqc theme settings to factory defaults. """</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery_confirm</span><span class="p">()</span>  <span class="c1"># Automatic for jqc methods</span>
-<span class="sd">&quot;&quot;&quot; See https://craftpip.github.io/jquery-confirm/ for usage. &quot;&quot;&quot;</span>
+<span class="sd">""" See https://craftpip.github.io/jquery-confirm/ for usage. """</span>
 </code></pre></div>
 <hr />
 <h4>✅ 🛂 Automated/Manual Hybrid Mode (MasterQA)</h4>

@@ -3006,7 +3006,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gitlab.com/users/sign_in"</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
@@ -3016,7 +3016,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gitlab.com/users/sign_in"</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
 </code></pre></div>
@@ -3025,26 +3025,26 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gitlab.com/users/sign_in"</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Username"</span><span class="p">,</span> <span class="s1">'[for="user_login"]'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'label[for="user_login"]'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'button:contains("Sign in")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'h1:contains("GitLab")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">"SeleniumBase wasn't detected"</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 Here's an example <b>where clicking the checkbox is required</b>, even for humans:<br />(Commonly seen on forms that are CAPTCHA-protected.)</p>
 <p><img src="https://seleniumbase.github.io/other/cf_turnstile.png" title="SeleniumBase" width="260"></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://seleniumbase.io/apps/turnstile&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://seleniumbase.io/apps/turnstile"</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#captcha-success&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"img#captcha-success"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"top_left"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">"SeleniumBase wasn't detected"</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/turnstile_click.jpg" title="SeleniumBase" width="440"></p>
 <p>If running on a Linux server, <code>uc_gui_handle_captcha()</code> might not be good enough. Switch to <code>uc_gui_click_captcha()</code> to be more stealthy. Note that these methods auto-detect between CF Turnstile and Google reCAPTCHA.</p>
@@ -3052,20 +3052,20 @@
 <p>👤 Here's an example <b>where the CAPTCHA appears after submitting a form</b>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ahrefs.com/website-authority-checker&quot;</span>
-    <span class="n">input_field</span> <span class="o">=</span> <span class="s1">&#39;input[placeholder=&quot;Enter domain&quot;]&#39;</span>
-    <span class="n">submit_button</span> <span class="o">=</span> <span class="s1">&#39;span:contains(&quot;Check Authority&quot;)&#39;</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://ahrefs.com/website-authority-checker"</span>
+    <span class="n">input_field</span> <span class="o">=</span> <span class="s1">'input[placeholder="Enter domain"]'</span>
+    <span class="n">submit_button</span> <span class="o">=</span> <span class="s1">'span:contains("Check Authority")'</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># The bot-check is later</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="s2">&quot;github.com/seleniumbase/SeleniumBase&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="s2">"github.com/seleniumbase/SeleniumBase"</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span><span class="n">submit_button</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mf">3.25</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text_not_visible</span><span class="p">(</span><span class="s2">&quot;Checking&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button[data-cky-tag=&quot;close-button&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;p:contains(&quot;github.com/seleniumbase/SeleniumBase&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Top 100 backlinks&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;bottom_center&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">wait_for_text_not_visible</span><span class="p">(</span><span class="s2">"Checking"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">'button[data-cky-tag="close-button"]'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'p:contains("github.com/seleniumbase/SeleniumBase")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'a:contains("Top 100 backlinks")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"bottom_center"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">"SeleniumBase wasn't detected!"</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/ahrefs_bypass.png" title="SeleniumBase" width="540"></p>
 <hr />
@@ -3073,15 +3073,15 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.virtualmanager.com/en/login&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://www.virtualmanager.com/en/login"</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">()</span>  <span class="c1"># Only used if needed</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;input[name*=&quot;email&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;input[name*=&quot;login&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;bottom_center&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected!&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name*="email"]'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name*="login"]'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"bottom_center"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">"SeleniumBase wasn't detected!"</span><span class="p">)</span>
 </code></pre></div>
 <p><a href="https://github.com/mdmintz/undetected-testing/actions/runs/9637461606/job/26576722411"><img width="540" alt="uc_gui_click_captcha on Linux" src="https://github.com/seleniumbase/SeleniumBase/assets/6788579/6aceb2a3-2a32-4521-b30a-f79446d2ce28"></a></p>
 <p>The 2nd <code translate="no">print()</code> should output <code translate="no">Virtual Manager</code>, which means that the automation successfully passed the Turnstile.</p>
@@ -3102,7 +3102,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">&quot;https://pixelscan.net/&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="s2">"https://pixelscan.net/"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="https://seleniumbase.github.io/other/pixelscan.jpg" title="SeleniumBase" width="540"></p>
@@ -3123,7 +3123,7 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_click</span><span class="p">(</span>
-    <span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;css selector&quot;</span><span class="p">,</span>
+    <span class="n">selector</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"css selector"</span><span class="p">,</span>
     <span class="n">timeout</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">SMALL_TIMEOUT</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_press_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
@@ -3134,20 +3134,20 @@
 
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># driver.uc_gui_click_cf(frame=&quot;iframe&quot;, retry=False, blind=False)</span>
-<span class="c1"># driver.uc_gui_click_rc(frame=&quot;iframe&quot;, retry=False, blind=False)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_click_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">"iframe"</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blind</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># driver.uc_gui_click_cf(frame="iframe", retry=False, blind=False)</span>
+<span class="c1"># driver.uc_gui_click_rc(frame="iframe", retry=False, blind=False)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
-<span class="c1"># driver.uc_gui_handle_cf(frame=&quot;iframe&quot;)</span>
-<span class="c1"># driver.uc_gui_handle_rc(frame=&quot;iframe&quot;)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_gui_handle_captcha</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s2">"iframe"</span><span class="p">)</span>
+<span class="c1"># driver.uc_gui_handle_cf(frame="iframe")</span>
+<span class="c1"># driver.uc_gui_handle_rc(frame="iframe")</span>
 </code></pre></div>
 <p>(Note that the <b><code translate="no">reconnect_time</code></b> is used to specify how long the driver should be disconnected from Chrome to prevent detection before reconnecting again.)</p>
 <p>👤 Since <b><code translate="no">driver.get(url)</code></b> is slower in <span translate="no">UC Mode</span> for bypassing detection, use <b><code translate="no">driver.default_get(url)</code></b> for a standard page load instead:</p>
 <div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">default_get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Faster, but Selenium can be detected</span>
 </code></pre></div>
 <p>👤 Here are some examples of using those special <b translate="no">UC Mode</b> methods: (Use <b><code translate="no">self.driver</code></b> for <b><code translate="no">BaseCase</code></b> formats. Use <b><code translate="no">sb.driver</code></b> for <b><code translate="no">SB()</code></b> formats):</p>
-<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gitlab.com/users/sign_in"</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -3155,12 +3155,12 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 <p>👤 You can also set the <b><code translate="no">reconnect_time</code></b> / <b><code translate="no">timeout</code></b> to <b><code translate="no">"breakpoint"</code></b> as a valid option. This allows the user to perform manual actions (until typing <b><code translate="no">c</code></b> and pressing <b><code translate="no">ENTER</code></b> to continue from the breakpoint):</p>
-<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gitlab.com/users/sign_in"</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">"breakpoint"</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">"breakpoint"</span><span class="p">)</span>
 
-<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="s2">"breakpoint"</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">reconnect</span><span class="p">(</span><span class="s2">"breakpoint"</span><span class="p">)</span>
 </code></pre></div>
 <p>(Note that while the special <b><code translate="no">UC Mode</code></b> breakpoint is active, you can't use <b><code translate="no">Selenium</code></b> commands in the browser, and the browser can't detect <b><code translate="no">Selenium</code></b>.)</p>
 <hr />
@@ -3174,7 +3174,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">&quot;breakpoint&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">uc_open_with_reconnect</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">reconnect_time</span><span class="o">=</span><span class="s2">"breakpoint"</span><span class="p">)</span>
 </code></pre></div>
 <p>(If you remain undetected while loading the page and performing manual actions, then you know you can create a working script once you swap the breakpoint with a time and add special methods like <b><code translate="no">sb.uc_click</code></b> as needed.)</p>
 <hr />
@@ -3188,7 +3188,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">Driver</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">)</span>  <span class="c1"># Tell SeleniumBase to do thread-locking as needed</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"-n"</span><span class="p">)</span>  <span class="c1"># Tell SeleniumBase to do thread-locking as needed</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">launch_driver</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -3198,7 +3198,7 @@
     <span class="k">finally</span><span class="p">:</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 
-<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://seleniumbase.io/demo_page&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'https://seleniumbase.io/demo_page'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">))</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
         <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">launch_driver</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>

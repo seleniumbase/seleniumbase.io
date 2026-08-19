@@ -2983,18 +2983,18 @@ Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/be
 Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>RealWorld<span class="w"> </span>App<span class="w"> </span><span class="c1"># features/realworld.feature:1</span>
 
 <span class="w">  </span>Scenario:<span class="w"> </span>Verify<span class="w"> </span>RealWorld<span class="w"> </span>App<span class="w"> </span><span class="o">(</span>log<span class="w"> </span><span class="k">in</span><span class="w"> </span>/<span class="w"> </span>sign<span class="w"> </span>out<span class="o">)</span><span class="w">  </span><span class="c1"># features/realworld.feature:3</span>
-<span class="w">    </span>Given<span class="w"> </span>Open<span class="w"> </span><span class="s2">&quot;seleniumbase.io/realworld/login&quot;</span><span class="w">      </span><span class="c1"># ../../sbase/steps.py:10</span>
+<span class="w">    </span>Given<span class="w"> </span>Open<span class="w"> </span><span class="s2">"seleniumbase.io/realworld/login"</span><span class="w">      </span><span class="c1"># ../../sbase/steps.py:10</span>
 <span class="w">    </span>And<span class="w"> </span>Clear<span class="w"> </span>Session<span class="w"> </span>Storage<span class="w">                         </span><span class="c1"># ../../sbase/steps.py:669</span>
-<span class="w">    </span>When<span class="w"> </span>Type<span class="w"> </span><span class="s2">&quot;demo_user&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#username&quot;</span><span class="w">            </span><span class="c1"># ../../sbase/steps.py:40</span>
-<span class="w">    </span>And<span class="w"> </span>Type<span class="w"> </span><span class="s2">&quot;secret_pass&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#password&quot;</span><span class="w">           </span><span class="c1"># ../../sbase/steps.py:40</span>
-<span class="w">    </span>And<span class="w"> </span>Do<span class="w"> </span>MFA<span class="w"> </span><span class="s2">&quot;GAXG2MTEOR3DMMDG&quot;</span><span class="w"> </span>into<span class="w"> </span><span class="s2">&quot;#totpcode&quot;</span><span class="w">    </span><span class="c1"># ../../sbase/steps.py:322</span>
-<span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>exact<span class="w"> </span>text<span class="w"> </span><span class="s2">&quot;Welcome!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;h1&quot;</span><span class="w">         </span><span class="c1"># ../../sbase/steps.py:157</span>
-<span class="w">    </span>And<span class="w"> </span>Highlight<span class="w"> </span><span class="s2">&quot;img#image1&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:184</span>
-<span class="w">    </span>And<span class="w"> </span>Click<span class="w"> </span><span class="s1">&#39;a:contains(&quot;This Page&quot;)&#39;</span><span class="w">               </span><span class="c1"># ../../sbase/steps.py:27</span>
+<span class="w">    </span>When<span class="w"> </span>Type<span class="w"> </span><span class="s2">"demo_user"</span><span class="w"> </span>into<span class="w"> </span><span class="s2">"#username"</span><span class="w">            </span><span class="c1"># ../../sbase/steps.py:40</span>
+<span class="w">    </span>And<span class="w"> </span>Type<span class="w"> </span><span class="s2">"secret_pass"</span><span class="w"> </span>into<span class="w"> </span><span class="s2">"#password"</span><span class="w">           </span><span class="c1"># ../../sbase/steps.py:40</span>
+<span class="w">    </span>And<span class="w"> </span>Do<span class="w"> </span>MFA<span class="w"> </span><span class="s2">"GAXG2MTEOR3DMMDG"</span><span class="w"> </span>into<span class="w"> </span><span class="s2">"#totpcode"</span><span class="w">    </span><span class="c1"># ../../sbase/steps.py:322</span>
+<span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>exact<span class="w"> </span>text<span class="w"> </span><span class="s2">"Welcome!"</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"h1"</span><span class="w">         </span><span class="c1"># ../../sbase/steps.py:157</span>
+<span class="w">    </span>And<span class="w"> </span>Highlight<span class="w"> </span><span class="s2">"img#image1"</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:184</span>
+<span class="w">    </span>And<span class="w"> </span>Click<span class="w"> </span><span class="s1">'a:contains("This Page")'</span><span class="w">               </span><span class="c1"># ../../sbase/steps.py:27</span>
 <span class="w">    </span>And<span class="w"> </span>Save<span class="w"> </span>screenshot<span class="w"> </span>to<span class="w"> </span>logs<span class="w">                       </span><span class="c1"># ../../sbase/steps.py:239</span>
-<span class="w">    </span>When<span class="w"> </span>Click<span class="w"> </span>link<span class="w"> </span><span class="s2">&quot;Sign out&quot;</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:195</span>
-<span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>element<span class="w"> </span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:120</span>
-<span class="w">    </span>And<span class="w"> </span>Assert<span class="w"> </span>text<span class="w"> </span><span class="s2">&quot;You have been signed out!&quot;</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:145</span>
+<span class="w">    </span>When<span class="w"> </span>Click<span class="w"> </span>link<span class="w"> </span><span class="s2">"Sign out"</span><span class="w">                        </span><span class="c1"># ../../sbase/steps.py:195</span>
+<span class="w">    </span>Then<span class="w"> </span>Assert<span class="w"> </span>element<span class="w"> </span><span class="s1">'a:contains("Sign in")'</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:120</span>
+<span class="w">    </span>And<span class="w"> </span>Assert<span class="w"> </span>text<span class="w"> </span><span class="s2">"You have been signed out!"</span><span class="w">       </span><span class="c1"># ../../sbase/steps.py:145</span>
 <span class="w">   </span>✅<span class="w"> </span>Scenario<span class="w"> </span>Passed!
 
 -<span class="w"> </span>Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
@@ -3027,9 +3027,9 @@ Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<sp
 <span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span>+<span class="w">                       </span><span class="c1"># features/steps/calculator.py:39</span>
 <span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="m">3</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:59</span>
 <span class="w">    </span>And<span class="w"> </span>Press<span class="w"> </span><span class="o">)</span><span class="w">                       </span><span class="c1"># features/steps/calculator.py:19</span>
-<span class="w">    </span>Then<span class="w"> </span>Verify<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;7.0×(3+3)&quot;</span><span class="w"> </span><span class="c1"># features/steps/calculator.py:135</span>
+<span class="w">    </span>Then<span class="w"> </span>Verify<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span><span class="s2">"7.0×(3+3)"</span><span class="w"> </span><span class="c1"># features/steps/calculator.py:135</span>
 <span class="w">    </span>When<span class="w"> </span><span class="nv">Press</span><span class="w"> </span><span class="o">=</span><span class="w">                      </span><span class="c1"># features/steps/calculator.py:44</span>
-<span class="w">    </span>Then<span class="w"> </span>Verify<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;42&quot;</span><span class="w">        </span><span class="c1"># features/steps/calculator.py:135</span>
+<span class="w">    </span>Then<span class="w"> </span>Verify<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span><span class="s2">"42"</span><span class="w">        </span><span class="c1"># features/steps/calculator.py:135</span>
 <span class="w">   </span>✅<span class="w"> </span>Scenario<span class="w"> </span>Passed!
 
 -<span class="w"> </span>Dashboard:<span class="w"> </span>/Users/michael/github/SeleniumBase/examples/behave_bdd/dashboard.html
@@ -3067,32 +3067,32 @@ Took<span class="w"> </span>0m1.672s
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">behave</span><span class="w"> </span><span class="kn">import</span> <span class="n">step</span>
 
 
-<span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Open the Swag Labs Login Page&quot;</span><span class="p">)</span>
+<span class="nd">@step</span><span class="p">(</span><span class="s2">"Open the Swag Labs Login Page"</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">go_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.saucedemo.com"</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">clear_local_storage</span><span class="p">()</span>
 
 
-<span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Login to Swag Labs with </span><span class="si">{user}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nd">@step</span><span class="p">(</span><span class="s2">"Login to Swag Labs with </span><span class="si">{user}</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">login_to_swag_labs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#user-name"</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_sauce</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 
-<span class="nd">@step</span><span class="p">(</span><span class="s2">&quot;Verify that the current user is logged in&quot;</span><span class="p">)</span>
+<span class="nd">@step</span><span class="p">(</span><span class="s2">"Verify that the current user is logged in"</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">verify_logged_in</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#header_container&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#react-burger-menu-btn&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;#shopping_cart_container&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#header_container"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#react-burger-menu-btn"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#shopping_cart_container"</span><span class="p">)</span>
 
 
-<span class="nd">@step</span><span class="p">(</span><span class="s1">&#39;Add &quot;</span><span class="si">{item}</span><span class="s1">&quot; to cart&#39;</span><span class="p">)</span>
+<span class="nd">@step</span><span class="p">(</span><span class="s1">'Add "</span><span class="si">{item}</span><span class="s1">" to cart'</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_item_to_cart</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
     <span class="n">sb</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sb</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;div.inventory_item:contains(&quot;</span><span class="si">%s</span><span class="s1">&quot;) button[name*=&quot;add&quot;]&#39;</span> <span class="o">%</span> <span class="n">item</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'div.inventory_item:contains("</span><span class="si">%s</span><span class="s1">") button[name*="add"]'</span> <span class="o">%</span> <span class="n">item</span><span class="p">)</span>
 </code></pre></div>
 <p>🐝 A <code>*.feature</code> file could look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> SeleniumBase scenarios for the Swag Labs App</span>
@@ -3103,15 +3103,15 @@ Took<span class="w"> </span>0m1.672s
 <span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> User can order a backpack from the store</span>
 <span class="k">    When </span><span class="nf">Login to Swag Labs with standard_user</span>
 <span class="nf">    </span><span class="k">Then </span><span class="nf">Verify that the current user is logged in</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Save price of &quot;</span><span class="s">Backpack</span><span class="nf">&quot; to </span><span class="nv">&lt;item_price&gt;</span>
-<span class="nf">    </span><span class="k">When </span><span class="nf">Add &quot;</span><span class="s">Backpack</span><span class="nf">&quot; to Cart</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Save price of "</span><span class="s">Backpack</span><span class="nf">" to </span><span class="nv">&lt;item_price&gt;</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">Add "</span><span class="s">Backpack</span><span class="nf">" to Cart</span>
 <span class="nf">    </span><span class="k">Then </span><span class="nf">Verify shopping cart badge shows </span><span class="s">1</span><span class="nf"> item(s)</span>
 <span class="nf">    </span><span class="k">When </span><span class="nf">Click on shopping cart icon</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Click Checkout</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Enter checkout info: First, Last, </span><span class="s">12345</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Click Continue</span>
-<span class="nf">    </span><span class="k">Then </span><span class="nf">Verify </span><span class="s">1</span><span class="nf"> &quot;</span><span class="s">Backpack</span><span class="nf">&quot;(s) in cart</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Verify cost of &quot;</span><span class="s">Backpack</span><span class="nf">&quot; is </span><span class="nv">&lt;item_price&gt;</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">Verify </span><span class="s">1</span><span class="nf"> "</span><span class="s">Backpack</span><span class="nf">"(s) in cart</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Verify cost of "</span><span class="s">Backpack</span><span class="nf">" is </span><span class="nv">&lt;item_price&gt;</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Verify item total is $</span><span class="s">29.99</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Verify tax amount is $</span><span class="s">2.40</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Verify total cost is $</span><span class="s">32.39</span>
@@ -3124,18 +3124,18 @@ Took<span class="w"> </span>0m1.672s
 <div class="highlight"><pre><span></span><code><span class="k">Feature:</span><span class="nf"> SeleniumBase scenarios for the RealWorld App</span>
 
 <span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Verify RealWorld App (log in / sign out)</span>
-<span class="k">    Given </span><span class="nf">Open &quot;</span><span class="s">seleniumbase.io/realworld/login</span><span class="nf">&quot;</span>
+<span class="k">    Given </span><span class="nf">Open "</span><span class="s">seleniumbase.io/realworld/login</span><span class="nf">"</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Clear Session Storage</span>
-<span class="nf">    </span><span class="k">When </span><span class="nf">Type &quot;</span><span class="s">demo_user</span><span class="nf">&quot; into &quot;</span><span class="s">#username</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Type &quot;</span><span class="s">secret_pass</span><span class="nf">&quot; into &quot;</span><span class="s">#password</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Do MFA &quot;</span><span class="s">GAXG2MTEOR3DMMDG</span><span class="nf">&quot; into &quot;</span><span class="s">#totpcode</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">Then </span><span class="nf">Assert text &quot;</span><span class="s">Welcome!</span><span class="nf">&quot; in &quot;</span><span class="s">h1</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Highlight element &quot;</span><span class="s">img#image1</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Click &#39;a:contains(&quot;</span><span class="s">This Page</span><span class="nf">&quot;)&#39;</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">Type "</span><span class="s">demo_user</span><span class="nf">" into "</span><span class="s">#username</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Type "</span><span class="s">secret_pass</span><span class="nf">" into "</span><span class="s">#password</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Do MFA "</span><span class="s">GAXG2MTEOR3DMMDG</span><span class="nf">" into "</span><span class="s">#totpcode</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">Assert text "</span><span class="s">Welcome!</span><span class="nf">" in "</span><span class="s">h1</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Highlight element "</span><span class="s">img#image1</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Click 'a:contains("</span><span class="s">This Page</span><span class="nf">")'</span>
 <span class="nf">    </span><span class="k">And </span><span class="nf">Save screenshot to logs</span>
-<span class="nf">    </span><span class="k">When </span><span class="nf">Click link &quot;</span><span class="s">Sign out</span><span class="nf">&quot;</span>
-<span class="nf">    </span><span class="k">Then </span><span class="nf">Assert element &#39;a:contains(&quot;</span><span class="s">Sign in</span><span class="nf">&quot;)&#39;</span>
-<span class="nf">    </span><span class="k">And </span><span class="nf">Assert text &quot;</span><span class="s">You have been signed out!</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">Click link "</span><span class="s">Sign out</span><span class="nf">"</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">Assert element 'a:contains("</span><span class="s">Sign in</span><span class="nf">")'</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">Assert text "</span><span class="s">You have been signed out!</span><span class="nf">"</span>
 </code></pre></div>
 <p>🐝 If there's a test failure, that's easy to spot:</p>
 <div class="highlight"><pre><span></span><code>Feature:<span class="w"> </span>SeleniumBase<span class="w"> </span>scenarios<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>Fail<span class="w"> </span>Page<span class="w"> </span><span class="c1"># features/fail_page.feature:1</span>
@@ -3159,8 +3159,8 @@ Took<span class="w"> </span>0m1.672s
 <p><img src="https://seleniumbase.github.io/cdn/img/sbase_behave_gui_wide_5.png" title="SeleniumBase" width="600"></p>
 <p>🐝🎖️ You can customize the tests that show up there:</p>
 <div class="highlight"><pre><span></span><code>sbase<span class="w"> </span>behave-gui<span class="w">  </span><span class="c1"># all tests</span>
-sbase<span class="w"> </span>behave-gui<span class="w"> </span>-i<span class="o">=</span>calculator<span class="w">  </span><span class="c1"># tests with &quot;calculator&quot; in the name</span>
-sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/<span class="w">  </span><span class="c1"># tests located in the &quot;features/&quot; folder</span>
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>-i<span class="o">=</span>calculator<span class="w">  </span><span class="c1"># tests with "calculator" in the name</span>
+sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/<span class="w">  </span><span class="c1"># tests located in the "features/" folder</span>
 sbase<span class="w"> </span>behave-gui<span class="w"> </span>features/calculator.feature<span class="w">  </span><span class="c1"># tests in that feature</span>
 </code></pre></div>
 <hr />

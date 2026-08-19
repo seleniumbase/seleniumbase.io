@@ -2964,7 +2964,7 @@
 <p>👁️🔎 <a href="../method_summary/">SeleniumBase APIs</a> can be called from tests via <code>self</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_abc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://example.com"</span><span class="p">)</span>
 </code></pre></div>
 <p>👁️🔎 Here's what a full test might look like:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
@@ -2972,15 +2972,15 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"seleniumbase.io/simple/login"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">,</span> <span class="s2">"demo_user"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_pass"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'a:contains("Sign in")'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Welcome!"</span><span class="p">,</span> <span class="s2">"h1"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"img#image1"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"#image1"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">"Sign out"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"signed out"</span><span class="p">,</span> <span class="s2">"#top_message"</span><span class="p">)</span>
 </code></pre></div>
 <p>(See the example, <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_simple_login.py">test_simple_login.py</a>, for reference.)</p>
 <p>👁️🔎 Here are some examples of running tests with <code>pytest</code>:</p>
@@ -2995,15 +2995,15 @@ pytest<span class="w"> </span>offline_examples/
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"seleniumbase.io/simple/login"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">,</span> <span class="s2">"demo_user"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_pass"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'a:contains("Sign in")'</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Welcome!"</span><span class="p">,</span> <span class="s2">"h1"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"img#image1"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"#image1"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">"Sign out"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"signed out"</span><span class="p">,</span> <span class="s2">"#top_message"</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>

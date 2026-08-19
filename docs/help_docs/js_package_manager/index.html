@@ -2904,13 +2904,13 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 
 <p>🗺️ Here is some tour code in Python from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/maps_introjs_tour.py">maps_introjs_tour.py</a> that expands into a lot of JavaScript.</p>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.google.com/maps/@42.3591234,-71.0915634,15z&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;introjs&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Welcome to Google Maps!&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;SeleniumBase Tours&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Enter Location&quot;</span><span class="p">,</span> <span class="s2">&quot;#searchboxinput&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Search Box&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;See it&quot;</span><span class="p">,</span> <span class="s2">&quot;#searchbox-searchbutton&quot;</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">&quot;Thanks for using Tours!&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;End of Guided Tour&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">export_tour</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;maps_introjs_tour.js&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.google.com/maps/@42.3591234,-71.0915634,15z"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">"introjs"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"Welcome to Google Maps!"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"SeleniumBase Tours"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"Enter Location"</span><span class="p">,</span> <span class="s2">"#searchboxinput"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Search Box"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"See it"</span><span class="p">,</span> <span class="s2">"#searchbox-searchbutton"</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"Thanks for using Tours!"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"End of Guided Tour"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">export_tour</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"maps_introjs_tour.js"</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 </code></pre></div>
 <p><div>🟨 For existing features, SeleniumBase already takes care of loading all the necessary JS and CSS files into the web browser. To load other packages, here are a few useful methods that you should know about:</div></p>
@@ -2919,23 +2919,23 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 </code></pre></div>
 <p><div>🟨 This example loads the <a href="https://introjs.com/">IntroJS</a> JavaScript library:</div></p>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/intro.js@5.1.0/intro.min.js&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_js_link</span><span class="p">(</span><span class="s2">"https://cdn.jsdelivr.net/npm/intro.js@5.1.0/intro.min.js"</span><span class="p">)</span>
 </code></pre></div>
 <p>🟨 If you're wondering how SeleniumBase does this, here's the code from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/fixtures/js_utils.py">js_utils.py</a> that loads JavaScript packages:</p>
 
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_js_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">js_link</span><span class="p">):</span>
     <span class="n">script_to_add_js</span> <span class="o">=</span> <span class="p">(</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;function injectJS(link) {</span>
-<span class="sd">              var body = document.getElementsByTagName(&quot;body&quot;)[0];</span>
-<span class="sd">              var script = document.createElement(&quot;script&quot;);</span>
+<span class="w">        </span><span class="sd">"""function injectJS(link) {</span>
+<span class="sd">              var body = document.getElementsByTagName("body")[0];</span>
+<span class="sd">              var script = document.createElement("script");</span>
 <span class="sd">              script.src = link;</span>
 <span class="sd">              script.defer;</span>
-<span class="sd">              script.type=&quot;text/javascript&quot;;</span>
-<span class="sd">              script.crossorigin = &quot;anonymous&quot;;</span>
+<span class="sd">              script.type="text/javascript";</span>
+<span class="sd">              script.crossorigin = "anonymous";</span>
 <span class="sd">              script.onload = function() { null };</span>
 <span class="sd">              body.appendChild(script);</span>
 <span class="sd">           }</span>
-<span class="sd">           injectJS(&quot;%s&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="sd">           injectJS("%s");"""</span><span class="p">)</span>
     <span class="n">js_link</span> <span class="o">=</span> <span class="n">escape_quotes_if_needed</span><span class="p">(</span><span class="n">js_link</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_js</span> <span class="o">%</span> <span class="n">js_link</span><span class="p">)</span>
 </code></pre></div>
@@ -2945,22 +2945,22 @@ pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--inte
 </code></pre></div>
 <p>🟨 Here's code that loads the <a href="https://introjs.com/">IntroJS</a> CSS:</p>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_css_link</span><span class="p">(</span><span class="s2">"https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css"</span><span class="p">)</span>
 </code></pre></div>
 <p>🟨 And here's the Python WebDriver code that makes this possible:</p>
 
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_css_link</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">css_link</span><span class="p">):</span>
     <span class="n">script_to_add_css</span> <span class="o">=</span> <span class="p">(</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;function injectCSS(css) {</span>
-<span class="sd">              var head = document.getElementsByTagName(&quot;head&quot;)[0];</span>
-<span class="sd">              var link = document.createElement(&quot;link&quot;);</span>
-<span class="sd">              link.rel = &quot;stylesheet&quot;;</span>
-<span class="sd">              link.type = &quot;text/css&quot;;</span>
+<span class="w">        </span><span class="sd">"""function injectCSS(css) {</span>
+<span class="sd">              var head = document.getElementsByTagName("head")[0];</span>
+<span class="sd">              var link = document.createElement("link");</span>
+<span class="sd">              link.rel = "stylesheet";</span>
+<span class="sd">              link.type = "text/css";</span>
 <span class="sd">              link.href = css;</span>
-<span class="sd">              link.crossorigin = &quot;anonymous&quot;;</span>
+<span class="sd">              link.crossorigin = "anonymous";</span>
 <span class="sd">              head.appendChild(link);</span>
 <span class="sd">           }</span>
-<span class="sd">           injectCSS(&quot;%s&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="sd">           injectCSS("%s");"""</span><span class="p">)</span>
     <span class="n">css_link</span> <span class="o">=</span> <span class="n">escape_quotes_if_needed</span><span class="p">(</span><span class="n">css_link</span><span class="p">)</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="n">script_to_add_css</span> <span class="o">%</span> <span class="n">css_link</span><span class="p">)</span>
 </code></pre></div>

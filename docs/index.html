@@ -2887,6 +2887,8 @@
 
 <p align="center" class="hero__title"><b>All-in-one Browser Automation Framework:<br />Web Crawling / Testing / Scraping / Stealth</b></p>
 
+<p align="center"><a href="https://trendshift.io/repositories/12493?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-12493" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/12493" alt="seleniumbase%2FSeleniumBase | Trendshift" width="250" height="55"/></a></p>
+
 <p align="center"><a href="https://pypi.python.org/pypi/seleniumbase" target="_blank"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?color=3399EE" alt="PyPI version" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22BBCC.svg" title="SeleniumBase" /></a> <a href="https://github.com/seleniumbase/SeleniumBase"><img src="https://img.shields.io/badge/✅%20View%20Code-on%20GitHub%20🌎-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank"><img src="https://github.com/seleniumbase/SeleniumBase/workflows/Tests/badge.svg" alt="SeleniumBase GitHub Actions" /></a> <a href="https://www.youtube.com/playlist?list=PLp9uKicxkBc5UIlGi2BuE3aWC7JyXpD3m"><img src="https://img.shields.io/badge/docs-📺-F12345.svg?style=flat&logo=YouTube&logoColor=white&label=YouTube" alt="YouTube Channel" /></a></p>
 
 <p align="center">
@@ -2940,7 +2942,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://browserscan.net/bot-detection"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
@@ -2959,7 +2961,7 @@
 <span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
     <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://bot.sannysoft.com/&quot;</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://bot.sannysoft.com/"</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div>
 <p align="center">
@@ -2973,18 +2975,18 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;Quickly type text!&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s2">&quot;textarea&quot;</span><span class="p">,</span> <span class="s2">&quot;Slowly type text!&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#myButton&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;input#mySlider&quot;</span><span class="p">,</span> <span class="s2">&quot;100&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">click_visible_elements</span><span class="p">(</span><span class="s2">&quot;input.checkBoxClassB&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">select_option_by_text</span><span class="p">(</span><span class="s2">&quot;#mySelect&quot;</span><span class="p">,</span> <span class="s2">&quot;Set to 75%&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">hover_and_click</span><span class="p">(</span><span class="s2">&quot;#myDropdown&quot;</span><span class="p">,</span> <span class="s2">&quot;#dropOption2&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#checkBox1&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">drag_and_drop</span><span class="p">(</span><span class="s2">&quot;img#logo&quot;</span><span class="p">,</span> <span class="s2">&quot;div#drop2&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">nested_click</span><span class="p">(</span><span class="s2">&quot;iframe#myFrame3&quot;</span><span class="p">,</span> <span class="s2">&quot;.fBox&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#myButton&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://seleniumbase.io/demo_page"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input"</span><span class="p">,</span> <span class="s2">"Quickly type text!"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">press_keys</span><span class="p">(</span><span class="s2">"textarea"</span><span class="p">,</span> <span class="s2">"Slowly type text!"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"#myButton"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">"input#mySlider"</span><span class="p">,</span> <span class="s2">"100"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click_visible_elements</span><span class="p">(</span><span class="s2">"input.checkBoxClassB"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">select_option_by_text</span><span class="p">(</span><span class="s2">"#mySelect"</span><span class="p">,</span> <span class="s2">"Set to 75%"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">hover_and_click</span><span class="p">(</span><span class="s2">"#myDropdown"</span><span class="p">,</span> <span class="s2">"#dropOption2"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"#checkBox1"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">drag_and_drop</span><span class="p">(</span><span class="s2">"img#logo"</span><span class="p">,</span> <span class="s2">"div#drop2"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">nested_click</span><span class="p">(</span><span class="s2">"iframe#myFrame3"</span><span class="p">,</span> <span class="s2">".fBox"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"#myButton"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <hr />
@@ -2992,12 +2994,12 @@
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://browserscan.net/bot-detection&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Test Results&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;strong:contains(&quot;Normal&quot;)&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bot Not Detected&quot;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s1">&#39;strong:contains(&quot;Normal&quot;)&#39;</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s2">"en"</span><span class="p">,</span> <span class="n">ad_block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://browserscan.net/bot-detection"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">"Test Results"</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'strong:contains("Normal")'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Bot Not Detected"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s1">'strong:contains("Normal")'</span><span class="p">,</span> <span class="n">pause</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <hr />
@@ -3006,10 +3008,10 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://news.ycombinator.com/submitted?id=seleniumbase&quot;</span><span class="p">)</span>
-<span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">&quot;span.titleline &gt; a&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://news.ycombinator.com/submitted?id=seleniumbase"</span><span class="p">)</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">"span.titleline &gt; a"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;* &quot;</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"* "</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <p>🐙 Stealthy CDP Mode examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
@@ -3042,34 +3044,34 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://google.com/ncr&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://google.com/ncr"</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Accept all&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">&#39;[name=&quot;q&quot;]&#39;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase GitHub page&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;[value=&quot;Google Search&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># The &quot;AI Overview&quot; sometimes loads</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">'button:contains("Accept all")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'[name="q"]'</span><span class="p">,</span> <span class="s2">"SeleniumBase GitHub page"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'[value="Google Search"]'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># The "AI Overview" sometimes loads</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">save_as_pdf_to_logs</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">save_page_source_to_logs</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">save_screenshot_to_logs</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logs have been saved to: ./latest_logs/&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Logs have been saved to: ./latest_logs/"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_gitlab.py" target="_blank">This example</a> bypasses Cloudflare's challenge page with UC + CDP Mode:</b><br />(If the Turnstile isn't bypassed automatically,  <b><code>sb.solve_captcha()</code></b> handles it.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span>
+<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://gitlab.com/users/sign_in"</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
     <span class="c1"># (The rest is for testing and demo purposes)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span> <span class="s1">&#39;[for=&quot;user_login&quot;]&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;label[for=&quot;user_login&quot;]&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">&quot;SeleniumBase wasn&#39;t detected&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Username"</span><span class="p">,</span> <span class="s1">'[for="user_login"]'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'label[for="user_login"]'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'button:contains("Sign in")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'h1:contains("GitLab")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">"SeleniumBase wasn't detected"</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <p align="center">
 <img src="https://seleniumbase.github.io/other/cf_sec.jpg" alt="SeleniumBase" width="346" /> <img src="https://seleniumbase.github.io/other/gitlab_bypass.png" alt="SeleniumBase" width="300" />
@@ -3083,11 +3085,11 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
 <span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://gitlab.com/users/sign_in&quot;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://gitlab.com/users/sign_in"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;h1:contains(&quot;GitLab&quot;)&#39;</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;button:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'h1:contains("GitLab")'</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'button:contains("Sign in")'</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
 <hr />
@@ -3101,20 +3103,20 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[name*=&quot;backpack&quot;]&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#shopping_cart_container a&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#checkout&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#first-name&quot;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#last-name&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#postal-code&quot;</span><span class="p">,</span> <span class="s2">&quot;77123&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#continue&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#finish&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Thank you for your order!&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.saucedemo.com"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#user-name"</span><span class="p">,</span> <span class="s2">"standard_user"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_sauce</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"div.inventory_list"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'button[name*="backpack"]'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"#shopping_cart_container a"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Backpack"</span><span class="p">,</span> <span class="s2">"div.cart_item"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"button#checkout"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input#first-name"</span><span class="p">,</span> <span class="s2">"SeleniumBase"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input#last-name"</span><span class="p">,</span> <span class="s2">"Automation"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input#postal-code"</span><span class="p">,</span> <span class="s2">"77123"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"input#continue"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"button#finish"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Thank you for your order!"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p><code>pytest test_get_swag.py</code></p>
@@ -3210,30 +3212,30 @@ With raw Selenium, that requires more code:<br />
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestSimpleLogin</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_simple_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"seleniumbase.io/simple/login"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">,</span> <span class="s2">"demo_user"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_pass"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'a:contains("Sign in")'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Welcome!"</span><span class="p">,</span> <span class="s2">"h1"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"img#image1"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"#image1"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">"Sign out"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"signed out"</span><span class="p">,</span> <span class="s2">"#top_message"</span><span class="p">)</span>
 </code></pre></div>
 <p align="left">📘📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_sb.py">raw_login_sb.py</a>, which uses the <b><code translate="no">SB</code></b> Context Manager. Runs with pure <code translate="no">python</code>. (Use <code translate="no">sb.driver</code> to access Selenium's raw <code translate="no">driver</code>.)</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
 
 <span class="k">with</span> <span class="n">SB</span><span class="p">()</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"seleniumbase.io/simple/login"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">,</span> <span class="s2">"demo_user"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_pass"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'a:contains("Sign in")'</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Welcome!"</span><span class="p">,</span> <span class="s2">"h1"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"img#image1"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"#image1"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">"Sign out"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"signed out"</span><span class="p">,</span> <span class="s2">"#top_message"</span><span class="p">)</span>
 </code></pre></div>
 <p align="left">📙📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_login_driver.py">raw_login_driver.py</a>, which uses the <b><code translate="no">Driver</code></b> Manager. Runs with pure <code translate="no">python</code>. (The <code>driver</code> is an improved version of Selenium's raw <code translate="no">driver</code>, with more methods.)</p>
 
@@ -3241,15 +3243,15 @@ With raw Selenium, that requires more code:<br />
 
 <span class="n">driver</span> <span class="o">=</span> <span class="n">Driver</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;seleniumbase.io/simple/login&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">,</span> <span class="s2">&quot;demo_user&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_pass&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a:contains(&quot;Sign in&quot;)&#39;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;img#image1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;#image1&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Sign out&quot;</span><span class="p">)</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;signed out&quot;</span><span class="p">,</span> <span class="s2">&quot;#top_message&quot;</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"seleniumbase.io/simple/login"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#username"</span><span class="p">,</span> <span class="s2">"demo_user"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_pass"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'a:contains("Sign in")'</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Welcome!"</span><span class="p">,</span> <span class="s2">"h1"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"img#image1"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"#image1"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">"Sign out"</span><span class="p">)</span>
+    <span class="n">driver</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"signed out"</span><span class="p">,</span> <span class="s2">"#top_message"</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
@@ -3282,13 +3284,13 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>🔵 <strong>Type <code>seleniumbase</code> or <code>sbase</code> to verify that SeleniumBase was installed successfully:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>___<span class="w">      </span>_<span class="w">          </span>_<span class="w">             </span>___<span class="w">              </span>
 /<span class="w"> </span>__<span class="p">|</span><span class="w"> </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span>___<span class="w"> </span>_<span class="w"> </span>_<span class="w"> </span><span class="o">(</span>_<span class="o">)</span>_<span class="w">  </span>_<span class="w"> </span>_<span class="w"> </span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>_<span class="w"> </span><span class="o">)</span><span class="w"> </span>__<span class="w"> </span>_<span class="w"> </span>______<span class="w"> </span>
-<span class="se">\_</span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>-_<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>-_<span class="o">)</span><span class="w"> </span><span class="s1">&#39; \| | \| | &#39;</span><span class="w">  </span><span class="se">\ </span><span class="p">|</span><span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>_<span class="sb">`</span><span class="w"> </span><span class="o">(</span>_-&lt;<span class="w"> </span>-_<span class="o">)</span>
+<span class="se">\_</span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>-_<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>-_<span class="o">)</span><span class="w"> </span><span class="s1">' \| | \| | '</span><span class="w">  </span><span class="se">\ </span><span class="p">|</span><span class="w"> </span>_<span class="w"> </span><span class="se">\/</span><span class="w"> </span>_<span class="sb">`</span><span class="w"> </span><span class="o">(</span>_-&lt;<span class="w"> </span>-_<span class="o">)</span>
 <span class="p">|</span>___/<span class="se">\_</span>__<span class="p">|</span>_<span class="se">\_</span>__<span class="p">|</span>_<span class="o">||</span>_<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>,_<span class="p">|</span>_<span class="p">|</span>_<span class="p">|</span>_<span class="se">\|</span>___/<span class="se">\_</span>_,_/__<span class="p">|</span>___<span class="p">|</span>
 ----------------------------------------------------
 
 ╭──────────────────────────────────────────────────╮
-│<span class="w">  </span>*<span class="w"> </span>USAGE:<span class="w"> </span><span class="s2">&quot;seleniumbase [COMMAND] [PARAMETERS]&quot;</span><span class="w">  </span>│
-│<span class="w">  </span>*<span class="w">    </span>OR:<span class="w">        </span><span class="s2">&quot;sbase [COMMAND] [PARAMETERS]&quot;</span><span class="w">  </span>│
+│<span class="w">  </span>*<span class="w"> </span>USAGE:<span class="w"> </span><span class="s2">"seleniumbase [COMMAND] [PARAMETERS]"</span><span class="w">  </span>│
+│<span class="w">  </span>*<span class="w">    </span>OR:<span class="w">        </span><span class="s2">"sbase [COMMAND] [PARAMETERS]"</span><span class="w">  </span>│
 │<span class="w">                                                  </span>│
 │<span class="w"> </span>COMMANDS:<span class="w">        </span>PARAMETERS<span class="w"> </span>/<span class="w"> </span>DESCRIPTIONS:<span class="w">      </span>│
 │<span class="w">    </span>get<span class="w"> </span>/<span class="w"> </span>install<span class="w">    </span><span class="o">[</span>DRIVER_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">      </span>│
@@ -3319,9 +3321,9 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 │<span class="w">    </span>grid-hub<span class="w">         </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">       </span>│
 │<span class="w">    </span>grid-node<span class="w">        </span><span class="o">[</span>start<span class="p">|</span>stop<span class="o">]</span><span class="w"> </span>--hub<span class="o">=[</span>HOST/IP<span class="o">]</span><span class="w"> </span>│
 │<span class="w">                                                  </span>│
-│<span class="w"> </span>*<span class="w">  </span><span class="nv">EXAMPLE</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;sbase get chromedriver stable&quot;</span><span class="w">    </span>│
-│<span class="w"> </span>*<span class="w">  </span>For<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;sbase help [COMMAND]&quot;</span><span class="w">    </span>│
-│<span class="w"> </span>*<span class="w">  </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span><span class="nv">commands</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;sbase --help&quot;</span><span class="w">    </span>│
+│<span class="w"> </span>*<span class="w">  </span><span class="nv">EXAMPLE</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"sbase get chromedriver stable"</span><span class="w">    </span>│
+│<span class="w"> </span>*<span class="w">  </span>For<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"sbase help [COMMAND]"</span><span class="w">    </span>│
+│<span class="w"> </span>*<span class="w">  </span>For<span class="w"> </span>info<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span><span class="nv">commands</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"sbase --help"</span><span class="w">    </span>│
 ╰──────────────────────────────────────────────────╯
 </code></pre></div>
 <h3>🔵 Downloading webdrivers:</h3>
@@ -3337,7 +3339,7 @@ Downloading<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </
 https://storage.googleapis.com/chrome-for-testing-public/149.0.7827.54/mac-arm64/chromedriver-mac-arm64.zip<span class="w"> </span>...
 Download<span class="w"> </span>Complete!
 
-Extracting<span class="w"> </span><span class="o">[</span><span class="s1">&#39;chromedriver&#39;</span><span class="o">]</span><span class="w"> </span>from<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </span>...
+Extracting<span class="w"> </span><span class="o">[</span><span class="s1">'chromedriver'</span><span class="o">]</span><span class="w"> </span>from<span class="w"> </span>chromedriver-mac-arm64.zip<span class="w"> </span>...
 Unzip<span class="w"> </span>Complete!
 
 The<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>chromedriver<span class="o">]</span><span class="w"> </span>was<span class="w"> </span>saved<span class="w"> </span>to:
@@ -3367,28 +3369,28 @@ pytest<span class="w"> </span>my_first_test.py
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_swag_labs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.saucedemo.com&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#user-name&quot;</span><span class="p">,</span> <span class="s2">&quot;standard_user&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">,</span> <span class="s2">&quot;secret_sauce</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div.inventory_list&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Products&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;button[name*=&quot;backpack&quot;]&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;#shopping_cart_container a&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Your Cart&quot;</span><span class="p">,</span> <span class="s2">&quot;span.title&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#checkout&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#first-name&quot;</span><span class="p">,</span> <span class="s2">&quot;SeleniumBase&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#last-name&quot;</span><span class="p">,</span> <span class="s2">&quot;Automation&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;#postal-code&quot;</span><span class="p">,</span> <span class="s2">&quot;77123&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;input#continue&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Checkout: Overview&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Backpack&quot;</span><span class="p">,</span> <span class="s2">&quot;div.cart_item&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;29.99&quot;</span><span class="p">,</span> <span class="s2">&quot;div.inventory_item_price&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;button#finish&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Thank you for your order!&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Pony Express&quot;]&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">js_click</span><span class="p">(</span><span class="s2">&quot;a#logout_sidebar_link&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#login_button_container&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.saucedemo.com"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#user-name"</span><span class="p">,</span> <span class="s2">"standard_user"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#password"</span><span class="p">,</span> <span class="s2">"secret_sauce</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"div.inventory_list"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Products"</span><span class="p">,</span> <span class="s2">"span.title"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'button[name*="backpack"]'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"#shopping_cart_container a"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Your Cart"</span><span class="p">,</span> <span class="s2">"span.title"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Backpack"</span><span class="p">,</span> <span class="s2">"div.cart_item"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"button#checkout"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#first-name"</span><span class="p">,</span> <span class="s2">"SeleniumBase"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#last-name"</span><span class="p">,</span> <span class="s2">"Automation"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"#postal-code"</span><span class="p">,</span> <span class="s2">"77123"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"input#continue"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Checkout: Overview"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Backpack"</span><span class="p">,</span> <span class="s2">"div.cart_item"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"29.99"</span><span class="p">,</span> <span class="s2">"div.inventory_item_price"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"button#finish"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_exact_text</span><span class="p">(</span><span class="s2">"Thank you for your order!"</span><span class="p">,</span> <span class="s2">"h2"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'img[alt="Pony Express"]'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">js_click</span><span class="p">(</span><span class="s2">"a#logout_sidebar_link"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"div#login_button_container"</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li>By default, <strong><a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors</a></strong> are used for finding page elements.</li>
@@ -3444,7 +3446,7 @@ pytest<span class="w"> </span>my_first_test.py
 
 <p>✅ SeleniumBase uses simple syntax for commands. Example:</p>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># (The &quot;\n&quot; presses ENTER)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input"</span><span class="p">,</span> <span class="s2">"dogs</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (The "\n" presses ENTER)</span>
 </code></pre></div>
 <p>Most SeleniumBase scripts can be run with <code translate="no">pytest</code>, <code translate="no">pynose</code>, or pure <code translate="no">python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/stable/gherkin.html#features" target="_blank">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>coffee_cart_tests.py<span class="w"> </span>--rs
@@ -3502,7 +3504,7 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Do nothing for 3 seconds.</span>
 </code></pre></div>
 <p>🔵 <strong>Debug Mode</strong> with Python's built-in <strong><a href="https://docs.python.org/3/library/pdb.html">pdb</a></strong> library helps you debug tests:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">breakpoint</span><span class="p">()</span>  <span class="c1"># Shortcut for &quot;import pdb; pdb.set_trace()&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">breakpoint</span><span class="p">()</span>  <span class="c1"># Shortcut for "import pdb; pdb.set_trace()"</span>
 </code></pre></div>
 <blockquote>
 <p>(<strong><code>pdb</code></strong> commands: <code>n</code>, <code>c</code>, <code>s</code>, <code>u</code>, <code>d</code> =&gt; <code>next</code>, <code>continue</code>, <code>step</code>, <code>up</code>, <code>down</code>)</p>
@@ -3528,62 +3530,62 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 -n<span class="o">=</span>NUM<span class="w">  </span><span class="c1"># Multithread the tests using that many threads. (Speed up test runs!)</span>
 -s<span class="w">  </span><span class="c1"># See print statements. (Should be on by default with pytest.ini present.)</span>
 --junit-xml<span class="o">=</span>report.xml<span class="w">  </span><span class="c1"># Creates a junit-xml report after tests finish.</span>
---pdb<span class="w">  </span><span class="c1"># If a test fails, enter Post Mortem Debug Mode. (Don&#39;t use with CI!)</span>
---trace<span class="w">  </span><span class="c1"># Enter Debug Mode at the beginning of each test. (Don&#39;t use with CI!)</span>
+--pdb<span class="w">  </span><span class="c1"># If a test fails, enter Post Mortem Debug Mode. (Don't use with CI!)</span>
+--trace<span class="w">  </span><span class="c1"># Enter Debug Mode at the beginning of each test. (Don't use with CI!)</span>
 -m<span class="o">=</span>MARKER<span class="w">  </span><span class="c1"># Run tests with the specified pytest marker.</span>
 </code></pre></div>
 <p><a id="new_pytest_options"></a>
 ✅ SeleniumBase provides additional <code translate="no">pytest</code> command-line options for tests:</p>
-<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER<span class="w">  </span><span class="c1"># (The web browser to use. Default: &quot;chrome&quot;.)</span>
---chrome<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=chrome&quot;. On by default.)</span>
---edge<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=edge&quot;.)</span>
---firefox<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=firefox&quot;.)</span>
---safari<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=safari&quot;.)</span>
---opera<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=opera&quot;.)</span>
---brave<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=brave&quot;.)</span>
---comet<span class="w">  </span><span class="c1"># (Shortcut for &quot;--browser=comet&quot;.)</span>
+<div class="highlight"><pre><span></span><code>--browser<span class="o">=</span>BROWSER<span class="w">  </span><span class="c1"># (The web browser to use. Default: "chrome".)</span>
+--chrome<span class="w">  </span><span class="c1"># (Shortcut for "--browser=chrome". On by default.)</span>
+--edge<span class="w">  </span><span class="c1"># (Shortcut for "--browser=edge".)</span>
+--firefox<span class="w">  </span><span class="c1"># (Shortcut for "--browser=firefox".)</span>
+--safari<span class="w">  </span><span class="c1"># (Shortcut for "--browser=safari".)</span>
+--opera<span class="w">  </span><span class="c1"># (Shortcut for "--browser=opera".)</span>
+--brave<span class="w">  </span><span class="c1"># (Shortcut for "--browser=brave".)</span>
+--comet<span class="w">  </span><span class="c1"># (Shortcut for "--browser=comet".)</span>
 --chromium<span class="w">  </span><span class="c1"># (Shortcut for using base `Chromium`)</span>
 --settings-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (Override default SeleniumBase settings.)</span>
---env<span class="o">=</span>ENV<span class="w">  </span><span class="c1"># (Set the test env. Access with &quot;self.env&quot; in tests.)</span>
---account<span class="o">=</span>STR<span class="w">  </span><span class="c1"># (Set account. Access with &quot;self.account&quot; in tests.)</span>
---data<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.data&quot; in tests.)</span>
---var1<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var1&quot; in tests.)</span>
---var2<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var2&quot; in tests.)</span>
---var3<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.var3&quot; in tests.)</span>
---variables<span class="o">=</span>DICT<span class="w">  </span><span class="c1"># (Extra test data. Access with &quot;self.variables&quot;.)</span>
+--env<span class="o">=</span>ENV<span class="w">  </span><span class="c1"># (Set the test env. Access with "self.env" in tests.)</span>
+--account<span class="o">=</span>STR<span class="w">  </span><span class="c1"># (Set account. Access with "self.account" in tests.)</span>
+--data<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with "self.data" in tests.)</span>
+--var1<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with "self.var1" in tests.)</span>
+--var2<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with "self.var2" in tests.)</span>
+--var3<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Extra test data. Access with "self.var3" in tests.)</span>
+--variables<span class="o">=</span>DICT<span class="w">  </span><span class="c1"># (Extra test data. Access with "self.variables".)</span>
 --user-data-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Set the Chrome user data directory to use.)</span>
 --protocol<span class="o">=</span>PROTOCOL<span class="w">  </span><span class="c1"># (The Selenium Grid protocol: http|https.)</span>
 --server<span class="o">=</span>SERVER<span class="w">  </span><span class="c1"># (The Selenium Grid server/IP used for tests.)</span>
 --port<span class="o">=</span>PORT<span class="w">  </span><span class="c1"># (The Selenium Grid port used by the test server.)</span>
---cap-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
---cap-string<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (The web browser&#39;s desired capabilities to use.)</span>
+--cap-file<span class="o">=</span>FILE<span class="w">  </span><span class="c1"># (The web browser's desired capabilities to use.)</span>
+--cap-string<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (The web browser's desired capabilities to use.)</span>
 --proxy<span class="o">=</span>SERVER:PORT<span class="w">  </span><span class="c1"># (Connect to a proxy server:port as tests are running)</span>
 --proxy<span class="o">=</span>USERNAME:PASSWORD@SERVER:PORT<span class="w">  </span><span class="c1"># (Use an authenticated proxy server)</span>
---proxy-bypass-list<span class="o">=</span>STRING<span class="w"> </span><span class="c1"># (&quot;;&quot;-separated hosts to bypass, Eg &quot;*.foo.com&quot;)</span>
+--proxy-bypass-list<span class="o">=</span>STRING<span class="w"> </span><span class="c1"># (";"-separated hosts to bypass, Eg "*.foo.com")</span>
 --proxy-pac-url<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (Connect to a proxy server using a PAC_URL.pac file.)</span>
 --proxy-pac-url<span class="o">=</span>USERNAME:PASSWORD@URL<span class="w">  </span><span class="c1"># (Authenticated proxy with PAC URL.)</span>
 --proxy-driver<span class="w">  </span><span class="c1"># (If a driver download is needed, will use: --proxy=PROXY.)</span>
 --multi-proxy<span class="w">  </span><span class="c1"># (Allow multiple authenticated proxies when multi-threaded.)</span>
---agent<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Modify the web browser&#39;s User-Agent string.)</span>
+--agent<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Modify the web browser's User-Agent string.)</span>
 --mobile<span class="w">  </span><span class="c1"># (Use the mobile device emulator while running tests.)</span>
---metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set mobile metrics: &quot;CSSWidth,CSSHeight,PixelRatio&quot;.)</span>
---chromium-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span><span class="w">  </span><span class="c1"># (Set Chromium args, &quot;,&quot;-separated, no spaces.)</span>
---firefox-arg<span class="o">=</span><span class="s2">&quot;ARG=N,ARG2&quot;</span><span class="w">  </span><span class="c1"># (Set Firefox args, comma-separated, no spaces.)</span>
+--metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set mobile metrics: "CSSWidth,CSSHeight,PixelRatio".)</span>
+--chromium-arg<span class="o">=</span><span class="s2">"ARG=N,ARG2"</span><span class="w">  </span><span class="c1"># (Set Chromium args, ","-separated, no spaces.)</span>
+--firefox-arg<span class="o">=</span><span class="s2">"ARG=N,ARG2"</span><span class="w">  </span><span class="c1"># (Set Firefox args, comma-separated, no spaces.)</span>
 --firefox-pref<span class="o">=</span>SET<span class="w">  </span><span class="c1"># (Set a Firefox preference:value set, comma-separated.)</span>
 --extension-zip<span class="o">=</span>ZIP<span class="w">  </span><span class="c1"># (Load a Chrome Extension .zip|.crx, comma-separated.)</span>
 --extension-dir<span class="o">=</span>DIR<span class="w">  </span><span class="c1"># (Load a Chrome Extension directory, comma-separated.)</span>
---disable-features<span class="o">=</span><span class="s2">&quot;F1,F2&quot;</span><span class="w">  </span><span class="c1"># (Disable features, comma-separated, no spaces.)</span>
+--disable-features<span class="o">=</span><span class="s2">"F1,F2"</span><span class="w">  </span><span class="c1"># (Disable features, comma-separated, no spaces.)</span>
 --binary-location<span class="o">=</span>PATH<span class="w">  </span><span class="c1"># (Set path of the Chromium browser binary to use.)</span>
 --driver-version<span class="o">=</span>VER<span class="w">  </span><span class="c1"># (Set the chromedriver or uc_driver version to use.)</span>
---sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be &quot;complete&quot; or Angular to load.)</span>
+--sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be "complete" or Angular to load.)</span>
 --wfa<span class="w">  </span><span class="c1"># (Wait for AngularJS to be done loading after specific web actions.)</span>
---pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: &quot;normal&quot;, &quot;eager&quot;, or &quot;none&quot;.)</span>
+--pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: "normal", "eager", or "none".)</span>
 --headless<span class="w">  </span><span class="c1"># (The default headless mode. Linux uses this mode by default.)</span>
---headless1<span class="w">  </span><span class="c1"># (Use Chrome&#39;s old headless mode. Fast, but has limitations.)</span>
---headless2<span class="w">  </span><span class="c1"># (Use Chrome&#39;s new headless mode, which supports extensions.)</span>
+--headless1<span class="w">  </span><span class="c1"># (Use Chrome's old headless mode. Fast, but has limitations.)</span>
+--headless2<span class="w">  </span><span class="c1"># (Use Chrome's new headless mode, which supports extensions.)</span>
 --headed<span class="w">  </span><span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
 --xvfb<span class="w">  </span><span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
---xvfb-metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set Xvfb display size on Linux: &quot;Width,Height&quot;.)</span>
+--xvfb-metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set Xvfb display size on Linux: "Width,Height".)</span>
 --locale<span class="o">=</span>LOCALE_CODE<span class="w">  </span><span class="c1"># (Set the Language Locale Code for the web browser.)</span>
 --interval<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The autoplay interval for presentations &amp; tour steps)</span>
 --start-page<span class="o">=</span>URL<span class="w">  </span><span class="c1"># (The starting URL for the web browser when tests begin.)</span>
@@ -3599,7 +3601,7 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 --ad-block<span class="w">  </span><span class="c1"># (Block some types of display ads from loading.)</span>
 --host-resolver-rules<span class="o">=</span>RULES<span class="w">  </span><span class="c1"># (Set host-resolver-rules, comma-separated.)</span>
 --block-images<span class="w">  </span><span class="c1"># (Block images from loading during tests.)</span>
---do-not-track<span class="w">  </span><span class="c1"># (Indicate to websites that you don&#39;t want to be tracked.)</span>
+--do-not-track<span class="w">  </span><span class="c1"># (Indicate to websites that you don't want to be tracked.)</span>
 --verify-delay<span class="o">=</span>SECONDS<span class="w">  </span><span class="c1"># (The delay before MasterQA verification checks.)</span>
 --ee<span class="w"> </span><span class="p">|</span><span class="w"> </span>--esc-end<span class="w">  </span><span class="c1"># (Lets the user end the current test via the ESC key.)</span>
 --recorder<span class="w">  </span><span class="c1"># (Enables the Recorder for turning browser actions into code.)</span>
@@ -3613,31 +3615,31 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 --disable-csp<span class="w">  </span><span class="c1"># (Disable the Content Security Policy of websites.)</span>
 --disable-ws<span class="w">  </span><span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
 --enable-ws<span class="w">  </span><span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
---enable-sync<span class="w">  </span><span class="c1"># (Enable &quot;Chrome Sync&quot; on websites.)</span>
+--enable-sync<span class="w">  </span><span class="c1"># (Enable "Chrome Sync" on websites.)</span>
 --uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
---uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events when running in &quot;--undetected&quot; mode.)</span>
---log-cdp<span class="w">  </span><span class="c1"># (&quot;goog:loggingPrefs&quot;, {&quot;performance&quot;: &quot;ALL&quot;, &quot;browser&quot;: &quot;ALL&quot;})</span>
+--uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events when running in "--undetected" mode.)</span>
+--log-cdp<span class="w">  </span><span class="c1"># ("goog:loggingPrefs", {"performance": "ALL", "browser": "ALL"})</span>
 --remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
---ftrace<span class="w"> </span><span class="p">|</span><span class="w"> </span>--final-trace<span class="w">  </span><span class="c1"># (Debug Mode after each test. Don&#39;t use with CI!)</span>
+--ftrace<span class="w"> </span><span class="p">|</span><span class="w"> </span>--final-trace<span class="w">  </span><span class="c1"># (Debug Mode after each test. Don't use with CI!)</span>
 --dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
 --enable-3d-apis<span class="w">  </span><span class="c1"># (Enables WebGL and 3D APIs.)</span>
---swiftshader<span class="w">  </span><span class="c1"># (Chrome &quot;--use-gl=angle&quot; / &quot;--use-angle=swiftshader-webgl&quot;)</span>
---incognito<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Incognito mode.)</span>
---guest<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Guest mode.)</span>
---dark<span class="w">  </span><span class="c1"># (Enable Chrome&#39;s Dark mode.)</span>
---devtools<span class="w">  </span><span class="c1"># (Open Chrome&#39;s DevTools when the browser opens.)</span>
+--swiftshader<span class="w">  </span><span class="c1"># (Chrome "--use-gl=angle" / "--use-angle=swiftshader-webgl")</span>
+--incognito<span class="w">  </span><span class="c1"># (Enable Chrome's Incognito mode.)</span>
+--guest<span class="w">  </span><span class="c1"># (Enable Chrome's Guest mode.)</span>
+--dark<span class="w">  </span><span class="c1"># (Enable Chrome's Dark mode.)</span>
+--devtools<span class="w">  </span><span class="c1"># (Open Chrome's DevTools when the browser opens.)</span>
 --rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
 --rcs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-class-session<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>
 --crumbs<span class="w">  </span><span class="c1"># (Delete all cookies between tests reusing a session.)</span>
---disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the &quot;beforeunload&quot; event on Chrome.)</span>
---window-position<span class="o">=</span>X,Y<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window position.)</span>
---window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser&#39;s starting window size.)</span>
+--disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the "beforeunload" event on Chrome.)</span>
+--window-position<span class="o">=</span>X,Y<span class="w">  </span><span class="c1"># (Set the browser's starting window position.)</span>
+--window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser's starting window size.)</span>
 --maximize<span class="w">  </span><span class="c1"># (Start tests with the browser window maximized.)</span>
 --screenshot<span class="w">  </span><span class="c1"># (Save a screenshot at the end of each test.)</span>
 --no-screenshot<span class="w">  </span><span class="c1"># (No screenshots saved unless tests directly ask it.)</span>
 --visual-baseline<span class="w">  </span><span class="c1"># (Set the visual baseline for Visual/Layout tests.)</span>
---external-pdf<span class="w">  </span><span class="c1"># (Set Chromium &quot;plugins.always_open_pdf_externally&quot;:True.)</span>
+--external-pdf<span class="w">  </span><span class="c1"># (Set Chromium "plugins.always_open_pdf_externally":True.)</span>
 --timeout-multiplier<span class="o">=</span>MULTIPLIER<span class="w">  </span><span class="c1"># (Multiplies the default timeout values.)</span>
 --list-fail-page<span class="w">  </span><span class="c1"># (After each failing test, list the URL of the failure.)</span>
 </code></pre></div>
@@ -3711,15 +3713,15 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Log files from failed tests:</h3>
 
 <p>Let's try an example of a test that fails:</p>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot; test_fail.py &quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="sd">""" test_fail.py """</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
 <span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTestClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_find_army_of_robots_on_xkcd_desert_island</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/731/&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">&quot;div#ARMY_OF_ROBOTS&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://xkcd.com/731/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"div#ARMY_OF_ROBOTS"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This should fail</span>
 </code></pre></div>
 <p>You can run it from the <code>examples/</code> folder like this:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_fail.py
@@ -3795,9 +3797,9 @@ Inside your tests, you can use <code>self.data</code> to access that.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>USERNAME:PASSWORD@IP_ADDRESS:PORT
 </code></pre></div>
 <p>SeleniumBase also supports SOCKS4 and SOCKS5 proxies:</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks4://IP_ADDRESS:PORT&quot;</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">"socks4://IP_ADDRESS:PORT"</span>
 
-pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;socks5://IP_ADDRESS:PORT&quot;</span>
+pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">"socks5://IP_ADDRESS:PORT"</span>
 </code></pre></div>
 <p>To make things easier, you can add your frequently-used proxies to PROXY_LIST in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/seleniumbase/config/proxy_list.py">proxy_list.py</a>, and then use <code>--proxy=KEY_FROM_PROXY_LIST</code> to use the IP_ADDRESS:PORT of that key.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span class="o">=</span>proxy1
@@ -3805,7 +3807,7 @@ pytest<span class="w"> </span>proxy_test.py<span class="w"> </span>--proxy<span 
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Changing the User-Agent:</h3>
 
 <p>🔵 If you wish to change the User-Agent for your browser tests (Chromium and Firefox only), you can add <code>--agent="USER AGENT STRING"</code> as an argument on the command-line.</p>
-<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">&quot;Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU&quot;</span>
+<div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>user_agent_test.py<span class="w"> </span>--agent<span class="o">=</span><span class="s2">"Mozilla/5.0 (Nintendo 3DS; U; ; en) Version/1.7412.EU"</span>
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Handling Pop-Up Alerts:</h3>
 
@@ -3843,7 +3845,7 @@ Here's an example of running tests with some additional features enabled:
 <h3><img src="https://seleniumbase.github.io/img/logo7.png" title="SeleniumBase" width="32" /> Detailed Method Specifications and Examples:</h3>
 
 <p>🔵 <strong>Navigating to a web page: (and related commands)</strong></p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/378/&quot;</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://xkcd.com/378/"</span><span class="p">)</span>  <span class="c1"># This method opens the specified page.</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">go_back</span><span class="p">()</span>  <span class="c1"># This method navigates the browser to the previous page.</span>
 
@@ -3857,47 +3859,47 @@ Here's an example of running tests with some additional features enabled:
 </code></pre></div>
 <p><b>ProTip™:</b> You can use the <code translate="no">self.get_page_source()</code> method with Python's <code translate="no">find()</code> command to parse through HTML to find something specific. (For more advanced parsing, see the <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_parse_soup.py">BeautifulSoup example</a>.)</p>
 <div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_page_source</span><span class="p">()</span>
-<span class="n">head_open_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">)</span>
-<span class="n">head_close_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;/head&gt;&#39;</span><span class="p">,</span> <span class="n">head_open_tag</span><span class="p">)</span>
-<span class="n">everything_inside_head</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">head_open_tag</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&lt;head&gt;&#39;</span><span class="p">):</span><span class="n">head_close_tag</span><span class="p">]</span>
+<span class="n">head_open_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'&lt;head&gt;'</span><span class="p">)</span>
+<span class="n">head_close_tag</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'&lt;/head&gt;'</span><span class="p">,</span> <span class="n">head_open_tag</span><span class="p">)</span>
+<span class="n">everything_inside_head</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">head_open_tag</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s1">'&lt;head&gt;'</span><span class="p">):</span><span class="n">head_close_tag</span><span class="p">]</span>
 </code></pre></div>
 <p>🔵 <strong>Clicking:</strong></p>
 <p>To click an element on the page:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;div#my_id&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"div#my_id"</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>ProTip™:</strong> In most web browsers, you can right-click on a page and select <code>Inspect Element</code> to see the CSS selector details that you'll need to create your own scripts.</p>
 <p>🔵 <strong>Typing Text:</strong></p>
 <p><code translate="no">self.type(selector, text)</code>  # updates the text from the specified element with the specified value. An exception is raised if the element is missing or if the text field is not editable. Example:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">&quot;input#id_value&quot;</span><span class="p">,</span> <span class="s2">&quot;2012&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input#id_value"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">)</span>
 </code></pre></div>
 <p>You can also use <code translate="no">self.add_text()</code> or the <a href="https://www.selenium.dev/documentation/webdriver/" target="_blank">WebDriver</a> <code translate="no">.send_keys()</code> command, but those won't clear the text box first if there's already text inside.</p>
 <p>🔵 <strong>Getting the text from an element on a page:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">&quot;header h2&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="s2">"header h2"</span><span class="p">)</span>
 </code></pre></div>
 <p>🔵 <strong>Getting the attribute value from an element on a page:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;#comic img&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">"#comic img"</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">)</span>
 </code></pre></div>
 <p>🔵 <strong>Asserting existence of an element on a page within some number of seconds:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">&quot;div.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_present</span><span class="p">(</span><span class="s2">"div.my_class"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
 <p>(NOTE: You can also use: <code>self.assert_element_present(ELEMENT)</code>)</p>
 <p>🔵 <strong>Asserting visibility of an element on a page within some number of seconds:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element_visible</span><span class="p">(</span><span class="s2">"a.my_class"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 <p>(NOTE: The short versions of that are <code>self.find_element(ELEMENT)</code> and <code>self.assert_element(ELEMENT)</code>. The <code>find_element()</code> version returns the element.)</p>
 <p>Since the line above returns the element, you can combine that with <code>.click()</code> as shown below:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">"a.my_class"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 
-<span class="c1"># But you&#39;re better off using the following statement, which does the same thing</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a.my_class&quot;</span><span class="p">)</span>  <span class="c1"># DO IT THIS WAY!</span>
+<span class="c1"># But you're better off using the following statement, which does the same thing</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"a.my_class"</span><span class="p">)</span>  <span class="c1"># DO IT THIS WAY!</span>
 </code></pre></div>
 <p><strong>ProTip™:</strong> You can use dots to signify class names (Ex: <code>div.class_name</code>) as a simplified version of <code>div[class="class_name"]</code> within a CSS selector. </p>
 <p>You can also use <code>*=</code> to search for any partial value in a CSS selector as shown below:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">&#39;a[name*=&quot;partial_name&quot;]&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'a[name*="partial_name"]'</span><span class="p">)</span>
 </code></pre></div>
 <p>🔵 <strong>Asserting visibility of text inside an element on a page within some number of seconds:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Make it so!&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Tea. Earl Grey. Hot.&quot;</span><span class="p">,</span> <span class="s2">&quot;div#trek div.picard div.quotes&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Make it so!"</span><span class="p">,</span> <span class="s2">"div#trek div.picard div.quotes"</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">"Tea. Earl Grey. Hot."</span><span class="p">,</span> <span class="s2">"div#trek div.picard div.quotes"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p>(NOTE: <code>self.find_text(TEXT, ELEMENT)</code> and <code>self.wait_for_text(TEXT, ELEMENT)</code> also do this. For backwards compatibility, older method names were kept, but the default timeout may be different.)</p>
 <p>🔵 <strong>Asserting Anything:</strong></p>
@@ -3909,60 +3911,60 @@ Here's an example of running tests with some additional features enabled:
 </code></pre></div>
 <p>🔵 <strong>Useful Conditional Statements: (with creative examples)</strong></p>
 <p>❓ <code>is_element_visible(selector):</code>  (visible on the page)</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">&#39;div#warning&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Red Alert: Something bad might be happening!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s1">'div#warning'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Red Alert: Something bad might be happening!"</span><span class="p">)</span>
 </code></pre></div>
 <p>❓ <code>is_element_present(selector):</code>  (present in the HTML)</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s1">&#39;div#top_secret img.tracking_cookie&#39;</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s1">'div#top_secret img.tracking_cookie'</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contact_cookie_monster</span><span class="p">()</span>  <span class="c1"># Not a real SeleniumBase method</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">current_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">contact_the_nsa</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">current_url</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dark Zone Found&quot;</span><span class="p">)</span>  <span class="c1"># Not a real SeleniumBase method</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">contact_the_nsa</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">current_url</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">"Dark Zone Found"</span><span class="p">)</span>  <span class="c1"># Not a real SeleniumBase method</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_there_a_cloaked_klingon_ship_on_this_page</span><span class="p">():</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">):</span>
-        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">&quot;div.ships div.klingon&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_present</span><span class="p">(</span><span class="s2">"div.ships div.klingon"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">"div.ships div.klingon"</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
 <p>❓ <code>is_text_visible(text, selector):</code>  (text visible on element)</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;You Shall Not Pass!&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=3xYXUeSmb-Y&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"You Shall Not Pass!"</span><span class="p">,</span> <span class="s2">"h1"</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.youtube.com/watch?v=3xYXUeSmb-Y"</span><span class="p">)</span>
 </code></pre></div>
 <div></div>
 <details>
 <summary> ▶️ Click for a longer example of <code translate="no">is_text_visible():</code></summary>
 
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_mirror_universe_captain_picard_superbowl_ad</span><span class="p">(</span><span class="n">superbowl_year</span><span class="p">):</span>
-    <span class="n">selector</span> <span class="o">=</span> <span class="s2">&quot;div.superbowl_</span><span class="si">%s</span><span class="s2"> div.commercials div.transcript div.picard&quot;</span> <span class="o">%</span> <span class="n">superbowl_year</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Yes, it was I who summoned you all here.&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Paramount+ Superbowl Ad 2020&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Commander, signal the following: Our Network is Secure!&quot;</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe iboss Superbowl Ad 2018&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;For the Love of Marketing and Earl Grey Tea!&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe HubSpot Superbowl Ad 2015&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Delivery Drones... Engage&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe Amazon Superbowl Ad 2015&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Bing it on Screen!&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe Microsoft Superbowl Ad 2015&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;OK Glass, Make it So!&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe Google Superbowl Ad 2015&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Number One, I&#39;ve Never Seen Anything Like It.&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe Tesla Superbowl Ad 2015&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;Let us make sure history never forgets the name ... Facebook&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe Facebook Superbowl Ad 2015&quot;</span>
-    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;With the first link, the chain is forged.</span>
+    <span class="n">selector</span> <span class="o">=</span> <span class="s2">"div.superbowl_</span><span class="si">%s</span><span class="s2"> div.commercials div.transcript div.picard"</span> <span class="o">%</span> <span class="n">superbowl_year</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"Yes, it was I who summoned you all here."</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Paramount+ Superbowl Ad 2020"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"Commander, signal the following: Our Network is Secure!"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe iboss Superbowl Ad 2018"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"For the Love of Marketing and Earl Grey Tea!"</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe HubSpot Superbowl Ad 2015"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"Delivery Drones... Engage"</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe Amazon Superbowl Ad 2015"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"Bing it on Screen!"</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe Microsoft Superbowl Ad 2015"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"OK Glass, Make it So!"</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe Google Superbowl Ad 2015"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"Number One, I've Never Seen Anything Like It."</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe Tesla Superbowl Ad 2015"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"Let us make sure history never forgets the name ... Facebook"</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe Facebook Superbowl Ad 2015"</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_text_visible</span><span class="p">(</span><span class="s2">"""With the first link, the chain is forged.</span>
 <span class="s2">                              The first speech censored, the first thought forbidden,</span>
-<span class="s2">                              the first freedom denied, chains us all irrevocably.&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Picard Mirror Universe Wikimedia Superbowl Ad 2015&quot;</span>
+<span class="s2">                              the first freedom denied, chains us all irrevocably."""</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"Picard Mirror Universe Wikimedia Superbowl Ad 2015"</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Reports of my assimilation are greatly exaggerated.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Reports of my assimilation are greatly exaggerated."</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
 
 <p>❓ <code>is_link_text_visible(link_text):</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_link_text_visible</span><span class="p">(</span><span class="s2">&quot;Stop! Hammer time!&quot;</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">&quot;Stop! Hammer time!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_link_text_visible</span><span class="p">(</span><span class="s2">"Stop! Hammer time!"</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">click_link</span><span class="p">(</span><span class="s2">"Stop! Hammer time!"</span><span class="p">)</span>
 </code></pre></div>
 <h3>🔵 Switching Tabs:</h3>
 
@@ -3973,24 +3975,24 @@ Here's an example of running tests with some additional features enabled:
 <h3>🔵 How to handle iframes:</h3>
 
 <p>🔵 <b>iframes</b> follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">"iframe"</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>  <span class="c1"># Exit the current iframe</span>
 </code></pre></div>
 <p>To exit from multiple iframes, use <code>self.switch_to_default_content()</code>. (If inside a single iframe, this has the same effect as <code>self.switch_to_parent_frame()</code>.)</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">'iframe[name="frame1"]'</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">'iframe[name="frame2"]'</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the inner iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>  <span class="c1"># Back to the main page</span>
 </code></pre></div>
 <p>🔵 You can also use a context manager to act inside iframes:</p>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s2">"iframe"</span><span class="p">):</span>
     <span class="c1"># ... Now perform actions while inside the code block</span>
 <span class="c1"># You have left the iframe</span>
 </code></pre></div>
 <p>This also works with nested iframes:</p>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">):</span>
-    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">'iframe[name="frame1"]'</span><span class="p">):</span>
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">'iframe[name="frame2"]'</span><span class="p">):</span>
         <span class="c1"># ... Now perform actions while inside the code block</span>
     <span class="c1"># You are now back inside the first iframe</span>
 <span class="c1"># You have left all the iframes</span>
@@ -4001,7 +4003,7 @@ Here's an example of running tests with some additional features enabled:
 If the web page you're on already has jQuery loaded, you can start executing jQuery scripts immediately.
 You'd know this because the web page would contain something like the following in the HTML:</p>
 
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>🔵 It's OK if you want to use jQuery on a page that doesn't have it loaded yet. To do so, run the following command first:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">activate_jquery</span><span class="p">()</span>
@@ -4010,23 +4012,23 @@ You'd know this because the web page would contain something like the following 
 <details>
 <summary> ▶️ Here are some examples of using jQuery in your scripts. (<b>click to expand</b>)</summary>
 
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery, window.scrollTo(0, 600)&quot;</span><span class="p">)</span>  <span class="c1"># Scrolling the page</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery, window.scrollTo(0, 600)"</span><span class="p">)</span>  <span class="c1"># Scrolling the page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;#annoying-widget&#39;).hide()&quot;</span><span class="p">)</span>  <span class="c1"># Hiding elements on a page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('#annoying-widget').hide()"</span><span class="p">)</span>  <span class="c1"># Hiding elements on a page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;#hidden-widget&#39;).show(0)&quot;</span><span class="p">)</span>  <span class="c1"># Showing hidden elements on a page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('#hidden-widget').show(0)"</span><span class="p">)</span>  <span class="c1"># Showing hidden elements on a page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;#annoying-button a&#39;).remove()&quot;</span><span class="p">)</span>  <span class="c1"># Removing elements on a page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('#annoying-button a').remove()"</span><span class="p">)</span>  <span class="c1"># Removing elements on a page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;</span><span class="si">%s</span><span class="s2">&#39;).mouseover()&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mouse_over_item</span><span class="p">))</span>  <span class="c1"># Mouse-over elements on a page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('</span><span class="si">%s</span><span class="s2">').mouseover()"</span> <span class="o">%</span> <span class="p">(</span><span class="n">mouse_over_item</span><span class="p">))</span>  <span class="c1"># Mouse-over elements on a page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;input#the_id&#39;).val(&#39;my_text&#39;)&quot;</span><span class="p">)</span>  <span class="c1"># Fast text input on a page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('input#the_id').val('my_text')"</span><span class="p">)</span>  <span class="c1"># Fast text input on a page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;jQuery(&#39;div#dropdown a.link&#39;).click()&quot;</span><span class="p">)</span>  <span class="c1"># Click elements on a page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('div#dropdown a.link').click()"</span><span class="p">)</span>  <span class="c1"># Click elements on a page</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;return jQuery(&#39;div#amazing&#39;)[0].text&quot;</span><span class="p">)</span>  <span class="c1"># Returns the css &quot;text&quot; of the element given</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"return jQuery('div#amazing')[0].text"</span><span class="p">)</span>  <span class="c1"># Returns the css "text" of the element given</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;return jQuery(&#39;textarea&#39;)[2].value&quot;</span><span class="p">)</span>  <span class="c1"># Returns the css &quot;value&quot; of the 3rd textarea element on the page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"return jQuery('textarea')[2].value"</span><span class="p">)</span>  <span class="c1"># Returns the css "value" of the 3rd textarea element on the page</span>
 </code></pre></div>
 
 (Most of the above commands can be done directly with built-in SeleniumBase methods.)
@@ -4042,12 +4044,12 @@ You'd know this because the web page would contain something like the following 
 <details>
 <summary> ▶️ In this example, JavaScript creates a referral button on a page, which is then clicked. (<b>click to expand</b>)</summary>
 
-<div class="highlight"><pre><span></span><code><span class="n">start_page</span> <span class="o">=</span> <span class="s2">&quot;https://xkcd.com/465/&quot;</span>
-<span class="n">destination_page</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/seleniumbase/SeleniumBase&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">start_page</span> <span class="o">=</span> <span class="s2">"https://xkcd.com/465/"</span>
+<span class="n">destination_page</span> <span class="o">=</span> <span class="s2">"https://github.com/seleniumbase/SeleniumBase"</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">start_page</span><span class="p">)</span>
-<span class="n">referral_link</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&lt;a class=&#39;analytics test&#39; href=&#39;</span><span class="si">%s</span><span class="s1">&#39;&gt;Free-Referral Button!&lt;/a&gt;&#39;&#39;&#39;</span> <span class="o">%</span> <span class="n">destination_page</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;document.body.innerHTML = </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s1">&#39;&#39;&#39;</span> <span class="o">%</span> <span class="n">referral_link</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">&quot;a.analytics&quot;</span><span class="p">)</span>  <span class="c1"># Clicks the generated button</span>
+<span class="n">referral_link</span> <span class="o">=</span> <span class="s1">'''&lt;a class='analytics test' href='</span><span class="si">%s</span><span class="s1">'&gt;Free-Referral Button!&lt;/a&gt;'''</span> <span class="o">%</span> <span class="n">destination_page</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s1">'''document.body.innerHTML = </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s1">'''</span> <span class="o">%</span> <span class="n">referral_link</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"a.analytics"</span><span class="p">)</span>  <span class="c1"># Clicks the generated button</span>
 </code></pre></div>
 
 (Due to popular demand, this traffic generation example has been included in SeleniumBase with the <code translate="no">self.generate_referral(start_page, end_page)</code> and the <code translate="no">self.generate_traffic(start_page, end_page, loops)</code> methods.)
@@ -4063,16 +4065,16 @@ You'd know this because the web page would contain something like the following 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">DeferredAssertTests</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_deferred_asserts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/993/&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">&quot;#comic&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Brand Identity&quot;]&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;img[alt=&quot;Rocket Ship&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s2">&quot;#comicmap&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s2">&quot;Fake Item&quot;</span><span class="p">,</span> <span class="s2">&quot;ul.comicNav&quot;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s2">&quot;Random&quot;</span><span class="p">,</span> <span class="s2">&quot;ul.comicNav&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">&#39;a[name=&quot;Super Fake !!!&quot;]&#39;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Brand Identity&quot;</span><span class="p">,</span> <span class="s2">&quot;#ctitle&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_exact_text</span><span class="p">(</span><span class="s2">&quot;Fake Food&quot;</span><span class="p">,</span> <span class="s2">&quot;#comic&quot;</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://xkcd.com/993/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">"#comic"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">'img[alt="Brand Identity"]'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">'img[alt="Rocket Ship"]'</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s2">"#comicmap"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s2">"Fake Item"</span><span class="p">,</span> <span class="s2">"ul.comicNav"</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_text</span><span class="p">(</span><span class="s2">"Random"</span><span class="p">,</span> <span class="s2">"ul.comicNav"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_element</span><span class="p">(</span><span class="s1">'a[name="Super Fake !!!"]'</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_exact_text</span><span class="p">(</span><span class="s2">"Brand Identity"</span><span class="p">,</span> <span class="s2">"#ctitle"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deferred_assert_exact_text</span><span class="p">(</span><span class="s2">"Fake Food"</span><span class="p">,</span> <span class="s2">"#comic"</span><span class="p">)</span>  <span class="c1"># Will Fail</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">process_deferred_asserts</span><span class="p">()</span>
 </code></pre></div>
 <p><code translate="no">deferred_assert_element()</code> and <code translate="no">deferred_assert_text()</code> will save any exceptions that would be raised.
@@ -4083,7 +4085,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">delete_all_cookies</span><span class="p">()</span>
 <span class="n">capabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">capabilities</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">&quot;partial link text&quot;</span><span class="p">,</span> <span class="s2">&quot;GitHub&quot;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">"partial link text"</span><span class="p">,</span> <span class="s2">"GitHub"</span><span class="p">)</span>
 </code></pre></div>
 <p>(In general, you'll want to use the SeleniumBase versions of methods when available.)</p>
 <h3>🔵 How to retry failing tests automatically:</h3>

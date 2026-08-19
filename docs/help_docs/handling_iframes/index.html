@@ -2884,30 +2884,30 @@
 <h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> How to handle iframes</h2>
 
 <p>🖼️ <b>iframes</b> follow the same principle as new windows: You must first switch to the iframe if you want to perform actions in there:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s2">"iframe"</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_parent_frame</span><span class="p">()</span>  <span class="c1"># Exit the current iframe</span>
 </code></pre></div>
 <p>To exit from multiple iframes, use <code>self.switch_to_default_content()</code>. (If inside a single iframe, this has the same effect as <code>self.switch_to_parent_frame()</code>.)</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">'iframe[name="frame1"]'</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">'iframe[name="frame2"]'</span><span class="p">)</span>
 <span class="c1"># ... Now perform actions inside the inner iframe</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">switch_to_default_content</span><span class="p">()</span>  <span class="c1"># Back to the main page</span>
 </code></pre></div>
 <p>🖼️ You can also use a context manager to act inside iframes:</p>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s2">"iframe"</span><span class="p">):</span>
     <span class="c1"># ... Now perform actions while inside the code block</span>
 <span class="c1"># You have left the iframe</span>
 </code></pre></div>
 <p>This also works with nested iframes:</p>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame1&quot;]&#39;</span><span class="p">):</span>
-    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">&#39;iframe[name=&quot;frame2&quot;]&#39;</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">'iframe[name="frame1"]'</span><span class="p">):</span>
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame_switch</span><span class="p">(</span><span class="s1">'iframe[name="frame2"]'</span><span class="p">):</span>
         <span class="c1"># ... Now perform actions while inside the code block</span>
     <span class="c1"># You are now back inside the first iframe</span>
 <span class="c1"># You have left all the iframes</span>
 </code></pre></div>
 <p>🖼️ In special cases, you may want to set the page to the content of an iframe:</p>
-<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">set_content_to_frame</span><span class="p">(</span><span class="s2">&quot;iframe&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">set_content_to_frame</span><span class="p">(</span><span class="s2">"iframe"</span><span class="p">)</span>
 </code></pre></div>
 <p>To back out of one call of that, use:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">set_content_to_parent</span><span class="p">()</span>

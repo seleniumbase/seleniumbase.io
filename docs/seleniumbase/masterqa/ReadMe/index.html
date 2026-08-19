@@ -2887,14 +2887,14 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MasterQATests</span><span class="p">(</span><span class="n">MasterQA</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_masterqa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://xkcd.com/1700/&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Do you see a webcomic?&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/demo_page&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Do you see elements in a table?&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&quot;https://seleniumbase.io/devices/&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">&quot;div.mockup-wrapper&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Do you see 4 computer devices?&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://xkcd.com/1700/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">"Do you see a webcomic?"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://seleniumbase.io/demo_page"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s1">'table'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">"Do you see elements in a table?"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://seleniumbase.io/devices/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="s2">"div.mockup-wrapper"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">"Do you see 4 computer devices?"</span><span class="p">)</span>
 </code></pre></div>
 <p>After each automation checkpoint, a pop-up window will ask the user questions for each verification command.</p>
 <p>When the test run completes, as seen from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/master_qa/masterqa_test_1.py">this longer example</a>, you'll reach the results page that appears after answering all the verification questions. (Failed verifications generate links to screenshots and log files.)</p>
@@ -2914,7 +2914,7 @@ pytest<span class="w"> </span>masterqa_test_1.py
 <p>To add a manual verification step, use <code>self.verify()</code> in the code after each part of your test that needs a manual verification step. If you want to include a custom question, add text inside that call (in quotes). Example:</p>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span>
 
-<span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;Can you find the moon?&quot;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">"Can you find the moon?"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <p>MasterQA is powered by <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase</a>.</p>

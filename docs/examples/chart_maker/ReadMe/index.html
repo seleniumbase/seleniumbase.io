@@ -2898,12 +2898,12 @@ pytest<span class="w"> </span>my_chart.py
 <span class="k">class</span><span class="w"> </span><span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Automated Tests&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Passed&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#95d96f&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Untested&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#eaeaea&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Failed&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f1888f&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Pie Chart&lt;/p&gt;&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;my_chart.html&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Automated Tests"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Passed"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#95d96f"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Untested"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#eaeaea"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Failed"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#f1888f"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">"&lt;p&gt;Pie Chart&lt;/p&gt;"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"my_chart.html"</span><span class="p">)</span>
 </code></pre></div>
 <p>Here's how to run an example presentation with multiple charts:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/chart_maker
@@ -2925,16 +2925,16 @@ pytest<span class="w"> </span>chart_presentation.py
     <span class="k">def</span><span class="w"> </span><span class="nf">test_chart_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span>
-            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Time Outside&quot;</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;Last Week&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;Minutes&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Sun&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Line Chart&lt;/p&gt;&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;line_chart.html&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Time Outside"</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="s2">"Last Week"</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"Minutes"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Sun"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Mon"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Tue"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Wed"</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Thu"</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Fri"</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Sat"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">"&lt;p&gt;Line Chart&lt;/p&gt;"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"line_chart.html"</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 </code></pre></div>
 <p>This example is from <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/chart_maker/test_line_chart.py">test_line_chart.py</a>, which you can run from the <code>examples/chart_maker</code> folder with the following command:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>test_line_chart.py
@@ -2947,37 +2947,37 @@ pytest<span class="w"> </span>chart_presentation.py
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyChartMakerClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_chart_maker_presentation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">&quot;sky&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_presentation</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">"sky"</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Automated Tests&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Passed&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#95d96f&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Untested&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#eaeaea&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Failed&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f1888f&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Pie Chart&lt;/p&gt;&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Automated Tests"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Passed"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#95d96f"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Untested"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#eaeaea"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Failed"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#f1888f"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">"&lt;p&gt;Pie Chart&lt;/p&gt;"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_bar_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Language&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Orange&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Teal&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;HTML + CSS&quot;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Purple&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Bar Chart&lt;/p&gt;&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_bar_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Language"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Python"</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Orange"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"JavaScript"</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Teal"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"HTML + CSS"</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Purple"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">"&lt;p&gt;Bar Chart&lt;/p&gt;"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_column_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Colors&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Column Chart&lt;/p&gt;&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_column_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Colors"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Red"</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Red"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Green"</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Green"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Blue"</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Blue"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">"&lt;p&gt;Column Chart&lt;/p&gt;"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Last Week&#39;s Data&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Sun&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;Line Chart&lt;/p&gt;&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Last Week's Data"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Sun"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Mon"</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Tue"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Wed"</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Thu"</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Fri"</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="s2">"Sat"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="s2">"&lt;p&gt;Line Chart&lt;/p&gt;"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">())</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;chart_presentation.html&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_presentation</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"chart_presentation.html"</span><span class="p">)</span>
 </code></pre></div>
 <p>Here's how to run that example:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/chart_maker
@@ -2991,169 +2991,169 @@ pytest<span class="w"> </span>chart_presentation.py
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_pie_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Creates a JavaScript pie chart using &quot;HighCharts&quot;.</span>
+<span class="sd">""" Creates a JavaScript pie chart using "HighCharts".</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">    title - The title displayed for the chart.</span>
 <span class="sd">    subtitle - The subtitle displayed for the chart.</span>
 <span class="sd">    data_name - The series name. Useful for multi-series charts.</span>
-<span class="sd">                If no data_name, will default to using &quot;Series 1&quot;.</span>
-<span class="sd">    unit - The description label given to the chart&#39;s y-axis values.</span>
+<span class="sd">                If no data_name, will default to using "Series 1".</span>
+<span class="sd">    unit - The description label given to the chart's y-axis values.</span>
 <span class="sd">    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class="sd">           Should be set to True (default) for the first time creating</span>
 <span class="sd">           a chart on a web page. If creating multiple charts on the</span>
-<span class="sd">           same web page, you won&#39;t need to re-import the libraries</span>
+<span class="sd">           same web page, you won't need to re-import the libraries</span>
 <span class="sd">           when creating additional charts.</span>
 <span class="sd">    labels - If True, displays labels on the chart for data points.</span>
 <span class="sd">    legend - If True, displays the data point legend on the chart.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_bar_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Creates a JavaScript bar chart using &quot;HighCharts&quot;.</span>
+<span class="sd">""" Creates a JavaScript bar chart using "HighCharts".</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">    title - The title displayed for the chart.</span>
 <span class="sd">    subtitle - The subtitle displayed for the chart.</span>
 <span class="sd">    data_name - The series name. Useful for multi-series charts.</span>
-<span class="sd">                If no data_name, will default to using &quot;Series 1&quot;.</span>
-<span class="sd">    unit - The description label given to the chart&#39;s y-axis values.</span>
+<span class="sd">                If no data_name, will default to using "Series 1".</span>
+<span class="sd">    unit - The description label given to the chart's y-axis values.</span>
 <span class="sd">    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class="sd">           Should be set to True (default) for the first time creating</span>
 <span class="sd">           a chart on a web page. If creating multiple charts on the</span>
-<span class="sd">           same web page, you won&#39;t need to re-import the libraries</span>
+<span class="sd">           same web page, you won't need to re-import the libraries</span>
 <span class="sd">           when creating additional charts.</span>
 <span class="sd">    labels - If True, displays labels on the chart for data points.</span>
 <span class="sd">    legend - If True, displays the data point legend on the chart.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_column_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Creates a JavaScript column chart using &quot;HighCharts&quot;.</span>
+<span class="sd">""" Creates a JavaScript column chart using "HighCharts".</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">    title - The title displayed for the chart.</span>
 <span class="sd">    subtitle - The subtitle displayed for the chart.</span>
 <span class="sd">    data_name - The series name. Useful for multi-series charts.</span>
-<span class="sd">                If no data_name, will default to using &quot;Series 1&quot;.</span>
-<span class="sd">    unit - The description label given to the chart&#39;s y-axis values.</span>
+<span class="sd">                If no data_name, will default to using "Series 1".</span>
+<span class="sd">    unit - The description label given to the chart's y-axis values.</span>
 <span class="sd">    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class="sd">           Should be set to True (default) for the first time creating</span>
 <span class="sd">           a chart on a web page. If creating multiple charts on the</span>
-<span class="sd">           same web page, you won&#39;t need to re-import the libraries</span>
+<span class="sd">           same web page, you won't need to re-import the libraries</span>
 <span class="sd">           when creating additional charts.</span>
 <span class="sd">    labels - If True, displays labels on the chart for data points.</span>
 <span class="sd">    legend - If True, displays the data point legend on the chart.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_line_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Creates a JavaScript line chart using &quot;HighCharts&quot;.</span>
+<span class="sd">""" Creates a JavaScript line chart using "HighCharts".</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">    title - The title displayed for the chart.</span>
 <span class="sd">    subtitle - The subtitle displayed for the chart.</span>
 <span class="sd">    data_name - The series name. Useful for multi-series charts.</span>
-<span class="sd">                If no data_name, will default to using &quot;Series 1&quot;.</span>
-<span class="sd">    unit - The description label given to the chart&#39;s y-axis values.</span>
+<span class="sd">                If no data_name, will default to using "Series 1".</span>
+<span class="sd">    unit - The description label given to the chart's y-axis values.</span>
 <span class="sd">    zero - If True, the y-axis always starts at 0. (Default: False).</span>
 <span class="sd">    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class="sd">           Should be set to True (default) for the first time creating</span>
 <span class="sd">           a chart on a web page. If creating multiple charts on the</span>
-<span class="sd">           same web page, you won&#39;t need to re-import the libraries</span>
+<span class="sd">           same web page, you won't need to re-import the libraries</span>
 <span class="sd">           when creating additional charts.</span>
 <span class="sd">    labels - If True, displays labels on the chart for data points.</span>
 <span class="sd">    legend - If True, displays the data point legend on the chart.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">create_area_chart</span><span class="p">(</span>
     <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">libs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Creates a JavaScript area chart using &quot;HighCharts&quot;.</span>
+<span class="sd">""" Creates a JavaScript area chart using "HighCharts".</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
 <span class="sd">    title - The title displayed for the chart.</span>
 <span class="sd">    subtitle - The subtitle displayed for the chart.</span>
 <span class="sd">    data_name - The series name. Useful for multi-series charts.</span>
-<span class="sd">                If no data_name, will default to using &quot;Series 1&quot;.</span>
-<span class="sd">    unit - The description label given to the chart&#39;s y-axis values.</span>
+<span class="sd">                If no data_name, will default to using "Series 1".</span>
+<span class="sd">    unit - The description label given to the chart's y-axis values.</span>
 <span class="sd">    zero - If True, the y-axis always starts at 0. (Default: False).</span>
 <span class="sd">    libs - The option to include Chart libraries (JS and CSS files).</span>
 <span class="sd">           Should be set to True (default) for the first time creating</span>
 <span class="sd">           a chart on a web page. If creating multiple charts on the</span>
-<span class="sd">           same web page, you won&#39;t need to re-import the libraries</span>
+<span class="sd">           same web page, you won't need to re-import the libraries</span>
 <span class="sd">           when creating additional charts.</span>
 <span class="sd">    labels - If True, displays labels on the chart for data points.</span>
 <span class="sd">    legend - If True, displays the data point legend on the chart.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <p>If creating multiple charts at the same time, you can pass the <code>chart_name</code> parameter to distinguish between different charts.</p>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Adding a data point to a chart:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_data_point</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Add a data point to a SeleniumBase-generated chart.</span>
+<span class="sd">""" Add a data point to a SeleniumBase-generated chart.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    label - The label name for the data point.</span>
 <span class="sd">    value - The numeric value of the data point.</span>
 <span class="sd">    color - The HTML color of the data point.</span>
-<span class="sd">            Can be an RGB color. Eg: &quot;#55ACDC&quot;.</span>
-<span class="sd">            Can also be a named color. Eg: &quot;Teal&quot;.</span>
+<span class="sd">            Can be an RGB color. Eg: "#55ACDC".</span>
+<span class="sd">            Can also be a named color. Eg: "Teal".</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Adding a new data series to an existing chart:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">add_series_to_chart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Add a new data series to an existing chart.</span>
+<span class="sd">""" Add a new data series to an existing chart.</span>
 <span class="sd">    This allows charts to have multiple data sets.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    data_name - Set the series name. Useful for multi-series charts.</span>
 <span class="sd">    chart_name - If creating multiple charts,</span>
 <span class="sd">                 use this to select which one.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Saving a chart to a file:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">save_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Saves a SeleniumBase-generated chart to a file for later use.</span>
+<span class="sd">""" Saves a SeleniumBase-generated chart to a file for later use.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts at the same time,</span>
 <span class="sd">                 use this to select the one you wish to use.</span>
 <span class="sd">    filename - The name of the HTML file that you wish to</span>
-<span class="sd">               save the chart to. (filename must end in &quot;.html&quot;)</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">               save the chart to. (filename must end in ".html")</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <p>The full HTML of the chart is saved to the <code>saved_charts/</code> folder.</p>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Extracting the HTML of a chart:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">extract_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Extracts the HTML from a SeleniumBase-generated chart.</span>
+<span class="sd">""" Extracts the HTML from a SeleniumBase-generated chart.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts at the same time,</span>
 <span class="sd">                 use this to select the one you wish to use.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Displaying a chart in the browser window:</h3>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">display_chart</span><span class="p">(</span><span class="n">chart_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot; Displays a SeleniumBase-generated chart in the browser window.</span>
+<span class="sd">""" Displays a SeleniumBase-generated chart in the browser window.</span>
 <span class="sd">    @Params</span>
 <span class="sd">    chart_name - If creating multiple charts at the same time,</span>
 <span class="sd">                 use this to select the one you wish to use.</span>
 <span class="sd">    filename - The name of the HTML file that you wish to</span>
-<span class="sd">               save the chart to. (filename must end in &quot;.html&quot;)</span>
+<span class="sd">               save the chart to. (filename must end in ".html")</span>
 <span class="sd">    interval - The delay time for auto-advancing charts. (in seconds)</span>
 <span class="sd">               If set to 0 (default), auto-advancing is disabled.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 </code></pre></div>
 <p>All methods have the optional <code>chart_name</code> argument, which is only needed when storing multiple charts at the same time.</p>
 <hr />

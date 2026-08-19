@@ -2984,7 +2984,7 @@
 <p><img src="https://seleniumbase.github.io/cdn/img/dash_report.png" alt="Dashboard Pytest HTML Report" title="Dashboard Pytest HTML Report" width="520" /></p>
 <hr />
 <p>If viewing <code>pytest-html</code> reports in <a href="https://www.jenkins.io/">Jenkins</a>, you may need to <a href="https://stackoverflow.com/a/46197356/7058266">configure Jenkins settings</a> for the HTML to render correctly. This is due to <a href="https://www.jenkins.io/doc/book/security/configuring-content-security-policy/">Jenkins CSP changes</a>. That setting can be changed from <code>Manage Jenkins</code> &gt; <code>Script Console</code> by running:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">System</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s2">&quot;hudson.model.DirectoryBrowserSupport.CSP&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nx">System</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s2">"hudson.model.DirectoryBrowserSupport.CSP"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <p>You can also use <code>--junit-xml=report.xml</code> to get an xml report instead. Jenkins can use this file to display better reporting for your tests.</p>
