@@ -3096,7 +3096,7 @@
 <h3 id="the-seleniumbase-mcp-server-provides-stealthy-browser-automation-over-the-model-context-protocol-for-mcp-clients">The <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase</a> MCP server provides stealthy browser automation over the <a href="https://modelcontextprotocol.io">Model Context Protocol</a> for MCP clients.<a class="headerlink" href="#the-seleniumbase-mcp-server-provides-stealthy-browser-automation-over-the-model-context-protocol-for-mcp-clients" title="Permanent link">&para;</a></h3>
 <p>This server, (located in <code>server.py</code>), uses SeleniumBase's <a href="../help_docs/cdp_mode_methods/">Pure CDP Mode</a> (<code>seleniumbase.sb_cdp.Chrome</code>), where the browser is driven entirely over the Chrome DevTools Protocol, and there is no WebDriver in the loop at all, which makes it SeleniumBase's stealthiest mode. CAPTCHA-solving is included via the <code>solve_captcha()</code> method!</p>
 <p>Other SeleniumBase automation styles, (such as <code>Driver()</code> and <code>SB()</code>),  have their own MCP servers in <a href="https://github.com/seleniumbase/seleniumbase-mcp">seleniumbase/seleniumbase-mcp</a>.</p>
-<p>Defaults to <code>headless=False</code>. Use <code>headless=True</code> when starting a session for headless mode, which may be less stealthy.</p>
+<p><code>headless</code> defaults to <code>None</code> in <code>start_browser</code>, which resolves to headless on Linux (typical for server/container environments) and headed on Windows/macOS. Pass <code>headless=True</code> or <code>headless=False</code> explicitly to override this for any OS; headless mode may be less stealthy.</p>
 <h2 id="1-install">1. Install<a class="headerlink" href="#1-install" title="Permanent link">&para;</a></h2>
 <p>There are two ways to get the <code>seleniumbase-mcp</code> command:</p>
 <p><strong>If you just want to use the server (simplest — no repo clone needed):</strong></p>
@@ -3144,7 +3144,35 @@ uv<span class="w"> </span>sync
 <li>macOS: <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
 <li>Windows: <code>%APPDATA%\Claude\claude_desktop_config.json</code></li>
 </ul>
-<p>Restart Claude Desktop. You should see a 🔨 tools icon indicating the server connected, with tools like <code>start_browser</code>, <code>navigate</code>, <code>click</code>, etc. available.</p>
+<p>Restart Claude Desktop. You should see a 🔨 tools icon indicating the server connected, with the following MCP tools available through the tools interface:</p>
+<ul>
+<li><code>start_browser</code></li>
+<li><code>close_browser</code></li>
+<li><code>navigate</code></li>
+<li><code>navigate_history</code></li>
+<li><code>get_page_info</code></li>
+<li><code>find_elements</code></li>
+<li><code>get_content</code></li>
+<li><code>get_attributes</code></li>
+<li><code>check_state</code></li>
+<li><code>click</code></li>
+<li><code>hover</code></li>
+<li><code>drag_and_drop</code></li>
+<li><code>fill_input</code></li>
+<li><code>select_option</code></li>
+<li><code>act_on_element</code></li>
+<li><code>wait_for</code></li>
+<li><code>assert_that</code></li>
+<li><code>manage_cookies</code></li>
+<li><code>manage_storage</code></li>
+<li><code>scroll</code></li>
+<li><code>manage_window</code></li>
+<li><code>manage_tabs</code></li>
+<li><code>solve_captcha</code></li>
+<li><code>save_output</code></li>
+<li><code>run_javascript</code></li>
+<li><code>wait_seconds</code></li>
+</ul>
 <h2 id="4-connect-it-to-claude-code">4. Connect it to Claude Code<a class="headerlink" href="#4-connect-it-to-claude-code" title="Permanent link">&para;</a></h2>
 <p>This folder's <code>.mcp.json</code> is checked in and ready to use as-is.
 No path editing is required because <code>uv run seleniumbase-mcp</code> resolves this project from <code>pyproject.toml</code> in the current directory:</p>
@@ -3169,57 +3197,58 @@ No path editing is required because <code>uv run seleniumbase-mcp</code> resolve
 </code></pre></div>
 <p>(run from inside this folder, for the same reason as above.)</p>
 <h2 id="tools-exposed">Tools exposed<a class="headerlink" href="#tools-exposed" title="Permanent link">&para;</a></h2>
+<p>Tools here are grouped around a shared <code>selector</code> convention: <code>selector</code> args accept a CSS selector, or visible text (e.g. <code>a:contains("Sign in")</code>). Several near-identical one-off tools (e.g. separate click/wait/cookie/storage variants) have been consolidated into a single tool with a <code>mode</code>/<code>action</code>/<code>state</code>/<code>check</code> parameter, so there are fewer near-neighbor tools to disambiguate between while every underlying capability stays available.</p>
 <table>
 <thead>
 <tr>
 <th>Group</th>
-<th>Examples</th>
+<th>Tool(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Session</td>
-<td><code>start_browser(url, headless, incognito, guest, proxy, ad_block)</code>, <code>close_browser</code></td>
+<td><code>start_browser(url, headless, use_chromium, browser_executable_path, incognito, guest, ad_block, proxy)</code>, <code>close_browser</code></td>
 </tr>
 <tr>
 <td>Navigation</td>
-<td><code>navigate</code>, <code>reload_page</code>, <code>go_back</code>/<code>go_forward</code>, <code>get_current_url</code>, <code>get_title</code></td>
+<td><code>navigate</code>, <code>navigate_history(action: back/forward/reload)</code>, <code>get_page_info</code> (running status, url, title, origin, user agent, history in one call)</td>
 </tr>
 <tr>
 <td>Finding &amp; reading</td>
-<td><code>find_element_info</code>, <code>find_all_info</code>, <code>get_text</code>, <code>get_html_source</code>, <code>get_element_attribute(s)</code>, <code>is_element_present/visible</code></td>
+<td><code>find_elements(selector, timeout, include_html)</code>, <code>get_content(selector, output_format: text/html/urls, include_shadow_dom)</code>, <code>get_attributes</code>, <code>check_state(check: present/visible/count/text_visible)</code></td>
 </tr>
 <tr>
 <td>Interacting</td>
-<td><code>click</code>, <code>click_if_visible</code>, <code>click_visible_elements</code>, <code>type_text</code>, <code>send_keys</code>, <code>set_value</code>, <code>select_option_by_text/value/index</code>, <code>nested_click</code></td>
+<td><code>click(selector, nth, all_matches, only_if_visible, parent_selector, timeout, scroll)</code>, <code>hover(selector, then_click_selector)</code>, <code>drag_and_drop</code>, <code>fill_input(mode: type/append/set_value/fast_type/clear)</code>, <code>select_option(by: text/value/index)</code>, <code>act_on_element(action: focus/highlight/scroll_into_view)</code></td>
 </tr>
 <tr>
 <td>Waiting</td>
-<td><code>wait_for_element_present</code>, <code>wait_for_element_visible/not_visible/absent</code>, <code>wait_for_text</code></td>
+<td><code>wait_for(state: present/visible/not_visible/absent, text)</code></td>
 </tr>
 <tr>
 <td>Assertions</td>
-<td><code>assert_element</code>, <code>assert_text</code>, <code>assert_exact_text</code>, <code>assert_title</code>, <code>assert_url(_contains)</code></td>
+<td><code>assert_that(check: element_present/element_visible/text/title/url/url_contains)</code></td>
 </tr>
 <tr>
 <td>Cookies &amp; storage</td>
-<td><code>get_all_cookies</code>, <code>save_cookies</code>/<code>load_cookies</code>, <code>get/set_local_storage_item</code>, <code>get/set_session_storage_item</code></td>
+<td><code>manage_cookies(action: get_all/clear/save/load)</code>, <code>manage_storage(storage: local/session, action: get/set)</code></td>
 </tr>
 <tr>
 <td>Scrolling</td>
-<td><code>scroll_into_view</code>, <code>scroll_to_top/bottom</code>, <code>scroll_up/down</code></td>
+<td><code>scroll(direction: up/down/top/bottom, amount)</code></td>
 </tr>
 <tr>
-<td>Tabs &amp; windows</td>
-<td><code>open_new_tab</code>, <code>switch_to_tab</code>/<code>switch_to_newest_tab</code>, <code>close_active_tab</code>, <code>maximize</code>/<code>minimize</code>, <code>get/set_window_rect</code></td>
+<td>Windows &amp; tabs</td>
+<td><code>manage_window(action: get_rect/set_rect/maximize/minimize)</code>, <code>manage_tabs(action: list/open/switch/switch_newest/close_active)</code></td>
 </tr>
 <tr>
 <td>Captcha</td>
 <td><code>solve_captcha</code></td>
 </tr>
 <tr>
-<td>Output</td>
-<td><code>save_screenshot</code>, <code>save_page_source</code>, <code>save_as_pdf</code>, <code>evaluate</code> (run JS)</td>
+<td>Output &amp; misc</td>
+<td><code>save_output(format: screenshot/html/pdf)</code>, <code>run_javascript</code>, <code>wait_seconds</code></td>
 </tr>
 </tbody>
 </table>
@@ -3232,20 +3261,20 @@ No path editing is required because <code>uv run seleniumbase-mcp</code> resolve
 <p><strong>Blocking calls.</strong> SeleniumBase's calls are synchronous and will block the server while a page loads or an element is waited on. For a single-user local tool this is fine; for a multi-client server you'd want to run them in a thread pool via <code>asyncio.to_thread</code>.</p>
 </li>
 <li>
-<p><strong>Errors surface as tool errors.</strong> If a selector isn't found or an assertion fails, <code>sb_cdp.Chrome</code> raises an exception, which the MCP SDK turns into a tool error the client sees and can react to (e.g. by waiting longer or trying a different selector).</p>
+<p><strong>Errors surface as descriptive strings.</strong> Every tool (aside from session-lifecycle tools, which handle their own errors) is wrapped by a <code>handle_sb_errors</code> decorator: if a selector isn't found or an assertion fails, <code>sb_cdp.Chrome</code> raises an exception, and the decorator catches it and returns a string like <code>Error in click: NoSuchElementException - ...</code> instead of a raw tool error. This lets the calling agent read the failure and self-correct (e.g. by waiting longer or trying a different selector) rather than just seeing an opaque tool-call failure.</p>
 </li>
 <li>
-<p><strong>Elements don't cross the wire as handles.</strong> In native CDP Mode, <code>find_element()</code> returns a live object with its own methods (<code>el.click()</code>, <code>el.get_html()</code>, ...). MCP tools can only return JSON-serializable data, so <code>find_element_info</code>/<code>find_all_info</code> resolve the element immediately to a plain dict (<code>tag_name</code>, <code>text</code>, <code>html</code>) instead of returning a handle you could call further methods on. If you need to act on one of several matches, use <code>click_nth_element</code> (acts by position) rather than "find, then click" as two separate steps.</p>
+<p><strong>Elements don't cross the wire as handles.</strong> In native CDP Mode, <code>find_element()</code> returns a live object with its own methods (<code>el.click()</code>, <code>el.get_html()</code>, ...). MCP tools can only return JSON-serializable data, so <code>find_elements</code> resolves each match immediately to a plain dict (<code>tag_name</code>, <code>text</code>, and optionally <code>html</code>) instead of returning a handle you could call further methods on. If you need to act on one of several matches, use <code>click(selector, nth=...)</code> (acts by position) rather than "find, then click" as two separate steps.</p>
 </li>
 <li>
 <p><strong>CAPTCHA-solving.</strong> <code>solve_captcha</code> handles supported challenge types (e.g. Cloudflare Turnstile).</p>
 </li>
 <li>
-<p><strong>Security.</strong> <code>evaluate</code> runs arbitrary JS and this server can drive a real browser to real sites — don't expose it over an untrusted network transport; stdio + local trust (the default here) is the safe setup.</p>
+<p><strong>Security.</strong> <code>run_javascript</code> runs arbitrary JS, and <code>manage_storage</code> can expose authentication/session secrets; <code>manage_cookies</code> and <code>save_output</code> accept filenames/folders that can touch the filesystem. This server can also drive a real browser to real sites — don't expose it over an untrusted network transport; stdio + local trust (the default here) is the safe setup.</p>
 </li>
 </ul>
 <h2 id="extending">Extending<a class="headerlink" href="#extending" title="Permanent link">&para;</a></h2>
-<p>Adding a tool is just adding a <code>@mcp.tool()</code>-decorated function that calls the matching <code>sb_cdp.Chrome</code> method — SeleniumBase has methods for file uploads, drag-and-drop, hovering, network conditions, and more that aren't wrapped above yet.</p>
+<p>Adding a tool is just adding a <code>@mcp.tool()</code>-decorated function (wrapped in <code>handle_sb_errors</code>) that calls the matching <code>sb_cdp.Chrome</code> method — SeleniumBase has methods for file uploads, network conditions, and more that aren't wrapped above yet.</p>
 
 
 
