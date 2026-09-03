@@ -3149,20 +3149,19 @@ uv<span class="w"> </span>sync
 <li><code>start_browser</code></li>
 <li><code>close_browser</code></li>
 <li><code>navigate</code></li>
-<li><code>navigate_history</code></li>
+<li><code>manage_history</code></li>
 <li><code>get_page_info</code></li>
 <li><code>find_elements</code></li>
 <li><code>get_content</code></li>
 <li><code>get_attributes</code></li>
-<li><code>check_state</code></li>
+<li><code>check_condition</code></li>
 <li><code>click</code></li>
-<li><code>hover</code></li>
-<li><code>drag_and_drop</code></li>
-<li><code>fill_input</code></li>
+<li><code>hover_with_action</code></li>
+<li><code>type_text</code></li>
 <li><code>select_option</code></li>
-<li><code>act_on_element</code></li>
+<li><code>focus_on</code></li>
 <li><code>wait_for</code></li>
-<li><code>assert_that</code></li>
+<li><code>assert_condition</code></li>
 <li><code>manage_cookies</code></li>
 <li><code>manage_storage</code></li>
 <li><code>scroll</code></li>
@@ -3197,7 +3196,7 @@ No path editing is required because <code>uv run seleniumbase-mcp</code> resolve
 </code></pre></div>
 <p>(run from inside this folder, for the same reason as above.)</p>
 <h2 id="tools-exposed">Tools exposed<a class="headerlink" href="#tools-exposed" title="Permanent link">&para;</a></h2>
-<p>Tools here are grouped around a shared <code>selector</code> convention: <code>selector</code> args accept a CSS selector, or visible text (e.g. <code>a:contains("Sign in")</code>). Several near-identical one-off tools (e.g. separate click/wait/cookie/storage variants) have been consolidated into a single tool with a <code>mode</code>/<code>action</code>/<code>state</code>/<code>check</code> parameter, so there are fewer near-neighbor tools to disambiguate between while every underlying capability stays available.</p>
+<p>Tools here are grouped around a shared <code>selector</code> convention: <code>selector</code> args accept a CSS selector, or visible text (e.g. <code>a:contains("Sign in")</code>). Several near-identical one-off tools (e.g. separate click/hover/drag/wait/cookie/storage variants) have been consolidated into a single tool with a <code>mode</code>/<code>action</code>/<code>state</code>/<code>check</code> parameter, so there are fewer near-neighbor tools to disambiguate between while every underlying capability stays available.</p>
 <table>
 <thead>
 <tr>
@@ -3212,15 +3211,15 @@ No path editing is required because <code>uv run seleniumbase-mcp</code> resolve
 </tr>
 <tr>
 <td>Navigation</td>
-<td><code>navigate</code>, <code>navigate_history(action: back/forward/reload)</code>, <code>get_page_info</code> (running status, url, title, origin, user agent, history in one call)</td>
+<td><code>navigate</code>, <code>manage_history(action: back/forward/reload/list)</code>, <code>get_page_info</code> (running status, url, title, origin, user agent in one call)</td>
 </tr>
 <tr>
 <td>Finding &amp; reading</td>
-<td><code>find_elements(selector, timeout, include_html)</code>, <code>get_content(selector, output_format: text/html/urls, include_shadow_dom)</code>, <code>get_attributes</code>, <code>check_state(check: present/visible/count/text_visible)</code></td>
+<td><code>find_elements(selector, timeout, include_html)</code>, <code>get_content(selector, output_format: text/html/urls, include_shadow_dom)</code>, <code>get_attributes</code>, <code>check_condition(check: present/visible, text)</code></td>
 </tr>
 <tr>
 <td>Interacting</td>
-<td><code>click(selector, nth, all_matches, only_if_visible, parent_selector, timeout, scroll)</code>, <code>hover(selector, then_click_selector)</code>, <code>drag_and_drop</code>, <code>fill_input(mode: type/append/set_value/fast_type/clear)</code>, <code>select_option(by: text/value/index)</code>, <code>act_on_element(action: focus/highlight/scroll_into_view)</code></td>
+<td><code>click(selector, nth, all_matches, only_if_visible, parent_selector, timeout, scroll)</code>, <code>hover_with_action(selector1, selector2, action: none/click/drag_and_drop)</code>, <code>type_text(mode: fill_input/append/fast_type/set_value/clear_only)</code>, <code>select_option(by: text/value/index)</code>, <code>focus_on(action: scroll_to_element/focus/highlight)</code></td>
 </tr>
 <tr>
 <td>Waiting</td>
@@ -3228,7 +3227,7 @@ No path editing is required because <code>uv run seleniumbase-mcp</code> resolve
 </tr>
 <tr>
 <td>Assertions</td>
-<td><code>assert_that(check: element_present/element_visible/text/title/url/url_contains)</code></td>
+<td><code>assert_condition(check: element_present/element_visible/text_visible/title/url/url_contains)</code></td>
 </tr>
 <tr>
 <td>Cookies &amp; storage</td>
@@ -3261,7 +3260,31 @@ No path editing is required because <code>uv run seleniumbase-mcp</code> resolve
 <p><strong>Blocking calls.</strong> SeleniumBase's calls are synchronous and will block the server while a page loads or an element is waited on. For a single-user local tool this is fine; for a multi-client server you'd want to run them in a thread pool via <code>asyncio.to_thread</code>.</p>
 </li>
 <li>
+<p><strong><code>start_browser</code> retries once before failing.</strong> If the first launch attempt raises, it's retried once automatically before returning an error. This was added after seeing occasional first-attempt failures when testing against Glama's MCP Inspector; it costs nothing on the common case where the first launch already succeeds.</p>
+</li>
+<li>
 <p><strong>Errors surface as descriptive strings.</strong> Every tool (aside from session-lifecycle tools, which handle their own errors) is wrapped by a <code>handle_sb_errors</code> decorator: if a selector isn't found or an assertion fails, <code>sb_cdp.Chrome</code> raises an exception, and the decorator catches it and returns a string like <code>Error in click: NoSuchElementException - ...</code> instead of a raw tool error. This lets the calling agent read the failure and self-correct (e.g. by waiting longer or trying a different selector) rather than just seeing an opaque tool-call failure.</p>
+</li>
+<li>
+<p><strong>No standalone session-status tool.</strong> There is no separate <code>browser_status</code>-style tool. <code>get_page_info</code> doubles as the status check: it returns <code>{"running": False}</code> (optionally with an <code>error</code> field) when there's no active session or the session errors out, and page metadata (<code>running: True</code>, <code>url</code>, <code>title</code>, <code>origin</code>, <code>user_agent</code>) otherwise. <code>get_page_info</code> does not include navigation history — that lives on <code>manage_history(action="list")</code> instead (see below).</p>
+</li>
+<li>
+<p><strong>Navigation and history live in one tool: <code>manage_history</code>.</strong> What used to be <code>navigate_history</code> is now <code>manage_history</code>, and it gained a fourth action: <code>"list"</code>, which returns the browser's navigation history as <code>{"position": &lt;0-indexed current entry&gt;, "entries": [...]}</code>, where each entry has <code>id</code>, <code>url</code>, <code>user_typed_url</code>, <code>title</code>, and <code>transition_type</code>. <code>"back"</code>, <code>"forward"</code>, and <code>"reload"</code> behave as before. This is the only way to retrieve navigation history now — <code>get_page_info</code> doesn't return it.</p>
+</li>
+<li>
+<p><strong>Content reading is consolidated into one tool.</strong> <code>get_content</code> replaces what used to be three separate reads: page/element text, page/element HTML, and page-linked URLs. Pick the mode with <code>output_format</code> (<code>"text"</code>, <code>"html"</code>, or <code>"urls"</code>) rather than calling a dedicated <code>get_page_content</code> or <code>get_all_urls</code> tool — those no longer exist. Likewise, there's no standalone <code>get_user_agent</code> tool anymore; the User-Agent string is one of the fields returned by <code>get_page_info</code>.</p>
+</li>
+<li>
+<p><strong><code>check_condition</code> is deliberately narrow.</strong> Its <code>check</code> parameter only accepts <code>"present"</code> or <code>"visible"</code> — there's no built-in <code>"count"</code> check anymore; call <code>find_elements</code> and read the returned <code>count</code> field instead. Passing <code>text</code> checks whether that text is visible within <code>selector</code> and takes priority over <code>check</code> when both are given — so <code>check_condition(text="Sign in")</code> behaves differently from <code>check_condition(check="visible")</code>, not as two variants of the same check. Note that an empty string for <code>text</code> (or for <code>wait_for</code>'s <code>selector</code>/<code>text</code>) is treated as not provided, since both tools now branch on truthiness rather than on <code>is not None</code>.</p>
+</li>
+<li>
+<p><strong><code>find_elements</code> defaults to a fast, non-raising lookup.</strong> Its default <code>timeout</code> is 0.5 seconds (not 7, unlike most other tools here), and a failed lookup returns <code>{}</code> instead of raising — there is no error string on a miss, just an empty dict. Pass a longer <code>timeout</code> explicitly if the elements you're looking for may still be loading.</p>
+</li>
+<li>
+<p><strong>Hover, click-after-hover, and drag-and-drop share one tool.</strong> <code>hover_with_action(selector1, selector2, action)</code> replaces the earlier separate <code>hover</code> and <code>drag_and_drop</code> tools. <code>action="none"</code> hovers <code>selector1</code> only; <code>action="click"</code> hovers <code>selector1</code> then clicks <code>selector2</code> (useful for dropdown/submenu items revealed by hovering); <code>action="drag_and_drop"</code> drags <code>selector1</code> onto <code>selector2</code>. (<code>selector2</code> is required when <code>action</code> is <code>"click"</code> or <code>"drag_and_drop"</code>.)</p>
+</li>
+<li>
+<p><strong>Non-activating element actions are <code>focus_on</code>.</strong> What used to be <code>act_on_element</code> is now <code>focus_on(selector, action)</code>, with actions <code>scroll_to_element</code> (the default), <code>focus</code>, and <code>highlight</code> — note the default action changed from focusing the element to scrolling it into view. None of these actions click, type into, select from, or otherwise activate the element; use <code>click</code>, <code>type_text</code>, <code>select_option</code>, or <code>hover_with_action</code> for that.</p>
 </li>
 <li>
 <p><strong>Elements don't cross the wire as handles.</strong> In native CDP Mode, <code>find_element()</code> returns a live object with its own methods (<code>el.click()</code>, <code>el.get_html()</code>, ...). MCP tools can only return JSON-serializable data, so <code>find_elements</code> resolves each match immediately to a plain dict (<code>tag_name</code>, <code>text</code>, and optionally <code>html</code>) instead of returning a handle you could call further methods on. If you need to act on one of several matches, use <code>click(selector, nth=...)</code> (acts by position) rather than "find, then click" as two separate steps.</p>
