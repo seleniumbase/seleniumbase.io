@@ -3112,15 +3112,15 @@
 
 <h1 id="seleniumbase-mcp"><code>seleniumbase-mcp</code><a class="headerlink" href="#seleniumbase-mcp" title="Permanent link">&para;</a></h1>
 <h3 id="the-seleniumbase-mcp-server-provides-stealthy-browser-automation-over-the-model-context-protocol-for-mcp-clients">The <a href="https://github.com/seleniumbase/SeleniumBase">SeleniumBase</a> MCP server provides stealthy browser automation over the <a href="https://modelcontextprotocol.io">Model Context Protocol</a> for MCP clients.<a class="headerlink" href="#the-seleniumbase-mcp-server-provides-stealthy-browser-automation-over-the-model-context-protocol-for-mcp-clients" title="Permanent link">&para;</a></h3>
-<p>This server, (located in <code>server.py</code>), uses SeleniumBase's <a href="../help_docs/cdp_mode_methods/">Pure CDP Mode</a> (<code>seleniumbase.sb_cdp.Chrome</code>), where the browser is driven entirely over the Chrome DevTools Protocol, and there is no WebDriver in the loop at all, which makes it SeleniumBase's stealthiest mode. CAPTCHA-solving is available through <code>solve_captcha()</code>.</p>
-<p>Other SeleniumBase automation styles, (such as <code>Driver()</code> and <code>SB()</code>),  have their own MCP servers in <a href="https://github.com/seleniumbase/seleniumbase-mcp">seleniumbase/seleniumbase-mcp</a>.</p>
-<p><code>headless</code> defaults to <code>None</code> in <code>start_browser</code>, which resolves to headless on Linux (typical for server/container environments) and headed on Windows/macOS. Pass <code>headless=True</code> or <code>headless=False</code> explicitly to override this for any OS; headless mode may be less stealthy.</p>
+<p>This server (located in <code>server.py</code>) uses SeleniumBase's <a href="../help_docs/cdp_mode_methods/">Pure CDP Mode</a> (<code>seleniumbase.sb_cdp.Chrome</code>), where the browser is driven entirely over the Chrome DevTools Protocol, and there is no WebDriver in the loop at all, which makes it SeleniumBase's stealthiest mode. CAPTCHA-solving is available through <code>solve_captcha()</code>.</p>
+<p>Other SeleniumBase automation styles (such as <code>Driver()</code> and <code>SB()</code>) have their own MCP servers in <a href="https://github.com/seleniumbase/seleniumbase-mcp">seleniumbase/seleniumbase-mcp</a>.</p>
+<p><code>headless</code> defaults to <code>None</code> in <code>start_browser</code>, which resolves to headless mode on Linux (typical for server/container environments) and headed mode on Windows/macOS. Pass <code>headless=True</code> or <code>headless=False</code> explicitly to override this for any OS; headless mode may be less stealthy.</p>
 <h2 id="1-install">1. Install<a class="headerlink" href="#1-install" title="Permanent link">&para;</a></h2>
 <p>There are two ways to get the <code>seleniumbase-mcp</code> command:</p>
 <p><strong>If you just want to use the server (simplest — no repo clone needed):</strong></p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"seleniumbase[mcp]"</span>
 </code></pre></div>
-<p>This installs <code>seleniumbase</code> from PyPI along with the <code>mcp[cli]</code> extra, and registers a <code>seleniumbase-mcp</code> console-script command. Your MCP client config can be as simple as <code>{"command": "seleniumbase-mcp"}</code> (see step 3's Option A).</p>
+<p>This installs <code>seleniumbase</code> from PyPI along with the <code>mcp[cli]</code> extra, and registers a <code>seleniumbase-mcp</code> console-script command. Your MCP client config can be as simple as <code>{"command": "seleniumbase-mcp"}</code> (see Step 3's Option A).</p>
 <p><strong>If you're working from a <code>git clone</code> of this repo (instead of a PyPI install):</strong></p>
 <p>(Requires <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>)</p>
 <p>This folder lives inside the SeleniumBase repo, so if you've already cloned SeleniumBase, just <code>cd</code> into this folder and sync:</p>
@@ -3129,7 +3129,7 @@ uv<span class="w"> </span>sync
 </code></pre></div>
 <p><code>uv sync</code> reads <code>pyproject.toml</code>, creates a <code>.venv/</code> in this folder, and installs <code>mcp[cli]</code> plus <code>seleniumbase</code>, which is resolved from the local SeleniumBase checkout one directory up (in editable mode, via <code>[tool.uv.sources]</code> in <code>pyproject.toml</code>), not from PyPI. It also installs this project itself, which registers a <code>seleniumbase-mcp</code> console-script command via <code>[project.scripts]</code>, pointing at <code>server.py</code>'s <code>main()</code> function (<code>mcp.run(transport="stdio")</code>). That's what lets <code>uv run seleniumbase-mcp</code> work as the MCP client command in steps 3 and 4 below.</p>
 <p>Pure CDP Mode doesn't use WebDriver, so no <code>chromedriver</code> download is needed... just a working Chrome/Chromium install.</p>
-<p>(If you don't want to use <code>uv</code>, you can use a standard Python virtual environment instead: <code>python3 -m venv venv &amp;&amp; pip install -r requirements.txt</code> works too. <code>requirements.txt</code> installs the local SeleniumBase checkout via <code>-e .</code> the same way. Substitute <code>python server.py</code> for <code>uv run seleniumbase-mcp</code> everywhere below, and use absolute <code>venv/bin/python</code> + script path in your MCP client config instead of the path-free options.)</p>
+<p>If you don't want to use <code>uv</code>, you can use a standard Python virtual environment instead: <code>python3 -m venv venv &amp;&amp; pip install -r requirements.txt</code>, which installs the local SeleniumBase checkout via <code>-e .</code>. Then substitute <code>python server.py</code> for <code>uv run seleniumbase-mcp</code> everywhere below, and use absolute <code>venv/bin/python</code> + script path in your MCP client config instead of the path-free options.</p>
 <p>Without <code>uv</code>, you can directly run the <code>seleniumbase-mcp</code> command to start the server after <code>pip</code>-installing <code>seleniumbase</code>.</p>
 <h2 id="2-try-it-standalone-optional-sanity-check">2. Try it standalone (optional sanity check)<a class="headerlink" href="#2-try-it-standalone-optional-sanity-check" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>mcp<span class="w"> </span>dev<span class="w"> </span>server.py
@@ -3137,9 +3137,9 @@ uv<span class="w"> </span>sync
 <p>Or if using <code>uv</code>:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mcp<span class="w"> </span>dev<span class="w"> </span>server.py
 </code></pre></div>
-<p>That opens the MCP Inspector, where you can test commands ("Tools"). Use Ctrl+C to exit from the terminal. Next step is wiring it into a client harness.</p>
+<p>That opens the MCP Inspector, where you can test commands ("Tools"). Use Ctrl+C to exit the MCP Inspector from the terminal. The next step is wiring it into a client harness.</p>
 <h2 id="3-connect-it-to-claude-desktop">3. Connect it to Claude Desktop<a class="headerlink" href="#3-connect-it-to-claude-desktop" title="Permanent link">&para;</a></h2>
-<p>Claude Desktop doesn't run from a "project" directory the way Claude Code does, so a bare <code>uv run seleniumbase-mcp</code> isn't guaranteed to find this folder. Two ways to get a stable config:</p>
+<p>Claude Desktop doesn't run from a "project" directory the way Claude Code does, so a bare <code>uv run seleniumbase-mcp</code> isn't guaranteed to find this folder. There are two ways to create a stable configuration:</p>
 <p><strong>Option A — global install (recommended, zero paths anywhere):</strong></p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>.<span class="w">    </span><span class="c1"># from inside this folder, installs the command globally</span>
 </code></pre></div>
@@ -3150,7 +3150,7 @@ uv<span class="w"> </span>sync
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Note this bakes in the location of the SeleniumBase checkout at install time (since <code>seleniumbase</code> resolves to <code>../</code> via the editable path source). If you move or delete this clone, re-run <code>uv tool install .</code> from its new location.</p>
+<p>Note that this bakes in the location of the SeleniumBase checkout at install time (since <code>seleniumbase</code> resolves to <code>../</code> via the editable path source). If you move or delete this clone, re-run <code>uv tool install .</code> from its new location.</p>
 <p><strong>Option B — point <code>uv</code> at this folder directly (one absolute path, but no venv/interpreter path to track down, and no separate install step):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3166,7 +3166,7 @@ uv<span class="w"> </span>sync
 <li>macOS: <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
 <li>Windows: <code>%APPDATA%\Claude\claude_desktop_config.json</code></li>
 </ul>
-<p>Restart Claude Desktop. You should see a 🔨 tools icon indicating the server connected, with the following MCP tools available through the tools interface:</p>
+<p>Restart Claude Desktop. You should see a 🔨 tools icon indicating the server connected, with the following MCP tools available through the interface:</p>
 <ul>
 <li><code>start_browser</code></li>
 <li><code>close_browser</code></li>
@@ -3224,7 +3224,7 @@ No path editing is required because <code>seleniumbase-mcp</code> resolves this 
 <li><strong>SeleniumBase's visible-text selector</strong> syntax, e.g. <code>a:contains("Sign in")</code>, is accepted by several tools (including <code>click_element</code>, when not using <code>all_matches</code>) but not all of them — <code>find_elements</code>, for example, only supports CSS/XPath.</li>
 </ul>
 <h2 id="tools-exposed">Tools exposed<a class="headerlink" href="#tools-exposed" title="Permanent link">&para;</a></h2>
-<p>Tools here are grouped around a shared <code>selector</code> convention. Several near-identical one-off tools (e.g. separate click/hover/drag/wait/cookie/storage variants) have been consolidated into a single tool with a <code>mode</code>/<code>action</code>/<code>state</code>/<code>check</code> parameter, so there are fewer near-neighbor tools to disambiguate between while every underlying capability stays available. Tool names also follow a verb+object convention (<code>click_element</code>, <code>focus_element</code>, <code>scroll_page</code>, <code>save_page</code>, <code>open_url</code>) rather than bare verbs, so a tool's name signals what it acts on without needing to read its description.</p>
+<p>Tools here are grouped around a shared <code>selector</code> convention. Several near-identical one-off tools (e.g. separate click/hover/drag/wait/cookie/storage variants) have been consolidated into a single tool with a <code>mode</code>/<code>action</code>/<code>state</code>/<code>check</code> parameter, so there are fewer near-neighbor tools to disambiguate between while keeping every underlying capability available. Tool names also follow a verb+object convention (<code>click_element</code>, <code>focus_element</code>, <code>scroll_page</code>, <code>save_page</code>, <code>open_url</code>) rather than bare verbs, so a tool's name signals what it acts on without needing to read its description.</p>
 <table>
 <thead>
 <tr>
@@ -3270,7 +3270,7 @@ No path editing is required because <code>seleniumbase-mcp</code> resolves this 
 <td><code>manage_window(action: get_rect/set_rect/maximize/minimize)</code>, <code>manage_tabs(action: list_tabs/open_new_tab/switch_to_tab/switch_to_newest_tab/close_active_tab)</code></td>
 </tr>
 <tr>
-<td>Captcha</td>
+<td>CAPTCHA</td>
 <td><code>solve_captcha</code></td>
 </tr>
 <tr>
@@ -3291,7 +3291,7 @@ No path editing is required because <code>seleniumbase-mcp</code> resolves this 
 <p><strong><code>start_browser</code> retries once before failing.</strong> If the first launch attempt raises, it's retried once automatically before returning an error. This was added after seeing occasional first-attempt failures when testing against Glama's MCP Inspector; it costs nothing on the common case where the first launch already succeeds.</p>
 </li>
 <li>
-<p><strong>Two error-handling paths, by design.</strong> Most failures (a selector isn't found, an assertion fails, an invalid <code>action</code>/<code>mode</code>/<code>check</code> value is passed) are caught by the <code>handle_sb_errors</code> decorator and returned as a descriptive string, e.g. <code>Error in click_element: NoSuchElementException - ...</code>, so the calling agent can read the failure and self-correct. There's one deliberate exception: calling any tool other than <code>start_browser</code>/<code>close_browser</code> when no browser session is running raises <code>ToolError</code> (via the shared <code>_get_sb()</code> helper) instead of returning a string. <code>handle_sb_errors</code> explicitly re-raises <code>ToolError</code> rather than catching it, so this surfaces to the MCP client as a real tool-call error (<code>is_error=True</code>), not as ordinary text the agent has to pattern-match on. <code>start_browser</code> and <code>close_browser</code> handle their own lifecycle errors directly (e.g. "already running", a failed <code>quit()</code>) and also return strings rather than raising.</p>
+<p><strong>Two error-handling paths, by design.</strong> Most failures (an element matching a selector isn't found, an assertion fails, an invalid <code>action</code>/<code>mode</code>/<code>check</code> value is passed) are caught by the <code>handle_sb_errors</code> decorator and returned as a descriptive string, e.g. <code>Error in click_element: NoSuchElementException - ...</code>, so the calling agent can read the failure and self-correct. There's one deliberate exception: calling any tool other than <code>start_browser</code>/<code>close_browser</code> when no browser session is running raises <code>ToolError</code> (via the shared <code>_get_sb()</code> helper) instead of returning a string. <code>handle_sb_errors</code> explicitly re-raises <code>ToolError</code> rather than catching it, so this surfaces to the MCP client as a real tool-call error (<code>is_error=True</code>), not as ordinary text the agent has to pattern-match on. <code>start_browser</code> and <code>close_browser</code> handle their own lifecycle errors directly (e.g. "already running", a failed <code>quit()</code>) and also return strings rather than raising.</p>
 </li>
 <li>
 <p><strong><code>find_elements</code> catches its own lookup failures.</strong> Its default <code>timeout</code> is 0.5 seconds (not 5, unlike most other tools here). A failed or empty lookup never raises: no matches returns <code>{"count": 0, "matches": []}</code>, and an actual lookup error (e.g. an unsupported selector) returns <code>{"count": 0, "matches": [], "error": "&lt;details&gt;"}</code> — the error lives inside the returned dict rather than surfacing as a top-level string from <code>handle_sb_errors</code>. Pass a longer <code>timeout</code> explicitly if the elements you're looking for may still be loading.</p>
@@ -3313,7 +3313,7 @@ No path editing is required because <code>seleniumbase-mcp</code> resolves this 
 </li>
 </ul>
 <h2 id="extending">Extending<a class="headerlink" href="#extending" title="Permanent link">&para;</a></h2>
-<p>Adding a tool is just adding a <code>@mcp.tool()</code>-decorated function (wrapped in <code>handle_sb_errors</code>) that calls the matching <code>sb_cdp.Chrome</code> method — SeleniumBase has methods for file uploads, network conditions, and more that aren't wrapped above yet.</p>
+<p>Adding a tool is just adding a <code>@mcp.tool()</code>-decorated function (wrapped in <code>handle_sb_errors</code>) that calls the matching <code>sb_cdp.Chrome</code> method. SeleniumBase has methods for file uploads, network conditions, and more that aren't wrapped above yet.</p>
 
 
 
