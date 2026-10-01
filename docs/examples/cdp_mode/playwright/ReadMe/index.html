@@ -3383,15 +3383,15 @@
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_selector</span><span class="p">(</span><span class="n">input_field</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">'button[id*="Agree"]'</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">input_field</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
     <span class="n">search</span> <span class="o">=</span> <span class="s2">"Nike Shoes"</span>
     <span class="n">page</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">input_field</span><span class="p">,</span> <span class="n">search</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'ul[id*="typeahead"] li div'</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
-    <span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">"a.ProductCard-link"</span><span class="p">)</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="s2">"a[data-productcard]"</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">elements</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">'**** Found results for "</span><span class="si">%s</span><span class="s1">": ****'</span> <span class="o">%</span> <span class="n">search</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
@@ -3411,7 +3411,6 @@
     <span class="n">browser</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">connect_over_cdp</span><span class="p">(</span><span class="n">endpoint_url</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">contexts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.bing.com/turing/captcha/challenge"</span><span class="p">)</span>
-    <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>
     <span class="n">page</span><span class="o">.</span><span class="n">wait_for_timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
 </code></pre></div>
