@@ -2952,7 +2952,7 @@
 <hr />
 <p>🥷 Stealth modes: <a translate="no" href="help_docs/uc_mode/"><b>UC Mode</b></a> / <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> can bypass bot-detection, handle CAPTCHAs, and call methods from the <a href="https://chromedevtools.github.io/devtools-protocol/" translate="no">Chrome Devtools Protocol</a>. CDP Mode includes <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a>, which makes Playwright stealthy.</p>
 <p>🧪 End-to-End Testing examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples">./examples/</a>.</p>
-<p>🐙 Stealthy CDP Mode examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
+<p>🐙 CDP Mode (stealth) examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
 <p>🎭 Stealthy Playwright examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/">./examples/cdp_mode/playwright/</a>.</p>
 <p>📚 Examples that have <code>test_</code> or  <code>_test</code> in the filename are specifically designed to run with <code>pytest</code> / <code>pynose</code>. Other examples run directly with raw <code>python</code> (those files generally start with <code>raw_</code> to avoid confusion).</p>
 <hr />
@@ -3020,7 +3020,7 @@
 <hr />
 <h3 align="left">🌐 CLI Options for Supported Chromium Browsers</h3>
 
-<p>💡 You can set the Chromium browser to use via command line parameters:</p>
+<p>💡 You can set which Chromium browser to use via command-line parameters:</p>
 
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--chromium<span class="w">  </span><span class="c1"># Use the unbranded Chromium browser</span>
 python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--cft<span class="w">  </span><span class="c1"># Use Chrome-for-testing</span>
@@ -3034,7 +3034,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 <hr />
 <h3 align="left">⚙️ Stealthy architecture flowchart:</h3>
 
-<p><img src="https://seleniumbase.github.io/other/sb_architecture.png" width="520" style="max-width: 100% !important; height: auto !important;" alt="Stealthy architecture flowchart" /></p>
+<p><img src="https://seleniumbase.github.io/other/sb_architecture.png" width="540" style="max-width: 100% !important; height: auto !important;" alt="Stealthy architecture flowchart" /></p>
 <hr />
 <h3>🧪 Comprehensive E2E Testing with <code>pytest</code>:</h3>
 
@@ -3064,6 +3064,7 @@ python<span class="w"> </span>SCRIPT.py<span class="w"> </span>--brave<span clas
 <p><code>pytest test_get_swag.py</code></p>
 </blockquote>
 <p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_get_swag.py"><img src="https://seleniumbase.github.io/cdn/gif/fast_swag_2.gif" alt="SeleniumBase Test" width="500" style="max-width: 100% !important; height: auto !important;" /></a></p>
+<p>🥷 For stealth with <code>pytest</code>, add <code>--uc</code> as a command-line option.</p>
 <hr />
 <p align="left"><b>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/test_coffee_cart.py" target="_blank">This example</a> tests another e-commerce site with <code>pytest</code>:</b></p>
 
