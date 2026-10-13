@@ -3596,12 +3596,8 @@
 <span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'strong:contains("Normal")'</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://bot.sannysoft.com/"</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#user-agent-result.passed"</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#webdriver-result.passed"</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#advanced-webdriver-result.passed"</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#permissions-result.passed"</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#plugins-length-result.passed"</span><span class="p">)</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">"#plugins-type-result.passed"</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">".passed"</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">assert_element_not_visible</span><span class="p">(</span><span class="s2">".failed"</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div>
