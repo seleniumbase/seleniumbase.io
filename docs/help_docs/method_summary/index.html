@@ -3670,8 +3670,6 @@
     <span class="n">log_cdp_events</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">no_sandbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">disable_gpu</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">headless1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">headless2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">incognito</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">guest_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">dark_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -3782,7 +3780,7 @@
 <span class="bp">self</span><span class="o">.</span><span class="n">get_active_element_css</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_beautiful_soup</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">get_unique_links</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">get_link_status_code</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">get_link_status_code</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_link_status_code_is_not_404</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">assert_no_404_errors</span><span class="p">(</span><span class="n">multithreaded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Duplicates</span>

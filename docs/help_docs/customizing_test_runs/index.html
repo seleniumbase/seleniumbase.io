@@ -3617,10 +3617,15 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be "complete" or Angular to load.)</span>
 --wfa<span class="w">  </span><span class="c1"># (Wait for AngularJS to be done loading after specific web actions.)</span>
 --pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: "normal", "eager", or "none".)</span>
---headless<span class="w">  </span><span class="c1"># (The default headless mode. Linux uses this mode by default.)</span>
---headless1<span class="w">  </span><span class="c1"># (Use Chrome's old headless mode. Fast, but has limitations.)</span>
---headless2<span class="w">  </span><span class="c1"># (Use Chrome's new headless mode, which supports extensions.)</span>
+--headless<span class="w">  </span><span class="c1"># (Use headless mode. Linux uses this mode by default.)</span>
+--chs<span class="w">  </span><span class="c1"># (Use Chrome-Headless-Shell, a limited Chrome without stealth.)</span>
 --headed<span class="w">  </span><span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
+--incognito<span class="w">  </span><span class="c1"># (Enable Chrome's Incognito mode.)</span>
+--guest<span class="w">  </span><span class="c1"># (Enable Chrome's Guest mode.)</span>
+--uc<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
+--uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events in UC Mode. NOT related to CDP Mode.)</span>
+--log-cdp<span class="w">  </span><span class="c1"># ("goog:loggingPrefs", {"performance": "ALL", "browser": "ALL"})</span>
+--remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
 --xvfb<span class="w">  </span><span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
 --xvfb-metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set Xvfb display size on Linux: "Width,Height".)</span>
 --locale<span class="o">=</span>LOCALE_CODE<span class="w">  </span><span class="c1"># (Set the Language Locale Code for the web browser.)</span>
@@ -3654,17 +3659,11 @@ pytest<span class="w"> </span>my_first_test.py<span class="w"> </span>--settings
 --disable-ws<span class="w">  </span><span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
 --enable-ws<span class="w">  </span><span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
 --enable-sync<span class="w">  </span><span class="c1"># (Enable "Chrome Sync" on websites.)</span>
---uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
---uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events when running in "--undetected" mode.)</span>
---log-cdp<span class="w">  </span><span class="c1"># ("goog:loggingPrefs", {"performance": "ALL", "browser": "ALL"})</span>
---remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
 --ftrace<span class="w"> </span><span class="p">|</span><span class="w"> </span>--final-trace<span class="w">  </span><span class="c1"># (Debug Mode after each test. Don't use with CI!)</span>
 --dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
 --enable-3d-apis<span class="w">  </span><span class="c1"># (Enables WebGL and 3D APIs.)</span>
 --swiftshader<span class="w">  </span><span class="c1"># (Chrome "--use-gl=angle" / "--use-angle=swiftshader-webgl")</span>
---incognito<span class="w">  </span><span class="c1"># (Enable Chrome's Incognito mode.)</span>
---guest<span class="w">  </span><span class="c1"># (Enable Chrome's Guest mode.)</span>
 --dark<span class="w">  </span><span class="c1"># (Enable Chrome's Dark mode.)</span>
 --devtools<span class="w">  </span><span class="c1"># (Open Chrome's DevTools when the browser opens.)</span>
 --rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
@@ -3824,7 +3823,7 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <p>You can specify a Language Locale Code to customize web pages on supported websites. With SeleniumBase, you can change the web browser's Locale on the command line by doing this:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--locale<span class="o">=</span>CODE<span class="w">  </span><span class="c1"># Example: --locale=ru</span>
 </code></pre></div>
-<p>Visit <a href="locale_codes/"><b>🗾 Locales</b></a> for a full list of codes.</p>
+<p>Visit <strong><a href="../locale_codes/">🗾 Locales</a>)</strong> for a full list of codes.</p>
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Changing the default driver version:</h3>
 
@@ -3940,9 +3939,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <span class="n">rtf</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Shortcut / Duplicate of "raise_test_failure".</span>
 <span class="n">raise_test_failure</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># If "test" mode, raise Exception on 1st failure.</span>
 <span class="n">browser</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Choose from "chrome", "edge", "firefox", or "safari".</span>
-<span class="n">headless</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use the default headless mode for Chromium and Firefox.</span>
-<span class="n">headless1</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium's old headless mode. (Fast, but limited)</span>
-<span class="n">headless2</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium's new headless mode. (Has more features)</span>
+<span class="n">headless</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use headless mode for Chromium/Firefox. (headless=True)</span>
 <span class="n">locale_code</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the Language Locale Code for the web browser.</span>
 <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid protocol: "http" or "https".</span>
 <span class="n">servername</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid server/IP used for tests.</span>
@@ -4047,9 +4044,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 <h2><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> 03. <code>Driver()</code> method options</h2>
 
 <div class="highlight"><pre><span></span><code><span class="n">browser</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Choose from "chrome", "edge", "firefox", or "safari".</span>
-<span class="n">headless</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use the default headless mode for Chromium and Firefox.</span>
-<span class="n">headless1</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium's old headless mode. (Fast, but limited)</span>
-<span class="n">headless2</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use Chromium's new headless mode. (Has more features)</span>
+<span class="n">headless</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Use headless mode for Chromium/Firefox. (headless=True)</span>
 <span class="n">headed</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Run tests in headed/GUI mode on Linux, where not default.</span>
 <span class="n">locale_code</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># Set the Language Locale Code for the web browser.</span>
 <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># The Selenium Grid protocol: "http" or "https".</span>
@@ -4128,7 +4123,7 @@ pytest<span class="w"> </span>test_swag_labs.py<span class="w"> </span>--mobile<
 
 <div class="highlight"><pre><span></span><code><span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">user_data_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">headless</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">headless</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Set `headless=True` to activate</span>
 <span class="n">incognito</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">guest</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">browser_executable_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>

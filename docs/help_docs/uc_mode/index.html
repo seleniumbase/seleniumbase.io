@@ -3657,21 +3657,20 @@
 <p><img src="https://seleniumbase.github.io/other/ahrefs_bypass.png" title="SeleniumBase" width="540"></p>
 <hr />
 <p>👤 <b>On Linux</b>, use <code>sb.solve_captcha()</code> to handle CAPTCHAs:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">SB</span>
-
-<span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://www.virtualmanager.com/en/login"</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">SB</span><span class="p">(</span><span class="n">uc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">sb</span><span class="p">:</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.virtualmanager.com/en/login"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>  <span class="c1"># Only used if needed</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name*="email"]'</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">get_page_title</span><span class="p">())</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name*="login"]'</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">set_messenger_theme</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"bottom_center"</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">post_message</span><span class="p">(</span><span class="s2">"SeleniumBase wasn't detected!"</span><span class="p">)</span>
 </code></pre></div>
-<p><a href="https://github.com/mdmintz/undetected-testing/actions/runs/9637461606/job/26576722411"><img width="540" alt="uc_gui_click_captcha on Linux" src="https://github.com/seleniumbase/SeleniumBase/assets/6788579/6aceb2a3-2a32-4521-b30a-f79446d2ce28"></a></p>
-<p>The 2nd <code translate="no">print()</code> should output <code translate="no">Virtual Manager</code>, which means that the automation successfully passed the Turnstile.</p>
+<p><a href="https://github.com/mdmintz/undetected-testing/actions/runs/40727279996/job/122953823886#step:11:16"><img width="540" alt="solve_captcha() on Linux" src="https://github.com/user-attachments/assets/e4075e34-cc0d-40f2-a923-a61275298607"></a></p>
+<p>The 2nd <code translate="no">print()</code> outputs the expected page title, which means that the automation successfully clicked &amp; bypassed the Turnstile.</p>
 <p>(Note: <span translate="no">UC Mode</span> has a special virtual display on Linux: <code>Xvfb</code>, which is enabled by default when not changing headed/headless settings.)</p>
 <hr />
 <p>👤 Here's a <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_pixelscan.py">UC Mode example</a> of bypassing bot-detection on Pixelscan:</p>

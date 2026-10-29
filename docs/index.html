@@ -3470,7 +3470,7 @@
 <p align="center"><b align="center">Includes stealth options for bypassing bot-detection and CAPTCHAs.<br /></b></p>
 
 <p align="center">
-<a href="https://pypi.python.org/pypi/seleniumbase" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?style=flat-square&color=3399EE" alt="PyPI version" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank" rel="noopener"><img src="https://img.shields.io/github/actions/workflow/status/seleniumbase/SeleniumBase/python-package.yml?branch=master&style=flat-square&label=CI" alt="SeleniumBase GitHub Actions" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/%20View%20Code-on%20GitHub%20-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/license-MIT-33A6C6.svg?style=flat-square" title="SeleniumBase" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/mcp_servers" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/MCP-tool_catalog-7C6EE5?style=flat-square" height="20" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank" rel="noopener"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" height="20" /></a><br />
+<a href="https://pypi.python.org/pypi/seleniumbase" target="_blank" rel="noopener"><img src="https://img.shields.io/pypi/v/seleniumbase.svg?style=flat-square&color=3399EE" alt="PyPI version" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/actions" target="_blank" rel="noopener"><img src="https://img.shields.io/github/actions/workflow/status/seleniumbase/SeleniumBase/python-package.yml?branch=master&style=flat-square&label=CI" alt="SeleniumBase GitHub Actions" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/%20View%20Code-on%20GitHub%20-02A79E.svg" alt="SeleniumBase on GitHub" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/license-MIT-33A6C6.svg?style=flat-square" title="SeleniumBase" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/mcp_servers" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/MCP-tool_info-7C6EE5?style=flat-square" height="20" /></a> <a href="https://pepy.tech/projects/seleniumbase?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=daily&viewType=line&versions=*" target="_blank" rel="noopener"><img src="https://static.pepy.tech/badge/seleniumbase" alt="SeleniumBase PyPI downloads" height="20" /></a><br />
 <a href="https://www.youtube.com/playlist?list=PLp9uKicxkBc5UIlGi2BuE3aWC7JyXpD3m" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/docs-📺-D844E8.svg?style=flat-square&logo=YouTube&logoColor=white&label=YouTube" alt="YouTube Channel" height="20" /></a> <a href="https://www.facebook.com/SeleniumBase/" target="_blank" rel="noopener"> <img src="https://img.shields.io/badge/Facebook-4K_followers-1877F2?style=flat-square&logo=facebook&logoColor=white" alt="SeleniumBase Facebook Followers" height="20" /></a> <a href="https://x.com/seleniumbase" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/-1K_followers-1DA1F2?style=flat-square&logo=x&logoColor=white&labelColor=555555" alt="SeleniumBase X Followers" height="20" /></a> <a href="https://discord.gg/EdhQTn3EyE" target="_blank" rel="noopener"><img src="https://img.shields.io/discord/727927627830001734?style=flat-square&color=7289DA&label=Discord&logo=discord&logoColor=white" height="20" /></a> <a href="https://github.com/seleniumbase/SeleniumBase" target="_blank" rel="noopener"><img src="https://badgen.net/github/stars/seleniumbase/SeleniumBase" title="Stars" height="20" /></a>
 </p>
 
@@ -3517,18 +3517,28 @@
 <p>🥷 <a translate="no" href="help_docs/uc_mode/"><a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> makes browser automation undetectable to anti-bot services and <a href="examples/cdp_mode/playwright/ReadMe/">adds <b>stealth</b> to stock <span translate="no">Playwright</span></a>. Also includes code for bypassing CAPTCHAs.</p>
 <p>📚 Example scripts that start or end with "<code>test</code>" are specifically designed to be run with <code><b>pytest</b></code>. Other scripts run directly with raw <code><b>python</b></code>. (Those start with "<code>raw</code>" to avoid confusion.)</p>
 <hr />
-<p>📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_cdp_mode.py">an example</a> with <b><code translate="no">seleniumbase</code></b> <b><code translate="no">sb_cdp</code></b> (<a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp"><i>Pure CDP Mode</i></a>):<br  /><em>(It bypasses both BrowserScan AND Sannysoft Bot-Detection)</em></p>
+<p>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_cdp_mode.py">This example</a> uses <b><code translate="no">seleniumbase</code></b> <b><code translate="no">sb_cdp</code></b> (<em><a href="examples/cdp_mode/ReadMe/#Pure_CDP_Mode">Pure CDP Mode</a></em>):<br  /><em>(It bypasses BrowserScan, Sannysoft, and Cloudflare bot-detection)</em></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>  <span class="c1"># Launch a stealth browser</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://browserscan.net/bot-detection"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'strong:contains("Normal")'</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
 <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://bot.sannysoft.com/"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">".passed"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element_not_visible</span><span class="p">(</span><span class="s2">".failed"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.planetminecraft.com/account"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'[name="email"]'</span><span class="p">,</span> <span class="s2">"Name123"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'[name="password"]'</span><span class="p">,</span> <span class="s2">"Pass"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"input#autologin"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>  <span class="c1"># Works on different CAPTCHAs</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name="login"]'</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">assert_element_not_visible</span><span class="p">(</span><span class="s2">"input[disabled]"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>  <span class="c1"># Quit browser before end-of-program</span>
 </code></pre></div>
 <p align="center">
 <img src="https://seleniumbase.github.io/cdn/img/results_normal.jpg" width="520" style="max-width: 100% !important; height: auto !important;" alt="BrowserScan Test Results: Normal" />
@@ -3540,30 +3550,14 @@
 <br /><em>(All Sannysoft bot-detection tests passed successfully)</em>
 </p>
 
-<hr />
-<p>📝 Here's <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_planetmc.py">another example</a> with <b><code translate="no">seleniumbase</code></b> <b><code translate="no">sb_cdp</code></b> (<a href="examples/cdp_mode/ReadMe.md#-pure-cdp-mode-sb_cdp"><i>Pure CDP Mode</i></a>):<br />(It performs various browser actions and bypasses a Cloudflare Turnstile)</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
-
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">incognito</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.planetminecraft.com/account"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name="login"]'</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'input[name="email"]'</span><span class="p">,</span> <span class="s2">"test@example.com"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'input[name="password"]'</span><span class="p">,</span> <span class="s2">"Fake_Password"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"input#autologin"</span><span class="p">)</span>  <span class="c1"># The checkbox</span>
-<span class="k">if</span> <span class="n">sb</span><span class="o">.</span><span class="n">is_element_visible</span><span class="p">(</span><span class="s2">"input[disabled]"</span><span class="p">):</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>  <span class="c1"># Enables the input</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">assert_element_absent</span><span class="p">(</span><span class="s2">"input[disabled]"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>python raw_cdp_planetmc.py
-</code></pre></div>
-<p align="left">
+<p align="center">
 <img src="https://seleniumbase.github.io/other/pmc_captcha_2.png" width="530" style="max-width: 100% !important; height: auto !important;" alt="Cloudflare Turnstile bypassed successfully" />
+<br /><em>(Cloudflare Turnstile bypassed successfully on Planet Minecraft)</em>
 </p>
 
+<hr />
 <p>✅ <b><code>sb.solve_captcha()</code></b> handles CAPTCHAs that aren't bypassed automatically.<br />(If called when there's no CAPTCHA on the page, then nothing happens / no-op.)</p>
-<p>ℹ️ <code>sb.assert_*</code> methods wait up to 7 seconds for the expected condition to occur.</p>
+<p>ℹ️ <code>sb.assert_*</code> methods wait up to 7 seconds for the expected condition.<br />(Raises an exception if the condition isn't met in time.)</p>
 <hr />
 <p align="left">📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_yc_news.py" target="_blank" rel="noopener">This script</a> scrapes Hacker News listings:</p>
 
@@ -3998,7 +3992,7 @@ pytest<span class="w"> </span>my_first_test.py
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s2">"input"</span><span class="p">,</span> <span class="s2">"dogs</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (The "\n" presses ENTER)</span>
 </code></pre></div>
-<p>Most SeleniumBase scripts can be run with <code translate="no">pytest</code>, <code translate="no">pynose</code>, or pure <code translate="no">python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/stable/gherkin.html#features" target="_blank" rel="noopener">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
+<p>Most SeleniumBase scripts can be run with <code translate="no">pytest</code>, <code translate="no">pynose</code>, or pure <code translate="no">python</code>. Not all test runners can run all test formats. For example, tests that use the <code>sb</code> pytest fixture can only be run with <code>pytest</code>. (See <a href="help_docs/syntax_formats/">Syntax Formats</a>) There's also a <a href="https://behave.readthedocs.io/en/latest/gherkin/" target="_blank" rel="noopener">Gherkin</a> test format that runs with <a href="examples/behave_bdd/ReadMe/">behave</a>.</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>coffee_cart_tests.py<span class="w"> </span>--rs
 pytest<span class="w"> </span>test_sb_fixture.py<span class="w"> </span>--demo
 pytest<span class="w"> </span>test_suite.py<span class="w"> </span>--rs<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>--dashboard
@@ -4130,10 +4124,15 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 --sjw<span class="w">  </span><span class="c1"># (Skip JS Waits for readyState to be "complete" or Angular to load.)</span>
 --wfa<span class="w">  </span><span class="c1"># (Wait for AngularJS to be done loading after specific web actions.)</span>
 --pls<span class="o">=</span>PLS<span class="w">  </span><span class="c1"># (Set pageLoadStrategy on Chrome: "normal", "eager", or "none".)</span>
---headless<span class="w">  </span><span class="c1"># (The default headless mode. Linux uses this mode by default.)</span>
---headless1<span class="w">  </span><span class="c1"># (Use Chrome's old headless mode. Fast, but has limitations.)</span>
---headless2<span class="w">  </span><span class="c1"># (Use Chrome's new headless mode, which supports extensions.)</span>
+--headless<span class="w">  </span><span class="c1"># (Use headless mode. Linux uses this mode by default.)</span>
+--chs<span class="w">  </span><span class="c1"># (Use Chrome-Headless-Shell, a limited Chrome without stealth.)</span>
 --headed<span class="w">  </span><span class="c1"># (Run tests in headed/GUI mode on Linux OS, where not default.)</span>
+--incognito<span class="w">  </span><span class="c1"># (Enable Chrome's Incognito mode.)</span>
+--guest<span class="w">  </span><span class="c1"># (Enable Chrome's Guest mode.)</span>
+--uc<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
+--uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events in UC Mode. NOT related to CDP Mode.)</span>
+--log-cdp<span class="w">  </span><span class="c1"># ("goog:loggingPrefs", {"performance": "ALL", "browser": "ALL"})</span>
+--remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
 --xvfb<span class="w">  </span><span class="c1"># (Run tests using the Xvfb virtual display server on Linux OS.)</span>
 --xvfb-metrics<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set Xvfb display size on Linux: "Width,Height".)</span>
 --locale<span class="o">=</span>LOCALE_CODE<span class="w">  </span><span class="c1"># (Set the Language Locale Code for the web browser.)</span>
@@ -4167,17 +4166,11 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 --disable-ws<span class="w">  </span><span class="c1"># (Disable Web Security on Chromium-based browsers.)</span>
 --enable-ws<span class="w">  </span><span class="c1"># (Enable Web Security on Chromium-based browsers.)</span>
 --enable-sync<span class="w">  </span><span class="c1"># (Enable "Chrome Sync" on websites.)</span>
---uc<span class="w"> </span><span class="p">|</span><span class="w"> </span>--undetected<span class="w">  </span><span class="c1"># (Use undetected-chromedriver to evade bot-detection.)</span>
---uc-cdp-events<span class="w">  </span><span class="c1"># (Capture CDP events when running in "--undetected" mode.)</span>
---log-cdp<span class="w">  </span><span class="c1"># ("goog:loggingPrefs", {"performance": "ALL", "browser": "ALL"})</span>
---remote-debug<span class="w">  </span><span class="c1"># (Sync to Chrome Remote Debugger chrome://inspect/#devices)</span>
 --ftrace<span class="w"> </span><span class="p">|</span><span class="w"> </span>--final-trace<span class="w">  </span><span class="c1"># (Debug Mode after each test. Don't use with CI!)</span>
 --dashboard<span class="w">  </span><span class="c1"># (Enable the SeleniumBase Dashboard. Saved at: dashboard.html)</span>
 --dash-title<span class="o">=</span>STRING<span class="w">  </span><span class="c1"># (Set the title shown for the generated dashboard.)</span>
 --enable-3d-apis<span class="w">  </span><span class="c1"># (Enables WebGL and 3D APIs.)</span>
 --swiftshader<span class="w">  </span><span class="c1"># (Chrome "--use-gl=angle" / "--use-angle=swiftshader-webgl")</span>
---incognito<span class="w">  </span><span class="c1"># (Enable Chrome's Incognito mode.)</span>
---guest<span class="w">  </span><span class="c1"># (Enable Chrome's Guest mode.)</span>
 --dark<span class="w">  </span><span class="c1"># (Enable Chrome's Dark mode.)</span>
 --devtools<span class="w">  </span><span class="c1"># (Open Chrome's DevTools when the browser opens.)</span>
 --rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
@@ -4564,21 +4557,13 @@ You'd know this because the web page would contain something like the following 
 <summary> ▶️ Here are some examples of using jQuery in your scripts. (<b>click to expand</b>)</summary>
 
 <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery, window.scrollTo(0, 600)"</span><span class="p">)</span>  <span class="c1"># Scrolling the page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('#annoying-widget').hide()"</span><span class="p">)</span>  <span class="c1"># Hiding elements on a page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('#hidden-widget').show(0)"</span><span class="p">)</span>  <span class="c1"># Showing hidden elements on a page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('#annoying-button a').remove()"</span><span class="p">)</span>  <span class="c1"># Removing elements on a page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('</span><span class="si">%s</span><span class="s2">').mouseover()"</span> <span class="o">%</span> <span class="p">(</span><span class="n">mouse_over_item</span><span class="p">))</span>  <span class="c1"># Mouse-over elements on a page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('input#the_id').val('my_text')"</span><span class="p">)</span>  <span class="c1"># Fast text input on a page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"jQuery('div#dropdown a.link').click()"</span><span class="p">)</span>  <span class="c1"># Click elements on a page</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"return jQuery('div#amazing')[0].text"</span><span class="p">)</span>  <span class="c1"># Returns the css "text" of the element given</span>
-
 <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"return jQuery('textarea')[2].value"</span><span class="p">)</span>  <span class="c1"># Returns the css "value" of the 3rd textarea element on the page</span>
 </code></pre></div>
 
