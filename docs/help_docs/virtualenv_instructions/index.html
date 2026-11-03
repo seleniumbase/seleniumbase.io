@@ -3532,14 +3532,15 @@
   <h1>⚙️ Virtualenv Instructions</h1>
 
 <h2 id="virtual-environment-tutorial">Virtual Environment Tutorial<a class="headerlink" href="#virtual-environment-tutorial" title="Permanent link">&para;</a></h2>
-<p>There are multiple ways of creating a <strong><a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">Python virtual environment</a></strong>. This tutorial covers two of those:</p>
+<p>There are multiple ways of creating a <strong><a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">Python virtual environment</a></strong>. This tutorial covers three of those:</p>
 <ul>
-<li>The <code>venv</code> command (<i>included with Python 3+</i>).</li>
+<li>The <code>venv</code> command.</li>
 <li>The virtualenvwrapper <code>mkvirtualenv</code> command.</li>
+<li>The <a href="https://docs.astral.sh/uv/">uv</a> commands: <code>uv venv</code> and <code>uv sync</code>.</li>
 </ul>
 <p><code>venv</code> creates virtual environments in the location where run (<i>generally with Python projects</i>).</p>
 <p><code>mkvirtualenv</code> creates virtual environments in one place (<i>generally in your home directory</i>).</p>
-<p>(The <a href="https://www.python.org/psf/">Python Software Foundation</a> recommends <code>venv</code> for creating virtual environments.)</p>
+<p><code>uv venv</code> creates virtual environments in the location where run (<i>like <code>venv</code>, but faster</i>).</p>
 <h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Option 1: Using "venv"</h3>
 
 <blockquote>
@@ -3576,33 +3577,103 @@ call<span class="w"> </span>sbase_env<span class="se">\\</span>Scripts<span clas
 <h3>Create a virtual environment:</h3>
 
 <ul>
-<li><code>mkvirtualenv ENV</code>:</li>
+<li><code>mkvirtualenv ENV</code>.</li>
 </ul>
 <div class="highlight"><pre><span></span><code>mkvirtualenv<span class="w"> </span>sbase_env
 </code></pre></div>
 <p>(If you have multiple versions of Python installed on your machine, and you want your virtual environment to use a specific Python version, add <code>--python=PATH_TO_PYTHON_EXE</code> to your <code>mkvirtualenv</code> command with the Python executable to use.)</p>
-<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> virtualenvwrapper commands:</h3>
+<h4>Leave your current virtual environment:</h4>
 
-<p>Creating a virtual environment:</p>
-<div class="highlight"><pre><span></span><code>mkvirtualenv<span class="w"> </span>sbase_env
-</code></pre></div>
-<p>Leaving your virtual environment:</p>
 <div class="highlight"><pre><span></span><code>deactivate
 </code></pre></div>
-<p>Returning to a virtual environment:</p>
+<h4>Return to an existing virtual environment:</h4>
+
 <div class="highlight"><pre><span></span><code>workon<span class="w"> </span>sbase_env
 </code></pre></div>
-<p>Listing all virtual environments:</p>
+<h4>List all virtual environments:</h4>
+
 <div class="highlight"><pre><span></span><code>workon
 </code></pre></div>
-<p>Deleting a virtual environment:</p>
+<h4>Delete a virtual environment:</h4>
+
 <div class="highlight"><pre><span></span><code>rmvirtualenv<span class="w"> </span>sbase_env
 </code></pre></div>
+<hr />
+<h3><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32" /> Option 3: Using <code>uv</code></h3>
+
+<p><a href="https://docs.astral.sh/uv/">uv</a> is a fast Python package and project manager that can also create virtual environments.</p>
+<blockquote>
+<p>Install uv (macOS/Linux terminal):</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+<blockquote>
+<p>Install uv (Windows PowerShell):</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>powershell<span class="w"> </span>-ExecutionPolicy<span class="w"> </span>ByPass<span class="w"> </span>-c<span class="w"> </span><span class="s2">"irm https://astral.sh/uv/install.ps1 | iex"</span>
+</code></pre></div>
+<p>(uv can also be installed with <code>pip install uv</code>, or with <code>pip install seleniumbase[uv]</code>. See the <a href="https://docs.astral.sh/uv/getting-started/installation/">uv installation docs</a> for more options.)</p>
+<h3>Create a virtual environment with <b><code>uv venv</code></b>:</h3>
+
+<blockquote>
+<p>macOS/Linux terminal:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>sbase_env
+<span class="nb">source</span><span class="w"> </span>sbase_env/bin/activate
+</code></pre></div>
+<blockquote>
+<p>Windows CMD prompt:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>sbase_env
+call<span class="w"> </span>sbase_env<span class="se">\\</span>Scripts<span class="se">\\</span>activate
+</code></pre></div>
+<p>(If you don't provide a name, <code>uv venv</code> creates a virtual environment named <code>.venv</code> in the current directory.)</p>
+<p>Once the virtual environment is active, install SeleniumBase with <code>uv pip</code>:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>seleniumbase
+</code></pre></div>
+<p>(<em>Note</em>: Virtual environments created with <code>uv venv</code> don't include <code>pip</code> by default. SeleniumBase lists <code>pip</code> as a dependency, so it gets installed along with SeleniumBase. For other projects, use <code>uv pip install ...</code> in place of <code>pip install ...</code>, or create the environment with <code>uv venv --seed sbase_env</code> to include <code>pip</code> from the start.)</p>
+<p>If you want your virtual environment to use a specific Python version, add <code>--python</code> to your <code>uv venv</code> command. uv can download that Python version for you if it isn't installed yet:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.15<span class="w"> </span>sbase_env
+</code></pre></div>
+<p>(To install a Python version without creating a virtual environment, use: <code>uv python install 3.15</code>.)</p>
+<p>To exit a virtual env, type <code>deactivate</code>.</p>
+<p>To delete a virtual env, remove its folder (<code>rm -rf sbase_env</code> on macOS/Linux, or <code>rmdir /s /q sbase_env</code> on Windows CMD).</p>
+<h3>Work from a local clone with <code>uv sync</code>:</h3>
+
+<p>If you've cloned the SeleniumBase repo and want to work on it locally, <code>uv sync</code> can create the virtual environment and install the dependencies in a single step:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/seleniumbase/SeleniumBase.git
+<span class="nb">cd</span><span class="w"> </span>SeleniumBase
+uv<span class="w"> </span>sync
+</code></pre></div>
+<p><code>uv sync</code> creates a <code>.venv</code> folder in the top-level SeleniumBase folder (if one doesn't exist yet), installs the dependencies listed in <code>setup.py</code>, and installs SeleniumBase itself in editable mode, so changes to your local files take effect right away. It also writes a <code>uv.lock</code> file that records the exact versions that were resolved.</p>
+<p>You can activate the environment as usual:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div>
+<p>(On Windows CMD: <code>call .venv\\Scripts\\activate</code>)</p>
+<p>Or skip activation and use <code>uv run</code> to run commands inside the environment:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>sbase<span class="w"> </span>--help
+uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>examples/my_first_test.py
+</code></pre></div>
+<p>To update the environment after pulling new changes, run <code>uv sync</code> again.</p>
+<p>To use a specific Python version, add <code>--python</code>:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>sync<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.15
+</code></pre></div>
+<h3>Optional extras with <code>uv sync</code>:</h3>
+
+<p>SeleniumBase defines several optional extras in <code>setup.py</code>. Add the ones you need with <code>--extra</code>:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </span>mcp
+uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </span>pillow<span class="w"> </span>--extra<span class="w"> </span>pdfminer
+</code></pre></div>
+<p>To install all of them at once:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+</code></pre></div>
+<p>Available extras: <code>allure</code>, <code>coverage</code>, <code>flake8</code>, <code>mcp</code>, <code>mss</code>, <code>pdfminer</code>, <code>pillow</code>, <code>pip-system-certs</code>, <code>playwright</code>, <code>proxy</code>, <code>pyautogui</code>, and <code>uv</code>.</p>
+<p>(In an environment that was created with <code>uv venv</code>, the <code>pip</code> equivalent is <code>uv pip install -e ".[mcp]"</code>.)</p>
 <hr />
 <p>If the <code>python</code> and <code>python3</code> versions don't match (<em>while in a virtualenv on macOS or Linux</em>), the following command will sync the versions:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span>python3
 </code></pre></div>
-<p>(To remove an alias, use: <code>unalias NAME</code>)</p>
+<p>(To remove an alias, use: <code>unalias NAME</code>. Note that setting an alias is temporary for the current shell session. Users should add <code>alias python=python3</code> to their shell profile (<code>~/.zshrc</code> or <code>~/.bashrc</code>) if they want it to persist across terminal restarts.)</p>
 <hr />
 <p>To verify the <code>python</code> version, use:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>--version
@@ -3612,7 +3683,7 @@ call<span class="w"> </span>sbase_env<span class="se">\\</span>Scripts<span clas
 </code></pre></div>
 <hr />
 <blockquote>
-<p><i><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">python-guide.org/en/latest/dev/virtualenvs</a> has more information about Python virtual environments. For specific details about VirtualEnv and VirtualEnvWrapper, see <a href="http://virtualenv.readthedocs.org/en/latest/">http://virtualenv.readthedocs.org/en/latest/</a> and <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">http://virtualenvwrapper.readthedocs.org/en/latest/</a>.</i></p>
+<p><i><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">python-guide.org/en/latest/dev/virtualenvs</a> has more information about Python virtual environments. For specific details about VirtualEnv and VirtualEnvWrapper, see <a href="http://virtualenv.readthedocs.org/en/latest/">http://virtualenv.readthedocs.org/en/latest/</a> and <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">http://virtualenvwrapper.readthedocs.org/en/latest/</a>. For uv, see <a href="https://docs.astral.sh/uv/">docs.astral.sh/uv</a>.</i></p>
 </blockquote>
 
 
