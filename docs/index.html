@@ -3512,53 +3512,34 @@
 <p>🐙 Stealthy CDP Mode examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/tree/master/examples/cdp_mode">./examples/cdp_mode/</a>.</p>
 <p>🎭 Stealthy Playwright examples are located in <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/playwright/">./examples/cdp_mode/playwright/</a>.</p>
 <blockquote>
-<p>Examples that start with "<code>test</code>" are designed to run with <strong><code>pytest</code></strong>.<br />
-Other scripts run directly with raw <strong><code>python</code></strong> (and start with "<code>raw</code>").</p>
+<p>Examples that start with <code>test</code> run with <strong><code>pytest</code></strong>.<br />
+Other examples run directly with raw <strong><code>python</code></strong>.</p>
 </blockquote>
 <hr />
-<p>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/raw_cdp_mode.py">This example</a> uses <b><code translate="no">seleniumbase</code></b> <b><code translate="no">sb_cdp</code></b> (<em><a href="examples/cdp_mode/ReadMe/#Pure_CDP_Mode">Pure CDP Mode</a></em>):<br  /><em>(It bypasses BrowserScan, Sannysoft, and Cloudflare bot-detection)</em></p>
+<p>📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_mode.py">This example</a> uses <b><code translate="no">seleniumbase</code></b> <b><code translate="no">sb_cdp</code></b> (<em><a href="examples/cdp_mode/ReadMe/#Pure_CDP_Mode">Pure CDP Mode</a></em>):<br  /><em>(It shows some basic methods and bypasses a Cloudflare Turnstile)</em></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
-<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>  <span class="c1"># Launch a stealth browser</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://browserscan.net/bot-detection"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'strong:contains("Normal")'</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://bot.sannysoft.com/"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s2">".passed"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">assert_element_not_visible</span><span class="p">(</span><span class="s2">".failed"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
+<span class="n">sb</span> <span class="o">=</span> <span class="n">sb_cdp</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>  <span class="c1"># Launches a stealth browser</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.planetminecraft.com/account"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'[name="email"]'</span><span class="p">,</span> <span class="s2">"Name123"</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'[name="email"]'</span><span class="p">,</span> <span class="s2">"Test123"</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="s1">'[name="password"]'</span><span class="p">,</span> <span class="s2">"Pass"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"input#autologin"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>  <span class="c1"># Works on different CAPTCHAs</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"input#autologin"</span><span class="p">)</span>  <span class="c1"># Unchecks a checkbox</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">()</span>  <span class="c1"># (as backup if not automatic)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="s1">'input[name="login"]'</span><span class="p">)</span>
 <span class="n">sb</span><span class="o">.</span><span class="n">assert_element_not_visible</span><span class="p">(</span><span class="s2">"input[disabled]"</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>  <span class="c1"># Quit browser before end-of-program</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># (only to slow down the live demo)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>  <span class="c1"># (otherwise quits automatically at end)</span>
 </code></pre></div>
-<p align="center">
-<img src="https://seleniumbase.github.io/cdn/img/results_normal.jpg" width="520" style="max-width: 100% !important; height: auto !important;" alt="BrowserScan Test Results: Normal" />
-<br /><em>(BrowserScan bot-detection passed successfully)</em>
-</p>
-
-<p align="center">
-<img src="https://seleniumbase.github.io/other/sannysoft_success.jpg" width="428" style="max-width: 100% !important; height: auto !important;" alt="All Sannysoft tests passed successfully" />
-<br /><em>(Sannysoft bot-detection passed successfully)</em>
-</p>
-
-<p align="center">
-<img src="https://seleniumbase.github.io/other/pmc_captcha_2.png" width="530" style="max-width: 100% !important; height: auto !important;" alt="Cloudflare Turnstile bypassed successfully" />
-<br /><em>(Cloudflare Turnstile passed successfully on Planet Minecraft)</em>
+<p align="left">
+<img src="https://seleniumbase.github.io/other/pmc_captcha_3.png" width="542" style="max-width: 100% !important; height: auto !important;" alt="Cloudflare Turnstile bypassed successfully" />
+<br /><em>(Note that the click action only unchecked the "Stay signed in" checkbox.)</em>
 </p>
 
 <hr />
 <p>✅ <b><code>sb.solve_captcha()</code></b> handles CAPTCHAs that aren't bypassed automatically.<br />(If called when there's no CAPTCHA on the page, then nothing happens / no-op.)</p>
 <p>ℹ️ <code>sb.assert_*</code> methods wait up to 7 seconds for the expected condition.<br />(Raises an exception if the condition isn't met in time.)</p>
 <hr />
-<p align="left">📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_yc_news.py" target="_blank" rel="noopener">This script</a> scrapes Hacker News listings:</p>
+<p align="left">📝 <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/cdp_mode/raw_cdp_yc_news.py" target="_blank" rel="noopener">This script</a> searches Hacker News via Algolia. Then prints items and saves to PDF:</p>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">sb_cdp</span>
 
@@ -3566,12 +3547,14 @@ Other scripts run directly with raw <strong><code>python</code></strong> (and st
 <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://hn.algolia.com/?query=seleniumbase"</span><span class="p">)</span>
 <span class="n">elements</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="s2">"div.Story_title &gt; a"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"* "</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"--&gt; "</span> <span class="o">+</span> <span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">save_as_pdf</span><span class="p">(</span><span class="s2">"sb_news.pdf"</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">"./downloaded_files/"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"*** PDF saved to: ./downloaded_files/sb_news.pdf"</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>python raw_cdp_yc_news.py
 </code></pre></div>
 <p align="left">
-<img src="https://seleniumbase.github.io/other/yc_news_results.png" alt="SeleniumBase" width="510" style="max-width: 100% !important; height: auto !important;"/>
+<img src="https://seleniumbase.github.io/other/yc_news_results_2.png" alt="SeleniumBase" width="510" style="max-width: 100% !important; height: auto !important;"/>
 </p>
 
 <hr />
