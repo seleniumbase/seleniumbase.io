@@ -3827,13 +3827,13 @@ There's more info on that here: <a href="https://pypi.org/project/pytest-xdist/2
 <hr />
 <h3><img src="https://seleniumbase.github.io/img/green_logo.png" title="SeleniumBase" width="32" /> Changing the default driver version:</h3>
 
-<p>🔵 By default, SeleniumBase will make sure that the major driver version matches the major browser version for Chromium tests. (Eg. If Chrome <code>149.X</code> is installed and you have chromedriver <code>149.X</code>, then nothing happens, but if you had chromedriver <code>148.X</code> instead, then SeleniumBase would download chromedriver <code>149.X</code> to match the browser version.)</p>
+<p>🔵 By default, SeleniumBase will make sure that the major driver version matches the major browser version for Chromium tests. (Eg. If Chrome <code>156.X</code> is installed and you have chromedriver <code>156.X</code>, then nothing happens, but if you had chromedriver <code>155.X</code> instead, then SeleniumBase would download chromedriver <code>156.X</code> to match the browser version.)</p>
 <p>🎛️ To change this default behavior, you can use:</p>
 <div class="highlight"><pre><span></span><code>pytest<span class="w"> </span>--driver-version<span class="o">=</span>VER
 </code></pre></div>
 <p>The <code>VER</code> in <code>--driver-version=VER</code> can be:
-* A major driver version. Eg. <code>149</code>. (milestone)
-* An exact driver version. Eg. <code>149.0.7827.155</code>.
+* A major driver version. Eg. <code>156</code>. (milestone)
+* An exact driver version. Eg. <code>156.0.8078.80</code>.
 * <code>"browser"</code> (exact match on browser version)
 * <code>"keep"</code> (keep using the driver you already have)
 * <code>"latest"</code> / <code>"stable"</code> (latest stable version)
