@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -971,6 +971,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        To create a tour utilizing the IntroJS Library, use one of the following
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to-create-a-tour-utilizing-the-shepherd-library-use-one-of-the-following" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -986,17 +997,6 @@
     <span class="md-ellipsis">
       
         To create a tour utilizing the Bootstrap Tour Library, use one of the following
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        To create a tour utilizing the IntroJS Library, use one of the following
       
     </span>
   </a>
@@ -3651,6 +3651,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        To create a tour utilizing the IntroJS Library, use one of the following
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to-create-a-tour-utilizing-the-shepherd-library-use-one-of-the-following" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3666,17 +3677,6 @@
     <span class="md-ellipsis">
       
         To create a tour utilizing the Bootstrap Tour Library, use one of the following
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        To create a tour utilizing the IntroJS Library, use one of the following
       
     </span>
   </a>
@@ -3811,9 +3811,12 @@
 
 <h2><a href="https://github.com/seleniumbase/SeleniumBase/"><img src="https://seleniumbase.github.io/img/logo6.png" title="SeleniumBase" width="32"></a> 🌏 Interactive Product Tours 🚎</h2>
 
+<blockquote>
+<p><strong>("Tour Mode" / "Tours")</strong></p>
+</blockquote>
 <p>SeleniumBase Tours utilize 5 JavaScript libraries for creating interactive walkthroughs on <strong>any website</strong>:</p>
 <blockquote>
-<p><strong><a href="https://introjs.com/">IntroJS</a></strong>, <strong><a href="http://bootstraptour.com/">Bootstrap Tour</a></strong>, <strong><a href="https://kamranahmed.info/driver.js/">DriverJS</a></strong>, <strong><a href="https://shepherdjs.dev/">Shepherd</a></strong>, and <strong><a href="https://linkedinattic.github.io/hopscotch/">Hopscotch</a></strong>.</p>
+<p><strong><a href="https://introjs.com/">IntroJS</a></strong>, <strong><a href="http://bootstraptour.com/">Bootstrap Tour</a></strong>, <strong><a href="https://driverjs.com/">DriverJS</a></strong>, <strong><a href="https://shepherdjs.dev/">Shepherd</a></strong>, and <strong><a href="https://linkedinattic.github.io/hopscotch/">Hopscotch</a></strong>.</p>
 </blockquote>
 <p><b>A tour demo: (with autoplay)</b></p>
 <p><img src="https://seleniumbase.github.io/cdn/gif/introjs_tour.gif" title="SeleniumBase Tour of Google"><br></p>
@@ -3821,16 +3824,14 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/tour_examples
 pytest<span class="w"> </span>maps_introjs_tour.py<span class="w"> </span>--interval<span class="o">=</span><span class="m">1</span>
 </code></pre></div>
-<p><b>Here's a longer version:</b></p>
-<p><img src="https://seleniumbase.github.io/cdn/gif/google_tour_4.gif" title="SeleniumBase Tour of Google"><br></p>
-<p><a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples/google_tour.py">SeleniumBase google_tour.py</a></p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/tour_examples
-pytest<span class="w"> </span>google_tour.py
-</code></pre></div>
 <blockquote>
-<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples">GitHub =&gt; SeleniumBase/examples/tour_examples</a>)</p>
+<p>(From <a href="https://github.com/seleniumbase/SeleniumBase/blob/master/examples/tour_examples">SeleniumBase/examples/tour_examples</a>)</p>
 </blockquote>
 <h3 id="creating-a-new-tour">Creating a new tour<a class="headerlink" href="#creating-a-new-tour" title="Permanent link">&para;</a></h3>
+<h4 id="to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following">To create a tour utilizing the IntroJS Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
+<p><code>self.create_introjs_tour()</code></p>
+<p>OR</p>
+<p><code>self.create_tour(theme="introjs")</code></p>
 <h4 id="to-create-a-tour-utilizing-the-shepherd-library-use-one-of-the-following">To create a tour utilizing the Shepherd Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-shepherd-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.create_shepherd_tour()</code></p>
 <p>OR</p>
@@ -3840,10 +3841,6 @@ pytest<span class="w"> </span>google_tour.py
 <p><code>self.create_bootstrap_tour()</code></p>
 <p>OR</p>
 <p><code>self.create_tour(theme="bootstrap")</code></p>
-<h4 id="to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following">To create a tour utilizing the IntroJS Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-introjs-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
-<p><code>self.create_introjs_tour()</code></p>
-<p>OR</p>
-<p><code>self.create_tour(theme="introjs")</code></p>
 <h4 id="to-create-a-tour-utilizing-the-driverjs-library-use-one-of-the-following">To create a tour utilizing the DriverJS Library, use one of the following<a class="headerlink" href="#to-create-a-tour-utilizing-the-driverjs-library-use-one-of-the-following" title="Permanent link">&para;</a></h4>
 <p><code>self.create_driverjs_tour()</code></p>
 <p>OR</p>
@@ -3867,13 +3864,11 @@ pytest<span class="w"> </span>google_tour.py
 <p>All methods have the optional <code>name</code> argument, which is only needed if you're creating multiple tours at once. Then, when you're adding a step or playing a tour, SeleniumBase knows which tour you're referring too. You can avoid using the <code>name</code> arg for multiple tours if you play a tour before creating a new one.</p>
 <h3 id="heres-how-the-code-looks">Here's how the code looks<a class="headerlink" href="#heres-how-the-code-looks" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">seleniumbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseCase</span>
-<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">,</span> <span class="s2">"--uc"</span><span class="p">)</span>
+<span class="n">BaseCase</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="vm">__file__</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyTourClass</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_google_tour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">undetectable</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">get_new_driver</span><span class="p">(</span><span class="n">undetectable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://google.com/ncr"</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s1">'button:contains("Accept all")'</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">'[name="q"]'</span><span class="p">)</span>
@@ -3896,20 +3891,8 @@ pytest<span class="w"> </span>google_tour.py
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"Or press [ENTER] after entry."</span><span class="p">,</span> <span class="s1">'[name="q"]'</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">highlight_type</span><span class="p">(</span><span class="s1">'[name="q"]'</span><span class="p">,</span> <span class="s2">"GitHub</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ad_block</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s2">"#search"</span><span class="p">)</span>
-
-        <span class="c1"># Create a website tour using the Bootstrap Tour JS library</span>
-        <span class="c1"># Same as:  self.create_bootstrap_tour()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">create_tour</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s2">"bootstrap"</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"3-second autoplay..."</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_tour_step</span><span class="p">(</span><span class="s2">"Here's the next tour:"</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">play_tour</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Tour automatically continues after 3 sec</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.google.com/maps/@42.3591234,-71.0915634,15z"</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">'[name="q"]'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">'[aria-label="Interactive map"]'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">'[aria-label="Zoom in"]'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">'[aria-label="Zoom out"]'</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_element</span><span class="p">(</span><span class="s1">'[jsaction*="minimap.main;"]'</span><span class="p">)</span>
@@ -3983,7 +3966,7 @@ pytest<span class="w"> </span>google_tour.py
 </blockquote>
 <hr />
 <p><img src="https://seleniumbase.github.io/cdn/gif/driverjs_tour_2.gif" title="SeleniumBase Tour of Google"><br></p>
-<h3 align="left"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_b.png" alt="SeleniumBase" width="320" /></h3>
+<h3 align="left"><img src="https://seleniumbase.github.io/cdn/img/sb_logo_b.png" alt="SeleniumBase" width="360" /></h3>
 
 
 
@@ -4053,7 +4036,7 @@ pytest<span class="w"> </span>google_tour.py
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

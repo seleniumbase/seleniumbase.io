@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="img/green_logo3.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -3508,16 +3508,12 @@
 </p>
 
 <hr />
-<h3 align="left">⚙️ High-level architecture and special modes:</h3>
+<h3 align="left">⚙️ Architecture for Chromium modes (and stealth options):</h3>
 
 <p><img src="https://seleniumbase.github.io/other/sb_architecture.png" width="595" style="max-width: 100% !important; height: auto !important;" alt="Stealthy architecture flowchart" /></p>
 <ul>
 <li>🐙 <a translate="no" href="examples/cdp_mode/ReadMe/"><b>CDP Mode</b></a> <b>bypasses bot-detection with Chromium-based browsers.</b></li>
 <li>🎭 <a href="examples/cdp_mode/playwright/ReadMe/"><b><span translate="no">Stealthy Playwright Mode</span></b></a> <b>extends CDP Mode's stealth to Playwright.</b></li>
-</ul>
-<ul>
-<li><code><b>pip install seleniumbase</b></code> for the main framework.</li>
-<li><code><b>pip install playwright</b></code> for the optional integration.</li>
 </ul>
 
 <hr />
@@ -4163,6 +4159,7 @@ pynose<span class="w"> </span><span class="o">[</span>FILE_NAME.py<span class="o
 --rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-session<span class="w">  </span><span class="c1"># (Reuse browser session for all tests.)</span>
 --rcs<span class="w"> </span><span class="p">|</span><span class="w"> </span>--reuse-class-session<span class="w">  </span><span class="c1"># (Reuse session for tests in class.)</span>
 --crumbs<span class="w">  </span><span class="c1"># (Delete all cookies between tests reusing a session.)</span>
+--no-tt<span class="w">  </span><span class="c1"># (Skips "--test-type" when using Proxy Mode. Adds stealth.)</span>
 --disable-beforeunload<span class="w">  </span><span class="c1"># (Disable the "beforeunload" event on Chrome.)</span>
 --window-position<span class="o">=</span>X,Y<span class="w">  </span><span class="c1"># (Set the browser's starting window position.)</span>
 --window-size<span class="o">=</span>WIDTH,HEIGHT<span class="w">  </span><span class="c1"># (Set the browser's starting window size.)</span>
@@ -4720,7 +4717,7 @@ To flush out all the failed deferred asserts into a single exception, make sure 
       <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["toc.hide", "toc.follow", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
