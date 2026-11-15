@@ -3892,14 +3892,14 @@
     <span class="n">sb</span><span class="o">.</span><span class="n">activate_cdp_mode</span><span class="p">()</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">"https://www.pokemon.com/us/pokedex"</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s2">"button#onetrust-accept-btn-handler"</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">click_if_visible</span><span class="p">(</span><span class="s2">"#onetrust-accept-btn-handler"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'b:contains("Show Advanced Search")'</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'span[data-type="type"][data-value="electric"]'</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">scroll_into_view</span><span class="p">(</span><span class="s2">"a#advSearch"</span><span class="p">)</span>
-    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s2">"a#advSearch"</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">sb</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="s1">'img[src*="img/pokedex/detail/025.png"]'</span><span class="p">)</span>
