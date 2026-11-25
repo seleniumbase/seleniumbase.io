@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09051c">
+  <meta name="description" content="Insert coin and step into the neon-soaked world of the 80s arcade.">
+  <title>NEON ARCADE — Play Like It's 1985</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Neon Arcade home"><span class="brand-mark">N</span><span>NEON<span class="brand-accent"> ARCADE</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#games">THE GAMES</a>
+      <a href="#about">OUR STORY</a>
+      <a href="#high-scores">HIGH SCORES</a>
+    </nav>
+    <a class="header-coin" href="#games"><span>●</span> INSERT COIN</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="pulse-dot"></span> EST. 1985 · PLAYER ONE, READY?</p>
+        <h1>WELCOME TO<br><span class="neon-pink">THE</span> <span class="neon-cyan">ARCADE</span></h1>
+        <p class="hero-copy">Big pixels. Bigger dreams. The golden age of gaming is alive and well. Pick your game, chase the high score, and never stop playing.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games">EXPLORE GAMES <span>↗</span></a>
+          <a class="button button-ghost" href="#about">OUR STORY</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>08</strong><span>CLASSIC GAMES</span></div>
+          <i></i>
+          <div><strong>1985</strong><span>THE GOLDEN YEAR</span></div>
+          <i></i>
+          <div><strong>∞</strong><span>CONTINUES</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a glowing retro arcade cabinet">
+        <div class="sun"></div>
+        <div class="arcade-cabinet">
+          <div class="cabinet-top">NEON ARCADE</div>
+          <div class="cabinet-screen">
+            <div class="screen-stars">✦　·　✧　·　✦</div>
+            <div class="screen-title">PIXEL<br><span>FEVER</span></div>
+            <div class="screen-player">▲</div>
+            <div class="screen-invaders">▾　▾　▾</div>
+          </div>
+          <div class="cabinet-controls"><span class="joystick"></span><span class="control-button pink"></span><span class="control-button cyan"></span></div>
+          <div class="cabinet-speaker">▦ ▦ ▦</div>
+          <div class="cabinet-base">1 OR 2 PLAYERS</div>
+        </div>
+        <div class="floating-chip chip-one">1UP</div>
+        <div class="floating-chip chip-two">★ HI-SCORE ★</div>
+      </div>
+      <a class="scroll-cue" href="#games">SCROLL TO PLAY <span>↓</span></a>
+    </section>
+
+    <section class="ticker" aria-label="Arcade announcement">
+      <div class="ticker-track"><span>★ GAME ON</span><b>✦</b><span>NO QUARTERS REQUIRED</span><b>✦</b><span>HIGH SCORES. GOOD TIMES.</span><b>✦</b><span>GAME ON</span><b>✦</b><span>NO QUARTERS REQUIRED</span><b>✦</b><span>HIGH SCORES. GOOD TIMES.</span><b>✦</b></div>
+    </section>
+
+    <section class="games-section section-pad" id="games">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHOOSE YOUR DESTINY</p><h2>SELECT YOUR <span class="neon-pink">GAME</span></h2></div>
+        <p class="section-note">One more round? We know the feeling.<br>Which cabinet is calling your name?</p>
+      </div>
+      <div class="game-grid">
+        <article class="game-card game-purple">
+          <div class="game-art space-art"><span class="pixel-moon"></span><span class="ufo">▰</span><span class="pixel-ship">▲</span><span class="stars">✦　·　✧　·　✦</span></div>
+          <div class="game-info"><div><span class="game-number">01 / SHOOTER</span><h3>GALAXY RAIDERS</h3></div><span class="game-arrow">↗</span></div>
+          <p>Defend the galaxy. Dodge the lasers. Become a legend.</p>
+          <button class="play-link" data-game="Galaxy Raiders">VIEW GAME <span>→</span></button>
+        </article>
+        <article class="game-card game-blue">
+          <div class="game-art maze-art"><div class="maze">╔══╦══╗<br>║ · · ║<br>╠╗╔═╦╝<br>║·◉·║<br>╚══╩══╝</div><span class="maze-dot">●</span></div>
+          <div class="game-info"><div><span class="game-number">02 / MAZE</span><h3>PIXEL CHOMP</h3></div><span class="game-arrow">↗</span></div>
+          <p>One maze. A thousand dots. Don't get caught.</p>
+          <button class="play-link" data-game="Pixel Chomp">VIEW GAME <span>→</span></button>
+        </article>
+        <article class="game-card game-orange">
+          <div class="game-art racer-art"><div class="road-lines"></div><span class="race-car">▰</span><span class="race-car car-two">▰</span><span class="speed-lines">≋ ≋ ≋</span></div>
+          <div class="game-info"><div><span class="game-number">03 / RACING</span><h3>NEON DRIFTER</h3></div><span class="game-arrow">↗</span></div>
+          <p>Hit the gas. Own the night. Leave rivals in the dust.</p>
+          <button class="play-link" data-game="Neon Drifter">VIEW GAME <span>→</span></button>
+        </article>
+      </div>
+      <p class="more-games">MORE CLASSICS COMING SOON <span>● ● ●</span></p>
+    </section>
+
+    <section class="score-section section-pad" id="high-scores">
+      <div class="score-copy"><p class="eyebrow">LEGENDS ARE MADE HERE</p><h2>THE WALL OF<br><span class="neon-cyan">FAME</span></h2><p>Every pixel tells a story. Every score is a shot at immortality. Think you've got what it takes?</p><a class="button button-primary" href="#games">CLAIM YOUR SPOT <span>↗</span></a></div>
+      <div class="scoreboard">
+        <div class="scoreboard-top"><span>★ TOP PLAYERS ★</span><span>ALL TIME</span></div>
+        <div class="score-row score-head"><span>RANK</span><span>PLAYER</span><span>SCORE</span></div>
+        <div class="score-row"><span class="rank gold">01</span><strong>PIXEL_KING</strong><b>984,200</b></div>
+        <div class="score-row"><span class="rank silver">02</span><strong>MS_CIRCUIT</strong><b>872,650</b></div>
+        <div class="score-row"><span class="rank bronze">03</span><strong>8BIT_HERO</strong><b>761,300</b></div>
+        <div class="score-row"><span class="rank">04</span><strong>JOYSTICK_J</strong><b>645,900</b></div>
+        <div class="score-row"><span class="rank">05</span><strong>CTRL_ALT_ELITE</strong><b>592,410</b></div>
+        <div class="scoreboard-bottom"><span>INSERT COIN TO CONTINUE</span><span class="blink">▮</span></div>
+      </div>
+    </section>
+
+    <section class="about-section section-pad" id="about">
+      <div class="about-icon">✦</div>
+      <p class="eyebrow">A LITTLE NOSTALGIA NEVER HURT</p>
+      <h2>BUILT ON <span class="neon-pink">PIXELS.</span><br>POWERED BY <span class="neon-cyan">NOSTALGIA.</span></h2>
+      <p class="about-copy">Back when a pocketful of quarters could buy you an entire afternoon, the arcade was more than a place to play. It was where rivalries were born, friendships were made, and legends got their initials on the screen. We're keeping that feeling alive.</p>
+      <a class="button button-ghost" href="#home">BACK TO THE TOP ↑</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">N</span><span>NEON<span class="brand-accent"> ARCADE</span></span></a><p>© 1985–2026 NEON ARCADE. GAME ON FOREVER.</p><div class="socials"><a href="#home" aria-label="Instagram">IG</a><a href="#home" aria-label="X">X</a><a href="#home" aria-label="YouTube">YT</a></div></footer>
+
+  <div class="modal" id="game-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-panel"><button class="modal-close" aria-label="Close dialog">×</button><p class="eyebrow">PLAYER ONE, READY?</p><h2 id="modal-title">GAME TITLE</h2><div class="modal-pixel">★</div><p id="modal-message">This cabinet is warming up. Your next high score starts here.</p><button class="button button-primary" id="modal-coin">INSERT COIN <span>●</span></button></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

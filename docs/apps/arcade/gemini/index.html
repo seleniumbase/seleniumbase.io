@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STARLIGHT ARCADE // EST. 1984</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="horizon-grid" aria-hidden="true"></div>
+
+  <!-- Top Arcade HUD Bar -->
+  <header class="hud-bar">
+    <div class="hud-item">
+      <span class="label">1UP</span>
+      <span class="value" id="player-score">000000</span>
+    </div>
+    <div class="hud-item center">
+      <span class="label">HIGH SCORE</span>
+      <span class="value gold">999990</span>
+    </div>
+    <div class="hud-item right">
+      <span class="label">CREDITS</span>
+      <span class="value cyan" id="credit-count">00</span>
+    </div>
+  </header>
+
+  <!-- Hero Marquee -->
+  <main class="container">
+    <section class="hero">
+      <div class="neon-sign">
+        <p class="subtitle">WELCOME TO SECTOR 7G</p>
+        <h1 class="glitch-title" data-text="STARLIGHT ARCADE">STARLIGHT ARCADE</h1>
+        <p class="tagline">NEON CABINETS • SYNTHWAVE BEATS • QUARTER-FED GLORY</p>
+      </div>
+
+      <div class="coin-slot-panel">
+        <button id="insert-coin-btn" class="arcade-btn pink">
+          <span class="blink">▶ INSERT COIN (25¢)</span>
+        </button>
+        <button id="sound-toggle-btn" class="arcade-btn cyan" aria-pressed="true">
+          SFX: ON
+        </button>
+      </div>
+    </section>
+
+    <!-- Playable Mini-Game Cabinet -->
+    <section class="cabinet-section">
+      <div class="section-header">
+        <h2>// PLAYABLE CABINET: ASTRO DEFENDER</h2>
+        <span class="status-pill" id="game-status">INSERT COIN TO PLAY</span>
+      </div>
+
+      <div class="arcade-bezel">
+        <canvas id="game-canvas" width="640" height="360"></canvas>
+        <div class="cabinet-controls">
+          <span>[◀ / ▶] OR [A / D] MOVE</span>
+          <span>[SPACE] LASER</span>
+          <button id="start-game-btn" class="arcade-btn yellow" disabled>START 1P</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Cabinets Grid -->
+    <section class="cabinets-catalog">
+      <div class="section-header">
+        <h2>// FLOOR LINEUP</h2>
+        <span class="status-pill">TOKENS: 4 FOR $1</span>
+      </div>
+
+      <div class="card-grid" id="cabinet-grid">
+        <article class="cabinet-card" data-cabinet="cyber-runner">
+          <div class="card-badge">NEW</div>
+          <h3>CYBER RUNNER '84</h3>
+          <p class="genre">OUTRUN RACER</p>
+          <p class="desc">Outrun the synth-cops down an endless magenta highway at 200 MPH.</p>
+          <div class="card-footer">
+            <span>1 COIN</span>
+            <button class="inspect-btn">VIEW SPECS</button>
+          </div>
+        </article>
+
+        <article class="cabinet-card" data-cabinet="void-invaders">
+          <div class="card-badge hot">HOT</div>
+          <h3>VOID INVADERS</h3>
+          <p class="genre">FIXED SHOOTER</p>
+          <p class="desc">Defend the orbital perimeter from descending fleets of pixel dreadnoughts.</p>
+          <div class="card-footer">
+            <span>1 COIN</span>
+            <button class="inspect-btn">VIEW SPECS</button>
+          </div>
+        </article>
+
+        <article class="cabinet-card" data-cabinet="dungeon-byte">
+          <div class="card-badge">CO-OP</div>
+          <h3>DUNGEON BYTE</h3>
+          <p class="genre">2P HACK & SLASH</p>
+          <p class="desc">Grab a friend and battle through 32 floors of CRT-rendered catacombs.</p>
+          <div class="card-footer">
+            <span>2 COINS</span>
+            <button class="inspect-btn">VIEW SPECS</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- High Score Leaderboard -->
+    <section class="leaderboard-section">
+      <div class="section-header">
+        <h2>// ALL-TIME HALL OF FAME</h2>
+        <span class="status-pill">UPDATED LIVE</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>RANK</th>
+            <th>INITIALS</th>
+            <th>GAME</th>
+            <th>SCORE</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <tr>
+            <td class="gold">1ST</td>
+            <td>ACE</td>
+            <td>ASTRO DEFENDER</td>
+            <td>999,990</td>
+          </tr>
+          <tr>
+            <td class="cyan">2ND</td>
+            <td>MAX</td>
+            <td>CYBER RUNNER '84</td>
+            <td>845,200</td>
+          </tr>
+          <tr>
+            <td class="pink">3RD</td>
+            <td>ZAP</td>
+            <td>VOID INVADERS</td>
+            <td>712,450</td>
+          </tr>
+          <tr>
+            <td>4TH</td>
+            <td>NEO</td>
+            <td>DUNGEON BYTE</td>
+            <td>650,100</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Info Footer -->
+    <footer class="arcade-footer">
+      <p>OPEN DAILY: 12:00 PM – MIDNIGHT • 404 NEON BOULEVARD</p>
+      <p class="small">WINNERS DON'T USE DRUGS • NO FOOD OR DRINKS ON GLASS TOPS</p>
+    </footer>
+  </main>
+
+  <!-- Cabinet Spec Modal -->
+  <div id="spec-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button id="close-modal-btn" class="close-btn">X</button>
+      <h3 id="modal-title">CABINET SPECS</h3>
+      <p id="modal-body"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

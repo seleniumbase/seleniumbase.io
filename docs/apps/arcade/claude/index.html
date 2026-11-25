@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Quarter Arcade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="crt" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="logo" href="#home">NEON QUARTER</a>
+  <nav>
+    <a href="#play">Play</a>
+    <a href="#games">Games</a>
+    <a href="#scores">High scores</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <div class="credits">Credits: <span id="credits">0</span></div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <h1 class="sign"><span>NEON</span><span>QUARTER</span><span>ARCADE</span></h1>
+    <p class="tagline">48 cabinets. Real quarters. Open late since 1984.</p>
+    <button class="btn blink" id="coin">Insert coin</button>
+    <p class="hint" id="coin-msg">Press the button to add a credit, then scroll to play.</p>
+  </section>
+
+  <section id="play" class="play">
+    <h2>Play Star Defender</h2>
+    <div class="cabinet">
+      <div class="marquee">STAR DEFENDER</div>
+      <div class="screen">
+        <canvas id="game" width="480" height="360" aria-label="Star Defender game"></canvas>
+        <div class="overlay" id="overlay">
+          <p id="overlay-title">INSERT COIN</p>
+          <p id="overlay-sub">Add a credit above, then press Start</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="stat">Score <b id="score">0</b></div>
+        <button class="btn small" id="start">Start (1 credit)</button>
+        <div class="stat">Lives <b id="lives">3</b></div>
+      </div>
+      <div class="touch">
+        <button id="left" aria-label="Move left">◀</button>
+        <button id="fire">FIRE</button>
+        <button id="right" aria-label="Move right">▶</button>
+      </div>
+      <p class="hint">Arrow keys or A / D to move. Space to fire.</p>
+    </div>
+  </section>
+
+  <section id="games" class="games">
+    <h2>On the floor</h2>
+    <ul class="rack">
+      <li class="c-pink"><div class="mq">GALACTIC GRUB</div><p>Chomp through the maze. Ghosts hate you. 1–2 players.</p><span class="tag">25¢</span></li>
+      <li class="c-cyan"><div class="mq">TURBO CIRCUIT</div><p>Sit-down racer with a real steering wheel and gear shifter.</p><span class="tag">50¢</span></li>
+      <li class="c-yellow"><div class="mq">BARREL BARON</div><p>Climb the girders, dodge the barrels, rescue the mechanic.</p><span class="tag">25¢</span></li>
+      <li class="c-orange"><div class="mq">STREET BRAWL II</div><p>Four-player beat-’em-up. Bring friends. Bring snacks.</p><span class="tag">25¢</span></li>
+      <li class="c-green"><div class="mq">PIN WIZARD</div><p>Our oldest pinball table. Tilt at your own risk.</p><span class="tag">50¢</span></li>
+      <li class="c-pink"><div class="mq">ROBO RAMPAGE</div><p>Twin-stick shooter with a crowd of loyal regulars.</p><span class="tag">25¢</span></li>
+    </ul>
+  </section>
+
+  <section id="scores" class="scores">
+    <h2>High scores</h2>
+    <p class="hint">Top 5 on this machine. Beat them in Star Defender above.</p>
+    <ol id="score-list"></ol>
+    <form id="name-form" class="hidden">
+      <label for="initials">New high score! Enter your initials</label>
+      <input id="initials" maxlength="3" autocomplete="off" required pattern="[A-Za-z]{1,3}">
+      <button class="btn small" type="submit">Save score</button>
+    </form>
+  </section>
+
+  <section id="visit" class="visit">
+    <h2>Visit us</h2>
+    <dl>
+      <dt>Hours</dt><dd>Mon–Thu 3pm–11pm<br>Fri–Sat 12pm–1am<br>Sun 12pm–9pm</dd>
+      <dt>Address</dt><dd>1984 Joystick Lane<br>Main Street District</dd>
+      <dt>Prices</dt><dd>Most games 25¢. Unlimited play wristband: $15 all day.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer>© 1984–2026 Neon Quarter Arcade. Please play responsibly. Please return your tickets.</footer>
+<script src="script.js"></script>
+</body>
+</html>
